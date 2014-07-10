@@ -13,7 +13,6 @@ using namespace std;
 
 #define NOT_USE_OF_CIRCLE 1
 #define NOT_USE_OF_DRAW_TEXT 1
-#define NOT_USE_DT_SYNTH 1
 
 /*
  *	Rhythm

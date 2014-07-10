@@ -19,10 +19,6 @@ using namespace std;
 
 boost::asio::io_service dt_sequence_thread_boost::io;
 
-
-// strange attractor test
-float a, b, c, d, x ,y;
-
 dt_sequence_thread_boost::dt_sequence_thread_boost()
 :bRun(false), bStop_requested(false),bHold(false), sleep_tick(1),sleep_microsec(10000),sleep_millisec(10),master_delay(0)
 
@@ -38,9 +34,8 @@ dt_sequence_thread_boost::dt_sequence_thread_boost()
 	phase = 0;
 	change_freq(0);
 	
-	master_clock_message.setAddress("/32/noteOn");
+	master_clock_message.setAddress("/master_clock");
 	master_clock_message.addIntArg(1);
-	
 }
 
 void dt_sequence_thread_boost::threadFunc(){
@@ -57,20 +52,12 @@ void dt_sequence_thread_boost::threadFunc(){
 void dt_sequence_thread_boost::task(const boost::system::error_code& /*e*/, boost::asio::deadline_timer *t){
 	app = ofApp::getInstance();
 	
-//	master_tick++;
-//	if(master_tick == UINT_MAX) master_tick = 0;
-//	if(master_tick % sleep_tick == 0){
 		ofApp * app = ofApp::getInstance();
 		app->all_containers.step();
 
-		if(master_step%2 == master_delay)app->osc_sender.send_message(master_clock_message);
+//		//if(master_step%4 == master_delay)app->osc_sender.send_message(master_clock_message);
 
 		master_step++;
-	
-	
-	
-//	}
-	
 	if(!bHold){
 		if(freq!=0){
 				phase+=phase_adder;
@@ -95,12 +82,13 @@ void dt_sequence_thread_boost::task(const boost::system::error_code& /*e*/, boos
 	//
 	//	strange attractor
 	//
-	
-	//float newx = sinf(y*b) + c*sinf(x*b);
-	//float newy = sinf(x*a) + d*sinf(y*a);
-	
-	//x = newx;
-	//y = newy;
+	// float a, b, c, d, x ,y;
+	//
+	// float newx = sinf(y*b) + c*sinf(x*b);
+	// float newy = sinf(x*a) + d*sinf(y*a);
+	// x = newx;
+	// y = newy;
+	//
 
 void dt_sequence_thread_boost::start(){
 	boost::thread thread(&dt_sequence_thread_boost::threadFunc, this);
@@ -151,4 +139,3 @@ void dt_sequence_thread_boost::change_sleep_time_microsec(int usec){
 		sleep_millisec = sleep_microsec/1000;
 	}
 }
-

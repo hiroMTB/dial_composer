@@ -14,7 +14,6 @@
 #include "dt_circle_base.h"
 	#include "dt_circle_note_on.h"
 	#include "dt_circle_param.h"
-	#include "dt_circle_synth.h"
 	#include "dt_circle_midi.h"
 	#include "dt_circle_osc.h"
 
@@ -106,12 +105,6 @@ void dt_touch::mousePressed(int x, int y, int button){
 					dt_circle_osc * o = new dt_circle_osc();
 					app->all_containers.output_container->addCircle(o);
 					c = o;
-#ifndef NOT_USE_DT_SYNTH
-				}else if(rand<0.45){
-					dt_circle_synth * o = new dt_circle_synth();
-					ofApp::all_containers->output_container->addCircle(o);
-					c = o;
-#endif
 				}else{
 					float rand = ofRandom(1) * 0.7;
 					if(rand<0.1){

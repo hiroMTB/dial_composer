@@ -14,7 +14,6 @@
 #include "dt_circle_base.h"
 	#include "dt_circle_note_on.h"
 	#include "dt_circle_param.h"
-	#include "dt_circle_synth.h"
 	#include "dt_circle_midi.h"
 	#include "dt_circle_osc.h"
 

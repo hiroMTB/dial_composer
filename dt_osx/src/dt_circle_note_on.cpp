@@ -16,7 +16,6 @@
 #include "dt_circle_container.h"
 
 #include "dt_circle_param.h"
-#include "dt_circle_synth.h"
 #include "dt_circle_osc.h"
 #include "dt_circle_midi.h"
 #include "dt_circle_drawer.h"
@@ -209,14 +208,6 @@ void dt_circle_note_on::fire(){
 		
 		dt_circle_type &type = output_circles[i]->data.circle_type;
 		switch (type) {
-			case DT_CIRCLE_SYNTH:
-			{
-//				dt_circle_synth::note_off_all_synth();
-//				dt_circle_synth * s = static_cast<dt_circle_synth*>(output_circles[i]);
-//				s->make_note(note_num, velocity, duration*0.001, pan, cc12, cc13, cc14);
-			}
-			break;
-			
 			case DT_CIRCLE_OSC:
 			{
 				dt_circle_osc * o = static_cast<dt_circle_osc*>((output_circles[i]));

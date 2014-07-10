@@ -26,7 +26,6 @@ public:
 	
 	void setup();
 	void setupVisual();
-	void setupAudio();
 	void setupModule();
 	
 	void update();
@@ -45,11 +44,7 @@ public:
 	void windowResized(int w, int h);
 	void dragEvent(ofDragInfo dragInfo){};
 	void gotMessage(ofMessage msg);
-	
-#ifndef NOT_USE_DT_SYNTH
-    void audioRequested (float * output, int bufferSize, int nChannels);
-#endif
-	
+		
 	// module
 	dt_osc_sender		osc_sender;
 	dt_midi_sender		midi_sender;
@@ -61,8 +56,6 @@ public:
 	dt_linear_drawer	linear_drawer;
 	dt_sequence_thread	sequence_thread;
 	dt_circle_all_containers all_containers;
-	
-	~ofApp();
 
 	
 	ofRectangle canvas;

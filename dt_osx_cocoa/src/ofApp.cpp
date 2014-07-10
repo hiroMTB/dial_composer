@@ -38,12 +38,8 @@ void ofApp::windowResized(int w, int h){
 }
 
 void ofApp::setup(){
-	
 	setupVisual();
-	setupAudio();
 	setupModule();
-	
-	windowResized(ofGetWidth(), ofGetHeight());
 }
 
 void ofApp::setupVisual(){
@@ -56,14 +52,9 @@ void ofApp::setupVisual(){
 	ofDisableAlphaBlending();
 	ofEnableAntiAliasing();
 	ofDisableSmoothing();
+	windowResized(ofGetWidth(), ofGetHeight());
 }
 
-void ofApp::setupAudio(){
-#ifndef NOT_USE_DT_SYNTH
-	cout << "setting up Sound" << endl;
-	ofSoundStreamSetup(2, 0, this, audio_sampling_rate, audio_buffer_size, 4);
-#endif
-}
 
 void ofApp::setupModule(){
 	
@@ -216,22 +207,6 @@ void ofApp::keyPressed(int key){
 	}
 }
 
-/*
- *
- *	Audio
- *
- */
-#ifndef NOT_USE_DT_SYNTH
-void ofApp::audioRequested (float * output, int bufferSize, int nChannels){
-	
-#ifdef USE_AUDIO_THREAD
-	if(sequence_thread) sequence_thread.audioRequested(output, bufferSize, nChannels);
-#endif
-	
-	mixer.fillBufferOfFloats(output, bufferSize, nChannels);
-}
-#endif
- 
  /*
  *
  *	finishing
@@ -241,6 +216,3 @@ void ofApp::exit(){
 	sequence_thread.stop();
 }
 
-ofApp::~ofApp(){
-	sequence_thread.stop();
-}
