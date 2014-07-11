@@ -76,11 +76,13 @@ void dt_circle_all_containers::add_line_to_all_lines(const ofVec2f& p1, const of
 
 
 void dt_circle_all_containers::draw(){
-		
+    
+    ofEnableAlphaBlending();
 	param_container->draw();
 	output_container->draw();
 	note_on_container->draw();
-	
+	ofDisableAlphaBlending();
+    
 	// all lines
 	ofEnableAlphaBlending();
 	glLineWidth(1);

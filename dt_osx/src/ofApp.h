@@ -13,7 +13,7 @@
 #include "dt_linear_drawer.h"
 #include "dt_sequence_thread.h"
 #include "dt_circle_all_containers.h"
-#include "dt_gui.h"
+#include "dt_controler.h"
 
 class ofApp : public ofBaseApp {
 
@@ -23,7 +23,7 @@ private:
 public:
 	static ofApp * instance;	
 	static ofApp * init();
-	static ofApp * getInstance();
+	inline static ofApp * getInstance(){ return instance; }
 	
 	void setup();
 	void setupVisual();
@@ -57,7 +57,7 @@ public:
 	dt_linear_drawer	linear_drawer;
 	dt_sequence_thread	sequence_thread;
 	dt_circle_all_containers all_containers;
-	dt_gui				gui;
+	dt_controler		controler;
 	
 	void exit();
 	

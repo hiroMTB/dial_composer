@@ -51,8 +51,10 @@ dt_linear_drawer::dt_linear_drawer(){
  */
 void dt_linear_drawer::draw(int x, int y, int w, int h, float scale){
 	
+    ofEnableAlphaBlending();
 	ofSetColor(30, 30, 40, 70);
 	ofRect(x-10, y-10, w+20, h+20);
+    ofDisableAlphaBlending();
 	
 	// clear
 	points.clear();
@@ -60,7 +62,6 @@ void dt_linear_drawer::draw(int x, int y, int w, int h, float scale){
 	lines.clear();
 	colors_l.clear();
 
-	
 	ofFloatColor line_color(0.6);
 	ofFloatColor onset_color(0.9);
 	

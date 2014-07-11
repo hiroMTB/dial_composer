@@ -5,22 +5,23 @@
 //  Created by mtb on 5/5/14.
 //
 //
-
 #include "dt_circle_note_on.h"
+
 #include "ofMain.h"
 #include "ofApp.h"
 #include "dt_rhythm_lib.h"
-#include "dt_dial_ui.h"
 #include "dt_sequence_thread.h"
 #include "dt_font_manager.h"
 #include "dt_circle_container.h"
-
 #include "dt_circle_param.h"
 #include "dt_circle_osc.h"
 #include "dt_circle_midi.h"
 #include "dt_circle_drawer.h"
+#include "dt_dial_ui.h"
 
-dt_circle_note_on::dt_circle_note_on(){
+dt_circle_note_on::dt_circle_note_on():
+note_num_count(0), velocity_count(0), duration_count(0), pan_count(0), cc12_count(0), cc13_count(0), cc14_count(0)
+{
 	data.circle_type = DT_CIRCLE_NOTE_ON;
 
 	ui = new dt_dial_ui(this);
@@ -39,8 +40,8 @@ dt_circle_note_on::~dt_circle_note_on(){
 	}
 }
 
+
 /*
- 
 		speedに影響を受けるパラメータ
 			- rev_radius
 			- collision_radius
@@ -127,7 +128,6 @@ void dt_circle_note_on::draw(){
 
 	bool fired = data.fire_rate>0.3;
 	bool selected = selected_circle == this;
-
 	
 	// shape
 	int mode = GL_LINE_LOOP;
@@ -140,8 +140,6 @@ void dt_circle_note_on::draw(){
 		ofSetColor(data.circle_color);
 	}
 
-
-
 	glPushMatrix();{
 		glScalef(data.rev_radius, data.rev_radius, 1);
 		rshape_vbo.bind();
@@ -149,18 +147,15 @@ void dt_circle_note_on::draw(){
 		rshape_vbo.unbind();
 	}glPopMatrix();
 	
-	//if(data.bShowUI) ui->draw();
+	if(data.bShowUI) ui->draw();
 	
 	ofPopMatrix();
 }
 
 
-
-
 void dt_circle_note_on::post_step(){
 	data.indi_current_point += data.indi_point_adder;
 }
-
 
 
 void dt_circle_note_on::change_rshape(int type){
@@ -170,39 +165,6 @@ void dt_circle_note_on::change_rshape(int type){
 
 void dt_circle_note_on::fire(){
 
-	int note_num_count =0, velocity_count=0, duration_count=0, pan_count=0, cc12_count=0, cc13_count=0, cc14_count=0;
-	
-	// input paramater
-	for(int i=0; i<input_circles.size(); i++){
-		dt_circle_param_base * pb = static_cast<dt_circle_param_base*>(input_circles[i]);
-		bool marked = pb->data.bFired;
-		//if(marked){
-			float param = marked ? pb->param_on : pb->param_off;
-			
-			dt_circle_type &type = pb->data.circle_type;
-			
-			switch(type){
-				case DT_CIRCLE_VELOCITY: velocity_count++; break;
-				case DT_CIRCLE_NOTE_NUM: note_num_count++;	break;
-				case DT_CIRCLE_DURATION: duration_count++; break;
-				case DT_CIRCLE_L:		 pan_count++; break;
-				case DT_CIRCLE_R:		 pan_count++; break;
-				case DT_CIRCLE_CC12:	 cc12_count++; break;
-				case DT_CIRCLE_CC13:	 cc13_count++; break;
-				case DT_CIRCLE_CC14:	 cc14_count++; break;
-				default: break;
-			}
-		//}
-	}
-	
-	velocity_count  = (velocity_count>4) ? 4 : velocity_count;
-	note_num_count  = (note_num_count>4) ? 4 : note_num_count;
-	duration_count  = (duration_count>4) ? 4 : duration_count;
-	cc12_count		= (cc12_count>4) ? 4 : cc12_count;
-	cc13_count		= (cc13_count>4) ? 4 : cc13_count;
-	cc14_count		= (cc14_count>4) ? 4 : cc14_count;
-	pan_count		= (pan_count>4) ? 4 : pan_count;
-
 	// output
 	for(int i=0; i<output_circles.size(); i++){
 		
@@ -211,19 +173,18 @@ void dt_circle_note_on::fire(){
 			case DT_CIRCLE_OSC:
 			{
 				dt_circle_osc * o = static_cast<dt_circle_osc*>((output_circles[i]));
-				o->send_osc(o->ch, note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count);
+				o->send_osc(o->ch, note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count, cc16_count);
 				data.fired_ch = o->ch;
-				
-//				dt_trigger_event e(ofApp::getInstance()->sequence_thread.master_step, o->ch, o->ch + 48, 100, 10, 9, 12, 13, 14, 15);
-//				app->midi_writer.add_trigger_event(e);
 			}
-				break;
+			break;
 			
 			case DT_CIRCLE_MIDI:
 			{
 				dt_circle_midi * m = static_cast<dt_circle_midi*>(output_circles[i]);
 				m->send_midi(m->ch, note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count);
 			}
+            break;
+
 			default:
 				break;
 		}

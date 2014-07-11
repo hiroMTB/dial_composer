@@ -18,17 +18,17 @@ public:
 	dt_circle_output_base(){};
 	~dt_circle_output_base(){};
 	
-
-	// empty
+  	// empty
 	virtual void setup(int beat_num){};
 	virtual void update();
 	virtual void fire(){};
 	
+    void setup_text();
+    
 	// override
 	virtual void draw();
 
 	string initial;
 	int ch;
-	
 };
 

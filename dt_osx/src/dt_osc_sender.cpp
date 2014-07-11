@@ -7,6 +7,7 @@
 //
 
 #include "def.h"
+#include "dt_controler.h"
 #include "dt_osc_sender.h"
 
 /*
@@ -15,8 +16,8 @@
  *
  */
 dt_osc_sender::dt_osc_sender():
-address(DT_DEFAULT_OSC_ADDRESS),
-port(DT_DEFAULT_OSC_PORT){
+address(DT_OSC_OUT_ADDRESS),
+port(DT_OSC_OUT_PORT){
 	reset();
 	ofLogNotice("OSC sender setup, Address: "+address+", port: "+ofToString(port));
 }

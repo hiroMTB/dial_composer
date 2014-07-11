@@ -51,11 +51,11 @@ public:
 	static ofColor noteNum_color;
 	static ofColor velocity_color;
 	static ofColor duration_color;
-	static ofColor L_color;
-	static ofColor R_color;
+	static ofColor pan_color;
 	static ofColor cc12_color;
 	static ofColor cc13_color;
 	static ofColor cc14_color;
+	static ofColor cc16_color;
 };
 
 
@@ -89,26 +89,15 @@ public:
 	};
 };
 
-class dt_circle_param_L : public dt_circle_param_base {
+class dt_circle_param_pan : public dt_circle_param_base {
 public:
-	dt_circle_param_L(){
-		data.circle_type = DT_CIRCLE_L;
-		initial = "L";
-		data.circle_color = data.indi_color = data.line_color = L_color;
+	dt_circle_param_pan(){
+		data.circle_type = DT_CIRCLE_PAN;
+		initial = "LR";
+		data.circle_color = data.indi_color = data.line_color = pan_color;
 		data.line_color *= line_color_rate * 0.01;
 	}
 };
-
-class dt_circle_param_R : public dt_circle_param_base {
-public:
-	dt_circle_param_R(){
-		data.circle_type = DT_CIRCLE_R;
-		initial = "R";
-		data.circle_color = data.indi_color = data.line_color = R_color;
-		data.line_color *= line_color_rate * 0.01;
-	};
-};
-
 
 
 class dt_circle_param_cc12 : public dt_circle_param_base {
@@ -141,4 +130,12 @@ public:
 	};
 };
 
-
+class dt_circle_param_cc16 : public dt_circle_param_base {
+public:
+	dt_circle_param_cc16(){
+		data.circle_type = DT_CIRCLE_CC16;
+		initial = "16";
+		data.circle_color = data.indi_color = data.line_color = cc16_color;
+		data.line_color *= line_color_rate * 0.01;
+	};
+};

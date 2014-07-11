@@ -209,7 +209,12 @@ void dt_dial_ui::draw_HOME(){
 
 	
 	ofNoFill();
+	
+#ifndef NOT_USE_OF_CIRCLE
 	ofCircle(0, 0, ui_base_radius);
+#else
+	parent->app->circle_drawer.draw(ui_base_radius, GL_LINES);
+#endif
 
 	for(int i=0; i<num_home_button; i++){
 		angle = i*step_angle + start_angle;
@@ -239,7 +244,7 @@ void dt_dial_ui::draw_HOME(){
 									  
 				ofRotate(90, 0, 0, 1);
 #ifndef NOT_USE_OF_DRAW_TEXT
-				ofTrueTypeFont &font = ofApp::getInstance()->font_manager->font_S;
+				ofTrueTypeFont &font = ofApp::getInstance()->font_manager.font_S;
 				ofRectangle r = font.getStringBoundingBox(icon, 0, 0);
 				ofSetColor(50);
 				ofFill();

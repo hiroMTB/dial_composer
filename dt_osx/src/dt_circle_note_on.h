@@ -46,15 +46,7 @@ public:
 	vector<dt_circle_base*> input_circles;
 	vector<dt_circle_base*> output_circles;
 	
-	
-	float note_num;		// 0 - 128
-	float velocity;		// 0 - 1.0
-	float duration;		// 0 - 1.0
-	float L;			// 0 - 1.0
-	float R;			// 0 - 1.0
-	float cc12;			// 0 - 1.0
-	float cc13;			// 0 - 1.0
-	float cc14;			// 0 - 1.0
+	int note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count, cc16_count;
 	
 	int intersection(float p0_x, float p0_y, float p1_x, float p1_y, float p2_x, float p2_y, float p3_x, float p3_y, float *i_x, float *i_y);
 };

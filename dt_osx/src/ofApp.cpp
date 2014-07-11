@@ -18,11 +18,6 @@ ofApp * ofApp::init(){
 	return instance;
 }
 
-ofApp * ofApp::getInstance(){
-	return instance;
-}
-
-
 /*
  *
  *	setup
@@ -86,7 +81,7 @@ void ofApp::draw(){
 	ofSetColor(95);
 	draw_info(canvas.x+15, canvas.y+canvas.height + 60);
 	
-	gui.draw();
+	controler.draw();
 }
 
 void ofApp::draw_info(int x, int y){
@@ -136,20 +131,21 @@ void ofApp::draw_info(int x, int y){
 		ofSetColor(dt_circle_param_base::duration_color);
 		ofDrawBitmapString("dur", 100, 0);
 		
-		ofSetColor(dt_circle_param_base::L_color);
-		ofDrawBitmapString("L", 150, 0);
-		
-		ofSetColor(dt_circle_param_base::R_color);
-		ofDrawBitmapString("R", 200, 0);
+		ofSetColor(dt_circle_param_base::pan_color);
+		ofDrawBitmapString("LR", 150, 0);
 		
 		ofSetColor(dt_circle_param_base::cc12_color);
-		ofDrawBitmapString("cc12", 250, 0);
+		ofDrawBitmapString("cc12", 200, 0);
 		
 		ofSetColor(dt_circle_param_base::cc13_color);
-		ofDrawBitmapString("cc13", 300, 0);
+		ofDrawBitmapString("cc13", 250, 0);
 		
 		ofSetColor(dt_circle_param_base::cc14_color);
-		ofDrawBitmapString("cc14", 350, 0);
+		ofDrawBitmapString("cc14", 300, 0);
+
+		ofSetColor(dt_circle_param_base::cc16_color);
+		ofDrawBitmapString("cc16", 350, 0);
+
 	}ofPopMatrix();
 
 	
@@ -161,7 +157,7 @@ void ofApp::mousePressed(int x, int y, int button){ touch.mousePressed(x, y, but
 
 void ofApp::mouseDragged(int x, int y, int button){ touch.mouseDragged(x, y, button); }
 
-void ofApp::mouseReleased(int x, int y, int button){ touch.mousePressed(x, y, button); }
+void ofApp::mouseReleased(int x, int y, int button){ touch.mouseReleased(x, y, button); }
 
 void ofApp::gotMessage(ofMessage msg){ cout << msg.message << endl; }
 
@@ -201,7 +197,7 @@ void ofApp::keyPressed(int key){
 		case 'r': all_containers.change_speed_random_all(1, 128); break;
 		case 'l': bShow_linear_drawer = !bShow_linear_drawer; break;
 		case 'm': midi_writer.save_midi_file("_test" + ofGetTimestampString() + ".midi"); break;
-		case 'G': gui.toggle();
+		case 'G': controler.toggle();
 		default: break;
 	}
 }

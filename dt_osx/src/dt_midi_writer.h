@@ -20,6 +20,7 @@
 #include "ofMain.h"
 
 #include "def.h"
+#include "dt_controler.h"
 #include "AppConfig.h"
 #include "modules/juce_core/juce_core.h"
 #include "modules/juce_audio_basics/juce_audio_basics.h"

@@ -18,14 +18,13 @@ typedef enum dt_circle_type{
 	DT_CIRCLE_NOTE_NUM	= 2,
 	DT_CIRCLE_VELOCITY	= 3,
 	DT_CIRCLE_DURATION	= 4,
-	DT_CIRCLE_L			= 5,
-	DT_CIRCLE_R			= 6,
+	DT_CIRCLE_PAN		= 5,
 
 	DT_CIRCLE_CC12		= 12,
 	DT_CIRCLE_CC13		= 13,
 	DT_CIRCLE_CC14		= 14,
+	DT_CIRCLE_CC16		= 16,
 	
-	DT_CIRCLE_SYNTH		= 100,
 	DT_CIRCLE_OSC		= 101,
 	DT_CIRCLE_MIDI		= 102
 };
@@ -126,6 +125,9 @@ public:
 	unsigned int wait_step;
 	
 	void change_beat(int beat);
-	
+    
+    ofTrueTypeFont * font;
+    ofVboMesh text_mesh;
+    ofPoint text_pos;
 };
 

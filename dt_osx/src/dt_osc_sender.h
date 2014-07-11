@@ -28,5 +28,5 @@ public:
 	
 private:
 	ofxOscSender sender;
-	
+
 };

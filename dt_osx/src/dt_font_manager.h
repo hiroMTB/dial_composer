@@ -14,6 +14,11 @@ class dt_font_manager{
 
 public:
 
+    ofTrueTypeFont font_SS;
+	ofTrueTypeFont font_S;
+	ofTrueTypeFont font_M;
+	ofTrueTypeFont font_L;
+    
 	dt_font_manager(){
 		
 		cout << "setting up Font Manager" << endl;
@@ -32,13 +37,9 @@ public:
 		font_S.loadFont(fontName, 10, antiAliased, fullCharacterSet, makeContours);
 		font_M.loadFont(fontName, 14, antiAliased, fullCharacterSet, makeContours);
 		font_L.loadFont(fontName, 18, antiAliased, fullCharacterSet, makeContours);
-	};
+    };
 
-	ofTrueTypeFont font_SS;
-	ofTrueTypeFont font_S;
-	ofTrueTypeFont font_M;
-	ofTrueTypeFont font_L;
-	
+    
 //	ofVbo V;
 //	ofVbo N;
 //	ofVbo L;

@@ -38,8 +38,7 @@ void dt_circle_param_base::setup(int beat_num){
 //	change_rshape(ofRandom(30, 60));
 	
 	data.collision_radius = 20;
-	data.bCollide = false;
-
+	data.bCollide = true;
 }
 
 void dt_circle_param_base::change_rshape(int type){
@@ -159,9 +158,9 @@ void dt_circle_param_base::fire(){
 ofColor dt_circle_param_base::noteNum_color =	ofColor(184,  88,  32);
 ofColor dt_circle_param_base::velocity_color =	ofColor(247, 106, 129);
 ofColor dt_circle_param_base::duration_color =	ofColor( 52,  78, 168);
-ofColor dt_circle_param_base::L_color =			ofColor( 30, 141,  25);
-ofColor dt_circle_param_base::R_color =			ofColor( 30, 141,  25);
+ofColor dt_circle_param_base::pan_color =			ofColor( 30, 141,  25);
 ofColor dt_circle_param_base::cc12_color =		ofColor(133, 135,  65);
 ofColor dt_circle_param_base::cc13_color =		ofColor(160, 163,  79);
 ofColor dt_circle_param_base::cc14_color =		ofColor(201, 204,  98);
+ofColor dt_circle_param_base::cc16_color =		ofColor(241, 244,  138);
 

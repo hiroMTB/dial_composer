@@ -100,12 +100,12 @@ void dt_touch::mousePressed(int x, int y, int button){
 					app->all_containers.note_on_container->addCircle(no);
 					c = no;
 					max_slot = DT_RHYTHM_SHAPE_MAX_SLOT;
-				}else if(rand<0.36){
+				}else if(rand<0.33){
 					dt_circle_osc * o = new dt_circle_osc();
 					app->all_containers.output_container->addCircle(o);
 					c = o;
 				}else{
-					float rand = ofRandom(1) * 0.7;
+					float rand = ofRandom(1) * 0.8;
 					if(rand<0.1){
 						dt_circle_param_noteNum * nn = new dt_circle_param_noteNum();
 						app->all_containers.param_container->addCircle(nn);
@@ -119,15 +119,9 @@ void dt_touch::mousePressed(int x, int y, int button){
 						app->all_containers.param_container->addCircle(d);
 						c = d;
 					}else if(rand<0.4){
-						if(ofRandom(1)<0.5){
-							dt_circle_param_L * l = new dt_circle_param_L();
-							app->all_containers.param_container->addCircle(l);
-							c = l;
-						}else{
-							dt_circle_param_R * r = new dt_circle_param_R();
-							app->all_containers.param_container->addCircle(r);
-							c = r;
-						}
+						dt_circle_param_pan * p = new dt_circle_param_pan();
+						app->all_containers.param_container->addCircle(p);
+						c = p;
 					}else if(rand<0.5){
 						 dt_circle_param_cc12 * y = new dt_circle_param_cc12();
 						app->all_containers.param_container->addCircle(y);
@@ -136,8 +130,12 @@ void dt_touch::mousePressed(int x, int y, int button){
 						dt_circle_param_cc13 * y = new dt_circle_param_cc13();
 						app->all_containers.param_container->addCircle(y);
 						c = y;
-					}else{
+					}else if(rand<0.7){
 						dt_circle_param_cc14 * y = new dt_circle_param_cc14();
+						app->all_containers.param_container->addCircle(y);
+						c = y;
+					}else if(rand<0.8){
+						dt_circle_param_cc16 * y = new dt_circle_param_cc16();
 						app->all_containers.param_container->addCircle(y);
 						c = y;
 					}
@@ -186,7 +184,7 @@ void dt_touch::mouseReleased(int x, int y, int button){
 	// Short time touch end
 	if(0<=time && time < 13){
 		dt_circle_base * c = touched_circle;
-		if(c->ui){
+		if(c && c->ui){
 			if(c->data.bShowUI){
 				if(c->ui->mode == DT_DIAL_UI_HOME){
 					c->ui->change_mode(DT_DIAL_UI_NONE);
