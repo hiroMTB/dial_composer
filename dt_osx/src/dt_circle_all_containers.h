@@ -58,5 +58,6 @@ public:
 	void change_speed_random_all(int min, int max);
 	void change_beat_all(int beat);
 	void change_position_all();
-	void change_beat_resolution(int res);
+	void change_beat_resolution_all(int res);
+	void change_osc_ch_all();
 };

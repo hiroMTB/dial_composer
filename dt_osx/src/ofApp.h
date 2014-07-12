@@ -13,7 +13,7 @@
 #include "dt_linear_drawer.h"
 #include "dt_sequence_thread.h"
 #include "dt_circle_all_containers.h"
-#include "dt_controler.h"
+#include "dt_config.h"
 
 class ofApp : public ofBaseApp {
 
@@ -57,7 +57,7 @@ public:
 	dt_linear_drawer	linear_drawer;
 	dt_sequence_thread	sequence_thread;
 	dt_circle_all_containers all_containers;
-	dt_controler		controler;
+	dt_config			config;
 	
 	void exit();
 	

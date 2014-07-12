@@ -148,7 +148,7 @@ void dt_touch::make_random_circle(int x, int y, int num=100){
 		}
 		
 		if(c!= NULL){
-			c->setup(ofRandom(dt_config::DT_RHYTHM_SHAPE_MIN_SLOT, dt_config::DT_RHYTHM_SHAPE_MAX_SLOT));
+			c->setup(ofRandom(dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX));
 			c->data.position.x = x + random_p.x;
 			c->data.position.y = y + random_p.y;
 			app->all_containers.circle_base_container->addCircle(c);

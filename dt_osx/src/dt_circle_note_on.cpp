@@ -26,7 +26,7 @@ note_num_count(0), velocity_count(0), duration_count(0), pan_count(0), cc12_coun
 
 	ui = new dt_dial_ui(this);
 
-	rshape_points.reserve(dt_config::DT_RHYTHM_SHAPE_MAX_SLOT);
+	rshape_points.reserve(dt_config::DT_RHYTHM_SHAPE_SLOT_MAX);
 	data.indi_color.set(0.95);
 	data.circle_color.set(0.3);
 	data.line_color.set(0.1);
@@ -62,7 +62,7 @@ void dt_circle_note_on::setup(int beat_num){
 	seq = new dt_sequencer();
 
 	set_beats(beat_num);
-	set_speed( (int)round(ofRandom(1, 2)));
+	set_speed( (int)round(ofRandom(1, dt_config::DT_BEAT_SPEED_MAX)));
 
 	// Quantize to beat position
 	//int steps_per_beat = DT_BEAT_RESOLUTION; //* data.speed;

@@ -11,6 +11,7 @@
 #include "dt_circle_base.h"
 #include "dt_circle_note_on.h"
 #include "dt_circle_param.h"
+#include "dt_config.h"
 
 dt_circle_all_containers::dt_circle_all_containers(){
 	setup();
@@ -123,6 +124,8 @@ void dt_circle_all_containers::change_speed_all(int speed){
 void dt_circle_all_containers::change_speed_random_all(int min, int max){
 	if (min<1) min = 1;
 
+	dt_config::DT_BEAT_SPEED_MAX = max;
+	
 	for(int i=0; i<note_on_container->circles.size(); i++){
 		int speed = ofRandom(min, max);
 		note_on_container->circles[i]->set_speed(speed);
@@ -150,7 +153,7 @@ void dt_circle_all_containers::change_position_all(){
 	}
 }
 
-void dt_circle_all_containers::change_beat_resolution(int res){
+void dt_circle_all_containers::change_beat_resolution_all(int res){
 	dt_config::DT_BEAT_RESOLUTION = res;
 	for(int i=0; i<note_on_container->circles.size(); i++){
 		dt_circle_note_on * n = note_on_container->circles[i];
@@ -159,3 +162,12 @@ void dt_circle_all_containers::change_beat_resolution(int res){
 	}
 }
 
+
+void dt_circle_all_containers::change_osc_ch_all(){
+	
+	for(int i=0; i<output_container->circles.size(); i++){
+		dt_circle_output_base * o = output_container->circles[i];
+		int ch = round(ofRandom(1, dt_config::DT_OSC_OUT_CH_MAX));
+		o->setup_ch(ch);
+	}
+}

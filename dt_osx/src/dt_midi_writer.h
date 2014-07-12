@@ -20,7 +20,6 @@
 #include "ofMain.h"
 
 #include "def.h"
-#include "dt_controler.h"
 #include "dt_config.h"
 #include "AppConfig.h"
 #include "modules/juce_core/juce_core.h"
@@ -59,7 +58,7 @@ public:
 		midi_file.setTicksPerQuarterNote(960);	// max 32767, cubase default 1/16=480
 
 		
-		track_num = dt_config::DT_MAX_OSC_CH;
+		track_num = dt_config::DT_OSC_OUT_CH_MAX;
 		MidiMessageSequence tracks;
 	
 		for(int i=0; i<events.size(); i++){

@@ -27,6 +27,8 @@ public:
 	// override
 	virtual void draw();
 
+	void setup_ch(int ch);
+	
 	int ch;
 };
 

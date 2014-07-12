@@ -7,7 +7,6 @@
 //
 
 #include "def.h"
-#include "dt_controler.h"
 #include "dt_osc_sender.h"
 #include "dt_config.h"
 

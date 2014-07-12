@@ -44,3 +44,9 @@ void dt_circle_output_base::update(){
 	data.world_position = data.position;
 }
 
+
+void dt_circle_output_base::setup_ch(int _ch){
+	ch = _ch;
+	initial = ofToString(ch);
+	setup_text(initial);
+}
