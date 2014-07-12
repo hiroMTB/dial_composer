@@ -36,9 +36,12 @@ void dt_circle_param_base::setup(int beat_num){
 //	data.collision_radius = data.rev_radius + ofRandom(3, 30);
 //
 //	change_rshape(ofRandom(30, 60));
-	
+
+	data.rev_radius = 25;
 	data.collision_radius = 20;
 	data.bCollide = true;
+	
+    setup_text(initial);
 }
 
 void dt_circle_param_base::change_rshape(int type){
@@ -55,21 +58,16 @@ void dt_circle_param_base::update(){
 	//	float ind = seq->indicator;
 	//	data.rev_angle = TWO_PI * ind / (float)seq->total_steps;
 	//	ofVec2f p(cosf(data.rev_angle), sinf(data.rev_angle));
-	data.world_position = data.position; // + p * data.rev_radius;
+	if(dt_config::DT_MOVE_CIRCLE) data.world_position = data.position; // + p * data.rev_radius;
 	
 }
 
 void dt_circle_param_base::draw(){
-	/*
-	float waiting_rate = (float)(dt_sequencer::beat_resolution-wait_step) / (float)dt_sequencer::beat_resolution;
 	
 	ofPushStyle();
 	ofPushMatrix();
 	ofTranslate(data.position.x, data.position.y);
-	
-	float waiting_animation_rate = 0.5 + waiting_rate*0.5;
-	ofScale(waiting_animation_rate, waiting_animation_rate);
-	
+		
 	bool fired = data.fire_rate>0.5;
 	bool selected = selected_circle == this;
 	
@@ -85,22 +83,7 @@ void dt_circle_param_base::draw(){
 #endif
 	
 #ifndef NOT_USE_OF_DRAW_TEXT
-	// Text
-	ofTrueTypeFont *f;
-	if(data.rev_radius<15){
-		f = &app->font_manager->font_S;
-	}else{
-		f = &app->font_manager->font_M;
-	}
-	
-	ofRectangle bb = f->getStringBoundingBox(initial, 0,0);
-	float font_w = bb.width;
-	float font_h = bb.height;
-	float target_w = data.rev_radius/1.8;
-	float scale = target_w/font_w;
-	
-	ofFill();
-	f->drawStringAsShapes(initial, -font_w/2, font_h/2);
+	draw_initial();
 #endif
 	
 	
@@ -111,7 +94,6 @@ void dt_circle_param_base::draw(){
 	
 	ofPopStyle();
 	ofPopMatrix();
-	 */
 }
 
 
@@ -126,7 +108,7 @@ void dt_circle_param_base::make_vbo(){
 	rshape_points.clear();
 	
 	int beat_num = seq->total_beats;
-	int beat_res = DT_BEAT_RESOLUTION;
+	int beat_res = dt_config::DT_BEAT_RESOLUTION;
 	float start_angle = 0;
 	float r = data.rev_radius;
 	float lenght = 3;

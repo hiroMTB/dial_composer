@@ -11,6 +11,7 @@
 #include "ofApp.h"
 #include "dt_rhythm_lib.h"
 
+#include "dt_config.h"
 
 dt_sequencer::dt_sequencer()
 :indicator(0),
@@ -18,7 +19,7 @@ bCounter_clockwise(true),
 total_beats(-1),
 rhythm_shape_type(0){
 	app = ofApp::getInstance();
-	beat_resolution = DT_BEAT_RESOLUTION;
+	beat_resolution = dt_config::DT_BEAT_RESOLUTION;
 }
 
 void dt_sequencer::setup(float _total_beats){

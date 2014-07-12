@@ -23,12 +23,10 @@ public:
 	virtual void update();
 	virtual void fire(){};
 	
-    void setup_text();
     
 	// override
 	virtual void draw();
 
-	string initial;
 	int ch;
 };
 

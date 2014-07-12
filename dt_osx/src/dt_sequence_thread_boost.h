@@ -27,22 +27,12 @@ public:
 	
     bool bRun;
     bool bStop_requested;
-	bool bHold;
-
+	
 	float bpm;
-    float sleep_millisec;
 	float sleep_microsec;
 
-	unsigned int master_tick;
 	unsigned int master_step;
-	unsigned int sleep_tick;
-	float real_sleep_micro_sec;
 	float min_sleep_micro_sec;
-	float random_amount;
-	
-	float freq;
-	float phase_adder;
-	float phase;
 
 	ofxOscMessage master_clock_message;
 	

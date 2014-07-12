@@ -43,4 +43,6 @@ public:
 
 	dt_touch_obj t_obj;
 
+	
+	void make_random_circle(int x, int y, int num);
 };

@@ -85,76 +85,83 @@ void dt_touch::mousePressed(int x, int y, int button){
 			
 			t_obj = DT_TOUCH_OBJ_CIRCLE;
 		}else{
-			
-			for(int i=0; i<100; i++){
-				int max_slot = 10;
-				
-				ofVec2f random_p(ofRandom(-1, 1), ofRandom(-1, 1));
-				random_p *= 3.0;
-				
-				// touch canvas
-				float rand = ofRandom(0, 1.0);
-				dt_circle_base * c = NULL;
-				if(rand<0.25){
-					dt_circle_note_on * no = new dt_circle_note_on();
-					app->all_containers.note_on_container->addCircle(no);
-					c = no;
-					max_slot = DT_RHYTHM_SHAPE_MAX_SLOT;
-				}else if(rand<0.33){
-					dt_circle_osc * o = new dt_circle_osc();
-					app->all_containers.output_container->addCircle(o);
-					c = o;
-				}else{
-					float rand = ofRandom(1) * 0.8;
-					if(rand<0.1){
-						dt_circle_param_noteNum * nn = new dt_circle_param_noteNum();
-						app->all_containers.param_container->addCircle(nn);
-						c = nn;
-					}else if(rand<0.2){
-						dt_circle_param_velocity * v = new dt_circle_param_velocity();
-						app->all_containers.param_container->addCircle(v);
-						c = v;
-					}else if(rand<0.3){
-						dt_circle_param_duration * d = new dt_circle_param_duration();
-						app->all_containers.param_container->addCircle(d);
-						c = d;
-					}else if(rand<0.4){
-						dt_circle_param_pan * p = new dt_circle_param_pan();
-						app->all_containers.param_container->addCircle(p);
-						c = p;
-					}else if(rand<0.5){
-						 dt_circle_param_cc12 * y = new dt_circle_param_cc12();
-						app->all_containers.param_container->addCircle(y);
-						c = y;
-					}else if(rand<0.6){
-						dt_circle_param_cc13 * y = new dt_circle_param_cc13();
-						app->all_containers.param_container->addCircle(y);
-						c = y;
-					}else if(rand<0.7){
-						dt_circle_param_cc14 * y = new dt_circle_param_cc14();
-						app->all_containers.param_container->addCircle(y);
-						c = y;
-					}else if(rand<0.8){
-						dt_circle_param_cc16 * y = new dt_circle_param_cc16();
-						app->all_containers.param_container->addCircle(y);
-						c = y;
-					}
-				}
-				if(c!= NULL){
-					c->setup(ofRandom(DT_RHYTHM_SHAPE_MIN_SLOT, max_slot));
-					c->data.position = t + random_p;
-					app->all_containers.circle_base_container->addCircle(c);
+			// touch canvas
+			make_random_circle(t.x, t.y, 100);
+		}
+	}
+}
 
-					touched_circle = c;
-					touched_circle_center = c->data.position;
-					touch_entry = t;
-					dt_circle_base::selected_circle = c;
-					
-					touch_time = -1;
-					
-					t_obj = DT_TOUCH_OBJ_CANVAS;
-				}
+
+void dt_touch::make_random_circle(int x, int y, int num=100){
+	app = ofApp::getInstance();
+	
+	for(int i=0; i<num; i++){
+		
+		ofVec2f random_p(ofRandom(-1, 1), ofRandom(-1, 1));
+		random_p *= 1000.0;
+		
+		float rand = ofRandom(0, 1.0);
+		dt_circle_base * c = NULL;
+		if(rand<0.25){
+			dt_circle_note_on * no = new dt_circle_note_on();
+			app->all_containers.note_on_container->addCircle(no);
+			c = no;
+		}else if(rand<0.33){
+			dt_circle_osc * o = new dt_circle_osc();
+			app->all_containers.output_container->addCircle(o);
+			c = o;
+		}else{
+			float rand = ofRandom(1) * 0.8;
+			if(rand<0.1){
+				dt_circle_param_noteNum * nn = new dt_circle_param_noteNum();
+				app->all_containers.param_container->addCircle(nn);
+				c = nn;
+			}else if(rand<0.2){
+				dt_circle_param_velocity * v = new dt_circle_param_velocity();
+				app->all_containers.param_container->addCircle(v);
+				c = v;
+			}else if(rand<0.3){
+				dt_circle_param_duration * d = new dt_circle_param_duration();
+				app->all_containers.param_container->addCircle(d);
+				c = d;
+			}else if(rand<0.4){
+				dt_circle_param_pan * p = new dt_circle_param_pan();
+				app->all_containers.param_container->addCircle(p);
+				c = p;
+			}else if(rand<0.5){
+				dt_circle_param_cc12 * y = new dt_circle_param_cc12();
+				app->all_containers.param_container->addCircle(y);
+				c = y;
+			}else if(rand<0.6){
+				dt_circle_param_cc13 * y = new dt_circle_param_cc13();
+				app->all_containers.param_container->addCircle(y);
+				c = y;
+			}else if(rand<0.7){
+				dt_circle_param_cc14 * y = new dt_circle_param_cc14();
+				app->all_containers.param_container->addCircle(y);
+				c = y;
+			}else if(rand<0.8){
+				dt_circle_param_cc16 * y = new dt_circle_param_cc16();
+				app->all_containers.param_container->addCircle(y);
+				c = y;
 			}
+		}
+		
+		if(c!= NULL){
+			c->setup(ofRandom(dt_config::DT_RHYTHM_SHAPE_MIN_SLOT, dt_config::DT_RHYTHM_SHAPE_MAX_SLOT));
+			c->data.position.x = x + random_p.x;
+			c->data.position.y = y + random_p.y;
+			app->all_containers.circle_base_container->addCircle(c);
+			
+			
+			touched_circle = c;
+			touched_circle_center = c->data.position;
+			touch_entry.set(x, y);
+			dt_circle_base::selected_circle = c;
+			
+			touch_time = -1;
+			
+			t_obj = DT_TOUCH_OBJ_CANVAS;
 		}
 	}
 }

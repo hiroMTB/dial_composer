@@ -12,22 +12,7 @@
 
 #include "dt_circle_drawer.h"
 
-void dt_circle_output_base::setup_text(){
 
-    if(data.rev_radius<15){
-        font = &app->font_manager.font_S;
-    }else{
-        font = &app->font_manager.font_M;
-    }
-
-    ofRectangle bb = font->getStringBoundingBox(initial, 0,0);
-    float font_w = bb.width;
-    float font_h = bb.height;
-    float target_w = data.rev_radius;
-    float scale = target_w/font_w;
-    
-    text_mesh = font->getStringMesh(initial, -font_w/2-1, font_h/2);
-}
 
 void dt_circle_output_base::draw(){
 	
@@ -47,9 +32,7 @@ void dt_circle_output_base::draw(){
 	// Text
     ofFill();
     ofSetColor(105);
-    font->getFontTexture().bind();
-    text_mesh.draw();
-    font->getFontTexture().unbind();
+	draw_initial();
 #endif
 
 	ofPopMatrix();
@@ -57,7 +40,7 @@ void dt_circle_output_base::draw(){
 
 
 void dt_circle_output_base::update(){
-	data.position += data.move_speed;
+	if(dt_config::DT_MOVE_CIRCLE) data.position += data.move_speed;
 	data.world_position = data.position;
 }
 

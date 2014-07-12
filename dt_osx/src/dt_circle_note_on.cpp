@@ -20,13 +20,13 @@
 #include "dt_dial_ui.h"
 
 dt_circle_note_on::dt_circle_note_on():
-note_num_count(0), velocity_count(0), duration_count(0), pan_count(0), cc12_count(0), cc13_count(0), cc14_count(0)
+note_num_count(0), velocity_count(0), duration_count(0), pan_count(0), cc12_count(0), cc13_count(0), cc14_count(0), cc16_count(0)
 {
 	data.circle_type = DT_CIRCLE_NOTE_ON;
 
 	ui = new dt_dial_ui(this);
 
-	rshape_points.reserve(DT_RHYTHM_SHAPE_MAX_SLOT);
+	rshape_points.reserve(dt_config::DT_RHYTHM_SHAPE_MAX_SLOT);
 	data.indi_color.set(0.95);
 	data.circle_color.set(0.3);
 	data.line_color.set(0.1);
@@ -62,16 +62,18 @@ void dt_circle_note_on::setup(int beat_num){
 	seq = new dt_sequencer();
 
 	set_beats(beat_num);
-	set_speed( (int)round(ofRandom(1, 4)));
+	set_speed( (int)round(ofRandom(1, 2)));
 
 	// Quantize to beat position
-	int steps_per_beat = DT_BEAT_RESOLUTION; //* data.speed;
-	int sub_step = app->sequence_thread.master_step % steps_per_beat;
-	wait_step = steps_per_beat - sub_step;
+	//int steps_per_beat = DT_BEAT_RESOLUTION; //* data.speed;
+	//int sub_step = app->sequence_thread.master_step % steps_per_beat;
+	//wait_step = steps_per_beat - sub_step;
 		
+	wait_step = 0;
 	// ROTATE little bit
-	int quantize_step = DT_BEAT_RESOLUTION / DT_QUANTIZE_RESOLUTION;
-	seq->indicator = quantize_step * (int)round(ofRandom(0, DT_QUANTIZE_RESOLUTION-1));
+	int quantize_step = 1; //dt_config::DT_BEAT_RESOLUTION / dt_config::DT_QUANTIZE_RESOLUTION;
+	int rotate_step =  quantize_step * (int)round(ofRandom(0, dt_config::DT_QUANTIZE_RESOLUTION-1));
+	seq->indicator = rotate_step;
 }
 
 void dt_circle_note_on::set_beats(int beat_num){
@@ -94,7 +96,7 @@ void dt_circle_note_on::set_speed(int speed){
 void dt_circle_note_on::update(){
 	data.fire_rate*=0.8;
 
-	data.position += data.move_speed;
+	if(dt_config::DT_MOVE_CIRCLE) data.position += data.move_speed;
 	//data.world_position = data.position + data.indi_current_point;
 	
 	float deg = 360.0 * seq->indicator/seq->total_steps * DEG_TO_RAD;
@@ -118,7 +120,7 @@ void dt_circle_note_on::check_connection(){
 
 void dt_circle_note_on::draw(){
 	
-	float waiting_rate = (float)(DT_BEAT_RESOLUTION-wait_step) / (float)DT_BEAT_RESOLUTION;
+	float waiting_rate = (float)(dt_config::DT_BEAT_RESOLUTION-wait_step) / (float)dt_config::DT_BEAT_RESOLUTION;
 	
 	ofPushMatrix();
 	ofTranslate(data.position.x, data.position.y);
@@ -140,21 +142,23 @@ void dt_circle_note_on::draw(){
 		ofSetColor(data.circle_color);
 	}
 
-	glPushMatrix();{
-		glScalef(data.rev_radius, data.rev_radius, 1);
-		rshape_vbo.bind();
-		rshape_vbo.draw(mode, 0, rshape_points.size());
-		rshape_vbo.unbind();
-	}glPopMatrix();
+	if(fired | !dt_config::DT_MASSIVE_MODE){
+		ofPushMatrix();{
+			ofScale(data.rev_radius, data.rev_radius, 1);
+			rshape_vbo.bind();
+			rshape_vbo.draw(mode, 0, rshape_points.size());
+			rshape_vbo.unbind();
+		}ofPopMatrix();
+	}
 	
-	if(data.bShowUI) ui->draw();
+	//if(data.bShowUI) ui->draw();
 	
 	ofPopMatrix();
 }
 
 
 void dt_circle_note_on::post_step(){
-	data.indi_current_point += data.indi_point_adder;
+	//data.indi_current_point += data.indi_point_adder;
 }
 
 
@@ -190,6 +194,8 @@ void dt_circle_note_on::fire(){
 		}
 		
 	}
+	
+//	note_num_count = velocity_count = duration_count = pan_count = cc12_count = cc13_count = cc14_count = cc16_count = 0;
 	
 //	update_world_position();
 	
@@ -229,7 +235,7 @@ void dt_circle_note_on::update_world_position(){
 	float y_c = r * sinf(angle_c*DEG_TO_RAD);
 	
 	data.indi_current_point = ofVec2f(x_c, y_c);
-	data.indi_point_adder = (data.indi_next_point - data.indi_current_point) / (float)(far * DT_BEAT_RESOLUTION);
+	data.indi_point_adder = (data.indi_next_point - data.indi_current_point) / (float)(far * dt_config::DT_BEAT_RESOLUTION);
 }
 
 
@@ -243,7 +249,7 @@ void dt_circle_note_on::make_vbo(){
 	for(int i=0; i<beat_num; i++){
 		bool on = seq->getDataFromBeat(i);
 		if(on){
-			float angle = start_angle + (i *  data.rev_speed * DT_BEAT_RESOLUTION);
+			float angle = start_angle + (i *  data.rev_speed * dt_config::DT_BEAT_RESOLUTION);
 			
 			float x = r * cosf(angle*DEG_TO_RAD);
 			float y = r * sinf(angle*DEG_TO_RAD);

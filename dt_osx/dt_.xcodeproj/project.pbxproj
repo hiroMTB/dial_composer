@@ -62,6 +62,7 @@
 		F66E1D72195E813700CEE795 /* dt_linear_drawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F66E1D70195E813700CEE795 /* dt_linear_drawer.cpp */; };
 		F6779837194F9F1F005DFF45 /* juce_core.mm in Sources */ = {isa = PBXBuildFile; fileRef = F677971D194F9A5B005DFF45 /* juce_core.mm */; };
 		F6779838194F9F82005DFF45 /* juce_audio_basics.mm in Sources */ = {isa = PBXBuildFile; fileRef = F67796CD194F9A5B005DFF45 /* juce_audio_basics.mm */; };
+		F6B0939B1971414700619955 /* dt_config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B0939A1971414700619955 /* dt_config.cpp */; };
 		F6B766DA1947984B00B0741D /* dt_circle_all_containers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766B61947984B00B0741D /* dt_circle_all_containers.cpp */; };
 		F6B766DB1947984B00B0741D /* dt_circle_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766B91947984B00B0741D /* dt_circle_base.cpp */; };
 		F6B766DD1947984B00B0741D /* dt_circle_note_on.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766BD1947984B00B0741D /* dt_circle_note_on.cpp */; };
@@ -503,6 +504,8 @@
 		F67797D9194F9A5B005DFF45 /* zlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
 		F67797DA194F9A5B005DFF45 /* zutil.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
 		F67797DB194F9A5B005DFF45 /* zutil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
+		F6B0939919713A2A00619955 /* dt_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_config.h; sourceTree = "<group>"; };
+		F6B0939A1971414700619955 /* dt_config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_config.cpp; sourceTree = "<group>"; };
 		F6B766B61947984B00B0741D /* dt_circle_all_containers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_circle_all_containers.cpp; sourceTree = "<group>"; };
 		F6B766B71947984B00B0741D /* dt_circle_all_containers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_circle_all_containers.h; sourceTree = "<group>"; };
 		F6B766B81947984B00B0741D /* dt_circle_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_circle_base.h; sourceTree = "<group>"; };
@@ -10757,6 +10760,8 @@
 			isa = PBXGroup;
 			children = (
 				F65D786419631B3B00C42128 /* def.h */,
+				F6B0939919713A2A00619955 /* dt_config.h */,
+				F6B0939A1971414700619955 /* dt_config.cpp */,
 				F6EE1B35196AA04400A77A20 /* dt_controler.h */,
 				4D89ABAC197005630081CE06 /* dt_controler.cpp */,
 				F6B766D81947984B00B0741D /* main.cpp */,
@@ -28265,9 +28270,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* dt_osx */ = {
+		E4B69B5A0A3A1756003C02F2 /* dt_ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "dt_osx" */;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "dt_" */;
 			buildPhases = (
 				E4B69B580A3A1756003C02F2 /* Sources */,
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
@@ -28279,7 +28284,7 @@
 			dependencies = (
 				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
 			);
-			name = dt_osx;
+			name = dt_;
 			productName = myOFApp;
 			productReference = E4B69B5B0A3A1756003C02F2 /* dt_osxDebug.app */;
 			productType = "com.apple.product-type.application";
@@ -28292,7 +28297,7 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 			};
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "dt_osx" */;
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "dt_" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -28313,7 +28318,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4B69B5A0A3A1756003C02F2 /* dt_osx */,
+				E4B69B5A0A3A1756003C02F2 /* dt_ */,
 			);
 		};
 /* End PBXProject section */
@@ -28368,6 +28373,7 @@
 				4D89ABAD197005630081CE06 /* dt_controler.cpp in Sources */,
 				F6075E13194DE94E00F8F7E0 /* ofxMidiMessage.cpp in Sources */,
 				F6075E14194DE94E00F8F7E0 /* ofxMidiOut.cpp in Sources */,
+				F6B0939B1971414700619955 /* dt_config.cpp in Sources */,
 				F6B766E01947984B00B0741D /* dt_dial_ui.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
@@ -28616,7 +28622,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
 					/Users/matobahiroshiRet/Desktop/2014_05_dialt/of_v0.8.1_osx/addons/ofxOSXBoost/libs/boost/lib/osx_i386,
 				);
-				PRODUCT_NAME = dt_osxDebug;
+				PRODUCT_NAME = dt_Debug;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -28704,7 +28710,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 					/Users/matobahiroshiRet/Desktop/2014_05_dialt/of_v0.8.1_osx/addons/ofxOSXBoost/libs/boost/lib/osx_i386,
 				);
-				PRODUCT_NAME = dt_osx;
+				PRODUCT_NAME = dt_;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -28712,7 +28718,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "dt_osx" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "dt_" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
@@ -28721,7 +28727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "dt_osx" */ = {
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "dt_" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B600A3A1757003C02F2 /* Debug */,

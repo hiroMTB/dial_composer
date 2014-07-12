@@ -25,7 +25,7 @@ dt_linear_drawer::dt_linear_drawer(){
 		colors_p.push_back(ofFloatColor(0,0,0));
 
 		// for onset beat
-		for(int j=0; j<DT_RHYTHM_SHAPE_MAX_SLOT; j++){
+		for(int j=0; j<dt_config::DT_RHYTHM_SHAPE_MAX_SLOT; j++){
 			points.push_back(ofVec2f(-1,-1));
 			colors_p.push_back(ofFloatColor(0,0,0));
 		}
@@ -66,7 +66,7 @@ void dt_linear_drawer::draw(int x, int y, int w, int h, float scale){
 	ofFloatColor onset_color(0.9);
 	
 	float pix_per_beat = 8;
-	float pix_per_step = pix_per_beat / DT_BEAT_RESOLUTION;
+	float pix_per_step = pix_per_beat / dt_config::DT_BEAT_RESOLUTION;
 	float line_height = 10;
 	
 	// update data
@@ -75,7 +75,7 @@ void dt_linear_drawer::draw(int x, int y, int w, int h, float scale){
 
 		int speed = ns[i]->data.speed;
 		float y_max = h;
-		float width = pix_per_beat * (DT_RHYTHM_SHAPE_MAX_SLOT+1);
+		float width = pix_per_beat * (dt_config::DT_RHYTHM_SHAPE_MAX_SLOT+1);
 		
 		float x = 0;
 		float y = i * line_height;

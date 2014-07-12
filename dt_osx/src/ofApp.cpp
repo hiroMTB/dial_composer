@@ -5,6 +5,8 @@
 #include "dt_circle_container.h"
 #include "dt_circle_param.h"
 
+#include "dt_config.h"
+
 /*
  *
  *	singleton
@@ -29,10 +31,10 @@ ofApp::ofApp()
 
 void ofApp::windowResized(int w, int h){
 	canvas.setX(100);
-	canvas.setY(50);
+	canvas.setY(150);
 
 	canvas.width = w-200;
-	canvas.height = h-230;
+	canvas.height = h-300;
 }
 
 void ofApp::setup(){
@@ -53,8 +55,7 @@ void ofApp::setupVisual(){
 }
 
 void ofApp::setupModule(){
-	rhythm_lib.setup(DT_RHYTHM_SHAPE_MIN_SLOT, DT_RHYTHM_SHAPE_MAX_SLOT);
-	sequence_thread.change_bpm(5);
+	rhythm_lib.setup(dt_config::DT_RHYTHM_SHAPE_MIN_SLOT, dt_config::DT_RHYTHM_SHAPE_MAX_SLOT);
 	sequence_thread.start();
 }
 
@@ -67,97 +68,27 @@ void ofApp::setupModule(){
 void ofApp::update(){
 	touch.update();
 	all_containers.update();
+	
+	dt_config::DT_MASSIVE_MODE = (all_containers.circle_base_container->circles.size() >= 8000);
 }
 
 
 void ofApp::draw(){
 	ofDisableAlphaBlending();
-	ofBackground(10, 20, 50);
+	ofBackground(7, 17, 40);
 	ofSetupScreenOrtho();
 	
 	all_containers.draw();
 	if(bShow_linear_drawer) linear_drawer.draw(canvas.x+30, canvas.y+30, canvas.width-60, canvas.height-60, 1);
-	
-	ofSetColor(95);
-	draw_info(canvas.x+15, canvas.y+canvas.height + 60);
-	
+		
 	controler.draw();
 }
-
-void ofApp::draw_info(int x, int y){
-
-	ofPushMatrix();
-	ofTranslate(x, y);
-	ofFill();
-	
-	int circle_num = all_containers.circle_base_container->circles.size();
-	int noteOn_num = all_containers.note_on_container->circles.size();
-	int param_num = all_containers.param_container->circles.size();
-	int output_num = all_containers.output_container->circles.size();
-	
-	float fps = ofGetFrameRate();
-	
-	ofPushMatrix();{
-		ofTranslate(0, 0);
-		ofDrawBitmapString("Fps: " + ofToString(fps),			0, 0);
-		ofDrawBitmapString("All: " + ofToString(circle_num),	150, 0);
-		ofDrawBitmapString("noteOn: " + ofToString(noteOn_num), 150, 20);
-		ofDrawBitmapString("Param: " + ofToString(param_num),	150, 40);
-		ofDrawBitmapString("output: " + ofToString(output_num), 150, 60);
-	}ofPopMatrix();
-	
-	// sleep time
-	ofPushMatrix();{
-		ofTranslate(300, 0);
-		ofDrawBitmapString("sleep: " + ofToString(sequence_thread.real_sleep_micro_sec), -0, 0);
-		ofDrawBitmapString("freq: "  + ofToString(sequence_thread.freq), 0, 20);
-		ofDrawBitmapString("amp: "  + ofToString(sequence_thread.random_amount), 0, 40);
-
-		ofTranslate(150, -5);
-		ofLine(0, 0, 300, 0);
-		int pos = sequence_thread.real_sleep_micro_sec * 0.0005;
-		ofRect(pos, -2, 4, 4);
-	}ofPopMatrix();
-	
-	// param circle color schem
-	ofPushMatrix();{
-		ofTranslate(canvas.width-420, 0);
-		ofSetColor(dt_circle_param_base::noteNum_color);
-		ofDrawBitmapString("noteNum", -25, 0);
-		
-		ofSetColor(dt_circle_param_base::velocity_color);
-		ofDrawBitmapString("vel", 50, 0);
-		
-		ofSetColor(dt_circle_param_base::duration_color);
-		ofDrawBitmapString("dur", 100, 0);
-		
-		ofSetColor(dt_circle_param_base::pan_color);
-		ofDrawBitmapString("LR", 150, 0);
-		
-		ofSetColor(dt_circle_param_base::cc12_color);
-		ofDrawBitmapString("cc12", 200, 0);
-		
-		ofSetColor(dt_circle_param_base::cc13_color);
-		ofDrawBitmapString("cc13", 250, 0);
-		
-		ofSetColor(dt_circle_param_base::cc14_color);
-		ofDrawBitmapString("cc14", 300, 0);
-
-		ofSetColor(dt_circle_param_base::cc16_color);
-		ofDrawBitmapString("cc16", 350, 0);
-
-	}ofPopMatrix();
-
-	
-	ofPopMatrix();
-}
-
 
 void ofApp::mousePressed(int x, int y, int button){ touch.mousePressed(x, y, button);}
 
 void ofApp::mouseDragged(int x, int y, int button){ touch.mouseDragged(x, y, button); }
 
-void ofApp::mouseReleased(int x, int y, int button){ touch.mouseReleased(x, y, button); }
+void ofApp::mouseReleased(int x, int y, int button){ /*touch.mouseReleased(x, y, button);*/ }
 
 void ofApp::gotMessage(ofMessage msg){ cout << msg.message << endl; }
 
@@ -175,29 +106,49 @@ void ofApp::keyPressed(int key){
 			if(!bAlt) sequence_thread.change_sleep_time_microsec(sequence_thread.sleep_microsec += 1000);
 			else sequence_thread.master_delay++;
 			break;
-		case OF_KEY_RIGHT:	sequence_thread.change_freq( sequence_thread.freq+1 ); break;
-		case OF_KEY_LEFT:	sequence_thread.change_freq( sequence_thread.freq-1 ); break;
- 		case '1': sequence_thread.change_bpm(2); break;
-		case '2': sequence_thread.change_bpm(4); break;
-		case '3': sequence_thread.change_bpm(8); break;
-		case '4': sequence_thread.change_bpm(12); break;
-		case '5': sequence_thread.change_bpm(16); break;
-		case '6': sequence_thread.change_bpm(20); break;
-
-		case '7': sequence_thread.random_amount =  5000; break;
-		case '8': sequence_thread.random_amount =  40000; break;
-		case '9': sequence_thread.random_amount =  300000; break;
-		case '0': sequence_thread.change_freq(0); break;
+//		case OF_KEY_RIGHT:	sequence_thread.change_freq( sequence_thread.freq+1 ); break;
+//		case OF_KEY_LEFT:	sequence_thread.change_freq( sequence_thread.freq-1 ); break;
+ 		case '1': sequence_thread.change_bpm(100); break;
+		case '2': sequence_thread.change_bpm(200); break;
+		case '3': sequence_thread.change_bpm(300); break;
+		case '4': sequence_thread.change_bpm(400); break;
+		case '5': sequence_thread.change_bpm(500); break;
+		case '6': sequence_thread.change_bpm(600); break;
+		case '7': sequence_thread.change_bpm(700); break;
+		case '8': sequence_thread.change_bpm(800); break;
+		case '9': sequence_thread.change_bpm(900); break;
+		case '0': sequence_thread.change_bpm(1000); break;
 			
-		case ' ': sequence_thread.bHold = !sequence_thread.bHold; break;
-		case 'f': ofToggleFullscreen(); break;
-		case 's': all_containers.change_speed_all(1); break;
-		case 'b': all_containers.change_beat_all(floor(ofRandom(DT_RHYTHM_SHAPE_MIN_SLOT, DT_RHYTHM_SHAPE_MAX_SLOT-1))); break;
-		case 'p': all_containers.change_position_all(); break;
-		case 'r': all_containers.change_speed_random_all(1, 128); break;
-		case 'l': bShow_linear_drawer = !bShow_linear_drawer; break;
-		case 'm': midi_writer.save_midi_file("_test" + ofGetTimestampString() + ".midi"); break;
-		case 'G': controler.toggle();
+		case ' ': dt_config::DT_MOVE_CIRCLE = !dt_config::DT_MOVE_CIRCLE; break;
+		case 'q': all_containers.change_speed_all(1); break;
+		case 'w': all_containers.change_speed_random_all(1, 2); break;
+		case 'r': all_containers.change_speed_random_all(1, 4); break;
+		case 't': all_containers.change_speed_random_all(1, 8); break;
+		case 'y': all_containers.change_speed_random_all(1, 16); break;
+		case 'u': all_containers.change_speed_random_all(1, 32); break;
+		case 'i': all_containers.change_speed_random_all(1, 64); break;
+		case 'o': all_containers.change_speed_random_all(1, 128); break;
+		case 'p': all_containers.change_speed_random_all(1, 256); break;
+			
+		case 'a': all_containers.change_beat_resolution(4); break;
+		case 's': all_containers.change_beat_resolution(8); break;
+		case 'd': all_containers.change_beat_resolution(12); break;
+		case 'f': all_containers.change_beat_resolution(16); break;
+		case 'g': all_containers.change_beat_resolution(24); break;
+		case 'h': all_containers.change_beat_resolution(32); break;
+		case 'j': all_containers.change_beat_resolution(48); break;
+		case 'k': all_containers.change_beat_resolution(64); break;
+		case 'l': all_containers.change_beat_resolution(128); break;
+			
+		case 'L': bShow_linear_drawer = !bShow_linear_drawer; break;
+		case 'G': controler.toggle(); break;
+		case 'F': ofToggleFullscreen(); break;
+		case 'B': all_containers.change_beat_all(floor(ofRandom(dt_config::DT_RHYTHM_SHAPE_MIN_SLOT, dt_config::DT_RHYTHM_SHAPE_MAX_SLOT-1))); break;
+		case 'P': all_containers.change_position_all(); break;
+
+		case OF_KEY_RETURN:
+			touch.make_random_circle(ofRandom(0, ofGetWidth()), ofRandom(0, ofGetHeight()), 100); break;
+			
 		default: break;
 	}
 }

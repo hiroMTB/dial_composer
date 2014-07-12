@@ -126,8 +126,13 @@ public:
 	
 	void change_beat(int beat);
     
+	void setup_text(string initial);
+	void draw_initial();
     ofTrueTypeFont * font;
     ofVboMesh text_mesh;
     ofPoint text_pos;
+
+	string initial;
+
 };
 

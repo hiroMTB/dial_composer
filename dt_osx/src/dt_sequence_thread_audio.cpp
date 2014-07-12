@@ -31,7 +31,7 @@ void dt_sequence_thread_audio::change_bpm(int _bpm){
 	
 	bpm = _bpm;
 	float beat_period_ms = 60.0*1000.0 / (float) bpm;						// 500		ms
-	sleep_millisec = beat_period_ms / (float)DT_BEAT_RESOLUTION;		// 31.25	ms
+	sleep_millisec = beat_period_ms / (float)dt_config::DT_BEAT_RESOLUTION;		// 31.25	ms
 	sleep_microsec = sleep_millisec * 1000.0;	// 1562.5 us
 	
 	wait_tick = (int)(sleep_microsec / min_sleep_micro_sec);

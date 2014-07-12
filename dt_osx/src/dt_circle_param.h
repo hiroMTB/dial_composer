@@ -42,10 +42,7 @@ public:
 	
 	float param_min;
 	float param_max;
-
-	string initial;
 	
-
 	static const int line_color_rate = 35;		// %
 	
 	static ofColor noteNum_color;
@@ -93,7 +90,7 @@ class dt_circle_param_pan : public dt_circle_param_base {
 public:
 	dt_circle_param_pan(){
 		data.circle_type = DT_CIRCLE_PAN;
-		initial = "LR";
+		initial = "P";
 		data.circle_color = data.indi_color = data.line_color = pan_color;
 		data.line_color *= line_color_rate * 0.01;
 	}
@@ -104,7 +101,7 @@ class dt_circle_param_cc12 : public dt_circle_param_base {
 public:
 	dt_circle_param_cc12(){
 		data.circle_type = DT_CIRCLE_CC12;
-		initial = "12";
+		initial = "C";
 		data.circle_color = data.indi_color = data.line_color = cc12_color;
 		data.line_color *= line_color_rate * 0.01;
 	};
@@ -114,7 +111,7 @@ class dt_circle_param_cc13 : public dt_circle_param_base {
 public:
 	dt_circle_param_cc13(){
 		data.circle_type = DT_CIRCLE_CC13;
-		initial = "13";
+		initial = "C";
 		data.circle_color = data.indi_color = data.line_color = cc13_color;
 		data.line_color *= line_color_rate * 0.01;
 	};
@@ -124,7 +121,7 @@ class dt_circle_param_cc14 : public dt_circle_param_base {
 public:
 	dt_circle_param_cc14(){
 		data.circle_type = DT_CIRCLE_CC14;
-		initial = "14";
+		initial = "C";
 		data.circle_color = data.indi_color = data.line_color = cc14_color;
 		data.line_color *= line_color_rate * 0.01;
 	};
@@ -134,7 +131,7 @@ class dt_circle_param_cc16 : public dt_circle_param_base {
 public:
 	dt_circle_param_cc16(){
 		data.circle_type = DT_CIRCLE_CC16;
-		initial = "16";
+		initial = "C";
 		data.circle_color = data.indi_color = data.line_color = cc16_color;
 		data.line_color *= line_color_rate * 0.01;
 	};

@@ -98,10 +98,12 @@ public:
 		int connection_num_input = 0;
 		int connection_num_output = 0;
 
+		if(bInput) c1->note_num_count = c1->velocity_count = c1->duration_count = c1->pan_count = c1->cc12_count = c1->cc13_count = c1->cc14_count = c1->cc16_count = 0;
+		
 		for(int i=0; i<circles.size(); i++){
 			
-			if( bInput && connection_num_input > DT_CONNECTION_NUM_INPUT_MAX) break;
-			if(!bInput && connection_num_output > DT_CONNECTION_NUM_OUTPUT_MAX) break;
+			if( bInput && connection_num_input > dt_config::DT_CONNECTION_NUM_INPUT_MAX) break;
+			if(!bInput && connection_num_output > dt_config::DT_CONNECTION_NUM_OUTPUT_MAX) break;
 
 			T c2 = circles[i];
 			ofVec2f &p1 = c1->data.position;
@@ -113,14 +115,14 @@ public:
 				if( bInput){
 					connection_num_input++;
 					switch(c2->data.circle_type){
-						case DT_CIRCLE_VELOCITY: if(c1->velocity_count<4) c1->velocity_count++; break;
-						case DT_CIRCLE_NOTE_NUM: if(c1->note_num_count<4) c1->note_num_count++;	break;
-						case DT_CIRCLE_DURATION: if(c1->duration_count<4) c1->duration_count++; break;
-						case DT_CIRCLE_PAN:		 if(c1->pan_count<4) c1->pan_count++; break;
-						case DT_CIRCLE_CC12:	 if(c1->cc12_count<4) c1->cc12_count++; break;
-						case DT_CIRCLE_CC13:	 if(c1->cc13_count<4) c1->cc13_count++; break;
-						case DT_CIRCLE_CC14:	 if(c1->cc14_count<4) c1->cc14_count++; break;
-						case DT_CIRCLE_CC16:	 if(c1->cc16_count<4) c1->cc16_count++; break;
+						case DT_CIRCLE_VELOCITY: if(c1->velocity_count<3) c1->velocity_count++; break;
+						case DT_CIRCLE_NOTE_NUM: if(c1->note_num_count<3) c1->note_num_count++;	break;
+						case DT_CIRCLE_DURATION: if(c1->duration_count<3) c1->duration_count++; break;
+						case DT_CIRCLE_PAN:		 if(c1->pan_count<3) c1->pan_count++; break;
+						case DT_CIRCLE_CC12:	 if(c1->cc12_count<3) c1->cc12_count++; break;
+						case DT_CIRCLE_CC13:	 if(c1->cc13_count<3) c1->cc13_count++; break;
+						case DT_CIRCLE_CC14:	 if(c1->cc14_count<3) c1->cc14_count++; break;
+						case DT_CIRCLE_CC16:	 if(c1->cc16_count<3) c1->cc16_count++; break;
 						default: break;
 					}
 				}
@@ -146,38 +148,38 @@ public:
 	void process_collision(){
 		for(int i=0; i<circles.size(); i++){
 			T c1 = circles[i];
-			if(c1->data.bCollide){
-			
-				ofVec2f &p1 = c1->data.position;
-				float r1 = c1->data.collision_radius;
-				
-				float quickness = 0.01f;
-				float rad_range = 1.0;
-				
-				for(int j=i+1; j<circles.size(); j++){
-					T c2 = circles[j];
-					if(c2->data.bCollide){
-						
-						ofVec2f &p2 = c2->data.position;
-						float r2 = c2->data.collision_radius;
-						
-						float dist_x = p2.x - p1.x;
-						float dist_y = p2.y - p1.y;
-						
-						float dist2 = pow(dist_x,2) + pow(dist_y, 2);
-						float rad_sum = pow(r1+r2, 2) * rad_range;
-						bool collide = dist2<rad_sum;
-						if(collide){
-							c1->data.position.x -= (dist_x*quickness);
-							c1->data.position.y -= (dist_y*quickness);
-							
-							c2->data.position.x += (dist_x*quickness);
-							c2->data.position.y += (dist_y*quickness);
-							
-						}
-					}
-				}
-			}
+//			if(c1->data.bCollide){
+//			
+//				ofVec2f &p1 = c1->data.position;
+//				float r1 = c1->data.collision_radius;
+//				
+//				float quickness = 0.01f;
+//				float rad_range = 1.0;
+//				
+//				for(int j=i+1; j<circles.size(); j++){
+//					T c2 = circles[j];
+//					if(c2->data.bCollide){
+//						
+//						ofVec2f &p2 = c2->data.position;
+//						float r2 = c2->data.collision_radius;
+//						
+//						float dist_x = p2.x - p1.x;
+//						float dist_y = p2.y - p1.y;
+//						
+//						float dist2 = pow(dist_x,2) + pow(dist_y, 2);
+//						float rad_sum = pow(r1+r2, 2) * rad_range;
+//						bool collide = dist2<rad_sum;
+//						if(collide){
+//							c1->data.position.x -= (dist_x*quickness);
+//							c1->data.position.y -= (dist_y*quickness);
+//							
+//							c2->data.position.x += (dist_x*quickness);
+//							c2->data.position.y += (dist_y*quickness);
+//							
+//						}
+//					}
+//				}
+//			}
 			
 			/*
 			 *	against wall

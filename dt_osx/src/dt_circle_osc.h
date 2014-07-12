@@ -9,6 +9,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "dt_circle_base.h"
 #include "dt_circle_output_base.h"
 #include "dt_circle_osc.h"
 #include "ofxOsc.h"
@@ -22,7 +23,6 @@ public:
 	
 
     string address_prefix;
-    ofxOscMessage noteOn, noteNum, vel, dur, chPan, cc12, cc13, cc14, cc16;
 
 	dt_circle_osc(){}
 	
@@ -36,23 +36,12 @@ public:
 		data.collision_radius = data.rev_radius + ofRandom(10, 30);
 		
 		data.circle_type = DT_CIRCLE_OSC;
-		ch = (int)ceil(ofRandom(0, DT_MAX_OSC_CH));
+		ch = (int)ceil(ofRandom(0, dt_config::DT_MAX_OSC_CH));
 		initial = ofToString(ch);
         
-        address_prefix = DT_OSC_OUT_ADDRESS_PREFIX + ofToString(ch) + "/";	// eg /dt/1/
-        noteOn.setAddress	(address_prefix + "noteOn");
-		noteNum.setAddress	(address_prefix + "noteNum");
-		vel.setAddress		(address_prefix + "vel");
-		dur.setAddress		(address_prefix + "dur");
-		chPan.setAddress	(address_prefix + "chPan");
-		cc12.setAddress		(address_prefix + "cc12");
-		cc13.setAddress		(address_prefix + "cc13");
-		cc14.setAddress		(address_prefix + "cc14");
-		cc16.setAddress		(address_prefix + "cc16");
+        address_prefix = dt_config::DT_OSC_OUT_ADDRESS_PREFIX + initial + "/";	// eg /dt/1/
         
-        noteOn.addIntArg(1);
-        
-        setup_text();
+        setup_text(initial);
 	}
 	
 	
@@ -65,40 +54,20 @@ public:
 	
 	// send osc
 	void send_osc(int _ch, int _noteNum, int _vel, int _dur, int _pan,  int _cc12, int _cc13, int _cc14, int _cc16){
-		ofxOscBundle all;
-        clear_osc_message();
-        
-		noteNum.addIntArg(_noteNum);
-		vel.addIntArg(_vel);
-		dur.addIntArg(_dur);
-		chPan.addIntArg(_pan);
-		cc12.addIntArg(_cc12);
-		cc13.addIntArg(_cc13);
-		cc14.addIntArg(_cc14);
-		cc16.addIntArg(_cc16);
-		
-		all.addMessage(cc12);
-		all.addMessage(cc13);
-		all.addMessage(cc14);
-        all.addMessage(cc16);
-        
-		all.addMessage(chPan);
-		all.addMessage(dur);
-		all.addMessage(vel);
-		all.addMessage(noteNum);
-		all.addMessage(noteOn);
-		
-		app->osc_sender.send_bundle(all);
-	};
+		ofxOscMessage noteOn;
 
-    
-    void clear_osc_message(){
-        vel.clear();
-        dur.clear();
-		chPan.clear();
-		cc12.clear();
-		cc13.clear();
-		cc14.clear();
-		cc16.clear();
-    }
+		noteOn.setAddress	(address_prefix + "noteOn");
+		noteOn.addIntArg(1);
+		noteOn.addIntArg(_noteNum);
+		noteOn.addIntArg(_vel);
+		noteOn.addIntArg(_dur);
+		noteOn.addIntArg(_pan);
+		
+		noteOn.addIntArg(_cc12);
+		noteOn.addIntArg(_cc13);
+		noteOn.addIntArg(_cc14);
+		noteOn.addIntArg(16);
+		
+		app->osc_sender.send_message(noteOn);
+	};
 };

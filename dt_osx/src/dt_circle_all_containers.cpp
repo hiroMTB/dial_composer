@@ -26,7 +26,7 @@ void dt_circle_all_containers::setup(){
 	output_container		= new dt_circle_output_container();
 	
 	// all points
-	for(int i=0; i<DT_MAX_CIRCLE_NUM; i++){
+	for(int i=0; i<dt_config::DT_MAX_CIRCLE_NUM; i++){
 		all_points_pos.push_back(ofVec2f(-123,-123));
 		all_points_color.push_back(ofFloatColor(1, 0.3,0.2));
 	}
@@ -35,7 +35,7 @@ void dt_circle_all_containers::setup(){
 	
 	
 	// all lines
-	for(int i=0; i<DT_MAX_CIRCLE_NUM*3; i++){
+	for(int i=0; i<dt_config::DT_MAX_CIRCLE_NUM*3; i++){
 		all_lines_pos.push_back(ofVec2f(-123,-123));
 		all_lines_pos.push_back(ofVec2f(-123,-123));
 		all_lines_color.push_back(ofFloatColor(0,1,0));
@@ -78,35 +78,36 @@ void dt_circle_all_containers::add_line_to_all_lines(const ofVec2f& p1, const of
 void dt_circle_all_containers::draw(){
     
     ofEnableAlphaBlending();
-	param_container->draw();
-	output_container->draw();
+	if(param_container->circles.size()<300)  param_container->draw();
+	if(output_container->circles.size()<100) output_container->draw();
 	note_on_container->draw();
 	ofDisableAlphaBlending();
     
-	// all lines
-	ofEnableAlphaBlending();
-	glLineWidth(1);
-	all_lines_vbo.bind();
-	all_lines_vbo.updateColorData(&all_lines_color[0], all_lines_color.size());
-	all_lines_vbo.updateVertexData(&all_lines_pos[0], all_lines_pos.size());
-	all_lines_vbo.draw(GL_LINES, 0, all_lines_pos.size());
-	all_lines_vbo.unbind();
-	ofDisableAlphaBlending();
+	if(!dt_config::DT_MASSIVE_MODE)	{
+		// all lines
+		ofEnableAlphaBlending();
+		glLineWidth(1);
+		all_lines_vbo.bind();
+		all_lines_vbo.updateColorData(&all_lines_color[0], all_lines_color.size());
+		all_lines_vbo.updateVertexData(&all_lines_pos[0], all_lines_pos.size());
+		all_lines_vbo.draw(GL_LINES, 0, all_lines_pos.size());
+		all_lines_vbo.unbind();
+		ofDisableAlphaBlending();
 
-	// all points
-	glPointSize(1);
-	all_points_vbo.bind();
-	all_points_vbo.updateColorData(&all_points_color[0], all_points_color.size());
-	all_points_vbo.updateVertexData(&all_points_pos[0], all_points_pos.size());
-	all_points_vbo.draw(GL_POINTS, 0, all_points_pos.size());
-	all_points_vbo.unbind();
-
+		// all points
+		glPointSize(1);
+		all_points_vbo.bind();
+		all_points_vbo.updateColorData(&all_points_color[0], all_points_color.size());
+		all_points_vbo.updateVertexData(&all_points_pos[0], all_points_pos.size());
+		all_points_vbo.draw(GL_POINTS, 0, all_points_pos.size());
+		all_points_vbo.unbind();
+	}
 }
 
 
 void dt_circle_all_containers::step(){
 	//param_container->step();
-	// output_container->step();	dont need
+	//output_container->step();
 	
 	note_on_container->step();
 }
@@ -134,8 +135,8 @@ void dt_circle_all_containers::change_beat_all(int beat){
 		dt_circle_note_on * n = note_on_container->circles[i];
 		n->setup(beat);
 
-		int quantize_step = DT_BEAT_RESOLUTION / DT_QUANTIZE_RESOLUTION;
-		n->seq->indicator = quantize_step * (int)round(ofRandom(0, DT_QUANTIZE_RESOLUTION-1));
+//		int quantize_step = dt_config::DT_BEAT_RESOLUTION / dt_config::DT_QUANTIZE_RESOLUTION;
+//		n->seq->indicator = quantize_step * (int)round(ofRandom(0, dt_config::DT_QUANTIZE_RESOLUTION-1));
 	}
 }
 
@@ -149,5 +150,12 @@ void dt_circle_all_containers::change_position_all(){
 	}
 }
 
-
+void dt_circle_all_containers::change_beat_resolution(int res){
+	dt_config::DT_BEAT_RESOLUTION = res;
+	for(int i=0; i<note_on_container->circles.size(); i++){
+		dt_circle_note_on * n = note_on_container->circles[i];
+		int beats = n->seq->total_beats;
+		n->setup(beats);
+	}
+}
 
