@@ -21,10 +21,14 @@ typedef dt_circle_container<dt_circle_note_on*>		dt_circle_note_on_container;
 typedef dt_circle_container<dt_circle_param_base*>	dt_circle_param_container;
 typedef dt_circle_container<dt_circle_output_base*> dt_circle_output_container;
 
+
+class ofApp;
+
 class dt_circle_all_containers{
 
 public:
-
+	ofApp * app;
+	
 	// Containers
 	dt_circle_base_container * circle_base_container;
 	dt_circle_note_on_container * note_on_container;
@@ -54,7 +58,6 @@ public:
 	void add_point_to_all_points(const  ofVec2f& p, const ofFloatColor &c);
 	void add_line_to_all_lines(const ofVec2f &p1, const ofVec2f &p2, const ofFloatColor &c1, const ofFloatColor &c2);
 	
-	void change_speed_all(int speed);
 	void change_speed_random_all(int min, int max);
 	void change_beat_all(int beat);
 	void change_position_all();

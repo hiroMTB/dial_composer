@@ -41,6 +41,7 @@ public:
 	void task(const boost::system::error_code& /*e*/, boost::asio::deadline_timer* t);
     void threadFunc();
 	
+	void setup();
 	void start();
 	void stop();
 	

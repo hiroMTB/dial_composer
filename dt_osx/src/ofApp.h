@@ -14,6 +14,7 @@
 #include "dt_sequence_thread.h"
 #include "dt_circle_all_containers.h"
 #include "dt_config.h"
+#include "dt_osc_recorder.h"
 
 class ofApp : public ofBaseApp {
 
@@ -46,6 +47,9 @@ public:
 	void dragEvent(ofDragInfo dragInfo){};
 	void gotMessage(ofMessage msg);
 		
+	
+//	void 
+	
 	// module
 	dt_osc_sender		osc_sender;
 	dt_midi_sender		midi_sender;
@@ -58,10 +62,10 @@ public:
 	dt_sequence_thread	sequence_thread;
 	dt_circle_all_containers all_containers;
 	dt_config			config;
+	dt_osc_recorder		osc_recorder;
 	
 	void exit();
 	
 	ofRectangle canvas;
-	bool bShow_linear_drawer;
 };
 

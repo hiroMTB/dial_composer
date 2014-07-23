@@ -53,13 +53,10 @@ void dt_circle_param_base::change_rshape(int type){
 void dt_circle_param_base::update(){
 	data.fire_rate*=0.8;
 	
-	data.position += data.move_speed;
-
-	//	float ind = seq->indicator;
-	//	data.rev_angle = TWO_PI * ind / (float)seq->total_steps;
-	//	ofVec2f p(cosf(data.rev_angle), sinf(data.rev_angle));
-	if(dt_config::DT_MOVE_CIRCLE) data.world_position = data.position; // + p * data.rev_radius;
-	
+	if(dt_config::DT_PLAY_GEN_RHYTHM){
+		data.position += data.move_speed;
+		data.world_position = data.position;
+	}
 }
 
 void dt_circle_param_base::draw(){

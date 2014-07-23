@@ -40,8 +40,10 @@ void dt_circle_output_base::draw(){
 
 
 void dt_circle_output_base::update(){
-	if(dt_config::DT_MOVE_CIRCLE) data.position += data.move_speed;
-	data.world_position = data.position;
+	if(dt_config::DT_PLAY_GEN_RHYTHM){
+		data.position += data.move_speed;
+		data.world_position = data.position;
+	}
 }
 
 

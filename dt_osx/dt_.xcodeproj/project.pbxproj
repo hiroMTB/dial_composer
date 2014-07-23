@@ -61,6 +61,7 @@
 		F66E1D72195E813700CEE795 /* dt_linear_drawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F66E1D70195E813700CEE795 /* dt_linear_drawer.cpp */; };
 		F6779837194F9F1F005DFF45 /* juce_core.mm in Sources */ = {isa = PBXBuildFile; fileRef = F677971D194F9A5B005DFF45 /* juce_core.mm */; };
 		F6779838194F9F82005DFF45 /* juce_audio_basics.mm in Sources */ = {isa = PBXBuildFile; fileRef = F67796CD194F9A5B005DFF45 /* juce_audio_basics.mm */; };
+		F6A08C7E1971FBC400969E36 /* dt_osc_recorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6A08C7C1971FBC400969E36 /* dt_osc_recorder.cpp */; };
 		F6B0939B1971414700619955 /* dt_config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B0939A1971414700619955 /* dt_config.cpp */; };
 		F6B766DA1947984B00B0741D /* dt_circle_all_containers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766B61947984B00B0741D /* dt_circle_all_containers.cpp */; };
 		F6B766DB1947984B00B0741D /* dt_circle_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766B91947984B00B0741D /* dt_circle_base.cpp */; };
@@ -502,6 +503,8 @@
 		F67797D9194F9A5B005DFF45 /* zlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
 		F67797DA194F9A5B005DFF45 /* zutil.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
 		F67797DB194F9A5B005DFF45 /* zutil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
+		F6A08C7C1971FBC400969E36 /* dt_osc_recorder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_osc_recorder.cpp; sourceTree = "<group>"; };
+		F6A08C7D1971FBC400969E36 /* dt_osc_recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_osc_recorder.h; sourceTree = "<group>"; };
 		F6B0939919713A2A00619955 /* dt_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_config.h; sourceTree = "<group>"; };
 		F6B0939A1971414700619955 /* dt_config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_config.cpp; sourceTree = "<group>"; };
 		F6B766B61947984B00B0741D /* dt_circle_all_containers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_circle_all_containers.cpp; sourceTree = "<group>"; };
@@ -11432,6 +11435,8 @@
 		F6B7670219479CA500B0741D /* seq */ = {
 			isa = PBXGroup;
 			children = (
+				F6A08C7D1971FBC400969E36 /* dt_osc_recorder.h */,
+				F6A08C7C1971FBC400969E36 /* dt_osc_recorder.cpp */,
 				F6B766D41947984B00B0741D /* dt_sequencer.h */,
 				F6B766D51947984B00B0741D /* dt_sequencer.cpp */,
 				F6B766D31947984B00B0741D /* dt_sequence_thread.h */,
@@ -28373,6 +28378,7 @@
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
+				F6A08C7E1971FBC400969E36 /* dt_osc_recorder.cpp in Sources */,
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,

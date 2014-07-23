@@ -72,7 +72,7 @@ void dt_circle_note_on::setup(int beat_num){
 	wait_step = 0;
 	// ROTATE little bit
 	int quantize_step = 1; //dt_config::DT_BEAT_RESOLUTION / dt_config::DT_QUANTIZE_RESOLUTION;
-	int rotate_step =  quantize_step * (int)round(ofRandom(0, dt_config::DT_QUANTIZE_RESOLUTION-1));
+	int rotate_step =  quantize_step * (int)round(ofRandom(0, dt_config::DT_BEAT_RESOLUTION-1));
 	seq->indicator = rotate_step;
 }
 
@@ -96,13 +96,14 @@ void dt_circle_note_on::set_speed(int speed){
 void dt_circle_note_on::update(){
 	data.fire_rate*=0.8;
 
-	if(dt_config::DT_MOVE_CIRCLE) data.position += data.move_speed;
-	//data.world_position = data.position + data.indi_current_point;
+	if(dt_config::DT_PLAY_GEN_RHYTHM){
+		data.position += data.move_speed;
 	
-	float deg = 360.0 * seq->indicator/seq->total_steps * DEG_TO_RAD;
-	data.world_position = data.position + ofVec2f(cos(deg), sin(deg)) * data.rev_radius;
+		float deg = 360.0 * seq->indicator/seq->total_steps * DEG_TO_RAD;
+		data.world_position = data.position + ofVec2f(cos(deg), sin(deg)) * data.rev_radius;
 	
-	check_connection();
+		check_connection();
+	}
 }
 
 void dt_circle_note_on::check_connection(){
@@ -115,7 +116,6 @@ void dt_circle_note_on::check_connection(){
 	
 	// output check
 	ofApp::getInstance()->all_containers.output_container->check_connection(this, false);
-	
 }
 
 void dt_circle_note_on::draw(){
@@ -169,38 +169,42 @@ void dt_circle_note_on::change_rshape(int type){
 
 void dt_circle_note_on::fire(){
 
-	// output
-	for(int i=0; i<output_circles.size(); i++){
-		
-		dt_circle_type &type = output_circles[i]->data.circle_type;
-		switch (type) {
-			case DT_CIRCLE_OSC:
-			{
-				dt_circle_osc * o = static_cast<dt_circle_osc*>((output_circles[i]));
-				o->send_osc(o->ch, note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count, cc16_count);
-				data.fired_ch = o->ch;
-			}
-			break;
+	int rate = dt_config::DT_GEN_RHYTHM_RATE;
+	if(rate == 0) return;
+	
+	if(rate==100 || ofRandom(0,100) <= rate){
+	
+		// output
+		for(int i=0; i<output_circles.size(); i++){
 			
-			case DT_CIRCLE_MIDI:
-			{
-				dt_circle_midi * m = static_cast<dt_circle_midi*>(output_circles[i]);
-				m->send_midi(m->ch, note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count);
-			}
-            break;
-
-			default:
+			dt_circle_type &type = output_circles[i]->data.circle_type;
+			switch (type) {
+				case DT_CIRCLE_OSC:
+				{
+					dt_circle_osc * o = static_cast<dt_circle_osc*>((output_circles[i]));
+					o->send_osc(o->ch, note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count, cc16_count);
+					data.fired_ch = o->ch;
+				}
 				break;
+				
+				case DT_CIRCLE_MIDI:
+				{
+					dt_circle_midi * m = static_cast<dt_circle_midi*>(output_circles[i]);
+					m->send_midi(m->ch, note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count);
+				}
+				break;
+
+				default:
+					break;
+			}
 		}
 		
-	}
-	
-//	note_num_count = velocity_count = duration_count = pan_count = cc12_count = cc13_count = cc14_count = cc16_count = 0;
-	
-//	update_world_position();
-	
-	if(output_circles.size()!=0){
-		data.fire_rate = 1.0;
+	//	update_world_position();
+		
+		if(output_circles.size()!=0){
+			data.fire_rate = 1.0;
+		}
+		
 	}
 }
 

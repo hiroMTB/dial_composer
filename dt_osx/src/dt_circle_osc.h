@@ -9,18 +9,21 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxOsc.h"
+
+#include "ofApp.h"
+
 #include "dt_circle_base.h"
 #include "dt_circle_output_base.h"
 #include "dt_circle_osc.h"
-#include "ofxOsc.h"
 #include "dt_osc_sender.h"
-#include "ofApp.h"
+#include "dt_osc_recorder.h"
+
 
 class dt_circle_osc : public dt_circle_output_base{
-	
-	
-public:
 
+public:
+	
 	dt_circle_osc(){}
 	
 	virtual void setup(int beat_num){
@@ -66,5 +69,7 @@ public:
 		noteOn.addIntArg(16);
 		
 		app->osc_sender.send_message(noteOn);
+		
+		app->osc_recorder.add_osc_message(noteOn, ch);
 	};
 };
