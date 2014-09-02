@@ -76,8 +76,6 @@ public:
 			circles[i]->update();
 			ofApp::getInstance()->all_containers.add_point_to_all_points(circles[i]->data.world_position, circles[i]->data.indi_color);
 		}
-		
-		//process_collision();
 	};
 	
 	void draw(){
@@ -148,38 +146,38 @@ public:
 	void process_collision(){
 		for(int i=0; i<circles.size(); i++){
 			T c1 = circles[i];
-//			if(c1->data.bCollide){
-//			
-//				ofVec2f &p1 = c1->data.position;
-//				float r1 = c1->data.collision_radius;
-//				
-//				float quickness = 0.01f;
-//				float rad_range = 1.0;
-//				
-//				for(int j=i+1; j<circles.size(); j++){
-//					T c2 = circles[j];
-//					if(c2->data.bCollide){
-//						
-//						ofVec2f &p2 = c2->data.position;
-//						float r2 = c2->data.collision_radius;
-//						
-//						float dist_x = p2.x - p1.x;
-//						float dist_y = p2.y - p1.y;
-//						
-//						float dist2 = pow(dist_x,2) + pow(dist_y, 2);
-//						float rad_sum = pow(r1+r2, 2) * rad_range;
-//						bool collide = dist2<rad_sum;
-//						if(collide){
-//							c1->data.position.x -= (dist_x*quickness);
-//							c1->data.position.y -= (dist_y*quickness);
-//							
-//							c2->data.position.x += (dist_x*quickness);
-//							c2->data.position.y += (dist_y*quickness);
-//							
-//						}
-//					}
-//				}
-//			}
+			if(c1->data.bCollide){
+			
+				ofVec2f &p1 = c1->data.position;
+				float r1 = c1->data.collision_radius;
+				
+				float quickness = 0.1f;
+				float rad_range = 1.0;
+				
+				for(int j=i+1; j<circles.size(); j++){
+					T c2 = circles[j];
+					if(c2->data.bCollide){
+						
+						ofVec2f &p2 = c2->data.position;
+						float r2 = c2->data.collision_radius;
+						
+						float dist_x = p2.x - p1.x;
+						float dist_y = p2.y - p1.y;
+						
+						float dist2 = pow(dist_x,2) + pow(dist_y, 2);
+						float rad_sum = pow(r1+r2, 2) * rad_range;
+						bool collide = dist2<rad_sum;
+						if(collide){
+							c1->data.position.x -= (dist_x*quickness);
+							c1->data.position.y -= (dist_y*quickness);
+							
+							c2->data.position.x += (dist_x*quickness);
+							c2->data.position.y += (dist_y*quickness);
+							
+						}
+					}
+				}
+			}
 			
 			/*
 			 *	against wall

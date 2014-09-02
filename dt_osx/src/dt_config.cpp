@@ -19,8 +19,8 @@ bool dt_config::DT_PLAY_GEN_RHYTHM = true;
 int dt_config::DT_GEN_RHYTHM_RATE = 100;
 int dt_config::DT_RHYTHM_SHAPE_SLOT_MIN =	  3;
 int dt_config::DT_RHYTHM_SHAPE_SLOT_MAX =	 24;
-int dt_config::DT_QUANTIZE_RESOLUTION =		 64;
-int dt_config::DT_BEAT_RESOLUTION =			 64;
+int dt_config::DT_QUANTIZE_RESOLUTION =		 16;
+int dt_config::DT_BEAT_RESOLUTION =			 16;
 int dt_config::DT_BEAT_SPEED_MAX =			 32;
 int dt_config::DT_CONNECTION_NUM_INPUT_MAX = 16;
 int dt_config::DT_CONNECTION_NUM_OUTPUT_MAX = 3;
@@ -46,10 +46,10 @@ int dt_config::DT_BUFFERED_RHYTHM_LOOP_END = 63;
 bool dt_config::DT_SHOW_BUFFERED_RHYTHM = true;
 
 // draw mode
-bool dt_config::DT_MASSIVE_MODE = false;
 bool dt_config::DT_SHOW_LINER_DRAWER = false;
 bool dt_config::DT_SHOW_PARAM = true;
 
+float dt_config::DT_SIZE_BASE = 100.0;
 
 dt_config::dt_config(){}
 

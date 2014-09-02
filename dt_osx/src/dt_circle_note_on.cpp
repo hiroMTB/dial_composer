@@ -27,7 +27,9 @@ note_num_count(0), velocity_count(0), duration_count(0), pan_count(0), cc12_coun
 	ui = new dt_dial_ui(this);
 
 	rshape_points.reserve(dt_config::DT_RHYTHM_SHAPE_SLOT_MAX);
-	data.indi_color.set(0.95);
+	rshape_colors.reserve(dt_config::DT_RHYTHM_SHAPE_SLOT_MAX);
+
+	data.indi_color.set(0);
 	data.circle_color.set(0.3);
 	data.line_color.set(0.1);
 }
@@ -62,7 +64,7 @@ void dt_circle_note_on::setup(int beat_num){
 	seq = new dt_sequencer();
 
 	set_beats(beat_num);
-	set_speed( (int)round(ofRandom(1, dt_config::DT_BEAT_SPEED_MAX)));
+	set_speed(1);
 
 	// Quantize to beat position
 	//int steps_per_beat = DT_BEAT_RESOLUTION; //* data.speed;
@@ -80,15 +82,14 @@ void dt_circle_note_on::set_beats(int beat_num){
 	seq->setup(beat_num);
 	data.rev_speed = (float)360.0 / (float)seq->total_steps;
 	change_rshape(ofRandom(-1000, 1000));
-	
 	set_speed(data.speed);
 }
 
 void dt_circle_note_on::set_speed(int speed){
 	data.speed = speed;
 	data.rev_angle = seq->indicator * data.rev_speed;
-	data.rev_radius = 15 + (seq->total_beats * data.speed)*0.003;
-	data.collision_radius = data.rev_radius + 15;
+	data.rev_radius = dt_config::DT_SIZE_BASE * 0.5;
+	data.collision_radius = data.rev_radius * 2.0;
 	data.input_connection_radius = data.collision_radius + 100;
 	data.output_connection_radius = data.collision_radius + 100;
 }
@@ -121,37 +122,30 @@ void dt_circle_note_on::check_connection(){
 void dt_circle_note_on::draw(){
 	
 	float waiting_rate = (float)(dt_config::DT_BEAT_RESOLUTION-wait_step) / (float)dt_config::DT_BEAT_RESOLUTION;
-	
-	ofPushMatrix();
-	ofTranslate(data.position.x, data.position.y);
-	
 	float waiting_animation_rate = 0.5 + waiting_rate*0.5;
-	ofScale(waiting_animation_rate, waiting_animation_rate);
-
 	bool fired = data.fire_rate>0.3;
 	bool selected = selected_circle == this;
+    float scale = fired ? waiting_animation_rate+data.fire_rate*0.2 : waiting_animation_rate;
+	ofPushMatrix();
+	ofTranslate(data.position.x, data.position.y);
+	ofScale(scale, scale);
+
 	
 	// shape
-	int mode = GL_LINE_LOOP;
+    glLineWidth(2);
 
-	glLineWidth(1);
+	if(fired) ofSetColor(200);
+	else ofSetColor(data.circle_color);
 
-	if(fired){
-		ofSetColor(200);
-	}else{
-		ofSetColor(data.circle_color);
-	}
-
-	if(fired | !dt_config::DT_MASSIVE_MODE){
-		ofPushMatrix();{
-			ofScale(data.rev_radius, data.rev_radius, 1);
-			rshape_vbo.bind();
-			rshape_vbo.draw(mode, 0, rshape_points.size());
-			rshape_vbo.unbind();
-		}ofPopMatrix();
-	}
+	int mode = (rshape_points.size() <= 2) ?  GL_LINE_LOOP : GL_TRIANGLE_FAN;
+    ofPushMatrix();{
+        ofScale(data.rev_radius, data.rev_radius, 1);
+        rshape_vbo.bind();
+        rshape_vbo.draw(mode, 0, rshape_points.size());
+        rshape_vbo.unbind();
+    }ofPopMatrix();
 	
-	//if(data.bShowUI) ui->draw();
+	if(data.bShowUI) ui->draw();
 	
 	ofPopMatrix();
 }
@@ -201,9 +195,9 @@ void dt_circle_note_on::fire(){
 		
 	//	update_world_position();
 		
-		if(output_circles.size()!=0){
+		//if(output_circles.size()!=0){
 			data.fire_rate = 1.0;
-		}
+		//}
 		
 	}
 }
@@ -250,6 +244,8 @@ void dt_circle_note_on::make_vbo(){
 	float start_angle = 0;
 	float r = 1.0;
 	
+    float hue_base = ofRandom(0.0, 1.0);
+    
 	for(int i=0; i<beat_num; i++){
 		bool on = seq->getDataFromBeat(i);
 		if(on){
@@ -258,11 +254,15 @@ void dt_circle_note_on::make_vbo(){
 			float x = r * cosf(angle*DEG_TO_RAD);
 			float y = r * sinf(angle*DEG_TO_RAD);
             
+            ofFloatColor c;
+            c.setHsb(hue_base + i*0.01, ofRandom(0.6, 0.8), 0.8);
 			rshape_points.push_back(ofVec2f(x,y));
+            rshape_colors.push_back(c);
 		}
 	}
 	
 	rshape_vbo.setVertexData(&rshape_points[0], rshape_points.size(), GL_DYNAMIC_DRAW);
+    rshape_vbo.setColorData(&rshape_colors[0], rshape_colors.size(), GL_DYNAMIC_DRAW);
 }
 
 void dt_circle_note_on::make_potato_shape(){
@@ -294,7 +294,9 @@ void dt_circle_note_on::make_potato_shape(){
 		float x = r * (cosf(angle * DEG_TO_RAD));
 		float y = r * (sinf(angle * DEG_TO_RAD));
 		rshape_points.push_back(ofVec2f(x, y));
+        rshape_colors.push_back(ofFloatColor(0,0,0));
 	}
 	
 	rshape_vbo.setVertexData(&rshape_points[0], rshape_points.size(), GL_DYNAMIC_DRAW);
+    rshape_vbo.setColorData(&rshape_colors[0], rshape_colors.size(), GL_DYNAMIC_DRAW);
 }

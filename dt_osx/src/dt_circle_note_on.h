@@ -38,6 +38,8 @@ public:
 	
 	ofVbo rshape_vbo;
 	vector<ofVec2f> rshape_points;
+    vector<ofFloatColor> rshape_colors;
+    
 	void change_rshape(int type);
 	void make_vbo();
 	void make_potato_shape();

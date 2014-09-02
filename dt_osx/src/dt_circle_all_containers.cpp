@@ -73,31 +73,25 @@ void dt_circle_all_containers::add_line_to_all_lines(const ofVec2f& p1, const of
 
 void dt_circle_all_containers::draw(){
     
-    ofEnableAlphaBlending();
 	if(param_container->circles.size()<300)  param_container->draw();
 	if(output_container->circles.size()<100) output_container->draw();
 	note_on_container->draw();
-	ofDisableAlphaBlending();
     
-	if(!dt_config::DT_MASSIVE_MODE)	{
-		// all lines
-		ofEnableAlphaBlending();
-		glLineWidth(1);
-		all_lines_vbo.bind();
-		all_lines_vbo.updateColorData(&all_lines_color[0], all_lines_color.size());
-		all_lines_vbo.updateVertexData(&all_lines_pos[0], all_lines_pos.size());
-		all_lines_vbo.draw(GL_LINES, 0, all_lines_pos.size());
-		all_lines_vbo.unbind();
-		ofDisableAlphaBlending();
+    // all lines
+    glLineWidth(1);
+    all_lines_vbo.bind();
+    all_lines_vbo.updateColorData(&all_lines_color[0], all_lines_color.size());
+    all_lines_vbo.updateVertexData(&all_lines_pos[0], all_lines_pos.size());
+    all_lines_vbo.draw(GL_LINES, 0, all_lines_pos.size());
+    all_lines_vbo.unbind();
 
-		// all points
-		glPointSize(1);
-		all_points_vbo.bind();
-		all_points_vbo.updateColorData(&all_points_color[0], all_points_color.size());
-		all_points_vbo.updateVertexData(&all_points_pos[0], all_points_pos.size());
-		all_points_vbo.draw(GL_POINTS, 0, all_points_pos.size());
-		all_points_vbo.unbind();
-	}
+    // all points
+    glPointSize(6);
+    all_points_vbo.bind();
+    all_points_vbo.updateColorData(&all_points_color[0], all_points_color.size());
+    all_points_vbo.updateVertexData(&all_points_pos[0], all_points_pos.size());
+    all_points_vbo.draw(GL_POINTS, 0, all_points_pos.size());
+    all_points_vbo.unbind();
 }
 
 void dt_circle_all_containers::step(){

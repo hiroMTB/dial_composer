@@ -56,10 +56,10 @@ public:
 
 
 	// draw mode
-	static bool DT_MASSIVE_MODE;
 	static bool DT_SHOW_LINER_DRAWER;
 	static bool DT_SHOW_PARAM;
 		
+    static float DT_SIZE_BASE;
 	
 public:
 	ofApp * app;

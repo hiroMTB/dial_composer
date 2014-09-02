@@ -86,7 +86,23 @@ void dt_touch::mousePressed(int x, int y, int button){
 			t_obj = DT_TOUCH_OBJ_CIRCLE;
 		}else{
 			// touch canvas
-			make_random_circle(t.x, t.y, 100);
+			//make_random_circle(t.x, t.y, 100);
+            
+			dt_circle_note_on * c = new dt_circle_note_on();
+			app->all_containers.note_on_container->addCircle(c);
+            c->setup(ofRandom(dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX));
+			c->data.position.x = x;
+			c->data.position.y = y;
+			app->all_containers.circle_base_container->addCircle(c);
+			touched_circle = c;
+			touched_circle_center = c->data.position;
+			touch_entry.set(x, y);
+			dt_circle_base::selected_circle = c;
+			
+			touch_time = -1;
+			
+			t_obj = DT_TOUCH_OBJ_CANVAS;
+
 		}
 	}
 }
