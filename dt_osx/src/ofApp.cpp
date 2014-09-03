@@ -51,7 +51,7 @@ void ofApp::setupModule(){
 	osc_recorder.setup();
 	
 	sequence_thread.setup();
-	sequence_thread.change_bpm( 300 );
+	sequence_thread.change_bpm( 120 );
 	sequence_thread.start();
 }
 

@@ -139,4 +139,6 @@ void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
 	point_vbo.draw( GL_POINTS, 0, points.size() );
 	point_vbo.unbind();
 	glPopMatrix();
+	
+	ofEnableAlphaBlending();
 }
