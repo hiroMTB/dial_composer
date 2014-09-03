@@ -97,7 +97,7 @@
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="0.0" y="338" width="1219" height="674"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1258"/>
             <view key="contentView" id="372">
                 <rect key="frame" x="0.0" y="0.0" width="1219" height="674"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -107,85 +107,98 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <openGLView fixedFrame="YES" antiAliasingType="supersample" rendererType="accelerated" samplingRate="8" useAuxiliaryDepthBufferStencil="NO" useDoubleBufferingEnabled="YES" allowOffline="YES" useRecovery="YES" id="536" customClass="dt_GLView">
-                                <rect key="frame" x="0.0" y="0.0" width="919" height="674"/>
+                                <rect key="frame" x="0.0" y="0.0" width="930" height="674"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </openGLView>
                             <customView id="JlJ-z2-6AB">
-                                <rect key="frame" x="920" y="0.0" width="299" height="674"/>
+                                <rect key="frame" x="931" y="0.0" width="288" height="674"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="NSq-Ay-K7t">
-                                        <rect key="frame" x="54" y="639" width="35" height="35"/>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="SgV-25-UHk">
+                                        <rect key="frame" x="57" y="639" width="175" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="40x-eG-4TM">
+                                                <rect key="frame" x="72" y="0.0" width="35" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="Qld-Fu-1V6"/>
+                                                    <constraint firstAttribute="height" constant="35" id="uRw-zT-VgN"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoLeftTemplate" imagePosition="only" alignment="center" alternateImage="NSGoRightTemplate" state="on" imageScaling="proportionallyDown" inset="2" id="hhL-B8-IeL">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="G2I-zg-EfR">
+                                                <rect key="frame" x="38" y="0.0" width="35" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="ipT-AA-muF"/>
+                                                    <constraint firstAttribute="width" constant="35" id="zVu-dW-Jlx"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSBluetoothTemplate" imagePosition="only" alignment="center" alternateImage="NSShareTemplate" imageScaling="proportionallyDown" inset="2" id="yvK-Ew-hIp">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="NSq-Ay-K7t">
+                                                <rect key="frame" x="4" y="0.0" width="35" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="PST-S4-eiT"/>
+                                                    <constraint firstAttribute="width" constant="35" id="u72-W8-xGm"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" alternateImage="NSRemoveTemplate" state="on" imageScaling="proportionallyDown" inset="2" id="ZCa-BC-X96">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="zJO-sn-LGl">
+                                                <rect key="frame" x="106" y="0.0" width="35" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="EVG-LC-sik"/>
+                                                    <constraint firstAttribute="height" constant="35" id="lR6-co-eW0"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSListViewTemplate" imagePosition="only" alignment="center" alternateImage="NSStopProgressTemplate" state="on" imageScaling="proportionallyDown" inset="2" id="POF-q0-OrT">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Vq3-sR-Wvm">
+                                                <rect key="frame" x="140" y="0.0" width="35" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="EWs-kD-V8M"/>
+                                                    <constraint firstAttribute="height" constant="35" id="xAJ-eQ-K4k"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSQuickLookTemplate" imagePosition="only" alignment="center" alternateImage="NSRefreshFreestandingTemplate" state="on" imageScaling="proportionallyDown" inset="2" id="wiB-u0-dIf">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="PST-S4-eiT"/>
-                                            <constraint firstAttribute="width" constant="35" id="u72-W8-xGm"/>
+                                            <constraint firstItem="Vq3-sR-Wvm" firstAttribute="top" secondItem="SgV-25-UHk" secondAttribute="top" id="15a-Xy-txV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vq3-sR-Wvm" secondAttribute="trailing" id="5Hg-8m-gXl"/>
+                                            <constraint firstItem="Vq3-sR-Wvm" firstAttribute="leading" secondItem="zJO-sn-LGl" secondAttribute="trailing" constant="-1" id="BWJ-2y-uLC"/>
+                                            <constraint firstItem="NSq-Ay-K7t" firstAttribute="trailing" secondItem="G2I-zg-EfR" secondAttribute="leading" constant="1" id="Iim-qr-VNW"/>
+                                            <constraint firstAttribute="bottom" secondItem="Vq3-sR-Wvm" secondAttribute="bottom" id="LtS-Wg-FqC"/>
+                                            <constraint firstItem="40x-eG-4TM" firstAttribute="leading" secondItem="NSq-Ay-K7t" secondAttribute="trailing" constant="33" id="MvF-My-bpm"/>
+                                            <constraint firstItem="Vq3-sR-Wvm" firstAttribute="leading" secondItem="40x-eG-4TM" secondAttribute="trailing" constant="33" id="Nzk-eL-r5d"/>
+                                            <constraint firstItem="Vq3-sR-Wvm" firstAttribute="leading" secondItem="SgV-25-UHk" secondAttribute="leading" constant="140" id="e7I-HQ-6Hx"/>
+                                            <constraint firstItem="Vq3-sR-Wvm" firstAttribute="top" secondItem="zJO-sn-LGl" secondAttribute="top" id="k8k-zP-piI"/>
+                                            <constraint firstItem="Vq3-sR-Wvm" firstAttribute="top" secondItem="NSq-Ay-K7t" secondAttribute="top" id="maD-2X-NhY"/>
+                                            <constraint firstItem="Vq3-sR-Wvm" firstAttribute="top" secondItem="G2I-zg-EfR" secondAttribute="top" id="xJF-cW-CRL"/>
+                                            <constraint firstItem="Vq3-sR-Wvm" firstAttribute="top" secondItem="40x-eG-4TM" secondAttribute="top" id="z7b-vH-CDk"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" alternateImage="NSRemoveTemplate" state="on" imageScaling="proportionallyDown" inset="2" id="ZCa-BC-X96">
-                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="G2I-zg-EfR">
-                                        <rect key="frame" x="93" y="639" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="ipT-AA-muF"/>
-                                            <constraint firstAttribute="width" constant="35" id="zVu-dW-Jlx"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSBluetoothTemplate" imagePosition="only" alignment="center" alternateImage="NSShareTemplate" imageScaling="proportionallyDown" inset="2" id="yvK-Ew-hIp">
-                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="40x-eG-4TM">
-                                        <rect key="frame" x="132" y="639" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="Qld-Fu-1V6"/>
-                                            <constraint firstAttribute="height" constant="35" id="uRw-zT-VgN"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoLeftTemplate" imagePosition="only" alignment="center" alternateImage="NSGoRightTemplate" state="on" imageScaling="proportionallyDown" inset="2" id="hhL-B8-IeL">
-                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="zJO-sn-LGl">
-                                        <rect key="frame" x="171" y="639" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="EVG-LC-sik"/>
-                                            <constraint firstAttribute="height" constant="35" id="lR6-co-eW0"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSListViewTemplate" imagePosition="only" alignment="center" alternateImage="NSStopProgressTemplate" state="on" imageScaling="proportionallyDown" inset="2" id="POF-q0-OrT">
-                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="Vq3-sR-Wvm">
-                                        <rect key="frame" x="210" y="639" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="EWs-kD-V8M"/>
-                                            <constraint firstAttribute="height" constant="35" id="xAJ-eQ-K4k"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSQuickLookTemplate" imagePosition="only" alignment="center" alternateImage="NSRefreshFreestandingTemplate" state="on" imageScaling="proportionallyDown" inset="2" id="wiB-u0-dIf">
-                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
+                                    </customView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="NSq-Ay-K7t" firstAttribute="top" secondItem="G2I-zg-EfR" secondAttribute="top" id="1kD-GQ-aYN"/>
-                                    <constraint firstItem="G2I-zg-EfR" firstAttribute="top" secondItem="JlJ-z2-6AB" secondAttribute="top" id="F4E-By-npM"/>
-                                    <constraint firstItem="Vq3-sR-Wvm" firstAttribute="leading" secondItem="zJO-sn-LGl" secondAttribute="trailing" constant="4" id="Tf2-Vt-FxU"/>
-                                    <constraint firstItem="40x-eG-4TM" firstAttribute="top" secondItem="JlJ-z2-6AB" secondAttribute="top" id="Zpl-Bf-8pW"/>
-                                    <constraint firstItem="zJO-sn-LGl" firstAttribute="top" secondItem="JlJ-z2-6AB" secondAttribute="top" id="cEN-1U-X4D"/>
-                                    <constraint firstItem="Vq3-sR-Wvm" firstAttribute="top" secondItem="JlJ-z2-6AB" secondAttribute="top" id="ehz-Eh-wP1"/>
-                                    <constraint firstItem="G2I-zg-EfR" firstAttribute="leading" secondItem="NSq-Ay-K7t" secondAttribute="trailing" constant="4" id="i0G-us-Sw8"/>
-                                    <constraint firstItem="zJO-sn-LGl" firstAttribute="leading" secondItem="40x-eG-4TM" secondAttribute="trailing" constant="4" id="ox9-gR-kEW"/>
-                                    <constraint firstAttribute="centerX" secondItem="40x-eG-4TM" secondAttribute="centerX" id="prZ-cp-okc"/>
-                                    <constraint firstItem="40x-eG-4TM" firstAttribute="leading" secondItem="G2I-zg-EfR" secondAttribute="trailing" constant="4" id="wUZ-Xg-I6N"/>
+                                    <constraint firstItem="SgV-25-UHk" firstAttribute="top" secondItem="JlJ-z2-6AB" secondAttribute="top" id="c8y-hu-AI4"/>
+                                    <constraint firstItem="SgV-25-UHk" firstAttribute="top" secondItem="JlJ-z2-6AB" secondAttribute="top" id="peE-en-i3K"/>
+                                    <constraint firstItem="SgV-25-UHk" firstAttribute="centerX" secondItem="JlJ-z2-6AB" secondAttribute="centerX" id="sWf-pb-gni"/>
                                 </constraints>
                             </customView>
                         </subviews>
