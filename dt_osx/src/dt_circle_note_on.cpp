@@ -88,10 +88,6 @@ void dt_circle_note_on::set_beats(int beat_num){
 void dt_circle_note_on::set_speed(int speed){
 	data.speed = speed;
 	data.rev_angle = seq->indicator * data.rev_speed;
-	data.rev_radius = dt_config::DT_SIZE_BASE * 0.5;
-	data.collision_radius = data.rev_radius * 2.0;
-	data.input_connection_radius = data.collision_radius + 100;
-	data.output_connection_radius = data.collision_radius + 100;
 }
 
 void dt_circle_note_on::update(){
@@ -105,6 +101,13 @@ void dt_circle_note_on::update(){
 	
 		check_connection();
 	}
+    
+    // size update
+    data.rev_radius = dt_config::DT_SIZE_BASE * 0.5;
+	data.collision_radius = data.rev_radius * 2.0;
+	data.input_connection_radius = data.collision_radius + 100;
+	data.output_connection_radius = data.collision_radius + 100;
+
 }
 
 void dt_circle_note_on::check_connection(){
@@ -242,7 +245,7 @@ void dt_circle_note_on::make_vbo(){
 	
 	int beat_num = seq->total_beats;
 	float start_angle = 0;
-	float r = 1.0;
+	float r = 0.8;
 	
     float hue_base = ofRandom(0.0, 1.0);
     

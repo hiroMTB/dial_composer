@@ -29,10 +29,12 @@ void ofApp::windowResized(int w, int h){
 	canvas.setX(80);
 	canvas.setY(50);
 
-	canvas.width = w-160;
-	canvas.height = h-450;
+	canvas.width = w-100;
+	canvas.height = h-50;
 	
 	config.reset_position();
+    
+    dt_config::DT_SIZE_BASE = max(w, h)/12.0;
 }
 
 void ofApp::setup(){

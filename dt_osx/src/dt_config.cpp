@@ -130,8 +130,8 @@ void dt_config::setup(){
 
 void dt_config::reset_position(){
 	app = ofApp::getInstance();
-	int x = app->canvas.x + 20;
-	int y = app->canvas.y + app->canvas.height + 180;
+	int x = 20;
+	int y = ofGetHeight() - width;
 
 	int w = width + 20;
 	status.setPosition(x,  y);

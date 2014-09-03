@@ -213,6 +213,7 @@ void dt_dial_ui::draw_HOME(){
 #ifndef NOT_USE_OF_CIRCLE
 	ofCircle(0, 0, ui_base_radius);
 #else
+    glLineWidth(1);
 	parent->app->circle_drawer.draw(ui_base_radius, GL_LINES);
 #endif
 

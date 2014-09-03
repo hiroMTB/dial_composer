@@ -19,7 +19,7 @@
 ofFloatColor dt_circle_data::defaultColor = ofFloatColor(0);
 
 dt_circle_data::dt_circle_data():
-name("def"), bStop(false), bMute(false), position(ofVec2f(-1,-1)), radius(12), rev_angle(0), rev_radius(20), rev_speed(0), phase_step(0), collision_radius(10), bCollide(true), input_connection_radius(0), output_connection_radius(0), bShowUI(true), circle_type(DT_CIRCLE_BASE),speed(1),step_age(0), bFired(false), fire_rate(0), fired_ch(-1)
+name("def"), bStop(false), bMute(false), position(ofVec2f(-1,-1)), radius(12), rev_angle(0), rev_radius(20), rev_speed(0), phase_step(0), collision_radius(10), bCollide(true), input_connection_radius(0), output_connection_radius(0), bShowUI(false), circle_type(DT_CIRCLE_BASE),speed(1),step_age(0), bFired(false), fire_rate(0), fired_ch(-1)
 {
 	move_speed.set(0,0);
 }

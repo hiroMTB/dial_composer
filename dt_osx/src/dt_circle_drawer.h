@@ -25,7 +25,7 @@ public:
 	 *
 	 */
 	dt_circle_drawer(){
-		setup(30);
+		setup(60);
 	}
 	
 	void setup(int _resolution){
