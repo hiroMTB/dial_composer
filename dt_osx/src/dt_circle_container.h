@@ -117,10 +117,10 @@ public:
 						case DT_CIRCLE_NOTE_NUM: if(c1->note_num_count<3) c1->note_num_count++;	break;
 						case DT_CIRCLE_DURATION: if(c1->duration_count<3) c1->duration_count++; break;
 						case DT_CIRCLE_PAN:		 if(c1->pan_count<3) c1->pan_count++; break;
-						case DT_CIRCLE_CC12:	 if(c1->cc12_count<3) c1->cc12_count++; break;
-						case DT_CIRCLE_CC13:	 if(c1->cc13_count<3) c1->cc13_count++; break;
-						case DT_CIRCLE_CC14:	 if(c1->cc14_count<3) c1->cc14_count++; break;
-						case DT_CIRCLE_CC16:	 if(c1->cc16_count<3) c1->cc16_count++; break;
+						case DT_CIRCLE_CC1:	 if(c1->cc12_count<3) c1->cc12_count++; break;
+						case DT_CIRCLE_CC2:	 if(c1->cc13_count<3) c1->cc13_count++; break;
+						case DT_CIRCLE_CC3:	 if(c1->cc14_count<3) c1->cc14_count++; break;
+						case DT_CIRCLE_CC4:	 if(c1->cc16_count<3) c1->cc16_count++; break;
 						default: break;
 					}
 				}
@@ -151,7 +151,7 @@ public:
 				ofVec2f &p1 = c1->data.position;
 				float r1 = c1->data.collision_radius;
 				
-				float quickness = 0.1f;
+				float quickness = 0.03f;
 				float rad_range = 1.0;
 				
 				for(int j=i+1; j<circles.size(); j++){

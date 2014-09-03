@@ -34,7 +34,7 @@ void ofApp::windowResized(int w, int h){
 	
 	config.reset_position();
     
-    dt_config::DT_SIZE_BASE = max(w, h)/12.0;
+    dt_config::DT_SIZE_BASE = max(w, h)/13.0;
 }
 
 void ofApp::setup(){

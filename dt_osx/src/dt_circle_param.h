@@ -49,10 +49,10 @@ public:
 	static ofColor velocity_color;
 	static ofColor duration_color;
 	static ofColor pan_color;
-	static ofColor cc12_color;
-	static ofColor cc13_color;
-	static ofColor cc14_color;
-	static ofColor cc16_color;
+	static ofColor cc1_color;
+	static ofColor cc2_color;
+	static ofColor cc3_color;
+	static ofColor cc4_color;
 };
 
 
@@ -97,42 +97,42 @@ public:
 };
 
 
-class dt_circle_param_cc12 : public dt_circle_param_base {
+class dt_circle_param_cc1 : public dt_circle_param_base {
 public:
-	dt_circle_param_cc12(){
-		data.circle_type = DT_CIRCLE_CC12;
-		initial = "C";
-		data.circle_color = data.indi_color = data.line_color = cc12_color;
+	dt_circle_param_cc1(){
+		data.circle_type = DT_CIRCLE_CC1;
+		initial = "C1";
+		data.circle_color = data.indi_color = data.line_color = cc1_color;
 		data.line_color *= line_color_rate * 0.01;
 	};
 };
 
-class dt_circle_param_cc13 : public dt_circle_param_base {
+class dt_circle_param_cc2 : public dt_circle_param_base {
 public:
-	dt_circle_param_cc13(){
-		data.circle_type = DT_CIRCLE_CC13;
-		initial = "C";
-		data.circle_color = data.indi_color = data.line_color = cc13_color;
+	dt_circle_param_cc2(){
+		data.circle_type = DT_CIRCLE_CC2;
+		initial = "C2";
+		data.circle_color = data.indi_color = data.line_color = cc2_color;
 		data.line_color *= line_color_rate * 0.01;
 	};
 };
 
-class dt_circle_param_cc14 : public dt_circle_param_base {
+class dt_circle_param_cc3 : public dt_circle_param_base {
 public:
-	dt_circle_param_cc14(){
-		data.circle_type = DT_CIRCLE_CC14;
-		initial = "C";
-		data.circle_color = data.indi_color = data.line_color = cc14_color;
+	dt_circle_param_cc3(){
+		data.circle_type = DT_CIRCLE_CC3;
+		initial = "C3";
+		data.circle_color = data.indi_color = data.line_color = cc3_color;
 		data.line_color *= line_color_rate * 0.01;
 	};
 };
 
-class dt_circle_param_cc16 : public dt_circle_param_base {
+class dt_circle_param_cc4 : public dt_circle_param_base {
 public:
-	dt_circle_param_cc16(){
-		data.circle_type = DT_CIRCLE_CC16;
-		initial = "C";
-		data.circle_color = data.indi_color = data.line_color = cc16_color;
+	dt_circle_param_cc4(){
+		data.circle_type = DT_CIRCLE_CC4;
+		initial = "C4";
+		data.circle_color = data.indi_color = data.line_color = cc4_color;
 		data.line_color *= line_color_rate * 0.01;
 	};
 };

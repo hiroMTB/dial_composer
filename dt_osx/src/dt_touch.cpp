@@ -145,19 +145,19 @@ void dt_touch::make_random_circle(int x, int y, int num=100){
 				app->all_containers.param_container->addCircle(p);
 				c = p;
 			}else if(rand<0.5){
-				dt_circle_param_cc12 * y = new dt_circle_param_cc12();
+				dt_circle_param_cc1 * y = new dt_circle_param_cc1();
 				app->all_containers.param_container->addCircle(y);
 				c = y;
 			}else if(rand<0.6){
-				dt_circle_param_cc13 * y = new dt_circle_param_cc13();
+				dt_circle_param_cc2 * y = new dt_circle_param_cc2();
 				app->all_containers.param_container->addCircle(y);
 				c = y;
 			}else if(rand<0.7){
-				dt_circle_param_cc14 * y = new dt_circle_param_cc14();
+				dt_circle_param_cc3 * y = new dt_circle_param_cc3();
 				app->all_containers.param_container->addCircle(y);
 				c = y;
 			}else if(rand<0.8){
-				dt_circle_param_cc16 * y = new dt_circle_param_cc16();
+				dt_circle_param_cc4 * y = new dt_circle_param_cc4();
 				app->all_containers.param_container->addCircle(y);
 				c = y;
 			}

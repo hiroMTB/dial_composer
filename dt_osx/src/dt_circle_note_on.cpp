@@ -104,7 +104,7 @@ void dt_circle_note_on::update(){
     
     // size update
     data.rev_radius = dt_config::DT_SIZE_BASE * 0.5;
-	data.collision_radius = data.rev_radius * 2.0;
+	data.collision_radius = data.rev_radius * 1.5;
 	data.input_connection_radius = data.collision_radius + 100;
 	data.output_connection_radius = data.collision_radius + 100;
 

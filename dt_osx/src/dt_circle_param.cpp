@@ -133,13 +133,12 @@ void dt_circle_param_base::fire(){
 }
 
 
-
 ofColor dt_circle_param_base::noteNum_color =	ofColor(184,  88,  32);
 ofColor dt_circle_param_base::velocity_color =	ofColor(247, 106, 129);
 ofColor dt_circle_param_base::duration_color =	ofColor( 52,  78, 168);
-ofColor dt_circle_param_base::pan_color =			ofColor( 30, 141,  25);
-ofColor dt_circle_param_base::cc12_color =		ofColor(133, 135,  65);
-ofColor dt_circle_param_base::cc13_color =		ofColor(160, 163,  79);
-ofColor dt_circle_param_base::cc14_color =		ofColor(201, 204,  98);
-ofColor dt_circle_param_base::cc16_color =		ofColor(241, 244,  138);
+ofColor dt_circle_param_base::pan_color =		ofColor( 30, 141,  25);
+ofColor dt_circle_param_base::cc1_color =		ofColor(133, 135,  65);
+ofColor dt_circle_param_base::cc2_color =		ofColor(160, 163,  79);
+ofColor dt_circle_param_base::cc3_color =		ofColor(201, 204,  98);
+ofColor dt_circle_param_base::cc4_color =		ofColor(241, 244,  138);
 

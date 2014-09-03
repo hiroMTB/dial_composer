@@ -13,6 +13,7 @@
 #include "dt_circle_base.h"
 #include "dt_rhythm_lib.h"
 
+#include "dt_circle_param.h"
 
 class dt_circle_note_on : public dt_circle_base{
 
@@ -24,7 +25,6 @@ public:
 	virtual void update();
 	virtual void draw();
 
-
 	void set_beats(int beat_num);
 	void set_speed(int speed);
 	
@@ -32,8 +32,7 @@ public:
 	
 	virtual void post_step();
 	virtual void fire();
-	
-	
+		
 	~dt_circle_note_on();
 	
 	ofVbo rshape_vbo;
@@ -49,6 +48,14 @@ public:
 	vector<dt_circle_base*> output_circles;
 	
 	int note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count, cc16_count;
-	
-	int intersection(float p0_x, float p0_y, float p1_x, float p1_y, float p2_x, float p2_y, float p3_x, float p3_y, float *i_x, float *i_y);
+	   
+    dt_circle_param_noteNum     noteNum;
+    dt_circle_param_velocity    vel;
+    dt_circle_param_duration    dur;
+    dt_circle_param_pan         pan;
+    dt_circle_param_cc1         cc1;
+    dt_circle_param_cc2         cc2;
+    dt_circle_param_cc3         cc3;
+    dt_circle_param_cc4         cc4;
+    
 };
