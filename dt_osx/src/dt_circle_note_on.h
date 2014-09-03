@@ -28,32 +28,27 @@ class dt_circle_note_on : public dt_circle_base{
 
 public:
 	dt_circle_note_on();
-	
+	~dt_circle_note_on();
+		
 	// override
-	virtual void setup(int beat_num);
+	virtual void setup( int beat_num );
 	virtual void update();
 	virtual void draw();
-
-	void set_beats(int beat_num);
-	void set_speed(int speed);
-	
-	void check_connection();
-	
 	virtual void fire();
-		
-	~dt_circle_note_on();
+
+	void set_beats( int beat_num );
+	void set_speed( int speed );
+	void check_connection();
+	void change_rshape( int type );
+	void make_vbo();
+	void make_potato_shape();
+	void update_world_position();
 	
 	ofVbo rshape_vbo;
 	vector<ofVec2f> rshape_points;
     vector<ofFloatColor> rshape_colors;
     
-	void change_rshape(int type);
-	void make_vbo();
-	void make_potato_shape();
-	void update_world_position();
-	
 	vector<dt_circle_base*> input_circles;
 	vector<dt_circle_base*> output_circles;
-    
     dt_param_state p_state;
 };

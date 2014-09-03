@@ -8,12 +8,29 @@
 
 #pragma once
 
-
 class ofApp;
 
 class dt_sequencer{
 
 public:
+	
+	dt_sequencer();
+	~dt_sequencer(){};
+	
+	void setup(float beats);
+	
+	void updateIndicator();
+	void updateIndicator(bool forward);
+	
+	void setRhythmShape(int type);
+	void incRhythmShape(int n);
+	
+	int	getCurrentBeat();
+	bool getDataFromBeat(int beat);
+	bool getDataFromStep(int step);
+	bool getDataNow();
+	bool isOnBeat();
+
 	ofApp * app;
 	
 	bool bCounter_clockwise;
@@ -23,23 +40,4 @@ public:
 	unsigned int total_steps;
 	unsigned int total_beats;
 	unsigned int indicator;
-
-	
-	dt_sequencer();
-	~dt_sequencer(){};
-	
-	void setup(float beats);
-	
-	void updateIndicator();
-	void updateIndicator(bool forward);
-
-	void setRhythmShape(int type);
-	void incRhythmShape(int n);
-	
-	int	getCurrentBeat();
-	bool getDataFromBeat(int beat);
-	bool getDataFromStep(int step);
-	bool getDataNow();
-	bool isOnBeat();
-	
 };

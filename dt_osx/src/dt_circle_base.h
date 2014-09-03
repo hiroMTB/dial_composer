@@ -39,10 +39,7 @@ class dt_circle_data{
 	
 public:
 	
-	
 	dt_circle_data();
-
-	static ofFloatColor defaultColor;
 	
 	bool bStop;
 	bool bMute;
@@ -52,6 +49,8 @@ public:
 	
 	int phase_step;
 	int fired_ch;
+	int step_age;
+	int speed;
 	
 	float radius;
 	float rev_angle;
@@ -62,24 +61,21 @@ public:
 	float output_connection_radius;
 	float fire_rate;
 
-	int step_age;
-	int speed;
-	
 	string name;
 	
 	ofVec2f position;
 	ofVec2f move_speed;
 	ofVec2f world_position;
+	ofVec2f indi_current_point;
+	ofVec2f indi_next_point;
+	ofVec2f indi_point_adder;
+	
+	static ofFloatColor defaultColor;
 	ofFloatColor indi_color;
 	ofFloatColor line_color;
 	ofFloatColor circle_color;
 	
 	dt_circle_type circle_type;
-	
-	ofVec2f indi_current_point;
-	ofVec2f indi_next_point;
-	ofVec2f indi_point_adder;
-	
 };
 
 
@@ -93,7 +89,6 @@ public:
 class ofApp;
 class dt_dial_ui;
 
-
 class dt_circle_base{
 	
 public:
@@ -104,7 +99,7 @@ public:
 	ofApp * app;
 	
 	dt_circle_base();
-	virtual void setup(int beat=4) = 0;
+	virtual void setup( int beat=4 ) = 0;
 	virtual void update() = 0;
 	virtual void draw() = 0;
 
@@ -121,15 +116,14 @@ public:
 	// for animation
 	unsigned int wait_step;
 	
-	void change_beat(int beat);
+	void change_beat( int beat );
     
-	void setup_text(string initial);
+	void setup_text( string initial );
 	void draw_initial();
     ofTrueTypeFont * font;
     ofVboMesh text_mesh;
     ofPoint text_pos;
 
 	string initial;
-
 };
 

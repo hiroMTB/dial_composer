@@ -55,12 +55,12 @@ public:
 	void draw();
 	void step();
 	
-	void add_point_to_all_points(const  ofVec2f& p, const ofFloatColor &c);
-	void add_line_to_all_lines(const ofVec2f &p1, const ofVec2f &p2, const ofFloatColor &c1, const ofFloatColor &c2);
+	void add_point_to_all_points( const  ofVec2f& p, const ofFloatColor &c );
+	void add_line_to_all_lines( const ofVec2f &p1, const ofVec2f &p2, const ofFloatColor &c1, const ofFloatColor &c2 );
 	
-	void change_speed_random_all(int min, int max);
-	void change_beat_all(int beat);
+	void change_speed_random_all( int min, int max );
+	void change_beat_all( int beat );
 	void change_position_all();
-	void change_beat_resolution_all(int res);
+	void change_beat_resolution_all( int res );
 	void change_osc_ch_all();
 };

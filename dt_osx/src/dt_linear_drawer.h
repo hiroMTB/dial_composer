@@ -16,12 +16,10 @@ class dt_linear_drawer{
 	
 public:
 	dt_linear_drawer();
+	void draw( int x, int y, int w, int h, float scale );
 
 	ofApp * app;
-	
-	void draw(int x, int y, int w, int h, float scale);
 
-	
 	ofVbo point_vbo;
 	vector<ofVec2f> points;
 	vector<ofFloatColor> colors_p;

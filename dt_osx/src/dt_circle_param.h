@@ -17,34 +17,21 @@ class dt_circle_param_base : public dt_circle_base{
 
 public:
 	dt_circle_param_base();
+	~dt_circle_param_base();
 	
 	//override
 	virtual void setup(int beat_num);
-
+	virtual void fire();
 	void update();
 	void draw();
-	
-	virtual void fire();
-
 	void draw_vbo();
-	
-	~dt_circle_param_base();
-	
-	ofVbo rshape_vbo;
-	vector<ofVec2f> rshape_points;
-
 	void make_vbo();
 	void change_rshape(int type);
-	
-	
+
 	float param_on;
 	float param_off;
-	
 	float param_min;
 	float param_max;
-	
-	static const int line_color_rate = 35;		// %
-	
 	static ofColor noteNum_color;
 	static ofColor velocity_color;
 	static ofColor duration_color;
@@ -53,9 +40,11 @@ public:
 	static ofColor cc2_color;
 	static ofColor cc3_color;
 	static ofColor cc4_color;
+	ofVbo rshape_vbo;
+	vector<ofVec2f> rshape_points;
 };
 
-
+float line_color_rate = 35.0;
 
 class dt_circle_param_noteNum : public dt_circle_param_base{
 public:

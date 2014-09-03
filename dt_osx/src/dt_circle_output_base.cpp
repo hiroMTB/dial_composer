@@ -9,46 +9,35 @@
 #include "dt_circle_output_base.h"
 #include "ofApp.h"
 #include "dt_font_manager.h"
-
 #include "dt_circle_drawer.h"
-
-
 
 void dt_circle_output_base::draw(){
 	
-	ofPushMatrix();
-	ofTranslate(data.position.x, data.position.y);		
-	ofSetColor(data.circle_color);
-	ofFill();
-	ofSetLineWidth(1);
-	glPointSize(1);
-#ifndef NOT_USE_OF_CIRCLE
-	ofCircle(0, 0, data.rev_radius);
-#else
-	app->circle_drawer.draw(data.rev_radius, GL_LINES);
-#endif
-	
+	ofPushMatrix();{
+		ofTranslate( data.position.x, data.position.y );
+		ofSetColor( data.circle_color );
+		ofFill();
+		ofSetLineWidth( 1 );
+		glPointSize( 1 );
+		app->circle_drawer.draw( data.rev_radius, GL_LINES );
+		
 #ifndef NOT_USE_OF_DRAW_TEXT
-	// Text
-    ofFill();
-    ofSetColor(105);
-	draw_initial();
+		ofFill();
+		ofSetColor( 105 );
+		draw_initial();
 #endif
-
-	ofPopMatrix();
+	}ofPopMatrix();
 }
 
-
 void dt_circle_output_base::update(){
-	if(dt_config::DT_PLAY_GEN_RHYTHM){
+	if( dt_config::DT_PLAY_GEN_RHYTHM ){
 		data.position += data.move_speed;
 		data.world_position = data.position;
 	}
 }
 
-
-void dt_circle_output_base::setup_ch(int _ch){
+void dt_circle_output_base::setup_ch( int _ch ){
 	ch = _ch;
-	initial = ofToString(ch);
-	setup_text(initial);
+	initial = ofToString( ch );
+	setup_text( initial );
 }

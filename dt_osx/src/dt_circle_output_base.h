@@ -17,17 +17,11 @@ class dt_circle_output_base : public dt_circle_base{
 public:
 	dt_circle_output_base(){};
 	~dt_circle_output_base(){};
-	
-  	// empty
-	virtual void setup(int beat_num){};
-	virtual void update();
+	virtual void setup( int beat_num ){};
 	virtual void fire(){};
-	
-    
-	// override
+	virtual void update();
 	virtual void draw();
-
-	void setup_ch(int ch);
+	void setup_ch( int ch );
 	
 	int ch;
 };

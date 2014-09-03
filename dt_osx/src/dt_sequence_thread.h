@@ -8,8 +8,6 @@
 
 #pragma once
 
-//#define USE_AUDIO_THREAD
-
 #ifndef USE_AUDIO_THREAD
 	#define USE_BOOST_THREAD
 

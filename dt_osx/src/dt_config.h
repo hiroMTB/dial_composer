@@ -18,7 +18,26 @@ class ofApp;
 class dt_config{
 
 public:
+	
+	dt_config();
+	
+	void setup();
+	void reset_position();
+	void update();
+	void draw();
+	void toggle();
 
+	inline static string toOnOff( bool b ){ return b ? "On" : "Off"; };
+	void synch_param();
+	
+	ofApp * app;
+	
+	// gui panel
+	int width = 250;
+	int height = 20;
+	
+	ofxOscReceiver osc_r;
+	
 	// status
 	static const int DT_CIRCLE_MAX = 20000;
 	static int	DT_MASTER_CLOCK_OUT_RESOLUTION;
@@ -27,14 +46,14 @@ public:
 	static const int	DT_OSC_OUT_CH_SYSTEM_MAX = 32;
 	static int			DT_OSC_OUT_CH_MAX;
 	static int			DT_OSC_OUT_CH_MIN;
-	static std::string	DT_OSC_OUT_ADDRESS_PREFIX;
-	static std::string	DT_OSC_OUT_ADDRESS;
+	static string		DT_OSC_OUT_ADDRESS_PREFIX;
+	static string		DT_OSC_OUT_ADDRESS;
 	static int			DT_OSC_OUT_PORT;
 	
 	// OSC in
-	static std::string	DT_OSC_IN_ADDRESS_PREFIX;
+	static string		DT_OSC_IN_ADDRESS_PREFIX;
 	static int			DT_OSC_IN_PORT;
-
+	
 	// Generative Rhythm
 	static bool DT_PLAY_GEN_RHYTHM;
 	static int DT_GEN_RHYTHM_RATE;
@@ -53,18 +72,15 @@ public:
 	static int DT_BUFFERED_RHYTHM_LOOP_START;
 	static int DT_BUFFERED_RHYTHM_LOOP_END;
 	static bool DT_SHOW_BUFFERED_RHYTHM;
-
-
+	
+	
 	// draw mode
 	static bool DT_SHOW_LINER_DRAWER;
 	static bool DT_SHOW_PARAM;
-		
+	
     static float DT_SIZE_BASE;
 	
-public:
-	ofApp * app;
 	
-
 	/*
 	 *
 	 *	Why we use ofxGui for just show parameter?
@@ -94,24 +110,6 @@ public:
 	ofxLabel massive_mode;
 	ofxLabel show_linear_drawer;
 	ofxLabel show_param;
-	
-	dt_config();
-	
-	void setup();
-	void reset_position();
-	void update();
-	void draw();
-	void toggle();
-
-	// gui panel
-	int width = 250;
-	int height = 20;
-	
-	ofxOscReceiver osc_r;
-	
-	inline static string toOnOff(bool b){ return b ? "On" : "Off"; };
-
-	void synch_param();
 };
 
 

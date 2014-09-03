@@ -21,13 +21,11 @@ public:
 
 	dt_rhythm_lib();
 	~dt_rhythm_lib();
+	void setup( int start_slot, int end_slot );
+	const RHYTHM_SHAPE& getRhythm( int slotNum, int type );
 	
 	SHAPE_TABLE shapes;
 	int maxSlot;
-
-	void setup(int start_slot, int end_slot);
-
-	const RHYTHM_SHAPE& getRhythm(int slotNum, int type);
-	int getRhythmSize(int slotNum);
+	int getRhythmSize( int slotNum );
 
 };

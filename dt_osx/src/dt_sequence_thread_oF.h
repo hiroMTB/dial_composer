@@ -16,21 +16,17 @@ class dt_sequence_thread_oF : public ofThread{
 
 public:
 	
-	ofApp * app;
 	dt_sequence_thread_oF();
-	
-	static int sleep_microsec;
-	static int sleep_millisec;
-	
-	static unsigned int master_tick;
-	static unsigned int master_step;
-	static unsigned int sleep_tick;
-	
-	bool stopRequested;
 	virtual void threadedFunction();
-	
 	void start();
 	void stop();
 	
+	ofApp * app;
 	
+	static int sleep_microsec;
+	static int sleep_millisec;
+	static unsigned int master_tick;
+	static unsigned int master_step;
+	static unsigned int sleep_tick;
+	bool stopRequested;
 };

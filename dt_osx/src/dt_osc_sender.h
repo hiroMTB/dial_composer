@@ -16,17 +16,15 @@ class dt_osc_sender{
 public:
 	dt_osc_sender();
 	
+	void setTargetAddress( string address );
+	void setTargetPort( int port );
+	void reset();
+	void send_message( ofxOscMessage &m );
+	void send_bundle( ofxOscBundle &b );
+	
 	string address;
 	int port;
 	
-	void setTargetAddress(string address);	// should call reset after set address
-	void setTargetPort(int port);
-	void reset();
-	
-	void send_message(ofxOscMessage &m);
-	void send_bundle(ofxOscBundle &b);
-	
 private:
 	ofxOscSender sender;
-
 };

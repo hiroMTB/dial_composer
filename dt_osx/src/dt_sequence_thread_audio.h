@@ -16,26 +16,19 @@ class dt_sequence_thread_audio{ // : public ofBaseSoundOutput{
 	
 public:
 	dt_sequence_thread_audio();
-	
+	void audioRequested( float * output, int bufferSize, int nChannels );
+	void change_bpm( int bpm );
+	void stop(){};
+
 	ofApp * app;
-	
 	int sampling_rate;
 	int buffer_size;
 	int wait_tick;
-	float min_sleep_micro_sec;
-	
 	int sleep_millisec;
 	int sleep_microsec;
-	
+	int bpm;
 	unsigned int master_step;
 	unsigned int sleep_tick;
-
-	void audioRequested(float * output, int bufferSize, int nChannels );
-	
-	void change_bpm(int bpm);
-
-	int bpm;
+	float min_sleep_micro_sec;
 	float random_amount;
-	
-	void stop(){};
 };
