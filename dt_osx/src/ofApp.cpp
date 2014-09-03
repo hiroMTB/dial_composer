@@ -52,6 +52,8 @@ void ofApp::setupVisual(){
 	ofEnableAlphaBlending();
 	ofEnableAntiAliasing();
 	ofEnableSmoothing();
+    
+    view_mode = 0;
 }
 
 void ofApp::setupModule(){
@@ -82,15 +84,24 @@ void ofApp::update(){
 
 
 void ofApp::draw(){
-	ofDisableAlphaBlending();
-	ofBackground(220);
-	ofSetupScreenOrtho();
-	
-	all_containers.draw();
-	
-	if(dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw(canvas.x+30, canvas.y+30, canvas.width-60, canvas.height-60, 1);
-		
-	config.draw();
+    ofBackground(220);
+
+    switch( view_mode ){
+        case 0:
+            ofSetupScreenOrtho();
+            all_containers.draw();
+            if(dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw(canvas.x+30, canvas.y+30, canvas.width-60, canvas.height-60, 1);
+            config.draw();
+            break;
+
+        case 1:
+            // draw rhythm screen
+            ofSetupScreenOrtho();
+            break;
+
+        default:
+            break;
+    }
 }
 
 void ofApp::mousePressed(int x, int y, int button){ touch.mousePressed(x, y, button);}
@@ -116,7 +127,10 @@ void ofApp::keyPressed(int key){
 			if(!bAlt) sequence_thread.change_sleep_time_microsec(sequence_thread.sleep_microsec += 1000);
 			else sequence_thread.master_delay++;
 			break;
- 		case '1': sequence_thread.change_bpm(100); break;
+            
+        // view_mode
+ 		case '0':  view_mode = 0; break;
+ 		case '1':  view_mode = 1; break;
 			
 		// play
 		case ' ': dt_config::DT_PLAY_GEN_RHYTHM = !dt_config::DT_PLAY_GEN_RHYTHM; config.synch_param(); break;

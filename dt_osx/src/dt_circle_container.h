@@ -96,7 +96,7 @@ public:
 		int connection_num_input = 0;
 		int connection_num_output = 0;
 
-		if(bInput) c1->note_num_count = c1->velocity_count = c1->duration_count = c1->pan_count = c1->cc12_count = c1->cc13_count = c1->cc14_count = c1->cc16_count = 0;
+		if(bInput) c1->p_state.reset();
 		
 		for(int i=0; i<circles.size(); i++){
 			
@@ -113,14 +113,14 @@ public:
 				if( bInput){
 					connection_num_input++;
 					switch(c2->data.circle_type){
-						case DT_CIRCLE_VELOCITY: if(c1->velocity_count<3) c1->velocity_count++; break;
-						case DT_CIRCLE_NOTE_NUM: if(c1->note_num_count<3) c1->note_num_count++;	break;
-						case DT_CIRCLE_DURATION: if(c1->duration_count<3) c1->duration_count++; break;
-						case DT_CIRCLE_PAN:		 if(c1->pan_count<3) c1->pan_count++; break;
-						case DT_CIRCLE_CC1:	 if(c1->cc12_count<3) c1->cc12_count++; break;
-						case DT_CIRCLE_CC2:	 if(c1->cc13_count<3) c1->cc13_count++; break;
-						case DT_CIRCLE_CC3:	 if(c1->cc14_count<3) c1->cc14_count++; break;
-						case DT_CIRCLE_CC4:	 if(c1->cc16_count<3) c1->cc16_count++; break;
+                        case DT_CIRCLE_NOTE_NUM:    c1->p_state.bNote = true; break;
+                        case DT_CIRCLE_VELOCITY:    c1->p_state.bVel = true; break;
+						case DT_CIRCLE_DURATION:    c1->p_state.bDur = true; break;
+						case DT_CIRCLE_PAN:         c1->p_state.bPan = true; break;
+						case DT_CIRCLE_CC1:         c1->p_state.bCc1 = true; break;
+						case DT_CIRCLE_CC2:         c1->p_state.bCc2 = true; break;
+						case DT_CIRCLE_CC3:         c1->p_state.bCc3 = true; break;
+						case DT_CIRCLE_CC4:         c1->p_state.bCc4 = true; break;
 						default: break;
 					}
 				}

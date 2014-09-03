@@ -11,8 +11,18 @@
 #include "ofMain.h"
 #include "dt_circle_base.h"
 #include "dt_rhythm_lib.h"
-
 #include "dt_circle_param.h"
+
+struct dt_param_state{
+public:
+    dt_param_state();
+    
+    bool bNote, bVel, bDur, bPan, bCc1, bCc2, bCc3, bCc4;
+    float note, vel, dur, pan, cc1, cc2, cc3, cc4;
+
+    void reset();
+};
+
 
 class dt_circle_note_on : public dt_circle_base{
 
@@ -44,16 +54,6 @@ public:
 	
 	vector<dt_circle_base*> input_circles;
 	vector<dt_circle_base*> output_circles;
-	
-	int note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count, cc16_count;
-	   
-    dt_circle_param_noteNum     noteNum;
-    dt_circle_param_velocity    vel;
-    dt_circle_param_duration    dur;
-    dt_circle_param_pan         pan;
-    dt_circle_param_cc1         cc1;
-    dt_circle_param_cc2         cc2;
-    dt_circle_param_cc3         cc3;
-    dt_circle_param_cc4         cc4;
     
+    dt_param_state p_state;
 };

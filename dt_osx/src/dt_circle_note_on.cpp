@@ -19,9 +19,17 @@
 #include "dt_circle_drawer.h"
 #include "dt_dial_ui.h"
 
-dt_circle_note_on::dt_circle_note_on():
-note_num_count(0), velocity_count(0), duration_count(0), pan_count(0), cc12_count(0), cc13_count(0), cc14_count(0), cc16_count(0)
-{
+
+dt_param_state::dt_param_state(){
+    reset();
+}
+
+void dt_param_state::reset(){
+    bNote=bVel=bDur=bPan=bCc1=bCc2=bCc3=bCc4= false;
+    note=vel=dur=pan=cc1=cc2=cc3=cc4=0.0;
+}
+
+dt_circle_note_on::dt_circle_note_on(){
 	data.circle_type = DT_CIRCLE_NOTE_ON;
 
 	ui = new dt_dial_ui(this);
@@ -174,7 +182,7 @@ void dt_circle_note_on::fire(){
 				case DT_CIRCLE_OSC:
 				{
 					dt_circle_osc * o = static_cast<dt_circle_osc*>((output_circles[i]));
-					o->send_osc(o->ch, note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count, cc16_count);
+					o->send_osc(o->ch, p_state.note, p_state.vel, p_state.dur, p_state.pan, p_state.cc1,p_state.cc2, p_state.cc3, p_state.cc4 );
 					data.fired_ch = o->ch;
 				}
 				break;
@@ -182,7 +190,7 @@ void dt_circle_note_on::fire(){
 				case DT_CIRCLE_MIDI:
 				{
 					dt_circle_midi * m = static_cast<dt_circle_midi*>(output_circles[i]);
-					m->send_midi(m->ch, note_num_count, velocity_count, duration_count, pan_count, cc12_count, cc13_count, cc14_count);
+					m->send_midi(m->ch, p_state.note, p_state.vel, p_state.dur, p_state.pan, p_state.cc1,p_state.cc2, p_state.cc3, p_state.cc4 );
 				}
 				break;
 
@@ -191,11 +199,7 @@ void dt_circle_note_on::fire(){
 			}
 		}
 		
-	//	update_world_position();
-		
-		//if(output_circles.size()!=0){
-			data.fire_rate = 1.0;
-		//}
+		data.fire_rate = 1.0;
 		
 	}
 }

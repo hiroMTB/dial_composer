@@ -67,5 +67,7 @@ public:
 	void exit();
 	
 	ofRectangle canvas;
+    
+    int view_mode;
 };
 

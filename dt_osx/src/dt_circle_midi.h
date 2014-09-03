@@ -45,11 +45,12 @@ public:
 	
 	
 	// send midi
-	void send_midi(int ch, int noteNumber, int velocity, int duration, int pan, int cc12, int cc13, int cc14){
-		app->midi_sender.send_cc(1, 10, pan);
-		app->midi_sender.send_cc(1, 12, cc12);
-		app->midi_sender.send_cc(1, 12, cc13);
-  		app->midi_sender.send_cc(1, 12, cc14);
+	void send_midi(int ch, int noteNumber, int velocity, int duration, int pan, int cc1, int cc2, int cc3, int cc4){
+		app->midi_sender.send_cc(1, 102, pan);
+		app->midi_sender.send_cc(1, 103, cc1);
+		app->midi_sender.send_cc(1, 104, cc2);
+  		app->midi_sender.send_cc(1, 105, cc3);
+  		app->midi_sender.send_cc(1, 106, cc4);
 		app->midi_sender.send_note_on(1, noteNumber, velocity, duration);
 	};
 
