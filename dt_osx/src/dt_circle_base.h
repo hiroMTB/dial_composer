@@ -108,13 +108,10 @@ public:
 	virtual void update() = 0;
 	virtual void draw() = 0;
 
-
 	// sequencer
 	dt_sequencer * seq;
 
-	virtual void pre_srep(){};
 	virtual void step();
-	virtual void post_step(){};
 	virtual void fire(){};
 	virtual void check_sequencer();
 	

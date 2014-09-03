@@ -46,13 +46,8 @@ void dt_circle_base::step(){
 	}
 	
 	if(app->sequence_thread.master_step % data.speed == 0){
-		pre_srep();
-		
 		if(data.bStop) return;
-		
 		check_sequencer();
-		
-		post_step();
 	}
 }
 

@@ -43,6 +43,7 @@ dt_circle_note_on::~dt_circle_note_on(){
 }
 
 
+
 /*
 		speedに影響を受けるパラメータ
 			- rev_radius
@@ -153,12 +154,6 @@ void dt_circle_note_on::draw(){
 	ofPopMatrix();
 }
 
-
-void dt_circle_note_on::post_step(){
-	//data.indi_current_point += data.indi_point_adder;
-}
-
-
 void dt_circle_note_on::change_rshape(int type){
 	seq->setRhythmShape(type);
 	make_vbo();
@@ -239,7 +234,6 @@ void dt_circle_note_on::update_world_position(){
 	data.indi_point_adder = (data.indi_next_point - data.indi_current_point) / (float)(far * dt_config::DT_BEAT_RESOLUTION);
 }
 
-
 void dt_circle_note_on::make_vbo(){
 	rshape_points.clear();
 	
@@ -262,42 +256,6 @@ void dt_circle_note_on::make_vbo(){
 			rshape_points.push_back(ofVec2f(x,y));
             rshape_colors.push_back(c);
 		}
-	}
-	
-	rshape_vbo.setVertexData(&rshape_points[0], rshape_points.size(), GL_DYNAMIC_DRAW);
-    rshape_vbo.setColorData(&rshape_colors[0], rshape_colors.size(), GL_DYNAMIC_DRAW);
-}
-
-void dt_circle_note_on::make_potato_shape(){
-	
-	int stepNum = 40;
-	float stepAngle = 360.0 / stepNum;
-	float r = data.rev_radius;
-	
-	
-	vector<float> rs;
-	
-	for(int i=0; i<stepNum; i++){
-		float newr = r * (1.0 + ofRandom(-0.9, 0.9));
-		rs.push_back(newr);
-	}
-	
-	// low pass filter
-	for (int k=0; k<15; k++) {
-		float pastr = rs[stepNum-1];
-		for(int i=0; i<stepNum; i++){
-			rs[i]= pastr*0.5 + rs[i]*0.5;
-			pastr = rs[i];
-		}
-	}
-	
-	for(int i=0; i<stepNum; i++){
-		float r = rs[i];
-		float angle = i * stepAngle;
-		float x = r * (cosf(angle * DEG_TO_RAD));
-		float y = r * (sinf(angle * DEG_TO_RAD));
-		rshape_points.push_back(ofVec2f(x, y));
-        rshape_colors.push_back(ofFloatColor(0,0,0));
 	}
 	
 	rshape_vbo.setVertexData(&rshape_points[0], rshape_points.size(), GL_DYNAMIC_DRAW);

@@ -8,7 +8,6 @@
 
 #pragma once
 
-
 #include "ofMain.h"
 #include "dt_circle_base.h"
 #include "dt_rhythm_lib.h"
@@ -30,7 +29,6 @@ public:
 	
 	void check_connection();
 	
-	virtual void post_step();
 	virtual void fire();
 		
 	~dt_circle_note_on();
