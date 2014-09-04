@@ -16,9 +16,7 @@
 @interface dt_GLView : ofxCocoaGLView {
 
 @private
-	
 	ofApp * app;
-
 }
 
 

@@ -13,6 +13,14 @@
 		28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5928AA323F5C2690B06C837D /* UdpSocketWin.cpp */; };
 		4294163B15857489B2176769 /* svgtiny_gradient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 582921BA98D224ED41833868 /* svgtiny_gradient.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
+		4D380E7919B7CE650056783F /* OscView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D380E7819B7CE650056783F /* OscView.xib */; };
+		4D7376AB19B7D440000AC010 /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7376AA19B7D440000AC010 /* CircleView.xib */; };
+		4D7376AD19B7D460000AC010 /* GeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7376AC19B7D460000AC010 /* GeneralView.xib */; };
+		4D7376B019B7DFE4000AC010 /* OscViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D7376AF19B7DFE4000AC010 /* OscViewController.mm */; };
+		4D7376B519B7EC05000AC010 /* MainWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D7376B419B7EC05000AC010 /* MainWindowController.mm */; };
+		4D7376B719B7EE7F000AC010 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7376B619B7EE7F000AC010 /* MainWindow.xib */; };
+		4D7376BC19B802D7000AC010 /* GeneralViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D7376BB19B802D7000AC010 /* GeneralViewController.mm */; };
+		4D7376C019B802EF000AC010 /* CircleViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D7376BE19B802EF000AC010 /* CircleViewController.mm */; };
 		4D7525DB19B6AC1B005CDA6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7525DA19B6AC1B005CDA6F /* QuartzCore.framework */; };
 		4D75A7AE19B6C10C005CDA6F /* libboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D75A69319B6C10A005CDA6F /* libboost.a */; };
 		4D75A7AF19B6C10C005CDA6F /* libboost_chrono.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D75A69419B6C10A005CDA6F /* libboost_chrono.a */; };
@@ -27,7 +35,7 @@
 		4D75A7BC19B6C217005CDA6F /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D75A7BB19B6C217005CDA6F /* QuickTime.framework */; };
 		4D82B81C19B66AF500BA0CEF /* dt_osc_recorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B81A19B66AF500BA0CEF /* dt_osc_recorder.cpp */; };
 		4D82B82019B67D7300BA0CEF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D82B81F19B67D7300BA0CEF /* MainMenu.xib */; };
-		4D82B82619B67D8800BA0CEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82319B67D8800BA0CEF /* AppDelegate.m */; };
+		4D82B82619B67D8800BA0CEF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82319B67D8800BA0CEF /* AppDelegate.mm */; };
 		4D82B82719B67D8800BA0CEF /* dt_GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82519B67D8800BA0CEF /* dt_GLView.mm */; };
 		4D82B89F19B67DAC00BA0CEF /* ofxCocoaGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B87919B67DAC00BA0CEF /* ofxCocoaGLView.mm */; };
 		510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF695B88BA5FAACEAA937 /* UdpSocket.cpp */; };
@@ -90,7 +98,7 @@
 		F6B766E61947984B00B0741D /* dt_sequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D51947984B00B0741D /* dt_sequencer.cpp */; };
 		F6B766E71947984B00B0741D /* dt_touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D71947984B00B0741D /* dt_touch.cpp */; };
 		F6B766E81947984B00B0741D /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D81947984B00B0741D /* main.mm */; };
-		F6B766E91947984B00B0741D /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D91947984B00B0741D /* ofApp.cpp */; };
+		F6B766E91947984B00B0741D /* ofApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D91947984B00B0741D /* ofApp.mm */; };
 		F6B791361947ABA600B0741D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B791351947ABA600B0741D /* libc++.dylib */; };
 		F6EE1B4D196AA7A600A77A20 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6EE1B3B196AA4E600A77A20 /* ofxBaseGui.cpp */; };
 		F6EE1B4E196AA7A600A77A20 /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6EE1B3D196AA4E600A77A20 /* ofxButton.cpp */; };
@@ -148,6 +156,18 @@
 		3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = NetworkingUtils.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp; sourceTree = SOURCE_ROOT; };
 		444657A12E59D0ED86981498 /* TimerListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TimerListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/TimerListener.h; sourceTree = SOURCE_ROOT; };
 		48974F980F51769171D0B2F5 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = IpEndpointName.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h; sourceTree = SOURCE_ROOT; };
+		4D380E7819B7CE650056783F /* OscView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OscView.xib; sourceTree = "<group>"; };
+		4D7376AA19B7D440000AC010 /* CircleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
+		4D7376AC19B7D460000AC010 /* GeneralView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralView.xib; sourceTree = "<group>"; };
+		4D7376AE19B7DFE4000AC010 /* OscViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscViewController.h; sourceTree = "<group>"; };
+		4D7376AF19B7DFE4000AC010 /* OscViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OscViewController.mm; sourceTree = "<group>"; };
+		4D7376B319B7EC05000AC010 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		4D7376B419B7EC05000AC010 /* MainWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainWindowController.mm; sourceTree = "<group>"; };
+		4D7376B619B7EE7F000AC010 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		4D7376BA19B802D7000AC010 /* GeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralViewController.h; sourceTree = "<group>"; };
+		4D7376BB19B802D7000AC010 /* GeneralViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeneralViewController.mm; sourceTree = "<group>"; };
+		4D7376BD19B802EF000AC010 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
+		4D7376BE19B802EF000AC010 /* CircleViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CircleViewController.mm; sourceTree = "<group>"; };
 		4D7525DA19B6AC1B005CDA6F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4D757C7A19B6C0F3005CDA6F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4D757C7B19B6C0F3005CDA6F /* addon_config.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = addon_config.mk; sourceTree = "<group>"; };
@@ -10091,7 +10111,7 @@
 		4D82B81B19B66AF500BA0CEF /* dt_osc_recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_osc_recorder.h; sourceTree = "<group>"; };
 		4D82B81F19B67D7300BA0CEF /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = ../../MainMenu.xib; sourceTree = "<group>"; };
 		4D82B82219B67D8800BA0CEF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4D82B82319B67D8800BA0CEF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4D82B82319B67D8800BA0CEF /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		4D82B82419B67D8800BA0CEF /* dt_GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_GLView.h; sourceTree = "<group>"; };
 		4D82B82519B67D8800BA0CEF /* dt_GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dt_GLView.mm; sourceTree = "<group>"; };
 		4D82B87819B67DAC00BA0CEF /* ofxCocoaGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxCocoaGLView.h; sourceTree = "<group>"; };
@@ -10483,7 +10503,7 @@
 		F6B766D61947984B00B0741D /* dt_touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_touch.h; sourceTree = "<group>"; };
 		F6B766D71947984B00B0741D /* dt_touch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_touch.cpp; sourceTree = "<group>"; };
 		F6B766D81947984B00B0741D /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		F6B766D91947984B00B0741D /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
+		F6B766D91947984B00B0741D /* ofApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofApp.mm; sourceTree = "<group>"; };
 		F6B766EA1947987100B0741D /* ofApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		F6B791351947ABA600B0741D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		F6EE1B3B196AA4E600A77A20 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBaseGui.cpp; sourceTree = "<group>"; };
@@ -10589,6 +10609,18 @@
 				86D2677079A3AF4A5A88E29A /* oscpack */,
 			);
 			name = libs;
+			sourceTree = "<group>";
+		};
+		4D7376B819B7EE9C000AC010 /* interface */ = {
+			isa = PBXGroup;
+			children = (
+				4D82B81F19B67D7300BA0CEF /* MainMenu.xib */,
+				4D7376B619B7EE7F000AC010 /* MainWindow.xib */,
+				4D7376AC19B7D460000AC010 /* GeneralView.xib */,
+				4D380E7819B7CE650056783F /* OscView.xib */,
+				4D7376AA19B7D440000AC010 /* CircleView.xib */,
+			);
+			name = interface;
 			sourceTree = "<group>";
 		};
 		4D757C7919B6C0F3005CDA6F /* ofxOSXBoost */ = {
@@ -27363,9 +27395,17 @@
 		4D82B82119B67D8800BA0CEF /* Cocoa */ = {
 			isa = PBXGroup;
 			children = (
-				4D82B81F19B67D7300BA0CEF /* MainMenu.xib */,
+				4D7376B819B7EE9C000AC010 /* interface */,
 				4D82B82219B67D8800BA0CEF /* AppDelegate.h */,
-				4D82B82319B67D8800BA0CEF /* AppDelegate.m */,
+				4D82B82319B67D8800BA0CEF /* AppDelegate.mm */,
+				4D7376B319B7EC05000AC010 /* MainWindowController.h */,
+				4D7376B419B7EC05000AC010 /* MainWindowController.mm */,
+				4D7376AE19B7DFE4000AC010 /* OscViewController.h */,
+				4D7376AF19B7DFE4000AC010 /* OscViewController.mm */,
+				4D7376BA19B802D7000AC010 /* GeneralViewController.h */,
+				4D7376BB19B802D7000AC010 /* GeneralViewController.mm */,
+				4D7376BD19B802EF000AC010 /* CircleViewController.h */,
+				4D7376BE19B802EF000AC010 /* CircleViewController.mm */,
 				4D82B82419B67D8800BA0CEF /* dt_GLView.h */,
 				4D82B82519B67D8800BA0CEF /* dt_GLView.mm */,
 			);
@@ -27580,7 +27620,7 @@
 				F6B0939A1971414700619955 /* dt_config.cpp */,
 				F6B766D81947984B00B0741D /* main.mm */,
 				F6B766EA1947987100B0741D /* ofApp.h */,
-				F6B766D91947984B00B0741D /* ofApp.cpp */,
+				F6B766D91947984B00B0741D /* ofApp.mm */,
 				F6B7670119479C8400B0741D /* circle */,
 				F6B7670219479CA500B0741D /* seq */,
 				F6B7670019479C8000B0741D /* ui */,
@@ -28387,6 +28427,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D82B82019B67D7300BA0CEF /* MainMenu.xib in Resources */,
+				4D7376B719B7EE7F000AC010 /* MainWindow.xib in Resources */,
+				4D7376AD19B7D460000AC010 /* GeneralView.xib in Resources */,
+				4D7376AB19B7D440000AC010 /* CircleView.xib in Resources */,
+				4D380E7919B7CE650056783F /* OscView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -28414,6 +28458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6EE1B4D196AA7A600A77A20 /* ofxBaseGui.cpp in Sources */,
+				4D7376BC19B802D7000AC010 /* GeneralViewController.mm in Sources */,
 				F6EE1B4E196AA7A600A77A20 /* ofxButton.cpp in Sources */,
 				F6EE1B4F196AA7A600A77A20 /* ofxGuiGroup.cpp in Sources */,
 				F6EE1B50196AA7A600A77A20 /* ofxLabel.cpp in Sources */,
@@ -28431,6 +28476,7 @@
 				F6075E11194DE94E00F8F7E0 /* ofxMidi.cpp in Sources */,
 				F6075E12194DE94E00F8F7E0 /* ofxMidiIn.cpp in Sources */,
 				F6075E13194DE94E00F8F7E0 /* ofxMidiMessage.cpp in Sources */,
+				4D7376B519B7EC05000AC010 /* MainWindowController.mm in Sources */,
 				F6075E14194DE94E00F8F7E0 /* ofxMidiOut.cpp in Sources */,
 				F6B0939B1971414700619955 /* dt_config.cpp in Sources */,
 				F6B766E01947984B00B0741D /* dt_dial_ui.cpp in Sources */,
@@ -28447,18 +28493,20 @@
 				A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */,
 				28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
+				4D7376B019B7DFE4000AC010 /* OscViewController.mm in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
+				4D7376C019B802EF000AC010 /* CircleViewController.mm in Sources */,
 				B88A57B4B0BA6191EF3571E9 /* ofxSvg.cpp in Sources */,
 				6A565A9714A6A12EB9098F52 /* src_colors.cpp in Sources */,
 				1D6B78EF041B097CE4F423C4 /* svgtiny.cpp in Sources */,
 				4294163B15857489B2176769 /* svgtiny_gradient.cpp in Sources */,
-				F6B766E91947984B00B0741D /* ofApp.cpp in Sources */,
+				F6B766E91947984B00B0741D /* ofApp.mm in Sources */,
 				F6B766E41947984B00B0741D /* dt_sequence_thread_boost.cpp in Sources */,
 				1B5F996886A777589D5DD794 /* svgtiny_list.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
-				4D82B82619B67D8800BA0CEF /* AppDelegate.m in Sources */,
+				4D82B82619B67D8800BA0CEF /* AppDelegate.mm in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
@@ -28616,6 +28664,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = DEBUG;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					../../../addons/ofxOsc/libs,
@@ -28647,7 +28696,9 @@
 					../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386,
 					/Users/matobahiroshi/Desktop/2014_09_dial/dev/of_v0.8.1_osx/addons/ofxOSXBoost/libs/boost/lib/osx_i386,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = dialDebug;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -28698,7 +28749,9 @@
 					../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386,
 					/Users/matobahiroshi/Desktop/2014_09_dial/dev/of_v0.8.1_osx/addons/ofxOSXBoost/libs/boost/lib/osx_i386,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = dial;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

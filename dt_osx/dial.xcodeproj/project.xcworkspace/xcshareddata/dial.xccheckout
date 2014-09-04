@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B5EF5807-3385-4102-B9B3-DF31DB58D5B4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>dial</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>03683E81-62BD-420E-B8F7-1E06FC652691</key>
+		<string>https://github.com/hiroMTB/dt_.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>dt_osx/dial.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>03683E81-62BD-420E-B8F7-1E06FC652691</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hiroMTB/dt_.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>03683E81-62BD-420E-B8F7-1E06FC652691</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>03683E81-62BD-420E-B8F7-1E06FC652691</string>
+			<key>IDESourceControlWCCName</key>
+			<string>dev</string>
+		</dict>
+	</array>
+</dict>
+</plist>

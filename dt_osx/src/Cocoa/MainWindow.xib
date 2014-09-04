@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
+            <connections>
+                <outlet property="SidePanel" destination="HDK-FH-YMP" id="LUa-HA-c78"/>
+                <outlet property="SidePanelSelector1" destination="OpI-Ve-vo7" id="tJY-wL-ohu"/>
+                <outlet property="SidePanelSelector2" destination="sSu-I1-uln" id="CDN-Wn-4KT"/>
+                <outlet property="SidePanelSelector3" destination="eze-50-kMh" id="yK3-hT-GHj"/>
+                <outlet property="SidePanelSelector4" destination="H8b-je-Rjf" id="Gde-xC-xHl"/>
+                <outlet property="SidePanelSelector5" destination="THX-Lb-uHn" id="7BN-wl-slD"/>
+                <outlet property="glView" destination="ga9-lS-mbF" id="zEM-hK-zSB"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application">
+            <connections>
+                <outlet property="delegate" destination="ipO-Ld-frq" id="WeF-0X-XtP"/>
+            </connections>
+        </customObject>
+        <window title="dialt" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="ipO-Ld-frq">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="0.0" y="338" width="1219" height="674"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <view key="contentView" id="GzE-ve-f11">
+                <rect key="frame" x="0.0" y="0.0" width="1219" height="674"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <splitView dividerStyle="thin" vertical="YES" id="L0P-A7-OcK">
+                        <rect key="frame" x="0.0" y="0.0" width="1219" height="674"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <openGLView antiAliasingType="supersample" rendererType="accelerated" samplingRate="8" useAuxiliaryDepthBufferStencil="NO" useDoubleBufferingEnabled="YES" allowOffline="YES" useRecovery="YES" id="ga9-lS-mbF" customClass="dt_GLView">
+                                <rect key="frame" x="0.0" y="0.0" width="852" height="674"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </openGLView>
+                            <splitView dividerStyle="thin" id="7BA-cB-d6i">
+                                <rect key="frame" x="853" y="0.0" width="366" height="674"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <customView id="J8X-o1-q3v">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <button id="OpI-Ve-vo7">
+                                                <rect key="frame" x="98" y="0.0" width="35" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" alternateImage="NSRemoveTemplate" state="on" imageScaling="proportionallyDown" inset="2" id="64h-FC-xDA">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="SelectSideP1:" target="-2" id="SDI-hz-qLc"/>
+                                                </connections>
+                                            </button>
+                                            <button id="sSu-I1-uln">
+                                                <rect key="frame" x="132" y="0.0" width="35" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSBluetoothTemplate" imagePosition="only" alignment="center" alternateImage="NSShareTemplate" imageScaling="proportionallyDown" inset="2" id="BQ7-9Z-llx">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="SelectSideP2:" target="-2" id="O5f-4h-xcE"/>
+                                                </connections>
+                                            </button>
+                                            <button id="eze-50-kMh">
+                                                <rect key="frame" x="166" y="0.0" width="35" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoLeftTemplate" imagePosition="only" alignment="center" alternateImage="NSGoRightTemplate" imageScaling="proportionallyDown" inset="2" id="53J-i5-zfQ">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="SelectSideP3:" target="-2" id="6T8-lB-7cI"/>
+                                                </connections>
+                                            </button>
+                                            <button id="H8b-je-Rjf">
+                                                <rect key="frame" x="200" y="0.0" width="35" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSQuickLookTemplate" imagePosition="only" alignment="center" alternateImage="NSRefreshFreestandingTemplate" imageScaling="proportionallyDown" inset="2" id="hUI-qJ-JFA">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="SelectSideP4:" target="-2" id="6gU-oh-MhQ"/>
+                                                </connections>
+                                            </button>
+                                            <button id="THX-Lb-uHn">
+                                                <rect key="frame" x="234" y="0.0" width="35" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSListViewTemplate" imagePosition="only" alignment="center" alternateImage="NSStopProgressTemplate" imageScaling="proportionallyDown" inset="2" id="7TC-BI-rKX">
+                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="SelectSideP5:" target="-2" id="p8z-8B-E1d"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </customView>
+                                    <customView id="HDK-FH-YMP">
+                                        <rect key="frame" x="0.0" y="36" width="366" height="638"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </customView>
+                                </subviews>
+                                <holdingPriorities>
+                                    <real value="250"/>
+                                    <real value="250"/>
+                                </holdingPriorities>
+                            </splitView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
+                </subviews>
+            </view>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSBluetoothTemplate" width="7" height="14"/>
+        <image name="NSGoLeftTemplate" width="9" height="9"/>
+        <image name="NSGoRightTemplate" width="9" height="9"/>
+        <image name="NSListViewTemplate" width="11" height="10"/>
+        <image name="NSQuickLookTemplate" width="21" height="16"/>
+        <image name="NSRefreshFreestandingTemplate" width="14" height="14"/>
+        <image name="NSRemoveTemplate" width="8" height="8"/>
+        <image name="NSShareTemplate" width="18" height="16"/>
+        <image name="NSStopProgressTemplate" width="11" height="11"/>
+    </resources>
+</document>
