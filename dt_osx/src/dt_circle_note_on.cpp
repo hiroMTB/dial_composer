@@ -36,7 +36,8 @@ dt_circle_note_on::dt_circle_note_on(){
 	rshape_colors.reserve( dt_config::DT_RHYTHM_SHAPE_SLOT_MAX );
 
 	data.indi_color.set( 0 );
-	data.circle_color.set( 0.3 );
+    
+	data.circle_color.setHsb( ofRandom( 0.0, 1.0 ), ofRandom(0.6, 0.8), 0.8 );
 	data.line_color.set( 0.1 );
 }
 
@@ -234,12 +235,15 @@ void dt_circle_note_on::update_world_position(){
 
 void dt_circle_note_on::make_vbo(){
 	rshape_points.clear();
-	
+	rshape_colors.clear();
+    
 	int beat_num = seq->total_beats;
 	float start_angle = 0;
 	float r = 0.8;
-	
-    float hue_base = ofRandom( 0.0, 1.0 );
+
+    float h = data.circle_color.getHue();
+    float s = data.circle_color.getSaturation();
+    float b = data.circle_color.getBrightness();
     
 	for( int i=0; i<beat_num; i++ ){
 		bool on = seq->getDataFromBeat( i );
@@ -247,11 +251,18 @@ void dt_circle_note_on::make_vbo(){
 			float angle = start_angle + ( i * data.rev_speed * dt_config::DT_BEAT_RESOLUTION );
 			float x = r * cosf( angle*DEG_TO_RAD );
 			float y = r * sinf( angle*DEG_TO_RAD );
+    
             
-            ofFloatColor c;
-            c.setHsb( hue_base + i*0.01, ofRandom(0.6, 0.8), 0.8 );
+            ofFloatColor c = data.circle_color;
+            c.setHsb( h + i*0.01, MAX( 0.6,s+ofRandom(-0.3, 0.3) ), 0.8 );
+
 			rshape_points.push_back( ofVec2f(x,y) );
-            rshape_colors.push_back( data.circle_color + c*0.1 );
+            rshape_colors.push_back( c );
+            
+            //float hue_base = ofRandom( 0.0, 1.0 );
+            //ofFloatColor c;
+            //c.setHsb( hue_base + i*0.01, ofRandom(0.6, 0.8), 0.8 );
+			
 		}
 	}
 	

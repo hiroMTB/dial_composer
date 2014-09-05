@@ -40,7 +40,7 @@ public:
 	void set_speed( int speed );
 	void check_connection();
 	virtual void change_rshape( int type );
-	void make_vbo();
+	virtual void make_vbo();
 	void update_world_position();
 	
 	ofVbo rshape_vbo;

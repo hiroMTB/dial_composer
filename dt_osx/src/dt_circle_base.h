@@ -110,8 +110,7 @@ public:
 	virtual void fire(){};
 	virtual void check_sequencer();
 
-    virtual void update_chape();
-    virtual void update_color();    
+    virtual void make_vbo(){};
 
 	// ui
 	dt_dial_ui * ui;

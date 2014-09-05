@@ -94,13 +94,12 @@
     float r = ( (NSColorWell*)sender).color.redComponent;
     float g = ( (NSColorWell*)sender).color.greenComponent;
     float b = ( (NSColorWell*)sender).color.blueComponent;
-    
     dt_circle_base::selected_circle->change_circle_color( r, g, b, 1.0 );
+    dt_circle_base::selected_circle->make_vbo();
 }
 
 - (void)update_ui{
     dt_circle_base * c = dt_circle_base::selected_circle;
-    
     [self.beat_sl setIntValue: c->seq->total_beats];
     [self.beat_tx setIntValue: c->seq->total_beats];
     
@@ -108,5 +107,3 @@
 }
 
 @end
-
-

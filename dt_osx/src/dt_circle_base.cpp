@@ -101,7 +101,8 @@ void dt_circle_base::change_speed( int speed ){
 }
 
 void dt_circle_base::change_shape( int shape ){
-    change_rshape( shape );
+    seq->setRhythmShape( shape );
+    make_vbo();
 }
 
 void dt_circle_base::change_circle_color( float r, float g, float b, float a ){
