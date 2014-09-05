@@ -28,6 +28,7 @@ void ofApp::setup(){
 	windowResized(ofGetWidth(), ofGetHeight());
 	setupVisual();
 	setupModule();
+    bg.set( 0.8 );
 }
 
 void ofApp::setupVisual(){
@@ -64,7 +65,7 @@ void ofApp::update(){
 }
 
 void ofApp::draw(){
-    ofBackground( 220 );
+    ofBackground( bg );
 
     switch( view_mode ){
         case 0:

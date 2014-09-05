@@ -59,5 +59,7 @@ public:
 	
 	ofRectangle canvas;
     int view_mode;
+    
+    ofFloatColor bg;
 };
 

@@ -251,7 +251,7 @@ void dt_circle_note_on::make_vbo(){
             ofFloatColor c;
             c.setHsb( hue_base + i*0.01, ofRandom(0.6, 0.8), 0.8 );
 			rshape_points.push_back( ofVec2f(x,y) );
-            rshape_colors.push_back( c );
+            rshape_colors.push_back( data.circle_color + c*0.1 );
 		}
 	}
 	

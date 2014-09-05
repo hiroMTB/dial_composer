@@ -9,10 +9,12 @@
 #import "GeneralViewController.h"
 
 @interface GeneralViewController ()
-
 @end
 
 @implementation GeneralViewController
+@synthesize bpm_sl;
+@synthesize bpm_tx;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -39,9 +39,8 @@ public:
 	void set_beats( int beat_num );
 	void set_speed( int speed );
 	void check_connection();
-	void change_rshape( int type );
+	virtual void change_rshape( int type );
 	void make_vbo();
-	void make_potato_shape();
 	void update_world_position();
 	
 	ofVbo rshape_vbo;

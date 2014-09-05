@@ -10611,7 +10611,7 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
-		4D7376B819B7EE9C000AC010 /* interface */ = {
+		4D7376B819B7EE9C000AC010 /* xib */ = {
 			isa = PBXGroup;
 			children = (
 				4D82B81F19B67D7300BA0CEF /* MainMenu.xib */,
@@ -10620,7 +10620,7 @@
 				4D380E7819B7CE650056783F /* OscView.xib */,
 				4D7376AA19B7D440000AC010 /* CircleView.xib */,
 			);
-			name = interface;
+			name = xib;
 			sourceTree = "<group>";
 		};
 		4D757C7919B6C0F3005CDA6F /* ofxOSXBoost */ = {
@@ -27395,7 +27395,7 @@
 		4D82B82119B67D8800BA0CEF /* Cocoa */ = {
 			isa = PBXGroup;
 			children = (
-				4D7376B819B7EE9C000AC010 /* interface */,
+				4D7376B819B7EE9C000AC010 /* xib */,
 				4D82B82219B67D8800BA0CEF /* AppDelegate.h */,
 				4D82B82319B67D8800BA0CEF /* AppDelegate.mm */,
 				4D7376B319B7EC05000AC010 /* MainWindowController.h */,

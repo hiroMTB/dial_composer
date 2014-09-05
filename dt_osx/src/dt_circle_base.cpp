@@ -96,6 +96,18 @@ void dt_circle_base::change_beat( int beat ){
 	seq->setup( beat );
 }
 
+void dt_circle_base::change_speed( int speed ){
+    data.speed = speed;
+}
+
+void dt_circle_base::change_shape( int shape ){
+    change_rshape( shape );
+}
+
+void dt_circle_base::change_circle_color( float r, float g, float b, float a ){
+    data.circle_color.set( r, g, b, a );
+}
+
 void dt_circle_base::setup_text( string initial ){
 	
     if( data.rev_radius<15 ){

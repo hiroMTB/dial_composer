@@ -109,7 +109,10 @@ public:
 	virtual void step();
 	virtual void fire(){};
 	virtual void check_sequencer();
-	
+
+    virtual void update_chape();
+    virtual void update_color();    
+
 	// ui
 	dt_dial_ui * ui;
 
@@ -117,6 +120,9 @@ public:
 	unsigned int wait_step;
 	
 	void change_beat( int beat );
+    void change_speed( int speed );
+    void change_shape( int shape );
+    void change_circle_color( float r, float g, float b, float a );
     
 	void setup_text( string initial );
 	void draw_initial();

@@ -8,6 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface GeneralViewController : NSViewController
+@interface GeneralViewController : NSViewController {
+    NSSlider *bpm_sl;
+    NSTextField *bpm_tx;
+}
+
+@property (assign) IBOutlet NSSlider *bpm_sl;
+@property (assign) IBOutlet NSTextField *bpm_tx;
 
 @end

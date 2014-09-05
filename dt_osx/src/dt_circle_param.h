@@ -26,7 +26,7 @@ public:
 	void draw();
 	void draw_vbo();
 	void make_vbo();
-	void change_rshape(int type);
+	virtual void change_rshape(int type);
 
 	float param_on;
 	float param_off;

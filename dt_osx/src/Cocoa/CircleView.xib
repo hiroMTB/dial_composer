@@ -7,91 +7,115 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CircleViewController">
             <connections>
+                <outlet property="beat_sl" destination="WdH-ev-z2I" id="OQN-E8-nP9"/>
+                <outlet property="beat_tx" destination="kOs-M2-Mgz" id="7FZ-dz-TVc"/>
+                <outlet property="ch_sl" destination="M13-Ag-nuB" id="agD-yn-YmU"/>
+                <outlet property="ch_tx" destination="azr-d8-Z4Q" id="ccZ-hl-MEb"/>
+                <outlet property="color" destination="H38-h7-TgT" id="YRv-MT-htP"/>
+                <outlet property="edge_sl" destination="Psw-3T-Mvt" id="MAY-cF-edq"/>
+                <outlet property="edge_tx" destination="EoX-N9-4wx" id="CA6-7M-kOa"/>
+                <outlet property="rotate_sl" destination="dlV-Fk-pGg" id="KiK-Jc-UUk"/>
+                <outlet property="rotate_tx" destination="MKk-xb-a2e" id="cpS-4G-1Vk"/>
+                <outlet property="shape_sl" destination="ggV-jV-Nlh" id="spd-1T-Nrv"/>
+                <outlet property="shape_tx" destination="dcP-vk-16B" id="nhS-pi-hrY"/>
+                <outlet property="side_sl" destination="lSJ-Lq-LrT" id="nVs-PW-bUQ"/>
+                <outlet property="side_tx" destination="VXd-TI-rkn" id="PW2-2T-bav"/>
+                <outlet property="speed_sl" destination="VAj-Yd-R5w" id="BTW-hB-NdR"/>
+                <outlet property="speed_tx" destination="Cv1-tc-ZT2" id="vns-pt-eyt"/>
                 <outlet property="view" destination="sGL-pZ-sJW" id="EKG-EF-dBf"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
         <customView wantsLayer="YES" id="sGL-pZ-sJW" userLabel="CircleView">
-            <rect key="frame" x="0.0" y="0.0" width="262" height="594"/>
+            <rect key="frame" x="0.0" y="0.0" width="335" height="594"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="zlN-Gb-Ncc">
                     <rect key="frame" x="18" y="557" width="108" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Note Num Circle" id="b5I-zg-JGg">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="GMS-Ge-K61">
-                    <rect key="frame" x="18" y="26" width="39" height="17"/>
+                    <rect key="frame" x="18" y="27" width="39" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color" id="N7F-7h-0YM">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <colorWell id="H38-h7-TgT">
-                    <rect key="frame" x="146" y="20" width="96" height="23"/>
+                    <rect key="frame" x="88" y="24" width="88" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="change_color:" target="-2" id="6DK-fX-5sr"/>
+                    </connections>
                 </colorWell>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ayr-Vv-Uhy">
                     <rect key="frame" x="18" y="516" width="46" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="enable" id="vzY-f0-gzD">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <segmentedControl verticalHuggingPriority="750" id="iYr-NB-WnC">
-                    <rect key="frame" x="137" y="512" width="107" height="24"/>
+                    <rect key="frame" x="86" y="512" width="92" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <segmentedCell key="cell" alignment="left" style="rounded" trackingMode="selectOne" id="S5a-LM-ntY">
                         <font key="font" metaFont="system"/>
                         <segments>
-                            <segment label="OFF" width="50"/>
-                            <segment label="ON" width="50" selected="YES" tag="1"/>
+                            <segment label="OFF" width="43"/>
+                            <segment label="ON" width="42" selected="YES" tag="1"/>
                         </segments>
                     </segmentedCell>
                 </segmentedControl>
                 <slider verticalHuggingPriority="750" id="VAj-Yd-R5w">
-                    <rect key="frame" x="88" y="445" width="154" height="15"/>
+                    <rect key="frame" x="88" y="443" width="154" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="xGR-3d-Igb"/>
+                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" minValue="1" maxValue="8" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="8" allowsTickMarkValuesOnly="YES" sliderType="linear" id="xGR-3d-Igb"/>
+                    <connections>
+                        <action selector="change_speed:" target="-2" id="tYc-cF-hgd"/>
+                    </connections>
                 </slider>
                 <slider verticalHuggingPriority="750" id="dlV-Fk-pGg">
                     <rect key="frame" x="88" y="416" width="154" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="hiD-T9-P1B"/>
+                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="360" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="hiD-T9-P1B"/>
+                    <connections>
+                        <action selector="change_rotate:" target="-2" id="RPp-7T-984"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="6Je-hw-09R">
                     <rect key="frame" x="18" y="446" width="41" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="speed" id="qeI-h2-wbI">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="eTf-6B-xMf">
-                    <rect key="frame" x="18" y="152" width="31" height="17"/>
+                    <rect key="frame" x="18" y="153" width="31" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="OSC" id="g8a-d0-6nW">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="clW-RY-fSl">
-                    <rect key="frame" x="18" y="119" width="19" height="17"/>
+                    <rect key="frame" x="18" y="120" width="19" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ch" id="HEa-3A-97L">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -100,7 +124,7 @@
                     <rect key="frame" x="18" y="416" width="42" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="rotate" id="UFA-JZ-4Lk">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -108,75 +132,188 @@
                 <slider verticalHuggingPriority="750" id="ggV-jV-Nlh">
                     <rect key="frame" x="88" y="388" width="154" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="4K9-8o-HyA"/>
+                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="1000" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="4K9-8o-HyA"/>
+                    <connections>
+                        <action selector="change_shape:" target="-2" id="9L0-Zd-5Ml"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="R1i-uA-s1n">
                     <rect key="frame" x="18" y="388" width="41" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="shape" id="e3P-kr-BHx">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" id="M13-Ag-nuB">
-                    <rect key="frame" x="77" y="119" width="154" height="17"/>
+                    <rect key="frame" x="88" y="119" width="154" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" controlSize="mini" state="on" alignment="left" minValue="1" maxValue="32" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="32" allowsTickMarkValuesOnly="YES" sliderType="linear" id="IiP-cg-2Yv"/>
+                    <connections>
+                        <action selector="change_ch:" target="-2" id="Qh5-J8-p7H"/>
+                    </connections>
                 </slider>
                 <slider verticalHuggingPriority="750" id="Psw-3T-Mvt">
-                    <rect key="frame" x="88" y="311" width="154" height="15"/>
+                    <rect key="frame" x="88" y="286" width="154" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="w29-xm-VGq"/>
+                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="255" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="w29-xm-VGq"/>
+                    <connections>
+                        <action selector="change_edge:" target="-2" id="vSh-65-ATn"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="At4-bW-sai">
-                    <rect key="frame" x="18" y="346" width="86" height="17"/>
+                    <rect key="frame" x="18" y="321" width="86" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Output value" id="Nt8-Gz-u91">
-                        <font key="font" metaFont="system"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Output Value" id="Nt8-Gz-u91">
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="awo-fX-al4">
-                    <rect key="frame" x="18" y="311" width="35" height="17"/>
+                    <rect key="frame" x="18" y="286" width="35" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="edge" id="4ar-Ha-tSd">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" id="lSJ-Lq-LrT">
-                    <rect key="frame" x="88" y="288" width="154" height="15"/>
+                    <rect key="frame" x="88" y="260" width="154" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="UYB-j1-vkW"/>
+                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="255" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="UYB-j1-vkW"/>
+                    <connections>
+                        <action selector="change_side:" target="-2" id="ycg-dc-gKv"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="rpe-rG-0HB">
-                    <rect key="frame" x="18" y="288" width="30" height="17"/>
+                    <rect key="frame" x="18" y="260" width="30" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="side" id="7yq-KH-M74">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" id="WdH-ev-z2I">
-                    <rect key="frame" x="88" y="471" width="154" height="15"/>
+                    <rect key="frame" x="88" y="470" width="154" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="7se-8Z-906"/>
+                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" minValue="4" maxValue="30" doubleValue="8" tickMarkPosition="below" numberOfTickMarks="27" allowsTickMarkValuesOnly="YES" sliderType="linear" id="7se-8Z-906"/>
+                    <connections>
+                        <action selector="change_beat:" target="-2" id="rBh-62-mqW"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="75M-GM-vU8">
                     <rect key="frame" x="18" y="472" width="32" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="beat" id="9hF-wf-fDL">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <textField verticalHuggingPriority="750" id="kOs-M2-Mgz">
+                    <rect key="frame" x="258" y="469" width="57" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="QtK-ev-dwj">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="j1m-vS-IIu">
+                            <real key="minimum" value="4"/>
+                            <real key="maximum" value="30"/>
+                            <metadata>
+                                <real key="inspectorSampleValue" value="2222"/>
+                            </metadata>
+                        </numberFormatter>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="change_beat:" target="-2" id="DjV-F3-KK6"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" id="Cv1-tc-ZT2">
+                    <rect key="frame" x="258" y="443" width="57" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="gY5-Gy-nzm">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="FhV-Wn-Y3W"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="change_speed:" target="-2" id="k6f-Nu-vHH"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" id="MKk-xb-a2e">
+                    <rect key="frame" x="258" y="413" width="57" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="SYg-O4-f0y">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="8XT-yU-k8p"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="change_rotate:" target="-2" id="b9E-Ga-1OX"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" id="dcP-vk-16B">
+                    <rect key="frame" x="258" y="385" width="57" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="N4f-sq-nRL">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="mor-UZ-axb"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="change_shape:" target="-2" id="RMC-Y9-JeR"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" id="EoX-N9-4wx">
+                    <rect key="frame" x="258" y="284" width="57" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="nsy-Hv-We0">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="LP6-e2-Spj"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="change_edge:" target="-2" id="max-ud-StL"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" id="VXd-TI-rkn">
+                    <rect key="frame" x="258" y="258" width="57" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Aq0-2m-ml8">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="cMC-wV-nsQ"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="change_side:" target="-2" id="H7z-AZ-5uD"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" id="azr-d8-Z4Q">
+                    <rect key="frame" x="258" y="119" width="57" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2R7-Cv-Nno">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="h0a-W7-eYd"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="change_ch:" target="-2" id="nAL-t2-JTH"/>
+                    </connections>
+                </textField>
             </subviews>
             <accessibility description="CircleView"/>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="zXK-BO-fni"/>
     </objects>
 </document>
