@@ -45,7 +45,7 @@ xcuserdata/
 
 
 #image file
-*.png
+#*.png
 *.jpg
 *.jpeg
 *.tiff
