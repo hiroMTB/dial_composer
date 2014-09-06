@@ -107,6 +107,7 @@ void dt_circle_base::change_shape( int shape ){
 
 void dt_circle_base::change_circle_color( float r, float g, float b, float a ){
     data.circle_color.set( r, g, b, a );
+    make_vbo();
 }
 
 void dt_circle_base::setup_text( string initial ){

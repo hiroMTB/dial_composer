@@ -95,7 +95,6 @@
     float g = ( (NSColorWell*)sender).color.greenComponent;
     float b = ( (NSColorWell*)sender).color.blueComponent;
     dt_circle_base::selected_circle->change_circle_color( r, g, b, 1.0 );
-    dt_circle_base::selected_circle->make_vbo();
 }
 
 - (void)update_ui{
