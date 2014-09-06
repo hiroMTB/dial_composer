@@ -84,7 +84,7 @@ void dt_circle_all_containers::draw(){
     all_lines_vbo.unbind();
 
     // all points
-    glPointSize( 4 );
+    glPointSize( 6 );
     all_points_vbo.bind();
     all_points_vbo.updateColorData( &all_points_color[0], all_points_color.size() );
     all_points_vbo.updateVertexData( &all_points_pos[0], all_points_pos.size() );

@@ -191,9 +191,9 @@ void dt_dial_ui::draw_HOME(){
 	float step_angle = 50;
 	float start_angle = 195;
 	string icon = "0";
-	ofNoFill();
-    glLineWidth( 1 );
-	parent->app->circle_drawer.draw( ui_base_radius, GL_LINES );
+//	ofNoFill();
+//    glLineWidth( 1 );
+//	parent->app->circle_drawer.draw( ui_base_radius, GL_LINES );
 
 	for( int i=0; i<num_home_button; i++ ){
 		angle = i*step_angle + start_angle;

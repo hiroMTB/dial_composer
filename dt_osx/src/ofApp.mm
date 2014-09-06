@@ -30,7 +30,7 @@ void ofApp::setup(){
 	windowResized(ofGetWidth(), ofGetHeight());
 	setupVisual();
 	setupModule();
-    bg.set( 0.8 );
+    bg.set( 0.039, 0.062, 0.062 );
 }
 
 void ofApp::setupVisual(){
@@ -145,9 +145,8 @@ void ofApp::keyPressed( int key ){
 			
 		case 'a': all_containers.change_beat_resolution_all(4); break;
 
-
 		case 'L': dt_config::DT_SHOW_LINER_DRAWER = !dt_config::DT_SHOW_LINER_DRAWER; config.synch_param(); break;
-		case 'G': config.toggle(); break;
+		case 'C': config.toggle(); break;
 		case 'F': ofToggleFullscreen(); break;
 		case 'B': all_containers.change_beat_all(floor(ofRandom(dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX-1))); break;
 		case 'P': all_containers.change_position_all(); break;

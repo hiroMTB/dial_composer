@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="background_color" destination="hgo-QT-Z52" id="C9n-WS-wYt"/>
                 <outlet property="bg_color" destination="hgo-QT-Z52" id="t3C-za-Mgn"/>
+                <outlet property="bpm_sl" destination="zO1-Nz-pUn" id="sBp-dk-ACl"/>
                 <outlet property="bpm_tx" destination="oyd-bR-m5l" id="0pv-xP-iG5"/>
                 <outlet property="change_bg_color" destination="hgo-QT-Z52" id="vBl-lN-U4X"/>
                 <outlet property="circle_num_tx" destination="KXi-0U-hJM" id="Fus-1L-ksu"/>
@@ -71,7 +72,7 @@
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="G74-Ro-ZXV">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="5Vb-D6-XhY">
                             <real key="minimum" value="1"/>
-                            <real key="maximum" value="600"/>
+                            <real key="maximum" value="1000"/>
                         </numberFormatter>
                         <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -129,7 +130,10 @@
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zO1-Nz-pUn">
                     <rect key="frame" x="78" y="594" width="132" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="1000" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="a2M-C0-ZHn"/>
+                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="300" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="a2M-C0-ZHn"/>
+                    <connections>
+                        <action selector="change_bpm:" target="-2" id="SJS-0c-DET"/>
+                    </connections>
                 </slider>
             </subviews>
             <constraints>

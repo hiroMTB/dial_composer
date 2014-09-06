@@ -32,10 +32,7 @@ dt_circle_note_on::dt_circle_note_on(){
 
 	ui = new dt_dial_ui( this );
 
-	data.indi_color.set( 0.3 );
-    
 	data.circle_color.setHsb( ofRandom( 0.0, 1.0 ), ofRandom(0.6, 0.8), 0.8 );
-	data.line_color.set( 0.1 );
 }
 
 dt_circle_note_on::~dt_circle_note_on(){
@@ -136,13 +133,14 @@ void dt_circle_note_on::draw(){
 	
     // circle
     if( dt_circle_base::selected_circle == this ){
-        glPointSize( 3 );
-        glColor4f( 1.0, 0.3, 0.6, 1.0 );
+        glPointSize( 4 );
+//        glColor4f( 1.0, 0.3, 0.6, 1.0 );
+        ofSetColor( data.circle_color );
     }else{
         glPointSize( 2 );
-        glColor4f( 0.8, 0.8, 0.8, 0.8 );
+        glColor4f( 0.8, 0.8, 0.8, 0.7 );
     }
-    app->circle_drawer.draw( data.rev_radius * 1.01, GL_POINTS );
+    app->circle_drawer.draw( data.rev_radius * 1.26, GL_POINTS );
     
 	// shape
     glLineWidth( 2 );
@@ -276,12 +274,12 @@ void dt_circle_note_on::make_vbo(){
 			rshape_points.push_back( ofVec2f(x,y) );
             rshape_colors.push_back( c );
 		}
-        float rg = 0.9;
+        float rg = 0.99;
         x = rg * cos;
         y = rg * sin;
         // guide shape
         rguid_points.push_back( ofVec2f(x, y) );
-        rguid_colors.push_back( ofFloatColor(0.5, 0.7) );
+        rguid_colors.push_back( ofFloatColor(0.2, 1) );
 	}
 	
 	rshape_vbo.setVertexData( &rshape_points[0], rshape_points.size(), GL_DYNAMIC_DRAW );

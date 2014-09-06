@@ -46,7 +46,7 @@ bool dt_config::DT_SHOW_BUFFERED_RHYTHM = true;
 
 // draw mode
 bool dt_config::DT_SHOW_LINER_DRAWER = false;
-bool dt_config::DT_SHOW_PARAM = true;
+bool dt_config::DT_SHOW_PARAM = false;
 
 float dt_config::DT_SIZE_BASE = 100.0;
 
@@ -57,23 +57,6 @@ void dt_config::setup(){
 	height = 20;
 	int color = 110;
 	
-	{
-		status.setDefaultWidth( width );
-		status.setDefaultHeight( height );
-		status.setDefaultTextColor( color );
-		status.setup();
-		status.setName( "status" );
-
-		status.add( fps.setup("fps", "") );
-		status.add( sleep_microsec.setup("/sleep_microsec", "") );
-		status.add( master_clock_out_resolution.setup("/master_clock_out_resolution", "") );
-		status.add( circle_num.setup("all circle num", "") );
-		status.add( noteOn_num.setup("noteOn circle num", "") );
-		status.add( param_num.setup("param circle num", "") );
-		status.add( output_num.setup("output circle num", "") );
-		
-	}
-
 	{
 		osc.setDefaultWidth( width );
 		osc.setDefaultHeight( height );
@@ -132,26 +115,16 @@ void dt_config::reset_position(){
 	int y = ofGetHeight() - width;
 
 	int w = width + 20;
-	status.setPosition( x, y );
-	osc.setPosition( x + w, y );
-	generative_rhythm.setPosition( x + w*2, y );
-	buffered_rhythm.setPosition( x + w*3, y );
-	draw_mode.setPosition( x + w*4, y );
+	osc.setPosition( x, y );
+	generative_rhythm.setPosition( x + w, y );
+	buffered_rhythm.setPosition( x + w*2, y );
+	draw_mode.setPosition( x + w*3, y );
 	
 	osc_r.setup( DT_OSC_IN_PORT );
 }
 
 void dt_config::update(){
 	app = ofApp::getInstance();
-	
-	if( DT_SHOW_PARAM ){
-        // status
-		fps = ofToString( ofGetFrameRate(),1 );
-		circle_num = ofToString( app->all_containers.circle_base_container->circles.size() );
-		noteOn_num = ofToString( app->all_containers.note_on_container->circles.size() );
-		param_num = ofToString( app->all_containers.param_container->circles.size() );
-		output_num = ofToString( app->all_containers.output_container->circles.size() );
-	}
 	
 	while( osc_r.hasWaitingMessages() ){
 		ofxOscMessage m;
@@ -165,11 +138,9 @@ void dt_config::update(){
 			int i = m.getArgAsInt32( 0 );
 			i = max( 1000, i );
 			app->sequence_thread.change_sleep_time_microsec( i );
-			sleep_microsec = ofToString( app->sequence_thread.sleep_microsec );
 		}else if( address == pre + "master_clock_out_resolution" ){
 			int i= m.getArgAsInt32( 0 );
 			DT_MASTER_CLOCK_OUT_RESOLUTION = i;
-			master_clock_out_resolution = ofToString( DT_MASTER_CLOCK_OUT_RESOLUTION );
 			
 		// OSC
 		}else if( address == pre + "osc_out_ch_max" ){
@@ -311,7 +282,6 @@ void dt_config::update(){
 void dt_config::draw(){
 	if( DT_SHOW_PARAM ){
 		ofSetColor( 200 );
-		status.draw();
 		osc.draw();
 		generative_rhythm.draw();
 		buffered_rhythm.draw();
@@ -324,13 +294,6 @@ void dt_config::toggle(){
 }
 
 void dt_config::synch_param(){
-	fps = ofToString( ofGetFrameRate(),1 );
-	circle_num = ofToString( app->all_containers.circle_base_container->circles.size() );
-	noteOn_num = ofToString( app->all_containers.note_on_container->circles.size());
-	param_num = ofToString( app->all_containers.param_container->circles.size() );
-	output_num = ofToString( app->all_containers.output_container->circles.size() );
-	sleep_microsec = ofToString( app->sequence_thread.sleep_microsec );
-	master_clock_out_resolution = ofToString( DT_MASTER_CLOCK_OUT_RESOLUTION );
 	
 	osc_out_ch_max = ofToString( DT_OSC_OUT_CH_MAX );
 	osc_out_address = ofToString( DT_OSC_OUT_ADDRESS );

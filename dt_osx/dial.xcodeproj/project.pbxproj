@@ -14,6 +14,15 @@
 		4294163B15857489B2176769 /* svgtiny_gradient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 582921BA98D224ED41833868 /* svgtiny_gradient.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
 		4D380E7919B7CE650056783F /* OscView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D380E7819B7CE650056783F /* OscView.xib */; };
+		4D6FDDB519BBCCAF009000CA /* _icons.ai in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDAC19BBCCAE009000CA /* _icons.ai */; };
+		4D6FDDB619BBCCAF009000CA /* icon-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDAD19BBCCAE009000CA /* icon-01.png */; };
+		4D6FDDB719BBCCAF009000CA /* icon-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDAE19BBCCAE009000CA /* icon-02.png */; };
+		4D6FDDB819BBCCAF009000CA /* icon-03.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDAF19BBCCAE009000CA /* icon-03.png */; };
+		4D6FDDB919BBCCAF009000CA /* icon-04.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDB019BBCCAF009000CA /* icon-04.png */; };
+		4D6FDDBA19BBCCAF009000CA /* icon-05.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDB119BBCCAF009000CA /* icon-05.png */; };
+		4D6FDDBB19BBCCAF009000CA /* icon-06.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDB219BBCCAF009000CA /* icon-06.png */; };
+		4D6FDDBC19BBCCAF009000CA /* icon-07.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDB319BBCCAF009000CA /* icon-07.png */; };
+		4D6FDDBD19BBCCAF009000CA /* icon-08.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDB419BBCCAF009000CA /* icon-08.png */; };
 		4D7376AB19B7D440000AC010 /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7376AA19B7D440000AC010 /* CircleView.xib */; };
 		4D7376AD19B7D460000AC010 /* GeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7376AC19B7D460000AC010 /* GeneralView.xib */; };
 		4D7376B019B7DFE4000AC010 /* OscViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D7376AF19B7DFE4000AC010 /* OscViewController.mm */; };
@@ -157,6 +166,15 @@
 		444657A12E59D0ED86981498 /* TimerListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TimerListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/TimerListener.h; sourceTree = SOURCE_ROOT; };
 		48974F980F51769171D0B2F5 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = IpEndpointName.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h; sourceTree = SOURCE_ROOT; };
 		4D380E7819B7CE650056783F /* OscView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OscView.xib; sourceTree = "<group>"; };
+		4D6FDDAC19BBCCAE009000CA /* _icons.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _icons.ai; sourceTree = "<group>"; };
+		4D6FDDAD19BBCCAE009000CA /* icon-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-01.png"; sourceTree = "<group>"; };
+		4D6FDDAE19BBCCAE009000CA /* icon-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-02.png"; sourceTree = "<group>"; };
+		4D6FDDAF19BBCCAE009000CA /* icon-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-03.png"; sourceTree = "<group>"; };
+		4D6FDDB019BBCCAF009000CA /* icon-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-04.png"; sourceTree = "<group>"; };
+		4D6FDDB119BBCCAF009000CA /* icon-05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-05.png"; sourceTree = "<group>"; };
+		4D6FDDB219BBCCAF009000CA /* icon-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-06.png"; sourceTree = "<group>"; };
+		4D6FDDB319BBCCAF009000CA /* icon-07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-07.png"; sourceTree = "<group>"; };
+		4D6FDDB419BBCCAF009000CA /* icon-08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-08.png"; sourceTree = "<group>"; };
 		4D7376AA19B7D440000AC010 /* CircleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
 		4D7376AC19B7D460000AC010 /* GeneralView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralView.xib; sourceTree = "<group>"; };
 		4D7376AE19B7DFE4000AC010 /* OscViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscViewController.h; sourceTree = "<group>"; };
@@ -10609,6 +10627,23 @@
 				86D2677079A3AF4A5A88E29A /* oscpack */,
 			);
 			name = libs;
+			sourceTree = "<group>";
+		};
+		4D6FDDAB19BBCCAE009000CA /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				4D6FDDAC19BBCCAE009000CA /* _icons.ai */,
+				4D6FDDAD19BBCCAE009000CA /* icon-01.png */,
+				4D6FDDAE19BBCCAE009000CA /* icon-02.png */,
+				4D6FDDAF19BBCCAE009000CA /* icon-03.png */,
+				4D6FDDB019BBCCAF009000CA /* icon-04.png */,
+				4D6FDDB119BBCCAF009000CA /* icon-05.png */,
+				4D6FDDB219BBCCAF009000CA /* icon-06.png */,
+				4D6FDDB319BBCCAF009000CA /* icon-07.png */,
+				4D6FDDB419BBCCAF009000CA /* icon-08.png */,
+			);
+			name = icons;
+			path = bin/data/icons;
 			sourceTree = "<group>";
 		};
 		4D7376B819B7EE9C000AC010 /* MainWindow */ = {
@@ -27636,6 +27671,7 @@
 				F6B791351947ABA600B0741D /* libc++.dylib */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
+				4D6FDDAB19BBCCAE009000CA /* icons */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
@@ -28459,11 +28495,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6FDDB519BBCCAF009000CA /* _icons.ai in Resources */,
+				4D6FDDBA19BBCCAF009000CA /* icon-05.png in Resources */,
+				4D6FDDBC19BBCCAF009000CA /* icon-07.png in Resources */,
 				4D82B82019B67D7300BA0CEF /* MainMenu.xib in Resources */,
+				4D6FDDBD19BBCCAF009000CA /* icon-08.png in Resources */,
+				4D6FDDB819BBCCAF009000CA /* icon-03.png in Resources */,
+				4D6FDDB619BBCCAF009000CA /* icon-01.png in Resources */,
 				4D7376B719B7EE7F000AC010 /* MainWindow.xib in Resources */,
 				4D7376AD19B7D460000AC010 /* GeneralView.xib in Resources */,
+				4D6FDDB719BBCCAF009000CA /* icon-02.png in Resources */,
+				4D6FDDB919BBCCAF009000CA /* icon-04.png in Resources */,
 				4D7376AB19B7D440000AC010 /* CircleView.xib in Resources */,
 				4D380E7919B7CE650056783F /* OscView.xib in Resources */,
+				4D6FDDBB19BBCCAF009000CA /* icon-06.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

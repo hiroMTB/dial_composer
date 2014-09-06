@@ -85,9 +85,9 @@ public:
 	 *		->	it's faster because ofxGui use ofxVboMesh to draw text
 	 *
 	 */
-	ofxPanel status;
-	ofxLabel fps, sleep_microsec, master_clock_out_resolution;
-	ofxLabel circle_num, noteOn_num, param_num, output_num;
+//	ofxPanel status;
+//	ofxLabel fps, sleep_microsec, master_clock_out_resolution;
+//	ofxLabel circle_num, noteOn_num, param_num, output_num;
     
     ofxPanel osc;
 	ofxLabel osc_out_address, osc_out_port, osc_out_ch_max, osc_out_ch_min;

@@ -51,7 +51,7 @@
                                                     <constraint firstAttribute="width" constant="35" id="LJD-e1-bKr"/>
                                                     <constraint firstAttribute="height" constant="35" id="PjH-24-008"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" alternateImage="NSRemoveTemplate" state="on" imageScaling="proportionallyDown" inset="2" id="64h-FC-xDA">
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-05" imagePosition="only" alignment="center" alternateImage="icon-01" state="on" imageScaling="proportionallyDown" inset="2" id="64h-FC-xDA">
                                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -66,7 +66,7 @@
                                                     <constraint firstAttribute="height" constant="35" id="Efg-Uv-3W4"/>
                                                     <constraint firstAttribute="width" constant="35" id="Ev5-9r-7aZ"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSBluetoothTemplate" imagePosition="only" alignment="center" alternateImage="NSShareTemplate" imageScaling="proportionallyDown" inset="2" id="BQ7-9Z-llx">
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-06" imagePosition="only" alignment="center" alternateImage="icon-02" imageScaling="proportionallyDown" inset="2" id="BQ7-9Z-llx">
                                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -81,7 +81,7 @@
                                                     <constraint firstAttribute="width" constant="35" id="JNF-gz-NhU"/>
                                                     <constraint firstAttribute="height" constant="35" id="Ksj-Dm-zQN"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoLeftTemplate" imagePosition="only" alignment="center" alternateImage="NSGoRightTemplate" imageScaling="proportionallyDown" inset="2" id="53J-i5-zfQ">
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-07" imagePosition="only" alignment="center" alternateImage="icon-03" imageScaling="proportionallyDown" inset="2" id="53J-i5-zfQ">
                                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -96,7 +96,7 @@
                                                     <constraint firstAttribute="height" constant="35" id="gLm-Re-y8W"/>
                                                     <constraint firstAttribute="width" constant="35" id="niI-DD-Kpe"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSQuickLookTemplate" imagePosition="only" alignment="center" alternateImage="NSRefreshFreestandingTemplate" imageScaling="proportionallyDown" inset="2" id="hUI-qJ-JFA">
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-08" imagePosition="only" alignment="center" alternateImage="icon-04" imageScaling="proportionallyDown" inset="2" id="hUI-qJ-JFA">
                                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -161,18 +161,34 @@
                     <constraint firstItem="L0P-A7-OcK" firstAttribute="top" secondItem="GzE-ve-f11" secondAttribute="top" id="v4g-M9-MR7"/>
                 </constraints>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="EC8D6FE7-95CC-44EC-AB8D-A8A04F605F88" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="uVp-Hv-nur">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="D599B025-1F9C-4DC5-AE8E-635051545189" label="Stop" paletteLabel="Stop" tag="-1" id="i7h-QL-rSP"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="JPo-oo-Vuf"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="96n-h3-sdd"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Uoj-De-OOb"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="9d9-qH-VUD"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="gZ8-O5-Atp"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="JPo-oo-Vuf"/>
+                    <toolbarItem reference="96n-h3-sdd"/>
+                    <toolbarItem reference="gZ8-O5-Atp"/>
+                    <toolbarItem reference="Uoj-De-OOb"/>
+                </defaultToolbarItems>
+            </toolbar>
         </window>
     </objects>
     <resources>
-        <image name="NSAddTemplate" width="8" height="8"/>
-        <image name="NSBluetoothTemplate" width="7" height="14"/>
-        <image name="NSGoLeftTemplate" width="9" height="9"/>
-        <image name="NSGoRightTemplate" width="9" height="9"/>
         <image name="NSListViewTemplate" width="11" height="10"/>
-        <image name="NSQuickLookTemplate" width="21" height="16"/>
-        <image name="NSRefreshFreestandingTemplate" width="14" height="14"/>
-        <image name="NSRemoveTemplate" width="8" height="8"/>
-        <image name="NSShareTemplate" width="18" height="16"/>
         <image name="NSStopProgressTemplate" width="11" height="11"/>
+        <image name="icon-01" width="64" height="64"/>
+        <image name="icon-02" width="65" height="64"/>
+        <image name="icon-03" width="65" height="64"/>
+        <image name="icon-04" width="65" height="64"/>
+        <image name="icon-05" width="64" height="65"/>
+        <image name="icon-06" width="65" height="65"/>
+        <image name="icon-07" width="65" height="65"/>
+        <image name="icon-08" width="65" height="65"/>
     </resources>
 </document>
