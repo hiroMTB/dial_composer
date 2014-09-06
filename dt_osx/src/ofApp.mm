@@ -4,6 +4,8 @@
 #include "dt_circle_container.h"
 #include "dt_circle_param.h"
 
+#import "AppDelegate.h"
+
 ofApp * ofApp::instance = NULL;
 
 ofApp * ofApp::init(){
@@ -62,6 +64,10 @@ void ofApp::update(){
 	all_containers.update();
 
 	osc_recorder.update( canvas.x+30, canvas.y + canvas.height + 30, canvas.width-70, 100 );
+
+    // update Cocoa UI
+    AppDelegate *  d = (AppDelegate*)[NSApplication sharedApplication].delegate;
+    if( d ) [d update_ui];
 }
 
 void ofApp::draw(){

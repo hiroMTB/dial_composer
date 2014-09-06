@@ -23,6 +23,7 @@
 
     NSViewController *myCurrentViewController;
 
+    @public
     GeneralViewController *generalViewController;
     CircleViewController *circleViewController;
     OscViewController *oscViewController;

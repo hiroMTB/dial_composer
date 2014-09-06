@@ -5,4 +5,9 @@
 {
     MainWindowController *mainWindowController;
 }
+
+@property (nonatomic, strong) MainWindowController * mainWindowController;
+
+- (void)update_ui;
+
 @end

@@ -1,6 +1,6 @@
 #import "ofMain.h"
 #import <Cocoa/Cocoa.h>
-
-int main(int argc, char *argv[]){	
+#import "AppDelegate.h"
+int main(int argc, char *argv[]){
 	return NSApplicationMain(argc, (const char **)argv);
 }

@@ -17,11 +17,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application">
-            <connections>
-                <outlet property="delegate" destination="ipO-Ld-frq" id="WeF-0X-XtP"/>
-            </connections>
-        </customObject>
+        <customObject id="-3" userLabel="Application"/>
         <window title="dialt" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="ipO-Ld-frq">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>

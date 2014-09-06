@@ -12,6 +12,8 @@
 
 #import "CircleViewController.h"
 
+#import "AppDelegate.h"
+
 @interface CircleViewController ()
 @end
 
@@ -21,8 +23,7 @@
 @synthesize beat_tx, speed_tx, rotate_tx, shape_tx, edge_tx, side_tx, ch_tx;
 @synthesize color;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
@@ -76,7 +77,6 @@
     dt_circle_base * c = dt_circle_base::selected_circle;
 }
 
-
 - (IBAction)change_ch:(id)sender {
     int ch = [sender intValue];
     [self.ch_sl setIntValue:ch];
@@ -85,9 +85,9 @@
 }
 
 - (IBAction)change_color:(id)sender {
-    float r = ( (NSColorWell*)sender).color.redComponent;
-    float g = ( (NSColorWell*)sender).color.greenComponent;
-    float b = ( (NSColorWell*)sender).color.blueComponent;
+    float r = ( (NSColorWell*)sender ).color.redComponent;
+    float g = ( (NSColorWell*)sender ).color.greenComponent;
+    float b = ( (NSColorWell*)sender ).color.blueComponent;
     dt_circle_base * c = dt_circle_base::selected_circle;
     if( c ) c->change_circle_color( r, g, b, 1.0 );
 }
