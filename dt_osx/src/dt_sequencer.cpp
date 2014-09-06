@@ -27,6 +27,7 @@ rhythm_shape_type( 0 )
 void dt_sequencer::setup( float _total_beats ){
 	total_beats = _total_beats;
 	total_steps = total_beats * beat_resolution;
+    indicator = 0;
 }
 
 void dt_sequencer::updateIndicator(){

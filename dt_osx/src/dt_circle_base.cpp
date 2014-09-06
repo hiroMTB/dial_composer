@@ -91,9 +91,12 @@ void dt_circle_base::check_sequencer(){
 }
 
 void dt_circle_base::change_beat( int beat ){
-	delete seq;
-	seq = new dt_sequencer();
+	int shape = seq->rhythm_shape_type;
+    //delete seq;
+	//seq = new dt_sequencer();
 	seq->setup( beat );
+    seq->setRhythmShape( shape );
+    make_vbo();
 }
 
 void dt_circle_base::change_speed( int speed ){
