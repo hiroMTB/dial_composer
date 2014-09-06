@@ -6,10 +6,8 @@
 //
 //
 
-#import <Foundation/Foundation.h>
-
-
 #pragma once
+
 #include "ofApp.h"
 #include "ofxCocoaGLView.h"
 
@@ -18,7 +16,6 @@
 @private
 	ofApp * app;
 }
-
 
 - (void)setup;
 - (void)update;

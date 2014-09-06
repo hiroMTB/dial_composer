@@ -73,13 +73,10 @@ public:
 	static int DT_BUFFERED_RHYTHM_LOOP_END;
 	static bool DT_SHOW_BUFFERED_RHYTHM;
 	
-	
 	// draw mode
 	static bool DT_SHOW_LINER_DRAWER;
 	static bool DT_SHOW_PARAM;
-	
     static float DT_SIZE_BASE;
-	
 	
 	/*
 	 *
@@ -111,5 +108,3 @@ public:
 	ofxLabel show_linear_drawer;
 	ofxLabel show_param;
 };
-
-

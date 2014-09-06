@@ -8,7 +8,6 @@
 
 #import "OscViewController.h"
 
-
 @implementation OscViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -20,11 +19,9 @@
     return self;
 }
 
-
 - (void)awakeFromNib
 {
-    
-    
+
 }
 
 @end

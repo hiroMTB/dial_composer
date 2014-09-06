@@ -34,11 +34,11 @@
 @property (nonatomic, strong) CircleViewController *circleViewController;
 @property (nonatomic, strong) OscViewController *oscViewController;
 
-
 - (IBAction)SelectSideP1:(id)sender;
 - (IBAction)SelectSideP2:(id)sender;
 - (IBAction)SelectSideP3:(id)sender;
 - (IBAction)SelectSideP4:(id)sender;
 - (IBAction)SelectSideP5:(id)sender;
 - (NSViewController *)viewController;
+
 @end

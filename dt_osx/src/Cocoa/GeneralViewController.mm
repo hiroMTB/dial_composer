@@ -15,7 +15,6 @@
 @synthesize bpm_sl;
 @synthesize bpm_tx;
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

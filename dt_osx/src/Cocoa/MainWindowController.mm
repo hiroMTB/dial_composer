@@ -88,39 +88,45 @@ NSString *const OscViewTitle		= @"OscView";
     [self didChangeValueForKey:@"viewController"];
 }
 
-- (IBAction)SelectSideP1:(id)sender {
+- (IBAction)SelectSideP1:(id)sender
+{
     [self deselect_all_side_panel];
     [SidePanelSelector1 setState: NSOnState ];
     
     [self changeViewController : 1];
 }
 
-- (IBAction)SelectSideP2:(id)sender {
+- (IBAction)SelectSideP2:(id)sender
+{
     [self deselect_all_side_panel];
     [SidePanelSelector2 setState: NSOnState ];
     [self changeViewController : 2];
 }
 
-- (IBAction)SelectSideP3:(id)sender {
+- (IBAction)SelectSideP3:(id)sender
+{
     [self deselect_all_side_panel];
     [SidePanelSelector3 setState: NSOnState ];
     [self changeViewController : 3];
 }
 
-- (IBAction)SelectSideP4:(id)sender {
+- (IBAction)SelectSideP4:(id)sender
+{
     [self deselect_all_side_panel];
     [SidePanelSelector4 setState: NSOnState ];
     [self changeViewController : 4];
 }
 
-- (IBAction)SelectSideP5:(id)sender {
+- (IBAction)SelectSideP5:(id)sender
+{
     [self deselect_all_side_panel];
     [SidePanelSelector5 setState: NSOnState ];
     [self changeViewController : 5];
 }
 
 
-- (void)deselect_all_side_panel{
+- (void)deselect_all_side_panel
+{
     [SidePanelSelector1 setState: NSOffState ];
     [SidePanelSelector2 setState: NSOffState ];
     [SidePanelSelector3 setState: NSOffState ];
@@ -132,6 +138,5 @@ NSString *const OscViewTitle		= @"OscView";
 {
 	return self.myCurrentViewController;
 }
-
 
 @end

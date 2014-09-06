@@ -44,6 +44,10 @@ public:
 	void gotMessage( ofMessage msg );
 	void exit();
 
+    int view_mode;
+    ofFloatColor bg;
+    ofRectangle canvas;
+    
 	dt_osc_sender		osc_sender;
 	dt_midi_sender		midi_sender;
 	dt_midi_writer		midi_writer;
@@ -55,11 +59,7 @@ public:
 	dt_sequence_thread	sequence_thread;
 	dt_config			config;
 	dt_osc_recorder		osc_recorder;
-	dt_circle_all_containers all_containers;
+	dt_circle_all_containers all_containers;	
 	
-	ofRectangle canvas;
-    int view_mode;
-    
-    ofFloatColor bg;
 };
 
