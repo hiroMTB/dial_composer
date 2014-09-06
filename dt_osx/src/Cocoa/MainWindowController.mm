@@ -25,7 +25,7 @@ NSString *const OscViewTitle		= @"OscView";
 
 - (id)initWithWindow:(NSWindow *)window {
     self = [super initWithWindow:window];
-    [self changeViewController:1];
+//    [self changeViewController:1];
     return self;
 }
 
@@ -74,14 +74,12 @@ NSString *const OscViewTitle		= @"OscView";
             break;
 
     }
-
     
-    [SidePanel addSubview:[self.myCurrentViewController view]];
-    
-    [[self.myCurrentViewController view] setFrame:[SidePanel bounds]];
-	
-	[self.myCurrentViewController setRepresentedObject:[NSNumber numberWithUnsignedInteger:[[[self.myCurrentViewController view] subviews] count]]];
-    
+    NSView * contentView = [self.myCurrentViewController view];
+    [contentView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+    [contentView setFrame:[SidePanel bounds]];
+    [SidePanel addSubview:contentView];
+	[self.myCurrentViewController setRepresentedObject:[NSNumber numberWithUnsignedInteger:[[contentView subviews] count]]];
     [self didChangeValueForKey:@"viewController"];
 }
 
