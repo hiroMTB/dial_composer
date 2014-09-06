@@ -48,14 +48,8 @@ void dt_circle_all_containers::setup(){
 }
 
 void dt_circle_all_containers::update(){
-	all_points_pos.clear();
-	all_points_color.clear();
-	
-	all_lines_pos.clear();
-	all_lines_color.clear();
 	
 	circle_base_container->update();
-
 	circle_base_container->process_collision();
 }
 
@@ -90,12 +84,17 @@ void dt_circle_all_containers::draw(){
     all_lines_vbo.unbind();
 
     // all points
-    glPointSize( 3 );
+    glPointSize( 4 );
     all_points_vbo.bind();
     all_points_vbo.updateColorData( &all_points_color[0], all_points_color.size() );
     all_points_vbo.updateVertexData( &all_points_pos[0], all_points_pos.size() );
     all_points_vbo.draw( GL_POINTS, 0, all_points_pos.size() );
     all_points_vbo.unbind();
+    
+    all_points_pos.clear();
+	all_points_color.clear();
+	all_lines_pos.clear();
+	all_lines_color.clear();
 }
 
 void dt_circle_all_containers::step(){

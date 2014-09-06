@@ -47,6 +47,7 @@ public:
     int view_mode;
     ofFloatColor bg;
     ofRectangle canvas;
+    ofImage noise;
     
 	dt_osc_sender		osc_sender;
 	dt_midi_sender		midi_sender;

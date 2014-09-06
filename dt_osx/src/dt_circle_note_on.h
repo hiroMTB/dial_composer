@@ -46,6 +46,10 @@ public:
 	ofVbo rshape_vbo;
 	vector<ofVec2f> rshape_points;
     vector<ofFloatColor> rshape_colors;
+
+    ofVbo rguid_vbo;
+	vector<ofVec2f> rguid_points;
+    vector<ofFloatColor> rguid_colors;
     
 	vector<dt_circle_base*> input_circles;
 	vector<dt_circle_base*> output_circles;

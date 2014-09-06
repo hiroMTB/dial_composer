@@ -23,7 +23,7 @@ void ofApp::windowResized( int w, int h ){
 	canvas.height = h-50;
 	
 	config.reset_position();
-    dt_config::DT_SIZE_BASE = max( w, h )/13.0;
+    dt_config::DT_SIZE_BASE = max( w, h )/11.0;
 }
 
 void ofApp::setup(){
@@ -42,6 +42,10 @@ void ofApp::setupVisual(){
 	ofEnableAlphaBlending();
 	ofEnableAntiAliasing();
 	ofEnableSmoothing();
+
+    ofDisableArbTex();
+    noise.loadImage("img/noise2.png");
+    noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
     
     view_mode = 0;
 }
@@ -72,7 +76,11 @@ void ofApp::update(){
 
 void ofApp::draw(){
     ofBackground( bg );
-
+    ofSetColor( 255, 170 );
+    noise.width = ofGetWidth();
+    noise.height = ofGetHeight();
+    noise.draw( 0, 0 );
+    
     switch( view_mode ){
         case 0:
             ofSetupScreenOrtho();
