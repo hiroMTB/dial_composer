@@ -74,6 +74,65 @@ void dt_circle_note_on::setup( int beat_num ){
 	int quantize_step = 1; //dt_config::DT_BEAT_RESOLUTION / dt_config::DT_QUANTIZE_RESOLUTION;
 	int rotate_step =  quantize_step * (int)round( ofRandom(0, dt_config::DT_BEAT_RESOLUTION-1) );
 	seq->indicator = rotate_step;
+    
+    
+    // input
+    {
+        dt_circle_param_noteNum * note = new dt_circle_param_noteNum();
+        note->setup( ofRandom(4, 22) );
+        note->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
+        note->change_shape( 300 );
+        input_circles.push_back( note );
+    }
+
+    {
+        
+        dt_circle_param_velocity * vel = new dt_circle_param_velocity();
+        vel->setup( ofRandom(4, 22) );
+        vel->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
+        vel->change_shape( 300 );
+        input_circles.push_back( vel );
+    }
+    
+    {
+        dt_circle_param_duration * dur = new dt_circle_param_duration();
+        dur->setup( ofRandom(4, 22) );
+        dur->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
+        dur->change_shape( 300 );
+        input_circles.push_back( dur );
+    }
+
+    {
+        dt_circle_param_cc1 * cc1 = new dt_circle_param_cc1();
+        cc1->setup( ofRandom(4, 22) );
+        cc1->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
+        cc1->change_shape( 300 );
+        input_circles.push_back( cc1 );
+    }
+
+    {
+        dt_circle_param_cc2 * cc2 = new dt_circle_param_cc2();
+        cc2->setup( ofRandom(4, 22) );
+        cc2->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
+        cc2->change_shape( 300 );
+        input_circles.push_back( cc2 );
+    }
+    
+    {
+        dt_circle_param_cc3 * cc3 = new dt_circle_param_cc3();
+        cc3->setup( ofRandom(4, 22) );
+        cc3->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
+        cc3->change_shape( 300 );
+        input_circles.push_back( cc3 );
+    }
+    
+    {
+        dt_circle_param_cc4 * cc4 = new dt_circle_param_cc4();
+        cc4->setup( ofRandom(4, 22) );
+        cc4->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
+        cc4->change_shape( 300 );
+        input_circles.push_back( cc4 );
+    }
 }
 
 void dt_circle_note_on::set_beats( int beat_num ){
@@ -109,14 +168,14 @@ void dt_circle_note_on::update(){
 
 void dt_circle_note_on::check_connection(){
 	
-	input_circles.clear();
-	output_circles.clear();
+	//input_circles.clear();
+	//output_circles.clear();
 	
 	//	input check
-	ofApp::getInstance()->all_containers.param_container->check_connection( this, true );
+	//ofApp::getInstance()->all_containers.param_container->check_connection( this, true );
 	
 	// output check
-	ofApp::getInstance()->all_containers.output_container->check_connection( this, false );
+	//ofApp::getInstance()->all_containers.output_container->check_connection( this, false );
 }
 
 void dt_circle_note_on::draw(){

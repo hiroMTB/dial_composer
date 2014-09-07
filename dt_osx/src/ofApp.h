@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "def.h"
+#include "ofxTween.h"
 #include "dt_midi_writer.h"
 #include "dt_osc_sender.h"
 #include "dt_midi_sender.h"
@@ -43,7 +44,8 @@ public:
 	void dragEvent( ofDragInfo dragInfo ){};
 	void gotMessage( ofMessage msg );
 	void exit();
-
+    void change_view( int view_mode );
+    
     int view_mode;
     ofFloatColor bg;
     ofRectangle canvas;
@@ -61,6 +63,8 @@ public:
 	dt_config			config;
 	dt_osc_recorder		osc_recorder;
 	dt_circle_all_containers all_containers;	
-	
+
+    ofVec2f campos, campos_target;
+	ofxEasingQuad camtw_x, camtw_y;
 };
 

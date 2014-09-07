@@ -8,10 +8,8 @@
 
 #pragma once
 
-
 #include "ofMain.h"
 #include "dt_circle_base.h"
-
 
 class dt_circle_param_base : public dt_circle_base{
 
@@ -42,9 +40,11 @@ public:
 	static ofColor cc4_color;
 	ofVbo rshape_vbo;
 	vector<ofVec2f> rshape_points;
+    
+    static const int line_color_rate = 35;
 };
 
-float line_color_rate = 35.0;
+
 
 class dt_circle_param_noteNum : public dt_circle_param_base{
 public:

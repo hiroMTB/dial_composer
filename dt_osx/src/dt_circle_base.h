@@ -93,42 +93,34 @@ class dt_circle_base{
 	
 public:
 
-	static dt_circle_base * selected_circle;
-	dt_circle_data data;
-
-	ofApp * app;
-	
-	dt_circle_base();
+    dt_circle_base();
 	virtual void setup( int beat=4 ) = 0;
 	virtual void update() = 0;
 	virtual void draw() = 0;
-
-	// sequencer
-	dt_sequencer * seq;
-
-	virtual void step();
+    virtual void step();
 	virtual void fire(){};
 	virtual void check_sequencer();
-
     virtual void make_vbo(){};
-
-	// ui
-	dt_dial_ui * ui;
-
-	// for animation
-	unsigned int wait_step;
-	
+    
 	void change_beat( int beat );
     void change_speed( int speed );
     void change_shape( int shape );
     void change_circle_color( float r, float g, float b, float a );
-    
 	void setup_text( string initial );
 	void draw_initial();
+
+    ofApp * app;
+
+    static dt_circle_base * selected_circle;
+	unsigned int wait_step;
+    string initial;
+
+	dt_circle_data data;
+	dt_sequencer * seq;
+    dt_dial_ui * ui;
+
     ofTrueTypeFont * font;
     ofVboMesh text_mesh;
     ofPoint text_pos;
-
-	string initial;
 };
 

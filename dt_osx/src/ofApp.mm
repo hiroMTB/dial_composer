@@ -47,6 +47,9 @@ void ofApp::setupVisual(){
     noise.loadImage("img/noise2.png");
     noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
     
+    campos.set( ofGetWidth()/2, ofGetHeight()/2 );
+    campos_target = campos;
+    
     view_mode = 0;
 }
 
@@ -66,37 +69,58 @@ void ofApp::update(){
 	touch.update();
 	config.update();
 	all_containers.update();
-
 	osc_recorder.update( canvas.x+30, canvas.y + canvas.height + 30, canvas.width-70, 100 );
 
     // update Cocoa UI
     AppDelegate *  d = (AppDelegate*)[NSApplication sharedApplication].delegate;
+
     if( d ) [d update_ui];
+    
+    campos = campos*0.9 + campos_target*0.1;
 }
 
 void ofApp::draw(){
     ofBackground( bg );
     ofSetColor( 255, 170 );
-    noise.width = ofGetWidth();
-    noise.height = ofGetHeight();
+
+    float w = ofGetWidth();
+    float h = ofGetHeight();
+    noise.width = w;
+    noise.height = h;
     noise.draw( 0, 0 );
-    
+
+    ofSetupScreenOrtho();
+    ofPushMatrix();
+    ofTranslate( -(campos.x-w/2), -(campos.y-h/2) );
+
     switch( view_mode ){
         case 0:
-            ofSetupScreenOrtho();
             all_containers.draw();
             if( dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw(canvas.x+30, canvas.y+30, canvas.width-60, canvas.height-60, 1 );
             config.draw();
             break;
 
         case 1:
-            // draw rhythm screen
-            ofSetupScreenOrtho();
+        {
+            dt_circle_base * sel = dt_circle_base::selected_circle;
+            if( sel ){
+                sel->draw();
+                dt_circle_type t = sel->data.circle_type;
+                if( t == DT_CIRCLE_NOTE_ON ){
+                    dt_circle_note_on * o = static_cast<dt_circle_note_on*>(sel);
+                    for( int i=0; i<o->input_circles.size(); i++ ){
+                        o->input_circles[i]->draw();
+                    }
+                }
+            }
             break;
-
+        }
         default:
             break;
     }
+    
+    ofPopMatrix();
+
 }
 
 void ofApp::mousePressed( int x, int y, int button ){
@@ -132,8 +156,8 @@ void ofApp::keyPressed( int key ){
 			break;
             
         // view_mode
- 		case '0':  view_mode = 0; break;
- 		case '1':  view_mode = 1; break;
+ 		case '0':  change_view( 0 ); break;
+ 		case '1':  change_view( 1 ); break;
 			
 		// play
 		case ' ': dt_config::DT_PLAY_GEN_RHYTHM = !dt_config::DT_PLAY_GEN_RHYTHM; config.synch_param(); break;
@@ -159,3 +183,24 @@ void ofApp::keyPressed( int key ){
 void ofApp::exit(){
 	sequence_thread.stop();
 }
+
+
+void ofApp::change_view( int _view_mode ){
+    
+    switch( _view_mode ){
+        case 0:
+            campos_target = ofVec2f( ofGetWidth()/2, ofGetHeight()/2 );
+            view_mode = _view_mode;
+            break;
+        case 1:
+        {
+            dt_circle_base * sel = dt_circle_base::selected_circle;
+            if( sel ){
+                campos_target = sel->data.position;
+                view_mode = _view_mode;
+            }
+            break;
+        }
+    }
+}
+

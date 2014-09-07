@@ -31,7 +31,12 @@ dt_circle_param_base::~dt_circle_param_base(){
 }
 
 void dt_circle_param_base::setup( int beat_num ){
-	data.rev_radius = 25;
+	seq = new dt_sequencer();
+    
+	//set_beats( beat_num );
+	//set_speed( 1 );
+    
+	data.rev_radius = 40;
 	data.collision_radius = 20;
 	data.bCollide = true;
     setup_text( initial );
@@ -46,14 +51,13 @@ void dt_circle_param_base::update(){
 	data.fire_rate *= 0.8;
 	
 	if( dt_config::DT_PLAY_GEN_RHYTHM ){
-		data.position += data.move_speed;
+		//data.position += data.move_speed;
 		data.world_position = data.position;
 	}
 }
 
 void dt_circle_param_base::draw(){
 	
-	ofPushStyle();
 	ofPushMatrix();
 	ofTranslate( data.position.x, data.position.y );
 		
@@ -63,9 +67,9 @@ void dt_circle_param_base::draw(){
 	// Circle
 	ofSetColor( data.circle_color - data.fire_rate*0.2 );
 	ofNoFill();
-	ofSetLineWidth( 1 );
-	glPointSize( 1 );
-	app->circle_drawer.draw(data.rev_radius);
+	ofSetLineWidth( 2 );
+	glPointSize( 3 );
+	app->circle_drawer.draw( data.rev_radius );
 	
 #ifndef NOT_USE_OF_DRAW_TEXT
 	draw_initial();
@@ -76,7 +80,6 @@ void dt_circle_param_base::draw(){
 	if( data.bShowUI )
 		ui->draw();
 	
-	ofPopStyle();
 	ofPopMatrix();
 }
 
