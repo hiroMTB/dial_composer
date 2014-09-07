@@ -143,7 +143,6 @@ void dt_circle_note_on::draw(){
     app->circle_drawer.draw( data.rev_radius * 1.26, GL_POINTS );
     
 	// shape
-    glLineWidth( 2 );
 	if(fired) ofSetColor( 200 );
 	else ofSetColor( data.circle_color );
 
@@ -158,6 +157,7 @@ void dt_circle_note_on::draw(){
         rguid_vbo.unbind();
         
         // shape
+        glLineWidth( 3 );
         rshape_vbo.bind();
         rshape_vbo.draw( mode, 0, rshape_points.size() );
         rshape_vbo.unbind();
