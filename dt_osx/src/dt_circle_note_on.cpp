@@ -176,40 +176,13 @@ void dt_circle_note_on::change_rshape( int type ){
 }
 
 void dt_circle_note_on::fire(){
-
-	int rate = dt_config::DT_GEN_RHYTHM_RATE;
-	if( rate == 0 ) return;
 	
-	if( rate==100 || ofRandom(0,100) <= rate ){
-	
-		// output
-		for( int i=0; i<output_circles.size(); i++ ){
-			
-			dt_circle_type &type = output_circles[i]->data.circle_type;
-			switch ( type ) {
-				case DT_CIRCLE_OSC:
-				{
-					dt_circle_osc * o = static_cast<dt_circle_osc*>( (output_circles[i]) );
-					o->send_osc( o->ch, p_state.note, p_state.vel, p_state.dur, p_state.pan, p_state.cc1,p_state.cc2, p_state.cc3, p_state.cc4 );
-					data.fired_ch = o->ch;
-				}
-				break;
-				
-				case DT_CIRCLE_MIDI:
-				{
-					dt_circle_midi * m = static_cast<dt_circle_midi*>( output_circles[i] );
-					m->send_midi( m->ch, p_state.note, p_state.vel, p_state.dur, p_state.pan, p_state.cc1,p_state.cc2, p_state.cc3, p_state.cc4 );
-				}
-				break;
+    ofxOscMessage m;
+    m.setAddress( "1" );
+    m.addIntArg( 255 );
+    app->osc_sender.send_message( m );
 
-				default:
-					break;
-			}
-		}
-		
-		data.fire_rate = 1.0;
-		
-	}
+    data.fire_rate = 1.0;
 }
 
 void dt_circle_note_on::update_world_position(){

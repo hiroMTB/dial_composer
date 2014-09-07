@@ -13,7 +13,9 @@
 		28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5928AA323F5C2690B06C837D /* UdpSocketWin.cpp */; };
 		4294163B15857489B2176769 /* svgtiny_gradient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 582921BA98D224ED41833868 /* svgtiny_gradient.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
-		4D380E7919B7CE650056783F /* OscView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D380E7819B7CE650056783F /* OscView.xib */; };
+		4D1DCF0019BBFF60003F8AF0 /* OscInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DCEFD19BBFF60003F8AF0 /* OscInView.xib */; };
+		4D1DCF0119BBFF60003F8AF0 /* OscInViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCEFF19BBFF60003F8AF0 /* OscInViewController.mm */; };
+		4D380E7919B7CE650056783F /* OscOutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D380E7819B7CE650056783F /* OscOutView.xib */; };
 		4D6FDDB519BBCCAF009000CA /* _icons.ai in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDAC19BBCCAE009000CA /* _icons.ai */; };
 		4D6FDDB619BBCCAF009000CA /* icon-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDAD19BBCCAE009000CA /* icon-01.png */; };
 		4D6FDDB719BBCCAF009000CA /* icon-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDAE19BBCCAE009000CA /* icon-02.png */; };
@@ -25,7 +27,7 @@
 		4D6FDDBD19BBCCAF009000CA /* icon-08.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FDDB419BBCCAF009000CA /* icon-08.png */; };
 		4D7376AB19B7D440000AC010 /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7376AA19B7D440000AC010 /* CircleView.xib */; };
 		4D7376AD19B7D460000AC010 /* GeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7376AC19B7D460000AC010 /* GeneralView.xib */; };
-		4D7376B019B7DFE4000AC010 /* OscViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D7376AF19B7DFE4000AC010 /* OscViewController.mm */; };
+		4D7376B019B7DFE4000AC010 /* OscOutViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D7376AF19B7DFE4000AC010 /* OscOutViewController.mm */; };
 		4D7376B519B7EC05000AC010 /* MainWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D7376B419B7EC05000AC010 /* MainWindowController.mm */; };
 		4D7376B719B7EE7F000AC010 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7376B619B7EE7F000AC010 /* MainWindow.xib */; };
 		4D7376BC19B802D7000AC010 /* GeneralViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D7376BB19B802D7000AC010 /* GeneralViewController.mm */; };
@@ -100,7 +102,7 @@
 		F6B766DD1947984B00B0741D /* dt_circle_note_on.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766BD1947984B00B0741D /* dt_circle_note_on.cpp */; };
 		F6B766DE1947984B00B0741D /* dt_circle_param.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766BF1947984B00B0741D /* dt_circle_param.cpp */; };
 		F6B766E01947984B00B0741D /* dt_dial_ui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766C81947984B00B0741D /* dt_dial_ui.cpp */; };
-		F6B766E21947984B00B0741D /* dt_osc_sender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766CC1947984B00B0741D /* dt_osc_sender.cpp */; };
+		F6B766E21947984B00B0741D /* dt_osc_sender.mm in Sources */ = {isa = PBXBuildFile; fileRef = F6B766CC1947984B00B0741D /* dt_osc_sender.mm */; };
 		F6B766E31947984B00B0741D /* dt_rhythm_lib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766CE1947984B00B0741D /* dt_rhythm_lib.cpp */; };
 		F6B766E41947984B00B0741D /* dt_sequence_thread_boost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D01947984B00B0741D /* dt_sequence_thread_boost.cpp */; };
 		F6B766E51947984B00B0741D /* dt_sequence_thread_oF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D21947984B00B0741D /* dt_sequence_thread_oF.cpp */; };
@@ -165,7 +167,10 @@
 		3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = NetworkingUtils.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp; sourceTree = SOURCE_ROOT; };
 		444657A12E59D0ED86981498 /* TimerListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TimerListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/TimerListener.h; sourceTree = SOURCE_ROOT; };
 		48974F980F51769171D0B2F5 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = IpEndpointName.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h; sourceTree = SOURCE_ROOT; };
-		4D380E7819B7CE650056783F /* OscView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OscView.xib; sourceTree = "<group>"; };
+		4D1DCEFD19BBFF60003F8AF0 /* OscInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OscInView.xib; sourceTree = "<group>"; };
+		4D1DCEFE19BBFF60003F8AF0 /* OscInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscInViewController.h; sourceTree = "<group>"; };
+		4D1DCEFF19BBFF60003F8AF0 /* OscInViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OscInViewController.mm; sourceTree = "<group>"; };
+		4D380E7819B7CE650056783F /* OscOutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OscOutView.xib; sourceTree = "<group>"; };
 		4D6FDDAC19BBCCAE009000CA /* _icons.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _icons.ai; sourceTree = "<group>"; };
 		4D6FDDAD19BBCCAE009000CA /* icon-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-01.png"; sourceTree = "<group>"; };
 		4D6FDDAE19BBCCAE009000CA /* icon-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-02.png"; sourceTree = "<group>"; };
@@ -177,8 +182,8 @@
 		4D6FDDB419BBCCAF009000CA /* icon-08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-08.png"; sourceTree = "<group>"; };
 		4D7376AA19B7D440000AC010 /* CircleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
 		4D7376AC19B7D460000AC010 /* GeneralView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralView.xib; sourceTree = "<group>"; };
-		4D7376AE19B7DFE4000AC010 /* OscViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscViewController.h; sourceTree = "<group>"; };
-		4D7376AF19B7DFE4000AC010 /* OscViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OscViewController.mm; sourceTree = "<group>"; };
+		4D7376AE19B7DFE4000AC010 /* OscOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscOutViewController.h; sourceTree = "<group>"; };
+		4D7376AF19B7DFE4000AC010 /* OscOutViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OscOutViewController.mm; sourceTree = "<group>"; };
 		4D7376B319B7EC05000AC010 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		4D7376B419B7EC05000AC010 /* MainWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainWindowController.mm; sourceTree = "<group>"; };
 		4D7376B619B7EE7F000AC010 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -10508,7 +10513,7 @@
 		F6B766C81947984B00B0741D /* dt_dial_ui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_dial_ui.cpp; sourceTree = "<group>"; };
 		F6B766C91947984B00B0741D /* dt_font_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_font_manager.h; sourceTree = "<group>"; };
 		F6B766CB1947984B00B0741D /* dt_osc_sender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_osc_sender.h; sourceTree = "<group>"; };
-		F6B766CC1947984B00B0741D /* dt_osc_sender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_osc_sender.cpp; sourceTree = "<group>"; };
+		F6B766CC1947984B00B0741D /* dt_osc_sender.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dt_osc_sender.mm; sourceTree = "<group>"; };
 		F6B766CD1947984B00B0741D /* dt_rhythm_lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_rhythm_lib.h; sourceTree = "<group>"; };
 		F6B766CE1947984B00B0741D /* dt_rhythm_lib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_rhythm_lib.cpp; sourceTree = "<group>"; };
 		F6B766CF1947984B00B0741D /* dt_sequence_thread_boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_sequence_thread_boost.h; sourceTree = "<group>"; };
@@ -10627,6 +10632,16 @@
 				86D2677079A3AF4A5A88E29A /* oscpack */,
 			);
 			name = libs;
+			sourceTree = "<group>";
+		};
+		4D1DCEFC19BBFF43003F8AF0 /* OscInView */ = {
+			isa = PBXGroup;
+			children = (
+				4D1DCEFD19BBFF60003F8AF0 /* OscInView.xib */,
+				4D1DCEFE19BBFF60003F8AF0 /* OscInViewController.h */,
+				4D1DCEFF19BBFF60003F8AF0 /* OscInViewController.mm */,
+			);
+			name = OscInView;
 			sourceTree = "<group>";
 		};
 		4D6FDDAB19BBCCAE009000CA /* icons */ = {
@@ -27435,7 +27450,8 @@
 				4D8FC6E219BB3DE600DC6817 /* GlView */,
 				4D8FC6E019BB3D8800DC6817 /* GeneralView */,
 				4D8FC6E119BB3D9400DC6817 /* CircleView */,
-				4D8FC6DF19BB3D7400DC6817 /* OscView */,
+				4D8FC6DF19BB3D7400DC6817 /* OscOutView */,
+				4D1DCEFC19BBFF43003F8AF0 /* OscInView */,
 			);
 			path = Cocoa;
 			sourceTree = "<group>";
@@ -27458,14 +27474,14 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		4D8FC6DF19BB3D7400DC6817 /* OscView */ = {
+		4D8FC6DF19BB3D7400DC6817 /* OscOutView */ = {
 			isa = PBXGroup;
 			children = (
-				4D380E7819B7CE650056783F /* OscView.xib */,
-				4D7376AE19B7DFE4000AC010 /* OscViewController.h */,
-				4D7376AF19B7DFE4000AC010 /* OscViewController.mm */,
+				4D380E7819B7CE650056783F /* OscOutView.xib */,
+				4D7376AE19B7DFE4000AC010 /* OscOutViewController.h */,
+				4D7376AF19B7DFE4000AC010 /* OscOutViewController.mm */,
 			);
-			name = OscView;
+			name = OscOutView;
 			sourceTree = "<group>";
 		};
 		4D8FC6E019BB3D8800DC6817 /* GeneralView */ = {
@@ -27832,7 +27848,7 @@
 			children = (
 				F6B766C91947984B00B0741D /* dt_font_manager.h */,
 				F6B766CB1947984B00B0741D /* dt_osc_sender.h */,
-				F6B766CC1947984B00B0741D /* dt_osc_sender.cpp */,
+				F6B766CC1947984B00B0741D /* dt_osc_sender.mm */,
 				F6075E07194DD88300F8F7E0 /* dt_midi_sender.h */,
 				F6B766CD1947984B00B0741D /* dt_rhythm_lib.h */,
 				F6B766CE1947984B00B0741D /* dt_rhythm_lib.cpp */,
@@ -28501,13 +28517,14 @@
 				4D82B82019B67D7300BA0CEF /* MainMenu.xib in Resources */,
 				4D6FDDBD19BBCCAF009000CA /* icon-08.png in Resources */,
 				4D6FDDB819BBCCAF009000CA /* icon-03.png in Resources */,
+				4D1DCF0019BBFF60003F8AF0 /* OscInView.xib in Resources */,
 				4D6FDDB619BBCCAF009000CA /* icon-01.png in Resources */,
 				4D7376B719B7EE7F000AC010 /* MainWindow.xib in Resources */,
 				4D7376AD19B7D460000AC010 /* GeneralView.xib in Resources */,
 				4D6FDDB719BBCCAF009000CA /* icon-02.png in Resources */,
 				4D6FDDB919BBCCAF009000CA /* icon-04.png in Resources */,
 				4D7376AB19B7D440000AC010 /* CircleView.xib in Resources */,
-				4D380E7919B7CE650056783F /* OscView.xib in Resources */,
+				4D380E7919B7CE650056783F /* OscOutView.xib in Resources */,
 				4D6FDDBB19BBCCAF009000CA /* icon-06.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28560,6 +28577,7 @@
 				F6B766E01947984B00B0741D /* dt_dial_ui.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
+				4D1DCF0119BBFF60003F8AF0 /* OscInViewController.mm in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
 				4D82B81C19B66AF500BA0CEF /* dt_osc_recorder.cpp in Sources */,
@@ -28571,7 +28589,7 @@
 				A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */,
 				28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
-				4D7376B019B7DFE4000AC010 /* OscViewController.mm in Sources */,
+				4D7376B019B7DFE4000AC010 /* OscOutViewController.mm in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
@@ -28592,7 +28610,7 @@
 				F66E1D72195E813700CEE795 /* dt_linear_drawer.cpp in Sources */,
 				F6B766E51947984B00B0741D /* dt_sequence_thread_oF.cpp in Sources */,
 				F6B766DB1947984B00B0741D /* dt_circle_base.cpp in Sources */,
-				F6B766E21947984B00B0741D /* dt_osc_sender.cpp in Sources */,
+				F6B766E21947984B00B0741D /* dt_osc_sender.mm in Sources */,
 				F6B766DE1947984B00B0741D /* dt_circle_param.cpp in Sources */,
 				F63412E8194A6BE400B2E3CC /* dt_sequence_thread_audio.cpp in Sources */,
 				4D82B82719B67D8800BA0CEF /* dt_GLView.mm in Sources */,

@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class GeneralViewController, CircleViewController, OscViewController;
+@class GeneralViewController, CircleViewController, OscOutViewController, OscInViewController;
 @class dt_GLView;
 
 @interface MainWindowController : NSWindowController
@@ -26,14 +26,16 @@
     @public
     GeneralViewController *generalViewController;
     CircleViewController *circleViewController;
-    OscViewController *oscViewController;
+    OscOutViewController *oscOutViewController;
+    OscInViewController *oscInViewController;
 }
 
 @property (nonatomic, assign) NSViewController *myCurrentViewController;
 
 @property (nonatomic, strong) GeneralViewController *generalViewController;
 @property (nonatomic, strong) CircleViewController *circleViewController;
-@property (nonatomic, strong) OscViewController *oscViewController;
+@property (nonatomic, strong) OscOutViewController *oscOutViewController;
+@property (nonatomic, strong) OscInViewController *oscInViewController;
 
 - (IBAction)SelectSideP1:(id)sender;
 - (IBAction)SelectSideP2:(id)sender;

@@ -9,19 +9,22 @@
 #import "MainWindowController.h"
 #import "GeneralViewController.h"
 #import "CircleViewController.h"
-#import "OscViewController.h"
+#import "oscOutViewController.h"
+#import "oscInViewController.h"
 
 @implementation MainWindowController
 
 NSString *const GeneralViewTitle	= @"GeneralView";
 NSString *const CircleViewTitle		= @"CircleView";
-NSString *const OscViewTitle		= @"OscView";
+NSString *const OscOutViewTitle		= @"OscOutView";
+NSString *const OscInViewTitle		= @"OscInView";
 
 @synthesize myCurrentViewController;
 
 @synthesize generalViewController;
 @synthesize circleViewController;
-@synthesize oscViewController;
+@synthesize oscOutViewController;
+@synthesize oscInViewController;
 
 - (id)initWithWindow:(NSWindow *)window {
     self = [super initWithWindow:window];
@@ -58,13 +61,17 @@ NSString *const OscViewTitle		= @"OscView";
             break;
             
         case 3:
-            if(oscViewController == nil)
-                oscViewController = [[OscViewController alloc] initWithNibName:OscViewTitle bundle:nil];
-            myCurrentViewController = self.oscViewController;
-            [self.myCurrentViewController setTitle:OscViewTitle];
+            if(oscOutViewController == nil)
+                oscOutViewController = [[OscOutViewController alloc] initWithNibName:OscOutViewTitle bundle:nil];
+            myCurrentViewController = self.oscOutViewController;
+            [self.myCurrentViewController setTitle:OscOutViewTitle];
             break;
             
         case 4:
+            if(oscInViewController == nil)
+                oscInViewController = [[OscInViewController alloc] initWithNibName:OscInViewTitle bundle:nil];
+            myCurrentViewController = self.oscInViewController;
+            [self.myCurrentViewController setTitle:OscInViewTitle];
             break;
 
         case 5:
