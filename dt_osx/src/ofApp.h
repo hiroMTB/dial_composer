@@ -64,7 +64,9 @@ public:
 	dt_osc_recorder		osc_recorder;
 	dt_circle_all_containers all_containers;	
 
-    ofVec2f campos, campos_target;
+    ofVec2f campos, campos_target, center;
 	ofxEasingQuad camtw_x, camtw_y;
+
+    ofEasyCam cam;
 };
 

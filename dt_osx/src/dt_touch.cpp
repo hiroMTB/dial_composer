@@ -114,13 +114,6 @@ void dt_touch::make_random_circle( int x, int y, int num=100 ){
 			dt_circle_osc * o = new dt_circle_osc();
 			app->all_containers.output_container->addCircle( o );
 			c = o;
-		}else{
-			float rand = ofRandom( 1 ) * 0.8;
-			if( rand < 0.1 ){
-				dt_circle_param_noteNum * nn = new dt_circle_param_noteNum();
-				app->all_containers.param_container->addCircle( nn );
-				c = nn;
-			}
 		}
 		
 		if(c!= NULL){

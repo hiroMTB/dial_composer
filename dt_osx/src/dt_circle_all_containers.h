@@ -13,12 +13,12 @@
 template<typename T> class dt_circle_container;
 class dt_circle_base;
 class dt_circle_note_on;
-class dt_circle_param_base;
+class dt_circle_param;
 class dt_circle_output_base;
 
 typedef dt_circle_container<dt_circle_base*>		dt_circle_base_container;
 typedef dt_circle_container<dt_circle_note_on*>		dt_circle_note_on_container;
-typedef dt_circle_container<dt_circle_param_base*>	dt_circle_param_container;
+typedef dt_circle_container<dt_circle_param*>       dt_circle_param_container;
 typedef dt_circle_container<dt_circle_output_base*> dt_circle_output_container;
 
 

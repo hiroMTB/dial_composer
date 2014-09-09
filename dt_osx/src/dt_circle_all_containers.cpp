@@ -140,9 +140,9 @@ void dt_circle_all_containers::change_beat_resolution_all( int res ){
 
 void dt_circle_all_containers::change_osc_ch_all(){
 	
-	for( int i=0; i<output_container->circles.size(); i++ ){
-		dt_circle_output_base * o = output_container->circles[ i ];
-		int ch = round( ofRandom(1, dt_config::DT_OSC_OUT_CH_MAX) );
-		o->setup_ch( ch );
-	}
+//	for( int i=0; i<output_container->circles.size(); i++ ){
+//		dt_circle_output_base * o = output_container->circles[ i ];
+//		int ch = round( ofRandom(1, dt_config::DT_OSC_OUT_CH_MAX) );
+//		o->setup_ch( ch );
+//	}
 }

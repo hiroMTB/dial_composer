@@ -24,6 +24,7 @@ void ofApp::windowResized( int w, int h ){
 	
 	config.reset_position();
     dt_config::DT_SIZE_BASE = max( w, h )/12.0;
+    center.set( w/2, h/2 );
 }
 
 void ofApp::setup(){
@@ -91,7 +92,7 @@ void ofApp::draw(){
 
     ofSetupScreenOrtho();
     ofPushMatrix();
-    ofTranslate( -(campos.x-w/2), -(campos.y-h/2) );
+    ofTranslate( -(center.x-w/2), -(center.y-h/2) );
 
     switch( view_mode ){
         case 0:
@@ -120,7 +121,7 @@ void ofApp::draw(){
     }
     
     ofPopMatrix();
-
+    
 }
 
 void ofApp::mousePressed( int x, int y, int button ){

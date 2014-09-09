@@ -75,64 +75,8 @@ void dt_circle_note_on::setup( int beat_num ){
 	int rotate_step =  quantize_step * (int)round( ofRandom(0, dt_config::DT_BEAT_RESOLUTION-1) );
 	seq->indicator = rotate_step;
     
-    
     // input
-    {
-        dt_circle_param_noteNum * note = new dt_circle_param_noteNum();
-        note->setup( ofRandom(4, 22) );
-        note->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
-        note->change_shape( 300 );
-        input_circles.push_back( note );
-    }
 
-    {
-        
-        dt_circle_param_velocity * vel = new dt_circle_param_velocity();
-        vel->setup( ofRandom(4, 22) );
-        vel->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
-        vel->change_shape( 300 );
-        input_circles.push_back( vel );
-    }
-    
-    {
-        dt_circle_param_duration * dur = new dt_circle_param_duration();
-        dur->setup( ofRandom(4, 22) );
-        dur->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
-        dur->change_shape( 300 );
-        input_circles.push_back( dur );
-    }
-
-    {
-        dt_circle_param_cc1 * cc1 = new dt_circle_param_cc1();
-        cc1->setup( ofRandom(4, 22) );
-        cc1->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
-        cc1->change_shape( 300 );
-        input_circles.push_back( cc1 );
-    }
-
-    {
-        dt_circle_param_cc2 * cc2 = new dt_circle_param_cc2();
-        cc2->setup( ofRandom(4, 22) );
-        cc2->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
-        cc2->change_shape( 300 );
-        input_circles.push_back( cc2 );
-    }
-    
-    {
-        dt_circle_param_cc3 * cc3 = new dt_circle_param_cc3();
-        cc3->setup( ofRandom(4, 22) );
-        cc3->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
-        cc3->change_shape( 300 );
-        input_circles.push_back( cc3 );
-    }
-    
-    {
-        dt_circle_param_cc4 * cc4 = new dt_circle_param_cc4();
-        cc4->setup( ofRandom(4, 22) );
-        cc4->data.position = data.position + ofVec2f( ofRandom(100,400), ofRandom(100,400) );
-        cc4->change_shape( 300 );
-        input_circles.push_back( cc4 );
-    }
 }
 
 void dt_circle_note_on::set_beats( int beat_num ){
@@ -199,27 +143,26 @@ void dt_circle_note_on::draw(){
         glPointSize( 2 );
         glColor4f( 0.8, 0.8, 0.8, 0.7 );
     }
-    app->circle_drawer.draw( data.rev_radius * 1.26, GL_POINTS );
+    app->circle_drawer.draw( data.rev_radius * 1.26, OF_MESH_POINTS );
     
 	// shape
 	if(fired) ofSetColor( 200 );
 	else ofSetColor( data.circle_color );
-
-	int mode = (rshape_points.size() <= 2) ?  GL_LINE_LOOP : GL_TRIANGLE_FAN;
+    
     ofPushMatrix();{
         ofScale( data.rev_radius, data.rev_radius, 1 );
 
         // guid
         glPointSize( 2 );
-        rguid_vbo.bind();
-        rguid_vbo.draw( GL_POINTS, 0, rguid_points.size() );
-        rguid_vbo.unbind();
+        rguid.draw( OF_MESH_POINTS );
         
         // shape
         glLineWidth( 3 );
-        rshape_vbo.bind();
-        rshape_vbo.draw( mode, 0, rshape_points.size() );
-        rshape_vbo.unbind();
+        if (rshape.getNumVertices() <= 2){
+            rshape.draw( OF_MESH_WIREFRAME );
+        }else{
+            rshape.draw( OF_MESH_FILL );
+        }
         
     }ofPopMatrix();
 	
@@ -279,11 +222,10 @@ void dt_circle_note_on::update_world_position(){
 }
 
 void dt_circle_note_on::make_vbo(){
-	rshape_points.clear();
-	rshape_colors.clear();
 
-    rguid_points.clear();
-    rguid_colors.clear();
+    rguid.clear();
+    rshape.clear();
+
     
 	int beat_num = seq->total_beats;
 	float start_angle = 0;
@@ -291,8 +233,10 @@ void dt_circle_note_on::make_vbo(){
     float s = data.circle_color.getSaturation();
     float b = data.circle_color.getBrightness();
     
+    int vertIndex = 0;
+    
 	for( int i=0; i<beat_num; i++ ){
-		bool on = seq->getDataFromBeat( i );
+        bool on = seq->getDataFromBeat( i );
         float angle = start_angle + ( i * data.rev_speed * dt_config::DT_BEAT_RESOLUTION );
         float cos = cosf( angle*DEG_TO_RAD );
         float sin = sinf( angle*DEG_TO_RAD );
@@ -302,21 +246,29 @@ void dt_circle_note_on::make_vbo(){
 		if( on ){
             ofFloatColor c = data.circle_color;
             c.setHsb( h + i*0.01, MAX( 0.6,s+ofRandom(-0.1, 0.1) ), 0.8 );
-
-			rshape_points.push_back( ofVec2f(x,y) );
-            rshape_colors.push_back( c );
+            rshape.addVertex( ofVec3f(x, y, 0) );
+            rshape.addIndex( vertIndex++ );
+            rshape.addColor( c );
 		}
         float rg = 0.99;
         x = rg * cos;
         y = rg * sin;
-        // guide shape
-        rguid_points.push_back( ofVec2f(x, y) );
-        rguid_colors.push_back( ofFloatColor(0.2, 1) );
-	}
-	
-	rshape_vbo.setVertexData( &rshape_points[0], rshape_points.size(), GL_DYNAMIC_DRAW );
-    rshape_vbo.setColorData( &rshape_colors[0], rshape_colors.size(), GL_DYNAMIC_DRAW );
     
-    rguid_vbo.setVertexData( &rguid_points[0], rguid_points.size(), GL_DYNAMIC_DRAW );
-    rguid_vbo.setColorData( &rguid_colors[0], rguid_colors.size(), GL_DYNAMIC_DRAW );
+        // guide shape
+        rguid.addVertex( ofVec3f(x, y, 0) );
+        rguid.addIndex( i );
+        rguid.addColor( ofFloatColor(0.2, 1) );
+	}
+    
+    // setup Mode and Usage
+    if( vertIndex <=2 ){
+        rshape.setMode(OF_PRIMITIVE_LINES );
+    }else{
+        rshape.setMode( OF_PRIMITIVE_TRIANGLE_FAN );
+    }
+    rguid.setMode( OF_PRIMITIVE_POINTS);
+    
+    rshape.setUsage( GL_DYNAMIC_DRAW );
+    rguid.setUsage( GL_DYNAMIC_DRAW );
+
 }

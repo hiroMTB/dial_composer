@@ -94,7 +94,6 @@
 		E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */; };
 		E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E715D3B6510020DFD4 /* QTKit.framework */; };
 		E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F985F515E0DE99003869B5 /* Accelerate.framework */; };
-		F6075E0C194DE5B500F8F7E0 /* dt_circle_output_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6075E0A194DE5B500F8F7E0 /* dt_circle_output_base.cpp */; };
 		F6075E0D194DE94E00F8F7E0 /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6075DCD194DD26F00F8F7E0 /* RtMidi.cpp */; };
 		F6075E0E194DE94E00F8F7E0 /* ofxRtMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6075DDA194DD26F00F8F7E0 /* ofxRtMidiIn.cpp */; };
 		F6075E0F194DE94E00F8F7E0 /* ofxRtMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6075DDC194DD26F00F8F7E0 /* ofxRtMidiOut.cpp */; };
@@ -10256,11 +10255,7 @@
 		F6075DF2194DD26F00F8F7E0 /* ofxMidiOut.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMidiOut.cpp; sourceTree = "<group>"; };
 		F6075DF3194DD26F00F8F7E0 /* ofxMidiOut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMidiOut.h; sourceTree = "<group>"; };
 		F6075DF4194DD26F00F8F7E0 /* ofxMidiTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMidiTypes.h; sourceTree = "<group>"; };
-		F6075DFF194DD2A800F8F7E0 /* dt_circle_midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_circle_midi.h; sourceTree = "<group>"; };
-		F6075E02194DD2B400F8F7E0 /* dt_circle_osc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_circle_osc.h; sourceTree = "<group>"; };
 		F6075E07194DD88300F8F7E0 /* dt_midi_sender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_midi_sender.h; sourceTree = "<group>"; };
-		F6075E0A194DE5B500F8F7E0 /* dt_circle_output_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_circle_output_base.cpp; sourceTree = "<group>"; };
-		F6075E0B194DE5B500F8F7E0 /* dt_circle_output_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_circle_output_base.h; sourceTree = "<group>"; };
 		F6075E16194DEA9600F8F7E0 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		F63412E6194A6BE400B2E3CC /* dt_sequence_thread_audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_sequence_thread_audio.cpp; sourceTree = "<group>"; };
 		F63412E7194A6BE400B2E3CC /* dt_sequence_thread_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_sequence_thread_audio.h; sourceTree = "<group>"; };
@@ -27884,26 +27879,6 @@
 			path = desktop;
 			sourceTree = "<group>";
 		};
-		F6075E04194DD2C100F8F7E0 /* param */ = {
-			isa = PBXGroup;
-			children = (
-				F6B766BE1947984B00B0741D /* dt_circle_param.h */,
-				F6B766BF1947984B00B0741D /* dt_circle_param.cpp */,
-			);
-			name = param;
-			sourceTree = "<group>";
-		};
-		F6075E05194DD2C600F8F7E0 /* out */ = {
-			isa = PBXGroup;
-			children = (
-				F6075E0B194DE5B500F8F7E0 /* dt_circle_output_base.h */,
-				F6075E0A194DE5B500F8F7E0 /* dt_circle_output_base.cpp */,
-				F6075E02194DD2B400F8F7E0 /* dt_circle_osc.h */,
-				F6075DFF194DD2A800F8F7E0 /* dt_circle_midi.h */,
-			);
-			name = out;
-			sourceTree = "<group>";
-		};
 		F64097801953E90D0021407A /* utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -28443,8 +28418,8 @@
 				F6B766B91947984B00B0741D /* dt_circle_base.cpp */,
 				F6B766BC1947984B00B0741D /* dt_circle_note_on.h */,
 				F6B766BD1947984B00B0741D /* dt_circle_note_on.cpp */,
-				F6075E04194DD2C100F8F7E0 /* param */,
-				F6075E05194DD2C600F8F7E0 /* out */,
+				F6B766BE1947984B00B0741D /* dt_circle_param.h */,
+				F6B766BF1947984B00B0741D /* dt_circle_param.cpp */,
 			);
 			name = circle;
 			sourceTree = "<group>";
@@ -28703,7 +28678,6 @@
 				F6B766DE1947984B00B0741D /* dt_circle_param.cpp in Sources */,
 				F63412E8194A6BE400B2E3CC /* dt_sequence_thread_audio.cpp in Sources */,
 				4D82B82719B67D8800BA0CEF /* dt_GLView.mm in Sources */,
-				F6075E0C194DE5B500F8F7E0 /* dt_circle_output_base.cpp in Sources */,
 				F6B766E81947984B00B0741D /* main.mm in Sources */,
 				F6B766DD1947984B00B0741D /* dt_circle_note_on.cpp in Sources */,
 				F6B766E61947984B00B0741D /* dt_sequencer.cpp in Sources */,

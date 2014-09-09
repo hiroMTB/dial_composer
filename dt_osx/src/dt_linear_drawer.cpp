@@ -17,31 +17,6 @@
 dt_linear_drawer::dt_linear_drawer(){
 
 	app = ofApp::getInstance();
-	
-	for( int i=0; i<10000; i++ ){
-
-		// for indicators
-		points.push_back( ofVec2f(-1,-1) );
-		colors_p.push_back( ofFloatColor(0,0,0) );
-
-		// for onset beat
-		for( int j=0; j<dt_config::DT_RHYTHM_SHAPE_SLOT_MAX; j++ ){
-			points.push_back( ofVec2f(-1,-1) );
-			colors_p.push_back( ofFloatColor(0,0,0) );
-		}
-		
-		// for timeline
-		lines.push_back( ofVec2f(-1,-1) );
-		lines.push_back( ofVec2f(-1,-1) );
-		colors_l.push_back( ofFloatColor(0,0,0) );
-   		colors_l.push_back( ofFloatColor(0,0,0) );
-	}
-	
-	point_vbo.setColorData( &colors_p[0], colors_p.size(), GL_DYNAMIC_DRAW );
-	point_vbo.setVertexData( &points[0], points.size(), GL_DYNAMIC_DRAW );
-	
-	line_vbo.setColorData( &colors_l[0], colors_l.size(), GL_DYNAMIC_DRAW );
-	line_vbo.setVertexData( &lines[0], lines.size(), GL_DYNAMIC_DRAW );
 }
 
 /*
@@ -50,25 +25,19 @@ dt_linear_drawer::dt_linear_drawer(){
  *
  */
 void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
-	
-    ofSetColor( 30, 30, 40, 70 );
-	ofRect( x-10, y-10, w+20, h+20 );
-    ofDisableAlphaBlending();
-	
-	// clear
-	points.clear();
-	colors_p.clear();
-	lines.clear();
-	colors_l.clear();
 
-	ofFloatColor line_color( 0.6 );
-	ofFloatColor onset_color( 0.9 );
-	
-	float pix_per_beat = 8;
+    static ofFloatColor line_color( 0.6 );
+	static ofFloatColor onset_color( 0.9 );
+	static float pix_per_beat = 16;
+	static float line_height = 20;
 	float pix_per_step = pix_per_beat / dt_config::DT_BEAT_RESOLUTION;
-	float line_height = 10;
 	
-	// update data
+	/*
+     *      update
+     */
+	points.clear();
+	lines.clear();
+	
 	vector<dt_circle_note_on*> &ns = ofApp::getInstance()->all_containers.note_on_container->circles;
 	for( int i=0; i<ns.size(); i++ ){
 
@@ -91,8 +60,8 @@ void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
 				x += col * width;
 				
 				if( seq->getDataFromBeat(j) ){
-					points.push_back( ofVec2f(x, y) );
-					colors_p.push_back( onset_color );
+					points.addVertex( ofVec2f(x, y) );
+					points.addColor( onset_color );
 				};
 			}
 		}
@@ -101,44 +70,43 @@ void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
 		{
 			// start
 			x = col * width;
-			lines.push_back( ofVec2f(x, y) );
-			colors_l.push_back( line_color );
+			lines.addVertex( ofVec2f(x,y) );
+			lines.addColor( line_color );
 
 			// end
 			x = pix_per_beat * total_beats;
 			x += col * width;
-			lines.push_back( ofVec2f(x, y) );
-			colors_l.push_back( line_color );
+			lines.addVertex( ofVec2f(x,y) );
+			lines.addColor( line_color );
 		}
 		
 		// add indicator
 		{
 			x = seq->indicator * pix_per_step;
 			x += col * width;
-			points.push_back( ofVec2f(x, y) );
-			colors_p.push_back( ofFloatColor(1,0,0) );
+			points.addVertex( ofVec2f(x, y) );
+			points.addColor( ofFloatColor(1,0,0) );
 		}
 	}
-		
-	glLineWidth( 1 );
-	glPointSize( 2 );
-	
-	glPushMatrix();
-	glTranslatef( x, y, 0 );
-	glScalef( scale, scale, 1 );
+    
+    points.setUsage( GL_DYNAMIC_DRAW );
+    lines.setUsage( GL_DYNAMIC_DRAW );
+    points.setMode( OF_PRIMITIVE_POINTS );
+    lines.setMode( OF_PRIMITIVE_LINES );
+    
+    /*
+     *      draw
+     */
+    glPushMatrix();{
+        ofSetColor( 30, 30, 40, 70 );
+        ofRect( x-10, y-10, w+20, h+20 );
 
-	line_vbo.bind();
-	line_vbo.updateColorData( &colors_l[0], colors_l.size() );
-	line_vbo.updateVertexData( &lines[0], lines.size() );
-	line_vbo.draw( GL_LINES, 0, lines.size() );
-	line_vbo.unbind();
-	
-	point_vbo.bind();
-	point_vbo.updateColorData( &colors_p[0], colors_p.size() );
-	point_vbo.updateVertexData( &points[0], points.size() );
-	point_vbo.draw( GL_POINTS, 0, points.size() );
-	point_vbo.unbind();
-	glPopMatrix();
-	
-	ofEnableAlphaBlending();
+        glTranslatef( x, y, 0 );
+        glScalef( scale, scale, 1 );
+        glLineWidth( 2 );
+        glPointSize( 4 );
+
+        lines.draw( OF_MESH_WIREFRAME );
+        points.draw( OF_MESH_WIREFRAME );
+    }glPopMatrix();
 }

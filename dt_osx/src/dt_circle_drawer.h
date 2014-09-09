@@ -14,7 +14,6 @@ class dt_circle_drawer{
 	
 public:
 	
-	
 	/*
 	 *
 	 *	Circle
@@ -26,14 +25,18 @@ public:
 	}
 
 	~dt_circle_drawer(){
-		points.clear();
-		vbo.clear();
+		clear();
 	}
 
+    void clear(){
+        circle_p.clear();
+        circle_l.clear();
+        circle_f.clear();
+    }
+    
 	void setup( int _resolution ){
 		resolution = _resolution;
-		points.clear();
-		vbo.clear();
+		clear();
 		
 		double step_radian = TWO_PI / (double)resolution;
 		double radian = 0;
@@ -42,22 +45,38 @@ public:
 			radian = (double)i * step_radian;
 			float x = cos( radian );
 			float y = sin( radian );
-			points.push_back( ofVec2f(x, y) );
+			circle_p.addVertex( ofVec2f(x, y) );
+            circle_p.addIndex( i );
+            
+            circle_l.addVertex( ofVec2f(x, y) );
+            circle_l.addIndex( i );
+            
+            circle_f.addVertex( ofVec2f(x, y) );
+            circle_f.addIndex( i );
 		}
-		
-		vbo.setVertexData( &points[0], points.size(), GL_DYNAMIC_DRAW );
 	};
 	
-	void draw( float radius, int draw_mode=GL_POINTS ){
+	void draw( float radius, ofPolyRenderMode renderMode=OF_MESH_POINTS ){
 		glPushMatrix();
 		glScalef( radius, radius, 1 );
-		vbo.bind();
-		vbo.draw( draw_mode, 0, points.size() );
-		vbo.unbind();
+        switch( renderMode ){
+            case OF_MESH_POINTS:
+                circle_p.draw( renderMode );
+                break;
+            case OF_MESH_WIREFRAME:
+                circle_p.draw( renderMode );
+                break;
+            case OF_MESH_FILL:
+                circle_f.draw( renderMode );
+                break;
+            default:
+                break;
+        }
 		glPopMatrix();
 	}
 	
 	int resolution;
-	ofVbo vbo;
-	vector<ofVec2f> points;
+	ofVboMesh circle_p;
+	ofVboMesh circle_l;
+	ofVboMesh circle_f;
 };

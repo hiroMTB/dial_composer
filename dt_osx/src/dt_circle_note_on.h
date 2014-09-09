@@ -43,15 +43,12 @@ public:
 	virtual void make_vbo();
 	void update_world_position();
 	
-	ofVbo rshape_vbo;
-	vector<ofVec2f> rshape_points;
-    vector<ofFloatColor> rshape_colors;
-
-    ofVbo rguid_vbo;
-	vector<ofVec2f> rguid_points;
-    vector<ofFloatColor> rguid_colors;
-    
+	ofVboMesh rshape;
+    ofVboMesh rguid;
+  
 	vector<dt_circle_base*> input_circles;
 	vector<dt_circle_base*> output_circles;
+
     dt_param_state p_state;
+
 };
