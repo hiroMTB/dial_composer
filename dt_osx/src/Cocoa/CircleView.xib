@@ -149,7 +149,7 @@
                 <slider verticalHuggingPriority="750" id="M13-Ag-nuB">
                     <rect key="frame" x="88" y="207" width="154" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" minValue="1" maxValue="32" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="32" allowsTickMarkValuesOnly="YES" sliderType="linear" id="IiP-cg-2Yv"/>
+                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" minValue="1" maxValue="32" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="32" allowsTickMarkValuesOnly="YES" sliderType="linear" id="IiP-cg-2Yv"/>
                     <connections>
                         <action selector="change_ch:" target="-2" id="Qh5-J8-p7H"/>
                     </connections>
@@ -157,7 +157,7 @@
                 <slider verticalHuggingPriority="750" id="Psw-3T-Mvt">
                     <rect key="frame" x="88" y="374" width="154" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="255" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="w29-xm-VGq"/>
+                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="255" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="w29-xm-VGq"/>
                     <connections>
                         <action selector="change_edge:" target="-2" id="vSh-65-ATn"/>
                     </connections>
@@ -183,7 +183,7 @@
                 <slider verticalHuggingPriority="750" id="lSJ-Lq-LrT">
                     <rect key="frame" x="88" y="348" width="154" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="255" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="UYB-j1-vkW"/>
+                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="255" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="UYB-j1-vkW"/>
                     <connections>
                         <action selector="change_side:" target="-2" id="ycg-dc-gKv"/>
                     </connections>

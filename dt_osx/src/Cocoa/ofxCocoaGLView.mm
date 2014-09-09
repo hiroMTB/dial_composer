@@ -21,94 +21,77 @@ public:
     
 	ofxCocoaGLView *view;
     
-	ofxCocoaGLViewWindowProxy(ofxCocoaGLView *view_)
-	{
+	ofxCocoaGLViewWindowProxy(ofxCocoaGLView *view_) {
 		view = view_;
 	}
     
-	int getWidth()
-	{
+	int getWidth() {
 		return view.bounds.size.width;
 	}
     
-	int getHeight()
-	{
+	int getHeight() {
 		return view.bounds.size.height;
 	}
     
-	ofPoint getWindowSize()
-	{
+	ofPoint getWindowSize()	{
 		NSSize size = view.bounds.size;
 		return ofPoint(size.width, size.height);
 	}
     
-	int getFrameNum()
-	{
+	int getFrameNum() {
 		return view->nFrameCount;
 	}
     
-	float getFrameRate()
-	{
+	float getFrameRate() {
 		return view->frameRate;
 	}
     
-	double getLastFrameTime()
-	{
+	double getLastFrameTime() {
 		return view->lastFrameTime;
 	}
     
-	void setFrameRate(float targetRate)
-	{
+	void setFrameRate(float targetRate) {
 		[view setFrameRate:targetRate];
 	}
     
-	void setFullscreen(bool fullscreen)
-	{
+	void setFullscreen(bool fullscreen) {
 		[view setFullscreen:fullscreen];
 	}
     
-	void toggleFullscreen()
-	{
+	void toggleFullscreen()	{
 		[view toggleFullscreen];
 	}
     
-	void hideCursor()
-	{
+	void hideCursor() {
 		[NSCursor hide];
 	}
     
-	void showCursor()
-	{
+	void showCursor() {
 		[NSCursor unhide];
 	}
     
-	void setWindowPosition(int x, int y)
-	{
+	void setWindowPosition(int x, int y) {
 		OFXCOCOAGLVIEW_IGNORED;
 	}
     
-	void setWindowShape(int w, int h)
-	{
+	void setWindowShape(int w, int h) {
 		OFXCOCOAGLVIEW_IGNORED;
 	}
     
-	void setWindowTitle(string title)
-	{
+	void setWindowTitle(string title) {
 		OFXCOCOAGLVIEW_IGNORED;
 	}
 };
 
 static ofPtr<ofxCocoaGLViewWindowProxy> window_proxy;
 
-static void setupWindowProxy(ofxCocoaGLView *view)
-{
+static void setupWindowProxy(ofxCocoaGLView *view) {
 	if (window_proxy) return;
 	window_proxy = ofPtr<ofxCocoaGLViewWindowProxy>(new ofxCocoaGLViewWindowProxy(view));
 	ofSetupOpenGL(window_proxy, view.bounds.size.width, view.bounds.size.height, OF_WINDOW);
 }
 
-static void makeCurrentView(ofxCocoaGLView *view)
-{
+static void makeCurrentView(ofxCocoaGLView *view) {
 	if (window_proxy)
 		window_proxy->view = view;
 }
@@ -127,30 +110,25 @@ static NSOpenGLContext *_context = nil;
 @synthesize mouseX, mouseY;
 @synthesize width, height;
 
-+ (NSOpenGLContext*)sharedContext
-{
++ (NSOpenGLContext*)sharedContext {
 	return _context;
 }
 
-+ (void)lockSharedContext
-{
++ (void)lockSharedContext {
 	[_context makeCurrentContext];
 	CGLContextObj cglContext = (CGLContextObj)[_context CGLContextObj];
 	CGLLockContext(cglContext);
 }
 
-+ (void)unlockSharedContext
-{
++ (void)unlockSharedContext {
 	CGLContextObj cglContext = (CGLContextObj)[_context CGLContextObj];
 	CGLUnlockContext(cglContext);
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
 	self = [super initWithCoder:aDecoder];
     
-	if (self)
-	{
+	if (self) {
 		initialised = NO;
 		bEnableSetupScreen = true;
 		nFrameCount = 0;
@@ -172,12 +150,9 @@ static NSOpenGLContext *_context = nil;
 		displayLink = NULL;
 		updateTimer = nil;
         
-		if (_context == nil)
-		{
+		if (_context == nil){
 			_context = [self openGLContext];
-		}
-		else
-		{
+		}else{
 			self.openGLContext = [[[NSOpenGLContext alloc] initWithFormat:self.pixelFormat shareContext:_context] autorelease];
 		}
         
@@ -219,21 +194,18 @@ static NSOpenGLContext *_context = nil;
 	return self;
 }
 
-- (void)dispose
-{
+- (void)dispose {
 	if (!fullscreenOn)
 		[self.window saveFrameUsingName:[self className]];
 	
 	[self exit];
     
-	if (updateTimer)
-	{
+	if (updateTimer) {
 		[updateTimer invalidate];
 		updateTimer = nil;
 	}
     
-	if (displayLink)
-	{
+	if (displayLink) {
 		CVDisplayLinkStop(displayLink);
 		CVDisplayLinkRelease(displayLink);
 		displayLink = NULL;
@@ -242,46 +214,39 @@ static NSOpenGLContext *_context = nil;
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 	[nc removeObserver:self name:NSApplicationWillTerminateNotification object:NSApp];
     
-	if (local_monitor_handler)
-	{
+	if (local_monitor_handler) {
 		[NSEvent removeMonitor:local_monitor_handler];
 		local_monitor_handler = nil;
 	}
     
-	if (global_monitor_handler)
-	{
+	if (global_monitor_handler) {
 		[NSEvent removeMonitor:global_monitor_handler];
 		global_monitor_handler = nil;
 	}
     
-	if (tracking_rect_tag)
-	{
+	if (tracking_rect_tag) {
 		[self removeTrackingRect:tracking_rect_tag];
 		tracking_rect_tag = NULL;
 	}
 }
 
-- (void)appWillTerminate:(id)sender
-{
+- (void)appWillTerminate:(id)sender {
 	[self dispose];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
 	[self dispose];
 	[super dealloc];
 }
 
-- (void)setFrameRate:(float)framerate_
-{
+- (void)setFrameRate:(float)framerate_ {
 	targetFrameRate = framerate_;
 	frameRate = targetFrameRate;
     
 	[self enableDisplayLink:useDisplayLink];
 }
 
-- (void)setFullscreenTo:(NSScreen*)screen
-{
+- (void)setFullscreenTo:(NSScreen*)screen {
 	if (fullscreenOn) return;
 	
 	NSRect frame = [screen frame];
@@ -297,8 +262,7 @@ static NSOpenGLContext *_context = nil;
 	
 	[startingWindow setAcceptsMouseMovedEvents:NO];
 	
-	if(fullscreenWindow != nil)
-	{
+	if(fullscreenWindow != nil) {
 		// Set the options for our new fullscreen window
 		[fullscreenWindow setReleasedWhenClosed:YES];
 		[fullscreenWindow setAcceptsMouseMovedEvents:YES];
@@ -308,15 +272,12 @@ static NSOpenGLContext *_context = nil;
 		[fullscreenWindow setLevel:NSNormalWindowLevel];
 		[fullscreenWindow makeFirstResponder:self];
 		fullscreenOn = true;
-	}
-	else
-	{
+	} else {
 		NSLog(@"Error: could not create fullscreen window!");
 	}
 }
 
-- (void)exitFullscreen
-{
+- (void)exitFullscreen {
 	if (!fullscreenOn) return;
 	
 	[NSMenu setMenuBarVisible:YES];
@@ -330,10 +291,8 @@ static NSOpenGLContext *_context = nil;
 	fullscreenOn = false;
 }
 
-- (void)setFullscreen:(BOOL)v
-{
-	if (v)
-	{
+- (void)setFullscreen:(BOOL)v {
+	if (v) {
 		NSPoint center;
 		NSRect rect = [self.window frame];
         
@@ -342,84 +301,64 @@ static NSOpenGLContext *_context = nil;
         
 		NSEnumerator *screenEnum = [[NSScreen screens] objectEnumerator];
 		NSScreen *screen;
-		while (screen = [screenEnum nextObject])
-		{
-			if (NSPointInRect(center, [screen frame]))
-			{
+		while (screen = [screenEnum nextObject]) {
+			if (NSPointInRect(center, [screen frame])) {
 				[self setFullscreenTo:screen];
 				break;
 			}
 		}
-	}
-	else
-	{
+	} else {
 		[self exitFullscreen];
 	}
 }
 
-- (void)toggleFullscreen
-{
+- (void)toggleFullscreen {
 	[self setFullscreen:!fullscreenOn];
 }
 
-- (void)enableDisplayLink:(BOOL)v
-{
+- (void)enableDisplayLink:(BOOL)v {
 	useDisplayLink = v;
     
-	if (displayLink)
-	{
+	if (displayLink) {
 		CVDisplayLinkStop(displayLink);
 		CVDisplayLinkRelease(displayLink);
 		displayLink = NULL;
 	}
     
-	if (updateTimer)
-	{
+	if (updateTimer) {
 		[updateTimer invalidate];
 		updateTimer = nil;
 	}
     
-	if (v)
-	{
+	if (v) {
 		CGLContextObj cglContext = (CGLContextObj)[[self openGLContext] CGLContextObj];
 		CGLPixelFormatObj cglPixelFormat = (CGLPixelFormatObj)[[self pixelFormat] CGLPixelFormatObj];
-        
 		CVDisplayLinkCreateWithActiveCGDisplays(&displayLink);
 		CVDisplayLinkSetOutputCallback(displayLink, &DisplayLinkCallback, self);
-        
 		CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink, cglContext, cglPixelFormat);
-        
 		CVDisplayLinkStart(displayLink);
-	}
-	else
-	{
+	} else {
 		float interval = 1. / targetFrameRate;
 		updateTimer = [NSTimer timerWithTimeInterval:interval target:self selector:@selector(drawView) userInfo:nil repeats:YES];
 		[[NSRunLoop mainRunLoop] addTimer:updateTimer forMode:NSRunLoopCommonModes];
 	}
 }
 
-- (void)prepareOpenGL
-{
+- (void)prepareOpenGL {
 	[super prepareOpenGL];
 	[self initGL];
 	[self enableDisplayLink:NO];
 }
 
-- (void)enableWindowEvents:(BOOL)v
-{
-	if (v)
-	{
+- (void)enableWindowEvents:(BOOL)v {
+	if (v) {
 		[[self window] makeFirstResponder:self];
-	}
-	else
-	{
+	} else {
 		[[self window] makeFirstResponder:nil];
 	}
 }
 
-- (void)initGL
-{
+- (void)initGL {
 	[self enableWindowEvents:YES];
     
 	// init mouse pos
@@ -434,8 +373,7 @@ static NSOpenGLContext *_context = nil;
 	[[self openGLContext] setValues:&swapInt forParameter:NSOpenGLCPSwapInterval];
     
 	GLenum err = glewInit();
-	if (GLEW_OK != err)
-	{
+	if (GLEW_OK != err) {
 		NSLog(@"GLEW init error... bailing");
 		exit(1);
 	}
@@ -454,8 +392,7 @@ static NSOpenGLContext *_context = nil;
 	[self.window setFrameUsingName:[self className] force:YES];
 }
 
-- (CVReturn)getFrameForTime:(const CVTimeStamp*)outputTime
-{
+- (CVReturn)getFrameForTime:(const CVTimeStamp*)outputTime {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
 	[self drawView];
@@ -475,8 +412,7 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
 	return result;
 }
 
-- (void)drawView
-{
+- (void)drawView {
 	if (!initialised) return;
     
 	if ([self isVisible])
@@ -525,8 +461,7 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
 	nFrameCount++;
 }
 
-- (void)reshape
-{
+- (void)reshape {
 	BEGIN_OPENGL();
     
 	makeCurrentView(self);
@@ -556,8 +491,7 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
 
 #pragma mark events
 
-- (NSPoint)getCurrentMousePos
-{
+- (NSPoint)getCurrentMousePos {
 	NSPoint p = [self.window convertScreenToBase:[NSEvent mouseLocation]];
 	p = [self convertPoint:p fromView:nil];
 	p.y = self.bounds.size.height - p.y;
@@ -568,14 +502,12 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
 	return p;
 }
 
-static int conv_button_number(int n)
-{
+static int conv_button_number(int n) {
 	static int table[] = {0, 2, 1};
 	return table[n];
 }
 
-- (void)mouseDown:(NSEvent *)theEvent
-{
+- (void)mouseDown:(NSEvent *)theEvent {
 	NSPoint p = [self getCurrentMousePos];
     
 	makeCurrentView(self);
@@ -585,8 +517,7 @@ static int conv_button_number(int n)
 	ofNotifyMousePressed(p.x, p.y, b);
 }
 
-- (void)mouseDragged:(NSEvent *)theEvent
-{
+- (void)mouseDragged:(NSEvent *)theEvent {
 	NSPoint p = [self getCurrentMousePos];
     
 	makeCurrentView(self);
@@ -596,8 +527,7 @@ static int conv_button_number(int n)
 	ofNotifyMouseDragged(p.x, p.y, b);
 }
 
-- (void)mouseUp:(NSEvent *)theEvent
-{
+- (void)mouseUp:(NSEvent *)theEvent {
 	NSPoint p = [self getCurrentMousePos];
     
 	makeCurrentView(self);
@@ -607,8 +537,7 @@ static int conv_button_number(int n)
 	ofNotifyMouseReleased(p.x, p.y, b);
 }
 
-- (void)_mouseMoved:(NSEvent *)theEvent
-{
+- (void)_mouseMoved:(NSEvent *)theEvent {
 	NSPoint p = [self getCurrentMousePos];
     
 	makeCurrentView(self);
@@ -617,8 +546,7 @@ static int conv_button_number(int n)
 	ofNotifyMouseMoved(p.x, p.y);
 }
 
-- (void)rightMouseDown:(NSEvent *)theEvent
-{
+- (void)rightMouseDown:(NSEvent *)theEvent {
 	NSPoint p = [self getCurrentMousePos];
     
 	makeCurrentView(self);
@@ -628,8 +556,7 @@ static int conv_button_number(int n)
 	ofNotifyMousePressed(p.x, p.y, b);
 }
 
-- (void)rightMouseDragged:(NSEvent *)theEvent
-{
+- (void)rightMouseDragged:(NSEvent *)theEvent {
 	NSPoint p = [self getCurrentMousePos];
     
 	makeCurrentView(self);
@@ -639,8 +566,7 @@ static int conv_button_number(int n)
 	ofNotifyMouseDragged(p.x, p.y, b);
 }
 
-- (void)rightMouseUp:(NSEvent *)theEvent
-{
+- (void)rightMouseUp:(NSEvent *)theEvent {
 	NSPoint p = [self getCurrentMousePos];
     
 	makeCurrentView(self);
@@ -650,8 +576,7 @@ static int conv_button_number(int n)
 	ofNotifyMouseReleased(p.x, p.y, b);
 }
 
-- (void)otherMouseDown:(NSEvent *)theEvent
-{
+- (void)otherMouseDown:(NSEvent *)theEvent {
 	NSPoint p = [self getCurrentMousePos];
     
 	makeCurrentView(self);
@@ -661,8 +586,7 @@ static int conv_button_number(int n)
 	ofNotifyMousePressed(p.x, p.y, b);
 }
 
-- (void)otherMouseDragged:(NSEvent *)theEvent
-{
+- (void)otherMouseDragged:(NSEvent *)theEvent {
 	NSPoint p = [self getCurrentMousePos];
     
 	makeCurrentView(self);
@@ -672,8 +596,7 @@ static int conv_button_number(int n)
 	ofNotifyMouseDragged(p.x, p.y, b);
 }
 
-- (void)otherMouseUp:(NSEvent *)theEvent
-{
+- (void)otherMouseUp:(NSEvent *)theEvent {
 	NSPoint p = [self getCurrentMousePos];
     
 	makeCurrentView(self);
@@ -683,15 +606,13 @@ static int conv_button_number(int n)
 	ofNotifyMouseReleased(p.x, p.y, b);
 }
 
-- (void)keyDown:(NSEvent *)theEvent
-{
+- (void)keyDown:(NSEvent *)theEvent {
 	const char *c = [[theEvent charactersIgnoringModifiers] UTF8String];
 	int key = c[0];
     
 	makeCurrentView(self);
     
-	if (key == OF_KEY_ESC)
-	{
+	if (key == OF_KEY_ESC) {
 		[[NSApplication sharedApplication] terminate:self];
 		[NSApp terminate:self];
 	}
@@ -700,8 +621,7 @@ static int conv_button_number(int n)
 	ofNotifyKeyPressed(key);
 }
 
-- (void)keyUp:(NSEvent *)theEvent
-{
+- (void)keyUp:(NSEvent *)theEvent {
 	const char *c = [[theEvent charactersIgnoringModifiers] UTF8String];
 	int key = c[0];
     
@@ -711,13 +631,11 @@ static int conv_button_number(int n)
 	ofNotifyKeyReleased(key);
 }
 
-- (void)mouseEntered:(NSEvent *)event
-{
+- (void)mouseEntered:(NSEvent *)event {
 	[self mouseEntered];
 }
 
-- (void)mouseExited:(NSEvent *)event
-{
+- (void)mouseExited:(NSEvent *)event {
 	[self mouseExited];
 }
 
@@ -727,7 +645,6 @@ static int conv_button_number(int n)
 - (void)update {}
 - (void)draw {}
 - (void)exit {}
-
 - (void)keyPressed:(int)key {}
 - (void)keyReleased:(int)key {}
 - (void)mouseMoved:(NSPoint)p {}
@@ -735,51 +652,41 @@ static int conv_button_number(int n)
 - (void)mousePressed:(NSPoint)p button:(int)button {}
 - (void)mouseReleased:(NSPoint)p button:(int)button {}
 - (void)windowResized:(NSSize)size {}
-
 - (void)mouseEntered {}
 - (void)mouseExited {}
 
 //
 
-- (void)setTranslucent:(BOOL)v
-{
+- (void)setTranslucent:(BOOL)v {
 	translucent = v;
-    
 	GLint opt = translucent ? 0 : 1;
 	[[self openGLContext] setValues:&opt forParameter:NSOpenGLCPSurfaceOpacity];
 }
 
-- (BOOL)isTranslucent
-{
+- (BOOL)isTranslucent {
 	return translucent;
 }
 
-- (BOOL)isOpaque
-{
+- (BOOL)isOpaque {
 	return !translucent;
 }
 
-- (BOOL)acceptsFirstResponder
-{
+- (BOOL)acceptsFirstResponder {
 	return YES;
 }
 
-- (BOOL)becomeFirstResponder
-{
+- (BOOL)becomeFirstResponder {
 	return YES;
 }
 
-- (BOOL)resignFirstResponder
-{
+- (BOOL)resignFirstResponder {
 	return YES;
 }
 
 //
 
-- (void)_surfaceNeedsUpdate:(NSNotification*)notification
-{
-	if (!initialised)
-	{
+- (void)_surfaceNeedsUpdate:(NSNotification*)notification {
+	if (!initialised){
 		[super update];
 		return;
 	}
@@ -787,8 +694,7 @@ static int conv_button_number(int n)
 	[self update];
 }
 
-- (BOOL)isVisible
-{
+- (BOOL)isVisible {
 	return self.window && [self.window isVisible];
 }
 

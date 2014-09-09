@@ -23,14 +23,14 @@ void ofApp::windowResized( int w, int h ){
 	canvas.height = h-50;
 	
 	config.reset_position();
-    dt_config::DT_SIZE_BASE = max( w, h )/11.0;
+    dt_config::DT_SIZE_BASE = max( w, h )/12.0;
 }
 
 void ofApp::setup(){
-	windowResized(ofGetWidth(), ofGetHeight());
+	windowResized( ofGetWidth(), ofGetHeight() );
 	setupVisual();
 	setupModule();
-    bg.set( 0.039, 0.062, 0.062 );
+    bg.set( 0.5 );
 }
 
 void ofApp::setupVisual(){

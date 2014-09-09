@@ -22,8 +22,8 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="0.0" y="518" width="1440" height="900"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="contentRect" x="0.0" y="523" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="GzE-ve-f11">
                 <rect key="frame" x="0.0" y="0.0" width="1440" height="900"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -161,34 +161,18 @@
                     <constraint firstItem="L0P-A7-OcK" firstAttribute="top" secondItem="GzE-ve-f11" secondAttribute="top" id="v4g-M9-MR7"/>
                 </constraints>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="EC8D6FE7-95CC-44EC-AB8D-A8A04F605F88" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="uVp-Hv-nur">
-                <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="D599B025-1F9C-4DC5-AE8E-635051545189" label="Stop" paletteLabel="Stop" tag="-1" id="i7h-QL-rSP"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="JPo-oo-Vuf"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="96n-h3-sdd"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Uoj-De-OOb"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="9d9-qH-VUD"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="gZ8-O5-Atp"/>
-                </allowedToolbarItems>
-                <defaultToolbarItems>
-                    <toolbarItem reference="JPo-oo-Vuf"/>
-                    <toolbarItem reference="96n-h3-sdd"/>
-                    <toolbarItem reference="gZ8-O5-Atp"/>
-                    <toolbarItem reference="Uoj-De-OOb"/>
-                </defaultToolbarItems>
-            </toolbar>
         </window>
     </objects>
     <resources>
         <image name="NSListViewTemplate" width="11" height="10"/>
         <image name="NSStopProgressTemplate" width="11" height="11"/>
-        <image name="icon-05a" width="64" height="65"/>
+        <image name="icon-05a" width="64" height="64"/>
         <image name="icon-05b" width="64" height="65"/>
-        <image name="icon-06a" width="65" height="65"/>
+        <image name="icon-06a" width="65" height="64"/>
         <image name="icon-06b" width="65" height="65"/>
-        <image name="icon-07a" width="65" height="65"/>
+        <image name="icon-07a" width="65" height="64"/>
         <image name="icon-07b" width="65" height="65"/>
-        <image name="icon-08a" width="65" height="65"/>
+        <image name="icon-08a" width="65" height="64"/>
         <image name="icon-08b" width="65" height="65"/>
     </resources>
 </document>

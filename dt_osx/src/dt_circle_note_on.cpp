@@ -301,7 +301,7 @@ void dt_circle_note_on::make_vbo(){
         float y = r * sin;
 		if( on ){
             ofFloatColor c = data.circle_color;
-            c.setHsb( h + i*0.01, MAX( 0.6,s+ofRandom(-0.3, 0.3) ), 0.8 );
+            c.setHsb( h + i*0.01, MAX( 0.6,s+ofRandom(-0.1, 0.1) ), 0.8 );
 
 			rshape_points.push_back( ofVec2f(x,y) );
             rshape_colors.push_back( c );

@@ -44,7 +44,6 @@
 		4D75A7B719B6C10C005CDA6F /* libboost_thread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D75A69C19B6C10A005CDA6F /* libboost_thread.a */; };
 		4D75A7BC19B6C217005CDA6F /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D75A7BB19B6C217005CDA6F /* QuickTime.framework */; };
 		4D82B81C19B66AF500BA0CEF /* dt_osc_recorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B81A19B66AF500BA0CEF /* dt_osc_recorder.cpp */; };
-		4D82B82019B67D7300BA0CEF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D82B81F19B67D7300BA0CEF /* MainMenu.xib */; };
 		4D82B82619B67D8800BA0CEF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82319B67D8800BA0CEF /* AppDelegate.mm */; };
 		4D82B82719B67D8800BA0CEF /* dt_GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82519B67D8800BA0CEF /* dt_GLView.mm */; };
 		4DABAE8A19BC18BB00E6F11C /* easing_terms_of_use.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DABAE5B19BC18BB00E6F11C /* easing_terms_of_use.html */; };
@@ -107,6 +106,7 @@
 		F6075E17194DEA9600F8F7E0 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6075E16194DEA9600F8F7E0 /* CoreMIDI.framework */; };
 		F63412E8194A6BE400B2E3CC /* dt_sequence_thread_audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F63412E6194A6BE400B2E3CC /* dt_sequence_thread_audio.cpp */; };
 		F66E1D72195E813700CEE795 /* dt_linear_drawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F66E1D70195E813700CEE795 /* dt_linear_drawer.cpp */; };
+		F672E43619BE796200C07C5E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F672E43519BE796200C07C5E /* MainMenu.xib */; };
 		F6779837194F9F1F005DFF45 /* juce_core.mm in Sources */ = {isa = PBXBuildFile; fileRef = F677971D194F9A5B005DFF45 /* juce_core.mm */; };
 		F6779838194F9F82005DFF45 /* juce_audio_basics.mm in Sources */ = {isa = PBXBuildFile; fileRef = F67796CD194F9A5B005DFF45 /* juce_audio_basics.mm */; };
 		F6B0939B1971414700619955 /* dt_config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B0939A1971414700619955 /* dt_config.cpp */; };
@@ -204,9 +204,6 @@
 		4D7376BD19B802EF000AC010 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
 		4D7376BE19B802EF000AC010 /* CircleViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CircleViewController.mm; sourceTree = "<group>"; };
 		4D7525DA19B6AC1B005CDA6F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4D757C7A19B6C0F3005CDA6F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		4D757C7B19B6C0F3005CDA6F /* addon_config.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = addon_config.mk; sourceTree = "<group>"; };
-		4D757C7F19B6C0F3005CDA6F /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4D757C8219B6C0F3005CDA6F /* accumulators.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = accumulators.hpp; sourceTree = "<group>"; };
 		4D757C8319B6C0F3005CDA6F /* accumulators_fwd.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = accumulators_fwd.hpp; sourceTree = "<group>"; };
 		4D757C8519B6C0F3005CDA6F /* accumulator_base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = accumulator_base.hpp; sourceTree = "<group>"; };
@@ -10144,7 +10141,6 @@
 		4D75A7BB19B6C217005CDA6F /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = System/Library/Frameworks/QuickTime.framework; sourceTree = SDKROOT; };
 		4D82B81A19B66AF500BA0CEF /* dt_osc_recorder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_osc_recorder.cpp; sourceTree = "<group>"; };
 		4D82B81B19B66AF500BA0CEF /* dt_osc_recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_osc_recorder.h; sourceTree = "<group>"; };
-		4D82B81F19B67D7300BA0CEF /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = ../../MainMenu.xib; sourceTree = "<group>"; };
 		4D82B82219B67D8800BA0CEF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D82B82319B67D8800BA0CEF /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		4D82B82419B67D8800BA0CEF /* dt_GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dt_GLView.h; path = Cocoa/dt_GLView.h; sourceTree = "<group>"; };
@@ -10176,8 +10172,8 @@
 		4DABAE7319BC18BB00E6F11C /* ofxEasingSine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxEasingSine.h; sourceTree = "<group>"; };
 		4DABAE7419BC18BB00E6F11C /* ofxTween.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTween.cpp; sourceTree = "<group>"; };
 		4DABAE7519BC18BB00E6F11C /* ofxTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTween.h; sourceTree = "<group>"; };
-		4DAFA43119BC931C008E9A14 /* ofxCocoaGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxCocoaGLView.h; sourceTree = "<group>"; };
-		4DAFA43219BC931C008E9A14 /* ofxCocoaGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxCocoaGLView.mm; sourceTree = "<group>"; };
+		4DAFA43119BC931C008E9A14 /* ofxCocoaGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCocoaGLView.h; path = Cocoa/ofxCocoaGLView.h; sourceTree = "<group>"; };
+		4DAFA43219BC931C008E9A14 /* ofxCocoaGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ofxCocoaGLView.mm; path = Cocoa/ofxCocoaGLView.mm; sourceTree = "<group>"; };
 		4E95FB446A9C9C6F0DE12D75 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPrintReceivedElements.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.h; sourceTree = SOURCE_ROOT; };
 		50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxXmlSettings.cpp; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		582921BA98D224ED41833868 /* svgtiny_gradient.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = svgtiny_gradient.cpp; path = ../../../addons/ofxSvg/libs/svgTiny/src/svgtiny_gradient.cpp; sourceTree = SOURCE_ROOT; };
@@ -10272,6 +10268,7 @@
 		F65D786419631B3B00C42128 /* def.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = def.h; sourceTree = "<group>"; };
 		F66E1D70195E813700CEE795 /* dt_linear_drawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_linear_drawer.cpp; sourceTree = "<group>"; };
 		F66E1D71195E813700CEE795 /* dt_linear_drawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_linear_drawer.h; sourceTree = "<group>"; };
+		F672E43519BE796200C07C5E /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		F6778751194F8D28005DFF45 /* dt_midi_writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_midi_writer.h; sourceTree = "<group>"; };
 		F67796B9194F9A5B005DFF45 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F67796BA194F9A5B005DFF45 /* juce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = juce.h; sourceTree = "<group>"; };
@@ -10712,8 +10709,6 @@
 		4D757C7919B6C0F3005CDA6F /* ofxOSXBoost */ = {
 			isa = PBXGroup;
 			children = (
-				4D757C7A19B6C0F3005CDA6F /* .gitignore */,
-				4D757C7B19B6C0F3005CDA6F /* addon_config.mk */,
 				4D757C7C19B6C0F3005CDA6F /* libs */,
 				4D75A69D19B6C10A005CDA6F /* LICENSE.md */,
 				4D75A69E19B6C10B005CDA6F /* ofxaddons_thumbnail.png */,
@@ -10743,7 +10738,6 @@
 		4D757C7E19B6C0F3005CDA6F /* include */ = {
 			isa = PBXGroup;
 			children = (
-				4D757C7F19B6C0F3005CDA6F /* .gitkeep */,
 				4D757C8019B6C0F3005CDA6F /* boost */,
 			);
 			path = include;
@@ -27478,12 +27472,10 @@
 			path = osx_i386;
 			sourceTree = "<group>";
 		};
-		4D82B82119B67D8800BA0CEF /* Cocoa */ = {
+		4D82B82119B67D8800BA0CEF /* cocoa */ = {
 			isa = PBXGroup;
 			children = (
-				4DAFA43119BC931C008E9A14 /* ofxCocoaGLView.h */,
-				4DAFA43219BC931C008E9A14 /* ofxCocoaGLView.mm */,
-				4D82B81F19B67D7300BA0CEF /* MainMenu.xib */,
+				F672E43519BE796200C07C5E /* MainMenu.xib */,
 				4D82B82219B67D8800BA0CEF /* AppDelegate.h */,
 				4D82B82319B67D8800BA0CEF /* AppDelegate.mm */,
 				4D7376B819B7EE9C000AC010 /* MainWindow */,
@@ -27493,6 +27485,7 @@
 				4D8FC6DF19BB3D7400DC6817 /* OscOutView */,
 				4D1DCEFC19BBFF43003F8AF0 /* OscInView */,
 			);
+			name = cocoa;
 			path = Cocoa;
 			sourceTree = "<group>";
 		};
@@ -27529,6 +27522,8 @@
 		4D8FC6E219BB3DE600DC6817 /* GlView */ = {
 			isa = PBXGroup;
 			children = (
+				4DAFA43119BC931C008E9A14 /* ofxCocoaGLView.h */,
+				4DAFA43219BC931C008E9A14 /* ofxCocoaGLView.mm */,
 				4D82B82419B67D8800BA0CEF /* dt_GLView.h */,
 				4D82B82519B67D8800BA0CEF /* dt_GLView.mm */,
 			);
@@ -27772,19 +27767,12 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4D82B82119B67D8800BA0CEF /* Cocoa */,
-				F65D786419631B3B00C42128 /* def.h */,
-				F6B0939919713A2A00619955 /* dt_config.h */,
-				F6B0939A1971414700619955 /* dt_config.cpp */,
-				F6B766D81947984B00B0741D /* main.mm */,
-				F6B766EA1947987100B0741D /* ofApp.h */,
-				F6B766D91947984B00B0741D /* ofApp.mm */,
+				F672E43719BE79EA00C07C5E /* main */,
+				4D82B82119B67D8800BA0CEF /* cocoa */,
 				F6B7670119479C8400B0741D /* circle */,
 				F6B7670219479CA500B0741D /* seq */,
 				F6B7670019479C8000B0741D /* ui */,
 				F64097801953E90D0021407A /* utility */,
-				F66E1D70195E813700CEE795 /* dt_linear_drawer.cpp */,
-				F66E1D71195E813700CEE795 /* dt_linear_drawer.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -27927,8 +27915,23 @@
 				F6B766CE1947984B00B0741D /* dt_rhythm_lib.cpp */,
 				F6778751194F8D28005DFF45 /* dt_midi_writer.h */,
 				F64097821953EA440021407A /* dt_circle_drawer.h */,
+				F66E1D71195E813700CEE795 /* dt_linear_drawer.h */,
+				F66E1D70195E813700CEE795 /* dt_linear_drawer.cpp */,
 			);
 			name = utility;
+			sourceTree = "<group>";
+		};
+		F672E43719BE79EA00C07C5E /* main */ = {
+			isa = PBXGroup;
+			children = (
+				F65D786419631B3B00C42128 /* def.h */,
+				F6B0939919713A2A00619955 /* dt_config.h */,
+				F6B0939A1971414700619955 /* dt_config.cpp */,
+				F6B766D81947984B00B0741D /* main.mm */,
+				F6B766EA1947987100B0741D /* ofApp.h */,
+				F6B766D91947984B00B0741D /* ofApp.mm */,
+			);
+			name = main;
 			sourceTree = "<group>";
 		};
 		F67796B8194F9A5A005DFF45 /* juce */ = {
@@ -28587,7 +28590,6 @@
 				4DABAE8A19BC18BB00E6F11C /* easing_terms_of_use.html in Resources */,
 				4D199EE819BC0B2D000D4AAF /* icon-05b.png in Resources */,
 				4D199EE919BC0B2D000D4AAF /* icon-06a.png in Resources */,
-				4D82B82019B67D7300BA0CEF /* MainMenu.xib in Resources */,
 				4D199EEB19BC0B2D000D4AAF /* icon-07a.png in Resources */,
 				4D199EEA19BC0B2D000D4AAF /* icon-06b.png in Resources */,
 				4D199EEC19BC0B2D000D4AAF /* icon-07b.png in Resources */,
@@ -28596,6 +28598,7 @@
 				4D7376B719B7EE7F000AC010 /* MainWindow.xib in Resources */,
 				4D199EEE19BC0B2D000D4AAF /* icon-08b.png in Resources */,
 				4D7376AD19B7D460000AC010 /* GeneralView.xib in Resources */,
+				F672E43619BE796200C07C5E /* MainMenu.xib in Resources */,
 				4D199EE719BC0B2D000D4AAF /* icon-05a.png in Resources */,
 				4D7376AB19B7D440000AC010 /* CircleView.xib in Resources */,
 				4D380E7919B7CE650056783F /* OscOutView.xib in Resources */,
@@ -28875,10 +28878,7 @@
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386,
-					/Users/matobahiroshi/Desktop/2014_09_dial/dev/of_v0.8.1_osx/addons/ofxOSXBoost/libs/boost/lib/osx_i386,
-				);
+				LIBRARY_SEARCH_PATHS = ../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = dialDebug;
 				SDKROOT = macosx10.8;
@@ -28929,10 +28929,7 @@
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386,
-					/Users/matobahiroshi/Desktop/2014_09_dial/dev/of_v0.8.1_osx/addons/ofxOSXBoost/libs/boost/lib/osx_i386,
-				);
+				LIBRARY_SEARCH_PATHS = ../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = dial;
 				SDKROOT = macosx10.8;
