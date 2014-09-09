@@ -11,7 +11,7 @@
 #include "ofApp.h"
 #include "dt_circle_all_containers.h"
 #include "dt_circle_container.h"
-#include "dt_circle_note_on.h"
+#include "dt_circle_trig.h"
 #include "dt_sequencer.h"
 
 dt_linear_drawer::dt_linear_drawer(){
@@ -38,7 +38,7 @@ void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
 	points.clear();
 	lines.clear();
 	
-	vector<dt_circle_note_on*> &ns = ofApp::getInstance()->all_containers.note_on_container->circles;
+	vector<dt_circle_trig*> &ns = ofApp::getInstance()->all_containers.note_on_container->circles;
 	for( int i=0; i<ns.size(); i++ ){
 
 		int speed = ns[i]->data.speed;

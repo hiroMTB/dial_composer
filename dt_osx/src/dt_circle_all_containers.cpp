@@ -9,7 +9,7 @@
 #include "dt_circle_all_containers.h"
 #include "dt_circle_container.h"
 #include "dt_circle_base.h"
-#include "dt_circle_note_on.h"
+#include "dt_circle_trig.h"
 #include "dt_circle_param.h"
 #include "dt_config.h"
 
@@ -22,7 +22,7 @@ void dt_circle_all_containers::setup(){
 	
 	// container
 	circle_base_container	= new dt_circle_base_container();
-	note_on_container		= new dt_circle_note_on_container();
+	note_on_container		= new dt_circle_trig_container();
 	param_container			= new dt_circle_param_container();
 	output_container		= new dt_circle_output_container();
 	
@@ -114,7 +114,7 @@ void dt_circle_all_containers::change_speed_random_all( int min, int max ){
 
 void dt_circle_all_containers::change_beat_all( int beat ){
 	for( int i=0; i<note_on_container->circles.size(); i++ ){
-		dt_circle_note_on * n = note_on_container->circles[ i ];
+		dt_circle_trig * n = note_on_container->circles[ i ];
 		n->setup( beat );
 	}
 }
@@ -132,7 +132,7 @@ void dt_circle_all_containers::change_beat_resolution_all( int res ){
 	dt_config::DT_BEAT_RESOLUTION = res;
 	app->config.synch_param();
 	for( int i=0; i<note_on_container->circles.size(); i++ ){
-		dt_circle_note_on * n = note_on_container->circles[ i ];
+		dt_circle_trig * n = note_on_container->circles[ i ];
 		int beats = n->seq->total_beats;
 		n->setup( beats );
 	}

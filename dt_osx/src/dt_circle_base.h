@@ -13,15 +13,8 @@
 
 
 typedef enum dt_circle_type{
-	DT_CIRCLE_NOTE_ON	= 0,
-	DT_CIRCLE_NOTE_NUM	= 1,
-	DT_CIRCLE_VELOCITY	= 2,
-	DT_CIRCLE_DURATION	= 3,
-	DT_CIRCLE_PAN		= 4,
-	DT_CIRCLE_CC1		= 5,
-	DT_CIRCLE_CC2		= 6,
-	DT_CIRCLE_CC3		= 7,
-	DT_CIRCLE_CC4		= 8,
+	DT_CIRCLE_TRIG	= 0,
+	DT_CIRCLE_PRAM	= 1,
 };
 
 

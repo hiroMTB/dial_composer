@@ -55,7 +55,7 @@ parent( _parent ),
 mode( DT_DIAL_UI_HOME )
 {
 	
-	bNeedParam = parent->data.circle_type != DT_CIRCLE_NOTE_ON;
+	bNeedParam = parent->data.circle_type != DT_CIRCLE_TRIG;
 
 	if(bNeedParam){
 		num_home_button = 5;

@@ -11,7 +11,7 @@
 #include "def.h"
 #include "ofMain.h"
 #include "ofApp.h"
-#include "dt_circle_note_on.h"
+#include "dt_circle_trig.h"
 #include "dt_circle_base.h"
 #include "dt_circle_output_base.h"
 #include "dt_circle_all_containers.h"
@@ -20,7 +20,7 @@
  *
  *		Container template class for ...
  *
- *		dt_circle_note_on*
+ *		dt_circle_trig*
  *		dt_circle_param_velocity*
  *		dt_circle_param_noteNum*
  *		dt_circle_param_duration*
@@ -88,58 +88,6 @@ public:
 		}
 	};
 
-	void check_connection( dt_circle_note_on * c1, bool bInput ){
-		
-		int connection_num_input = 0;
-		int connection_num_output = 0;
-
-		if( bInput )
-			c1->p_state.reset();
-		
-		for( int i=0; i<circles.size(); i++ ){
-			
-			if(  bInput && connection_num_input > dt_config::DT_CONNECTION_NUM_INPUT_MAX ) break;
-			if( !bInput && connection_num_output > dt_config::DT_CONNECTION_NUM_OUTPUT_MAX ) break;
-
-			T c2 = circles[ i ];
-			ofVec2f &p1 = c1->data.position;
-			ofVec2f &p2 = c2->data.position;
-			float dist = p2.distance( p1 );
-			float connection_radius = bInput ? c1->data.input_connection_radius : c1->data.output_connection_radius;
-			
-			if( dist<connection_radius ){
-				if( bInput ){
-					connection_num_input++;
-					switch( c2->data.circle_type ){
-                        case DT_CIRCLE_NOTE_NUM:    c1->p_state.bNote = true; break;
-                        case DT_CIRCLE_VELOCITY:    c1->p_state.bVel = true; break;
-						case DT_CIRCLE_DURATION:    c1->p_state.bDur = true; break;
-						case DT_CIRCLE_PAN:         c1->p_state.bPan = true; break;
-						case DT_CIRCLE_CC1:         c1->p_state.bCc1 = true; break;
-						case DT_CIRCLE_CC2:         c1->p_state.bCc2 = true; break;
-						case DT_CIRCLE_CC3:         c1->p_state.bCc3 = true; break;
-						case DT_CIRCLE_CC4:         c1->p_state.bCc4 = true; break;
-						default: break;
-					}
-				}
-				
-				if( !bInput ) connection_num_output++;
-				
-				ofVec2f dir = ( p2-p1 ).normalize();	// p1 -> p2
-				float r1 = c1->data.collision_radius-5;
-				float r2 = c2->data.collision_radius-5;
-
-				ofVec2f connect_p1 = p1 + dir*r1;
-				ofVec2f connect_p2 = p2 - dir*r2;
-				
-				if( bInput )c1->input_circles.push_back( c2 );
-				else c1->output_circles.push_back( c2 );
-				ofFloatColor line_color = c2->data.line_color;
-				line_color.a = 0.4;
-				ofApp::getInstance()->all_containers.add_line_to_all_lines( connect_p1, connect_p2, line_color, line_color );
-			}
-		}
-	}
 
 	void process_collision(){
 		for( int i=0; i<circles.size(); i++ ){

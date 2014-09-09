@@ -10,7 +10,7 @@
 #include "ofApp.h"
 #include "dt_dial_ui.h"
 #include "dt_circle_base.h"
-#include "dt_circle_note_on.h"
+#include "dt_circle_trig.h"
 #include "dt_circle_param.h"
 #include "dt_circle_container.h"
 #include "dt_circle_all_containers.h"
@@ -78,7 +78,7 @@ void dt_touch::mousePressed( int x, int y, int button ){
 			// touch canvas
 			//make_random_circle(t.x, t.y, 100);
             
-			dt_circle_note_on * c = new dt_circle_note_on();
+			dt_circle_trig * c = new dt_circle_trig();
 			app->all_containers.note_on_container->addCircle( c );
             c->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
 			c->data.position.x = x;
@@ -105,7 +105,7 @@ void dt_touch::make_random_circle( int x, int y, int num=100 ){
 		float rand = ofRandom( 0, 1.0 );
 		dt_circle_base * c = NULL;
 		if( rand < 0.25 ){
-			dt_circle_note_on * no = new dt_circle_note_on();
+			dt_circle_trig * no = new dt_circle_trig();
 			app->all_containers.note_on_container->addCircle( no );
 			c = no;
 		}

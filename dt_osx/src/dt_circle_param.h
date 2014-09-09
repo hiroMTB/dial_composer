@@ -25,19 +25,7 @@ public:
 	virtual void make_vbo();
 	virtual void change_rshape(int type);
 
-	static ofColor noteNum_color;
-	static ofColor velocity_color;
-	static ofColor duration_color;
-	static ofColor pan_color;
-	static ofColor cc1_color;
-	static ofColor cc2_color;
-	static ofColor cc3_color;
-	static ofColor cc4_color;
-	
-    float param_on;
-	float param_off;
-	float param_min;
-	float param_max;
+    float param;
 
 	ofVboMesh rshape;
 };
