@@ -42,7 +42,7 @@ void ofx2DCamera::begin(){
     ofSetupScreenOrtho();
     ofPushMatrix();
         ofTranslate( ofGetWidth()/2, ofGetHeight()/2 );
-        ofTranslate( -trans );
+        ofTranslate( trans );
         ofTranslate( pivot );
         ofRotate( angle, 0, 0, 1);
         ofScale( zoomRate, zoomRate);
@@ -78,6 +78,11 @@ void ofx2DCamera::debugDraw(){
 
     ofSetRectMode( OF_RECTMODE_CENTER );
     
+    // grid
+    ofSetColor( 20 );
+    ofLine( -500, 0, 500, 0 );
+    ofLine( 0, -500, 0, 500 );
+    
     // trans
     ofNoFill();
     ofSetLineWidth(1);
@@ -110,8 +115,8 @@ void ofx2DCamera::zoom( float _zoomRate, int time_ms, int delay_ms){
 void ofx2DCamera::moveZoom( ofVec2f _trans, float _zoomRate, int time_ms, int delay_ms ){
     
     startPivot( _trans );
-    transX_tw.setParameters( 1, easingsine, ofxTween::easeInOut, trans.x, _trans.x, time_ms/2, delay_ms );
-    transY_tw.setParameters( 2, easingsine, ofxTween::easeInOut, trans.y, _trans.y, time_ms/2, delay_ms );
+    transX_tw.setParameters( 1, easingsine, ofxTween::easeInOut, trans.x, -_trans.x, time_ms/2, delay_ms );
+    transY_tw.setParameters( 2, easingsine, ofxTween::easeInOut, trans.y, -_trans.y, time_ms/2, delay_ms );
     
     bZooming = true;
     zoomRate_tw.setParameters( 3, easingsine, ofxTween::easeInOut, zoomRate, _zoomRate, time_ms/2, delay_ms+time_ms/2 );

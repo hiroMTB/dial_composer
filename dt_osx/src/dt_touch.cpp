@@ -104,7 +104,8 @@ void dt_touch::mouseDragged( int tx, int ty, int button ){
 		dt_circle_base::selected_circle = c;
 	}else{
         // drag camera
-        app->cam.trans = app->cam.dragStartPos - dist*0.3;
+        float sensitivity = 0.8;
+        app->cam.trans = app->cam.dragStartPos + dist*sensitivity;
     }
 }
 
