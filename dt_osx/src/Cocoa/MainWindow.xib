@@ -23,7 +23,7 @@
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="0.0" y="523" width="1440" height="900"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
             <view key="contentView" id="GzE-ve-f11">
                 <rect key="frame" x="0.0" y="0.0" width="1440" height="900"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -51,7 +51,7 @@
                                                     <constraint firstAttribute="width" constant="35" id="LJD-e1-bKr"/>
                                                     <constraint firstAttribute="height" constant="35" id="PjH-24-008"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-05b" imagePosition="only" alignment="center" alternateImage="icon-05a" state="on" imageScaling="proportionallyDown" inset="2" id="64h-FC-xDA">
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-1_off" imagePosition="only" alignment="center" alternateImage="icon-1" state="on" imageScaling="proportionallyDown" inset="2" id="64h-FC-xDA">
                                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -66,7 +66,7 @@
                                                     <constraint firstAttribute="height" constant="35" id="Efg-Uv-3W4"/>
                                                     <constraint firstAttribute="width" constant="35" id="Ev5-9r-7aZ"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-06b" imagePosition="only" alignment="center" alternateImage="icon-06a" imageScaling="proportionallyDown" inset="2" id="BQ7-9Z-llx">
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-2_off" imagePosition="only" alignment="center" alternateImage="icon-2" imageScaling="proportionallyDown" inset="2" id="BQ7-9Z-llx">
                                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -81,7 +81,7 @@
                                                     <constraint firstAttribute="width" constant="35" id="JNF-gz-NhU"/>
                                                     <constraint firstAttribute="height" constant="35" id="Ksj-Dm-zQN"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-07b" imagePosition="only" alignment="center" alternateImage="icon-07a" imageScaling="proportionallyDown" inset="2" id="53J-i5-zfQ">
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-3_off" imagePosition="only" alignment="center" alternateImage="icon-3" imageScaling="proportionallyDown" inset="2" id="53J-i5-zfQ">
                                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -96,7 +96,7 @@
                                                     <constraint firstAttribute="height" constant="35" id="gLm-Re-y8W"/>
                                                     <constraint firstAttribute="width" constant="35" id="niI-DD-Kpe"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-08b" imagePosition="only" alignment="center" alternateImage="icon-08a" imageScaling="proportionallyDown" inset="2" id="hUI-qJ-JFA">
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-4_off" imagePosition="only" alignment="center" alternateImage="icon-4" imageScaling="proportionallyDown" inset="2" id="hUI-qJ-JFA">
                                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -166,13 +166,13 @@
     <resources>
         <image name="NSListViewTemplate" width="11" height="10"/>
         <image name="NSStopProgressTemplate" width="11" height="11"/>
-        <image name="icon-05a" width="64" height="64"/>
-        <image name="icon-05b" width="64" height="65"/>
-        <image name="icon-06a" width="65" height="64"/>
-        <image name="icon-06b" width="65" height="65"/>
-        <image name="icon-07a" width="65" height="64"/>
-        <image name="icon-07b" width="65" height="65"/>
-        <image name="icon-08a" width="65" height="64"/>
-        <image name="icon-08b" width="65" height="65"/>
+        <image name="icon-1" width="64" height="64"/>
+        <image name="icon-1_off" width="64" height="65"/>
+        <image name="icon-2" width="65" height="64"/>
+        <image name="icon-2_off" width="65" height="65"/>
+        <image name="icon-3" width="65" height="64"/>
+        <image name="icon-3_off" width="65" height="65"/>
+        <image name="icon-4" width="65" height="64"/>
+        <image name="icon-4_off" width="65" height="65"/>
     </resources>
 </document>
