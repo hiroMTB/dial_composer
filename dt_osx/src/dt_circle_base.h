@@ -13,20 +13,15 @@
 
 
 typedef enum dt_circle_type{
-	DT_CIRCLE_BASE		= -1,
 	DT_CIRCLE_NOTE_ON	= 0,
 	DT_CIRCLE_NOTE_NUM	= 1,
 	DT_CIRCLE_VELOCITY	= 2,
 	DT_CIRCLE_DURATION	= 3,
 	DT_CIRCLE_PAN		= 4,
-
 	DT_CIRCLE_CC1		= 5,
 	DT_CIRCLE_CC2		= 6,
 	DT_CIRCLE_CC3		= 7,
 	DT_CIRCLE_CC4		= 8,
-	
-	DT_CIRCLE_OSC		= 101,
-	DT_CIRCLE_MIDI		= 102
 };
 
 
@@ -72,7 +67,6 @@ public:
 	
 	static ofFloatColor defaultColor;
 	ofFloatColor indi_color;
-	ofFloatColor line_color;
 	ofFloatColor circle_color;
 	
 	dt_circle_type circle_type;

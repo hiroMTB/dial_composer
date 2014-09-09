@@ -13,8 +13,6 @@
 #include "dt_font_manager.h"
 #include "dt_circle_container.h"
 #include "dt_circle_param.h"
-#include "dt_circle_osc.h"
-#include "dt_circle_midi.h"
 #include "dt_circle_drawer.h"
 #include "dt_dial_ui.h"
 
@@ -245,7 +243,7 @@ void dt_circle_note_on::make_vbo(){
         float y = r * sin;
 		if( on ){
             ofFloatColor c = data.circle_color;
-            c.setHsb( h + i*0.01, MAX( 0.6,s+ofRandom(-0.1, 0.1) ), 0.8 );
+            c.setHsb( h + i*0.005, MAX( 0.6,s+ofRandom(-0.05, 0.05) ), 0.8 );
             rshape.addVertex( ofVec3f(x, y, 0) );
             rshape.addIndex( vertIndex++ );
             rshape.addColor( c );

@@ -63,6 +63,50 @@ void dt_circle_param::update(){
 		//data.position += data.move_speed;
 		data.world_position = data.position;
 	}
+    
+    /*
+     *
+     *  change type
+     *  should be mode to another function
+     *
+     */
+    switch ( data.circle_type ) {
+        case DT_CIRCLE_NOTE_NUM:
+            data.circle_color = noteNum_color;
+            initial = "N";
+            break;
+        case DT_CIRCLE_VELOCITY:
+            data.circle_color = velocity_color;
+            initial = "V";
+            break;
+        case DT_CIRCLE_DURATION:
+            data.circle_color = duration_color;
+            initial = "D";
+            break;
+        case DT_CIRCLE_PAN:
+            data.circle_color = pan_color;
+            initial = "P";
+            break;
+        case DT_CIRCLE_CC1:
+            data.circle_color = cc1_color;
+            initial = "CC1";
+            break;
+        case DT_CIRCLE_CC2:
+            data.circle_color = cc2_color;
+            initial = "CC2";
+            break;
+        case DT_CIRCLE_CC3:
+            data.circle_color = cc3_color;
+            initial = "CC3";
+            break;
+        case DT_CIRCLE_CC4:
+            data.circle_color = cc4_color;
+            initial = "CC4";
+            break;
+
+        default:
+            break;
+    }
 }
 
 void dt_circle_param::draw(){
@@ -74,6 +118,7 @@ void dt_circle_param::draw(){
 	bool selected = selected_circle == this;
 	
 	// Circle
+    
 	ofSetColor( data.circle_color - data.fire_rate*0.2 );
 	ofNoFill();
 	ofSetLineWidth( 2 );

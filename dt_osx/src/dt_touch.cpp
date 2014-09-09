@@ -12,8 +12,6 @@
 #include "dt_circle_base.h"
 #include "dt_circle_note_on.h"
 #include "dt_circle_param.h"
-#include "dt_circle_midi.h"
-#include "dt_circle_osc.h"
 #include "dt_circle_container.h"
 #include "dt_circle_all_containers.h"
 
@@ -110,12 +108,7 @@ void dt_touch::make_random_circle( int x, int y, int num=100 ){
 			dt_circle_note_on * no = new dt_circle_note_on();
 			app->all_containers.note_on_container->addCircle( no );
 			c = no;
-		}else if( rand < 0.33 ){
-			dt_circle_osc * o = new dt_circle_osc();
-			app->all_containers.output_container->addCircle( o );
-			c = o;
 		}
-		
 		if(c!= NULL){
 			c->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
 			c->data.position.x = x + random_p.x;

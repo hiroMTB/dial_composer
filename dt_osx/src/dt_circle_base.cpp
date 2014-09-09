@@ -39,7 +39,6 @@ output_connection_radius( 0.0 ),
 fire_rate( 0.0 ),
 move_speed( ofVec2f(0,0) ),
 position( ofVec2f(-1,-1) ),
-circle_type( DT_CIRCLE_BASE ),
 name( "def" )
 {
 }
@@ -52,7 +51,6 @@ name( "def" )
 dt_circle_base * dt_circle_base::selected_circle = NULL;
 
 dt_circle_base::dt_circle_base(){
-	data.circle_type = DT_CIRCLE_BASE;
 	app = ofApp::getInstance();
 }
 
