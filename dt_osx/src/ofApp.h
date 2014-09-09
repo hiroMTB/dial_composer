@@ -2,7 +2,6 @@
 
 #include "ofMain.h"
 #include "def.h"
-#include "ofxTween.h"
 #include "dt_midi_writer.h"
 #include "dt_osc_sender.h"
 #include "dt_midi_sender.h"
@@ -15,6 +14,7 @@
 #include "dt_circle_all_containers.h"
 #include "dt_config.h"
 #include "dt_osc_recorder.h"
+#include "ofx2DCamera.h"
 
 class ofApp : public ofBaseApp {
 
@@ -64,9 +64,6 @@ public:
 	dt_osc_recorder		osc_recorder;
 	dt_circle_all_containers all_containers;	
 
-    ofVec2f campos, campos_target, center;
-	ofxEasingQuad camtw_x, camtw_y;
-
-    ofEasyCam cam;
+    ofx2DCamera cam;
 };
 

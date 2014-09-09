@@ -92,14 +92,14 @@ void dt_circle_note_on::set_speed( int speed ){
 void dt_circle_note_on::update(){
 	data.fire_rate*=0.8;
 
-	if( dt_config::DT_PLAY_GEN_RHYTHM ){
-		data.position += data.move_speed;
-	
-		float deg = 360.0 * seq->indicator/seq->total_steps * DEG_TO_RAD;
-		data.world_position = data.position + ofVec2f( cos(deg), sin(deg) ) * data.rev_radius;
-	
-		check_connection();
-	}
+//	if( dt_config::DT_PLAY_GEN_RHYTHM ){
+//		//data.position += data.move_speed;
+//	
+//		float deg = 360.0 * seq->indicator/seq->total_steps * DEG_TO_RAD;
+//		data.world_position = data.position + ofVec2f( cos(deg), sin(deg) ) * data.rev_radius;
+//	
+//		check_connection();
+//	}
     
     // size update
     data.rev_radius = dt_config::DT_SIZE_BASE * 0.5;
@@ -166,7 +166,7 @@ void dt_circle_note_on::draw(){
 	
 	if( data.bShowUI )
 		ui->draw();
-	
+	    
 	ofPopMatrix();
 }
 

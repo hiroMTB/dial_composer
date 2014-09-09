@@ -37,11 +37,12 @@ void dt_touch::update(){
 //	circle?
 //	canvas?
 //
-void dt_touch::mousePressed( int x, int y, int button ){
+void dt_touch::mousePressed( int tx, int ty, int button ){
 	app = ofApp::getInstance();
 	
-	ofVec2f t( x, y );
-	
+	ofVec2f wp = app->cam.screenToWorld( ofVec2f(tx,ty) );
+    touch_entry = wp;
+
 	t_obj = DT_TOUCH_OBJ_NONE;
 	
 	// UI ELEM ?
@@ -54,7 +55,7 @@ void dt_touch::mousePressed( int x, int y, int button ){
 		dt_dial_ui * ui = c->ui;
 
 		if( ui && c->data.bShowUI ){
-			int ui_elem = ui->touch_test( t );
+			int ui_elem = ui->touch_test( wp );
 			if( ui_elem != DT_DIAL_UI_NONE ){
 				t_obj = DT_TOUCH_OBJ_UI_ELEM;
 				break;
@@ -63,66 +64,22 @@ void dt_touch::mousePressed( int x, int y, int button ){
 	}
 
 	if( t_obj == DT_TOUCH_OBJ_NONE ){
-		dt_circle_base * c = app->all_containers.circle_base_container->getTouchedCircle(t);
+		dt_circle_base * c = app->all_containers.circle_base_container->getTouchedCircle( wp );
 		
 		// CIRCLE or CANVAS ?
 		if( c != NULL ){
 			// touch circle
 			touched_circle = c;
 			touched_circle_center = c->data.position;
-			touch_entry = t;
 			dt_circle_base::selected_circle = c;
 			touch_time = 0;
 			t_obj = DT_TOUCH_OBJ_CIRCLE;
 		}else{
 			// touch canvas
-			//make_random_circle(t.x, t.y, 100);
-            
-			dt_circle_note_on * c = new dt_circle_note_on();
-			app->all_containers.note_on_container->addCircle( c );
-            c->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
-			c->data.position.x = x;
-			c->data.position.y = y;
-			app->all_containers.circle_base_container->addCircle( c );
-			touched_circle = c;
-			touched_circle_center = c->data.position;
-			touch_entry.set( x, y );
-			dt_circle_base::selected_circle = c;
-			touch_time = -1;
+			touch_time = 0;
 			t_obj = DT_TOUCH_OBJ_CANVAS;
-		}
-	}
-}
-
-void dt_touch::make_random_circle( int x, int y, int num=100 ){
-	app = ofApp::getInstance();
-	
-	for( int i=0; i<num; i++ ){
-		
-		ofVec2f random_p( ofRandom(-1, 1), ofRandom(-1, 1) );
-		random_p *= 1000.0;
-		
-		float rand = ofRandom( 0, 1.0 );
-		dt_circle_base * c = NULL;
-		if( rand < 0.25 ){
-			dt_circle_note_on * no = new dt_circle_note_on();
-			app->all_containers.note_on_container->addCircle( no );
-			c = no;
-		}
-		if(c!= NULL){
-			c->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
-			c->data.position.x = x + random_p.x;
-			c->data.position.y = y + random_p.y;
-			app->all_containers.circle_base_container->addCircle( c );
-						
-			touched_circle = c;
-			touched_circle_center = c->data.position;
-			touch_entry.set( x, y );
-			dt_circle_base::selected_circle = c;
-			
-			touch_time = -1;
-			
-			t_obj = DT_TOUCH_OBJ_CANVAS;
+            touched_circle = NULL;
+            app->cam.dragStartPos = app->cam.trans;
 		}
 	}
 }
@@ -134,35 +91,52 @@ void dt_touch::make_random_circle( int x, int y, int num=100 ){
  *		mvoe camera ?
  *
  */
-void dt_touch::mouseDragged( int x, int y, int button ){
-	dt_circle_base * c = touched_circle;
-	ofVec2f t( x, y );
+void dt_touch::mouseDragged( int tx, int ty, int button ){
+
+    ofVec2f wp = app->cam.screenToWorld( ofVec2f(tx,ty) );
+    ofVec2f dist = wp - touch_entry;
+
+    dt_circle_base * c = touched_circle;
 
 	if( c ){
-		ofVec2f dist = t - touch_entry;
-		c->data.position = dist + touched_circle_center;
+        // drag circle
+		c->data.position = touched_circle_center + dist;
 		dt_circle_base::selected_circle = c;
-	}
+	}else{
+        // drag camera
+        app->cam.trans = app->cam.dragStartPos - dist*0.3;
+    }
 }
 
-void dt_touch::mouseReleased( int x, int y, int button ){
+void dt_touch::mouseReleased( int tx, int ty, int button ){
 
+    ofVec2f wp = app->cam.screenToWorld( ofVec2f(tx,ty) );
+    
 	float time = touch_time;
 
 	// Short time touch end
 	if( 0<=time && time < 13 ){
-		dt_circle_base * c = touched_circle;
-		if( c && c->ui ){
-			if( c->data.bShowUI ){
-				if( c->ui->mode == DT_DIAL_UI_HOME ){
-					c->ui->change_mode( DT_DIAL_UI_NONE );
+		if( touched_circle && touched_circle->ui ){
+			if( touched_circle->data.bShowUI ){
+				if( touched_circle->ui->mode == DT_DIAL_UI_HOME ){
+					touched_circle->ui->change_mode( DT_DIAL_UI_NONE );
 				}else{
-					c->ui->change_mode( DT_DIAL_UI_HOME );
+					touched_circle->ui->change_mode( DT_DIAL_UI_HOME );
 				}
 			}else{
-				c->ui->change_mode( DT_DIAL_UI_HOME );
+				touched_circle->ui->change_mode( DT_DIAL_UI_HOME );
 			}
-		}
+		}else{
+            // create new circle
+            dt_circle_note_on * c = new dt_circle_note_on();
+			app->all_containers.note_on_container->addCircle( c );
+            c->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
+			c->data.position = wp;
+			app->all_containers.circle_base_container->addCircle( c );
+			touched_circle = c;
+			touched_circle_center = c->data.position;
+ 			dt_circle_base::selected_circle = c;
+        }
 	}else{
 		touched_circle = NULL;
 	}

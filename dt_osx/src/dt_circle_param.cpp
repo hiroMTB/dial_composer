@@ -59,10 +59,10 @@ void dt_circle_param::change_rshape( int type ){
 void dt_circle_param::update(){
 	data.fire_rate *= 0.8;
 	
-	if( dt_config::DT_PLAY_GEN_RHYTHM ){
-		//data.position += data.move_speed;
-		data.world_position = data.position;
-	}
+//	if( dt_config::DT_PLAY_GEN_RHYTHM ){
+//		//data.position += data.move_speed;
+//		data.world_position = data.position;
+//	}
     
     /*
      *

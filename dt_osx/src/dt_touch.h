@@ -28,7 +28,6 @@ public:
 	void mousePressed( int x, int y, int button );
 	void mouseDragged( int x, int y, int button );
 	void mouseReleased( int x, int y, int button );
-	void make_random_circle( int x, int y, int num );
 	
 	ofApp * app;
 	float touch_time;

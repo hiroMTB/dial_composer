@@ -46,6 +46,7 @@
 		4D82B81C19B66AF500BA0CEF /* dt_osc_recorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B81A19B66AF500BA0CEF /* dt_osc_recorder.cpp */; };
 		4D82B82619B67D8800BA0CEF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82319B67D8800BA0CEF /* AppDelegate.mm */; };
 		4D82B82719B67D8800BA0CEF /* dt_GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82519B67D8800BA0CEF /* dt_GLView.mm */; };
+		4D9CC35219BF667E00E75AD2 /* ofx2DCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D9CC35019BF667E00E75AD2 /* ofx2DCamera.cpp */; };
 		4DABAE8A19BC18BB00E6F11C /* easing_terms_of_use.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DABAE5B19BC18BB00E6F11C /* easing_terms_of_use.html */; };
 		4DABAE8B19BC18BB00E6F11C /* ofxEasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DABAE5C19BC18BB00E6F11C /* ofxEasing.cpp */; };
 		4DABAE8C19BC18BB00E6F11C /* ofxEasingBack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DABAE5E19BC18BB00E6F11C /* ofxEasingBack.cpp */; };
@@ -10144,6 +10145,8 @@
 		4D82B82319B67D8800BA0CEF /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		4D82B82419B67D8800BA0CEF /* dt_GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dt_GLView.h; path = Cocoa/dt_GLView.h; sourceTree = "<group>"; };
 		4D82B82519B67D8800BA0CEF /* dt_GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = dt_GLView.mm; path = Cocoa/dt_GLView.mm; sourceTree = "<group>"; };
+		4D9CC35019BF667E00E75AD2 /* ofx2DCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofx2DCamera.cpp; sourceTree = "<group>"; };
+		4D9CC35119BF667E00E75AD2 /* ofx2DCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofx2DCamera.h; sourceTree = "<group>"; };
 		4DABAE5B19BC18BB00E6F11C /* easing_terms_of_use.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = easing_terms_of_use.html; sourceTree = "<group>"; };
 		4DABAE5C19BC18BB00E6F11C /* ofxEasing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasing.cpp; sourceTree = "<group>"; };
 		4DABAE5D19BC18BB00E6F11C /* ofxEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxEasing.h; sourceTree = "<group>"; };
@@ -27526,6 +27529,17 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		4D9CC34F19BF664900E75AD2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F66E1D71195E813700CEE795 /* dt_linear_drawer.h */,
+				F66E1D70195E813700CEE795 /* dt_linear_drawer.cpp */,
+				4D9CC35019BF667E00E75AD2 /* ofx2DCamera.cpp */,
+				4D9CC35119BF667E00E75AD2 /* ofx2DCamera.h */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		4DABAE3519BC18BA00E6F11C /* ofxTween */ = {
 			isa = PBXGroup;
 			children = (
@@ -27767,6 +27781,7 @@
 				F6B7670119479C8400B0741D /* circle */,
 				F6B7670219479CA500B0741D /* seq */,
 				F6B7670019479C8000B0741D /* ui */,
+				4D9CC34F19BF664900E75AD2 /* view */,
 				F64097801953E90D0021407A /* utility */,
 			);
 			path = src;
@@ -27890,8 +27905,6 @@
 				F6B766CE1947984B00B0741D /* dt_rhythm_lib.cpp */,
 				F6778751194F8D28005DFF45 /* dt_midi_writer.h */,
 				F64097821953EA440021407A /* dt_circle_drawer.h */,
-				F66E1D71195E813700CEE795 /* dt_linear_drawer.h */,
-				F66E1D70195E813700CEE795 /* dt_linear_drawer.cpp */,
 			);
 			name = utility;
 			sourceTree = "<group>";
@@ -28615,6 +28628,7 @@
 				4DAFA43319BC931C008E9A14 /* ofxCocoaGLView.mm in Sources */,
 				4DABAE9419BC18BB00E6F11C /* ofxEasingQuart.cpp in Sources */,
 				F6EE1B54196AA7A600A77A20 /* ofxToggle.cpp in Sources */,
+				4D9CC35219BF667E00E75AD2 /* ofx2DCamera.cpp in Sources */,
 				F6779838194F9F82005DFF45 /* juce_audio_basics.mm in Sources */,
 				4DABAE9519BC18BB00E6F11C /* ofxEasingQuint.cpp in Sources */,
 				F6779837194F9F1F005DFF45 /* juce_core.mm in Sources */,

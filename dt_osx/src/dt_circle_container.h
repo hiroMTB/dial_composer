@@ -179,24 +179,24 @@ public:
 			/*
 			 *	against wall
 			 */
-			dt_circle_data &d = c1->data;
-			ofRectangle& canvas = ofApp::getInstance()->canvas;
-			float x = d.position.x;
-			float y = d.position.y;
-			float r = d.collision_radius;
-			if( x-r < canvas.x ){
-				d.position.x = r + canvas.x;
-				d.move_speed.x = -d.move_speed.x;
-			}else if( canvas.width + canvas.x < x+r ){
-				d.position.x = canvas.width + canvas.x-r;
-				d.move_speed.x = -d.move_speed.x;
-			}else if( y-r < canvas.y ){
-				d.position.y = r + canvas.y;
-				d.move_speed.y = -d.move_speed.y;
-			}else if( canvas.height + canvas.y < y+r ){
-				d.position.y = canvas.height + canvas.y-r;
-				d.move_speed.y = -d.move_speed.y;
-			}
+//			dt_circle_data &d = c1->data;
+//			ofRectangle& canvas = ofApp::getInstance()->canvas;
+//			float x = d.position.x;
+//			float y = d.position.y;
+//			float r = d.collision_radius;
+//			if( x-r < canvas.x ){
+//				d.position.x = r + canvas.x;
+//				d.move_speed.x = -d.move_speed.x;
+//			}else if( canvas.width + canvas.x < x+r ){
+//				d.position.x = canvas.width + canvas.x-r;
+//				d.move_speed.x = -d.move_speed.x;
+//			}else if( y-r < canvas.y ){
+//				d.position.y = r + canvas.y;
+//				d.move_speed.y = -d.move_speed.y;
+//			}else if( canvas.height + canvas.y < y+r ){
+//				d.position.y = canvas.height + canvas.y-r;
+//				d.move_speed.y = -d.move_speed.y;
+//			}
 		}
 	}
 };

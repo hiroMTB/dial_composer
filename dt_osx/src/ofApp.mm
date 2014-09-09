@@ -24,11 +24,11 @@ void ofApp::windowResized( int w, int h ){
 	
 	config.reset_position();
     dt_config::DT_SIZE_BASE = max( w, h )/12.0;
-    center.set( w/2, h/2 );
+
+    cam.reset();
 }
 
 void ofApp::setup(){
-	windowResized( ofGetWidth(), ofGetHeight() );
 	setupVisual();
 	setupModule();
     bg.set( 0.5 );
@@ -48,9 +48,6 @@ void ofApp::setupVisual(){
     noise.loadImage("img/noise2.png");
     noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
     
-    campos.set( ofGetWidth()/2, ofGetHeight()/2 );
-    campos_target = campos;
-    
     view_mode = 0;
 }
 
@@ -67,6 +64,7 @@ void ofApp::setupModule(){
 }
 
 void ofApp::update(){
+    cam.update();
 	touch.update();
 	config.update();
 	all_containers.update();
@@ -76,8 +74,6 @@ void ofApp::update(){
     AppDelegate *  d = (AppDelegate*)[NSApplication sharedApplication].delegate;
 
     if( d ) [d update_ui];
-    
-    campos = campos*0.9 + campos_target*0.1;
 }
 
 void ofApp::draw(){
@@ -90,15 +86,13 @@ void ofApp::draw(){
     noise.height = h;
     noise.draw( 0, 0 );
 
-    ofSetupScreenOrtho();
-    ofPushMatrix();
-    ofTranslate( -(center.x-w/2), -(center.y-h/2) );
-
-    switch( view_mode ){
+    cam.begin();
+    all_containers.draw();
+    
+    
+    /*switch( view_mode ){
         case 0:
             all_containers.draw();
-            if( dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw(canvas.x+30, canvas.y+30, canvas.width-60, canvas.height-60, 1 );
-            config.draw();
             break;
 
         case 1:
@@ -116,12 +110,25 @@ void ofApp::draw(){
             }
             break;
         }
-        default:
-            break;
     }
+    */
     
+    cam.debugDraw();
+    cam.end();
+    
+    ofPushMatrix();
+    if( dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw(canvas.x+30, canvas.y+30, canvas.width-60, canvas.height-60, 1 );
+    config.draw();
     ofPopMatrix();
+
+    mouseX = ofGetMouseX();
+    mouseY = ofGetMouseY();
+    ofRect( mouseX, mouseY, 5, 5 );
+    ofSetColor(20);
+    ofDrawBitmapString( "mouse " + ofToString(mouseX) + ", " + ofToString(mouseY), mouseX, mouseY );
     
+    ofVec2f world = cam.screenToWorld( ofVec2f(mouseX, mouseY) );
+    ofDrawBitmapString( "world " + ofToString(world.x) + ", " + ofToString(world.y), mouseX, mouseY+20 );
 }
 
 void ofApp::mousePressed( int x, int y, int button ){
@@ -175,7 +182,9 @@ void ofApp::keyPressed( int key ){
 		case 'F': ofToggleFullscreen(); break;
 		case 'B': all_containers.change_beat_all(floor(ofRandom(dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX-1))); break;
 		case 'P': all_containers.change_position_all(); break;
-		case 'R': dt_config::DT_SHOW_BUFFERED_RHYTHM = !dt_config::DT_SHOW_BUFFERED_RHYTHM; config.synch_param(); break;
+		case 'R':
+            cam.angle += 30;
+            break;
 
 		default: break;
 	}
@@ -190,14 +199,15 @@ void ofApp::change_view( int _view_mode ){
     
     switch( _view_mode ){
         case 0:
-            campos_target = ofVec2f( ofGetWidth()/2, ofGetHeight()/2 );
+            cam.zoom( 1.0, 500 );
+            cam.move( ofVec2f(0,0), 500, 501);
             view_mode = _view_mode;
             break;
         case 1:
         {
             dt_circle_base * sel = dt_circle_base::selected_circle;
             if( sel ){
-                campos_target = sel->data.position;
+                cam.moveZoom( sel->data.position, 1.5, 1000 );
                 view_mode = _view_mode;
             }
             break;
