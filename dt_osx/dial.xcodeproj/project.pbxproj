@@ -111,7 +111,7 @@
 		F6B0939B1971414700619955 /* dt_config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B0939A1971414700619955 /* dt_config.cpp */; };
 		F6B766DA1947984B00B0741D /* dt_circle_all_containers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766B61947984B00B0741D /* dt_circle_all_containers.cpp */; };
 		F6B766DB1947984B00B0741D /* dt_circle_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766B91947984B00B0741D /* dt_circle_base.cpp */; };
-		F6B766DD1947984B00B0741D /* dt_circle_trig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766BD1947984B00B0741D /* dt_circle_trig.cpp */; };
+		F6B766DD1947984B00B0741D /* dt_circle_note_on.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766BD1947984B00B0741D /* dt_circle_note_on.cpp */; };
 		F6B766DE1947984B00B0741D /* dt_circle_param.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766BF1947984B00B0741D /* dt_circle_param.cpp */; };
 		F6B766E01947984B00B0741D /* dt_dial_ui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766C81947984B00B0741D /* dt_dial_ui.cpp */; };
 		F6B766E21947984B00B0741D /* dt_osc_sender.mm in Sources */ = {isa = PBXBuildFile; fileRef = F6B766CC1947984B00B0741D /* dt_osc_sender.mm */; };
@@ -10536,8 +10536,8 @@
 		F6B766B81947984B00B0741D /* dt_circle_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_circle_base.h; sourceTree = "<group>"; };
 		F6B766B91947984B00B0741D /* dt_circle_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_circle_base.cpp; sourceTree = "<group>"; };
 		F6B766BA1947984B00B0741D /* dt_circle_container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_circle_container.h; sourceTree = "<group>"; };
-		F6B766BC1947984B00B0741D /* dt_circle_trig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_circle_trig.h; sourceTree = "<group>"; };
-		F6B766BD1947984B00B0741D /* dt_circle_trig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_circle_trig.cpp; sourceTree = "<group>"; };
+		F6B766BC1947984B00B0741D /* dt_circle_note_on.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_circle_note_on.h; sourceTree = "<group>"; };
+		F6B766BD1947984B00B0741D /* dt_circle_note_on.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_circle_note_on.cpp; sourceTree = "<group>"; };
 		F6B766BE1947984B00B0741D /* dt_circle_param.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_circle_param.h; sourceTree = "<group>"; };
 		F6B766BF1947984B00B0741D /* dt_circle_param.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_circle_param.cpp; sourceTree = "<group>"; };
 		F6B766C71947984B00B0741D /* dt_dial_ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_dial_ui.h; sourceTree = "<group>"; };
@@ -28416,8 +28416,8 @@
 				F6B766B61947984B00B0741D /* dt_circle_all_containers.cpp */,
 				F6B766B81947984B00B0741D /* dt_circle_base.h */,
 				F6B766B91947984B00B0741D /* dt_circle_base.cpp */,
-				F6B766BC1947984B00B0741D /* dt_circle_trig.h */,
-				F6B766BD1947984B00B0741D /* dt_circle_trig.cpp */,
+				F6B766BC1947984B00B0741D /* dt_circle_note_on.h */,
+				F6B766BD1947984B00B0741D /* dt_circle_note_on.cpp */,
 				F6B766BE1947984B00B0741D /* dt_circle_param.h */,
 				F6B766BF1947984B00B0741D /* dt_circle_param.cpp */,
 			);
@@ -28679,7 +28679,7 @@
 				F63412E8194A6BE400B2E3CC /* dt_sequence_thread_audio.cpp in Sources */,
 				4D82B82719B67D8800BA0CEF /* dt_GLView.mm in Sources */,
 				F6B766E81947984B00B0741D /* main.mm in Sources */,
-				F6B766DD1947984B00B0741D /* dt_circle_trig.cpp in Sources */,
+				F6B766DD1947984B00B0741D /* dt_circle_note_on.cpp in Sources */,
 				F6B766E61947984B00B0741D /* dt_sequencer.cpp in Sources */,
 				F6B766DA1947984B00B0741D /* dt_circle_all_containers.cpp in Sources */,
 			);

@@ -1,6 +1,6 @@
 #include "ofApp.h"
 #include "dt_circle_base.h"
-#include "dt_circle_trig.h"
+#include "dt_circle_note_on.h"
 #include "dt_circle_container.h"
 #include "dt_circle_param.h"
 
@@ -107,8 +107,8 @@ void ofApp::draw(){
             if( sel ){
                 sel->draw();
                 dt_circle_type t = sel->data.circle_type;
-                if( t == DT_CIRCLE_TRIG ){
-                    dt_circle_trig * o = static_cast<dt_circle_trig*>(sel);
+                if( t == DT_CIRCLE_NOTE_ON ){
+                    dt_circle_note_on * o = static_cast<dt_circle_note_on*>(sel);
                     for( int i=0; i<o->input_circles.size(); i++ ){
                         o->input_circles[i]->draw();
                     }

@@ -1,11 +1,11 @@
 //
-//  dt_circle_trig.cpp
+//  dt_circle_note_on.cpp
 //  dial_t
 //
 //  Created by mtb on 5/5/14.
 //
 //
-#include "dt_circle_trig.h"
+#include "dt_circle_note_on.h"
 #include "ofMain.h"
 #include "ofApp.h"
 #include "dt_rhythm_lib.h"
@@ -16,15 +16,24 @@
 #include "dt_circle_drawer.h"
 #include "dt_dial_ui.h"
 
-dt_circle_trig::dt_circle_trig(){
-	data.circle_type = DT_CIRCLE_TRIG;
+dt_param_state::dt_param_state(){
+    reset();
+}
+
+void dt_param_state::reset(){
+    bNote = bVel = bDur = bPan = bCc1 = bCc2 = bCc3 = bCc4 = false;
+    note = vel = dur = pan = cc1 = cc2 = cc3 = cc4 = 0.0;
+}
+
+dt_circle_note_on::dt_circle_note_on(){
+	data.circle_type = DT_CIRCLE_NOTE_ON;
 
 	ui = new dt_dial_ui( this );
 
 	data.circle_color.setHsb( ofRandom( 0.0, 1.0 ), ofRandom(0.6, 0.8), 0.8 );
 }
 
-dt_circle_trig::~dt_circle_trig(){
+dt_circle_note_on::~dt_circle_note_on(){
 	if( ui ) {
 		delete ui;
 		ui = 0;
@@ -46,7 +55,7 @@ dt_circle_trig::~dt_circle_trig(){
 			- collision_radius
 			- input/output_connection_radius
  */
-void dt_circle_trig::setup( int beat_num ){
+void dt_circle_note_on::setup( int beat_num ){
 
 	seq = new dt_sequencer();
 
@@ -68,19 +77,19 @@ void dt_circle_trig::setup( int beat_num ){
 
 }
 
-void dt_circle_trig::set_beats( int beat_num ){
+void dt_circle_note_on::set_beats( int beat_num ){
 	seq->setup( beat_num );
 	data.rev_speed = (float)360.0 / (float)seq->total_steps;
 	change_rshape( ofRandom(-1000, 1000) );
 	set_speed( data.speed );
 }
 
-void dt_circle_trig::set_speed( int speed ){
+void dt_circle_note_on::set_speed( int speed ){
 	data.speed = speed;
 	data.rev_angle = seq->indicator * data.rev_speed;
 }
 
-void dt_circle_trig::update(){
+void dt_circle_note_on::update(){
 	data.fire_rate*=0.8;
 
 	if( dt_config::DT_PLAY_GEN_RHYTHM ){
@@ -99,7 +108,7 @@ void dt_circle_trig::update(){
 	data.output_connection_radius = data.collision_radius + 100;
 }
 
-void dt_circle_trig::check_connection(){
+void dt_circle_note_on::check_connection(){
 	
 	//input_circles.clear();
 	//output_circles.clear();
@@ -111,7 +120,7 @@ void dt_circle_trig::check_connection(){
 	//ofApp::getInstance()->all_containers.output_container->check_connection( this, false );
 }
 
-void dt_circle_trig::draw(){
+void dt_circle_note_on::draw(){
 	
 	float waiting_rate = (float)(dt_config::DT_BEAT_RESOLUTION-wait_step) / (float)dt_config::DT_BEAT_RESOLUTION;
 	float waiting_animation_rate = 0.5 + waiting_rate*0.5;
@@ -161,12 +170,12 @@ void dt_circle_trig::draw(){
 	ofPopMatrix();
 }
 
-void dt_circle_trig::change_rshape( int type ){
+void dt_circle_note_on::change_rshape( int type ){
 	seq->setRhythmShape( type );
 	make_vbo();
 }
 
-void dt_circle_trig::fire(){
+void dt_circle_note_on::fire(){
 	
     ofxOscMessage m;
     m.setAddress( "1" );
@@ -176,7 +185,7 @@ void dt_circle_trig::fire(){
     data.fire_rate = 1.0;
 }
 
-void dt_circle_trig::update_world_position(){
+void dt_circle_note_on::update_world_position(){
 
 	int total_beats = seq->total_beats;
 	int current_beat_num = seq->getCurrentBeat();
@@ -210,7 +219,7 @@ void dt_circle_trig::update_world_position(){
 	data.indi_point_adder = ( data.indi_next_point - data.indi_current_point) / (float)(far * dt_config::DT_BEAT_RESOLUTION );
 }
 
-void dt_circle_trig::make_vbo(){
+void dt_circle_note_on::make_vbo(){
 
     rguid.clear();
     rshape.clear();

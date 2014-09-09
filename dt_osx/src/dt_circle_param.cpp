@@ -13,9 +13,22 @@
 #include "dt_font_manager.h"
 #include "dt_circle_drawer.h"
 
+ofColor dt_circle_param::noteNum_color =	ofColor( 184,  88,  32 );
+ofColor dt_circle_param::velocity_color =	ofColor( 247, 106, 129 );
+ofColor dt_circle_param::duration_color =	ofColor(  52,  78, 168 );
+ofColor dt_circle_param::pan_color =		ofColor(  30, 141,  25 );
+ofColor dt_circle_param::cc1_color =		ofColor( 133, 135,  65 );
+ofColor dt_circle_param::cc2_color =		ofColor( 160, 163,  79 );
+ofColor dt_circle_param::cc3_color =		ofColor( 201, 204,  98 );
+ofColor dt_circle_param::cc4_color =		ofColor( 241, 244,  138 );
+
 dt_circle_param::dt_circle_param()
 :
-param( 0 ) {
+param_on( ofRandom(0.2, 0.3) ),
+param_off( ofRandom(0.001, 0.1) ),
+param_max( 1 ),
+param_min( 0 )
+{
 	initial = "";
 }
 
@@ -50,6 +63,50 @@ void dt_circle_param::update(){
 		//data.position += data.move_speed;
 		data.world_position = data.position;
 	}
+    
+    /*
+     *
+     *  change type
+     *  should be mode to another function
+     *
+     */
+    switch ( data.circle_type ) {
+        case DT_CIRCLE_NOTE_NUM:
+            data.circle_color = noteNum_color;
+            initial = "N";
+            break;
+        case DT_CIRCLE_VELOCITY:
+            data.circle_color = velocity_color;
+            initial = "V";
+            break;
+        case DT_CIRCLE_DURATION:
+            data.circle_color = duration_color;
+            initial = "D";
+            break;
+        case DT_CIRCLE_PAN:
+            data.circle_color = pan_color;
+            initial = "P";
+            break;
+        case DT_CIRCLE_CC1:
+            data.circle_color = cc1_color;
+            initial = "CC1";
+            break;
+        case DT_CIRCLE_CC2:
+            data.circle_color = cc2_color;
+            initial = "CC2";
+            break;
+        case DT_CIRCLE_CC3:
+            data.circle_color = cc3_color;
+            initial = "CC3";
+            break;
+        case DT_CIRCLE_CC4:
+            data.circle_color = cc4_color;
+            initial = "CC4";
+            break;
+
+        default:
+            break;
+    }
 }
 
 void dt_circle_param::draw(){
