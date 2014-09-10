@@ -21,6 +21,9 @@ dt_touch::dt_touch(){
 	touch_entry.set( 0,0 );
 	touch_time = -1;
 	t_obj = DT_TOUCH_OBJ_NONE;
+    last_tap = 0;
+    bDouble_tap = false;
+    double_tap_time =500;
 }
 
 void dt_touch::update(){
@@ -40,6 +43,13 @@ void dt_touch::update(){
 void dt_touch::mousePressed( int tx, int ty, int button ){
 	app = ofApp::getInstance();
 	
+    unsigned long cur_tap = ofGetElapsedTimeMillis();
+    if( !bDouble_tap && last_tap!=0 && cur_tap-last_tap < double_tap_time ){
+        bDouble_tap = true;
+    }else{
+        bDouble_tap = false;
+    }
+
 	ofVec2f wp = app->cam.screenToWorld( ofVec2f(tx,ty) );
     touch_entry = wp;
 
@@ -82,6 +92,9 @@ void dt_touch::mousePressed( int tx, int ty, int button ){
             app->cam.dragStartPos = app->cam.trans;
 		}
 	}
+    
+    
+    last_tap = cur_tap;
 }
 
 /*
@@ -116,18 +129,29 @@ void dt_touch::mouseReleased( int tx, int ty, int button ){
 
 	// Short time touch end
 	if( 0<=time && time < 13 ){
-		if( touched_circle && touched_circle->ui ){
-			if( touched_circle->data.bShowUI ){
-				if( touched_circle->ui->mode == DT_DIAL_UI_HOME ){
-					touched_circle->ui->change_mode( DT_DIAL_UI_NONE );
-				}else{
-					touched_circle->ui->change_mode( DT_DIAL_UI_HOME );
-				}
-			}else{
-				touched_circle->ui->change_mode( DT_DIAL_UI_HOME );
-			}
+		if( touched_circle ){
+            // circle
+            if( bDouble_tap ){
+                if( app->view_mode == 0)
+                    app->change_view( 1 );
+                else{
+                    app->change_view( 0 );
+                }
+                bDouble_tap = false;
+                last_tap = 0;
+            }else if ( touched_circle->ui ){
+                if( touched_circle->data.bShowUI ){
+                    if( touched_circle->ui->mode == DT_DIAL_UI_HOME ){
+                        touched_circle->ui->change_mode( DT_DIAL_UI_NONE );
+                    }else{
+                        touched_circle->ui->change_mode( DT_DIAL_UI_HOME );
+                    }
+                }else{
+                    touched_circle->ui->change_mode( DT_DIAL_UI_HOME );
+                }
+            }
 		}else{
-            // create new circle
+            // canvas, create new circle
             dt_circle_note_on * c = new dt_circle_note_on();
 			app->all_containers.note_on_container->addCircle( c );
             c->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
@@ -144,4 +168,5 @@ void dt_touch::mouseReleased( int tx, int ty, int button ){
 	touch_time = -1;
 	
 	t_obj = DT_TOUCH_OBJ_NONE;
+    
 }

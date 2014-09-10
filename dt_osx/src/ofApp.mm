@@ -26,7 +26,7 @@ void ofApp::windowResized( int w, int h ){
 	canvas.width = w-100;
 	canvas.height = h-50;
 	config.reset_position();
-    dt_config::DT_SIZE_BASE = max( w, h )/12.0;
+    dt_config::DT_SIZE_BASE = max( w, h )/15.0;
     cam.reset();
 }
 
@@ -203,7 +203,7 @@ void ofApp::change_view( int _view_mode ){
         {
             dt_circle_base * sel = dt_circle_base::selected_circle;
             if( sel ){
-                cam.moveZoom( sel->data.position, 1.5, 1000 );
+                cam.moveZoom( sel->data.position, 1.7, 1000 );
                 view_mode = _view_mode;
             }
             break;

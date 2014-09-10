@@ -30,7 +30,10 @@ public:
 	void mouseReleased( int x, int y, int button );
 	
 	ofApp * app;
+    bool bDouble_tap;
 	float touch_time;
+    unsigned long last_tap;
+    unsigned long double_tap_time;
 	ofVec2f touched_circle_center;
 	ofVec2f touch_entry;
 	dt_circle_base * touched_circle;

@@ -78,10 +78,10 @@ void ofx2DCamera::debugDraw(){
 
     ofSetRectMode( OF_RECTMODE_CENTER );
     
-    // grid
+    // center guide
     ofSetColor( 20 );
-    ofLine( -500, 0, 500, 0 );
-    ofLine( 0, -500, 0, 500 );
+    ofLine( -100, 0, 100, 0 );
+    ofLine( 0, -100, 0, 100 );
     
     // trans
     ofNoFill();

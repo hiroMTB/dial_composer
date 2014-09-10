@@ -135,16 +135,16 @@ void dt_circle_note_on::draw(){
     // circle
     if( dt_circle_base::selected_circle == this ){
         glPointSize( 4 );
-//        glColor4f( 1.0, 0.3, 0.6, 1.0 );
         ofSetColor( data.circle_color );
     }else{
         glPointSize( 2 );
-        glColor4f( 0.8, 0.8, 0.8, 0.7 );
+        float b = app->bg.getBrightness() * 255.0;
+        ofSetColor( 255.0-b, 220 );
     }
     app->circle_drawer.draw( data.rev_radius * 1.26, OF_MESH_POINTS );
     
 	// shape
-	if(fired) ofSetColor( 200 );
+	if( fired ) ofSetColor( 200 );
 	else ofSetColor( data.circle_color );
     
     ofPushMatrix();{
