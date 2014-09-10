@@ -27,8 +27,7 @@ public:
 	void change_bpm(int bpm);
 	void change_freq(float freq);
 	void change_sleep_time_microsec(int usec);
-	
-		
+			
 	ofApp * app;
 
     bool bRun;
@@ -39,7 +38,6 @@ public:
 	float sleep_microsec;
 	float min_sleep_micro_sec;
 
-	ofxOscMessage master_clock_message;
 	boost::posix_time::ptime starttime, endtime;
 	static boost::asio::io_service io;
 };

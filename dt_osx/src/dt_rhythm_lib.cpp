@@ -26,7 +26,7 @@ const RHYTHM_SHAPE& dt_rhythm_lib::getRhythm( int slotNum, int type ){
 }
 
 void dt_rhythm_lib::setup( int start_slot, int end_slot ){
-	cout << "setting up Rhythm Library" << endl;
+	ofLogNotice( "dt_rhythm_lib", "setup" );
 
     // add fake data for slot0, slot1
     SLOT_SHAPE ss0, ss1;

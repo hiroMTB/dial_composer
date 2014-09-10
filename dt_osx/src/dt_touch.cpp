@@ -86,9 +86,8 @@ void dt_touch::mousePressed( int tx, int ty, int button ){
 
 /*
  *
- *		drag control ui ?
- *		move circle ?
- *		mvoe camera ?
+ *		drag control
+ *      move circle or camera
  *
  */
 void dt_touch::mouseDragged( int tx, int ty, int button ){

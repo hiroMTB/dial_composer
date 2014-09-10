@@ -9,8 +9,12 @@
 ofApp * ofApp::instance = NULL;
 
 ofApp * ofApp::init(){
-	if(!instance) instance = new ofApp();
-	else ofLogError("ofApp::init() Called again!!!!");
+	if(!instance){
+        ofLogNotice( "ofApp", "openFrameworks v" + ofGetVersionInfo() );
+        instance = new ofApp();
+    }else{
+        ofLogError("ofApp::init() Called again!!!!");
+    }
 	return instance;
 }
 
@@ -21,10 +25,8 @@ void ofApp::windowResized( int w, int h ){
 	canvas.setY( 50 );
 	canvas.width = w-100;
 	canvas.height = h-50;
-	
 	config.reset_position();
     dt_config::DT_SIZE_BASE = max( w, h )/12.0;
-
     cam.reset();
 }
 
@@ -35,29 +37,23 @@ void ofApp::setup(){
 }
 
 void ofApp::setupVisual(){
-	cout << "setting up Visual" << endl;
-
 	ofSetFrameRate( 60 );
 	ofSetVerticalSync( true );
 	ofSetCircleResolution( 3 );
 	ofEnableAlphaBlending();
 	ofEnableAntiAliasing();
 	ofEnableSmoothing();
-
     ofDisableArbTex();
     noise.loadImage("img/noise2.png");
     noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
-    
     view_mode = 0;
 }
 
 void ofApp::setupModule(){
 	rhythm_lib.setup( 3, 24 );
-
 	config.setup();
 	all_containers.setup();
 	osc_recorder.setup();
-	
 	sequence_thread.setup();
 	sequence_thread.change_bpm( 120 );
 	sequence_thread.start();

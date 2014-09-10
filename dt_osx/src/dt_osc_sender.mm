@@ -26,7 +26,7 @@ address( dt_config::DT_OSC_OUT_ADDRESS ),
 port( dt_config::DT_OSC_OUT_PORT )
 {
 	reset();
-	ofLogNotice( "OSC sender setup, Address: "+address+", port: "+ofToString(port) );
+	ofLogNotice( "dt_osc_dender", "setup address:"+address+", port:"+ofToString(port) );
 }
 
 void dt_osc_sender::reset(){

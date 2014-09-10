@@ -17,6 +17,8 @@ dt_osc_recorder::dt_osc_recorder()
 
 void dt_osc_recorder::setup(){
 	
+    ofLogNotice( "dt_osc_recoder", "setup" );
+    
 	for( int i=0; i<fragment_ring_max; i++ ){
 		fragment frag;
 

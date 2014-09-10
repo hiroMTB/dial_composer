@@ -20,8 +20,8 @@ public:
 	ofTrueTypeFont font_L;
     
 	dt_font_manager(){
-		cout << "setting up Font Manager" << endl;
 		string fontName = "fonts/Arial Unicode.ttf";
+		ofLogNotice( "dt_font_manager", "setup " + fontName );
 		
 		ofTrueTypeFont::setGlobalDpi( 72 );
 		bool antiAliased =		true;

@@ -26,12 +26,9 @@ bStop_requested( false ),
 sleep_microsec( 123456 ),
 master_delay( 0 )
 {
-	cout << "setting up Sequence Thread Boost" << endl;
+	ofLogNotice( "dt_sequence_thread_boost", "setup" );
 	master_step = 0;
-	
-	min_sleep_micro_sec = 1000;
-	master_clock_message.setAddress( "/master_clock" );
-	master_clock_message.addIntArg( 1 );
+    min_sleep_micro_sec = 1000;
 }
 
 void dt_sequence_thread_boost::setup(){
@@ -59,18 +56,10 @@ void dt_sequence_thread_boost::task( const boost::system::error_code& /*e*/, boo
 		app->osc_recorder.play_fragment();
 	}
 
-	// mster clock osc out
-	if( dt_config::DT_MASTER_CLOCK_OUT_RESOLUTION > 0 ){
-		if( master_step%dt_config::DT_MASTER_CLOCK_OUT_RESOLUTION == 0 ){
-			app->osc_sender.send_message( master_clock_message );
-		}
-	}
-		
 	master_step++;
 	
 	t->expires_at( t->expires_at() + boost::posix_time::microseconds(sleep_microsec) );
 	t->async_wait( boost::bind(&dt_sequence_thread_boost::task, this, boost::asio::placeholders::error(), t) );
-
 }
 
 void dt_sequence_thread_boost::start(){
