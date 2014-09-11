@@ -72,7 +72,6 @@ public:
 	void update(){
 		for( int i=0; i<circles.size(); i++ ){
 			circles[ i ]->update();
-			ofApp::getInstance()->all_containers.add_point_to_all_points( circles[i]->data.world_position, circles[i]->data.circle_color );
 		}
 	}
 	

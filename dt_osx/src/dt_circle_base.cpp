@@ -37,7 +37,6 @@ collision_radius( 10.0 ),
 input_connection_radius( 0.0 ),
 output_connection_radius( 0.0 ),
 fire_rate( 0.0 ),
-move_speed( ofVec2f(0,0) ),
 position( ofVec2f(-1,-1) ),
 name( "def" )
 {
@@ -86,6 +85,12 @@ void dt_circle_base::check_sequencer(){
 			}
 		}
 	}
+}
+
+ofVec2f dt_circle_base::calc_indi_position(){
+	float deg = 360.0 * seq->indicator/seq->total_steps * DEG_TO_RAD;
+	ofVec2f indi_pos = data.position + ofVec2f( cos(deg), sin(deg) ) * data.rev_radius;
+	return indi_pos;
 }
 
 void dt_circle_base::change_beat( int beat ){

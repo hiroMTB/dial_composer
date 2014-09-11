@@ -92,15 +92,10 @@ void dt_circle_note_on::set_speed( int speed ){
 void dt_circle_note_on::update(){
 	data.fire_rate*=0.8;
 
-//	if( dt_config::DT_PLAY_GEN_RHYTHM ){
-//		//data.position += data.move_speed;
-//	
-//		float deg = 360.0 * seq->indicator/seq->total_steps * DEG_TO_RAD;
-//		data.world_position = data.position + ofVec2f( cos(deg), sin(deg) ) * data.rev_radius;
-//	
-//		check_connection();
-//	}
-    
+	data.indi_position = calc_indi_position();
+	ofApp::getInstance()->all_containers.add_point_to_all_points( data.indi_position, data.circle_color );
+
+	
     // size update
     data.rev_radius = dt_config::DT_SIZE_BASE * 0.5;
 	data.collision_radius = data.rev_radius * 1.5;
@@ -183,40 +178,6 @@ void dt_circle_note_on::fire(){
     app->osc_sender.send_message( m );
 
     data.fire_rate = 1.0;
-}
-
-void dt_circle_note_on::update_world_position(){
-
-	int total_beats = seq->total_beats;
-	int current_beat_num = seq->getCurrentBeat();
-	int next_on_beat;
-	int far = 0;
- 	for( int i=0; i<total_beats; i++ ){
-		far++;
-		int check_beat =  (current_beat_num+far) % total_beats;
-		bool next_on = seq->getDataFromBeat( check_beat );
-		if( next_on ){
-			next_on_beat = check_beat;
-			break;
-		}
-	}
-
-	//
-//	if(next_on_baet == current_beat_num) return;
-	
-	float start_angle = 0;
-	float angle = start_angle + next_on_beat * ( 360.0/seq->total_beats );
-	float r = data.rev_radius * 0.95;
-	float x = r * cosf( angle*DEG_TO_RAD );
-	float y = r * sinf( angle*DEG_TO_RAD );
-	data.indi_next_point.set(x, y);
-	
-	float angle_c = start_angle + ( current_beat_num * (360.0/seq->total_beats) );
-	float x_c = r * cosf( angle_c*DEG_TO_RAD );
-	float y_c = r * sinf( angle_c*DEG_TO_RAD );
-	
-	data.indi_current_point = ofVec2f( x_c, y_c );
-	data.indi_point_adder = ( data.indi_next_point - data.indi_current_point) / (float)(far * dt_config::DT_BEAT_RESOLUTION );
 }
 
 void dt_circle_note_on::make_vbo(){

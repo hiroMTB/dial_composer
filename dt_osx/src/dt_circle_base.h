@@ -59,11 +59,7 @@ public:
 	string name;
 	
 	ofVec2f position;
-	ofVec2f move_speed;
-	ofVec2f world_position;
-	ofVec2f indi_current_point;
-	ofVec2f indi_next_point;
-	ofVec2f indi_point_adder;
+	ofVec2f indi_position;
 	
 	static ofFloatColor defaultColor;
 	ofFloatColor indi_color;
@@ -96,6 +92,7 @@ public:
 	virtual void check_sequencer();
     virtual void make_vbo(){};
     
+	ofVec2f calc_indi_position();
 	void change_beat( int beat );
     void change_speed( int speed );
     void change_shape( int shape );

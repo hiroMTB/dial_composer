@@ -41,7 +41,6 @@ public:
 	void check_connection();
 	virtual void change_rshape( int type );
 	virtual void make_vbo();
-	void update_world_position();
 	
 	ofVboMesh rshape;
     ofVboMesh rguid;
