@@ -33,7 +33,6 @@ void ofApp::windowResized( int w, int h ){
 void ofApp::setup(){
 	setupVisual();
 	setupModule();
-    bg.set( 0.5 );
 }
 
 void ofApp::setupVisual(){
@@ -46,7 +45,7 @@ void ofApp::setupVisual(){
     ofDisableArbTex();
     noise.loadImage("img/noise2.png");
     noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
-    view_mode = 0;
+	bg.set( 0.5 );
 }
 
 void ofApp::setupModule(){
@@ -57,6 +56,7 @@ void ofApp::setupModule(){
 	sequence_thread.setup();
 	sequence_thread.change_bpm( 120 );
 	sequence_thread.start();
+	mode_manager.setup();
 }
 
 void ofApp::update(){
@@ -111,6 +111,8 @@ void ofApp::draw(){
     
     cam.debugDraw();
     cam.end();
+
+	mode_manager.debug_draw();
     
     ofPushMatrix();
     if( dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw(canvas.x+30, canvas.y+30, canvas.width-60, canvas.height-60, 1 );
@@ -160,8 +162,8 @@ void ofApp::keyPressed( int key ){
 			break;
             
         // view_mode
- 		case '0':  change_view( 0 ); break;
- 		case '1':  change_view( 1 ); break;
+ 		case '0':  mode_manager.change_mode( DT_MODE_HOME ); break;
+ 		case '1':  mode_manager.change_mode( DT_MODE_ZOOM ); break;
 			
 		// play
 		case ' ': dt_config::DT_PLAY_GEN_RHYTHM = !dt_config::DT_PLAY_GEN_RHYTHM; config.synch_param(); break;
@@ -189,25 +191,3 @@ void ofApp::keyPressed( int key ){
 void ofApp::exit(){
 	sequence_thread.stop();
 }
-
-
-void ofApp::change_view( int _view_mode ){
-    
-    switch( _view_mode ){
-        case 0:
-            cam.zoom( 1.0, 500 );
-            cam.move( ofVec2f(0,0), 500, 501);
-            view_mode = _view_mode;
-            break;
-        case 1:
-        {
-            dt_circle_base * sel = dt_circle_base::selected_circle;
-            if( sel ){
-                cam.moveZoom( sel->data.position, 1.7, 1000 );
-                view_mode = _view_mode;
-            }
-            break;
-        }
-    }
-}
-

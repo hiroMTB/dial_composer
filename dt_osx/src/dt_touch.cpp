@@ -23,7 +23,7 @@ dt_touch::dt_touch(){
 	t_obj = DT_TOUCH_OBJ_NONE;
     last_tap = 0;
     bDouble_tap = false;
-    double_tap_time =500;
+    double_tap_time =200;
 }
 
 void dt_touch::update(){
@@ -117,7 +117,7 @@ void dt_touch::mouseDragged( int tx, int ty, int button ){
 	}else{
         // drag camera
         float sensitivity = 0.8;
-        app->cam.trans = app->cam.dragStartPos + dist*sensitivity;
+        app->cam.trans = app->cam.dragStartPos - dist*sensitivity;
     }
 }
 
@@ -132,10 +132,10 @@ void dt_touch::mouseReleased( int tx, int ty, int button ){
 		if( touched_circle ){
             // circle
             if( bDouble_tap ){
-                if( app->view_mode == 0)
-                    app->change_view( 1 );
+                if( app->mode_manager.mode == DT_MODE_HOME )
+                    app->mode_manager.change_mode( DT_MODE_ZOOM );
                 else{
-                    app->change_view( 0 );
+                    app->mode_manager.change_mode( DT_MODE_HOME );
                 }
                 bDouble_tap = false;
                 last_tap = 0;

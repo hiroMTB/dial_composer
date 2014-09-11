@@ -14,6 +14,7 @@
 #include "dt_circle_all_containers.h"
 #include "dt_config.h"
 #include "dt_osc_recorder.h"
+#include "dt_mode_manager.h"
 #include "ofx2DCamera.h"
 
 class ofApp : public ofBaseApp {
@@ -44,9 +45,7 @@ public:
 	void dragEvent( ofDragInfo dragInfo ){};
 	void gotMessage( ofMessage msg );
 	void exit();
-    void change_view( int view_mode );
-    
-    int view_mode;
+
     ofFloatColor bg;
     ofRectangle canvas;
     ofImage noise;
@@ -62,7 +61,8 @@ public:
 	dt_sequence_thread	sequence_thread;
 	dt_config			config;
 	dt_osc_recorder		osc_recorder;
-	dt_circle_all_containers all_containers;	
+	dt_circle_all_containers all_containers;
+	dt_mode_manager		mode_manager;
 
     ofx2DCamera cam;
 };

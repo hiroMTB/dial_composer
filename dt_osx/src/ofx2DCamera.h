@@ -9,7 +9,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxTween.h"
+#include "ofxTweener.h"
 
 class ofx2DCamera{
     
@@ -20,9 +20,10 @@ public:
     void update();
     void begin();
     void end();
-    void move( ofVec2f _trans, int time_ms, int delay_ms=0 );
-    void zoom( float _zoomRate, int time_ms, int delay_ms=0 );
-    void moveZoom( ofVec2f _trans, float _zoomRate, int time_ms, int delay_ms=0);
+    void move( ofVec2f _trans, int time_ms, void (^callback)(float *arg)=NULL  );
+    void zoom( float _zoomRate, int time_ms, void (^callback)(float *arg)=NULL  );
+    void moveZoom( ofVec2f _trans, float _zoomRate, int time_ms, void (^callback)(float *arg)=NULL );
+    void zoomMove( float _zoomRate, ofVec2f _trans, int time_ms, void (^callback)(float *arg)=NULL );
     
     void startPivot( ofVec2f pivotXY );
     
@@ -37,8 +38,5 @@ public:
     ofVec2f trans;
     ofVec2f dragStartPos;
     
-    ofxTween transX_tw, transY_tw, zoomRate_tw;
-    ofxEasingSine easingsine;
-    
-    bool bZooming;
+  	ofxTweener tweener;
 };

@@ -7,6 +7,7 @@
 //
 
 #include "ofx2DCamera.h"
+#include "ofApp.h"
 
 ofx2DCamera::ofx2DCamera(){
     reset();
@@ -20,29 +21,14 @@ void ofx2DCamera::reset(){
 }
 
 void ofx2DCamera::update(){
-    if( transX_tw.isRunning() ){
-        trans.x = transX_tw.update();
-    }
-
-    if( transY_tw.isRunning() ){
-        trans.y = transY_tw.update();
-    }
-    
-    if( zoomRate_tw.isRunning() ){
-        zoomRate = zoomRate_tw.update();
-    }else if( bZooming &&zoomRate_tw.isCompleted() ){
-//        ofVec2f center( ofGetWidth()/2, ofGetHeight()/2 );
-//        ofVec2f center_w = screenToWorld( center );
-//        startPivot( center_w );
-//        bZooming = false;
-    }
+	tweener.update();
 }
 
 void ofx2DCamera::begin(){
     ofSetupScreenOrtho();
     ofPushMatrix();
         ofTranslate( ofGetWidth()/2, ofGetHeight()/2 );
-        ofTranslate( trans );
+        ofTranslate( -trans );
         ofTranslate( pivot );
         ofRotate( angle, 0, 0, 1);
         ofScale( zoomRate, zoomRate);
@@ -68,7 +54,7 @@ ofVec2f ofx2DCamera::worldToScreen( ofVec2f worldXY ) const{
 
 ofVec2f ofx2DCamera::screenToWorld( ofVec2f screenXY ) const{
     ofVec2f center( ofGetWidth()/2, ofGetHeight()/2 );
-    ofVec2f ret = ( screenXY-trans-pivot-center ) / zoomRate;
+    ofVec2f ret = ( screenXY+trans-pivot-center ) / zoomRate;
     ret.rotate( -angle );
     ret += pivot;
     return ret;
@@ -102,22 +88,30 @@ void ofx2DCamera::debugDraw(){
     ofSetRectMode( OF_RECTMODE_CORNER );
 }
 
-void ofx2DCamera::move( ofVec2f _trans, int time_ms, int delay_ms ){
-    transX_tw.setParameters( 1, easingsine, ofxTween::easeInOut, trans.x, _trans.x, time_ms, delay_ms );
-    transY_tw.setParameters( 2, easingsine, ofxTween::easeInOut, trans.y, _trans.y, time_ms, delay_ms );
+void ofx2DCamera::move( ofVec2f _trans, int time_ms, void (^callback)(float *arg) ){
+	float time = (float) time_ms * 0.001;
+	tweener.addTween(trans.x, _trans.x, time, callback );
+	tweener.addTween(trans.y, _trans.y, time, callback );
 }
 
-void ofx2DCamera::zoom( float _zoomRate, int time_ms, int delay_ms){
-    bZooming = true;
-    zoomRate_tw.setParameters( 3, easingsine, ofxTween::easeInOut, zoomRate, _zoomRate, time_ms, delay_ms );
+void ofx2DCamera::zoom( float _zoomRate, int time_ms, void (^callback)(float *arg) ){
+	float time = (float) time_ms * 0.001;
+    tweener.addTween( zoomRate, _zoomRate, time, callback );
 }
 
-void ofx2DCamera::moveZoom( ofVec2f _trans, float _zoomRate, int time_ms, int delay_ms ){
-    
+void ofx2DCamera::moveZoom( ofVec2f _trans, float _zoomRate, int time_ms, void (^callback)(float *arg)){
+	float time = (float) time_ms * 0.001 * 0.5;
+	float delay = time;
     startPivot( _trans );
-    transX_tw.setParameters( 1, easingsine, ofxTween::easeInOut, trans.x, -_trans.x, time_ms/2, delay_ms );
-    transY_tw.setParameters( 2, easingsine, ofxTween::easeInOut, trans.y, -_trans.y, time_ms/2, delay_ms );
-    
-    bZooming = true;
-    zoomRate_tw.setParameters( 3, easingsine, ofxTween::easeInOut, zoomRate, _zoomRate, time_ms/2, delay_ms+time_ms/2 );
+	tweener.addTween( trans.x, _trans.x, time, &ofxTransitions::easeInOutSine );
+	tweener.addTween( trans.y, _trans.y, time, &ofxTransitions::easeInOutSine );
+	tweener.addTween( zoomRate, _zoomRate, time, &ofxTransitions::easeInOutSine, delay, callback );
+}
+
+void ofx2DCamera::zoomMove( float _zoomRate, ofVec2f _trans, int time_ms, void (^callback)(float *arg) ){
+	float time = (float) time_ms * 0.001 * 0.5;
+	float delay = time;
+	tweener.addTween( zoomRate, _zoomRate, time, &ofxTransitions::easeInOutSine );
+	tweener.addTween( trans.x, _trans.x, time, &ofxTransitions::easeInOutSine, delay );
+	tweener.addTween( trans.y, _trans.y, time, &ofxTransitions::easeInOutSine, delay, callback );
 }
