@@ -16,6 +16,7 @@ enum dt_mode{
 };
 
 class ofApp;
+class dt_circle_base;
 
 class dt_mode_manager{
 	
@@ -23,10 +24,13 @@ public:
 	
 	dt_mode_manager(){};
 	void setup();
-	void change_mode( dt_mode mode );
+	void go_to_home_mode();
+    void go_to_zoom_mode( dt_circle_base * target );
+    void toggle_mode();
 	
 	void debug_draw();
 	
 	ofApp * app;
 	dt_mode mode;
+    dt_circle_base * zoom_mode_target;
 };

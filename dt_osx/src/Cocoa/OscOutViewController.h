@@ -15,7 +15,6 @@
     NSTextField *address_tx;
     NSTextField *port_tx;
     NSTextView *output_tx;
-
 }
 
 @property (assign) IBOutlet NSSegmentedControl *enable_sc;

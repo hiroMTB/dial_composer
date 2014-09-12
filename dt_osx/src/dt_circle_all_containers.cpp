@@ -25,44 +25,30 @@ void dt_circle_all_containers::setup(){
 	note_on_container		= new dt_circle_note_on_container();
 	param_container			= new dt_circle_param_container();
 	output_container		= new dt_circle_output_container();
+
 	
-	// all points
-	for( int i=0; i<dt_config::DT_CIRCLE_MAX; i++ ){
-		all_points_pos.push_back(ofVec2f( -123,-123 ));
-		all_points_color.push_back( ofFloatColor(1, 0.3,0.2) );
-	}
-	all_points_vbo.setVertexData( &all_points_pos[0], all_points_pos.size(), GL_DYNAMIC_DRAW );
-	all_points_vbo.setColorData( &all_points_color[0], all_points_color.size(), GL_DYNAMIC_DRAW );
-	
-	
-	// all lines
-	for( int i=0; i<dt_config::DT_CIRCLE_MAX*3; i++ ){
-		all_lines_pos.push_back( ofVec2f(-123,-123) );
-		all_lines_pos.push_back( ofVec2f(-123,-123) );
-		all_lines_color.push_back( ofFloatColor(0,1,0) );
-		all_lines_color.push_back( ofFloatColor(0,1,0) );
-	}
-	
-	all_lines_vbo.setVertexData( &all_lines_pos[0], all_lines_pos.size(), GL_DYNAMIC_DRAW );
-	all_lines_vbo.setColorData( &all_lines_color[0], all_lines_color.size(), GL_DYNAMIC_DRAW );
+    indicators.setUsage( GL_DYNAMIC_DRAW );
+    indicators.setMode( OF_PRIMITIVE_POINTS );
+    
+    connection_lines.setUsage( GL_DYNAMIC_DRAW );
+    connection_lines.setMode( OF_PRIMITIVE_LINES );
 }
 
 void dt_circle_all_containers::update(){
-	
 	circle_base_container->update();
 	circle_base_container->process_collision();
 }
 
-void dt_circle_all_containers::add_point_to_all_points( const ofVec2f& p, const ofFloatColor& c ){
-	all_points_pos.push_back( p );
-	all_points_color.push_back( c );
+void dt_circle_all_containers::add_indicator( const ofVec2f& p, const ofFloatColor& c ){
+    indicators.addVertex( p );
+    indicators.addColor( c );
 }
 
-void dt_circle_all_containers::add_line_to_all_lines( const ofVec2f& p1, const ofVec2f& p2, const ofFloatColor& c1, const ofFloatColor& c2 ){
-	all_lines_pos.push_back( p1 );
-	all_lines_pos.push_back( p2 );
-	all_lines_color.push_back( c1 );
-	all_lines_color.push_back( c2 );
+void dt_circle_all_containers::add_connection_line( const ofVec2f& p1, const ofVec2f& p2, const ofFloatColor& c1, const ofFloatColor& c2 ){
+    connection_lines.addVertex( p1 );
+    connection_lines.addVertex( p2 );
+    connection_lines.addColor( c1 );
+    connection_lines.addColor( c2 );
 }
 
 void dt_circle_all_containers::draw(){
@@ -77,24 +63,14 @@ void dt_circle_all_containers::draw(){
     
     // all lines
     glLineWidth( 1 );
-    all_lines_vbo.bind();
-    all_lines_vbo.updateColorData( &all_lines_color[0], all_lines_color.size() );
-    all_lines_vbo.updateVertexData( &all_lines_pos[0], all_lines_pos.size() );
-    all_lines_vbo.draw( GL_LINES, 0, all_lines_pos.size() );
-    all_lines_vbo.unbind();
-
+    connection_lines.draw( OF_MESH_WIREFRAME );
+    
     // all points
     glPointSize( 6 );
-    all_points_vbo.bind();
-    all_points_vbo.updateColorData( &all_points_color[0], all_points_color.size() );
-    all_points_vbo.updateVertexData( &all_points_pos[0], all_points_pos.size() );
-    all_points_vbo.draw( GL_POINTS, 0, all_points_pos.size() );
-    all_points_vbo.unbind();
-    
-    all_points_pos.clear();
-	all_points_color.clear();
-	all_lines_pos.clear();
-	all_lines_color.clear();
+    indicators.draw( OF_MESH_POINTS );
+
+    indicators.clear();
+    connection_lines.clear();
 }
 
 void dt_circle_all_containers::step(){

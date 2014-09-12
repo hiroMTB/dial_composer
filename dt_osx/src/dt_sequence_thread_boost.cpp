@@ -23,8 +23,7 @@ dt_sequence_thread_boost::dt_sequence_thread_boost()
 :
 bRun( false ),
 bStop_requested( false ),
-sleep_microsec( 123456 ),
-master_delay( 0 )
+sleep_microsec( 123456 )
 {
 	ofLogNotice( "dt_sequence_thread_boost", "setup" );
 	master_step = 0;
@@ -87,11 +86,4 @@ void dt_sequence_thread_boost::change_bpm( int _bpm ){
 	}
 
 	app->config.synch_param();
-}
-
-void dt_sequence_thread_boost::change_sleep_time_microsec( int usec ){
-	if( usec >= min_sleep_micro_sec ){
-		sleep_microsec = usec;
-		app->config.synch_param();
-	}
 }

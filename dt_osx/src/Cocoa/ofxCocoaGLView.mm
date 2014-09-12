@@ -15,8 +15,7 @@ CGLUnlockContext(cglContext);
 
 static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,  const CVTimeStamp* now, const CVTimeStamp* outputTime, CVOptionFlags flagsIn, CVOptionFlags* flagsOut, void* displayLinkContext);
 
-class ofxCocoaGLViewWindowProxy : public ofAppBaseWindow
-{
+class ofxCocoaGLViewWindowProxy : public ofAppBaseWindow {
 public:
     
 	ofxCocoaGLView *view;

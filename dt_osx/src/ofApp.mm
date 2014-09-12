@@ -84,36 +84,14 @@ void ofApp::draw(){
 
     cam.begin();
     all_containers.draw();
-    
-    
-    /*switch( view_mode ){
-        case 0:
-            all_containers.draw();
-            break;
 
-        case 1:
-        {
-            dt_circle_base * sel = dt_circle_base::selected_circle;
-            if( sel ){
-                sel->draw();
-                dt_circle_type t = sel->data.circle_type;
-                if( t == DT_CIRCLE_NOTE_ON ){
-                    dt_circle_note_on * o = static_cast<dt_circle_note_on*>(sel);
-                    for( int i=0; i<o->input_circles.size(); i++ ){
-                        o->input_circles[i]->draw();
-                    }
-                }
-            }
-            break;
-        }
-    }
-    */
 #ifdef DEBUG
     cam.debugDraw();
 #endif
     
     cam.end();
 
+#ifdef DEBUG
 	mode_manager.debug_draw();
     
     ofPushMatrix();
@@ -129,6 +107,8 @@ void ofApp::draw(){
     
     ofVec2f world = cam.screenToWorld( ofVec2f(mouseX, mouseY) );
     ofDrawBitmapString( "world " + ofToString(world.x) + ", " + ofToString(world.y), mouseX, mouseY+20 );
+#endif
+
 }
 
 void ofApp::mousePressed( int x, int y, int button ){
@@ -154,34 +134,46 @@ void ofApp::keyPressed( int key ){
 	switch(key){
 			
 		case OF_KEY_UP:
-			if(!bAlt) sequence_thread.change_sleep_time_microsec(sequence_thread.sleep_microsec -= 1000);
-			else sequence_thread.master_delay++;
 			break;
 			
 		case OF_KEY_DOWN:
-			if(!bAlt) sequence_thread.change_sleep_time_microsec(sequence_thread.sleep_microsec += 1000);
-			else sequence_thread.master_delay++;
 			break;
             
         // view_mode
- 		case '0':  mode_manager.change_mode( DT_MODE_HOME ); break;
- 		case '1':  mode_manager.change_mode( DT_MODE_ZOOM ); break;
+ 		case OF_KEY_RETURN:
+            mode_manager.toggle_mode();
+            break;
 			
 		// play
-		case ' ': dt_config::DT_PLAY_GEN_RHYTHM = !dt_config::DT_PLAY_GEN_RHYTHM; config.synch_param(); break;
-		case OF_KEY_TAB: osc_recorder.toggle_play_fragment(); config.synch_param(); break;
+		case ' ':
+            dt_config::DT_PLAY_GEN_RHYTHM = !dt_config::DT_PLAY_GEN_RHYTHM;
+            config.synch_param();
+            break;
+            
+		case OF_KEY_TAB:
+            osc_recorder.toggle_play_fragment();
+            config.synch_param(); break;
+        
+		case 'L':
+            dt_config::DT_SHOW_LINER_DRAWER = !dt_config::DT_SHOW_LINER_DRAWER;
+            config.synch_param();
+            break;
+            
+		case 'C':
+            config.toggle();
+            break;
 
-		case 'q': if(bAlt) all_containers.change_speed_random_all(1, 1);
-		else dt_config::DT_BEAT_SPEED_MAX = 1; config.synch_param();
-				break;
-			
-		case 'a': all_containers.change_beat_resolution_all(4); break;
-
-		case 'L': dt_config::DT_SHOW_LINER_DRAWER = !dt_config::DT_SHOW_LINER_DRAWER; config.synch_param(); break;
-		case 'C': config.toggle(); break;
-		case 'F': ofToggleFullscreen(); break;
-		case 'B': all_containers.change_beat_all(floor(ofRandom(dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX-1))); break;
-		case 'P': all_containers.change_position_all(); break;
+		case 'F':
+            ofToggleFullscreen();
+            break;
+            
+		case 'B':
+            all_containers.change_beat_all(floor(ofRandom(dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX-1)));
+            break;
+            
+		case 'P': all_containers.change_position_all();
+            break;
+            
 		case 'R':
             cam.angle += 30;
             break;

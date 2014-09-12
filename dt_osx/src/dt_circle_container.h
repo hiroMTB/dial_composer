@@ -21,10 +21,7 @@
  *		Container template class for ...
  *
  *		dt_circle_note_on*
- *		dt_circle_param_velocity*
- *		dt_circle_param_noteNum*
- *		dt_circle_param_duration*
- *		dt_circle_param_pan*
+ *      dt_circle_param*
  *
  */
 
@@ -135,7 +132,7 @@ public:
 				else c1->output_circles.push_back( c2 );
 				ofFloatColor line_color = c2->data.line_color;
 				line_color.a = 0.4;
-				ofApp::getInstance()->all_containers.add_line_to_all_lines( connect_p1, connect_p2, line_color, line_color );
+				ofApp::getInstance()->all_containers.add_connection_line( connect_p1, connect_p2, line_color, line_color );
 			}
 		}
 	}

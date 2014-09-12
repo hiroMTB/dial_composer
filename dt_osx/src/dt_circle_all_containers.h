@@ -35,17 +35,8 @@ public:
 	dt_circle_param_container * param_container;
 	dt_circle_output_container * output_container;
 
-	// all point drawer
-	ofVbo all_points_vbo;
-	vector<ofVec2f> all_points_pos;
-	vector<ofFloatColor> all_points_color;
-
-
-	// all line drawer
-	ofVbo all_lines_vbo;
-	vector<ofVec2f> all_lines_pos;
-	vector<ofFloatColor> all_lines_color;
-
+	ofVboMesh indicators;
+	ofVboMesh connection_lines;
 	
 	dt_circle_all_containers();
 	~dt_circle_all_containers(){};
@@ -55,8 +46,8 @@ public:
 	void draw();
 	void step();
 	
-	void add_point_to_all_points( const  ofVec2f& p, const ofFloatColor &c );
-	void add_line_to_all_lines( const ofVec2f &p1, const ofVec2f &p2, const ofFloatColor &c1, const ofFloatColor &c2 );
+	void add_indicator( const  ofVec2f& p, const ofFloatColor &c );
+	void add_connection_line( const ofVec2f &p1, const ofVec2f &p2, const ofFloatColor &c1, const ofFloatColor &c2 );
 	
 	void change_speed_random_all( int min, int max );
 	void change_beat_all( int beat );

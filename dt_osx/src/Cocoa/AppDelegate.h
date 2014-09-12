@@ -1,8 +1,7 @@
 #import <Cocoa/Cocoa.h>
 @class MainWindowController;
 
-@interface AppDelegate : NSObject
-{
+@interface AppDelegate : NSObject {
     MainWindowController *mainWindowController;
 }
 

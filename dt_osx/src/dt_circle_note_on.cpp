@@ -38,22 +38,26 @@ dt_circle_note_on::~dt_circle_note_on(){
 		delete ui;
 		ui = 0;
 	}
+    
+    rguid.clear();
+    rshape.clear();
 }
 
 /*
-		speedに影響を受けるパラメータ
-			- rev_radius
-			- collision_radius
-			- input/output_connection_radius
+		speed affet to 
+            ...
  
-		beat num に影響を受けるパラメータ
-			- sequencer
+		beat_num affect to
+			- seq
 			- rev_speed
 			- vbo
-	
-			- rev_radius
-			- collision_radius
-			- input/output_connection_radius
+
+        fixed parameter
+            - indicator radius (vboMesh)
+            - rev_radius
+            - collision_radius
+            - input/output_connection_radius
+ 
  */
 void dt_circle_note_on::setup( int beat_num ){
 
@@ -92,9 +96,38 @@ void dt_circle_note_on::set_speed( int speed ){
 void dt_circle_note_on::update(){
 	data.fire_rate*=0.8;
 
-	data.indi_position = calc_indi_position();
-	ofApp::getInstance()->all_containers.add_point_to_all_points( data.indi_position, data.circle_color );
-
+    ofApp * app = ofApp::getInstance();
+    
+    // mode switching
+    dt_mode mode = app->mode_manager.mode;
+    switch ( mode ) {
+        case DT_MODE_HOME:
+            data.bShow = true;
+            break;
+            
+        case DT_MODE_HOME2ZOOM:
+            data.bShow = true;
+            break;
+            
+        case DT_MODE_ZOOM:
+            if( app->mode_manager.zoom_mode_target != this){
+                data.bShow = false;
+            }
+        case DT_MODE_ZOOM2HOME:
+            if( app->mode_manager.zoom_mode_target != this){
+                data.bShow = false;
+            }
+        default:
+            break;
+    }
+    
+	if( data.bShow ){
+        data.indi_position = calc_indi_position();
+    }else{
+        data.indi_position = data.position;
+    }
+    
+	ofApp::getInstance()->all_containers.add_indicator( data.indi_position, data.circle_color );
 	
     // size update
     data.rev_radius = dt_config::DT_SIZE_BASE * 0.5;
@@ -115,54 +148,69 @@ void dt_circle_note_on::check_connection(){
 	//ofApp::getInstance()->all_containers.output_container->check_connection( this, false );
 }
 
+/*
+ *      mode
+ *      fired
+ *      selected
+ */
 void dt_circle_note_on::draw(){
-	
-	float waiting_rate = (float)(dt_config::DT_BEAT_RESOLUTION-wait_step) / (float)dt_config::DT_BEAT_RESOLUTION;
-	float waiting_animation_rate = 0.5 + waiting_rate*0.5;
+    
+    if( data.bShow == false ){
+        return;
+    }
+    
 	bool fired = data.fire_rate > 0.3;
 	bool selected = selected_circle == this;
+  	
+	float waiting_rate = (float)(dt_config::DT_BEAT_RESOLUTION-wait_step) / (float)dt_config::DT_BEAT_RESOLUTION;
+	float waiting_animation_rate = 0.5 + waiting_rate*0.5;
     float scale = fired ? waiting_animation_rate+data.fire_rate*0.2 : waiting_animation_rate;
-	ofPushMatrix();
-	ofTranslate( data.position.x, data.position.y );
-	ofScale( scale, scale );
-
 	
-    // circle
-    if( dt_circle_base::selected_circle == this ){
-        glPointSize( 4 );
-        ofSetColor( data.circle_color );
-    }else{
-        glPointSize( 2 );
-        float b = app->bg.getBrightness() * 255.0;
-        ofSetColor( 255.0-b, 220 );
-    }
-    app->circle_drawer.draw( data.rev_radius * 1.26, OF_MESH_POINTS );
-    
-	// shape
-	if( fired ) ofSetColor( 200 );
-	else ofSetColor( data.circle_color );
-    
     ofPushMatrix();{
-        ofScale( data.rev_radius, data.rev_radius, 1 );
-
-        // guid
-        glPointSize( 2 );
-        rguid.draw( OF_MESH_POINTS );
-        
-        // shape
-        glLineWidth( 3 );
-        if (rshape.getNumVertices() <= 2){
-            rshape.draw( OF_MESH_WIREFRAME );
-        }else{
-            rshape.draw( OF_MESH_FILL );
+        ofTranslate( data.position.x, data.position.y );
+        ofScale( scale, scale );
+	
+        // circle
+        {
+            if( selected ){
+                glPointSize( 4 );
+                ofSetColor( data.circle_color );
+            }else{
+                glPointSize( 2 );
+                float b = app->bg.getBrightness() * 255.0;
+                ofSetColor( 255.0-b, 220 );
+            }
+            app->circle_drawer.draw( data.rev_radius * 1.26, OF_MESH_POINTS );
         }
         
+        // shape
+        {
+            ofPushMatrix();{
+                float shape_scale = data.rev_radius * 0.01;
+                ofScale( shape_scale, shape_scale, 1 );
+
+                // guid
+                glPointSize( 3 );
+                rguid.draw( OF_MESH_POINTS );
+                
+                // shape
+                ofPushMatrix();{
+                    ofScale( 0.8, 0.8, 1 );
+                    glLineWidth( 3 );
+                    if (rshape.getNumVertices() <= 2){
+                        rshape.draw( OF_MESH_WIREFRAME );
+                    }else{
+                        rshape.draw( OF_MESH_FILL );
+                    }
+                }ofPopMatrix();
+        
+            }ofPopMatrix();
+        }
+        
+        if( data.bShowUI )
+            ui->draw();
+            
     }ofPopMatrix();
-	
-	if( data.bShowUI )
-		ui->draw();
-	    
-	ofPopMatrix();
 }
 
 void dt_circle_note_on::change_rshape( int type ){
@@ -184,7 +232,6 @@ void dt_circle_note_on::make_vbo(){
 
     rguid.clear();
     rshape.clear();
-
     
 	int beat_num = seq->total_beats;
 	float start_angle = 0;
@@ -199,7 +246,7 @@ void dt_circle_note_on::make_vbo(){
         float angle = start_angle + ( i * data.rev_speed * dt_config::DT_BEAT_RESOLUTION );
         float cos = cosf( angle*DEG_TO_RAD );
         float sin = sinf( angle*DEG_TO_RAD );
-        float r = 0.8;
+        float r = 100.0;
         float x = r * cos;
         float y = r * sin;
 		if( on ){
@@ -209,14 +256,16 @@ void dt_circle_note_on::make_vbo(){
             rshape.addIndex( vertIndex++ );
             rshape.addColor( c );
 		}
-        float rg = 0.99;
-        x = rg * cos;
-        y = rg * sin;
     
         // guide shape
         rguid.addVertex( ofVec3f(x, y, 0) );
         rguid.addIndex( i );
-        rguid.addColor( ofFloatColor(0.2, 1) );
+        if( on ){
+            rguid.addColor( data.circle_color );
+        }else{
+            rguid.addColor( ofFloatColor(0.4, 1) );
+            
+        }
 	}
     
     // setup Mode and Usage

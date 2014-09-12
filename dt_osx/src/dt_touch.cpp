@@ -133,9 +133,9 @@ void dt_touch::mouseReleased( int tx, int ty, int button ){
             // circle
             if( bDouble_tap ){
                 if( app->mode_manager.mode == DT_MODE_HOME )
-                    app->mode_manager.change_mode( DT_MODE_ZOOM );
+                    app->mode_manager.go_to_zoom_mode( touched_circle );
                 else{
-                    app->mode_manager.change_mode( DT_MODE_HOME );
+                    app->mode_manager.go_to_home_mode();
                 }
                 bDouble_tap = false;
                 last_tap = 0;

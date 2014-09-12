@@ -54,7 +54,7 @@ void dt_osc_recorder::update( int _x, int _y, int _w, int _h ){
 			if( fragment_ring[i][j].getNumArgs()>0 ){
 				int ch = j;
 				y = ch * ch_h;
-				app->all_containers.add_point_to_all_points( ofVec2f(x+_x, y+_y), ofFloatColor(0.4, 0.9, 0.1) );
+				app->all_containers.add_indicator( ofVec2f(x+_x, y+_y), ofFloatColor(0.4, 0.9, 0.1) );
 			}
 		}
 	}
@@ -62,21 +62,21 @@ void dt_osc_recorder::update( int _x, int _y, int _w, int _h ){
 	if( dt_config::DT_PLAY_BUFFERED_RHYTHM ){
 		x = dt_config::DT_BUFFERED_RHYTHM_INDICATOR * frag_w;
 		y = dt_config::DT_OSC_OUT_CH_SYSTEM_MAX * ch_h + 5;
-		app->all_containers.add_line_to_all_lines( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(1, 0, 0.5), ofFloatColor(1, 0, 0.5) );
+		app->all_containers.add_connection_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(1, 0, 0.5), ofFloatColor(1, 0, 0.5) );
 		
 		// start, dynamic
 		x = dt_config::DT_BUFFERED_RHYTHM_LOOP_START * frag_w;
-		app->all_containers.add_line_to_all_lines( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(0, 0.4, 0.7), ofFloatColor(0, 0.4, 0.7) );
+		app->all_containers.add_connection_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(0, 0.4, 0.7), ofFloatColor(0, 0.4, 0.7) );
 		
 		// end, fixed
 		x = dt_config::DT_BUFFERED_RHYTHM_LOOP_END * frag_w;
-		app->all_containers.add_line_to_all_lines( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(0, 0.4, 0.7), ofFloatColor(0, 0.4, 0.7) );
+		app->all_containers.add_connection_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(0, 0.4, 0.7), ofFloatColor(0, 0.4, 0.7) );
 	}
 	
 	x = current_fragment * frag_w;
 	y = ( dt_config::DT_OSC_OUT_CH_SYSTEM_MAX-1 ) * ch_h;
-	app->all_containers.add_line_to_all_lines( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y-5), ofFloatColor(1, 1, 1), ofFloatColor(1, 1, 1) );
-	app->all_containers.add_line_to_all_lines( ofVec2f(_x+x, _y+y+5), ofVec2f(_x+x, _y+y+10), ofFloatColor(1, 1, 1), ofFloatColor(1, 1, 1) );
+	app->all_containers.add_connection_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y-5), ofFloatColor(1, 1, 1), ofFloatColor(1, 1, 1) );
+	app->all_containers.add_connection_line( ofVec2f(_x+x, _y+y+5), ofVec2f(_x+x, _y+y+10), ofFloatColor(1, 1, 1), ofFloatColor(1, 1, 1) );
 }
 
 void dt_osc_recorder::add_osc_message( const ofxOscMessage &m, int ch ){

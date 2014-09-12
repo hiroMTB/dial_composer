@@ -16,28 +16,29 @@ void dt_mode_manager::setup(){
 	mode = DT_MODE_HOME;
 }
 
-void dt_mode_manager::change_mode( dt_mode m ){
-	switch( m ){
-		case DT_MODE_HOME:
-			mode = DT_MODE_ZOOM2HOME;
-			app->cam.zoomMove( 1.0, ofVec2f(0,0), 1000, ^(float * arg){
-				ofApp::getInstance()->mode_manager.mode = DT_MODE_HOME;
-			});
-			break;
+void dt_mode_manager::go_to_home_mode(){
+    mode = DT_MODE_ZOOM2HOME;
+    app->cam.zoomMove( 1.0, ofVec2f(0,0), 1000, ^(float * arg){
+        ofApp::getInstance()->mode_manager.mode = DT_MODE_HOME;
+    });
+}
 
-		case DT_MODE_ZOOM:
-		{
-			mode = DT_MODE_HOME2ZOOM;
-			dt_circle_base * sel = dt_circle_base::selected_circle;
-			if( sel ){
-				app->cam.moveZoom( sel->data.position, 1.7, 1000, ^(float *arg){
-					ofApp::getInstance()->mode_manager.mode = DT_MODE_ZOOM;
-				});
-			}
-			break;
-		}
-	}
+void dt_mode_manager::go_to_zoom_mode( dt_circle_base *target ){
+    mode = DT_MODE_HOME2ZOOM;
+    if( target ){
+        zoom_mode_target = target;
+        app->cam.moveZoom( zoom_mode_target->data.position, 1.7, 1000, ^(float *arg){
+            ofApp::getInstance()->mode_manager.mode = DT_MODE_ZOOM;
+        });
+    }
+}
 
+void dt_mode_manager::toggle_mode(){
+    if( mode == DT_MODE_HOME ){
+        go_to_zoom_mode( dt_circle_base::selected_circle );
+    }else if( mode == DT_MODE_ZOOM ){
+        go_to_home_mode();
+    }
 }
 
 void dt_mode_manager::debug_draw(){

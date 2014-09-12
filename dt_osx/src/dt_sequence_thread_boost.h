@@ -26,13 +26,11 @@ public:
 	void stop();
 	void change_bpm(int bpm);
 	void change_freq(float freq);
-	void change_sleep_time_microsec(int usec);
 			
 	ofApp * app;
 
     bool bRun;
     bool bStop_requested;
-	int master_delay;
 	unsigned int master_step;
 	float bpm;
 	float sleep_microsec;

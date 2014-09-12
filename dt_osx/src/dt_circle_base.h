@@ -41,13 +41,13 @@ public:
 	bool bCollide;
 	bool bShowUI;
 	bool bFired;
+    bool bShow;
 	
 	int phase_step;
 	int fired_ch;
 	int step_age;
 	int speed;
 	
-	float radius;
 	float rev_angle;
 	float rev_speed;
 	float rev_radius;
@@ -92,13 +92,13 @@ public:
 	virtual void check_sequencer();
     virtual void make_vbo(){};
     
-	ofVec2f calc_indi_position();
 	void change_beat( int beat );
     void change_speed( int speed );
     void change_shape( int shape );
     void change_circle_color( float r, float g, float b, float a );
 	void setup_text( string initial );
 	void draw_initial();
+	ofVec2f calc_indi_position();
 
     ofApp * app;
 

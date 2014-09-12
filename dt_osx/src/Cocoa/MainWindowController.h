@@ -11,8 +11,7 @@
 @class GeneralViewController, CircleViewController, OscOutViewController, OscInViewController;
 @class dt_GLView;
 
-@interface MainWindowController : NSWindowController
-{
+@interface MainWindowController : NSWindowController {
     IBOutlet dt_GLView *glView;
     IBOutlet NSView *SidePanel;
     IBOutlet NSButton *SidePanelSelector1;

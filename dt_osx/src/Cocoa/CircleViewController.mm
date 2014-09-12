@@ -23,7 +23,7 @@
 @synthesize beat_tx, speed_tx, rotate_tx, shape_tx, edge_tx, side_tx, ch_tx;
 @synthesize color;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.

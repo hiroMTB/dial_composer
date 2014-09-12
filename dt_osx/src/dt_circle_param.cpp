@@ -60,7 +60,7 @@ void dt_circle_param::update(){
 	data.fire_rate *= 0.8;
 	
 	data.indi_position = calc_indi_position();
-	ofApp::getInstance()->all_containers.add_point_to_all_points( data.indi_position, data.circle_color );
+	ofApp::getInstance()->all_containers.add_indicator( data.indi_position, data.circle_color );
 
     /*
      *

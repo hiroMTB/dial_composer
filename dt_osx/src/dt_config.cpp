@@ -133,12 +133,7 @@ void dt_config::update(){
 		string address = m.getAddress();
 		string pre = DT_OSC_IN_ADDRESS_PREFIX;
 		
-		if( address == pre + "sleep_microsec" ){
-			
-			int i = m.getArgAsInt32( 0 );
-			i = max( 1000, i );
-			app->sequence_thread.change_sleep_time_microsec( i );
-		}else if( address == pre + "master_clock_out_resolution" ){
+		if( address == pre + "master_clock_out_resolution" ){
 			int i= m.getArgAsInt32( 0 );
 			DT_MASTER_CLOCK_OUT_RESOLUTION = i;
 			
