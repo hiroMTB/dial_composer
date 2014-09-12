@@ -111,7 +111,7 @@
 		F6B766E41947984B00B0741D /* dt_sequence_thread_boost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D01947984B00B0741D /* dt_sequence_thread_boost.cpp */; };
 		F6B766E51947984B00B0741D /* dt_sequence_thread_oF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D21947984B00B0741D /* dt_sequence_thread_oF.cpp */; };
 		F6B766E61947984B00B0741D /* dt_sequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D51947984B00B0741D /* dt_sequencer.cpp */; };
-		F6B766E71947984B00B0741D /* dt_touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D71947984B00B0741D /* dt_touch.cpp */; };
+		F6B766E71947984B00B0741D /* dt_touch_home.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D71947984B00B0741D /* dt_touch_home.cpp */; };
 		F6B766E81947984B00B0741D /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D81947984B00B0741D /* main.mm */; };
 		F6B766E91947984B00B0741D /* ofApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = F6B766D91947984B00B0741D /* ofApp.mm */; };
 		F6B791361947ABA600B0741D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B791351947ABA600B0741D /* libc++.dylib */; };
@@ -10527,8 +10527,8 @@
 		F6B766D31947984B00B0741D /* dt_sequence_thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_sequence_thread.h; sourceTree = "<group>"; };
 		F6B766D41947984B00B0741D /* dt_sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_sequencer.h; sourceTree = "<group>"; };
 		F6B766D51947984B00B0741D /* dt_sequencer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_sequencer.cpp; sourceTree = "<group>"; };
-		F6B766D61947984B00B0741D /* dt_touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_touch.h; sourceTree = "<group>"; };
-		F6B766D71947984B00B0741D /* dt_touch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_touch.cpp; sourceTree = "<group>"; };
+		F6B766D61947984B00B0741D /* dt_touch_home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_touch_home.h; sourceTree = "<group>"; };
+		F6B766D71947984B00B0741D /* dt_touch_home.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_touch_home.cpp; sourceTree = "<group>"; };
 		F6B766D81947984B00B0741D /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		F6B766D91947984B00B0741D /* ofApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofApp.mm; sourceTree = "<group>"; };
 		F6B766EA1947987100B0741D /* ofApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
@@ -28354,8 +28354,8 @@
 		F6B7670019479C8000B0741D /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				F6B766D61947984B00B0741D /* dt_touch.h */,
-				F6B766D71947984B00B0741D /* dt_touch.cpp */,
+				F6B766D61947984B00B0741D /* dt_touch_home.h */,
+				F6B766D71947984B00B0741D /* dt_touch_home.cpp */,
 				F6B766C71947984B00B0741D /* dt_dial_ui.h */,
 				F6B766C81947984B00B0741D /* dt_dial_ui.cpp */,
 			);
@@ -28615,7 +28615,7 @@
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
-				F6B766E71947984B00B0741D /* dt_touch.cpp in Sources */,
+				F6B766E71947984B00B0741D /* dt_touch_home.cpp in Sources */,
 				F66E1D72195E813700CEE795 /* dt_linear_drawer.cpp in Sources */,
 				F6B766E51947984B00B0741D /* dt_sequence_thread_oF.cpp in Sources */,
 				F6B766DB1947984B00B0741D /* dt_circle_base.cpp in Sources */,

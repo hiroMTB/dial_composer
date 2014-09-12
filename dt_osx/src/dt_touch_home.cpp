@@ -1,12 +1,12 @@
 //
-//  dt_touch.mm
+//  dt_touch_home.mm
 //  dialt
 //
 //  Created by mtb on 5/5/14.
 //
 //
 
-#include "dt_touch.h"
+#include "dt_touch_home.h"
 #include "ofApp.h"
 #include "dt_dial_ui.h"
 #include "dt_circle_base.h"
@@ -15,18 +15,18 @@
 #include "dt_circle_container.h"
 #include "dt_circle_all_containers.h"
 
-dt_touch::dt_touch(){
+dt_touch_home::dt_touch_home(){
 	touched_circle = NULL;
 	touched_circle_center.set( 0,0 );
 	touch_entry.set( 0,0 );
 	touch_time = -1;
-	t_obj = DT_TOUCH_OBJ_NONE;
+	t_obj = DT_TOUCH_HOME_OBJ_NONE;
     last_tap = 0;
     bDouble_tap = false;
     double_tap_time =200;
 }
 
-void dt_touch::update(){
+void dt_touch_home::update(){
 	if( touch_time >= 0 ){
 		touch_time++;
 	}
@@ -40,7 +40,7 @@ void dt_touch::update(){
 //	circle?
 //	canvas?
 //
-void dt_touch::mousePressed( int tx, int ty, int button ){
+void dt_touch_home::mousePressed( int tx, int ty, int button ){
 	app = ofApp::getInstance();
 	
     unsigned long cur_tap = ofGetElapsedTimeMillis();
@@ -53,7 +53,7 @@ void dt_touch::mousePressed( int tx, int ty, int button ){
 	ofVec2f wp = app->cam.screenToWorld( ofVec2f(tx,ty) );
     touch_entry = wp;
 
-	t_obj = DT_TOUCH_OBJ_NONE;
+	t_obj = DT_TOUCH_HOME_OBJ_NONE;
 	
 	// UI ELEM ?
 	dt_circle_base_container * circle_base_container = app->all_containers.circle_base_container;
@@ -67,13 +67,13 @@ void dt_touch::mousePressed( int tx, int ty, int button ){
 		if( ui && c->data.bShowUI ){
 			int ui_elem = ui->touch_test( wp );
 			if( ui_elem != DT_DIAL_UI_NONE ){
-				t_obj = DT_TOUCH_OBJ_UI_ELEM;
+				t_obj = DT_TOUCH_HOME_OBJ_UI_ELEM;
 				break;
 			}
 		}
 	}
 
-	if( t_obj == DT_TOUCH_OBJ_NONE ){
+	if( t_obj == DT_TOUCH_HOME_OBJ_NONE ){
 		dt_circle_base * c = app->all_containers.circle_base_container->getTouchedCircle( wp );
 		
 		// CIRCLE or CANVAS ?
@@ -83,11 +83,11 @@ void dt_touch::mousePressed( int tx, int ty, int button ){
 			touched_circle_center = c->data.position;
 			dt_circle_base::selected_circle = c;
 			touch_time = 0;
-			t_obj = DT_TOUCH_OBJ_CIRCLE;
+			t_obj = DT_TOUCH_HOME_OBJ_CIRCLE;
 		}else{
 			// touch canvas
 			touch_time = 0;
-			t_obj = DT_TOUCH_OBJ_CANVAS;
+			t_obj = DT_TOUCH_HOME_OBJ_CANVAS;
             touched_circle = NULL;
             app->cam.dragStartPos = app->cam.trans;
 		}
@@ -103,7 +103,7 @@ void dt_touch::mousePressed( int tx, int ty, int button ){
  *      move circle or camera
  *
  */
-void dt_touch::mouseDragged( int tx, int ty, int button ){
+void dt_touch_home::mouseDragged( int tx, int ty, int button ){
 
     ofVec2f wp = app->cam.screenToWorld( ofVec2f(tx,ty) );
     ofVec2f dist = wp - touch_entry;
@@ -121,7 +121,7 @@ void dt_touch::mouseDragged( int tx, int ty, int button ){
     }
 }
 
-void dt_touch::mouseReleased( int tx, int ty, int button ){
+void dt_touch_home::mouseReleased( int tx, int ty, int button ){
 
     ofVec2f wp = app->cam.screenToWorld( ofVec2f(tx,ty) );
     
@@ -167,6 +167,6 @@ void dt_touch::mouseReleased( int tx, int ty, int button ){
 
 	touch_time = -1;
 	
-	t_obj = DT_TOUCH_OBJ_NONE;
+	t_obj = DT_TOUCH_HOME_OBJ_NONE;
     
 }

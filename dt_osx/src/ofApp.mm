@@ -61,7 +61,7 @@ void ofApp::setupModule(){
 
 void ofApp::update(){
     cam.update();
-	touch.update();
+	touch_home.update();
 	config.update();
 	all_containers.update();
 	osc_recorder.update( canvas.x+30, canvas.y + canvas.height + 30, canvas.width-70, 100 );
@@ -112,15 +112,15 @@ void ofApp::draw(){
 }
 
 void ofApp::mousePressed( int x, int y, int button ){
-	touch.mousePressed( x, y, button );
+	touch_home.mousePressed( x, y, button );
 }
 
 void ofApp::mouseDragged( int x, int y, int button ){
-	touch.mouseDragged( x, y, button );
+	touch_home.mouseDragged( x, y, button );
 }
 
 void ofApp::mouseReleased( int x, int y, int button ){
-	touch.mouseReleased( x, y, button );
+	touch_home.mouseReleased( x, y, button );
 }
 
 void ofApp::gotMessage( ofMessage msg ){
