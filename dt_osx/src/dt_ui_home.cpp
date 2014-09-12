@@ -68,7 +68,9 @@ void dt_ui_home::dragStart( int x, int y, int button ){
     app = ofApp::getInstance();
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     drag_start_posw = mpw;
+    app->cam.dragStartTrans = app->cam.trans;
     drag_target_circle = app->all_containers.circle_base_container->getTouchedCircle( mpw );
+    
 }
 
 void dt_ui_home::dragging( int x, int y, int button ){
@@ -82,8 +84,8 @@ void dt_ui_home::dragging( int x, int y, int button ){
 		dt_circle_base::selected_circle = drag_target_circle;
 	}else{
         // drag camera
-        float sensitivity = 0.8;
-        app->cam.trans = app->cam.dragStartPos - dist*sensitivity;
+        float sensitivity = 0.6;
+        app->cam.trans = app->cam.dragStartTrans - dist*sensitivity;
     }
 }
 

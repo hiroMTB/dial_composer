@@ -34,7 +34,6 @@ mouseButton( 0 )
 {
 }
 
-
 void dt_mouse_gesture::update(){
     unsigned long now = ofGetElapsedTimeMillis();
 
@@ -62,7 +61,6 @@ void dt_mouse_gesture::mouseMoved( int x, int y, int button ){
 }
 
 void dt_mouse_gesture::mousePressed( int x, int y, int button ){
-    ofLogNotice( "mousePressed" );
     mouseX = x;
     mouseY = y;
     mouseButton = button;
@@ -88,7 +86,6 @@ void dt_mouse_gesture::mousePressed( int x, int y, int button ){
 }
 
 void dt_mouse_gesture::mouseDragged( int x, int y, int button ){
-    ofLogNotice( "mouseDragged" );
     mouseX = x;
     mouseY = y;
     mouseButton = button;
@@ -109,7 +106,6 @@ void dt_mouse_gesture::mouseDragged( int x, int y, int button ){
 }
 
 void dt_mouse_gesture::mouseReleased( int x, int y, int button ){
-    ofLogNotice( "mouseReleased" );
     mouseX = x;
     mouseY = y;
     mouseButton = button;

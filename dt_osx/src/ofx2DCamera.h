@@ -36,7 +36,7 @@ public:
     float angle;
     ofVec2f pivot;
     ofVec2f trans;
-    ofVec2f dragStartPos;
+    ofVec2f dragStartTrans;
     
   	ofxTweener tweener;
 };
