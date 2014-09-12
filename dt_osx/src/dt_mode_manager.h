@@ -42,4 +42,8 @@ public:
     dt_mouse_gesture * current_ui;
     dt_ui_home ui_home;
     dt_ui_zoom ui_zoom;
+    
+    // fanctor helper
+    dt_circle_base * zoom_mode_future_target;
+    
 };

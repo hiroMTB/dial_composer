@@ -112,6 +112,14 @@ void dt_circle_base::change_shape( int shape ){
     make_vbo();
 }
 
+void dt_circle_base::change_circle_color( ofColor & c ){
+    change_circle_color( c.r/255.0, c.g/255.0, c.b/255.0, c.a/255.0 );
+}
+
+void dt_circle_base::change_circle_color( ofFloatColor &c ){
+    change_circle_color( c.r, c.g, c.b, c.a );
+}
+
 void dt_circle_base::change_circle_color( float r, float g, float b, float a ){
     data.circle_color.set( r, g, b, a );
     make_vbo();

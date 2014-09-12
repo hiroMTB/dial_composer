@@ -27,7 +27,8 @@ dt_circle_param::dt_circle_param()
 param_on( ofRandom(0.2, 0.3) ),
 param_off( ofRandom(0.001, 0.1) ),
 param_max( 1 ),
-param_min( 0 )
+param_min( 0 ),
+parent( NULL )
 {
 	initial = "";
 }
@@ -42,64 +43,25 @@ dt_circle_param::~dt_circle_param(){
 void dt_circle_param::setup( int beat_num ){
 	seq = new dt_sequencer();
     
-	//set_beats( beat_num );
-	//set_speed( 1 );
+	change_beat( beat_num );
+	change_speed( 1 );
+    change_shape( ofRandom(-1000, 1000) );
     
-	data.rev_radius = 40;
-	data.collision_radius = 20;
-	data.bCollide = true;
+	data.bCollide = false;
     setup_text( initial );
 }
 
 void dt_circle_param::update(){
 	data.fire_rate *= 0.8;
-	
-	data.indi_position = calc_indi_position();
+    
+	data.indi_position = calc_indi_position() + parent->data.position;
 	ofApp::getInstance()->all_containers.add_indicator( data.indi_position, data.circle_color );
 
-    /*
-     *
-     *  change type
-     *  should be mode to another function
-     *
-     */
-    switch ( data.circle_type ) {
-        case DT_CIRCLE_NOTE_NUM:
-            data.circle_color = noteNum_color;
-            initial = "N";
-            break;
-        case DT_CIRCLE_VELOCITY:
-            data.circle_color = velocity_color;
-            initial = "V";
-            break;
-        case DT_CIRCLE_DURATION:
-            data.circle_color = duration_color;
-            initial = "D";
-            break;
-        case DT_CIRCLE_PAN:
-            data.circle_color = pan_color;
-            initial = "P";
-            break;
-        case DT_CIRCLE_CC1:
-            data.circle_color = cc1_color;
-            initial = "CC1";
-            break;
-        case DT_CIRCLE_CC2:
-            data.circle_color = cc2_color;
-            initial = "CC2";
-            break;
-        case DT_CIRCLE_CC3:
-            data.circle_color = cc3_color;
-            initial = "CC3";
-            break;
-        case DT_CIRCLE_CC4:
-            data.circle_color = cc4_color;
-            initial = "CC4";
-            break;
-
-        default:
-            break;
-    }
+    // size update
+    data.rev_radius = dt_config::DT_SIZE_BASE * 0.23;
+	data.collision_radius = data.rev_radius * 1.2;
+	data.input_connection_radius = data.collision_radius + 100;
+	data.output_connection_radius = data.collision_radius + 100;
 }
 
 void dt_circle_param::draw(){
@@ -110,29 +72,32 @@ void dt_circle_param::draw(){
 	bool fired = data.fire_rate>0.5;
 	bool selected = selected_circle == this;
 	
-	// Circle
+    {
+        // Circle
+        ofSetColor( data.circle_color - data.fire_rate*0.2 );
+        ofNoFill();
+        ofSetLineWidth( 2 );
+        glPointSize( 1 );
+        app->circle_drawer.draw( data.rev_radius*1.2 );
+    }
+
+    {
+        // shape
+        draw_vbo();
+    }
     
-	ofSetColor( data.circle_color - data.fire_rate*0.2 );
-	ofNoFill();
-	ofSetLineWidth( 2 );
-	glPointSize( 3 );
-	app->circle_drawer.draw( data.rev_radius );
-	
-#ifndef NOT_USE_OF_DRAW_TEXT
+    ofSetColor( 0 );
 	draw_initial();
-#endif
 	
-	draw_vbo();
-	
-	if( data.bShowUI )
-		ui->draw();
+//	if( data.bShowUI )
+//		ui->draw();
 	
 	ofPopMatrix();
 }
 
 void dt_circle_param::draw_vbo(){
 	glLineWidth( 2 );
-	rshape.draw( OF_MESH_WIREFRAME );
+	rshape.draw( OF_MESH_FILL );
 }
 
 void dt_circle_param::make_vbo(){
@@ -142,7 +107,7 @@ void dt_circle_param::make_vbo(){
 	int beat_res = dt_config::DT_BEAT_RESOLUTION;
 	float start_angle = 0;
 	float r = data.rev_radius;
-	float lenght = 3;
+	float length = 3;
 	
     int vertIndex = 0;
 	for( int i=0; i<beat_num; i++ ){
@@ -153,22 +118,61 @@ void dt_circle_param::make_vbo(){
 		float angle = start_angle + ( i*data.rev_speed * beat_res );
 		float sx = r * cosf( angle*DEG_TO_RAD );
 		float sy = r * sinf( angle*DEG_TO_RAD );
-		float ex = ( r+lenght ) * cosf( angle*DEG_TO_RAD );
-		float ey = ( r+lenght ) * sinf( angle*DEG_TO_RAD );
 			
-		rshape.addVertex( ofVec3f(sx,sy,0) );
-        rshape.addVertex( ofVec3f(ex,ey,0) );
+		rshape.addVertex( ofVec2f(sx,sy) );
 		rshape.addIndex( vertIndex++ );
-		rshape.addIndex( vertIndex++ );
-        
-        rshape.addColor( ofFloatColor(1) );
-        rshape.addColor( ofFloatColor(1) );
+        rshape.addColor( data.circle_color );
 	}
 	
     rshape.setUsage( GL_DYNAMIC_DRAW );
-    rshape.setMode( OF_PRIMITIVE_POINTS );
+    rshape.setMode( OF_PRIMITIVE_TRIANGLE_FAN );
 }
 
 void dt_circle_param::fire(){
 	data.fire_rate = 1.0;
+}
+
+void dt_circle_param::change_param_type( dt_circle_type type ){
+
+    data.circle_type = type;
+    
+    switch ( type ) {
+        case DT_CIRCLE_NOTE_NUM:
+            change_circle_color( noteNum_color );
+            initial = "Note";
+            break;
+        case DT_CIRCLE_VELOCITY:
+            change_circle_color( velocity_color );
+            initial = "Vel";
+            break;
+        case DT_CIRCLE_DURATION:
+            change_circle_color( duration_color );
+            initial = "Dur";
+            break;
+        case DT_CIRCLE_PAN:
+            change_circle_color( pan_color );
+            initial = "Pan";
+            break;
+        case DT_CIRCLE_CC1:
+            change_circle_color( cc1_color );
+            initial = "CC1";
+            break;
+        case DT_CIRCLE_CC2:
+            change_circle_color( cc2_color );
+            initial = "CC2";
+            break;
+        case DT_CIRCLE_CC3:
+            change_circle_color( cc3_color );
+            initial = "CC3";
+            break;
+        case DT_CIRCLE_CC4:
+            change_circle_color( cc4_color );
+            initial = "CC4";
+            break;
+            
+        default:
+            break;
+    }
+    
+    setup_text( initial );
 }

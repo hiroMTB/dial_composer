@@ -35,8 +35,8 @@ void dt_circle_all_containers::setup(){
 }
 
 void dt_circle_all_containers::update(){
-	circle_base_container->update();
-	circle_base_container->process_collision();
+	note_on_container->update();
+	note_on_container->process_collision();
 }
 
 void dt_circle_all_containers::add_indicator( const ofVec2f& p, const ofFloatColor& c ){
@@ -52,12 +52,6 @@ void dt_circle_all_containers::add_connection_line( const ofVec2f& p1, const ofV
 }
 
 void dt_circle_all_containers::draw(){
-    
-	if( param_container->circles.size()<300 )
-		param_container->draw();
-
-	if( output_container->circles.size()<100 )
-		output_container->draw();
 	
 	note_on_container->draw();
     
@@ -74,6 +68,7 @@ void dt_circle_all_containers::draw(){
 }
 
 void dt_circle_all_containers::step(){
+    param_container->step();
 	note_on_container->step();
 }
 

@@ -96,6 +96,8 @@ public:
     void change_speed( int speed );
     void change_shape( int shape );
     void change_circle_color( float r, float g, float b, float a );
+    void change_circle_color( ofFloatColor &c );
+    void change_circle_color( ofColor &c );
 	void setup_text( string initial );
 	void draw_initial();
 	ofVec2f calc_indi_position();
@@ -113,5 +115,8 @@ public:
     ofTrueTypeFont * font;
     ofVboMesh text_mesh;
     ofPoint text_pos;
+    
+    vector<dt_circle_base*> input_circles;
+	vector<dt_circle_base*> output_circles;
 };
 

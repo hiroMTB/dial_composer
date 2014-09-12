@@ -24,6 +24,8 @@ void dt_mode_manager::update(){
 
 void dt_mode_manager::go_to_home_mode(){
     mode = DT_MODE_ZOOM2HOME;
+    zoom_mode_target = NULL;
+    
     app->cam.zoomMove( 1.0, ofVec2f(0,0), 1000, ^(float * arg){
         dt_mode_manager & m = ofApp::getInstance()->mode_manager;
         m.mode = DT_MODE_HOME;
@@ -34,11 +36,12 @@ void dt_mode_manager::go_to_home_mode(){
 void dt_mode_manager::go_to_zoom_mode( dt_circle_base *target ){
     mode = DT_MODE_HOME2ZOOM;
     if( target ){
-        zoom_mode_target = target;
-        app->cam.moveZoom( zoom_mode_target->data.position, 1.5, 1000, ^(float *arg){
+        zoom_mode_future_target = target;
+        app->cam.moveZoom( target->data.position, 1.5, 1000, ^(float *arg){
             dt_mode_manager & m = ofApp::getInstance()->mode_manager;
             m.mode = DT_MODE_ZOOM;
             m.current_ui = &m.ui_zoom;
+            m.zoom_mode_target = m.zoom_mode_future_target;
         });
     }
 }

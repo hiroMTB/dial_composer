@@ -19,11 +19,13 @@ public:
 	
 	virtual void setup(int beat_num);
 	virtual void fire();
+	virtual void make_vbo();
+
+    void change_param_type( dt_circle_type t );
 	void update();
 	void draw();
 	void draw_vbo();
-	virtual void make_vbo();
-
+    
 	static ofColor noteNum_color;
 	static ofColor velocity_color;
 	static ofColor duration_color;
@@ -39,4 +41,6 @@ public:
 	float param_max;
 
 	ofVboMesh rshape;
+    
+    dt_circle_base * parent;
 };

@@ -37,5 +37,6 @@ public:
     
     ofApp * app;
     dt_ui_zoom_obj t_obj;
-    
+    ofVec2f drag_start_posw;
+    dt_circle_base * drag_target_circle;
 };

@@ -41,9 +41,6 @@ public:
 	
 	ofVboMesh rshape;
     ofVboMesh rguid;
-  
-	vector<dt_circle_base*> input_circles;
-	vector<dt_circle_base*> output_circles;
 
     dt_param_state p_state;
 

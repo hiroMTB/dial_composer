@@ -78,10 +78,21 @@ void dt_circle_note_on::setup( int beat_num ){
 	seq->indicator = rotate_step;
     
     // input
-    dt_circle_param * p = new dt_circle_param();
-    p->setup( ofRandom(4, 12) );
-    input_circles.push_back( p );
-
+    for( int i=0; i<7; i++){
+        dt_circle_param * p = new dt_circle_param();
+        p->setup( ofRandom(4, 12) );
+        p->change_param_type( (dt_circle_type)(i+1) );
+        float r = 150;
+        float rad = -(float)i*30.0 * DEG_TO_RAD;
+        float x = r * cos( rad );
+        float y = r * sin( rad );
+        p->data.position.set( x,y );
+        p->parent = this;
+        
+        input_circles.push_back( p );
+        app->all_containers.param_container->addCircle( p );
+        app->all_containers.circle_base_container->addCircle( p );
+    }
 }
 
 void dt_circle_note_on::update(){
@@ -104,27 +115,34 @@ void dt_circle_note_on::update(){
             if( app->mode_manager.zoom_mode_target != this){
                 data.bShow = false;
             }
+            break;
         case DT_MODE_ZOOM2HOME:
             if( app->mode_manager.zoom_mode_target != this){
-                data.bShow = false;
+                data.bShow = true;
             }
+            break;
         default:
             break;
     }
     
 	if( data.bShow ){
         data.indi_position = calc_indi_position();
-    }else{
-        data.indi_position = data.position;
+        ofApp::getInstance()->all_containers.add_indicator( data.indi_position, data.circle_color );
     }
-    
-	ofApp::getInstance()->all_containers.add_indicator( data.indi_position, data.circle_color );
 	
     // size update
     data.rev_radius = dt_config::DT_SIZE_BASE * 0.5;
 	data.collision_radius = data.rev_radius * 1.5;
 	data.input_connection_radius = data.collision_radius + 100;
 	data.output_connection_radius = data.collision_radius + 100;
+    
+    bool targeted = app->mode_manager.zoom_mode_target == this;
+    // input circles
+    if( targeted ){
+        for( int i=0; i<input_circles.size(); i++ ){
+            input_circles[i]->update();
+        }
+    }
 }
 
 void dt_circle_note_on::check_connection(){
@@ -153,6 +171,7 @@ void dt_circle_note_on::draw(){
     
 	bool blink = data.fire_rate > 0.3;
 	bool selected = selected_circle == this;
+    bool targeted = app->mode_manager.zoom_mode_target == this;
   	
 	float waiting_rate = (float)(dt_config::DT_BEAT_RESOLUTION-wait_step) / (float)dt_config::DT_BEAT_RESOLUTION;
 	float waiting_animation_rate = 0.5 + waiting_rate*0.5;
@@ -160,49 +179,58 @@ void dt_circle_note_on::draw(){
 	
     ofPushMatrix();{
         ofTranslate( data.position.x, data.position.y );
-        ofScale( scale, scale );
+        ofPushMatrix();{
+            ofScale( scale, scale );
 	
-        // circle
-        {
-            if( selected ){
-                glPointSize( 4 );
-                ofSetColor( data.circle_color );
-            }else{
-                glPointSize( 2 );
-                float b = app->bg.getBrightness() * 255.0;
-                ofSetColor( 255.0-b, 220 );
+            // circle
+            {
+                if( selected ){
+                    glPointSize( 4 );
+                    ofSetColor( data.circle_color );
+                }else{
+                    glPointSize( 2 );
+                    float b = app->bg.getBrightness() * 255.0;
+                    ofSetColor( 255.0-b, 220 );
+                }
+                app->circle_drawer.draw( data.rev_radius * 1.26, OF_MESH_POINTS );
             }
-            app->circle_drawer.draw( data.rev_radius * 1.26, OF_MESH_POINTS );
-        }
-        
-        // shape
-        {
-            ofPushMatrix();{
-                float shape_scale = data.rev_radius * 0.01;
-                ofScale( shape_scale, shape_scale, 1 );
-
-                // guid
-                glPointSize( 3 );
-                rguid.draw( OF_MESH_POINTS );
-                
-                // shape
+            
+            // shape
+            {
                 ofPushMatrix();{
-                    ofScale( 0.8, 0.8, 1 );
-                    glLineWidth( 3 );
-                    if (rshape.getNumVertices() <= 2){
-                        rshape.draw( OF_MESH_WIREFRAME );
-                    }else{
-                        if( !data.bMute ){
-                            rshape.setMode( OF_PRIMITIVE_TRIANGLE_FAN );
-                            rshape.draw( OF_MESH_FILL );
-                        }else{
-                            rshape.setMode( OF_PRIMITIVE_LINE_LOOP );
+                    float shape_scale = data.rev_radius * 0.01;
+                    ofScale( shape_scale, shape_scale, 1 );
+
+                    // guid
+                    glPointSize( 3 );
+                    rguid.draw( OF_MESH_POINTS );
+                    
+                    // shape
+                    ofPushMatrix();{
+                        ofScale( 0.8, 0.8, 1 );
+                        glLineWidth( 3 );
+                        if (rshape.getNumVertices() <= 2){
                             rshape.draw( OF_MESH_WIREFRAME );
+                        }else{
+                            if( !data.bMute ){
+                                rshape.setMode( OF_PRIMITIVE_TRIANGLE_FAN );
+                                rshape.draw( OF_MESH_FILL );
+                            }else{
+                                rshape.setMode( OF_PRIMITIVE_LINE_LOOP );
+                                rshape.draw( OF_MESH_WIREFRAME );
+                            }
                         }
-                    }
+                    }ofPopMatrix();
+            
                 }ofPopMatrix();
-        
-            }ofPopMatrix();
+            }
+        }ofPopMatrix();
+            
+        // input circles
+        if( targeted ){
+            for( int i=0; i<input_circles.size(); i++ ){
+                input_circles[i]->draw();
+            }
         }
         
         //if( data.bShowUI )
