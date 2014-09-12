@@ -37,7 +37,6 @@ public:
 	virtual void fire();
 
 	void check_connection();
-	virtual void change_rshape( int type );
 	virtual void make_vbo();
 	
 	ofVboMesh rshape;

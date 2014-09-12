@@ -204,11 +204,6 @@ void dt_circle_note_on::draw(){
     }ofPopMatrix();
 }
 
-void dt_circle_note_on::change_rshape( int type ){
-	seq->setRhythmShape( type );
-	make_vbo();
-}
-
 void dt_circle_note_on::fire(){
 	
     ofxOscMessage m;

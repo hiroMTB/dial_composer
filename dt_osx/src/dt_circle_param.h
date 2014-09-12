@@ -23,7 +23,6 @@ public:
 	void draw();
 	void draw_vbo();
 	virtual void make_vbo();
-	virtual void change_rshape(int type);
 
 	static ofColor noteNum_color;
 	static ofColor velocity_color;

@@ -51,11 +51,6 @@ void dt_circle_param::setup( int beat_num ){
     setup_text( initial );
 }
 
-void dt_circle_param::change_rshape( int type ){
-	seq->setRhythmShape( type );
-	make_vbo();
-}
-
 void dt_circle_param::update(){
 	data.fire_rate *= 0.8;
 	
