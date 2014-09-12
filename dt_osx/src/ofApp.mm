@@ -26,7 +26,7 @@ void ofApp::windowResized( int w, int h ){
 	canvas.width = w-100;
 	canvas.height = h-50;
 	config.reset_position();
-    dt_config::DT_SIZE_BASE = max( w, h )/15.0;
+    dt_config::DT_SIZE_BASE = max( w, h )/16.0;
     cam.reset();
 }
 

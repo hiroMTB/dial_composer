@@ -95,15 +95,16 @@ ofVec2f dt_circle_base::calc_indi_position(){
 
 void dt_circle_base::change_beat( int beat ){
 	int shape = seq->rhythm_shape_type;
-    //delete seq;
-	//seq = new dt_sequencer();
 	seq->setup( beat );
     seq->setRhythmShape( shape );
+	data.rev_speed = (float)360.0 / (float)seq->total_steps;
+	change_speed( data.speed );
     make_vbo();
 }
 
 void dt_circle_base::change_speed( int speed ){
     data.speed = speed;
+   	data.rev_angle = seq->indicator * data.rev_speed;
 }
 
 void dt_circle_base::change_shape( int shape ){

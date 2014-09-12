@@ -36,8 +36,6 @@ public:
 	virtual void draw();
 	virtual void fire();
 
-	void set_beats( int beat_num );
-	void set_speed( int speed );
 	void check_connection();
 	virtual void change_rshape( int type );
 	virtual void make_vbo();

@@ -45,7 +45,7 @@ dt_circle_note_on::~dt_circle_note_on(){
 
 /*
 		speed affet to 
-            ...
+            - rev_angle
  
 		beat_num affect to
 			- seq
@@ -62,10 +62,10 @@ dt_circle_note_on::~dt_circle_note_on(){
 void dt_circle_note_on::setup( int beat_num ){
 
 	seq = new dt_sequencer();
-
-	set_beats( beat_num );
-	set_speed( 1 );
-
+	change_beat( beat_num );
+	change_speed( 1 );
+    change_shape( ofRandom(-3000, 3000) );
+    
 	// Quantize to beat position
 	//int steps_per_beat = DT_BEAT_RESOLUTION; //* data.speed;
 	//int sub_step = app->sequence_thread.master_step % steps_per_beat;
@@ -78,19 +78,10 @@ void dt_circle_note_on::setup( int beat_num ){
 	seq->indicator = rotate_step;
     
     // input
+    dt_circle_param * p = new dt_circle_param();
+    p->setup( ofRandom(4, 12) );
+    input_circles.push_back( p );
 
-}
-
-void dt_circle_note_on::set_beats( int beat_num ){
-	seq->setup( beat_num );
-	data.rev_speed = (float)360.0 / (float)seq->total_steps;
-	change_rshape( ofRandom(-1000, 1000) );
-	set_speed( data.speed );
-}
-
-void dt_circle_note_on::set_speed( int speed ){
-	data.speed = speed;
-	data.rev_angle = seq->indicator * data.rev_speed;
 }
 
 void dt_circle_note_on::update(){
@@ -159,12 +150,12 @@ void dt_circle_note_on::draw(){
         return;
     }
     
-	bool fired = data.fire_rate > 0.3;
+	bool blink = data.fire_rate > 0.3;
 	bool selected = selected_circle == this;
   	
 	float waiting_rate = (float)(dt_config::DT_BEAT_RESOLUTION-wait_step) / (float)dt_config::DT_BEAT_RESOLUTION;
 	float waiting_animation_rate = 0.5 + waiting_rate*0.5;
-    float scale = fired ? waiting_animation_rate+data.fire_rate*0.2 : waiting_animation_rate;
+    float scale = blink ? waiting_animation_rate+data.fire_rate*0.2 : waiting_animation_rate;
 	
     ofPushMatrix();{
         ofTranslate( data.position.x, data.position.y );
@@ -207,8 +198,8 @@ void dt_circle_note_on::draw(){
             }ofPopMatrix();
         }
         
-        if( data.bShowUI )
-            ui->draw();
+        //if( data.bShowUI )
+        //  ui->draw();
             
     }ofPopMatrix();
 }
@@ -252,19 +243,18 @@ void dt_circle_note_on::make_vbo(){
 		if( on ){
             ofFloatColor c = data.circle_color;
             c.setHsb( h + i*0.005, MAX( 0.6,s+ofRandom(-0.05, 0.05) ), 0.8 );
-            rshape.addVertex( ofVec3f(x, y, 0) );
+            rshape.addVertex( ofVec2f(x, y) );
             rshape.addIndex( vertIndex++ );
             rshape.addColor( c );
 		}
     
         // guide shape
-        rguid.addVertex( ofVec3f(x, y, 0) );
+        rguid.addVertex( ofVec2f(x, y) );
         rguid.addIndex( i );
         if( on ){
             rguid.addColor( data.circle_color );
         }else{
-            rguid.addColor( ofFloatColor(0.4, 1) );
-            
+            rguid.addColor( ofFloatColor(0.7, 0.75) );
         }
 	}
     

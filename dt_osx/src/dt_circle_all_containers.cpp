@@ -84,7 +84,7 @@ void dt_circle_all_containers::change_speed_random_all( int min, int max ){
 	app->config.synch_param();
 	for( int i=0; i<note_on_container->circles.size(); i++ ){
 		int speed = ofRandom( min, max );
-		note_on_container->circles[i]->set_speed( speed );
+		note_on_container->circles[i]->change_speed( speed );
 	}
 }
 

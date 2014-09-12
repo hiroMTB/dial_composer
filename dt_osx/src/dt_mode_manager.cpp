@@ -27,7 +27,7 @@ void dt_mode_manager::go_to_zoom_mode( dt_circle_base *target ){
     mode = DT_MODE_HOME2ZOOM;
     if( target ){
         zoom_mode_target = target;
-        app->cam.moveZoom( zoom_mode_target->data.position, 1.7, 1000, ^(float *arg){
+        app->cam.moveZoom( zoom_mode_target->data.position, 1.5, 1000, ^(float *arg){
             ofApp::getInstance()->mode_manager.mode = DT_MODE_ZOOM;
         });
     }
