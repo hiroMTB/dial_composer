@@ -108,8 +108,10 @@ void ofApp::draw(){
         }
     }
     */
-    
+#ifdef DEBUG
     cam.debugDraw();
+#endif
+    
     cam.end();
 
 	mode_manager.debug_draw();
