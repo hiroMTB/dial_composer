@@ -9,6 +9,13 @@
 ofApp * ofApp::instance = NULL;
 
 ofApp * ofApp::init(){
+
+#ifdef DEBUG
+    ofSetLogLevel( OF_LOG_VERBOSE );
+#else
+    ofSetLogLevel( OF_LOG_ERROR );
+#endif
+    
 	if(!instance){
         ofLogNotice( "ofApp", "openFrameworks v" + ofGetVersionInfo() );
         instance = new ofApp();
@@ -31,7 +38,7 @@ void ofApp::windowResized( int w, int h ){
 }
 
 void ofApp::setup(){
-	setupVisual();
+    setupVisual();
 	setupModule();
 }
 
@@ -60,8 +67,8 @@ void ofApp::setupModule(){
 }
 
 void ofApp::update(){
+    mode_manager.update();
     cam.update();
-	touch_home.update();
 	config.update();
 	all_containers.update();
 	osc_recorder.update( canvas.x+30, canvas.y + canvas.height + 30, canvas.width-70, 100 );
@@ -111,16 +118,21 @@ void ofApp::draw(){
 
 }
 
+
+void ofApp::mouseMoved( int x, int y, int button ){
+    mode_manager.current_ui->mouseMoved( x, y, button );
+}
+
 void ofApp::mousePressed( int x, int y, int button ){
-	touch_home.mousePressed( x, y, button );
+	mode_manager.current_ui->mousePressed( x, y, button );
 }
 
 void ofApp::mouseDragged( int x, int y, int button ){
-	touch_home.mouseDragged( x, y, button );
+	mode_manager.current_ui->mouseDragged( x, y, button );
 }
 
 void ofApp::mouseReleased( int x, int y, int button ){
-	touch_home.mouseReleased( x, y, button );
+	mode_manager.current_ui->mouseReleased( x, y, button );
 }
 
 void ofApp::gotMessage( ofMessage msg ){

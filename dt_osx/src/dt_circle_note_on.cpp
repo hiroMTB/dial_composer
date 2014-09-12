@@ -143,6 +143,7 @@ void dt_circle_note_on::check_connection(){
  *      mode
  *      fired
  *      selected
+ *      mute
  */
 void dt_circle_note_on::draw(){
     
@@ -191,7 +192,13 @@ void dt_circle_note_on::draw(){
                     if (rshape.getNumVertices() <= 2){
                         rshape.draw( OF_MESH_WIREFRAME );
                     }else{
-                        rshape.draw( OF_MESH_FILL );
+                        if( !data.bMute ){
+                            rshape.setMode( OF_PRIMITIVE_TRIANGLE_FAN );
+                            rshape.draw( OF_MESH_FILL );
+                        }else{
+                            rshape.setMode( OF_PRIMITIVE_LINE_LOOP );
+                            rshape.draw( OF_MESH_WIREFRAME );
+                        }
                     }
                 }ofPopMatrix();
         
