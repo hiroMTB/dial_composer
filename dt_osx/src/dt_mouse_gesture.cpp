@@ -27,7 +27,7 @@ bDouble_click_check( false ),
 last_press( 0 ),
 last_release( 0 ),
 single_click_time( 300 ),
-double_click_time( 100 ),
+double_click_time( 200 ),
 mouseX( 0 ),
 mouseY( 0 ),
 mouseButton( 0 )
@@ -67,6 +67,8 @@ void dt_mouse_gesture::mousePressed( int x, int y, int button ){
     mouseY = y;
     mouseButton = button;
 
+    singleClickStart( mouseX, mouseY, mouseButton );
+    
     unsigned long now = ofGetElapsedTimeMillis();
     if( bDouble_click_check ){
         unsigned long wait_time = now - last_release;

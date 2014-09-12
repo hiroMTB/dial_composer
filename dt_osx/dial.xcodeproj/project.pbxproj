@@ -46,6 +46,9 @@
 		4D82B81C19B66AF500BA0CEF /* dt_osc_recorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B81A19B66AF500BA0CEF /* dt_osc_recorder.cpp */; };
 		4D82B82619B67D8800BA0CEF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82319B67D8800BA0CEF /* AppDelegate.mm */; };
 		4D82B82719B67D8800BA0CEF /* dt_GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82519B67D8800BA0CEF /* dt_GLView.mm */; };
+		4D84E8E719C38BA100D54F05 /* ofxModifierKeys_impl_linux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D84E8DA19C38BA100D54F05 /* ofxModifierKeys_impl_linux.cpp */; };
+		4D84E8E819C38BA100D54F05 /* ofxModifierKeys_impl_mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D84E8DB19C38BA100D54F05 /* ofxModifierKeys_impl_mac.mm */; };
+		4D84E8E919C38BA100D54F05 /* ofxModifierKeys_impl_win.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D84E8DC19C38BA100D54F05 /* ofxModifierKeys_impl_win.cpp */; };
 		4D9CC35219BF667E00E75AD2 /* ofx2DCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D9CC35019BF667E00E75AD2 /* ofx2DCamera.cpp */; };
 		4DAFA43319BC931C008E9A14 /* ofxCocoaGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DAFA43219BC931C008E9A14 /* ofxCocoaGLView.mm */; };
 		4DC0481D19C343D500346B96 /* dt_ui_zoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DC0481B19C343D500346B96 /* dt_ui_zoom.cpp */; };
@@ -10138,6 +10141,10 @@
 		4D82B82319B67D8800BA0CEF /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		4D82B82419B67D8800BA0CEF /* dt_GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dt_GLView.h; path = Cocoa/dt_GLView.h; sourceTree = "<group>"; };
 		4D82B82519B67D8800BA0CEF /* dt_GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = dt_GLView.mm; path = Cocoa/dt_GLView.mm; sourceTree = "<group>"; };
+		4D84E8D919C38BA100D54F05 /* ofxModifierKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxModifierKeys.h; sourceTree = "<group>"; };
+		4D84E8DA19C38BA100D54F05 /* ofxModifierKeys_impl_linux.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxModifierKeys_impl_linux.cpp; sourceTree = "<group>"; };
+		4D84E8DB19C38BA100D54F05 /* ofxModifierKeys_impl_mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxModifierKeys_impl_mac.mm; sourceTree = "<group>"; };
+		4D84E8DC19C38BA100D54F05 /* ofxModifierKeys_impl_win.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxModifierKeys_impl_win.cpp; sourceTree = "<group>"; };
 		4D9CC35019BF667E00E75AD2 /* ofx2DCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofx2DCamera.cpp; sourceTree = "<group>"; };
 		4D9CC35119BF667E00E75AD2 /* ofx2DCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofx2DCamera.h; sourceTree = "<group>"; };
 		4DAFA43119BC931C008E9A14 /* ofxCocoaGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCocoaGLView.h; path = Cocoa/ofxCocoaGLView.h; sourceTree = "<group>"; };
@@ -27463,6 +27470,26 @@
 			path = Cocoa;
 			sourceTree = "<group>";
 		};
+		4D84E8C419C38BA100D54F05 /* ofxModifierKeys */ = {
+			isa = PBXGroup;
+			children = (
+				4D84E8D819C38BA100D54F05 /* src */,
+			);
+			name = ofxModifierKeys;
+			path = ../../../addons/ofxModifierKeys;
+			sourceTree = "<group>";
+		};
+		4D84E8D819C38BA100D54F05 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4D84E8D919C38BA100D54F05 /* ofxModifierKeys.h */,
+				4D84E8DA19C38BA100D54F05 /* ofxModifierKeys_impl_linux.cpp */,
+				4D84E8DB19C38BA100D54F05 /* ofxModifierKeys_impl_mac.mm */,
+				4D84E8DC19C38BA100D54F05 /* ofxModifierKeys_impl_win.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		4D8FC6DF19BB3D7400DC6817 /* OscOutView */ = {
 			isa = PBXGroup;
 			children = (
@@ -27578,6 +27605,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				4D84E8C419C38BA100D54F05 /* ofxModifierKeys */,
 				F6AD809619C2472E00D210F5 /* ofxTweener */,
 				4D757C7919B6C0F3005CDA6F /* ofxOSXBoost */,
 				F6EE1B39196AA4E600A77A20 /* ofxGui */,
@@ -28569,6 +28597,7 @@
 				F6AD80B919C2486000D210F5 /* ofxTweener.h in Sources */,
 				F6EE1B4D196AA7A600A77A20 /* ofxBaseGui.cpp in Sources */,
 				4D7376BC19B802D7000AC010 /* GeneralViewController.mm in Sources */,
+				4D84E8E919C38BA100D54F05 /* ofxModifierKeys_impl_win.cpp in Sources */,
 				F6EE1B4E196AA7A600A77A20 /* ofxButton.cpp in Sources */,
 				F6EE1B4F196AA7A600A77A20 /* ofxGuiGroup.cpp in Sources */,
 				F6EE1B50196AA7A600A77A20 /* ofxLabel.cpp in Sources */,
@@ -28577,6 +28606,7 @@
 				F6EE1B53196AA7A600A77A20 /* ofxSliderGroup.cpp in Sources */,
 				4DAFA43319BC931C008E9A14 /* ofxCocoaGLView.mm in Sources */,
 				F6AD80B319C2472E00D210F5 /* ofxTransitions.cpp in Sources */,
+				4D84E8E719C38BA100D54F05 /* ofxModifierKeys_impl_linux.cpp in Sources */,
 				F6EE1B54196AA7A600A77A20 /* ofxToggle.cpp in Sources */,
 				4D9CC35219BF667E00E75AD2 /* ofx2DCamera.cpp in Sources */,
 				F6779838194F9F82005DFF45 /* juce_audio_basics.mm in Sources */,
@@ -28585,6 +28615,7 @@
 				F6075E0E194DE94E00F8F7E0 /* ofxRtMidiIn.cpp in Sources */,
 				F6075E0F194DE94E00F8F7E0 /* ofxRtMidiOut.cpp in Sources */,
 				F6075E10194DE94E00F8F7E0 /* ofxBaseMidi.cpp in Sources */,
+				4D84E8E819C38BA100D54F05 /* ofxModifierKeys_impl_mac.mm in Sources */,
 				F6075E11194DE94E00F8F7E0 /* ofxMidi.cpp in Sources */,
 				F6075E12194DE94E00F8F7E0 /* ofxMidiIn.cpp in Sources */,
 				F6075E13194DE94E00F8F7E0 /* ofxMidiMessage.cpp in Sources */,

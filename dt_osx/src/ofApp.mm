@@ -3,8 +3,9 @@
 #include "dt_circle_note_on.h"
 #include "dt_circle_container.h"
 #include "dt_circle_param.h"
+#include "ofxModifierKeys.h"
 
-#import "AppDelegate.h"
+#import  "AppDelegate.h"
 
 ofApp * ofApp::instance = NULL;
 
@@ -140,8 +141,8 @@ void ofApp::gotMessage( ofMessage msg ){
 }
 
 void ofApp::keyPressed( int key ){
-	bool bAlt = (key == OF_KEY_ALT);
-	// bool bShift = (key == OF_KEY_SHIFT); does not work?
+	bool bShitt = ofGetModifierPressed( OF_KEY_SHIFT );
+	bool bAlt = ofGetModifierPressed( OF_KEY_ALT );
 	
 	switch(key){
 			
@@ -177,13 +178,6 @@ void ofApp::keyPressed( int key ){
 
 		case 'F':
             ofToggleFullscreen();
-            break;
-            
-		case 'B':
-            all_containers.change_beat_all(floor(ofRandom(dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX-1)));
-            break;
-            
-		case 'P': all_containers.change_position_all();
             break;
             
 		case 'R':

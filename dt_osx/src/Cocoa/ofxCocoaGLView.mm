@@ -606,18 +606,51 @@ static int conv_button_number(int n) {
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-	const char *c = [[theEvent charactersIgnoringModifiers] UTF8String];
-	int key = c[0];
+//	const char *c = [[theEvent charactersIgnoringModifiers] UTF8String];
+//	int key = c[0];
+//    
+//	makeCurrentView(self);
+//    
+//	if (key == OF_KEY_ESC) {
+//		[[NSApplication sharedApplication] terminate:self];
+//		[NSApp terminate:self];
+//	}
+//    
+//	[self keyPressed:key];
+//	ofNotifyKeyPressed(key);
+
+    makeCurrentView(self);
     
-	makeCurrentView(self);
+    NSString *characters = [ theEvent characters ];
     
-	if (key == OF_KEY_ESC) {
-		[[NSApplication sharedApplication] terminate:self];
-		[NSApp terminate:self];
+	if( [ characters length ] )
+    {
+		unichar key = [ characters characterAtIndex : 0 ];
+        
+        if( key ==  OF_KEY_ESC )
+        {
+            //[ NSApp terminate : nil ];
+        }
+        else if( key == 63232 )
+        {
+            key = OF_KEY_UP;
+        }
+        else if( key == 63235 )
+        {
+            key = OF_KEY_RIGHT;
+        }
+        else if( key == 63233 )
+        {
+            key = OF_KEY_DOWN;
+        }
+        else if( key == 63234 )
+        {
+            key = OF_KEY_LEFT;
+        }
+        
+		ofNotifyKeyPressed( key );
+       	[self keyPressed:key];
 	}
-    
-	[self keyPressed:key];
-	ofNotifyKeyPressed(key);
 }
 
 - (void)keyUp:(NSEvent *)theEvent {

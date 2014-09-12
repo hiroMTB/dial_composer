@@ -25,6 +25,7 @@ class dt_ui_zoom : public dt_mouse_gesture {
     
 public:
     dt_ui_zoom();
+    virtual void singleClickStart( int x, int y, int button );
     virtual void singleClickEnd( int x, int y, int button );
     virtual void doubleClickStart( int x, int y, int button );
     virtual void doubleClickEnd( int x, int y, int button );

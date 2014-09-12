@@ -63,6 +63,6 @@ public:
 	dt_circle_all_containers all_containers;
 	dt_mode_manager		mode_manager;
 
-    ofx2DCamera         cam;
+    ofx2DCamera         cam;    
 };
 

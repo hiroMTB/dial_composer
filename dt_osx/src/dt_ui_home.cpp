@@ -14,6 +14,7 @@
 #include "dt_circle_param.h"
 #include "dt_circle_container.h"
 #include "dt_circle_all_containers.h"
+#include "ofxModifierKeys.h"
 
 dt_ui_home::dt_ui_home()
 :
@@ -22,22 +23,28 @@ drag_target_circle( NULL )
 {
 }
 
-void dt_ui_home::singleClickEnd( int x, int y, int button ){
+void dt_ui_home::singleClickStart(int x, int y, int button){
     app = ofApp::getInstance();
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     dt_circle_base * c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
     if( c ){
         // circle -> toggle mute
-        c->data.bMute = !c->data.bMute;
+        dt_circle_base::selected_circle = c;
     }else{
-        // canvas -> create new circle
-        dt_circle_note_on * nc = new dt_circle_note_on();
-        app->all_containers.note_on_container->addCircle( nc );
-        nc->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
-        nc->data.position = mpw;
-        app->all_containers.circle_base_container->addCircle( nc );
-        dt_circle_base::selected_circle = nc;
+        bool bShift = ofGetModifierPressed( OF_KEY_SHIFT );
+        if( !bShift ){
+            // canvas -> create new circle
+            dt_circle_note_on * nc = new dt_circle_note_on();
+            app->all_containers.note_on_container->addCircle( nc );
+            nc->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
+            nc->data.position = mpw;
+            app->all_containers.circle_base_container->addCircle( nc );
+            dt_circle_base::selected_circle = nc;
+        }
     }
+}
+
+void dt_ui_home::singleClickEnd( int x, int y, int button ){
 }
 
 void dt_ui_home::doubleClickStart( int x, int y, int button ){
@@ -57,6 +64,7 @@ void dt_ui_home::longClickEnd( int x, int y, int button ){
 }
 
 void dt_ui_home::dragStart( int x, int y, int button ){
+
     app = ofApp::getInstance();
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     drag_start_posw = mpw;

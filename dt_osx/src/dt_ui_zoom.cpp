@@ -15,6 +15,9 @@ dt_ui_zoom::dt_ui_zoom(){
     
 }
 
+void dt_ui_zoom::singleClickStart( int x, int y, int button ){
+}
+
 void dt_ui_zoom::singleClickEnd( int x, int y, int button ){
 }
 
