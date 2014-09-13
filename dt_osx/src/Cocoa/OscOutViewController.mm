@@ -51,4 +51,14 @@
     NSString * all = [NSString stringWithFormat:@"%@\n\%@", current, line];
    [output_tx setString:all];
 }
+
+- (void)update_ui{
+    ofApp * app = ofApp::getInstance();
+    if( app ){
+        
+        [self.address_tx setStringValue: [NSString stringWithUTF8String: app->config.DT_OSC_OUT_ADDRESS.c_str()]];
+        [self.port_tx setStringValue:[NSString stringWithUTF8String: ofToString(app->config.DT_OSC_OUT_PORT).c_str() ]];
+    }
+}
+
 @end

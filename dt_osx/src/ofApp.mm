@@ -73,11 +73,6 @@ void ofApp::update(){
 	config.update();
 	all_containers.update();
 	osc_recorder.update( canvas.x+30, canvas.y + canvas.height + 30, canvas.width-70, 100 );
-
-    // update Cocoa UI
-    AppDelegate *  d = (AppDelegate*)[NSApplication sharedApplication].delegate;
-
-    if( d ) [d update_ui];
 }
 
 void ofApp::draw(){
@@ -190,4 +185,14 @@ void ofApp::keyPressed( int key ){
 
 void ofApp::exit(){
 	sequence_thread.stop();
+}
+
+
+void ofApp::update_cocoa_ui(){
+    // update Cocoa UI
+    bool bToolbar_open = true;
+    if( bToolbar_open ){
+        AppDelegate *  d = (AppDelegate*)[NSApplication sharedApplication].delegate;
+        if( d ) [d update_ui];
+    }
 }

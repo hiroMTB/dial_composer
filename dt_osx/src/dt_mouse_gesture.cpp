@@ -27,7 +27,7 @@ bDouble_click_check( false ),
 last_press( 0 ),
 last_release( 0 ),
 single_click_time( 300 ),
-double_click_time( 200 ),
+double_click_time( 150 ),
 mouseX( 0 ),
 mouseY( 0 ),
 mouseButton( 0 )

@@ -27,6 +27,8 @@
     CircleViewController *circleViewController;
     OscOutViewController *oscOutViewController;
     OscInViewController *oscInViewController;
+
+    int currentViewType;
 }
 
 @property (nonatomic, assign) NSViewController *myCurrentViewController;
@@ -42,5 +44,7 @@
 - (IBAction)SelectSideP4:(id)sender;
 - (IBAction)SelectSideP5:(id)sender;
 - (NSViewController *)viewController;
+
+- (void)update_ui;
 
 @end

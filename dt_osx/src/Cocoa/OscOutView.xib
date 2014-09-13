@@ -93,10 +93,10 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="89Q-HI-ttc">
-                    <rect key="frame" x="140" y="519" width="104" height="24"/>
+                <segmentedControl verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="89Q-HI-ttc">
+                    <rect key="frame" x="140" y="519" width="104" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <segmentedCell key="cell" alignment="left" style="rounded" trackingMode="selectOne" id="ETV-gk-5r6">
+                    <segmentedCell key="cell" alignment="left" style="capsule" trackingMode="selectOne" id="ETV-gk-5r6">
                         <font key="font" metaFont="system"/>
                         <segments>
                             <segment label="OFF" width="49"/>

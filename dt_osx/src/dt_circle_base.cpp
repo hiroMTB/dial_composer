@@ -38,7 +38,9 @@ input_connection_radius( 0.0 ),
 output_connection_radius( 0.0 ),
 fire_rate( 0.0 ),
 position( ofVec2f(-1,-1) ),
-name( "def" )
+name( "default" ),
+ch( 1 ),
+output_value( 0 )
 {
 }
 

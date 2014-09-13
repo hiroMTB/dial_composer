@@ -30,7 +30,7 @@ int dt_config::DT_OSC_OUT_CH_MAX =			32;
 int dt_config::DT_OSC_OUT_CH_MIN =			 1;
 std::string dt_config::DT_OSC_OUT_ADDRESS_PREFIX = "/dt_out/";
 std::string dt_config::DT_OSC_OUT_ADDRESS = "localhost";
-int dt_config::DT_OSC_OUT_PORT =		   9999;
+int dt_config::DT_OSC_OUT_PORT =		   12345;
 
 // OSC in
 std::string dt_config::DT_OSC_IN_ADDRESS_PREFIX = "/dt_in/";

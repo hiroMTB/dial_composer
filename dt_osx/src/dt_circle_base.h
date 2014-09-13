@@ -8,9 +8,7 @@
 
 #pragma once
 
-
 #include "ofMain.h"
-
 
 enum dt_circle_type{
 	DT_CIRCLE_NOTE_ON	= 0,
@@ -24,6 +22,20 @@ enum dt_circle_type{
 	DT_CIRCLE_CC4		= 8,
 };
 
+inline string getEnumString( dt_circle_type t ){
+    switch( t ){
+        case DT_CIRCLE_NOTE_ON: return "NoteOn Circle";
+        case DT_CIRCLE_NOTE_NUM: return "NoteNum Circle";
+        case DT_CIRCLE_VELOCITY: return "Velocity Circle";
+        case DT_CIRCLE_DURATION: return "Duration Circle";
+        case DT_CIRCLE_PAN: return "Pan Circle";
+        case DT_CIRCLE_CC1: return "Control Change 1 Circle";
+        case DT_CIRCLE_CC2: return "Control Change 2 Circle";
+        case DT_CIRCLE_CC3: return "Control Change 3 Circle";
+        case DT_CIRCLE_CC4: return "Control Change 4 Circle";
+        default: return "";
+    }
+}
 
 /*
  *
@@ -47,7 +59,9 @@ public:
 	int fired_ch;
 	int step_age;
 	int speed;
-	
+	int ch;
+    
+    float output_value;
 	float rev_angle;
 	float rev_speed;
 	float rev_radius;

@@ -1,12 +1,6 @@
-#include "ofMain.h"
-#include "ofApp.h"
-#include "dt_circle_all_containers.h"
-#include "dt_circle_container.h"
-
 #import "AppDelegate.h"
 #import "MainWindowController.h"
 #import "GeneralViewController.h"
-
 
 @implementation AppDelegate
 
@@ -22,17 +16,15 @@
         [mainWindowController showWindow:self];
         
         NSLog(@"AppDelegate::applicationDidFinishLaunching");
+        [self update_ui];
     }
 }
 
 - (void)update_ui {
-    
-    int circle_num = ofApp::getInstance()->all_containers.note_on_container->circles.size();
-    float fps = ofGetFrameRate();
-    
-    [[mainWindowController generalViewController] update_circle_num:circle_num];
-    [[mainWindowController generalViewController] update_fps:fps];
-    
+
+    if( mainWindowController ){
+        [mainWindowController update_ui];
+    }
 }
 
 @end

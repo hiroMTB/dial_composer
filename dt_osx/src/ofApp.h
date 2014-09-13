@@ -45,6 +45,7 @@ public:
 	void dragEvent( ofDragInfo dragInfo ){};
 	void gotMessage( ofMessage msg );
 	void exit();
+    void update_cocoa_ui();
 
     ofFloatColor bg;
     ofRectangle canvas;

@@ -26,7 +26,6 @@
 - (IBAction)change_bpm:(id)sender;
 - (IBAction)change_bg_color:(id)sender;
 
-- (void)update_fps:(float)fps;
-- (void)update_circle_num:(int)n;
+- (void)update_ui;
 
 @end

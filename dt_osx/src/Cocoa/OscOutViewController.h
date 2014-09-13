@@ -28,4 +28,6 @@
 
 - (void)add_output_message:(std::string) m;
 
+- (void)update_ui;
+
 @end

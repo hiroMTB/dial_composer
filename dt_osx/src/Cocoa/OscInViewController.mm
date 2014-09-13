@@ -51,4 +51,9 @@
     NSString * all = [NSString stringWithFormat:@"%@\n\%@", current, line];
    [input_tx setString:all];
 }
+
+- (void)update_ui{
+    
+}
+
 @end

@@ -7,6 +7,10 @@
 //
 #include "ofMain.h"
 #include "ofApp.h"
+#include "dt_circle_all_containers.h"
+#include "dt_circle_container.h"
+#include "dt_sequence_thread.h"
+
 #import "GeneralViewController.h"
 
 @interface GeneralViewController ()
@@ -43,12 +47,19 @@
     if( app )app->bg.set( r, g, b, 1.0 );
 }
 
-- (void)update_fps:(float)fps {
-    [fps_tx setFloatValue:fps];
-}
-
-- (void)update_circle_num:(int)n {
-    [circle_num_tx setIntValue:n];
+- (void)update_ui{
+    ofApp * app = ofApp::getInstance();
+    
+    if( app ){
+     
+        [bpm_sl setFloatValue:app->sequence_thread.bpm];
+        [bpm_tx setFloatValue:app->sequence_thread.bpm];
+        [circle_num_tx setIntValue: app->all_containers.note_on_container->circles.size()];
+        [fps_tx setIntValue: ofGetFrameRate()];
+        
+        ofFloatColor &bg = app->bg;
+        [bg_color setColor: [NSColor colorWithCalibratedRed: bg.r green:bg.g blue:bg.b alpha:bg.a] ];
+    }
 }
 
 @end

@@ -28,7 +28,7 @@ void dt_ui_home::singleClickStart(int x, int y, int button){
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     dt_circle_base * c = app->all_containers.note_on_container->getTouchedCircle( mpw );
     if( c ){
-        // circle -> toggle mute
+        // circle -> select
         dt_circle_base::selected_circle = c;
     }else{
         bool bShift = ofGetModifierPressed( OF_KEY_SHIFT );
@@ -42,6 +42,7 @@ void dt_ui_home::singleClickStart(int x, int y, int button){
             dt_circle_base::selected_circle = nc;
         }
     }
+    app->update_cocoa_ui();
 }
 
 void dt_ui_home::singleClickEnd( int x, int y, int button ){
@@ -56,6 +57,8 @@ void dt_ui_home::doubleClickStart( int x, int y, int button ){
         // circle -> change mode
         app->mode_manager.go_to_zoom_mode( c );
     }
+    
+    app->update_cocoa_ui();
 }
 
 //void dt_ui_home::longClickStart( int x, int y, int button ){}
@@ -70,7 +73,7 @@ void dt_ui_home::dragStart( int x, int y, int button ){
     drag_start_posw = mpw;
     app->cam.dragStartTrans = app->cam.trans;
     drag_target_circle = app->all_containers.note_on_container->getTouchedCircle( mpw );
-    
+    app->update_cocoa_ui();
 }
 
 void dt_ui_home::dragging( int x, int y, int button ){
@@ -84,9 +87,11 @@ void dt_ui_home::dragging( int x, int y, int button ){
 		dt_circle_base::selected_circle = drag_target_circle;
 	}else{
         // drag camera
-        float sensitivity = 0.6;
+        float sensitivity = 0.7;
         app->cam.trans = app->cam.dragStartTrans - dist*sensitivity;
     }
+    
+    app->update_cocoa_ui();
 }
 
 void dt_ui_home::dragEnd( int x, int y, int button ){

@@ -38,6 +38,8 @@ void dt_ui_zoom::singleClickStart( int x, int y, int button ){
             dt_circle_base::selected_circle = p;
         }
     }
+    
+    app->update_cocoa_ui();
 }
 
 void dt_ui_zoom::singleClickEnd( int x, int y, int button ){
@@ -52,6 +54,8 @@ void dt_ui_zoom::doubleClickStart( int x, int y, int button ){
         // circle -> change mode
         app->mode_manager.go_to_home_mode();
     }
+    
+    app->update_cocoa_ui();
 }
 
 void dt_ui_zoom::doubleClickEnd( int x, int y, int button ){
@@ -68,6 +72,8 @@ void dt_ui_zoom::dragStart( int x, int y, int button ){
     drag_start_posw = mpw;
     app->cam.dragStartTrans = app->cam.trans;
     drag_target_circle = app->all_containers.circle_base_container->getTouchedCircle( mpw );
+    
+    app->update_cocoa_ui();
 }
 
 void dt_ui_zoom::dragging( int x, int y, int button ){

@@ -6,11 +6,12 @@
 //
 //
 #include "ofMain.h"
+
 #import "MainWindowController.h"
 #import "GeneralViewController.h"
 #import "CircleViewController.h"
-#import "oscOutViewController.h"
-#import "oscInViewController.h"
+#import "OscOutViewController.h"
+#import "OscInViewController.h"
 
 @implementation MainWindowController
 
@@ -83,18 +84,20 @@ NSString *const OscInViewTitle		= @"OscInView";
 
     }
     
+    currentViewType = whichViewTag;
+    
     NSView * contentView = [self.myCurrentViewController view];
     [contentView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
     [contentView setFrame:[SidePanel bounds]];
     [SidePanel addSubview:contentView];
 	[self.myCurrentViewController setRepresentedObject:[NSNumber numberWithUnsignedInteger:[[contentView subviews] count]]];
     [self didChangeValueForKey:@"viewController"];
+    [self update_ui];
 }
 
 - (IBAction)SelectSideP1:(id)sender {
     [self deselect_all_side_panel];
     [SidePanelSelector1 setState: NSOnState ];
-    
     [self changeViewController : 1];
 }
 
@@ -132,6 +135,33 @@ NSString *const OscInViewTitle		= @"OscInView";
 
 - (NSViewController *)viewController {
 	return self.myCurrentViewController;
+}
+
+
+- (void)update_ui{
+    if( self.myCurrentViewController ){
+
+        switch ( currentViewType ) {
+            case 1:
+                [self.generalViewController update_ui];
+                break;
+                
+            case 2:
+                [self.circleViewController update_ui];
+                break;
+                
+            case 3:
+                [self.oscOutViewController update_ui];
+                break;
+                
+            case 4:
+                [self.oscInViewController update_ui];
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 @end

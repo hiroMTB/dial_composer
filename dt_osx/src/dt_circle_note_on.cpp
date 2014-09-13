@@ -158,10 +158,10 @@ void dt_circle_note_on::check_connection(){
 }
 
 /*
- *      mode
- *      fired
- *      selected
- *      mute
+ *      mode ( home, zoom )
+ *      fired ( on, off )
+ *      selected (on , off )
+ *      mute ( on, off )
  */
 void dt_circle_note_on::draw(){
     
@@ -175,7 +175,7 @@ void dt_circle_note_on::draw(){
   	
 	float waiting_rate = (float)(dt_config::DT_BEAT_RESOLUTION-wait_step) / (float)dt_config::DT_BEAT_RESOLUTION;
 	float waiting_animation_rate = 0.5 + waiting_rate*0.5;
-    float scale = blink ? waiting_animation_rate+data.fire_rate*0.2 : waiting_animation_rate;
+    float scale = blink ? waiting_animation_rate+data.fire_rate*0.05 : waiting_animation_rate;
 	
     ofPushMatrix();{
         ofTranslate( data.position.x, data.position.y );
@@ -208,7 +208,7 @@ void dt_circle_note_on::draw(){
                     // shape
                     ofPushMatrix();{
                         ofScale( 0.8, 0.8, 1 );
-                        glLineWidth( 3 );
+                        glLineWidth( 2 );
                         if (rshape.getNumVertices() <= 2){
                             rshape.draw( OF_MESH_WIREFRAME );
                         }else{
@@ -240,12 +240,10 @@ void dt_circle_note_on::draw(){
 }
 
 void dt_circle_note_on::fire(){
-	
     ofxOscMessage m;
-    m.setAddress( "1" );
-    m.addIntArg( 255 );
+    m.setAddress( "/" + ofToString(data.ch) );
+    m.addFloatArg( data.output_value );
     app->osc_sender.send_message( m );
-
     data.fire_rate = 1.0;
 }
 
