@@ -34,6 +34,7 @@ NSString *const OscInViewTitle		= @"OscInView";
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    [self changeViewController:1];
 }
 
 - (void)changeViewController:(NSInteger)whichViewTag {

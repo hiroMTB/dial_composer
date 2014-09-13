@@ -14,12 +14,12 @@
 class ofApp;
 class dt_circle_base;
 
-typedef enum DT_UI_ZOOM_OBJ{
+enum dt_ui_zoom_obj{
     DT_UI_ZOOM_OBJ_NONE,
     DT_UI_ZOOM_OBJ_CANVAS,
     DT_UI_ZOOM_OBJ_NOTE_ON,
     DT_UI_ZOOM_OBJ_PARAM
-}dt_ui_zoom_obj;
+};
 
 class dt_ui_zoom : public dt_mouse_gesture {
     

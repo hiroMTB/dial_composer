@@ -14,12 +14,12 @@
 class ofApp;
 class dt_circle_base;
 
-typedef enum DT_UI_HOME_OBJ{
+enum dt_ui_home_obj{
 	DT_UI_HOME_OBJ_NONE,
 	DT_UI_HOME_OBJ_CANVAS,
 	DT_UI_HOME_OBJ_CIRCLE,
 	DT_UI_HOME_OBJ_UI_ELEM
-}dt_ui_home_obj;
+};
 
 class dt_ui_home : public dt_mouse_gesture{
 	

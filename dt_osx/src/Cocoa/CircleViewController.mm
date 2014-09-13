@@ -18,6 +18,9 @@
 @end
 
 @implementation CircleViewController
+@synthesize circle_type_lb;
+@synthesize name_tx;
+@synthesize enable_sw;
 
 @synthesize beat_sl, speed_sl, rotate_sl, shape_sl, edge_sl, side_sl, ch_sl;
 @synthesize beat_tx, speed_tx, rotate_tx, shape_tx, edge_tx, side_tx, ch_tx;
@@ -29,6 +32,18 @@
         // Initialization code here.
     }
     return self;
+}
+
+- (IBAction)change_name:(id)sender {
+    string name = [[sender stringValue] UTF8String];
+    dt_circle_base * c = dt_circle_base::selected_circle;
+    if( c ) c->data.name = name;
+}
+
+- (IBAction)change_enable:(id)sender {
+    int enable = [(NSSegmentedControl*)sender selectedSegment];
+    dt_circle_base * c = dt_circle_base::selected_circle;
+    if( c ) c->data.bMute = !(bool)enable;
 }
 
 - (IBAction)change_beat:(id)sender {
@@ -95,8 +110,11 @@
 - (void)update_ui{
     dt_circle_base * c = dt_circle_base::dt_circle_base::selected_circle;
     if( c ){
+//        [self.circle_type_lb setStringValue:[NSString stringWithUTF8String: c->data.circle_type ];
+        [self.name_tx setStringValue:[NSString stringWithUTF8String: c->data.name.c_str()] ];
         [self.beat_sl setIntValue: c->seq->total_beats];
         [self.beat_tx setIntValue: c->seq->total_beats];
+
     }
 }
 

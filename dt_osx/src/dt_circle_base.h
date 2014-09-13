@@ -12,7 +12,7 @@
 #include "ofMain.h"
 
 
-typedef enum dt_circle_type{
+enum dt_circle_type{
 	DT_CIRCLE_NOTE_ON	= 0,
 	DT_CIRCLE_NOTE_NUM	= 1,
 	DT_CIRCLE_VELOCITY	= 2,

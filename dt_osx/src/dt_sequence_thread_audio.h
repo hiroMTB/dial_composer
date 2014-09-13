@@ -10,6 +10,9 @@
 
 #include "ofMain.h"
 
+#define DT_AUDIO_SAMPLING_RATE 44100
+#define DT_AUDIO_BUFFER_SIZE 128
+
 class ofApp;
 
 class dt_sequence_thread_audio{ // : public ofBaseSoundOutput{

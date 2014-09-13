@@ -11,7 +11,7 @@
 #include "ofMain.h"
 #include "ofxSvg.h"
 
-typedef enum DT_DIAL_UI_MODE{
+enum dt_dial_ui_mode{
 	DT_DIAL_UI_NONE		= -123,
 	DT_DIAL_UI_HOME		= -1,
 	DT_DIAL_UI_SPEED	= 0,
@@ -19,7 +19,7 @@ typedef enum DT_DIAL_UI_MODE{
 	DT_DIAL_UI_ROT		= 2,
 	DT_DIAL_UI_MUTE		= 3,
 	DT_DIAL_UI_PRAM		= 4,
-} dt_dial_ui_mode;
+};
 
 
 class dt_circle_base;

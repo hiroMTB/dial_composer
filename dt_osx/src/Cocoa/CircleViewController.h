@@ -12,10 +12,16 @@
     NSSlider    *beat_sl, *speed_sl, *rotate_sl, *shape_sl, *edge_sl, *side_sl, *ch_sl;
     NSTextField *beat_tx, *speed_tx, *rotate_tx, *shape_tx, *edge_tx, *side_tx, *ch_tx;
     NSColorWell *color;
+    NSTextField *name_tx;
+    NSSegmentedControl *enable_sw;
+    NSTextField *circle_type_lb;
 }
 
 - (void)update_ui;
 
+@property (assign) IBOutlet NSTextField *circle_type_lb;
+@property (assign) IBOutlet NSTextField *name_tx;
+@property (assign) IBOutlet NSSegmentedControl *enable_sw;
 @property (assign) IBOutlet NSSlider *beat_sl;
 @property (assign) IBOutlet NSSlider *speed_sl;
 @property (assign) IBOutlet NSSlider *rotate_sl;
@@ -34,6 +40,8 @@
 
 @property (assign) IBOutlet NSColorWell *color;
 
+- (IBAction)change_name:(id)sender;
+- (IBAction)change_enable:(id)sender;
 - (IBAction)change_beat:(id)sender;
 - (IBAction)change_speed:(id)sender;
 - (IBAction)change_rotate:(id)sender;
