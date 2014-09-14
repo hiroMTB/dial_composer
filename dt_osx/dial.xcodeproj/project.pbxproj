@@ -43,7 +43,6 @@
 		4D75A7B519B6C10C005CDA6F /* libboost_signals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D75A69A19B6C10A005CDA6F /* libboost_signals.a */; };
 		4D75A7B619B6C10C005CDA6F /* libboost_system.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D75A69B19B6C10A005CDA6F /* libboost_system.a */; };
 		4D75A7B719B6C10C005CDA6F /* libboost_thread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D75A69C19B6C10A005CDA6F /* libboost_thread.a */; };
-		4D75A7BC19B6C217005CDA6F /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D75A7BB19B6C217005CDA6F /* QuickTime.framework */; };
 		4D82B81C19B66AF500BA0CEF /* dt_osc_recorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B81A19B66AF500BA0CEF /* dt_osc_recorder.cpp */; };
 		4D82B82619B67D8800BA0CEF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82319B67D8800BA0CEF /* AppDelegate.mm */; };
 		4D82B82719B67D8800BA0CEF /* dt_GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D82B82519B67D8800BA0CEF /* dt_GLView.mm */; };
@@ -84,7 +83,6 @@
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
 		E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */; };
-		E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E715D3B6510020DFD4 /* QTKit.framework */; };
 		E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F985F515E0DE99003869B5 /* Accelerate.framework */; };
 		F6075E0D194DE94E00F8F7E0 /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6075DCD194DD26F00F8F7E0 /* RtMidi.cpp */; };
 		F6075E0E194DE94E00F8F7E0 /* ofxRtMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6075DDA194DD26F00F8F7E0 /* ofxRtMidiIn.cpp */; };
@@ -10136,7 +10134,6 @@
 		4D75A69D19B6C10A005CDA6F /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		4D75A69E19B6C10B005CDA6F /* ofxaddons_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ofxaddons_thumbnail.png; sourceTree = "<group>"; };
 		4D75A69F19B6C10B005CDA6F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		4D75A7BB19B6C217005CDA6F /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = System/Library/Frameworks/QuickTime.framework; sourceTree = SDKROOT; };
 		4D82B81A19B66AF500BA0CEF /* dt_osc_recorder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_osc_recorder.cpp; sourceTree = "<group>"; };
 		4D82B81B19B66AF500BA0CEF /* dt_osc_recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_osc_recorder.h; sourceTree = "<group>"; };
 		4D82B82219B67D8800BA0CEF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -10574,12 +10571,10 @@
 			files = (
 				F6B791361947ABA600B0741D /* libc++.dylib in Frameworks */,
 				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
-				4D75A7BC19B6C217005CDA6F /* QuickTime.framework in Frameworks */,
 				4D7525DB19B6AC1B005CDA6F /* QuartzCore.framework in Frameworks */,
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				F6075E17194DEA9600F8F7E0 /* CoreMIDI.framework in Frameworks */,
 				E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */,
-				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
@@ -27621,6 +27616,8 @@
 		BBAB23C913894ECA00AA2426 /* system frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D7525DA19B6AC1B005CDA6F /* QuartzCore.framework */,
+				F6075E16194DEA9600F8F7E0 /* CoreMIDI.framework */,
 				E7F985F515E0DE99003869B5 /* Accelerate.framework */,
 				E4C2424410CC5A17004149E2 /* AppKit.framework */,
 				E4C2424510CC5A17004149E2 /* Cocoa.framework */,
@@ -27711,9 +27708,6 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
-				4D75A7BB19B6C217005CDA6F /* QuickTime.framework */,
-				4D7525DA19B6AC1B005CDA6F /* QuartzCore.framework */,
-				F6075E16194DEA9600F8F7E0 /* CoreMIDI.framework */,
 				F6B791351947ABA600B0741D /* libc++.dylib */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
