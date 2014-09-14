@@ -21,7 +21,6 @@ public:
 	 *
 	 */
 	dt_circle_drawer(){
-		setup( 60 );
 	}
 
 	~dt_circle_drawer(){
@@ -34,7 +33,7 @@ public:
         circle_f.clear();
     }
     
-	void setup( int _resolution ){
+	void initialize( int _resolution ){
 		resolution = _resolution;
 		clear();
 		
@@ -54,6 +53,8 @@ public:
             circle_f.addVertex( ofVec2f(x, y) );
             circle_f.addIndex( i );
 		}
+        
+        bInitialized = true;
 	};
 	
 	void draw( float radius, ofPolyRenderMode renderMode=OF_MESH_POINTS ){
@@ -75,6 +76,7 @@ public:
 		glPopMatrix();
 	}
 	
+    bool bInitialized;
 	int resolution;
 	ofVboMesh circle_p;
 	ofVboMesh circle_l;

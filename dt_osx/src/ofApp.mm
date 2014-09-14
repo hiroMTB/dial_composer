@@ -53,7 +53,7 @@ void ofApp::setupVisual(){
     ofDisableArbTex();
     noise.loadImage("img/noise2.png");
     noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
-	bg.set( 0.5 );
+	bg.set( 0.1 );
 }
 
 void ofApp::setupModule(){
@@ -77,7 +77,7 @@ void ofApp::update(){
 
 void ofApp::draw(){
     ofBackground( bg );
-    ofSetColor( 255, 170 );
+    ofSetColor( 255, 30 );
 
     float w = ofGetWidth();
     float h = ofGetHeight();

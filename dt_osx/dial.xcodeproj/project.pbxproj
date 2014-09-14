@@ -24,6 +24,7 @@
 		4D1DCF0019BBFF60003F8AF0 /* OscInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DCEFD19BBFF60003F8AF0 /* OscInView.xib */; };
 		4D1DCF0119BBFF60003F8AF0 /* OscInViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCEFF19BBFF60003F8AF0 /* OscInViewController.mm */; };
 		4D380E7919B7CE650056783F /* OscOutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D380E7819B7CE650056783F /* OscOutView.xib */; };
+		4D5A530E19C5019000039AF9 /* ofx2DCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A530C19C5019000039AF9 /* ofx2DCamera.cpp */; };
 		4D7376AB19B7D440000AC010 /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7376AA19B7D440000AC010 /* CircleView.xib */; };
 		4D7376AD19B7D460000AC010 /* GeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7376AC19B7D460000AC010 /* GeneralView.xib */; };
 		4D7376B019B7DFE4000AC010 /* OscOutViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D7376AF19B7DFE4000AC010 /* OscOutViewController.mm */; };
@@ -49,7 +50,6 @@
 		4D84E8E719C38BA100D54F05 /* ofxModifierKeys_impl_linux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D84E8DA19C38BA100D54F05 /* ofxModifierKeys_impl_linux.cpp */; };
 		4D84E8E819C38BA100D54F05 /* ofxModifierKeys_impl_mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D84E8DB19C38BA100D54F05 /* ofxModifierKeys_impl_mac.mm */; };
 		4D84E8E919C38BA100D54F05 /* ofxModifierKeys_impl_win.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D84E8DC19C38BA100D54F05 /* ofxModifierKeys_impl_win.cpp */; };
-		4D9CC35219BF667E00E75AD2 /* ofx2DCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D9CC35019BF667E00E75AD2 /* ofx2DCamera.cpp */; };
 		4DAFA43319BC931C008E9A14 /* ofxCocoaGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DAFA43219BC931C008E9A14 /* ofxCocoaGLView.mm */; };
 		4DC0481D19C343D500346B96 /* dt_ui_zoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DC0481B19C343D500346B96 /* dt_ui_zoom.cpp */; };
 		4DC0482019C345C900346B96 /* dt_mouse_gesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DC0481E19C345C900346B96 /* dt_mouse_gesture.cpp */; };
@@ -188,6 +188,8 @@
 		4D1DCEFE19BBFF60003F8AF0 /* OscInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscInViewController.h; sourceTree = "<group>"; };
 		4D1DCEFF19BBFF60003F8AF0 /* OscInViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OscInViewController.mm; sourceTree = "<group>"; };
 		4D380E7819B7CE650056783F /* OscOutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OscOutView.xib; sourceTree = "<group>"; };
+		4D5A530C19C5019000039AF9 /* ofx2DCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofx2DCamera.cpp; sourceTree = "<group>"; };
+		4D5A530D19C5019000039AF9 /* ofx2DCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofx2DCamera.h; sourceTree = "<group>"; };
 		4D7376AA19B7D440000AC010 /* CircleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
 		4D7376AC19B7D460000AC010 /* GeneralView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralView.xib; sourceTree = "<group>"; };
 		4D7376AE19B7DFE4000AC010 /* OscOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscOutViewController.h; sourceTree = "<group>"; };
@@ -10145,8 +10147,6 @@
 		4D84E8DA19C38BA100D54F05 /* ofxModifierKeys_impl_linux.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxModifierKeys_impl_linux.cpp; sourceTree = "<group>"; };
 		4D84E8DB19C38BA100D54F05 /* ofxModifierKeys_impl_mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxModifierKeys_impl_mac.mm; sourceTree = "<group>"; };
 		4D84E8DC19C38BA100D54F05 /* ofxModifierKeys_impl_win.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxModifierKeys_impl_win.cpp; sourceTree = "<group>"; };
-		4D9CC35019BF667E00E75AD2 /* ofx2DCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofx2DCamera.cpp; sourceTree = "<group>"; };
-		4D9CC35119BF667E00E75AD2 /* ofx2DCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofx2DCamera.h; sourceTree = "<group>"; };
 		4DAFA43119BC931C008E9A14 /* ofxCocoaGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCocoaGLView.h; path = Cocoa/ofxCocoaGLView.h; sourceTree = "<group>"; };
 		4DAFA43219BC931C008E9A14 /* ofxCocoaGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ofxCocoaGLView.mm; path = Cocoa/ofxCocoaGLView.mm; sourceTree = "<group>"; };
 		4DC0481B19C343D500346B96 /* dt_ui_zoom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_ui_zoom.cpp; sourceTree = "<group>"; };
@@ -27535,10 +27535,10 @@
 		4D9CC34F19BF664900E75AD2 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4D5A530C19C5019000039AF9 /* ofx2DCamera.cpp */,
+				4D5A530D19C5019000039AF9 /* ofx2DCamera.h */,
 				F66E1D71195E813700CEE795 /* dt_linear_drawer.h */,
 				F66E1D70195E813700CEE795 /* dt_linear_drawer.cpp */,
-				4D9CC35019BF667E00E75AD2 /* ofx2DCamera.cpp */,
-				4D9CC35119BF667E00E75AD2 /* ofx2DCamera.h */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -28606,9 +28606,9 @@
 				F6EE1B53196AA7A600A77A20 /* ofxSliderGroup.cpp in Sources */,
 				4DAFA43319BC931C008E9A14 /* ofxCocoaGLView.mm in Sources */,
 				F6AD80B319C2472E00D210F5 /* ofxTransitions.cpp in Sources */,
+				4D5A530E19C5019000039AF9 /* ofx2DCamera.cpp in Sources */,
 				4D84E8E719C38BA100D54F05 /* ofxModifierKeys_impl_linux.cpp in Sources */,
 				F6EE1B54196AA7A600A77A20 /* ofxToggle.cpp in Sources */,
-				4D9CC35219BF667E00E75AD2 /* ofx2DCamera.cpp in Sources */,
 				F6779838194F9F82005DFF45 /* juce_audio_basics.mm in Sources */,
 				F6779837194F9F1F005DFF45 /* juce_core.mm in Sources */,
 				F6075E0D194DE94E00F8F7E0 /* RtMidi.cpp in Sources */,

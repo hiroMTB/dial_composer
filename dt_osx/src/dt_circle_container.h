@@ -57,7 +57,13 @@ public:
 	T getTouchedCircle( const ofVec2f &t ){
 		for( int i=0; i<circles.size(); i++ ){
 			T c = circles[ i ];
-			ofVec2f& pos = c->data.position;
+			ofVec2f pos = c->data.position;
+
+            // for zoom view mouse picking
+            if( c->parent ){
+                pos += c->parent->data.position;
+            }
+            
 			float dis = pos.distance( t );
 			if( dis <= c->data.rev_radius ){
 				return c;

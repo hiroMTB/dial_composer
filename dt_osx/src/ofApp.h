@@ -7,7 +7,6 @@
 #include "dt_midi_sender.h"
 #include "dt_font_manager.h"
 #include "dt_rhythm_lib.h"
-#include "dt_circle_drawer.h"
 #include "dt_linear_drawer.h"
 #include "dt_sequence_thread.h"
 #include "dt_circle_all_containers.h"
@@ -56,7 +55,6 @@ public:
 	dt_midi_writer		midi_writer;
 	dt_font_manager		font_manager;
 	dt_rhythm_lib		rhythm_lib;
-	dt_circle_drawer	circle_drawer;
 	dt_linear_drawer	linear_drawer;
 	dt_sequence_thread	sequence_thread;
 	dt_config			config;

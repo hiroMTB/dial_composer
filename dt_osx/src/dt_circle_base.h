@@ -104,7 +104,7 @@ public:
     virtual void step();
 	virtual void fire(){};
 	virtual void check_sequencer();
-    virtual void make_vbo(){};
+    void make_vbo();
     
 	void change_beat( int beat );
     void change_speed( int speed );
@@ -132,5 +132,10 @@ public:
     
     vector<dt_circle_base*> input_circles;
 	vector<dt_circle_base*> output_circles;
+    
+    ofVboMesh rshape;
+	ofVboMesh rguid;
+    
+    dt_circle_base * parent;
 };
 

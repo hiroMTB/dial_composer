@@ -51,7 +51,10 @@ output_value( 0 )
  */
 dt_circle_base * dt_circle_base::selected_circle = NULL;
 
-dt_circle_base::dt_circle_base(){
+dt_circle_base::dt_circle_base()
+:
+parent( NULL )
+{
 	app = ofApp::getInstance();
 }
 
@@ -129,23 +132,85 @@ void dt_circle_base::change_circle_color( float r, float g, float b, float a ){
 
 void dt_circle_base::setup_text( string initial ){
 	
-    if( data.rev_radius<15 ){
-        font = &app->font_manager.font_S;
-    }else{
-        font = &app->font_manager.font_M;
-    }
-	
+    font = &app->font_manager.font_M;
     ofRectangle bb = font->getStringBoundingBox( initial, 0,0 );
     float font_w = bb.width;
     float font_h = bb.height;
     float target_w = data.rev_radius;
     float scale = target_w/font_w;
-    
-    text_mesh = font->getStringMesh( initial, -font_w/2-1, font_h/2 );
+    text_pos.set( -font_w/2-1, font_h/2 );
+    text_mesh = font->getStringMesh( initial, -font_w/2-1, font_h/2 );  // this seems just the quad
 }
 
 void dt_circle_base::draw_initial(){
-	font->getFontTexture().bind();
+/*
+ 
+    // bad text drawing quality
+    //
+	float scale = 1.0 / app->font_manager.dpi_rate;
+    font->getFontTexture().bind();
+    ofPushMatrix();
+    ofScale( scale, scale );
     text_mesh.draw();
+    ofPopMatrix();
     font->getFontTexture().unbind();
+ */
+
+    float scale = 1.0 / app->font_manager.dpi_rate;
+    ofPushMatrix();
+    ofScale( scale, scale );
+    ofFill();
+    font->drawStringAsShapes( initial, text_pos.x, text_pos.y );
+    ofPopMatrix();
+}
+
+void dt_circle_base::make_vbo(){
+    
+    rguid.clear();
+    rshape.clear();
+    
+	int beat_num = seq->total_beats;
+	float start_angle = 0;
+    float h = data.circle_color.getHue();
+    float s = data.circle_color.getSaturation();
+    float b = data.circle_color.getBrightness();
+    
+    int vertIndex = 0;
+    
+	for( int i=0; i<beat_num; i++ ){
+        bool on = seq->getDataFromBeat( i );
+        float angle = start_angle + ( i * data.rev_speed * dt_config::DT_BEAT_RESOLUTION );
+        float cos = cosf( angle*DEG_TO_RAD );
+        float sin = sinf( angle*DEG_TO_RAD );
+        float r = 100.0;
+        float x = r * cos;
+        float y = r * sin;
+		if( on ){
+            ofFloatColor c = data.circle_color;
+            c.setHsb( h + i*0.005, s+ofRandom(-0.01, 0.01), b );
+            rshape.addVertex( ofVec2f(x, y) );
+            rshape.addIndex( vertIndex++ );
+            rshape.addColor( c );
+		}
+        
+        // guide shape
+        rguid.addVertex( ofVec2f(x, y) );
+        rguid.addIndex( i );
+        if( on ){
+            rguid.addColor( data.circle_color );
+        }else{
+            rguid.addColor( ofFloatColor(0.7, 0.75) );
+        }
+	}
+    
+    // setup Mode and Usage
+    if( vertIndex <=2 ){
+        rshape.setMode(OF_PRIMITIVE_LINES );
+    }else{
+        rshape.setMode( OF_PRIMITIVE_TRIANGLE_FAN );
+    }
+    rguid.setMode( OF_PRIMITIVE_POINTS);
+    
+    rshape.setUsage( GL_DYNAMIC_DRAW );
+    rguid.setUsage( GL_DYNAMIC_DRAW );    
 }

@@ -10,6 +10,7 @@
 
 #include "ofMain.h"
 #include "dt_circle_base.h"
+#include "dt_circle_drawer.h"
 
 class dt_circle_param : public dt_circle_base{
 
@@ -19,12 +20,10 @@ public:
 	
 	virtual void setup(int beat_num);
 	virtual void fire();
-	virtual void make_vbo();
 
     void change_param_type( dt_circle_type t );
 	void update();
 	void draw();
-	void draw_vbo();
     
 	static ofColor noteNum_color;
 	static ofColor velocity_color;
@@ -40,7 +39,6 @@ public:
 	float param_min;
 	float param_max;
 
-	ofVboMesh rshape;
-    
-    dt_circle_base * parent;
+    static dt_circle_drawer	circle_drawer;
+
 };

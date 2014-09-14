@@ -22,15 +22,19 @@ ofColor dt_circle_param::cc2_color =		ofColor( 160, 163,  79 );
 ofColor dt_circle_param::cc3_color =		ofColor( 201, 204,  98 );
 ofColor dt_circle_param::cc4_color =		ofColor( 241, 244,  138 );
 
+dt_circle_drawer dt_circle_param::circle_drawer;
+
 dt_circle_param::dt_circle_param()
 :
 param_on( ofRandom(0.2, 0.3) ),
 param_off( ofRandom(0.001, 0.1) ),
 param_max( 1 ),
-param_min( 0 ),
-parent( NULL )
+param_min( 0 )
 {
 	initial = "";
+    if( !circle_drawer.bInitialized ){
+        circle_drawer.initialize( 30 );
+    }
 }
 
 dt_circle_param::~dt_circle_param(){
@@ -54,7 +58,12 @@ void dt_circle_param::setup( int beat_num ){
 void dt_circle_param::update(){
 	data.fire_rate *= 0.8;
     
-	data.indi_position = calc_indi_position() + parent->data.position;
+    data.indi_position = calc_indi_position();
+
+	if( parent ){
+        data.indi_position +=  parent->data.position;
+    }
+    
 	ofApp::getInstance()->all_containers.add_indicator( data.indi_position, data.circle_color );
 
     // size update
@@ -66,66 +75,60 @@ void dt_circle_param::update(){
 
 void dt_circle_param::draw(){
 	
-	ofPushMatrix();
-	ofTranslate( data.position.x, data.position.y );
-		
-	bool fired = data.fire_rate>0.5;
+	bool blink = data.fire_rate > 0.3;
 	bool selected = selected_circle == this;
-	
-    {
-        // Circle
-        ofSetColor( data.circle_color - data.fire_rate*0.2 );
-        ofNoFill();
-        ofSetLineWidth( 2 );
-        glPointSize( 1 );
-        app->circle_drawer.draw( data.rev_radius*1.2 );
-    }
+    float scale = blink ? 1.0+data.fire_rate*0.05 : 1.0;
 
-    {
-        // shape
-        draw_vbo();
-    }
-    
-    ofSetColor( 0 );
-	draw_initial();
+	ofPushMatrix();{
+        ofTranslate( data.position.x, data.position.y );
+        ofPushMatrix();{
+            ofScale( scale, scale );
+        
+            // circle
+            if( selected ){
+                glPointSize( 4 );
+                ofSetColor( data.circle_color );
+            }else{
+                glPointSize( 2 );
+                float b = app->bg.getBrightness() * 255.0;
+                ofSetColor( 255.0-b, 220 );
+            }
+            circle_drawer.draw( data.rev_radius * 1.26, OF_MESH_POINTS );
+            
+            // shape
+            ofPushMatrix();{
+                float shape_scale = data.rev_radius * 0.01;
+                ofScale( shape_scale, shape_scale, 1 );
+                
+                // guid
+                glPointSize( 3 );
+                rguid.draw( OF_MESH_POINTS );
+                
+                // shape
+                ofPushMatrix();{
+                    ofScale( 0.8, 0.8, 1 );
+                    glLineWidth( 2 );
+                    if (rshape.getNumVertices() <= 2){
+                        rshape.draw( OF_MESH_WIREFRAME );
+                    }else{
+                        if( !data.bMute ){
+                            rshape.setMode( OF_PRIMITIVE_TRIANGLE_FAN );
+                            rshape.draw( OF_MESH_FILL );
+                        }else{
+                            rshape.setMode( OF_PRIMITIVE_LINE_LOOP );
+                            rshape.draw( OF_MESH_WIREFRAME );
+                        }
+                    }
+                }ofPopMatrix();
+                
+            }ofPopMatrix();
+            
+        }ofPopMatrix();
+        
+        ofSetColor( data.circle_color*0.7 );
+        draw_initial();
 	
-//	if( data.bShowUI )
-//		ui->draw();
-	
-	ofPopMatrix();
-}
-
-void dt_circle_param::draw_vbo(){
-	glLineWidth( 2 );
-	rshape.draw( OF_MESH_FILL );
-}
-
-void dt_circle_param::make_vbo(){
-	rshape.clear();
-	
-	int beat_num = seq->total_beats;
-	int beat_res = dt_config::DT_BEAT_RESOLUTION;
-	float start_angle = 0;
-	float r = data.rev_radius;
-	float length = 3;
-	
-    int vertIndex = 0;
-	for( int i=0; i<beat_num; i++ ){
-		bool on = seq->getDataFromBeat( i );
-		if( !on )
-			continue;
-		
-		float angle = start_angle + ( i*data.rev_speed * beat_res );
-		float sx = r * cosf( angle*DEG_TO_RAD );
-		float sy = r * sinf( angle*DEG_TO_RAD );
-			
-		rshape.addVertex( ofVec2f(sx,sy) );
-		rshape.addIndex( vertIndex++ );
-        rshape.addColor( data.circle_color );
-	}
-	
-    rshape.setUsage( GL_DYNAMIC_DRAW );
-    rshape.setMode( OF_PRIMITIVE_TRIANGLE_FAN );
+	}ofPopMatrix();
 }
 
 void dt_circle_param::fire(){
@@ -139,35 +142,35 @@ void dt_circle_param::change_param_type( dt_circle_type type ){
     switch ( type ) {
         case DT_CIRCLE_NOTE_NUM:
             change_circle_color( noteNum_color );
-            initial = "Note";
+            initial = "N";
             break;
         case DT_CIRCLE_VELOCITY:
             change_circle_color( velocity_color );
-            initial = "Vel";
+            initial = "V";
             break;
         case DT_CIRCLE_DURATION:
             change_circle_color( duration_color );
-            initial = "Dur";
+            initial = "D";
             break;
         case DT_CIRCLE_PAN:
             change_circle_color( pan_color );
-            initial = "Pan";
+            initial = "P";
             break;
         case DT_CIRCLE_CC1:
             change_circle_color( cc1_color );
-            initial = "CC1";
+            initial = "C1";
             break;
         case DT_CIRCLE_CC2:
             change_circle_color( cc2_color );
-            initial = "CC2";
+            initial = "C2";
             break;
         case DT_CIRCLE_CC3:
             change_circle_color( cc3_color );
-            initial = "CC3";
+            initial = "C3";
             break;
         case DT_CIRCLE_CC4:
             change_circle_color( cc4_color );
-            initial = "CC4";
+            initial = "C4";
             break;
             
         default:

@@ -12,6 +12,7 @@
 #include "dt_circle_base.h"
 #include "dt_rhythm_lib.h"
 #include "dt_circle_param.h"
+#include "dt_circle_drawer.h"
 
 struct dt_param_state{
 public:
@@ -37,11 +38,8 @@ public:
 	virtual void fire();
 
 	void check_connection();
-	virtual void make_vbo();
 	
-	ofVboMesh rshape;
-    ofVboMesh rguid;
-
     dt_param_state p_state;
+	static dt_circle_drawer	circle_drawer;
 
 };
