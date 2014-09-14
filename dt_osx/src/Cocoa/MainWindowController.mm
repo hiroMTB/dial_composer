@@ -36,6 +36,12 @@ NSString *const OscInViewTitle		= @"OscInView";
 - (void)windowDidLoad {
     [super windowDidLoad];
     [self changeViewController:1];
+	
+	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+	[nc addObserver:self
+		   selector:@selector(windowDidChangeBackingProperties:)
+			   name:NSWindowDidChangeBackingPropertiesNotification
+			 object:self.window];
 }
 
 - (void)changeViewController:(NSInteger)whichViewTag {
@@ -136,6 +142,34 @@ NSString *const OscInViewTitle		= @"OscInView";
 - (NSViewController *)viewController {
 	return self.myCurrentViewController;
 }
+
+
+/*
+ *		retina - nonretina change notification
+ *		https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/CapturingScreenContents/CapturingScreenContents.html
+ */
+- (void)windowDidChangeBackingProperties:(NSNotification *)notification {
+	
+    NSWindow *theWindow = (NSWindow *)[notification object];
+    NSLog(@"windowDidChangeBackingProperties: window=%@", theWindow);
+	
+    CGFloat newBackingScaleFactor = [theWindow backingScaleFactor];
+    CGFloat oldBackingScaleFactor = [[[notification userInfo]
+									  objectForKey:@"NSBackingPropertyOldScaleFactorKey"]
+									 doubleValue];
+    if (newBackingScaleFactor != oldBackingScaleFactor) {
+        NSLog(@"\tThe backing scale factor changed from %.1f -> %.1f",
+			  oldBackingScaleFactor, newBackingScaleFactor);
+    }
+	
+    NSColorSpace *newColorSpace = [theWindow colorSpace];
+    NSColorSpace *oldColorSpace = [[notification userInfo]
+								   objectForKey:@"NSBackingPropertyOldColorSpaceKey"];
+    if (![newColorSpace isEqual:oldColorSpace]) {
+        NSLog(@"\tThe color space changed from %@ -> %@", oldColorSpace, newColorSpace);
+    }
+}
+
 
 
 - (void)update_ui{
