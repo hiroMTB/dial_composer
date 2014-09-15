@@ -512,7 +512,10 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
 - (NSPoint)getCurrentMousePos {
 	NSPoint p = [self.window convertScreenToBase:[NSEvent mouseLocation]];
 	p = [self convertPoint:p fromView:nil];
-	p.y = self.bounds.size.height - p.y;
+	p = [self convertPointToBacking:p];
+
+	NSRect backingBounds = [self convertRectToBacking:self.bounds];
+	p.y = backingBounds.size.height - p.y;
     
 	mouseX = p.x;
 	mouseY = p.y;

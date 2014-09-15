@@ -96,7 +96,7 @@ void dt_circle_note_on::setup( int beat_num ){
         p->setup( ofRandom(4, 12) );
         p->change_param_type( (dt_circle_type)(i+1) );
         p->change_shape( ofRandom(10, 100) );
-        float r = 150;
+        float r = app->config.DT_SIZE_BASE * 1.8;
         float rad = -(float)i*30.0 * DEG_TO_RAD;
         float x = r * cos( rad );
         float y = r * sin( rad );

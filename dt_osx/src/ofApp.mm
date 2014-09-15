@@ -26,7 +26,10 @@ ofApp * ofApp::init(){
 	return instance;
 }
 
-ofApp::ofApp(){}
+ofApp::ofApp()
+:
+backingScale( 1 )
+{}
 
 void ofApp::windowResized( int w, int h ){
 	canvas.setX( 80 );
@@ -34,7 +37,8 @@ void ofApp::windowResized( int w, int h ){
 	canvas.width = w-100;
 	canvas.height = h-50;
 	config.reset_position();
-    dt_config::DT_SIZE_BASE = max( w, h )/16.0;
+	backingScale = [[NSScreen mainScreen] backingScaleFactor];
+    dt_config::DT_SIZE_BASE = max( w, h )/16.0 * backingScale;
     cam.reset();
 }
 
@@ -114,7 +118,6 @@ void ofApp::draw(){
 
 }
 
-
 void ofApp::mouseMoved( int x, int y, int button ){
     mode_manager.current_ui->mouseMoved( x, y, button );
 }
@@ -187,7 +190,6 @@ void ofApp::exit(){
 	sequence_thread.stop();
 }
 
-
 void ofApp::update_cocoa_ui(){
     // update Cocoa UI
     bool bToolbar_open = true;
@@ -196,3 +198,9 @@ void ofApp::update_cocoa_ui(){
         if( d ) [d update_ui];
     }
 }
+
+void ofApp::backingScaleChanged( float newb, float oldb ){
+	backingScale = newb;
+	config.DT_SIZE_BASE *= newb / oldb;
+}
+
