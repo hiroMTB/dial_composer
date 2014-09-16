@@ -17,11 +17,9 @@
 struct dt_param_state{
 public:
     dt_param_state();
-    
-    bool bNote, bVel, bDur, bPan, bCc1, bCc2, bCc3, bCc4;
-    float note, vel, dur, pan, cc1, cc2, cc3, cc4;
-
     void reset();
+    
+    float note, vel, dur, pan, cc1, cc2, cc3, cc4;
 };
 
 

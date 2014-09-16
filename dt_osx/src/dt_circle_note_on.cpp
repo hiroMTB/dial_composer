@@ -21,7 +21,6 @@ dt_param_state::dt_param_state(){
 }
 
 void dt_param_state::reset(){
-    bNote = bVel = bDur = bPan = bCc1 = bCc2 = bCc3 = bCc4 = false;
     note = vel = dur = pan = cc1 = cc2 = cc3 = cc4 = 0.0;
 }
 
