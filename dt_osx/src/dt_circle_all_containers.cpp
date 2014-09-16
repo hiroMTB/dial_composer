@@ -32,7 +32,7 @@ void dt_circle_all_containers::setup(){
 }
 
 void dt_circle_all_containers::update(){
-    param_container->draw();
+    param_container->update();
 	note_on_container->update();
 	note_on_container->process_collision();
 }

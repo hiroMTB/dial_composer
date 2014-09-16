@@ -98,11 +98,12 @@ class dt_circle_base{
 public:
 
     dt_circle_base();
+    ~dt_circle_base();
 	virtual void setup( int beat=4 ) = 0;
 	virtual void update() = 0;
 	virtual void draw() = 0;
     virtual void step();
-	virtual void fire(){};
+	virtual void on_process(){};
 	virtual void check_sequencer();
     void make_vbo();
     

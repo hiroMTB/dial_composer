@@ -14,15 +14,6 @@
 #include "dt_circle_param.h"
 #include "dt_circle_drawer.h"
 
-struct dt_param_state{
-public:
-    dt_param_state();
-    void reset();
-    
-    float note, vel, dur, pan, cc1, cc2, cc3, cc4;
-};
-
-
 class dt_circle_note_on : public dt_circle_base{
 
 public:
@@ -33,11 +24,11 @@ public:
 	virtual void setup( int beat_num );
 	virtual void update();
 	virtual void draw();
-	virtual void fire();
+	virtual void on_process();
 
 	void check_connection();
 	
-    dt_param_state p_state;
+    std::map<dt_circle_type, float> prms;
 	static dt_circle_drawer	circle_drawer;
 
 };

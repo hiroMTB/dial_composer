@@ -95,9 +95,6 @@ public:
 		int connection_num_input = 0;
 		int connection_num_output = 0;
 
-		if( bInput )
-			c1->p_state.reset();
-		
 		for( int i=0; i<circles.size(); i++ ){
 			
 			if(  bInput && connection_num_input > dt_config::DT_CONNECTION_NUM_INPUT_MAX ) break;

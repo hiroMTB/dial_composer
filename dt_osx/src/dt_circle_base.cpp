@@ -53,9 +53,19 @@ dt_circle_base * dt_circle_base::selected_circle = NULL;
 
 dt_circle_base::dt_circle_base()
 :
-parent( NULL )
+parent( NULL ),
+wait_step( 0 )
 {
 	app = ofApp::getInstance();
+}
+
+
+dt_circle_base::~dt_circle_base(){
+    for( int i=0; i<input_circles.size(); i++ ){
+        if( input_circles[i] )
+            delete input_circles[i];
+    }
+    input_circles.clear();
 }
 
 void dt_circle_base::step(){
@@ -84,7 +94,7 @@ void dt_circle_base::check_sequencer(){
 		if( is_on_Beat ){
 			if( seq->getDataNow() ){
 				data.bFired = true;
-				fire();
+				on_process();
 			}else{
 				data.bFired = false;
 			}

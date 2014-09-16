@@ -19,7 +19,7 @@ public:
 	~dt_circle_param();
 	
 	virtual void setup(int beat_num);
-	virtual void fire();
+	virtual void on_process();
 
     void change_param_type( dt_circle_type t );
 	void update();
@@ -34,11 +34,6 @@ public:
 	static ofColor cc3_color;
 	static ofColor cc4_color;
 	
-    float param_on;
-	float param_off;
-	float param_min;
-	float param_max;
-
     static dt_circle_drawer	circle_drawer;
 
 };

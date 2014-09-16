@@ -12,6 +12,7 @@
 #include "dt_sequence_thread.h"
 #include "dt_font_manager.h"
 #include "dt_circle_drawer.h"
+#include "dt_circle_note_on.h"
 
 ofColor dt_circle_param::noteNum_color =	ofColor( 184,  88,  32 );
 ofColor dt_circle_param::velocity_color =	ofColor( 247, 106, 129 );
@@ -24,13 +25,7 @@ ofColor dt_circle_param::cc4_color =		ofColor( 241, 244,  138 );
 
 dt_circle_drawer dt_circle_param::circle_drawer;
 
-dt_circle_param::dt_circle_param()
-:
-param_on( ofRandom(0.2, 0.3) ),
-param_off( ofRandom(0.001, 0.1) ),
-param_max( 1 ),
-param_min( 0 )
-{
+dt_circle_param::dt_circle_param(){
 	initial = "";
     if( !circle_drawer.bInitialized ){
         circle_drawer.initialize( 30 );
@@ -138,8 +133,14 @@ void dt_circle_param::draw(){
 	}ofPopMatrix();
 }
 
-void dt_circle_param::fire(){
+void dt_circle_param::on_process(){
 	data.fire_rate = 1.0;
+    
+    // send value to note on object
+    if( parent ){
+        dt_circle_note_on * n = static_cast<dt_circle_note_on*>( parent );
+        n->prms[ data.circle_type ] = data.output_value;
+    }
 }
 
 void dt_circle_param::change_param_type( dt_circle_type type ){

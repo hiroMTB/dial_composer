@@ -16,14 +16,6 @@
 #include "dt_circle_drawer.h"
 #include "dt_dial_ui.h"
 
-dt_param_state::dt_param_state(){
-    reset();
-}
-
-void dt_param_state::reset(){
-    note = vel = dur = pan = cc1 = cc2 = cc3 = cc4 = 0.0;
-}
-
 /*
  *
  *      class dt_circle_note_on
@@ -42,6 +34,11 @@ dt_circle_note_on::dt_circle_note_on(){
     if( !circle_drawer.bInitialized ){
         circle_drawer.initialize( 60 );
     }
+    
+    for( int i=0; i<8; i++ ){
+        pair<dt_circle_type, float> p( (dt_circle_type)(i+1), 0.0 );
+        prms.insert( p );
+    }
 }
 
 dt_circle_note_on::~dt_circle_note_on(){
@@ -52,12 +49,6 @@ dt_circle_note_on::~dt_circle_note_on(){
     
     rguid.clear();
     rshape.clear();
-    
-    for( int i=0; i<input_circles.size(); i++ ){
-        if( input_circles[0] )
-            delete input_circles[0];
-    }
-    input_circles.clear();
 }
 
 void dt_circle_note_on::setup( int beat_num ){
@@ -101,7 +92,7 @@ void dt_circle_note_on::setup( int beat_num ){
         p->change_param_type( (dt_circle_type)(i+1) );
         p->change_shape( ofRandom(10, 100) );
         float r = 150;
-        float rad = -(float)i*30.0 * DEG_TO_RAD;
+        float rad = (-180.0+(float)i*30.0) * DEG_TO_RAD;
         float x = r * cos( rad );
         float y = r * sin( rad );
         p->data.position.set( x,y );
@@ -231,10 +222,16 @@ void dt_circle_note_on::draw(){
     }ofPopMatrix();
 }
 
-void dt_circle_note_on::fire(){
+void dt_circle_note_on::on_process(){
     ofxOscMessage m;
     m.setAddress( "/" + ofToString(data.ch) );
-    m.addFloatArg( data.output_value );
+    
+    for( int i=0; i<8; i++ ){
+        dt_circle_type type = ( dt_circle_type )( i+1 );
+        float v = prms[type];
+        m.addFloatArg( v );
+    }
+    
     app->osc_sender.send_message( m );
     data.fire_rate = 1.0;
 }
