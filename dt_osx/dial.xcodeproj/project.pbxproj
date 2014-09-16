@@ -27530,8 +27530,8 @@
 		4D9CC34F19BF664900E75AD2 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				4D5A530C19C5019000039AF9 /* ofx2DCamera.cpp */,
 				4D5A530D19C5019000039AF9 /* ofx2DCamera.h */,
+				4D5A530C19C5019000039AF9 /* ofx2DCamera.cpp */,
 				F66E1D71195E813700CEE795 /* dt_linear_drawer.h */,
 				F66E1D70195E813700CEE795 /* dt_linear_drawer.cpp */,
 			);
@@ -28413,8 +28413,8 @@
 		F6B7670219479CA500B0741D /* seq */ = {
 			isa = PBXGroup;
 			children = (
-				4D82B81A19B66AF500BA0CEF /* dt_osc_recorder.cpp */,
 				4D82B81B19B66AF500BA0CEF /* dt_osc_recorder.h */,
+				4D82B81A19B66AF500BA0CEF /* dt_osc_recorder.cpp */,
 				F6B766D41947984B00B0741D /* dt_sequencer.h */,
 				F6B766D51947984B00B0741D /* dt_sequencer.cpp */,
 				F6B766D31947984B00B0741D /* dt_sequence_thread.h */,

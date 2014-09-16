@@ -5,9 +5,8 @@
 //  Created by mtb on 5/5/14.
 //
 //
-#include "dt_circle_note_on.h"
-#include "ofMain.h"
 #include "ofApp.h"
+#include "dt_circle_note_on.h"
 #include "dt_rhythm_lib.h"
 #include "dt_sequence_thread.h"
 #include "dt_font_manager.h"
@@ -16,11 +15,6 @@
 #include "dt_circle_drawer.h"
 #include "dt_dial_ui.h"
 
-/*
- *
- *      class dt_circle_note_on
- *
- */
 dt_circle_drawer dt_circle_note_on::circle_drawer;
 
 dt_circle_note_on::dt_circle_note_on(){
@@ -159,13 +153,14 @@ void dt_circle_note_on::check_connection(){
 	//ofApp::getInstance()->all_containers.output_container->check_connection( this, false );
 }
 
-/*
- *      mode ( home, zoom )
- *      fired ( on, off )
- *      selected (on , off )
- *      mute ( on, off )
- */
 void dt_circle_note_on::draw(){
+    
+    /*
+     *      mode ( home, zoom )
+     *      fired ( on, off )
+     *      selected (on , off )
+     *      mute ( on, off )
+     */
     
     if( data.bShow == false ){
         return;
@@ -234,4 +229,6 @@ void dt_circle_note_on::on_process(){
     
     app->osc_sender.send_message( m );
     data.fire_rate = 1.0;
+    
+    app->osc_recorder.add_osc_message( m, data.ch );
 }

@@ -18,10 +18,8 @@ public:
 	~dt_sequencer(){};
 	
 	void setup(float beats);
-	
 	void updateIndicator();
 	void updateIndicator(bool forward);
-	
 	void setRhythmShape(int type);
 	void incRhythmShape(int n);
 	

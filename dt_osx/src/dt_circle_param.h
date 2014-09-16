@@ -19,11 +19,10 @@ public:
 	~dt_circle_param();
 	
 	virtual void setup(int beat_num);
-	virtual void on_process();
-
+	virtual void update();
+	virtual void draw();
+    virtual void on_process();
     void change_param_type( dt_circle_type t );
-	void update();
-	void draw();
     
 	static ofColor noteNum_color;
 	static ofColor velocity_color;

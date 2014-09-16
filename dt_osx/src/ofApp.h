@@ -25,11 +25,7 @@ public:
 	static ofApp * init();
 	inline static ofApp * getInstance(){ return instance; }
 	
-	void setup();
-	void setupVisual();
-	void setupAudio();
-	void setupModule();
-	
+	void setup();	
 	void update();
 	void draw();
 	void draw_info( int x, int y );
@@ -47,7 +43,6 @@ public:
     void update_cocoa_ui();
 
     ofFloatColor bg;
-    ofRectangle canvas;
     ofImage noise;
     
 	dt_osc_sender		osc_sender;

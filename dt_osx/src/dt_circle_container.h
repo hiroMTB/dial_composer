@@ -16,15 +16,6 @@
 #include "dt_circle_output_base.h"
 #include "dt_circle_all_containers.h"
 
-/*
- *
- *		Container template class for ...
- *
- *		dt_circle_note_on*
- *      dt_circle_param*
- *
- */
-
 template<typename T>
 class dt_circle_container{
 

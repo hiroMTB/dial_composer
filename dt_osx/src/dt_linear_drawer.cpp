@@ -26,10 +26,12 @@ dt_linear_drawer::dt_linear_drawer(){
  */
 void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
 
+    // settomgs
+    static float pix_per_beat = 20;
+	static float line_height = 30;
+    
     static ofFloatColor line_color( 0.6 );
 	static ofFloatColor onset_color( 0.9 );
-	static float pix_per_beat = 16;
-	static float line_height = 20;
 	float pix_per_step = pix_per_beat / dt_config::DT_BEAT_RESOLUTION;
 	
 	/*

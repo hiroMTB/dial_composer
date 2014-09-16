@@ -13,7 +13,6 @@
 #include "ofxModifierKeys.h"
 
 dt_ui_zoom::dt_ui_zoom(){
-    
 }
 
 void dt_ui_zoom::singleClickStart( int x, int y, int button ){

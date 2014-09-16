@@ -8,11 +8,11 @@
 
 #include "ofApp.h"
 #include "dt_circle_param.h"
+#include "dt_circle_note_on.h"
+#include "dt_circle_drawer.h"
 #include "dt_dial_ui.h"
 #include "dt_sequence_thread.h"
 #include "dt_font_manager.h"
-#include "dt_circle_drawer.h"
-#include "dt_circle_note_on.h"
 
 ofColor dt_circle_param::noteNum_color =	ofColor( 184,  88,  32 );
 ofColor dt_circle_param::velocity_color =	ofColor( 247, 106, 129 );

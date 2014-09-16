@@ -24,9 +24,7 @@ public:
     void zoom( float _zoomRate, int time_ms, void (^callback)(float *arg)=NULL  );
     void moveZoom( ofVec2f _trans, float _zoomRate, int time_ms, void (^callback)(float *arg)=NULL );
     void zoomMove( float _zoomRate, ofVec2f _trans, int time_ms, void (^callback)(float *arg)=NULL );
-    
     void startPivot( ofVec2f pivotXY );
-    
     void debugDraw();
         
     ofVec2f worldToScreen( ofVec2f worldXY ) const;

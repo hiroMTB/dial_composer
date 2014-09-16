@@ -29,21 +29,14 @@ ofApp * ofApp::init(){
 ofApp::ofApp(){}
 
 void ofApp::windowResized( int w, int h ){
-	canvas.setX( 80 );
-	canvas.setY( 50 );
-	canvas.width = w-100;
-	canvas.height = h-50;
 	config.reset_position();
     dt_config::DT_SIZE_BASE = max( w, h )/16.0;
     cam.reset();
 }
 
 void ofApp::setup(){
-    setupVisual();
-	setupModule();
-}
 
-void ofApp::setupVisual(){
+    //Visual
 	ofSetFrameRate( 60 );
 	ofSetVerticalSync( true );
 	ofSetCircleResolution( 3 );
@@ -54,9 +47,8 @@ void ofApp::setupVisual(){
     noise.loadImage("img/noise2.png");
     noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
 	bg.set( 0.1 );
-}
-
-void ofApp::setupModule(){
+    
+    //Module
 	rhythm_lib.setup( 3, 24 );
 	config.setup();
 	all_containers.setup();
@@ -72,7 +64,6 @@ void ofApp::update(){
     cam.update();
 	config.update();
 	all_containers.update();
-	osc_recorder.update( canvas.x+30, canvas.y + canvas.height + 30, canvas.width-70, 100 );
 }
 
 void ofApp::draw(){
@@ -85,22 +76,22 @@ void ofApp::draw(){
     noise.height = h;
     noise.draw( 0, 0 );
 
-    cam.begin();
-    all_containers.draw();
+    cam.begin(); {
+        all_containers.draw();
 
 #ifdef DEBUG
-    cam.debugDraw();
+        cam.debugDraw();
 #endif
     
-    cam.end();
+    } cam.end();
 
+  	osc_recorder.draw( 5, ofGetHeight()-70, ofGetWidth()-10, 64 );
+    if( dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw( 30, 300, 30, 500, 1 );
+    
 #ifdef DEBUG
 	mode_manager.debug_draw();
     
-    ofPushMatrix();
-    if( dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw(canvas.x+30, canvas.y+30, canvas.width-60, canvas.height-60, 1 );
     config.draw();
-    ofPopMatrix();
 
     mouseX = ofGetMouseX();
     mouseY = ofGetMouseY();
@@ -113,7 +104,6 @@ void ofApp::draw(){
 #endif
 
 }
-
 
 void ofApp::mouseMoved( int x, int y, int button ){
     mode_manager.current_ui->mouseMoved( x, y, button );
@@ -186,7 +176,6 @@ void ofApp::keyPressed( int key ){
 void ofApp::exit(){
 	sequence_thread.stop();
 }
-
 
 void ofApp::update_cocoa_ui(){
     // update Cocoa UI

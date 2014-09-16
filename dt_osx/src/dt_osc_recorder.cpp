@@ -19,6 +19,8 @@ void dt_osc_recorder::setup(){
 	
     ofLogNotice( "dt_osc_recoder", "setup" );
     
+	app = ofApp::getInstance();
+    
 	for( int i=0; i<fragment_ring_max; i++ ){
 		fragment frag;
 
@@ -30,17 +32,25 @@ void dt_osc_recorder::setup(){
 		fragment_ring.push_back( frag );
 	}
 	
-	app = ofApp::getInstance();
+    points.setUsage( GL_DYNAMIC_DRAW );
+    points.setMode( OF_PRIMITIVE_POINTS );
+    
+    lines.setUsage( GL_DYNAMIC_DRAW );
+    lines.setMode( OF_PRIMITIVE_LINES );
 }
 
-void dt_osc_recorder::update( int _x, int _y, int _w, int _h ){
+void dt_osc_recorder::draw( int _x, int _y, int _w, int _h ){
+    
+    points.clear();
+    lines.clear();
+    
 	if( !dt_config::DT_SHOW_BUFFERED_RHYTHM )
 		return;
-		
-	int x = 0;
-	int y = 0;
-	int frag_w = (float)_w / fragment_ring_max;
-	int ch_h = (float)_h /32.0;
+	
+	float x = 0;
+	float y = 0;
+	float frag_w = (float)_w / fragment_ring_max;
+	float ch_h = (float)_h / dt_config::DT_OSC_OUT_CH_SYSTEM_MAX;
 	
 	//
 	//	we should start from current fragment position
@@ -54,7 +64,7 @@ void dt_osc_recorder::update( int _x, int _y, int _w, int _h ){
 			if( fragment_ring[i][j].getNumArgs()>0 ){
 				int ch = j;
 				y = ch * ch_h;
-				app->all_containers.add_indicator( ofVec2f(x+_x, y+_y), ofFloatColor(0.4, 0.9, 0.1) );
+				add_point( ofVec2f(x+_x, y+_y), ofFloatColor(0.4, 0.9, 0.1) );
 			}
 		}
 	}
@@ -62,21 +72,28 @@ void dt_osc_recorder::update( int _x, int _y, int _w, int _h ){
 	if( dt_config::DT_PLAY_BUFFERED_RHYTHM ){
 		x = dt_config::DT_BUFFERED_RHYTHM_INDICATOR * frag_w;
 		y = dt_config::DT_OSC_OUT_CH_SYSTEM_MAX * ch_h + 5;
-		app->all_containers.add_connection_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(1, 0, 0.5), ofFloatColor(1, 0, 0.5) );
+		add_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(1, 0, 0.5), ofFloatColor(1, 0, 0.5) );
 		
 		// start, dynamic
 		x = dt_config::DT_BUFFERED_RHYTHM_LOOP_START * frag_w;
-		app->all_containers.add_connection_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(0, 0.4, 0.7), ofFloatColor(0, 0.4, 0.7) );
+		add_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(0, 0.4, 0.7), ofFloatColor(0, 0.4, 0.7) );
 		
 		// end, fixed
 		x = dt_config::DT_BUFFERED_RHYTHM_LOOP_END * frag_w;
-		app->all_containers.add_connection_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(0, 0.4, 0.7), ofFloatColor(0, 0.4, 0.7) );
+		add_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(0, 0.4, 0.7), ofFloatColor(0, 0.4, 0.7) );
 	}
 	
 	x = current_fragment * frag_w;
 	y = ( dt_config::DT_OSC_OUT_CH_SYSTEM_MAX-1 ) * ch_h;
-	app->all_containers.add_connection_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y-5), ofFloatColor(1, 1, 1), ofFloatColor(1, 1, 1) );
-	app->all_containers.add_connection_line( ofVec2f(_x+x, _y+y+5), ofVec2f(_x+x, _y+y+10), ofFloatColor(1, 1, 1), ofFloatColor(1, 1, 1) );
+	add_line( ofVec2f(_x+x, _y-8), ofVec2f(_x+x, _y-2), ofFloatColor(1), ofFloatColor(1) );
+	add_line( ofVec2f(_x+x, _y+y), ofVec2f(_x+x, _y+y+8), ofFloatColor(1), ofFloatColor(1) );
+
+    glLineWidth( 1 );
+    lines.draw( OF_MESH_WIREFRAME );
+
+    glPointSize( 2 );
+    points.draw( OF_MESH_POINTS );
+
 }
 
 void dt_osc_recorder::add_osc_message( const ofxOscMessage &m, int ch ){
@@ -133,4 +150,16 @@ void dt_osc_recorder::play_fragment(){
 	}else{
 		dt_config::DT_BUFFERED_RHYTHM_INDICATOR++;
 	}
+}
+
+void dt_osc_recorder::add_line( ofVec2f p1, ofVec2f p2, ofFloatColor c1, ofFloatColor c2 ){
+    lines.addVertex( p1 );
+    lines.addVertex( p2 );
+    lines.addColor( c1 );
+    lines.addColor( c2);
+}
+
+void dt_osc_recorder::add_point( ofVec2f p, ofFloatColor c ){
+    points.addVertex( p );
+    points.addColor( c );
 }
