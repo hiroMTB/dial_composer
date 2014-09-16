@@ -52,26 +52,31 @@ dt_circle_note_on::~dt_circle_note_on(){
     
     rguid.clear();
     rshape.clear();
+    
+    for( int i=0; i<input_circles.size(); i++ ){
+        if( input_circles[0] )
+            delete input_circles[0];
+    }
+    input_circles.clear();
 }
 
-/*
-		speed affet to 
-            - rev_angle
- 
-		beat_num affect to
-			- seq
-			- rev_speed
-			- vbo
-
-        fixed parameter
-            - indicator radius (vboMesh)
-            - rev_radius
-            - collision_radius
-            - input/output_connection_radius
- 
- */
 void dt_circle_note_on::setup( int beat_num ){
-
+    /*
+     speed affet to
+     - rev_angle
+     
+     beat_num affect to
+     - seq
+     - rev_speed
+     - vbo
+     
+     fixed parameter
+     - indicator radius (vboMesh)
+     - rev_radius
+     - collision_radius
+     - input/output_connection_radius
+     
+     */
 	seq = new dt_sequencer();
 	change_beat( beat_num );
 	change_speed( 1 );
@@ -149,13 +154,6 @@ void dt_circle_note_on::update(){
 	data.input_connection_radius = data.collision_radius + 100;
 	data.output_connection_radius = data.collision_radius + 100;
     
-    bool targeted = app->mode_manager.zoom_mode_target == this;
-    // input circles
-    if( targeted ){
-        for( int i=0; i<input_circles.size(); i++ ){
-            input_circles[i]->update();
-        }
-    }
 }
 
 void dt_circle_note_on::check_connection(){
@@ -230,13 +228,6 @@ void dt_circle_note_on::draw(){
                 }ofPopMatrix();
             }ofPopMatrix();
         }ofPopMatrix();
-            
-        // input circles
-        if( targeted ){
-            for( int i=0; i<input_circles.size(); i++ ){
-                input_circles[i]->draw();
-            }
-        }
     }ofPopMatrix();
 }
 

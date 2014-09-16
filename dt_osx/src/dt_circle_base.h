@@ -117,25 +117,21 @@ public:
 	ofVec2f calc_indi_position();
 
     ofApp * app;
-
-    static dt_circle_base * selected_circle;
 	unsigned int wait_step;
     string initial;
-
-	dt_circle_data data;
-	dt_sequencer * seq;
-    dt_dial_ui * ui;
-
     ofTrueTypeFont * font;
     ofVboMesh text_mesh;
     ofPoint text_pos;
-    
-    vector<dt_circle_base*> input_circles;
-	vector<dt_circle_base*> output_circles;
-    
     ofVboMesh rshape;
 	ofVboMesh rguid;
     
+    dt_circle_data data;
+	dt_sequencer * seq;
+    dt_dial_ui * ui;
+    static dt_circle_base * selected_circle;
     dt_circle_base * parent;
+    vector<dt_circle_base*> input_circles;
+	vector<dt_circle_base*> output_circles;
+
 };
 

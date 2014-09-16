@@ -138,14 +138,6 @@ void dt_config::update(){
 			DT_MASTER_CLOCK_OUT_RESOLUTION = i;
 			
 		// OSC
-		}else if( address == pre + "osc_out_ch_max" ){
-			
-			int i = m.getArgAsInt32( 0 );
-			i = max( 0, i );
-			DT_OSC_OUT_CH_MAX = i;
-			app->all_containers.change_osc_ch_all();
-			osc_out_ch_max = ofToString( DT_OSC_OUT_CH_MAX );
-			
 		}else if( address == pre + "osc_out_address" ){
 			
 			string s = m.getArgAsString( 0 );
@@ -196,21 +188,6 @@ void dt_config::update(){
 			i = max( 3, i );
 			DT_RHYTHM_SHAPE_SLOT_MAX = i;
 	        rhythm_shape_slot_max = ofToString( DT_RHYTHM_SHAPE_SLOT_MAX );
-		}else if( address == pre + "beat_resolution" ){
-			
-			int i = m.getArgAsInt32( 0 );
-			i = max( 1, i );
-			DT_BEAT_RESOLUTION = i;
-			app->all_containers.change_beat_resolution_all( i );
-			beat_resolution = ofToString( DT_BEAT_RESOLUTION );
-
-		}else if( address == pre + "beat_speed_max" ){
-			
-			int i = m.getArgAsInt32( 0 );
-			i = max( 1, i );
-			DT_BEAT_SPEED_MAX = i;
-			app->all_containers.change_speed_random_all( 1, i );
-	        beat_speed_max = ofToString( DT_BEAT_SPEED_MAX );
 
 		}else if( address == pre + "connection_num_input_max" ){
 			

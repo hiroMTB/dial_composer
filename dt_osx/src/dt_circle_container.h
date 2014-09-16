@@ -110,20 +110,6 @@ public:
 			float connection_radius = bInput ? c1->data.input_connection_radius : c1->data.output_connection_radius;
 			
 			if( dist<connection_radius ){
-				if( bInput ){
-					connection_num_input++;
-					switch( c2->data.circle_type ){
-                        case DT_CIRCLE_NOTE_NUM:    c1->p_state.bNote = true; break;
-                        case DT_CIRCLE_VELOCITY:    c1->p_state.bVel = true; break;
-						case DT_CIRCLE_DURATION:    c1->p_state.bDur = true; break;
-						case DT_CIRCLE_PAN:         c1->p_state.bPan = true; break;
-						case DT_CIRCLE_CC1:         c1->p_state.bCc1 = true; break;
-						case DT_CIRCLE_CC2:         c1->p_state.bCc2 = true; break;
-						case DT_CIRCLE_CC3:         c1->p_state.bCc3 = true; break;
-						case DT_CIRCLE_CC4:         c1->p_state.bCc4 = true; break;
-						default: break;
-					}
-				}
 				
 				if( !bInput ) connection_num_output++;
 				

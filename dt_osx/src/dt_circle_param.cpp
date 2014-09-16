@@ -56,6 +56,8 @@ void dt_circle_param::setup( int beat_num ){
 }
 
 void dt_circle_param::update(){
+    bool targeted = app->mode_manager.zoom_mode_target == parent;
+    if( !targeted ) return;
 	data.fire_rate *= 0.8;
     
     data.indi_position = calc_indi_position();
@@ -74,13 +76,18 @@ void dt_circle_param::update(){
 }
 
 void dt_circle_param::draw(){
-	
+    bool targeted = app->mode_manager.zoom_mode_target == parent;
+    if( !targeted ) return;
+
 	bool blink = data.fire_rate > 0.3;
 	bool selected = selected_circle == this;
     float scale = blink ? 1.0+data.fire_rate*0.05 : 1.0;
 
+    ofVec2f & ppos = parent->data.position;
+    
 	ofPushMatrix();{
-        ofTranslate( data.position.x, data.position.y );
+        
+        ofTranslate( data.position + ppos );
         ofPushMatrix();{
             ofScale( scale, scale );
         
@@ -95,12 +102,12 @@ void dt_circle_param::draw(){
             }
             circle_drawer.draw( data.rev_radius * 1.26, OF_MESH_POINTS );
             
-            // shape
+            // guide + shape
             ofPushMatrix();{
                 float shape_scale = data.rev_radius * 0.01;
                 ofScale( shape_scale, shape_scale, 1 );
                 
-                // guid
+                // guide
                 glPointSize( 3 );
                 rguid.draw( OF_MESH_POINTS );
                 
