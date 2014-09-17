@@ -69,12 +69,14 @@ public:
 	float input_connection_radius;
 	float output_connection_radius;
 	float fire_rate;
+    float alpha;
 
 	string name;
 	
 	ofVec2f position;
 	ofVec2f indi_position;
-	
+	ofVec2f position_offset;
+    
 	static ofFloatColor defaultColor;
 	ofFloatColor indi_color;
 	ofFloatColor circle_color;
@@ -134,6 +136,5 @@ public:
     dt_circle_base * parent;
     vector<dt_circle_base*> input_circles;
 	vector<dt_circle_base*> output_circles;
-
 };
 

@@ -40,7 +40,7 @@ fire_rate( 0.0 ),
 position( ofVec2f(-1,-1) ),
 name( "default" ),
 ch( 1 ),
-output_value( 0 )
+output_value( ofRandom(0, 127) )
 {
 }
 
@@ -204,7 +204,7 @@ void dt_circle_base::make_vbo(){
         float y = r * sin;
 		if( on ){
             ofFloatColor c = data.circle_color;
-            c.setHsb( h + i*0.005, s+ofRandom(-0.01, 0.01), b );
+            c.setHsb( h + i*0.005, s+ofRandom(-0.01, 0.01), b, c.a);
             rshape.addVertex( ofVec2f(x, y) );
             rshape.addIndex( vertIndex++ );
             rshape.addColor( c );
@@ -214,7 +214,9 @@ void dt_circle_base::make_vbo(){
         rguid.addVertex( ofVec2f(x, y) );
         rguid.addIndex( i );
         if( on ){
-            rguid.addColor( data.circle_color );
+            ofFloatColor c = data.circle_color;
+            c.a = 1;
+            rguid.addColor( c );
         }else{
             rguid.addColor( ofFloatColor(0.7, 0.75) );
         }

@@ -43,7 +43,7 @@ void ofApp::setup(){
     //Visual
 	ofSetFrameRate( 60 );
 	ofSetVerticalSync( true );
-	ofSetCircleResolution( 3 );
+	ofSetCircleResolution( 13 );
 	ofEnableAlphaBlending();
 	ofEnableAntiAliasing();
 	ofEnableSmoothing();
@@ -82,11 +82,6 @@ void ofApp::draw(){
 
     cam.begin(); {
         all_containers.draw();
-
-#ifdef DEBUG
-        cam.debugDraw();
-#endif
-    
     } cam.end();
 
   	osc_recorder.draw( 5, ofGetHeight()-70, ofGetWidth()-10, 64 );

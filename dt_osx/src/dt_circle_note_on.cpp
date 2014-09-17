@@ -22,8 +22,8 @@ dt_circle_note_on::dt_circle_note_on(){
 
 //	ui = new dt_dial_ui( this );
 
-	//data.circle_color.setHsb( ofRandom( 0.0, 1.0 ), ofRandom(0.6, 0.8), 0.8 );
-    data.circle_color.set( 0.7 );
+    data.circle_color.setHsb( ofRandom( 0.0, 1.0 ), ofRandom(0.6, 0.8), 0.8 );
+//    data.circle_color.set( 0.7 );
     
     if( !circle_drawer.bInitialized ){
         circle_drawer.initialize( 60 );
@@ -99,7 +99,6 @@ void dt_circle_note_on::setup( int beat_num ){
 }
 
 void dt_circle_note_on::update(){
-	data.fire_rate*=0.8;
 
     ofApp * app = ofApp::app;
     
@@ -139,6 +138,10 @@ void dt_circle_note_on::update(){
 	data.input_connection_radius = data.collision_radius + 100;
 	data.output_connection_radius = data.collision_radius + 100;
     
+    // param animation
+    data.position_offset *= 0.9;
+    data.fire_rate *=0.93;
+    data.alpha *= 0.99;
 }
 
 void dt_circle_note_on::check_connection(){
@@ -170,7 +173,7 @@ void dt_circle_note_on::draw(){
 	bool selected = selected_circle == this;
     bool targeted = app->mode_manager.zoom_mode_target == this;
     float scale = blink ? 1.0+data.fire_rate*0.05 : 1.0;
-	
+    
     ofPushMatrix();{
         ofTranslate( data.position.x, data.position.y );
         ofPushMatrix();{
@@ -215,6 +218,17 @@ void dt_circle_note_on::draw(){
                     }
                 }ofPopMatrix();
             }ofPopMatrix();
+        
+            // param animation
+            {
+                // parameter based animation
+                ofFloatColor c = data.circle_color;
+                c.setBrightness( c.getBrightness()*1.5 );
+                ofSetColor( c );
+                ofSetLineWidth( 1.0+data.alpha*5.0 );
+                ofLine( 0, 0, data.position_offset.x, data.position_offset.y );
+                ofCircle( data.position_offset, 1.0+data.alpha*5.0 );
+            }
         }ofPopMatrix();
     }ofPopMatrix();
 }
@@ -230,7 +244,14 @@ void dt_circle_note_on::on_process(){
     }
     
     app->osc_sender.send_message( m );
-    data.fire_rate = 1.0;
-    
     app->osc_recorder.add_osc_message( m, data.ch );
+    
+	float offset_x = (prms[DT_CIRCLE_PAN]-64.0)/127.0 * data.rev_radius;
+    float offset_y = (prms[DT_CIRCLE_NOTE_NUM]-64.0)/127.0 * data.rev_radius;
+    float alpha = prms[DT_CIRCLE_VELOCITY]/127.0;
+    float dur = prms[DT_CIRCLE_DURATION]/127.0;
+    
+    data.position_offset.set( offset_x, -offset_y );
+    data.alpha = alpha;
+    data.fire_rate = 1.0;
 }
