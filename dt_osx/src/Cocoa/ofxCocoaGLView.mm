@@ -1,5 +1,4 @@
 #include "ofMain.h"
-
 #include "ofxCocoaGLView.h"
 #include "ofAppBaseWindow.h"
 
@@ -25,16 +24,30 @@ public:
 	}
     
 	int getWidth() {
+#ifndef NO_RETINA
+		NSRect backingBounds = [view convertRectToBacking:view.bounds];
+		return backingBounds.size.width;
+#else
 		return view.bounds.size.width;
+#endif
 	}
     
 	int getHeight() {
+#ifndef NO_RETINA
+		NSRect backingBounds = [view convertRectToBacking:view.bounds];
+		return backingBounds.size.height;
+#else
 		return view.bounds.size.height;
+#endif
 	}
     
 	ofPoint getWindowSize()	{
+#ifndef NO_RETINA
+		NSSize size = [view convertRectToBacking:view.bounds].size;
+#else
 		NSSize size = view.bounds.size;
 		return ofPoint(size.width, size.height);
+#endif
 	}
     
 	int getFrameNum() {
@@ -433,8 +446,14 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
 		[self update];
 		ofNotifyUpdate();
         
-		NSRect r = self.bounds;
-		ofViewport(0, 0, r.size.width, r.size.height);
+		// retina support
+		NSRect backingBounds = [self convertRectToBacking:[self bounds]];
+		GLsizei backingPixelWidth  = (GLsizei)(backingBounds.size.width),
+		backingPixelHeight = (GLsizei)(backingBounds.size.height);
+		glViewport(0, 0, backingPixelWidth, backingPixelHeight);
+		
+		//NSRect r = self.bounds;
+		//ofViewport(0, 0, r.size.width, r.size.height);
         
 		float *bgPtr = ofBgColorPtr();
 		bool bClearAuto = ofbClearBg();
@@ -493,7 +512,10 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
 - (NSPoint)getCurrentMousePos {
 	NSPoint p = [self.window convertScreenToBase:[NSEvent mouseLocation]];
 	p = [self convertPoint:p fromView:nil];
-	p.y = self.bounds.size.height - p.y;
+	p = [self convertPointToBacking:p];
+
+	NSRect backingBounds = [self convertRectToBacking:self.bounds];
+	p.y = backingBounds.size.height - p.y;
     
 	mouseX = p.x;
 	mouseY = p.y;

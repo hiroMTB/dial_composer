@@ -26,11 +26,15 @@ ofApp * ofApp::init(){
 	return instance;
 }
 
-ofApp::ofApp(){}
+ofApp::ofApp()
+:
+backingScale( 1 )
+{}
 
 void ofApp::windowResized( int w, int h ){
 	config.reset_position();
-    dt_config::DT_SIZE_BASE = max( w, h )/16.0;
+	backingScale = [[NSScreen mainScreen] backingScaleFactor];
+    dt_config::DT_SIZE_BASE = max( w, h )/16.0 * backingScale;
     cam.reset();
 }
 
@@ -185,3 +189,9 @@ void ofApp::update_cocoa_ui(){
         if( d ) [d update_ui];
     }
 }
+
+void ofApp::backingScaleChanged( float newb, float oldb ){
+	backingScale = newb;
+	config.DT_SIZE_BASE *= newb / oldb;
+}
+

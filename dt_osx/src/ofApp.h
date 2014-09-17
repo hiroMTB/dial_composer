@@ -41,6 +41,7 @@ public:
 	void gotMessage( ofMessage msg );
 	void exit();
     void update_cocoa_ui();
+	void backingScaleChanged( float newb, float oldb );
 
     ofFloatColor bg;
     ofImage noise;
@@ -57,6 +58,7 @@ public:
 	dt_circle_all_containers all_containers;
 	dt_mode_manager		mode_manager;
 
-    ofx2DCamera         cam;    
+    ofx2DCamera         cam;
+	float backingScale;
 };
 
