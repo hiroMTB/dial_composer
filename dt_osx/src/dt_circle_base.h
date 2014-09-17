@@ -69,13 +69,12 @@ public:
 	float input_connection_radius;
 	float output_connection_radius;
 	float fire_rate;
-    float alpha;
+    float note, vel, dur, pan;  // for animation
 
 	string name;
 	
 	ofVec2f position;
 	ofVec2f indi_position;
-	ofVec2f position_offset;
     
 	static ofFloatColor defaultColor;
 	ofFloatColor indi_color;

@@ -139,9 +139,11 @@ void dt_circle_note_on::update(){
 	data.output_connection_radius = data.collision_radius + 100;
     
     // param animation
-    data.position_offset *= 0.9;
+    data.note *= 0.9;
+    data.pan *= 0.9;
+    data.vel *= 0.99;
+    data.dur *= 0.9;
     data.fire_rate *=0.93;
-    data.alpha *= 0.99;
 }
 
 void dt_circle_note_on::check_connection(){
@@ -221,13 +223,12 @@ void dt_circle_note_on::draw(){
         
             // param animation
             {
-                // parameter based animation
                 ofFloatColor c = data.circle_color;
                 c.setBrightness( c.getBrightness()*1.5 );
                 ofSetColor( c );
-                ofSetLineWidth( 1.0+data.alpha*5.0 );
-                ofLine( 0, 0, data.position_offset.x, data.position_offset.y );
-                ofCircle( data.position_offset, 1.0+data.alpha*5.0 );
+                ofSetLineWidth( 1.0+data.vel*5.0 );
+                ofLine( 0, 0, data.pan, data.note );
+                ofCircle( data.pan, data.note, 1.0+data.vel*5.0 );
             }
         }ofPopMatrix();
     }ofPopMatrix();
@@ -246,12 +247,9 @@ void dt_circle_note_on::on_process(){
     app->osc_sender.send_message( m );
     app->osc_recorder.add_osc_message( m, data.ch );
     
-	float offset_x = (prms[DT_CIRCLE_PAN]-64.0)/127.0 * data.rev_radius;
-    float offset_y = (prms[DT_CIRCLE_NOTE_NUM]-64.0)/127.0 * data.rev_radius;
-    float alpha = prms[DT_CIRCLE_VELOCITY]/127.0;
-    float dur = prms[DT_CIRCLE_DURATION]/127.0;
-    
-    data.position_offset.set( offset_x, -offset_y );
-    data.alpha = alpha;
+	data.pan = (prms[DT_CIRCLE_PAN]-64.0)/127.0 * data.rev_radius;
+    data.note = (prms[DT_CIRCLE_NOTE_NUM]-64.0)/127.0 * data.rev_radius;
+    data.vel = prms[DT_CIRCLE_VELOCITY]/127.0;
+    data.dur = prms[DT_CIRCLE_DURATION]/127.0;
     data.fire_rate = 1.0;
 }
