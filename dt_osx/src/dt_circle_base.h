@@ -110,6 +110,7 @@ public:
 	void change_beat( int beat );
     void change_speed( int speed );
     void change_shape( int shape );
+	void change_rotation( float beat );
     void change_circle_color( float r, float g, float b, float a );
     void change_circle_color( ofFloatColor &c );
     void change_circle_color( ofColor &c );

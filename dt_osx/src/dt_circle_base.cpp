@@ -6,11 +6,11 @@
 //
 //
 
+#include "ofApp.h"
 #include "dt_circle_base.h"
 #include "dt_sequencer.h"
-#include "ofApp.h"
 #include "dt_sequence_thread.h"
-
+#include "dt_config.h"
 /*
  *
  *		data
@@ -59,7 +59,6 @@ wait_step( 0 )
 	app = ofApp::getInstance();
 }
 
-
 dt_circle_base::~dt_circle_base(){
     for( int i=0; i<input_circles.size(); i++ ){
         if( input_circles[i] )
@@ -84,7 +83,7 @@ void dt_circle_base::step(){
 }
 
 void dt_circle_base::check_sequencer(){
-	seq->updateIndicator();	
+	seq->updateIndicator( 1 );
 	data.rev_speed = (float)360.0 / (float)seq->total_steps;
 	data.rev_angle = seq->indicator * data.rev_speed;
 
@@ -103,7 +102,8 @@ void dt_circle_base::check_sequencer(){
 }
 
 ofVec2f dt_circle_base::calc_indi_position(){
-	float deg = 360.0 * seq->indicator/seq->total_steps * DEG_TO_RAD;
+	int pos = seq->indicator+data.phase_step;
+	float deg = 360.0 * (float)pos/seq->total_steps * DEG_TO_RAD;
 	ofVec2f indi_pos = data.position + ofVec2f( cos(deg), sin(deg) ) * data.rev_radius;
 	return indi_pos;
 }
@@ -138,6 +138,13 @@ void dt_circle_base::change_circle_color( ofFloatColor &c ){
 void dt_circle_base::change_circle_color( float r, float g, float b, float a ){
     data.circle_color.set( r, g, b, a );
     make_vbo();
+}
+
+void dt_circle_base::change_rotation( float beat ){
+	int phase_step = (float)dt_config::DT_BEAT_RESOLUTION * beat;
+	int ds = phase_step - data.phase_step;
+	data.phase_step = phase_step;
+	seq->indicator += ds;
 }
 
 void dt_circle_base::setup_text( string initial ){

@@ -84,6 +84,8 @@ void dt_circle_param::draw(){
         
         ofTranslate( data.position + ppos );
         ofPushMatrix();{
+			float angle = data.phase_step*data.rev_speed;
+			ofRotateZ( angle );
             ofScale( scale, scale );
         
             // circle

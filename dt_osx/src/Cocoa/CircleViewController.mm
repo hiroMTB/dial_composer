@@ -78,10 +78,10 @@
 - (IBAction)change_rotate:(id)sender {
     dt_circle_base * c = dt_circle_base::selected_circle;
     if( c ){
-        int rotate = [sender intValue];
-        [self.rotate_sl setIntValue:rotate];
-        [self.rotate_tx setIntValue:rotate];
-        // c->change_rotate( rotate );
+        float rotate = [sender floatValue];
+        [self.rotate_sl setFloatValue:rotate];
+        [self.rotate_tx setFloatValue:rotate];
+		c->change_rotation( rotate );
     }
 }
 

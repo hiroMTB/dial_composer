@@ -62,7 +62,7 @@
                 <slider verticalHuggingPriority="750" id="dlV-Fk-pGg">
                     <rect key="frame" x="88" y="454" width="154" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="360" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="hiD-T9-P1B"/>
+                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" minValue="-20" maxValue="20" doubleValue="20" tickMarkPosition="above" sliderType="linear" id="hiD-T9-P1B"/>
                     <connections>
                         <action selector="change_rotate:" target="-2" id="RPp-7T-984"/>
                     </connections>

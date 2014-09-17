@@ -18,8 +18,7 @@ public:
 	~dt_sequencer(){};
 	
 	void setup(float beats);
-	void updateIndicator();
-	void updateIndicator(bool forward);
+	void updateIndicator( int steps );
 	void setRhythmShape(int type);
 	void incRhythmShape(int n);
 	
@@ -28,13 +27,12 @@ public:
 	bool getDataFromStep(int step);
 	bool getDataNow();
 	bool isOnBeat();
-
-	ofApp * app;
+	unsigned int loop_map( int i );
 	
+	ofApp * app;
 	bool bCounter_clockwise;
 	int rhythm_shape_type;
 	int beat_resolution;
-	
 	unsigned int total_steps;
 	unsigned int total_beats;
 	unsigned int indicator;

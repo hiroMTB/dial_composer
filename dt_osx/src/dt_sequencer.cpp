@@ -30,22 +30,9 @@ void dt_sequencer::setup( float _total_beats ){
     indicator = 0;
 }
 
-void dt_sequencer::updateIndicator(){
-	updateIndicator( bCounter_clockwise );
-}
-
-void dt_sequencer::updateIndicator( bool forward ){
-	if( forward ){
-		indicator++;
-		if( indicator >= total_steps ){
-			indicator = 0;
-		}
-	}else{
-		indicator--;
-		if( indicator >= total_steps ) {
-			indicator = total_steps-1;
-		}
-	}
+void dt_sequencer::updateIndicator( int steps ){
+	int new_ind = indicator + steps;
+	indicator = loop_map( new_ind );
 }
 
 void dt_sequencer::setRhythmShape( int type ){
@@ -87,8 +74,24 @@ bool dt_sequencer::getDataFromStep( int step ){
 }
 
 bool dt_sequencer::getDataNow(){
-	if( indicator%beat_resolution==0 )
+	if( isOnBeat() )
 		return app->rhythm_lib.getRhythm( (int)total_beats, rhythm_shape_type )[((int)indicator/beat_resolution)];
 
 	return false;
+}
+
+unsigned int dt_sequencer::loop_map( int i ){
+	/*
+	 *		mapping int value to 0 ~ total_step range
+	 */
+	unsigned int ret = 0;
+	if( i >= total_steps ){
+		ret = i % total_steps;
+	}else if( i < 0 ){
+		ret = total_steps + (i%total_steps);
+	}else{
+		ret = i;
+	}
+	
+	return ret;
 }

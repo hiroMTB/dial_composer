@@ -174,6 +174,8 @@ void dt_circle_note_on::draw(){
     ofPushMatrix();{
         ofTranslate( data.position.x, data.position.y );
         ofPushMatrix();{
+			float angle = data.phase_step*data.rev_speed;
+			ofRotateZ( angle );
             ofScale( scale, scale );
 	
             // circle
