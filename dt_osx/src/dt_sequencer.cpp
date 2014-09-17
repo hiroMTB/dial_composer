@@ -6,11 +6,10 @@
 //
 //
 
+#include "ofApp.h"
 #include "dt_sequencer.h"
 #include "dt_sequence_thread.h"
-#include "ofApp.h"
 #include "dt_rhythm_lib.h"
-
 #include "dt_config.h"
 
 dt_sequencer::dt_sequencer()
@@ -84,14 +83,11 @@ unsigned int dt_sequencer::loop_map( int i ){
 	/*
 	 *		mapping int value to 0 ~ total_step range
 	 */
-	unsigned int ret = 0;
 	if( i >= total_steps ){
-		ret = i % total_steps;
+		return i % total_steps;
 	}else if( i < 0 ){
-		ret = total_steps + (i%total_steps);
+		return total_steps + (i%total_steps);
 	}else{
-		ret = i;
+		return i;
 	}
-	
-	return ret;
 }
