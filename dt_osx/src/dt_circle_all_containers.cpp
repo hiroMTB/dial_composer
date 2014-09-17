@@ -18,7 +18,7 @@ dt_circle_all_containers::dt_circle_all_containers(){
 
 void dt_circle_all_containers::setup(){
 	
-	app = ofApp::getInstance();
+	app = ofApp::app;
 	
 	circle_base_container	= new dt_circle_base_container();
 	note_on_container		= new dt_circle_note_on_container();

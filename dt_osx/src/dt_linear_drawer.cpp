@@ -16,7 +16,7 @@
 
 dt_linear_drawer::dt_linear_drawer(){
 
-	app = ofApp::getInstance();
+	app = ofApp::app;
 }
 
 /*
@@ -40,7 +40,7 @@ void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
 	points.clear();
 	lines.clear();
 	
-	vector<dt_circle_note_on*> &ns = ofApp::getInstance()->all_containers.note_on_container->circles;
+	vector<dt_circle_note_on*> &ns = ofApp::app->all_containers.note_on_container->circles;
 	for( int i=0; i<ns.size(); i++ ){
 
 		int speed = ns[i]->data.speed;

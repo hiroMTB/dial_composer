@@ -161,7 +161,7 @@ NSString *const OscInViewTitle		= @"OscInView";
 			  oldBackingScaleFactor, newBackingScaleFactor);
     }
 	
-	ofApp::getInstance()->backingScaleChanged( newBackingScaleFactor, oldBackingScaleFactor );
+	ofApp::app->backingScaleChanged( newBackingScaleFactor, oldBackingScaleFactor );
 	
 	/*
     NSColorSpace *newColorSpace = [theWindow colorSpace];

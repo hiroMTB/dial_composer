@@ -112,7 +112,7 @@ public:
 				else c1->output_circles.push_back( c2 );
 				ofFloatColor line_color = c2->data.line_color;
 				line_color.a = 0.4;
-				ofApp::getInstance()->all_containers.add_connection_line( connect_p1, connect_p2, line_color, line_color );
+				ofApp::app->all_containers.add_connection_line( connect_p1, connect_p2, line_color, line_color );
 			}
 		}
 	}
@@ -156,7 +156,7 @@ public:
 			 *	against wall
 			 */
 //			dt_circle_data &d = c1->data;
-//			ofRectangle& canvas = ofApp::getInstance()->canvas;
+//			ofRectangle& canvas = ofApp::app->canvas;
 //			float x = d.position.x;
 //			float y = d.position.y;
 //			float r = d.collision_radius;

@@ -110,7 +110,7 @@ void dt_config::setup(){
 }
 
 void dt_config::reset_position(){
-	app = ofApp::getInstance();
+	app = ofApp::app;
 	int x = 20;
 	int y = ofGetHeight() - width;
 
@@ -124,7 +124,7 @@ void dt_config::reset_position(){
 }
 
 void dt_config::update(){
-	app = ofApp::getInstance();
+	app = ofApp::app;
 	
 	while( osc_r.hasWaitingMessages() ){
 		ofxOscMessage m;

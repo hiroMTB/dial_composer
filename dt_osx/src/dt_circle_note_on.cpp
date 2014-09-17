@@ -101,7 +101,7 @@ void dt_circle_note_on::setup( int beat_num ){
 void dt_circle_note_on::update(){
 	data.fire_rate*=0.8;
 
-    ofApp * app = ofApp::getInstance();
+    ofApp * app = ofApp::app;
     
     // mode switching
     dt_mode mode = app->mode_manager.mode;
@@ -130,7 +130,7 @@ void dt_circle_note_on::update(){
     
 	if( data.bShow ){
         data.indi_position = calc_indi_position();
-        ofApp::getInstance()->all_containers.add_indicator( data.indi_position, data.circle_color );
+        ofApp::app->all_containers.add_indicator( data.indi_position, data.circle_color );
     }
 	
     // size update
@@ -147,10 +147,10 @@ void dt_circle_note_on::check_connection(){
 	//output_circles.clear();
 	
 	//	input check
-	//ofApp::getInstance()->all_containers.param_container->check_connection( this, true );
+	//ofApp::app->all_containers.param_container->check_connection( this, true );
 	
 	// output check
-	//ofApp::getInstance()->all_containers.output_container->check_connection( this, false );
+	//ofApp::app->all_containers.output_container->check_connection( this, false );
 }
 
 void dt_circle_note_on::draw(){

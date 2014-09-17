@@ -61,7 +61,7 @@ void dt_circle_param::update(){
         data.indi_position +=  parent->data.position;
     }
     
-	ofApp::getInstance()->all_containers.add_indicator( data.indi_position, data.circle_color );
+	ofApp::app->all_containers.add_indicator( data.indi_position, data.circle_color );
 
     // size update
     data.rev_radius = dt_config::DT_SIZE_BASE * 0.23;

@@ -24,7 +24,7 @@ drag_target_circle( NULL )
 }
 
 void dt_ui_home::singleClickStart(int x, int y, int button){
-    app = ofApp::getInstance();
+    app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     dt_circle_base * c = app->all_containers.note_on_container->getTouchedCircle( mpw );
     if( c ){
@@ -49,7 +49,7 @@ void dt_ui_home::singleClickEnd( int x, int y, int button ){
 }
 
 void dt_ui_home::doubleClickStart( int x, int y, int button ){
-    app = ofApp::getInstance();
+    app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     dt_circle_base * c = app->all_containers.note_on_container->getTouchedCircle( mpw );
 
@@ -68,7 +68,7 @@ void dt_ui_home::longClickEnd( int x, int y, int button ){
 
 void dt_ui_home::dragStart( int x, int y, int button ){
 
-    app = ofApp::getInstance();
+    app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     drag_start_posw = mpw;
     app->cam.dragStartTrans = app->cam.trans;
@@ -77,7 +77,7 @@ void dt_ui_home::dragStart( int x, int y, int button ){
 }
 
 void dt_ui_home::dragging( int x, int y, int button ){
-    app = ofApp::getInstance();
+    app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     ofVec2f dist = mpw - drag_start_posw;
     

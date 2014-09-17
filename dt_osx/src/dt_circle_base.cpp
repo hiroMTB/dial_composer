@@ -56,7 +56,7 @@ dt_circle_base::dt_circle_base()
 parent( NULL ),
 wait_step( 0 )
 {
-	app = ofApp::getInstance();
+	app = ofApp::app;
 }
 
 dt_circle_base::~dt_circle_base(){

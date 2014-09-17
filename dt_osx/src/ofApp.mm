@@ -7,7 +7,7 @@
 
 #import  "AppDelegate.h"
 
-ofApp * ofApp::instance = NULL;
+ofApp * ofApp::app = NULL;
 
 ofApp * ofApp::init(){
 
@@ -17,13 +17,13 @@ ofApp * ofApp::init(){
     ofSetLogLevel( OF_LOG_ERROR );
 #endif
     
-	if(!instance){
+	if(!app){
         ofLogNotice( "ofApp", "openFrameworks v" + ofGetVersionInfo() );
-        instance = new ofApp();
+        app = new ofApp();
     }else{
         ofLogError("ofApp::init() Called again!!!!");
     }
-	return instance;
+	return app;
 }
 
 ofApp::ofApp()

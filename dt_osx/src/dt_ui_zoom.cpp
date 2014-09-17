@@ -16,7 +16,7 @@ dt_ui_zoom::dt_ui_zoom(){
 }
 
 void dt_ui_zoom::singleClickStart( int x, int y, int button ){
-    app = ofApp::getInstance();
+    app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     dt_circle_base * c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
     if( c ){
@@ -46,7 +46,7 @@ void dt_ui_zoom::singleClickEnd( int x, int y, int button ){
 }
 
 void dt_ui_zoom::doubleClickStart( int x, int y, int button ){
-    app = ofApp::getInstance();
+    app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     dt_circle_base * c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
     
@@ -67,7 +67,7 @@ void dt_ui_zoom::longClickEnd( int x, int y, int button ){
 }
 
 void dt_ui_zoom::dragStart( int x, int y, int button ){
-    app = ofApp::getInstance();
+    app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     drag_start_posw = mpw;
     app->cam.dragStartTrans = app->cam.trans;
@@ -76,7 +76,7 @@ void dt_ui_zoom::dragStart( int x, int y, int button ){
 }
 
 void dt_ui_zoom::dragging( int x, int y, int button ){
-    app = ofApp::getInstance();
+    app = ofApp::app;
     if( drag_target_circle == app->mode_manager.zoom_mode_target )
         return;
 

@@ -31,7 +31,7 @@ sleep_microsec( 123456 )
 }
 
 void dt_sequence_thread_boost::setup(){
-	app = ofApp::getInstance();
+	app = ofApp::app;
 }
 
 void dt_sequence_thread_boost::threadFunc(){

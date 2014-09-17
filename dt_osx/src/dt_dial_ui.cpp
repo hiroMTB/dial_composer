@@ -223,7 +223,7 @@ void dt_dial_ui::draw_HOME(){
 									  
 				ofRotate( 90, 0, 0, 1 );
 #ifndef NOT_USE_OF_DRAW_TEXT
-				ofTrueTypeFont &font = ofApp::getInstance()->font_manager.font_S;
+				ofTrueTypeFont &font = ofApp::app->font_manager.font_S;
 				ofRectangle r = font.getStringBoundingBox( icon, 0, 0 );
 				ofSetColor( 50 );
 				ofFill();

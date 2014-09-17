@@ -35,7 +35,7 @@
     float bpm = [sender floatValue];
     [bpm_sl setFloatValue:bpm];
     [bpm_tx setFloatValue:bpm];
-    ofApp * app = ofApp::getInstance();
+    ofApp * app = ofApp::app;
     if( app ) app->sequence_thread.change_bpm( bpm );
 }
 
@@ -43,12 +43,12 @@
     float r = ( (NSColorWell*)sender ).color.redComponent;
     float g = ( (NSColorWell*)sender ).color.greenComponent;
     float b = ( (NSColorWell*)sender ).color.blueComponent;
-    ofApp * app = ofApp::getInstance();
+    ofApp * app = ofApp::app;
     if( app )app->bg.set( r, g, b, 1.0 );
 }
 
 - (void)update_ui{
-    ofApp * app = ofApp::getInstance();
+    ofApp * app = ofApp::app;
     
     if( app ){
      

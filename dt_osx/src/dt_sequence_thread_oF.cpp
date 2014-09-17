@@ -21,7 +21,7 @@ dt_sequence_thread_oF::dt_sequence_thread_oF()
 :
 stopRequested( false )
 {
-	app = ofApp::getInstance();
+	app = ofApp::app;
 	master_tick = 0;
 	master_step = 0;
 }
@@ -32,7 +32,7 @@ void dt_sequence_thread_oF::threadedFunction(){
 		if( master_tick == UINT_MAX ) master_tick = 0;
 
 		if( master_tick % sleep_tick == 0 ){
-			ofApp::getInstance()->all_containers.step();
+			ofApp::app->all_containers.step();
 			master_step++;
 		}
 

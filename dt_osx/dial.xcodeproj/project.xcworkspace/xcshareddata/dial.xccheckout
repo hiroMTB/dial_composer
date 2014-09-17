@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>67804D5B-429A-47DE-818C-37DC1F686CE4</string>
+	<string>C6AF4CA0-78F3-42BC-BED6-0DDCC60726F4</string>
 	<key>IDESourceControlProjectName</key>
 	<string>dial</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>03683E81-62BD-420E-B8F7-1E06FC652691</key>
-		<string>https://github.com/hiroMTB/dt_.git</string>
+		<key>FDB09C04-F23D-4832-8EBD-06F25BD169E6</key>
+		<string>https://github.com/hiroMTB/dial_composer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>dt_osx/dial.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>03683E81-62BD-420E-B8F7-1E06FC652691</key>
+		<key>FDB09C04-F23D-4832-8EBD-06F25BD169E6</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/hiroMTB/dt_.git</string>
+	<string>https://github.com/hiroMTB/dial_composer.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>03683E81-62BD-420E-B8F7-1E06FC652691</string>
+	<string>FDB09C04-F23D-4832-8EBD-06F25BD169E6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>03683E81-62BD-420E-B8F7-1E06FC652691</string>
+			<string>FDB09C04-F23D-4832-8EBD-06F25BD169E6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>dev</string>
 		</dict>

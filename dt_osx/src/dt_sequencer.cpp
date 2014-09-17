@@ -19,7 +19,7 @@ bCounter_clockwise( true ),
 total_beats( -1 ),
 rhythm_shape_type( 0 )
 {
-	app = ofApp::getInstance();
+	app = ofApp::app;
 	beat_resolution = dt_config::DT_BEAT_RESOLUTION;
 }
 

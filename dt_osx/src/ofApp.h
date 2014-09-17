@@ -21,9 +21,8 @@ private:
 	ofApp();
 	
 public:
-	static ofApp * instance;	
+	static ofApp * app;
 	static ofApp * init();
-	inline static ofApp * getInstance(){ return instance; }
 	
 	void setup();	
 	void update();

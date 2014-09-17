@@ -19,7 +19,7 @@ buffer_size( DT_AUDIO_BUFFER_SIZE ),
 master_step( 0 ),
 sleep_tick( 1 )
 {
-	app = ofApp::getInstance();
+	app = ofApp::app;
 	
 	// should be 11609.977324... = about 11ms
 	min_sleep_micro_sec = ( 1000*1000 / (float)sampling_rate ) * buffer_size;
@@ -41,5 +41,5 @@ void dt_sequence_thread_audio::audioRequested( float * output, int bufferSize, i
 	master_step++;
 	
 	if( master_step%wait_tick==0 )
-		ofApp::getInstance()->all_containers.step();
+		ofApp::app->all_containers.step();
 }

@@ -12,7 +12,7 @@
 #include "dt_circle_base.h"
 
 void dt_mode_manager::setup(){
-	app = ofApp::getInstance();
+	app = ofApp::app;
 	mode = DT_MODE_HOME;
     current_ui = &ui_home;
 }
@@ -27,7 +27,7 @@ void dt_mode_manager::go_to_home_mode(){
     zoom_mode_target = NULL;
     
     app->cam.zoomMove( 1.0, ofVec2f(0,0), 1000, ^(float * arg){
-        dt_mode_manager & m = ofApp::getInstance()->mode_manager;
+        dt_mode_manager & m = ofApp::app->mode_manager;
         m.mode = DT_MODE_HOME;
         m.current_ui = &m.ui_home;
     });
@@ -38,7 +38,7 @@ void dt_mode_manager::go_to_zoom_mode( dt_circle_base *target ){
     if( target ){
         zoom_mode_future_target = target;
         app->cam.moveZoom( target->data.position, 1.85, 1000, ^(float *arg){
-            dt_mode_manager & m = ofApp::getInstance()->mode_manager;
+            dt_mode_manager & m = ofApp::app->mode_manager;
             m.mode = DT_MODE_ZOOM;
             m.current_ui = &m.ui_zoom;
             m.zoom_mode_target = m.zoom_mode_future_target;

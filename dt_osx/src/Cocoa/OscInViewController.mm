@@ -36,12 +36,12 @@
 
 - (IBAction)change_address:(id)sender {
     string address = [[sender stringValue] UTF8String];
-    ofApp::getInstance()->osc_sender.setTargetAddress( address );
+    ofApp::app->osc_sender.setTargetAddress( address );
 }
 
 - (IBAction)change_port:(id)sender {
     int port = [sender intValue];
-    ofApp::getInstance()->osc_sender.setTargetPort( port );
+    ofApp::app->osc_sender.setTargetPort( port );
 }
 
 
