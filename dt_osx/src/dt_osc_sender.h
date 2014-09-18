@@ -24,7 +24,9 @@ public:
 	
 	string address;
 	int port;
-	
+
+	vector<ofxOscMessage> print_buffer;
+    
 private:
 	ofxOscSender sender;
 };

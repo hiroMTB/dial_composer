@@ -97,6 +97,10 @@
 }
 
 - (IBAction)change_address:(id)sender {
+    dt_circle_base * c = dt_circle_base::selected_circle;
+    if( c ){
+        c->data.address = [sender stringValue].UTF8String;
+    }
 }
 
 - (IBAction)change_output_value:(id)sender {
@@ -131,12 +135,11 @@
         [beat_tx setIntValue: c->seq->total_beats];
         [speed_sl setIntValue: c->data.speed];
         [speed_tx setIntValue: c->data.speed];
-        [rotate_sl setFloatValue: 123];
-        [rotate_tx setFloatValue: 123];
+        [rotate_sl setFloatValue: c->data.phase_step];
+        [rotate_tx setFloatValue: c->data.phase_step];
         [shape_sl setIntValue: c->seq->rhythm_shape_type];
         [shape_tx setIntValue: c->seq->rhythm_shape_type];
-        string ad = ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS) + "/";
-        [top_address setStringValue:[NSString stringWithUTF8String:ad.c_str() ]];
+        [top_address setStringValue:[NSString stringWithUTF8String:ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS).c_str() ]];
         [output_value_sl setFloatValue: c->data.output_value];
         [output_value_tx setFloatValue: c->data.output_value];
 

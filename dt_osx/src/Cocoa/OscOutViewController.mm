@@ -52,8 +52,65 @@
 - (void)add_output_message:(std::string)m {
     NSString * line = [NSString stringWithUTF8String:m.c_str()];
     NSString * current = [output_tx string];
-    NSString * all = [NSString stringWithFormat:@"%@\n\%@", current, line];
-   [output_tx setString:all];
+    NSString * all = [NSString stringWithFormat:@"%@\%@", line, current];
+    [output_tx setString:all];
+}
+
+
+- (void)update_out_messages{
+    /*
+     *      dont call me often
+     */
+    
+    // clear
+//    [output_tx setString:@""];
+    
+    string ms = "";
+    vector<ofxOscMessage> &msgs = ofApp::app->osc_sender.print_buffer;
+    for( int i=0; i<msgs.size(); i++ ){
+        int index = msgs.size()-1-i;
+        ofxOscMessage &m = msgs[ index ];
+        ms += m.getAddress();
+
+        for( int i=0; i<m.getNumArgs(); i++ ){
+            ofxOscArgType t = m.getArgType( i );
+            switch( t ){
+                case OFXOSC_TYPE_INT32:
+                {
+                    int int32Arg = m.getArgAsInt32( i );
+                    ms += " " + ofToString( int32Arg );
+                    break;
+                }
+                case OFXOSC_TYPE_INT64:
+                {
+                    int int64Arg = m.getArgAsInt64( i );
+                    ms += " " + ofToString( int64Arg );
+                    break;
+                }
+                case OFXOSC_TYPE_FLOAT:
+                {
+                    float floatArg = m.getArgAsFloat( i );
+                    ms += " " + ofToString( floatArg );
+                    break;
+                }
+                case OFXOSC_TYPE_STRING:
+                {
+                    string stringArg = m.getArgAsString( i );
+                    ms += " " + stringArg;
+                    break;
+                }
+                default:
+                    ms += " error";
+                    break;
+            }
+        }
+        ms += "\n";
+    }
+    
+    msgs.clear();
+    
+    if(ms != "")
+        [self add_output_message:ms];
 }
 
 - (void)update_ui{
@@ -63,6 +120,8 @@
         [address_tx setStringValue: [NSString stringWithUTF8String: dt_config::DT_OSC_OUT_IP_ADDRESS.c_str()] ];
         [port_tx setStringValue: [NSString stringWithUTF8String: ofToString(dt_config::DT_OSC_OUT_PORT).c_str()] ];
         [top_address setStringValue: [NSString stringWithUTF8String:ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS).c_str()] ];
+
+        [self update_out_messages];
     }
 }
 

@@ -67,6 +67,8 @@ void ofApp::update(){
     cam.update();
 	config.update();
 	all_containers.update();
+    
+    [[[NSApplication sharedApplication] delegate] update_ui];
 }
 
 void ofApp::draw(){

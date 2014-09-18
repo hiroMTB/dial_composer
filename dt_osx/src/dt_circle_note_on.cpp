@@ -237,7 +237,7 @@ void dt_circle_note_on::draw(){
 void dt_circle_note_on::on_process(){
     
     ofxOscMessage m;
-    m.setAddress( data.address );
+    m.setAddress( dt_config::DT_OSC_OUT_TOP_ADDRESS + data.address );
     m.addIntArg( 1 );
 
     if( dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM ){

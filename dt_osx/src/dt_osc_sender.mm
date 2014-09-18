@@ -48,52 +48,10 @@ void dt_osc_sender::setTargetPort( int _port ){
 }
 
 void dt_osc_sender::send_message( ofxOscMessage &m ){
-    if(dt_config::DT_OSC_OUT_ENABLE)
+    if(dt_config::DT_OSC_OUT_ENABLE){
         sender.sendMessage( m );
-    
-    
-#pragma mark TASK
-    /*
-     *      It seems heavy for Cocoa gui display.
-     *      put a side in the meantime...
-     *
-     
-    string ms = m.getAddress();
-    for( int i=0; i<m.getNumArgs(); i++ ){
-        ofxOscArgType t = m.getArgType( i );
-        switch( t ){
-            case OFXOSC_TYPE_INT32:
-            {
-                int int32Arg = m.getArgAsInt32( i );
-                ms += " " + ofToString( int32Arg );
-                break;
-            }
-            case OFXOSC_TYPE_INT64:
-            {
-                int int64Arg = m.getArgAsInt64( i );
-                ms += " " + ofToString( int64Arg );
-                break;
-            }
-            case OFXOSC_TYPE_FLOAT:
-            {
-                float floatArg = m.getArgAsFloat( i );
-                ms += " " + ofToString( floatArg );
-                break;
-            }
-            case OFXOSC_TYPE_STRING:
-            {
-                string stringArg = m.getArgAsString( i );
-                ms += " " + stringArg;
-                break;
-            }
-            default:
-                ms += " error";
-                break;
-        }
+        print_buffer.push_back( m );
     }
-    AppDelegate * d = [[NSApplication sharedApplication] delegate];
-    [[[d mainWindowController] oscOutViewController] add_output_message: ms];
-     */
 }
 
 void dt_osc_sender::send_bundle( ofxOscBundle &b ){
