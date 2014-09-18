@@ -72,6 +72,10 @@ void dt_ui_zoom::dragStart( int x, int y, int button ){
     drag_start_posw = mpw;
     app->cam.dragStartTrans = app->cam.trans;
     drag_target_circle = app->all_containers.circle_base_container->getTouchedCircle( mpw );
+	
+	if( drag_target_circle )
+		drag_start_target_pos = drag_target_circle->data.position;
+	
     app->update_cocoa_ui();
 }
 
@@ -85,8 +89,7 @@ void dt_ui_zoom::dragging( int x, int y, int button ){
     
 	if( drag_target_circle ){
         // drag circle
-		drag_target_circle->data.position = drag_start_posw + dist - drag_target_circle->parent->data.position;
-		dt_circle_base::selected_circle = drag_target_circle;
+		drag_target_circle->data.position = drag_start_target_pos + dist;		dt_circle_base::selected_circle = drag_target_circle;
 	}else{
         // drag camera
         float sensitivity = 0.6;

@@ -38,5 +38,6 @@ public:
 
     ofApp * app;
     ofVec2f drag_start_posw;
-    dt_circle_base * drag_target_circle;
+    ofVec2f drag_start_target_pos;
+	dt_circle_base * drag_target_circle;
 };
