@@ -83,14 +83,14 @@ void dt_circle_note_on::setup( int beat_num ){
     for( int i=0; i<8; i++){
         dt_circle_param * p = new dt_circle_param();
         p->setup( ofRandom(4, 12) );
-        p->change_param_type( (dt_circle_type)(i+1) );
+        p->parent = this;
+        p->change_type( (dt_circle_type)(i+1) );
         p->change_shape( ofRandom(10, 100) );
         float r = app->config.DT_SIZE_BASE * 1.8;
         float rad = (-180.0+(float)i*30.0) * DEG_TO_RAD;
         float x = r * cos( rad );
         float y = r * sin( rad );
         p->data.position.set( x,y );
-        p->parent = this;
         
         input_circles.push_back( p );
         app->all_containers.param_container->addCircle( p );
@@ -236,7 +236,7 @@ void dt_circle_note_on::draw(){
 
 void dt_circle_note_on::on_process(){
     ofxOscMessage m;
-    m.setAddress( "/" + ofToString(data.ch) );
+    m.setAddress( data.address );
     
     for( int i=0; i<8; i++ ){
         dt_circle_type type = ( dt_circle_type )( i+1 );
@@ -245,7 +245,7 @@ void dt_circle_note_on::on_process(){
     }
     
     app->osc_sender.send_message( m );
-    app->osc_recorder.add_osc_message( m, data.ch );
+    app->osc_recorder.add_osc_message( m, 1 );
     
 	data.pan = (prms[DT_CIRCLE_PAN]-64.0)/127.0 * data.rev_radius;
     data.note = (prms[DT_CIRCLE_NOTE_NUM]-64.0)/127.0 * data.rev_radius;

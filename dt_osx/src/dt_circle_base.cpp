@@ -17,6 +17,15 @@
  *
  */
 ofFloatColor dt_circle_data::defaultColor = ofFloatColor( 0 );
+ofColor dt_circle_base::noteOn_color =		ofColor( 200 );
+ofColor dt_circle_base::noteNum_color =	ofColor( 184,  88,  32 );
+ofColor dt_circle_base::velocity_color =	ofColor( 247, 106, 129 );
+ofColor dt_circle_base::duration_color =	ofColor(  52,  78, 168 );
+ofColor dt_circle_base::pan_color =		ofColor(  30, 141,  25 );
+ofColor dt_circle_base::cc1_color =		ofColor( 133, 135,  65 );
+ofColor dt_circle_base::cc2_color =		ofColor( 160, 163,  79 );
+ofColor dt_circle_base::cc3_color =		ofColor( 201, 204,  98 );
+ofColor dt_circle_base::cc4_color =		ofColor( 241, 244,  138 );
 
 dt_circle_data::dt_circle_data()
 :
@@ -43,7 +52,7 @@ dur( 0 ),
 pan( 0 ),
 position( ofVec2f(-1,-1) ),
 name( "default" ),
-ch( 1 ),
+address( "/1" ),
 output_value( ofRandom(0, 127) )
 {
 }
@@ -129,6 +138,63 @@ void dt_circle_base::change_speed( int speed ){
 void dt_circle_base::change_shape( int shape ){
     seq->setRhythmShape( shape );
     make_vbo();
+}
+
+void dt_circle_base::change_type( dt_circle_type type ){
+	data.circle_type = type;
+    
+    switch ( data.circle_type ) {
+		case DT_CIRCLE_NOTE_ON:
+			change_circle_color( noteOn_color );
+            initial = "";
+			//address = "";
+            break;
+        case DT_CIRCLE_NOTE_NUM:
+            change_circle_color( noteNum_color );
+            initial = "N";
+			data.address = parent->data.address + "/note";
+            break;
+        case DT_CIRCLE_VELOCITY:
+            change_circle_color( velocity_color );
+            initial = "V";
+			data.address = parent->data.address + "/vel";
+            break;
+        case DT_CIRCLE_DURATION:
+            change_circle_color( duration_color );
+            initial = "D";
+			data.address = parent->data.address + "/dur";
+            break;
+        case DT_CIRCLE_PAN:
+            change_circle_color( pan_color );
+            initial = "P";
+			data.address = parent->data.address + "/pan";
+            break;
+        case DT_CIRCLE_CC1:
+            change_circle_color( cc1_color );
+            initial = "CC1";
+			data.address = parent->data.address + "/cc1";
+            break;
+        case DT_CIRCLE_CC2:
+            change_circle_color( cc2_color );
+            initial = "CC2";
+			data.address = parent->data.address + "/cc2";
+            break;
+        case DT_CIRCLE_CC3:
+            change_circle_color( cc3_color );
+            initial = "CC3";
+			data.address = parent->data.address + "/cc3";
+            break;
+        case DT_CIRCLE_CC4:
+            change_circle_color( cc4_color );
+            initial = "CC4";
+			data.address = parent->data.address + "/cc4";
+            break;
+            
+        default:
+            break;
+    }
+    
+    setup_text( initial );
 }
 
 void dt_circle_base::change_circle_color( ofColor & c ){
@@ -237,3 +303,4 @@ void dt_circle_base::make_vbo(){
     rshape.setUsage( GL_DYNAMIC_DRAW );
     rguid.setUsage( GL_DYNAMIC_DRAW );    
 }
+

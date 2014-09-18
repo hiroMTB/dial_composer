@@ -14,15 +14,6 @@
 #include "dt_sequence_thread.h"
 #include "dt_font_manager.h"
 
-ofColor dt_circle_param::noteNum_color =	ofColor( 184,  88,  32 );
-ofColor dt_circle_param::velocity_color =	ofColor( 247, 106, 129 );
-ofColor dt_circle_param::duration_color =	ofColor(  52,  78, 168 );
-ofColor dt_circle_param::pan_color =		ofColor(  30, 141,  25 );
-ofColor dt_circle_param::cc1_color =		ofColor( 133, 135,  65 );
-ofColor dt_circle_param::cc2_color =		ofColor( 160, 163,  79 );
-ofColor dt_circle_param::cc3_color =		ofColor( 201, 204,  98 );
-ofColor dt_circle_param::cc4_color =		ofColor( 241, 244,  138 );
-
 dt_circle_drawer dt_circle_param::circle_drawer;
 
 dt_circle_param::dt_circle_param(){
@@ -143,49 +134,4 @@ void dt_circle_param::on_process(){
         dt_circle_note_on * n = static_cast<dt_circle_note_on*>( parent );
         n->prms[ data.circle_type ] = data.output_value;
     }
-}
-
-void dt_circle_param::change_param_type( dt_circle_type type ){
-
-    data.circle_type = type;
-    
-    switch ( type ) {
-        case DT_CIRCLE_NOTE_NUM:
-            change_circle_color( noteNum_color );
-            initial = "N";
-            break;
-        case DT_CIRCLE_VELOCITY:
-            change_circle_color( velocity_color );
-            initial = "V";
-            break;
-        case DT_CIRCLE_DURATION:
-            change_circle_color( duration_color );
-            initial = "D";
-            break;
-        case DT_CIRCLE_PAN:
-            change_circle_color( pan_color );
-            initial = "P";
-            break;
-        case DT_CIRCLE_CC1:
-            change_circle_color( cc1_color );
-            initial = "C1";
-            break;
-        case DT_CIRCLE_CC2:
-            change_circle_color( cc2_color );
-            initial = "C2";
-            break;
-        case DT_CIRCLE_CC3:
-            change_circle_color( cc3_color );
-            initial = "C3";
-            break;
-        case DT_CIRCLE_CC4:
-            change_circle_color( cc4_color );
-            initial = "C4";
-            break;
-            
-        default:
-            break;
-    }
-    
-    setup_text( initial );
 }

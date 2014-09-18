@@ -30,7 +30,7 @@ void dt_ui_zoom::singleClickStart( int x, int y, int button ){
             p->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
             p->parent = app->mode_manager.zoom_mode_target;
             p->data.position = mpw - p->parent->data.position;
-            p->change_param_type( DT_CIRCLE_PAN );
+            p->change_type( DT_CIRCLE_PAN );
             app->all_containers.circle_base_container->addCircle( p );
             app->all_containers.param_container->addCircle( p );
             app->mode_manager.zoom_mode_target->input_circles.push_back( p );

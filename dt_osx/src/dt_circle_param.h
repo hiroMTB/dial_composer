@@ -24,15 +24,6 @@ public:
     virtual void on_process();
     void change_param_type( dt_circle_type t );
     
-	static ofColor noteNum_color;
-	static ofColor velocity_color;
-	static ofColor duration_color;
-	static ofColor pan_color;
-	static ofColor cc1_color;
-	static ofColor cc2_color;
-	static ofColor cc3_color;
-	static ofColor cc4_color;
-	
     static dt_circle_drawer	circle_drawer;
 
 };

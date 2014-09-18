@@ -59,7 +59,6 @@ public:
 	int fired_ch;
 	int step_age;
 	int speed;
-	int ch;
     
     float output_value;
 	float rev_angle;
@@ -72,6 +71,7 @@ public:
     float note, vel, dur, pan;  // for animation
 
 	string name;
+	string address;
 	
 	ofVec2f position;
 	ofVec2f indi_position;
@@ -112,6 +112,7 @@ public:
     void change_speed( int speed );
     void change_shape( int shape );
 	void change_rotation( float beat );
+	void change_type( dt_circle_type t );
     void change_circle_color( float r, float g, float b, float a );
     void change_circle_color( ofFloatColor &c );
     void change_circle_color( ofColor &c );
@@ -135,5 +136,16 @@ public:
     dt_circle_base * parent;
     vector<dt_circle_base*> input_circles;
 	vector<dt_circle_base*> output_circles;
+	
+
+	static ofColor noteOn_color;
+	static ofColor noteNum_color;
+	static ofColor velocity_color;
+	static ofColor duration_color;
+	static ofColor pan_color;
+	static ofColor cc1_color;
+	static ofColor cc2_color;
+	static ofColor cc3_color;
+	static ofColor cc4_color;
 };
 
