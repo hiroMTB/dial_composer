@@ -31,6 +31,7 @@ public:
 	ofxOscReceiver osc_r;
 	
 	// OSC out
+    static bool     DT_OSC_OUT_ENABLE;
   	static int      DT_OSC_OUT_CH_MAX;
 	static string	DT_OSC_OUT_TOP_ADDRESS;
 	static string	DT_OSC_OUT_IP_ADDRESS;
@@ -38,6 +39,7 @@ public:
 	static bool     DT_OSC_OUT_PACK_RHYTHM_PARAM;
     
 	// OSC in
+    static bool     DT_OSC_IN_ENABLE;
 	static string	DT_OSC_IN_TOP_ADDRESS;
 	static int		DT_OSC_IN_PORT;
 	

@@ -48,7 +48,8 @@ void dt_osc_sender::setTargetPort( int _port ){
 }
 
 void dt_osc_sender::send_message( ofxOscMessage &m ){
-	sender.sendMessage( m );
+    if(dt_config::DT_OSC_OUT_ENABLE)
+        sender.sendMessage( m );
     
     
 #pragma mark TASK
@@ -96,5 +97,6 @@ void dt_osc_sender::send_message( ofxOscMessage &m ){
 }
 
 void dt_osc_sender::send_bundle( ofxOscBundle &b ){
-	sender.sendBundle( b );
+    if(dt_config::DT_OSC_OUT_ENABLE)
+        sender.sendBundle( b );
 }

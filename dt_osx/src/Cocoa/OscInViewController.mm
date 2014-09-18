@@ -28,7 +28,7 @@
 }
 
 - (IBAction)change_enable:(id)sender {
-    
+    dt_config::DT_OSC_IN_ENABLE = [(NSSegmentedControl*)sender selectedSegment];
 }
 
 - (IBAction)change_address:(id)sender {
@@ -68,6 +68,7 @@
 - (void)update_ui{
     ofApp * app = ofApp::app;
     if( app ){
+        [enable_sc setSelectedSegment: (int)dt_config::DT_OSC_IN_ENABLE];
         [address_tx setStringValue: my_ip_address];
         [port_tx setStringValue:[NSString stringWithUTF8String: ofToString(dt_config::DT_OSC_IN_PORT).c_str() ]];
         [top_address setStringValue:[NSString stringWithUTF8String: ofToString(dt_config::DT_OSC_IN_TOP_ADDRESS).c_str() ]];

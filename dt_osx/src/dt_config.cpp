@@ -23,6 +23,7 @@ int dt_config::DT_CONNECTION_NUM_INPUT_MAX = 16;
 int dt_config::DT_CONNECTION_NUM_OUTPUT_MAX = 3;
 
 // OSC out
+bool dt_config::DT_OSC_OUT_ENABLE = true;
 int dt_config::DT_OSC_OUT_CH_MAX = 32;
 std::string dt_config::DT_OSC_OUT_TOP_ADDRESS = "/dial_out";
 std::string dt_config::DT_OSC_OUT_IP_ADDRESS = "localhost";
@@ -30,6 +31,7 @@ int dt_config::DT_OSC_OUT_PORT = 12345;
 bool dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM = true;
 
 // OSC in
+bool dt_config::DT_OSC_IN_ENABLE = true;
 std::string dt_config::DT_OSC_IN_TOP_ADDRESS = "/dial_in";
 int dt_config::DT_OSC_IN_PORT =	8888;
 
@@ -52,7 +54,9 @@ void dt_config::setup(){
 }
 
 void dt_config::update(){
-	
+	if( !dt_config::DT_OSC_IN_ENABLE )
+        return;
+    
 	while( osc_r.hasWaitingMessages() ){
 		ofxOscMessage m;
 		osc_r.getNextMessage( &m );
