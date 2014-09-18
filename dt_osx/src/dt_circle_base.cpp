@@ -145,9 +145,13 @@ void dt_circle_base::change_type( dt_circle_type type ){
     
     switch ( data.circle_type ) {
 		case DT_CIRCLE_NOTE_ON:
-			change_circle_color( noteOn_color );
+        {
+            ofFloatColor c;
+            c.setHsb( ofRandom( 0.0, 1.0 ), ofRandom(0.6, 0.8), 0.8 );
+			change_circle_color( c );
             initial = "T";
 			data.address = "/trg";
+        }
             break;
         case DT_CIRCLE_NOTE_NUM:
             change_circle_color( noteNum_color );

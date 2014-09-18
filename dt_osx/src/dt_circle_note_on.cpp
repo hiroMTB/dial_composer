@@ -21,9 +21,6 @@ dt_circle_note_on::dt_circle_note_on(){
 	data.circle_type = DT_CIRCLE_NOTE_ON;
 
 //	ui = new dt_dial_ui( this );
-
-    data.circle_color.setHsb( ofRandom( 0.0, 1.0 ), ofRandom(0.6, 0.8), 0.8 );
-//    data.circle_color.set( 0.7 );
     
     if( !circle_drawer.bInitialized ){
         circle_drawer.initialize( 60 );
