@@ -138,11 +138,11 @@ void dt_circle_note_on::update(){
 	data.output_connection_radius = data.collision_radius + 100;
     
     // param animation
-    data.note *= 0.9;
-    data.pan *= 0.9;
-    data.vel *= 0.9;
-    data.dur *= 0.9;
-    data.fire_rate *=0.93;
+    data.note *= 0.95;
+    data.pan *= 0.95;
+    data.vel *= 0.95;
+    data.dur *= 0.95;
+    data.fire_rate *=0.95;
 }
 
 void dt_circle_note_on::check_connection(){
@@ -226,9 +226,9 @@ void dt_circle_note_on::draw(){
                 c.setBrightness( c.getBrightness()*2.0 );
                 c.setSaturation( 0.3 );
                 ofSetColor( c );
-                ofSetLineWidth( 1.0+data.vel*8.0 );
+                ofSetLineWidth( 1.0+data.vel*5.0 );
                 ofLine( 0, 0, data.pan, data.note );
-                ofCircle( data.pan, data.note, 1.0+data.vel*5.0 );
+                ofCircle( data.pan, data.note, 1.0+data.vel*14.0 );
             }
         }ofPopMatrix();
     }ofPopMatrix();

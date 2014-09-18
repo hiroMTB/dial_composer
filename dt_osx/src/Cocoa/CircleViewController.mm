@@ -18,13 +18,6 @@
 @end
 
 @implementation CircleViewController
-@synthesize type_cb;
-@synthesize name_tx;
-@synthesize solo_bt, mute_bt;
-@synthesize beat_sl, speed_sl, rotate_sl, shape_sl, output_value_sl;
-@synthesize beat_tx, speed_tx, rotate_tx, shape_tx, output_value_tx;
-@synthesize address_lb;
-@synthesize color;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -66,8 +59,8 @@
     dt_circle_base * c = dt_circle_base::selected_circle;
     if( c ){
         int beat = [sender intValue];
-        [self.beat_sl setIntValue: beat];
-        [self.beat_tx setIntValue: beat];
+        [beat_sl setIntValue: beat];
+        [beat_tx setIntValue: beat];
         c->change_beat( beat );
     }
 }
@@ -76,8 +69,8 @@
     dt_circle_base * c = dt_circle_base::selected_circle;
     if( c ){
         int speed = [sender intValue];
-        [self.speed_sl setIntValue:speed];
-        [self.speed_tx setIntValue:speed];
+        [speed_sl setIntValue:speed];
+        [speed_tx setIntValue:speed];
         c->change_speed( speed );
     }
 }
@@ -86,8 +79,8 @@
     dt_circle_base * c = dt_circle_base::selected_circle;
     if( c ){
         float rotate = [sender floatValue];
-        [self.rotate_sl setFloatValue:rotate];
-        [self.rotate_tx setFloatValue:rotate];
+        [rotate_sl setFloatValue:rotate];
+        [rotate_tx setFloatValue:rotate];
 		c->change_rotation( rotate );
     }
 }
@@ -98,8 +91,8 @@
         int shape = [sender intValue];
         c->change_shape( shape );
         shape = c->seq->rhythm_shape_type;
-        [self.shape_sl setIntValue:shape];
-        [self.shape_tx setIntValue:shape];
+        [shape_sl setIntValue:shape];
+        [shape_tx setIntValue:shape];
     }
 }
 
@@ -110,8 +103,8 @@
     dt_circle_base * c = dt_circle_base::selected_circle;
     if( c ){
         float ov = [sender floatValue];
-        [self.output_value_sl setFloatValue:ov];
-        [self.output_value_tx setFloatValue:ov];
+        [output_value_sl setFloatValue:ov];
+        [output_value_tx setFloatValue:ov];
         c->data.output_value = ov;
     }
 }
@@ -130,26 +123,28 @@
 - (void)update_ui{
     dt_circle_base * c = dt_circle_base::dt_circle_base::selected_circle;
     if( c ){
-		[self.type_cb selectItemAtIndex: (int)c->data.circle_type];
-        [self.name_tx setStringValue: [NSString stringWithUTF8String: c->data.name.c_str()] ];
-        [self.solo_bt setState: NSOffState];
-        [self.mute_bt setState: c->data.bMute];
-        [self.beat_sl setIntValue: c->seq->total_beats];
-        [self.beat_tx setIntValue: c->seq->total_beats];
-        [self.speed_sl setIntValue: c->data.speed];
-        [self.speed_tx setIntValue: c->data.speed];
-        [self.rotate_sl setFloatValue: 123];
-        [self.rotate_tx setFloatValue: 123];
-        [self.shape_sl setIntValue: c->seq->rhythm_shape_type];
-        [self.shape_tx setIntValue: c->seq->rhythm_shape_type];
-        [self.output_value_sl setFloatValue: c->data.output_value];
-        [self.output_value_tx setFloatValue: c->data.output_value];
+		[type_cb selectItemAtIndex: (int)c->data.circle_type];
+        [name_tx setStringValue: [NSString stringWithUTF8String: c->data.name.c_str()] ];
+        [solo_bt setState: NSOffState];
+        [mute_bt setState: c->data.bMute];
+        [beat_sl setIntValue: c->seq->total_beats];
+        [beat_tx setIntValue: c->seq->total_beats];
+        [speed_sl setIntValue: c->data.speed];
+        [speed_tx setIntValue: c->data.speed];
+        [rotate_sl setFloatValue: 123];
+        [rotate_tx setFloatValue: 123];
+        [shape_sl setIntValue: c->seq->rhythm_shape_type];
+        [shape_tx setIntValue: c->seq->rhythm_shape_type];
+        string ad = ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS) + "/";
+        [top_address setStringValue:[NSString stringWithUTF8String:ad.c_str() ]];
+        [output_value_sl setFloatValue: c->data.output_value];
+        [output_value_tx setFloatValue: c->data.output_value];
 
         string adrs = c->data.address;
-        [self.address_lb setStringValue: [NSString stringWithUTF8String: adrs.c_str() ]];
+        [address_lb setStringValue: [NSString stringWithUTF8String: adrs.c_str() ]];
         
         ofFloatColor &col = c->data.circle_color;
-        [self.color setColor: [NSColor colorWithCalibratedRed:col.r green:col.g blue:col.b alpha:col.a] ];
+        [color setColor: [NSColor colorWithCalibratedRed:col.r green:col.g blue:col.b alpha:col.a] ];
     }
 }
 

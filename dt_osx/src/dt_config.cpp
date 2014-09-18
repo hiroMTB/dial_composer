@@ -24,13 +24,13 @@ int dt_config::DT_CONNECTION_NUM_OUTPUT_MAX = 3;
 
 // OSC out
 int dt_config::DT_OSC_OUT_CH_MAX = 32;
-std::string dt_config::DT_OSC_OUT_ADDRESS_PREFIX = "/dial_out/";
-std::string dt_config::DT_OSC_OUT_ADDRESS = "localhost";
+std::string dt_config::DT_OSC_OUT_TOP_ADDRESS = "/dial_out";
+std::string dt_config::DT_OSC_OUT_IP_ADDRESS = "localhost";
 int dt_config::DT_OSC_OUT_PORT = 12345;
 bool dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM = true;
 
 // OSC in
-std::string dt_config::DT_OSC_IN_ADDRESS_PREFIX = "/dial_in/";
+std::string dt_config::DT_OSC_IN_TOP_ADDRESS = "/dial_in";
 int dt_config::DT_OSC_IN_PORT =	8888;
 
 // Buffered Rhythm
@@ -58,13 +58,13 @@ void dt_config::update(){
 		osc_r.getNextMessage( &m );
 		
 		string address = m.getAddress();
-		string pre = DT_OSC_IN_ADDRESS_PREFIX;
+		string pre = DT_OSC_IN_TOP_ADDRESS;
 		
 		// OSC
-		if( address == pre + "osc_out_address" ){
+		if( address == pre + "osc_out_ip_address" ){
 			
 			string s = m.getArgAsString( 0 );
-			DT_OSC_OUT_ADDRESS = s;
+			DT_OSC_OUT_IP_ADDRESS = s;
 			app->osc_sender.setTargetAddress( s );
 			
 		}else if( address == pre + "osc_out_port" ){

@@ -32,13 +32,13 @@ public:
 	
 	// OSC out
   	static int      DT_OSC_OUT_CH_MAX;
-	static string	DT_OSC_OUT_ADDRESS_PREFIX;
-	static string	DT_OSC_OUT_ADDRESS;
+	static string	DT_OSC_OUT_TOP_ADDRESS;
+	static string	DT_OSC_OUT_IP_ADDRESS;
 	static int		DT_OSC_OUT_PORT;
 	static bool     DT_OSC_OUT_PACK_RHYTHM_PARAM;
     
 	// OSC in
-	static string	DT_OSC_IN_ADDRESS_PREFIX;
+	static string	DT_OSC_IN_TOP_ADDRESS;
 	static int		DT_OSC_IN_PORT;
 	
 	// Generative Rhythm

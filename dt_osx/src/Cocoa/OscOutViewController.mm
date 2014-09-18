@@ -13,11 +13,6 @@
 #import "OscOutViewController.h"
 
 @implementation OscOutViewController
-@synthesize enable_sc;
-@synthesize address_tx;
-@synthesize port_tx;
-@synthesize pack_rhythm_param_bt;
-@synthesize output_tx;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,6 +44,9 @@
     dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM = [sender state];
 }
 
+- (IBAction)change_top_address:(id)sender {
+}
+
 - (void)add_output_message:(std::string)m {
     NSString * line = [NSString stringWithUTF8String:m.c_str()];
     NSString * current = [output_tx string];
@@ -59,9 +57,9 @@
 - (void)update_ui{
     ofApp * app = ofApp::app;
     if( app ){
-        
-        [self.address_tx setStringValue: [NSString stringWithUTF8String: dt_config::DT_OSC_OUT_ADDRESS.c_str()]];
-        [self.port_tx setStringValue:[NSString stringWithUTF8String: ofToString(app->config.DT_OSC_OUT_PORT).c_str() ]];
+        [address_tx setStringValue: [NSString stringWithUTF8String: dt_config::DT_OSC_OUT_IP_ADDRESS.c_str()] ];
+        [port_tx setStringValue: [NSString stringWithUTF8String: ofToString(dt_config::DT_OSC_OUT_PORT).c_str()] ];
+        [top_address setStringValue: [NSString stringWithUTF8String:ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS).c_str()] ];
     }
 }
 

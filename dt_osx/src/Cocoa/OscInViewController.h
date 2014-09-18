@@ -11,23 +11,21 @@
 #include <string>
 
 @interface OscInViewController : NSViewController {
-    NSSegmentedControl *enable_sc;
-    NSTextField *address_tx;
-    NSTextField *port_tx;
-    NSTextView *input_tx;
+    IBOutlet NSSegmentedControl *enable_sc;
+    IBOutlet NSTextField *address_tx;
+    IBOutlet NSTextField *port_tx;
+    IBOutlet NSTextView *input_tx;
+    IBOutlet NSTextField *top_address;
+    IBOutlet NSButton *address_check;
+    NSString * my_ip_address;
 }
-
-@property (assign) IBOutlet NSSegmentedControl *enable_sc;
-@property (assign) IBOutlet NSTextField *address_tx;
-@property (assign) IBOutlet NSTextField *port_tx;
 
 - (IBAction)change_enable:(id)sender;
 - (IBAction)change_address:(id)sender;
 - (IBAction)change_port:(id)sender;
-@property (assign) IBOutlet NSTextView *input_tx;
+- (IBAction)check_ip_address:(id)sender;
 
 - (void)add_input_message:(std::string) m;
-
 - (void)update_ui;
-
+- (NSString*) getIPWithNSHost;
 @end

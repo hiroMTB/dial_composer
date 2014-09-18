@@ -17,11 +17,7 @@
 @end
 
 @implementation GeneralViewController
-@synthesize bpm_sl;
-@synthesize bpm_tx;
-@synthesize bg_color;
-@synthesize fps_tx;
-@synthesize circle_num_tx;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

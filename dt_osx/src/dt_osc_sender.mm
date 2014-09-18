@@ -22,7 +22,7 @@
  */
 dt_osc_sender::dt_osc_sender()
 :
-address( dt_config::DT_OSC_OUT_ADDRESS ),
+address( dt_config::DT_OSC_OUT_IP_ADDRESS ),
 port( dt_config::DT_OSC_OUT_PORT )
 {
 	reset();

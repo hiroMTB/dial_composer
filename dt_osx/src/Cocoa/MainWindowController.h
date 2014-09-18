@@ -32,7 +32,6 @@
 }
 
 @property (nonatomic, assign) NSViewController *myCurrentViewController;
-
 @property (nonatomic, strong) GeneralViewController *generalViewController;
 @property (nonatomic, strong) CircleViewController *circleViewController;
 @property (nonatomic, strong) OscOutViewController *oscOutViewController;
@@ -43,6 +42,7 @@
 - (IBAction)SelectSideP3:(id)sender;
 - (IBAction)SelectSideP4:(id)sender;
 - (IBAction)SelectSideP5:(id)sender;
+- (IBAction)hide_side_panel:(id)sender;
 - (NSViewController *)viewController;
 
 - (void)update_ui;

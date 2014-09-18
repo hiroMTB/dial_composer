@@ -52,7 +52,7 @@ dur( 0 ),
 pan( 0 ),
 position( ofVec2f(-1,-1) ),
 name( "default" ),
-address( "/1" ),
+address( "1" ),
 output_value( ofRandom(0, 127) )
 {
 }

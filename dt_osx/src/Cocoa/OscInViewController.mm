@@ -9,19 +9,16 @@
 #include "ofMain.h"
 #include "ofApp.h"
 #include "dt_osc_sender.h"
-
+#include "dt_config.h"
 #import "OscInViewController.h"
 
 @implementation OscInViewController
-@synthesize enable_sc;
-@synthesize address_tx;
-@synthesize port_tx;
-@synthesize input_tx;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
+        my_ip_address = @"unknown";
     }
     return self;
 }
@@ -44,6 +41,11 @@
     ofApp::app->osc_sender.setTargetPort( port );
 }
 
+- (IBAction)check_ip_address:(id)sender {
+    my_ip_address = [self getIPWithNSHost];
+    [self update_ui];
+}
+
 
 - (void)add_input_message:(std::string)m {
     NSString * line = [NSString stringWithUTF8String:m.c_str()];
@@ -52,8 +54,24 @@
    [input_tx setString:all];
 }
 
-- (void)update_ui{
+- (NSString*) getIPWithNSHost{
+    NSArray *addresses = [[NSHost currentHost] addresses];
     
+    for (NSString *anAddress in addresses) {
+        if (![anAddress hasPrefix:@"127"] && [[anAddress componentsSeparatedByString:@"."] count] == 4) {
+            return anAddress;
+        }
+    }
+    return @"not available";
+}
+
+- (void)update_ui{
+    ofApp * app = ofApp::app;
+    if( app ){
+        [address_tx setStringValue: my_ip_address];
+        [port_tx setStringValue:[NSString stringWithUTF8String: ofToString(dt_config::DT_OSC_IN_PORT).c_str() ]];
+        [top_address setStringValue:[NSString stringWithUTF8String: ofToString(dt_config::DT_OSC_IN_TOP_ADDRESS).c_str() ]];
+    }
 }
 
 @end

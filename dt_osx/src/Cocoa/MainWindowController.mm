@@ -131,6 +131,13 @@ NSString *const OscInViewTitle		= @"OscInView";
     [self changeViewController : 5];
 }
 
+- (IBAction)hide_side_panel:(id)sender {
+    
+    
+    
+    
+}
+
 - (void)deselect_all_side_panel {
     [SidePanelSelector1 setState: NSOffState ];
     [SidePanelSelector2 setState: NSOffState ];

@@ -41,7 +41,7 @@ void ofApp::setup(){
     //Visual
 	ofSetFrameRate( 60 );
 	ofSetVerticalSync( true );
-	ofSetCircleResolution( 13 );
+	ofSetCircleResolution( 24 );
 	ofEnableAlphaBlending();
 	ofEnableAntiAliasing();
 	ofEnableSmoothing();
