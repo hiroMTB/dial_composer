@@ -139,12 +139,16 @@
         [rotate_tx setFloatValue: c->data.phase_step];
         [shape_sl setIntValue: c->seq->rhythm_shape_type];
         [shape_tx setIntValue: c->seq->rhythm_shape_type];
-        [top_address setStringValue:[NSString stringWithUTF8String:ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS).c_str() ]];
+
+        string non_editable_address = ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS);
+        if( c->parent ){
+            non_editable_address += c->parent->data.address;
+        }
+        [top_address setStringValue:[NSString stringWithUTF8String:non_editable_address.c_str() ]];
+        [address_lb setStringValue: [NSString stringWithUTF8String: c->data.address.c_str() ]];
         [output_value_sl setFloatValue: c->data.output_value];
         [output_value_tx setFloatValue: c->data.output_value];
 
-        string adrs = c->data.address;
-        [address_lb setStringValue: [NSString stringWithUTF8String: adrs.c_str() ]];
         
         ofFloatColor &col = c->data.circle_color;
         [color setColor: [NSColor colorWithCalibratedRed:col.r green:col.g blue:col.b alpha:col.a] ];

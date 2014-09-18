@@ -53,7 +53,7 @@ pan( 0 ),
 position( ofVec2f(-1,-1) ),
 name( "default" ),
 address( "/1" ),
-output_value( ofRandom(0, 127) )
+output_value( (int)ofRandom(0, 127) )
 {
 }
 
@@ -146,48 +146,48 @@ void dt_circle_base::change_type( dt_circle_type type ){
     switch ( data.circle_type ) {
 		case DT_CIRCLE_NOTE_ON:
 			change_circle_color( noteOn_color );
-            initial = "";
-			//address = "";
+            initial = "T";
+			data.address = "/trg";
             break;
         case DT_CIRCLE_NOTE_NUM:
             change_circle_color( noteNum_color );
             initial = "N";
-			data.address = parent->data.address + "/note";
+			data.address = "/note";
             break;
         case DT_CIRCLE_VELOCITY:
             change_circle_color( velocity_color );
             initial = "V";
-			data.address = parent->data.address + "/vel";
+			data.address = "/vel";
             break;
         case DT_CIRCLE_DURATION:
             change_circle_color( duration_color );
             initial = "D";
-			data.address = parent->data.address + "/dur";
+			data.address = "/dur";
             break;
         case DT_CIRCLE_PAN:
             change_circle_color( pan_color );
             initial = "P";
-			data.address = parent->data.address + "/pan";
+			data.address = "/pan";
             break;
         case DT_CIRCLE_CC1:
             change_circle_color( cc1_color );
             initial = "CC1";
-			data.address = parent->data.address + "/cc1";
+			data.address = "/cc1";
             break;
         case DT_CIRCLE_CC2:
             change_circle_color( cc2_color );
             initial = "CC2";
-			data.address = parent->data.address + "/cc2";
+			data.address = "/cc2";
             break;
         case DT_CIRCLE_CC3:
             change_circle_color( cc3_color );
             initial = "CC3";
-			data.address = parent->data.address + "/cc3";
+			data.address = "/cc3";
             break;
         case DT_CIRCLE_CC4:
             change_circle_color( cc4_color );
             initial = "CC4";
-			data.address = parent->data.address + "/cc4";
+			data.address = "/cc4";
             break;
             
         default:

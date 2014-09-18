@@ -66,6 +66,7 @@ void dt_circle_note_on::setup( int beat_num ){
 	change_beat( beat_num );
 	change_speed( 1 );
     change_shape( ofRandom(-3000, 3000) );
+    change_type( DT_CIRCLE_NOTE_ON );
     
 	// Quantize to beat position
 	//int steps_per_beat = DT_BEAT_RESOLUTION; //* data.speed;

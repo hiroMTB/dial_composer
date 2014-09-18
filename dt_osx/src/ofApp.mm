@@ -68,6 +68,7 @@ void ofApp::update(){
 	config.update();
 	all_containers.update();
     
+#pragma mark BAD_CODE
     [[[NSApplication sharedApplication] delegate] update_ui];
 }
 

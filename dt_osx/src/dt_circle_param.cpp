@@ -142,7 +142,7 @@ void dt_circle_param::on_process(){
     // send osc directly
     if( !dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM ){
         ofxOscMessage m;
-        m.setAddress( data.address );
+        m.setAddress( dt_config::DT_OSC_OUT_TOP_ADDRESS + parent->data.address + data.address );
         m.addFloatArg( data.output_value );
         ofApp::app->osc_sender.send_message( m );
     }
