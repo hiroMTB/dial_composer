@@ -35,7 +35,6 @@ void ofApp::windowResized( int w, int h ){
 	config.reset_position();
 	backingScale = [[NSScreen mainScreen] backingScaleFactor];
     dt_config::DT_SIZE_BASE = max( w, h )/16.0 * backingScale;
-    cam.reset();
 }
 
 void ofApp::setup(){
@@ -61,6 +60,7 @@ void ofApp::setup(){
 	sequence_thread.change_bpm( 120 );
 	sequence_thread.start();
 	mode_manager.setup();
+	cam.reset();
 }
 
 void ofApp::update(){
