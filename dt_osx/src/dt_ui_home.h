@@ -35,6 +35,7 @@ public:
     virtual void dragStart( int x, int y, int button );
     virtual void dragging( int x, int y, int button );
     virtual void dragEnd( int x, int y, int button );
+    bool mode_check();
 
     ofApp * app;
     ofVec2f drag_start_posw;

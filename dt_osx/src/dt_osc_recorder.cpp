@@ -24,7 +24,7 @@ void dt_osc_recorder::setup(){
 	for( int i=0; i<fragment_ring_max; i++ ){
 		fragment frag;
 
-		for( int j=0; j<dt_config::DT_OSC_OUT_CH_SYSTEM_MAX; j++ ){
+		for( int j=0; j<dt_config::DT_OSC_OUT_CH_MAX; j++ ){
 			ofxOscMessage m;
 			m.clear();
 			frag.push_back( m );
@@ -50,7 +50,7 @@ void dt_osc_recorder::draw( int _x, int _y, int _w, int _h ){
 	float x = 0;
 	float y = 0;
 	float frag_w = (float)_w / fragment_ring_max;
-	float ch_h = (float)_h / dt_config::DT_OSC_OUT_CH_SYSTEM_MAX;
+	float ch_h = (float)_h / dt_config::DT_OSC_OUT_CH_MAX;
 	
 	//
 	//	we should start from current fragment position
@@ -59,7 +59,7 @@ void dt_osc_recorder::draw( int _x, int _y, int _w, int _h ){
 
 		x = i * frag_w;
 				
-		for( int j=0; j<dt_config::DT_OSC_OUT_CH_SYSTEM_MAX; j++ ){
+		for( int j=0; j<dt_config::DT_OSC_OUT_CH_MAX; j++ ){
 			
 			if( fragment_ring[i][j].getNumArgs()>0 ){
 				int ch = j;
@@ -71,7 +71,7 @@ void dt_osc_recorder::draw( int _x, int _y, int _w, int _h ){
 	
 	if( dt_config::DT_PLAY_BUFFERED_RHYTHM ){
 		x = dt_config::DT_BUFFERED_RHYTHM_INDICATOR * frag_w;
-		y = dt_config::DT_OSC_OUT_CH_SYSTEM_MAX * ch_h + 5;
+		y = dt_config::DT_OSC_OUT_CH_MAX * ch_h + 5;
 		add_line( ofVec2f(_x+x, _y-10), ofVec2f(_x+x, _y+y), ofFloatColor(1, 0, 0.5), ofFloatColor(1, 0, 0.5) );
 		
 		// start, dynamic
@@ -84,7 +84,7 @@ void dt_osc_recorder::draw( int _x, int _y, int _w, int _h ){
 	}
 	
 	x = current_fragment * frag_w;
-	y = ( dt_config::DT_OSC_OUT_CH_SYSTEM_MAX-1 ) * ch_h;
+	y = ( dt_config::DT_OSC_OUT_CH_MAX-1 ) * ch_h;
 	add_line( ofVec2f(_x+x, _y-8), ofVec2f(_x+x, _y-2), ofFloatColor(1), ofFloatColor(1) );
 	add_line( ofVec2f(_x+x, _y+y), ofVec2f(_x+x, _y+y+8), ofFloatColor(1), ofFloatColor(1) );
 
@@ -117,7 +117,7 @@ void dt_osc_recorder::step_fragment(){
 	}
 	
 	// clear
-	for( int i=0; i<dt_config::DT_OSC_OUT_CH_SYSTEM_MAX; i++ ){
+	for( int i=0; i<dt_config::DT_OSC_OUT_CH_MAX; i++ ){
 		fragment_ring[ current_fragment ][ i ].clear();
 	}
 }
@@ -137,7 +137,7 @@ void dt_osc_recorder::play_fragment(){
 
 	int rate = dt_config::DT_BUFFERED_RHYTHM_RATE;
 	
-	for( int i=0; i<dt_config::DT_OSC_OUT_CH_SYSTEM_MAX; i++ ){
+	for( int i=0; i<dt_config::DT_OSC_OUT_CH_MAX; i++ ){
 		if( rate==100 || ofRandom(0, 100) < rate ){
 			app->osc_sender.send_message(fragment_ring[ dt_config::DT_BUFFERED_RHYTHM_INDICATOR ][ i ]);
 		}

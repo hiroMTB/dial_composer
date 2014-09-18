@@ -80,21 +80,23 @@ void dt_circle_note_on::setup( int beat_num ){
     
     // input
     input_circles.clear();
-    for( int i=0; i<8; i++){
-        dt_circle_param * p = new dt_circle_param();
-        p->setup( ofRandom(4, 12) );
-        p->parent = this;
-        p->change_type( (dt_circle_type)(i+1) );
-        p->change_shape( ofRandom(10, 100) );
-        float r = app->config.DT_SIZE_BASE * 1.8;
-        float rad = (-180.0+(float)i*30.0) * DEG_TO_RAD;
-        float x = r * cos( rad );
-        float y = r * sin( rad );
-        p->data.position.set( x,y );
-        
-        input_circles.push_back( p );
-        app->all_containers.param_container->addCircle( p );
-        app->all_containers.circle_base_container->addCircle( p );
+    for( int j=0; j<2; j++){
+        for( int i=0; i<8; i++){
+            dt_circle_param * p = new dt_circle_param();
+            p->setup( ofRandom(4, 12) );
+            p->parent = this;
+            p->change_type( (dt_circle_type)(i+1) );
+            p->change_shape( ofRandom(10, 100) );
+            float r = dt_config::DT_SIZE_BASE*1.2 + j*dt_config::DT_SIZE_BASE*0.6;
+            float rad = (-180.0+(float)i*30.0) * DEG_TO_RAD;
+            float x = r * cos( rad );
+            float y = r * sin( rad );
+            p->data.position.set( x,y );
+            
+            input_circles.push_back( p );
+            app->all_containers.param_container->addCircle( p );
+            app->all_containers.circle_base_container->addCircle( p );
+        }
     }
 }
 
@@ -114,14 +116,11 @@ void dt_circle_note_on::update(){
             break;
             
         case DT_MODE_ZOOM:
-            if( app->mode_manager.zoom_mode_target != this){
-                data.bShow = false;
-            }
+            data.bShow = app->mode_manager.zoom_mode_target == this;
             break;
+            
         case DT_MODE_ZOOM2HOME:
-            if( app->mode_manager.zoom_mode_target != this){
-                data.bShow = true;
-            }
+            data.bShow = true;
             break;
         default:
             break;
@@ -141,7 +140,7 @@ void dt_circle_note_on::update(){
     // param animation
     data.note *= 0.9;
     data.pan *= 0.9;
-    data.vel *= 0.99;
+    data.vel *= 0.9;
     data.dur *= 0.9;
     data.fire_rate *=0.93;
 }
@@ -224,9 +223,10 @@ void dt_circle_note_on::draw(){
             // param animation
             {
                 ofFloatColor c = data.circle_color;
-                c.setBrightness( c.getBrightness()*1.5 );
+                c.setBrightness( c.getBrightness()*2.0 );
+                c.setSaturation( 0.3 );
                 ofSetColor( c );
-                ofSetLineWidth( 1.0+data.vel*5.0 );
+                ofSetLineWidth( 1.0+data.vel*8.0 );
                 ofLine( 0, 0, data.pan, data.note );
                 ofCircle( data.pan, data.note, 1.0+data.vel*5.0 );
             }
@@ -235,19 +235,27 @@ void dt_circle_note_on::draw(){
 }
 
 void dt_circle_note_on::on_process(){
+    
     ofxOscMessage m;
     m.setAddress( data.address );
-    
-    for( int i=0; i<8; i++ ){
-        dt_circle_type type = ( dt_circle_type )( i+1 );
-        float v = prms[type];
-        m.addFloatArg( v );
+    m.addIntArg( 1 );
+
+    if( dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM ){
+        // here we do packing and send
+        
+        for( int i=0; i<8; i++ ){
+            dt_circle_type type = ( dt_circle_type )( i+1 );
+            float v = prms[type];
+            m.addFloatArg( v );
+        }
     }
-    
+
+    // send
     app->osc_sender.send_message( m );
     app->osc_recorder.add_osc_message( m, 1 );
-    
-	data.pan = (prms[DT_CIRCLE_PAN]-64.0)/127.0 * data.rev_radius;
+
+    // update for animation
+    data.pan = (prms[DT_CIRCLE_PAN]-64.0)/127.0 * data.rev_radius;
     data.note = (prms[DT_CIRCLE_NOTE_NUM]-64.0)/127.0 * data.rev_radius;
     data.vel = prms[DT_CIRCLE_VELOCITY]/127.0;
     data.dur = prms[DT_CIRCLE_DURATION]/127.0;

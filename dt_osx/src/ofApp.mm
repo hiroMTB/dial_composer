@@ -32,9 +32,8 @@ backingScale( 1 )
 {}
 
 void ofApp::windowResized( int w, int h ){
-	config.reset_position();
 	backingScale = [[NSScreen mainScreen] backingScaleFactor];
-    dt_config::DT_SIZE_BASE = max( w, h )/16.0 * backingScale;
+    dt_config::DT_SIZE_BASE = max( w, h )/14.0 * backingScale;
 }
 
 void ofApp::setup(){
@@ -90,15 +89,10 @@ void ofApp::draw(){
 #ifdef DEBUG
 	mode_manager.debug_draw();
     
-    config.draw();
-
     mouseX = ofGetMouseX();
     mouseY = ofGetMouseY();
-    ofRect( mouseX, mouseY, 5, 5 );
-    ofSetColor(20);
-    ofDrawBitmapString( "mouse " + ofToString(mouseX) + ", " + ofToString(mouseY), mouseX, mouseY );
-    
     ofVec2f world = cam.screenToWorld( ofVec2f(mouseX, mouseY) );
+    ofSetColor(20);
     ofDrawBitmapString( "world " + ofToString(world.x) + ", " + ofToString(world.y), mouseX, mouseY+20 );
 #endif
 
@@ -144,22 +138,16 @@ void ofApp::keyPressed( int key ){
 		// play
 		case ' ':
             dt_config::DT_PLAY_GEN_RHYTHM = !dt_config::DT_PLAY_GEN_RHYTHM;
-            config.synch_param();
             break;
             
 		case OF_KEY_TAB:
             osc_recorder.toggle_play_fragment();
-            config.synch_param(); break;
+            break;
         
 		case 'L':
             dt_config::DT_SHOW_LINER_DRAWER = !dt_config::DT_SHOW_LINER_DRAWER;
-            config.synch_param();
             break;
             
-		case 'C':
-            config.toggle();
-            break;
-
 		case 'F':
             ofToggleFullscreen();
             break;

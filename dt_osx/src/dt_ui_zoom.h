@@ -14,13 +14,6 @@
 class ofApp;
 class dt_circle_base;
 
-enum dt_ui_zoom_obj{
-    DT_UI_ZOOM_OBJ_NONE,
-    DT_UI_ZOOM_OBJ_CANVAS,
-    DT_UI_ZOOM_OBJ_NOTE_ON,
-    DT_UI_ZOOM_OBJ_PARAM
-};
-
 class dt_ui_zoom : public dt_mouse_gesture {
     
 public:
@@ -34,9 +27,9 @@ public:
     virtual void dragStart( int x, int y, int button );
     virtual void dragging( int x, int y, int button );
     virtual void dragEnd( int x, int y, int button );
+    bool mode_check();
     
     ofApp * app;
-    dt_ui_zoom_obj t_obj;
     ofVec2f drag_start_posw;
 	ofVec2f drag_start_target_pos;
     dt_circle_base * drag_target_circle;

@@ -84,6 +84,4 @@ void dt_sequence_thread_boost::change_bpm( int _bpm ){
 	if( sleep_microsec < min_sleep_micro_sec ){
 		sleep_microsec = min_sleep_micro_sec;
 	}
-
-	app->config.synch_param();
 }

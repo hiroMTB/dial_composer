@@ -21,7 +21,8 @@ public:
 	 *
 	 */
 	dt_circle_drawer(){
-	}
+        clear();
+    }
 
 	~dt_circle_drawer(){
 		clear();
@@ -31,6 +32,10 @@ public:
         circle_p.clear();
         circle_l.clear();
         circle_f.clear();
+        
+        circle_p.setMode( OF_PRIMITIVE_POINTS );
+        circle_l.setMode( OF_PRIMITIVE_LINE_LOOP );
+        circle_f.setMode( OF_PRIMITIVE_TRIANGLE_FAN );
     }
     
 	void initialize( int _resolution ){
@@ -65,7 +70,7 @@ public:
                 circle_p.draw( renderMode );
                 break;
             case OF_MESH_WIREFRAME:
-                circle_p.draw( renderMode );
+                circle_l.draw( renderMode );
                 break;
             case OF_MESH_FILL:
                 circle_f.draw( renderMode );

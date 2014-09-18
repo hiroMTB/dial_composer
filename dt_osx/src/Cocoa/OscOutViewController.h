@@ -14,17 +14,20 @@
     NSSegmentedControl *enable_sc;
     NSTextField *address_tx;
     NSTextField *port_tx;
+    NSButton *pack_rhythm_param_bt;
     NSTextView *output_tx;
 }
 
 @property (assign) IBOutlet NSSegmentedControl *enable_sc;
 @property (assign) IBOutlet NSTextField *address_tx;
 @property (assign) IBOutlet NSTextField *port_tx;
+@property (assign) IBOutlet NSButton *pack_rhythm_param_bt;
 @property (assign) IBOutlet NSTextView *output_tx;
 
 - (IBAction)change_enable:(id)sender;
 - (IBAction)change_address:(id)sender;
 - (IBAction)change_port:(id)sender;
+- (IBAction)change_pack_rhythm_param:(id)sender;
 
 - (void)add_output_message:(std::string) m;
 

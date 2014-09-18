@@ -24,12 +24,12 @@ void dt_mode_manager::update(){
 
 void dt_mode_manager::go_to_home_mode(){
     mode = DT_MODE_ZOOM2HOME;
-    zoom_mode_target = NULL;
     
     app->cam.zoomMove( 1.0, ofVec2f(0,0), 1000, ^(float * arg){
         dt_mode_manager & m = ofApp::app->mode_manager;
         m.mode = DT_MODE_HOME;
         m.current_ui = &m.ui_home;
+        m.zoom_mode_target = NULL;
     });
 }
 

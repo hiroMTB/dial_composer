@@ -16,6 +16,8 @@ dt_ui_zoom::dt_ui_zoom(){
 }
 
 void dt_ui_zoom::singleClickStart( int x, int y, int button ){
+    if( !mode_check() )
+        return;
     app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     dt_circle_base * c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
@@ -27,7 +29,7 @@ void dt_ui_zoom::singleClickStart( int x, int y, int button ){
         if( !bShift ){
             // canvas -> create new circle
             dt_circle_param * p = new dt_circle_param();
-            p->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
+            p->setup( ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
             p->parent = app->mode_manager.zoom_mode_target;
             p->data.position = mpw - p->parent->data.position;
             p->change_type( DT_CIRCLE_PAN );
@@ -46,6 +48,9 @@ void dt_ui_zoom::singleClickEnd( int x, int y, int button ){
 }
 
 void dt_ui_zoom::doubleClickStart( int x, int y, int button ){
+    if( !mode_check() )
+        return;
+
     app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     dt_circle_base * c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
@@ -67,6 +72,9 @@ void dt_ui_zoom::longClickEnd( int x, int y, int button ){
 }
 
 void dt_ui_zoom::dragStart( int x, int y, int button ){
+    if( !mode_check() )
+        return;
+
     app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     drag_start_posw = mpw;
@@ -80,6 +88,9 @@ void dt_ui_zoom::dragStart( int x, int y, int button ){
 }
 
 void dt_ui_zoom::dragging( int x, int y, int button ){
+    if( !mode_check() )
+        return;
+
     app = ofApp::app;
     if( drag_target_circle == app->mode_manager.zoom_mode_target )
         return;
@@ -99,4 +110,8 @@ void dt_ui_zoom::dragging( int x, int y, int button ){
 
 void dt_ui_zoom::dragEnd( int x, int y, int button ){
     drag_target_circle = NULL;
+}
+
+bool dt_ui_zoom::mode_check(){
+    return ofApp::app->mode_manager.mode == DT_MODE_ZOOM;
 }
