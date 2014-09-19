@@ -59,6 +59,7 @@ public:
 	int fired_ch;
 	int step_age;
 	int speed;
+    int midi_ch;
     
     float output_value;
 	float rev_angle;

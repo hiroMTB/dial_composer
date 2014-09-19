@@ -35,6 +35,11 @@ bool dt_config::DT_OSC_IN_ENABLE = true;
 std::string dt_config::DT_OSC_IN_TOP_ADDRESS = "/dial_in";
 int dt_config::DT_OSC_IN_PORT =	8888;
 
+// MIDI out
+bool dt_config::DT_MIDI_OUT_ENABLE = true;
+bool dt_config::DT_MIDI_OUT_PACK_RHYTHM_PARAM = true;
+string dt_config::DT_MIDI_OUT_PORT_NAME = "dial_midi_out";
+
 // Buffered Rhythm
 bool dt_config::DT_PLAY_BUFFERED_RHYTHM = false;
 int dt_config::DT_BUFFERED_RHYTHM_RATE = 0;

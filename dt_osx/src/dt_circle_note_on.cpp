@@ -233,25 +233,39 @@ void dt_circle_note_on::draw(){
 }
 
 void dt_circle_note_on::on_process(){
-    
-    ofxOscMessage m;
-    m.setAddress( dt_config::DT_OSC_OUT_TOP_ADDRESS + data.address );
-    m.addIntArg( 1 );
-
-    if( dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM ){
-        // here we do packing and send
+    if(dt_config::DT_OSC_OUT_ENABLE){
         
-        for( int i=0; i<8; i++ ){
-            dt_circle_type type = ( dt_circle_type )( i+1 );
-            float v = prms[type];
-            m.addFloatArg( v );
+        ofxOscMessage m;
+        m.setAddress( dt_config::DT_OSC_OUT_TOP_ADDRESS + data.address );
+        m.addIntArg( 1 );
+
+        if( dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM ){
+            // here we do packing and send
+            
+            for( int i=0; i<8; i++ ){
+                dt_circle_type type = ( dt_circle_type )( i+1 );
+                float v = prms[type];
+                m.addFloatArg( v );
+            }
         }
+
+        // send osc
+        app->osc_sender.send_message( m );
+        app->osc_recorder.add_osc_message( m, 1 );
     }
-
-    // send
-    app->osc_sender.send_message( m );
-    app->osc_recorder.add_osc_message( m, 1 );
-
+    
+    // send midi
+    if( dt_config::DT_MIDI_OUT_ENABLE ){
+        if( dt_config::DT_MIDI_OUT_PACK_RHYTHM_PARAM ){
+            app->midi_sender.send_cc( data.midi_ch, 10, prms[DT_CIRCLE_PAN] );
+            app->midi_sender.send_cc( data.midi_ch, 102, prms[DT_CIRCLE_CC1] );
+            app->midi_sender.send_cc( data.midi_ch, 103, prms[DT_CIRCLE_CC2] );
+            app->midi_sender.send_cc( data.midi_ch, 104, prms[DT_CIRCLE_CC3] );
+            app->midi_sender.send_cc( data.midi_ch, 105, prms[DT_CIRCLE_CC4] );
+        }
+        app->midi_sender.send_note_on( data.midi_ch, prms[DT_CIRCLE_NOTE_NUM], prms[DT_CIRCLE_VELOCITY], prms[DT_CIRCLE_DURATION]*1000 );
+    }
+    
     // update for animation
     data.pan = (prms[DT_CIRCLE_PAN]-64.0)/127.0 * data.rev_radius;
     data.note = (prms[DT_CIRCLE_NOTE_NUM]-64.0)/127.0 * data.rev_radius;

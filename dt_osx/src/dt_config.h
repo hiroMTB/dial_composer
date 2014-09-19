@@ -43,6 +43,12 @@ public:
 	static string	DT_OSC_IN_TOP_ADDRESS;
 	static int		DT_OSC_IN_PORT;
 	
+    
+    // MIDI out
+    static bool     DT_MIDI_OUT_ENABLE;
+	static bool     DT_MIDI_OUT_PACK_RHYTHM_PARAM;
+    static string   DT_MIDI_OUT_PORT_NAME;
+    
 	// Generative Rhythm
 	static bool     DT_PLAY_GEN_RHYTHM;
 	static int      DT_GEN_RHYTHM_RATE;

@@ -140,10 +140,43 @@ void dt_circle_param::on_process(){
     }
 
     // send osc directly
-    if( !dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM ){
-        ofxOscMessage m;
-        m.setAddress( dt_config::DT_OSC_OUT_TOP_ADDRESS + parent->data.address + data.address );
-        m.addFloatArg( data.output_value );
-        ofApp::app->osc_sender.send_message( m );
+    if(dt_config::DT_OSC_OUT_ENABLE){
+        if( !dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM ){
+            ofxOscMessage m;
+            m.setAddress( dt_config::DT_OSC_OUT_TOP_ADDRESS + parent->data.address + data.address );
+            m.addFloatArg( data.output_value );
+            ofApp::app->osc_sender.send_message( m );
+        }
+    }
+    
+    // send midi cc
+    if( dt_config::DT_MIDI_OUT_ENABLE ){
+        if( !dt_config::DT_MIDI_OUT_PACK_RHYTHM_PARAM ){
+            switch( data.circle_type ){
+                case DT_CIRCLE_PAN:
+                    ofApp::app->midi_sender.send_cc( data.midi_ch, 10, data.output_value );
+                    break;
+                    
+                case DT_CIRCLE_CC1:
+                    ofApp::app->midi_sender.send_cc( data.midi_ch, 102, data.output_value );
+                    break;
+                    
+                case DT_CIRCLE_CC2:
+                    ofApp::app->midi_sender.send_cc( data.midi_ch, 103, data.output_value );
+                    break;
+
+                case DT_CIRCLE_CC3:
+                    ofApp::app->midi_sender.send_cc( data.midi_ch, 104, data.output_value );
+                    break;
+
+                case DT_CIRCLE_CC4:
+                    ofApp::app->midi_sender.send_cc( data.midi_ch, 105, data.output_value );
+                    break;
+
+                default:
+                    break;
+
+            }
+        }
     }
 }

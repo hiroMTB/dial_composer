@@ -22,8 +22,8 @@ public:
 		midi_out.closePort();
 	}
 	
-	void open_port( int port_num ){
-		midi_out.openVirtualPort( "dial_midiout_" + ofToString(port_num) );
+	void open_port( string port_name ){
+		midi_out.openVirtualPort( port_name );
 	}
 
 	void send_note_on( int ch, int noteNum, int vel, int dur_micro_sec ){
@@ -38,6 +38,7 @@ public:
 	}
 	
 	void send_note_off( int ch, int noteNum, int after_micro_sec ){
+        boost::this_thread::sleep( boost::posix_time::microseconds(after_micro_sec) );
 		midi_out.sendNoteOff( ch, noteNum );
 	}
 

@@ -60,6 +60,7 @@ void ofApp::setup(){
 	sequence_thread.start();
 	mode_manager.setup();
 	cam.reset();
+    midi_sender.open_port( dt_config::DT_MIDI_OUT_PORT_NAME );
 }
 
 void ofApp::update(){
