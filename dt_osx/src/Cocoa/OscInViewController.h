@@ -28,4 +28,6 @@
 - (void)add_input_message:(std::string) m;
 - (void)update_ui;
 - (NSString*) getIPWithNSHost;
+- (void)update_ui_every_frame;
+
 @end

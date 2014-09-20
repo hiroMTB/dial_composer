@@ -8,5 +8,5 @@
 @property (nonatomic, strong) MainWindowController * mainWindowController;
 
 - (void)update_ui;
-
+- (void)update_ui_every_frame;
 @end

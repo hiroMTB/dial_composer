@@ -19,6 +19,10 @@
     if (self) {
         // Initialization code here.
     }
+    
+    monitor_line_num_max = 100;
+    monitor_line_num = 0;
+    
     return self;
 }
 
@@ -49,25 +53,21 @@
     dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM = [sender state];
 }
 
-- (void)add_output_message:(std::string)m {
-    NSString * line = [NSString stringWithUTF8String:m.c_str()];
-    NSString * current = [output_tx string];
-    NSString * all = [NSString stringWithFormat:@"%@\%@", line, current];
-    [output_tx setString:all];
-}
-
-
 - (void)update_out_messages{
-    /*
-     *      dont call me often
-     */
-    
-    // clear
-//    [output_tx setString:@""];
-    
     string ms = "";
     vector<ofxOscMessage> &msgs = ofApp::app->osc_sender.print_buffer;
+    int msg_count = 0;
     for( int i=0; i<msgs.size(); i++ ){
+
+        // skip too many mesg
+        int start_index = msgs.size() - monitor_line_num_max;
+        if( start_index>0 ){
+            if( i < start_index)
+                continue;
+        }
+
+        msg_count++;
+        
         int index = msgs.size()-1-i;
         ofxOscMessage &m = msgs[ index ];
         ms += m.getAddress();
@@ -107,10 +107,38 @@
         ms += "\n";
     }
     
+    if(ms != ""){
+        [self add_output_message:ms :msg_count];
+    }
+
     msgs.clear();
+}
+
+- (void)add_output_message:(std::string)m :(int)line_num{
+
+    //cout << monitor_line_num << ", "<< line_num << endl;
     
-    if(ms != "")
-        [self add_output_message:ms];
+    NSString * current = [output_tx string];
+
+    int future_line_num = monitor_line_num+line_num;
+    if( future_line_num > monitor_line_num_max){
+        int kill_line_num = future_line_num - monitor_line_num_max;
+        int kill_start = monitor_line_num-kill_line_num;
+        //cout << kill_line_num << "," << kill_start << endl;
+        
+        // kill line from Text view
+        NSArray * temp = [current componentsSeparatedByString:@"\n"];
+        NSMutableArray * lines = [NSMutableArray arrayWithArray:temp];
+        [lines removeObjectsInRange:NSMakeRange(kill_start, kill_line_num)];
+        current = [lines componentsJoinedByString:@"\n"];
+        monitor_line_num = monitor_line_num_max;
+    }else{
+        monitor_line_num += line_num;
+    }
+    
+    NSString * line = [NSString stringWithUTF8String:m.c_str()];
+    NSString * all = [NSString stringWithFormat:@"%@\%@", line, current];
+    [output_tx setString:all];
 }
 
 - (void)update_ui{
@@ -120,9 +148,12 @@
         [address_tx setStringValue: [NSString stringWithUTF8String: dt_config::DT_OSC_OUT_IP_ADDRESS.c_str()] ];
         [port_tx setStringValue: [NSString stringWithUTF8String: ofToString(dt_config::DT_OSC_OUT_PORT).c_str()] ];
         [top_address setStringValue: [NSString stringWithUTF8String:ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS).c_str()] ];
-
-        [self update_out_messages];
+//        [self update_out_messages];
     }
+}
+
+-(void)update_ui_every_frame{
+    [self update_out_messages];
 }
 
 @end

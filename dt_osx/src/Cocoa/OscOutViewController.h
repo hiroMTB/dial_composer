@@ -17,6 +17,9 @@
     IBOutlet NSButton *pack_rhythm_param_bt;
     IBOutlet NSTextView *output_tx;
     IBOutlet NSTextField *top_address;
+    
+    int monitor_line_num_max;
+    int monitor_line_num;
 }
 
 - (IBAction)change_enable:(id)sender;
@@ -25,8 +28,8 @@
 - (IBAction)change_pack_rhythm_param:(id)sender;
 - (IBAction)change_top_address:(id)sender;
 
-- (void)add_output_message:(std::string) m;
-
+- (void)add_output_message:(std::string)m :(int)line_num;
 - (void)update_ui;
+- (void)update_ui_every_frame;
 
 @end

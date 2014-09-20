@@ -205,4 +205,22 @@ NSString *const OscInViewTitle		= @"OscInView";
     }
 }
 
+-(void)update_ui_every_frame{
+    if( self.myCurrentViewController ){
+        
+        switch ( currentViewType ) {
+            case 3:
+                [self.oscOutViewController update_ui_every_frame];
+                break;
+                
+            case 4:
+                [self.oscInViewController update_ui_every_frame];
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
 @end

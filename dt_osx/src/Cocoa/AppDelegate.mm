@@ -27,4 +27,10 @@
     }
 }
 
+- (void)update_ui_every_frame {
+    if( mainWindowController ){
+        [mainWindowController update_ui_every_frame];
+    }
+}
+
 @end

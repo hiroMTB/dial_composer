@@ -46,5 +46,5 @@
 - (NSViewController *)viewController;
 
 - (void)update_ui;
-
+- (void)update_ui_every_frame;
 @end
