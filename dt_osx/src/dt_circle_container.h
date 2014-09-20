@@ -15,6 +15,7 @@
 #include "dt_circle_base.h"
 #include "dt_circle_output_base.h"
 #include "dt_circle_all_containers.h"
+#include "dt_mode_manager.h"
 
 template<typename T>
 class dt_circle_container{
@@ -50,11 +51,21 @@ public:
 			T c = circles[ i ];
 			ofVec2f pos = c->data.position;
 
-            // for zoom view mouse picking
-            if( c->parent ){
-                pos += c->parent->data.position;
+            if( ofApp::app->mode_manager.mode == DT_MODE_HOME ){
+                // only pick note_on
+                if( c->data.circle_type != DT_CIRCLE_NOTE_ON )
+                    continue;
+                
+            }else if(ofApp::app->mode_manager.mode == DT_MODE_ZOOM ){
+                if( c != ofApp::app->mode_manager.zoom_mode_target &&
+                   c->parent != ofApp::app->mode_manager.zoom_mode_target){
+                    continue;
+                }
+                
+                if( c->parent ){
+                    pos += c->parent->data.position;
+                }
             }
-            
 			float dis = pos.distance( t );
 			if( dis <= c->data.rev_radius ){
 				return c;

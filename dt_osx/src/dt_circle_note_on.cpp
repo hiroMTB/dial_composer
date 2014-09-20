@@ -87,11 +87,21 @@ void dt_circle_note_on::setup( int beat_num ){
             p->parent = this;
             p->change_type( (dt_circle_type)(i+1) );
             p->change_shape( ofRandom(10, 100) );
+
+            /*
+            
+            circle layout
             float r = dt_config::DT_SIZE_BASE*1.2 + j*dt_config::DT_SIZE_BASE*0.6;
             float rad = (-180.0+(float)i*30.0) * DEG_TO_RAD;
             float x = r * cos( rad );
             float y = r * sin( rad );
-            p->data.position.set( x,y );
+            */
+            
+            float w = dt_config::DT_SIZE_BASE*0.6 + p->data.rev_radius;
+            float h =dt_config::DT_SIZE_BASE*0.6 + p->data.rev_radius;
+            float x = w * (i-3) - w/2;
+            float y = h * (j+2) - h/3;
+             p->data.position.set( x, -y );
             
             input_circles.push_back( p );
             app->all_containers.param_container->addCircle( p );
