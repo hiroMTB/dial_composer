@@ -128,7 +128,7 @@
     dt_circle_base * c = dt_circle_base::selected_circle;
     if( c ){
         int ch = [sender intValue];
-        c->data.midi_cc_num = ch;
+        c->data.midi_ch = ch;
         [midi_ch_sl setIntValue:ch];
         [midi_ch_tx setIntValue:ch];
     }
@@ -141,16 +141,6 @@
         c->data.midi_cc_num = cc;
         [midi_cc_number_sl setIntValue:cc];
         [midi_cc_number_tx setIntValue:cc];
-    }
-}
-
-- (IBAction)change_midi_output_value:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
-    if( c ){
-        int v = [sender intValue];
-        c->data.midi_output_value = v;
-        [midi_out_value_sl setIntValue:v];
-        [midi_out_value_tx setIntValue:v];
     }
 }
 
@@ -183,8 +173,6 @@
         [midi_ch_tx setIntValue:c->data.midi_ch];
         [midi_cc_number_sl setIntValue:c->data.midi_cc_num];
         [midi_cc_number_tx setIntValue:c->data.midi_cc_num];
-        [midi_out_value_sl setIntValue:c->data.midi_output_value];
-        [midi_out_value_tx setIntValue:c->data.midi_output_value];
         
         ofFloatColor &col = c->data.circle_color;
         [color setColor: [NSColor colorWithCalibratedRed:col.r green:col.g blue:col.b alpha:col.a] ];
@@ -214,14 +202,10 @@
             [midi_cc_number_sl setEnabled:false];
             [midi_cc_number_tx setEnabled:false];
             [midi_cc_number_stp setEnabled:false];
-            [midi_out_value_sl setEnabled:false];
-            [midi_out_value_tx setEnabled:false];
         }else{
             [midi_cc_number_sl setEnabled:true];
             [midi_cc_number_tx setEnabled:true];
             [midi_cc_number_stp setEnabled:true];
-            [midi_out_value_sl setEnabled:true];
-            [midi_out_value_tx setEnabled:true];
         }
     }
 }

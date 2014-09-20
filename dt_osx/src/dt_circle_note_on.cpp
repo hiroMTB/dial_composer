@@ -68,11 +68,11 @@ void dt_circle_note_on::setup( int beat_num ){
     change_type( DT_CIRCLE_NOTE_ON );
     
 	// Quantize to beat position
-	//int steps_per_beat = DT_BEAT_RESOLUTION; //* data.speed;
-	//int sub_step = app->sequence_thread.master_step % steps_per_beat;
-	//wait_step = steps_per_beat - sub_step;
+	int steps_per_beat = dt_config::DT_BEAT_RESOLUTION; //* data.speed;
+	int sub_step = app->sequence_thread.master_step % steps_per_beat;
+	wait_step = steps_per_beat - sub_step;
 		
-	wait_step = 0;
+//	wait_step = 0;
 	// ROTATE little bit
 	int quantize_step = 1; //dt_config::DT_BEAT_RESOLUTION / dt_config::DT_QUANTIZE_RESOLUTION;
 	int rotate_step =  quantize_step * (int)round( ofRandom(0, dt_config::DT_BEAT_RESOLUTION-1) );
@@ -269,11 +269,11 @@ void dt_circle_note_on::on_process(){
     // send midi
     if( dt_config::DT_MIDI_OUT_ENABLE ){
         if( dt_config::DT_MIDI_OUT_PACK_RHYTHM_PARAM ){
-            app->midi_sender.send_cc( data.midi_ch, 10, prms[DT_CIRCLE_PAN] );
-            app->midi_sender.send_cc( data.midi_ch, 102, prms[DT_CIRCLE_CC1] );
-            app->midi_sender.send_cc( data.midi_ch, 103, prms[DT_CIRCLE_CC2] );
-            app->midi_sender.send_cc( data.midi_ch, 104, prms[DT_CIRCLE_CC3] );
-            app->midi_sender.send_cc( data.midi_ch, 105, prms[DT_CIRCLE_CC4] );
+            app->midi_sender.send_cc( data.midi_ch, CCs[DT_CIRCLE_PAN], prms[DT_CIRCLE_PAN] );
+            app->midi_sender.send_cc( data.midi_ch, CCs[DT_CIRCLE_CC1], prms[DT_CIRCLE_CC1] );
+            app->midi_sender.send_cc( data.midi_ch, CCs[DT_CIRCLE_CC2], prms[DT_CIRCLE_CC2] );
+            app->midi_sender.send_cc( data.midi_ch, CCs[DT_CIRCLE_CC3], prms[DT_CIRCLE_CC3] );
+            app->midi_sender.send_cc( data.midi_ch, CCs[DT_CIRCLE_CC4], prms[DT_CIRCLE_CC4] );
         }
         app->midi_sender.send_note_on( data.midi_ch, prms[DT_CIRCLE_NOTE_NUM], prms[DT_CIRCLE_VELOCITY], prms[DT_CIRCLE_DURATION]*1000 );
     }

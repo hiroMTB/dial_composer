@@ -137,6 +137,7 @@ void dt_circle_param::on_process(){
     if( parent ){
         dt_circle_note_on * n = static_cast<dt_circle_note_on*>( parent );
         n->prms[ data.circle_type ] = data.output_value;
+        n->CCs[ data.circle_type] = data.midi_cc_num;
     }
 
     // send osc directly
@@ -152,7 +153,7 @@ void dt_circle_param::on_process(){
     // send midi cc
     if( dt_config::DT_MIDI_OUT_ENABLE ){
         if( !dt_config::DT_MIDI_OUT_PACK_RHYTHM_PARAM ){
-            ofApp::app->midi_sender.send_cc( data.midi_ch, data.midi_cc_num, data.midi_output_value );
+            ofApp::app->midi_sender.send_cc( data.midi_ch, data.midi_cc_num, data.output_value );
         }
     }
 }

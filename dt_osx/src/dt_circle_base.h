@@ -61,7 +61,6 @@ public:
 	int speed;
     int midi_ch;
     int midi_cc_num;
-    int midi_output_value;
     
     float output_value;
 	float rev_angle;

@@ -16,7 +16,6 @@
                 <outlet property="midi_cc_number_tx" destination="f8V-br-oZ0" id="fr9-e3-YCH"/>
                 <outlet property="midi_ch_sl" destination="W42-Ru-bHd" id="7eI-R3-xxp"/>
                 <outlet property="midi_ch_tx" destination="NVn-h3-jsW" id="usk-cr-3XQ"/>
-                <outlet property="midi_out_value_sl" destination="N80-uD-hjM" id="YCv-Ej-Owf"/>
                 <outlet property="midi_out_value_tx" destination="bqt-7A-Nem" id="6zN-fA-LXU"/>
                 <outlet property="mute_bt" destination="bxi-0C-Mdo" id="2Aw-D9-5bk"/>
                 <outlet property="name_tx" destination="5ki-HQ-sbz" id="jC2-VW-oJo"/>
@@ -473,14 +472,6 @@
                         <action selector="change_midi_cc:" target="-2" id="YAw-dY-qO6"/>
                     </connections>
                 </slider>
-                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N80-uD-hjM">
-                    <rect key="frame" x="90" y="135" width="154" height="15"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="127" tickMarkPosition="above" sliderType="linear" id="MBz-i2-4sj"/>
-                    <connections>
-                        <action selector="change_midi_output_value:" target="-2" id="K7K-Op-cdy"/>
-                    </connections>
-                </slider>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f8V-br-oZ0">
                     <rect key="frame" x="263" y="167" width="50" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -594,7 +585,6 @@
                 <constraint firstItem="ggV-jV-Nlh" firstAttribute="leading" secondItem="MKu-LU-F0x" secondAttribute="leading" id="bo0-Nb-6Xq"/>
                 <constraint firstItem="R1i-uA-s1n" firstAttribute="centerY" secondItem="dcP-vk-16B" secondAttribute="centerY" id="cXh-0C-XLu"/>
                 <constraint firstItem="Bxf-Xq-4c9" firstAttribute="leading" secondItem="kOs-M2-Mgz" secondAttribute="trailing" id="dJD-4s-ipD"/>
-                <constraint firstItem="N80-uD-hjM" firstAttribute="trailing" secondItem="MKu-LU-F0x" secondAttribute="trailing" id="dRq-CL-p41"/>
                 <constraint firstItem="Mrs-fj-pLF" firstAttribute="leading" secondItem="EhN-Dh-JkX" secondAttribute="leading" id="dgv-Ca-etu"/>
                 <constraint firstItem="MKu-LU-F0x" firstAttribute="trailing" secondItem="VAj-Yd-R5w" secondAttribute="trailing" id="dot-8d-EFu"/>
                 <constraint firstItem="Zsr-ol-mNz" firstAttribute="leading" secondItem="iDG-Vr-gSr" secondAttribute="trailing" constant="5" id="eFa-ca-2qN"/>
@@ -602,8 +592,6 @@
                 <constraint firstItem="bxi-0C-Mdo" firstAttribute="trailing" secondItem="xym-7N-NDC" secondAttribute="trailing" id="g9v-2W-xAS"/>
                 <constraint firstItem="b6s-Y8-mdv" firstAttribute="trailing" secondItem="bxi-0C-Mdo" secondAttribute="trailing" id="gYp-eD-Q0R"/>
                 <constraint firstItem="R1i-uA-s1n" firstAttribute="centerY" secondItem="kkf-dP-iaY" secondAttribute="centerY" id="gcZ-6i-j8P"/>
-                <constraint firstItem="RYL-lX-wHT" firstAttribute="centerY" secondItem="N80-uD-hjM" secondAttribute="centerY" id="hQk-Ve-AKe"/>
-                <constraint firstItem="N80-uD-hjM" firstAttribute="leading" secondItem="MKu-LU-F0x" secondAttribute="leading" id="jfJ-fU-fj2"/>
                 <constraint firstItem="EhN-Dh-JkX" firstAttribute="leading" secondItem="R1i-uA-s1n" secondAttribute="leading" id="jq3-0T-0wk"/>
                 <constraint firstItem="Mrs-fj-pLF" firstAttribute="centerY" secondItem="f8V-br-oZ0" secondAttribute="centerY" id="lq5-8S-Jms"/>
                 <constraint firstItem="H38-h7-TgT" firstAttribute="top" secondItem="sGL-pZ-sJW" secondAttribute="top" constant="20" id="mAs-t4-04y"/>

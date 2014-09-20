@@ -29,6 +29,9 @@ public:
 	void check_connection();
 	
     std::map<dt_circle_type, float> prms;
+    std::map<dt_circle_type, int> CCs;
+
 	static dt_circle_drawer	circle_drawer;
+
 
 };
