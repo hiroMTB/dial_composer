@@ -152,31 +152,7 @@ void dt_circle_param::on_process(){
     // send midi cc
     if( dt_config::DT_MIDI_OUT_ENABLE ){
         if( !dt_config::DT_MIDI_OUT_PACK_RHYTHM_PARAM ){
-            switch( data.circle_type ){
-                case DT_CIRCLE_PAN:
-                    ofApp::app->midi_sender.send_cc( data.midi_ch, 10, data.output_value );
-                    break;
-                    
-                case DT_CIRCLE_CC1:
-                    ofApp::app->midi_sender.send_cc( data.midi_ch, 102, data.output_value );
-                    break;
-                    
-                case DT_CIRCLE_CC2:
-                    ofApp::app->midi_sender.send_cc( data.midi_ch, 103, data.output_value );
-                    break;
-
-                case DT_CIRCLE_CC3:
-                    ofApp::app->midi_sender.send_cc( data.midi_ch, 104, data.output_value );
-                    break;
-
-                case DT_CIRCLE_CC4:
-                    ofApp::app->midi_sender.send_cc( data.midi_ch, 105, data.output_value );
-                    break;
-
-                default:
-                    break;
-
-            }
+            ofApp::app->midi_sender.send_cc( data.midi_ch, data.midi_cc_num, data.midi_output_value );
         }
     }
 }

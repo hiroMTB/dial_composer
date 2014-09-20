@@ -124,6 +124,36 @@
     }
 }
 
+- (IBAction)change_midi_ch:(id)sender {
+    dt_circle_base * c = dt_circle_base::selected_circle;
+    if( c ){
+        int ch = [sender intValue];
+        c->data.midi_cc_num = ch;
+        [midi_ch_sl setIntValue:ch];
+        [midi_ch_tx setIntValue:ch];
+    }
+}
+
+- (IBAction)change_midi_cc:(id)sender {
+    dt_circle_base * c = dt_circle_base::selected_circle;
+    if( c ){
+        int cc = [sender intValue];
+        c->data.midi_cc_num = cc;
+        [midi_cc_number_sl setIntValue:cc];
+        [midi_cc_number_tx setIntValue:cc];
+    }
+}
+
+- (IBAction)change_midi_output_value:(id)sender {
+    dt_circle_base * c = dt_circle_base::selected_circle;
+    if( c ){
+        int v = [sender intValue];
+        c->data.midi_output_value = v;
+        [midi_out_value_sl setIntValue:v];
+        [midi_out_value_tx setIntValue:v];
+    }
+}
+
 - (void)update_ui{
     dt_circle_base * c = dt_circle_base::dt_circle_base::selected_circle;
     if( c ){
@@ -149,10 +179,50 @@
         [output_value_sl setFloatValue: c->data.output_value];
         [output_value_tx setFloatValue: c->data.output_value];
 
+        [midi_ch_sl setIntValue:c->data.midi_ch];
+        [midi_ch_tx setIntValue:c->data.midi_ch];
+        [midi_cc_number_sl setIntValue:c->data.midi_cc_num];
+        [midi_cc_number_tx setIntValue:c->data.midi_cc_num];
+        [midi_out_value_sl setIntValue:c->data.midi_output_value];
+        [midi_out_value_tx setIntValue:c->data.midi_output_value];
         
         ofFloatColor &col = c->data.circle_color;
         [color setColor: [NSColor colorWithCalibratedRed:col.r green:col.g blue:col.b alpha:col.a] ];
+        
+        /*
+         *
+         *      Hide & Show gui parts
+         *
+         */
+        if( c->data.circle_type == DT_CIRCLE_NOTE_ON ){
+            [output_value_sl setEnabled:false];
+            [output_value_stp setEnabled:false];
+            [type_cb setEnabled:false];
+            
+        }else{
+            [output_value_sl setEnabled:true];
+            [output_value_stp setEnabled:true];
+            [type_cb setEnabled:true];
+        }
+        
+        // hide midi cc number control
+        if( c->data.circle_type == DT_CIRCLE_NOTE_ON ||
+           c->data.circle_type == DT_CIRCLE_VELOCITY ||
+           c->data.circle_type == DT_CIRCLE_NOTE_NUM ||
+           c->data.circle_type == DT_CIRCLE_DURATION  )
+        {
+            [midi_cc_number_sl setEnabled:false];
+            [midi_cc_number_tx setEnabled:false];
+            [midi_cc_number_stp setEnabled:false];
+            [midi_out_value_sl setEnabled:false];
+            [midi_out_value_tx setEnabled:false];
+        }else{
+            [midi_cc_number_sl setEnabled:true];
+            [midi_cc_number_tx setEnabled:true];
+            [midi_cc_number_stp setEnabled:true];
+            [midi_out_value_sl setEnabled:true];
+            [midi_out_value_tx setEnabled:true];
+        }
     }
 }
-
 @end

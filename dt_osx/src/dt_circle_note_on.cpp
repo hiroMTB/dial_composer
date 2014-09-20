@@ -30,6 +30,8 @@ dt_circle_note_on::dt_circle_note_on(){
         pair<dt_circle_type, float> p( (dt_circle_type)(i+1), 0.0 );
         prms.insert( p );
     }
+    
+    data.output_value = 1;
 }
 
 dt_circle_note_on::~dt_circle_note_on(){
@@ -237,7 +239,7 @@ void dt_circle_note_on::on_process(){
         
         ofxOscMessage m;
         m.setAddress( dt_config::DT_OSC_OUT_TOP_ADDRESS + data.address );
-        m.addIntArg( 1 );
+        m.addIntArg( data.output_value );
 
         if( dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM ){
             // here we do packing and send

@@ -9,8 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CircleViewController : NSViewController{
-    IBOutlet NSSlider    *beat_sl, *speed_sl, *rotate_sl, *shape_sl, *output_value_sl, *ch_sl;
-    IBOutlet NSTextField *beat_tx, *speed_tx, *rotate_tx, *shape_tx, *output_value_tx, *ch_tx;
+    IBOutlet NSSlider    *beat_sl, *speed_sl, *rotate_sl, *shape_sl, *output_value_sl, *midi_ch_sl, *midi_cc_number_sl, *midi_out_value_sl;
+    IBOutlet NSTextField *beat_tx, *speed_tx, *rotate_tx, *shape_tx, *output_value_tx, *midi_ch_tx, *midi_cc_number_tx, *midi_out_value_tx;
     IBOutlet NSTextField *top_address;
     IBOutlet NSTextField *address_lb;
     IBOutlet NSColorWell *color;
@@ -18,6 +18,10 @@
     IBOutlet NSButton *solo_bt;
     IBOutlet NSButton *mute_bt;
 	IBOutlet NSComboBox *type_cb;
+    IBOutlet NSTextField *output_value_lb;
+
+    IBOutlet NSStepper *output_value_stp;
+    IBOutlet NSStepper *midi_cc_number_stp;
 }
 
 - (IBAction)change_name:(id)sender;
@@ -31,6 +35,9 @@
 - (IBAction)change_address:(id)sender;
 - (IBAction)change_output_value:(id)sender;
 - (IBAction)change_color:(id)sender;
+- (IBAction)change_midi_ch:(id)sender;
+- (IBAction)change_midi_cc:(id)sender;
+- (IBAction)change_midi_output_value:(id)sender;
 
 - (void)update_ui;
 

@@ -40,6 +40,8 @@ fired_ch( -1 ),
 step_age( 0 ),
 speed( 1 ),
 midi_ch( 1 ),
+midi_cc_num( 0 ),
+midi_output_value( 0 ),
 rev_angle( 0.0 ),
 rev_speed( 0.0 ),
 rev_radius( 20.0 ),
@@ -158,41 +160,49 @@ void dt_circle_base::change_type( dt_circle_type type ){
             change_circle_color( noteNum_color );
             initial = "N";
 			data.address = "/note";
+            data.midi_cc_num = -1;
             break;
         case DT_CIRCLE_VELOCITY:
             change_circle_color( velocity_color );
             initial = "V";
 			data.address = "/vel";
+            data.midi_cc_num = -1;
             break;
         case DT_CIRCLE_DURATION:
             change_circle_color( duration_color );
             initial = "D";
 			data.address = "/dur";
+            data.midi_cc_num = -1;
             break;
         case DT_CIRCLE_PAN:
             change_circle_color( pan_color );
             initial = "P";
 			data.address = "/pan";
+            data.midi_cc_num = 10;
             break;
         case DT_CIRCLE_CC1:
             change_circle_color( cc1_color );
             initial = "CC1";
 			data.address = "/cc1";
+            data.midi_cc_num = 102;
             break;
         case DT_CIRCLE_CC2:
             change_circle_color( cc2_color );
             initial = "CC2";
 			data.address = "/cc2";
+            data.midi_cc_num = 103;
             break;
         case DT_CIRCLE_CC3:
             change_circle_color( cc3_color );
             initial = "CC3";
 			data.address = "/cc3";
+            data.midi_cc_num = 104;
             break;
         case DT_CIRCLE_CC4:
             change_circle_color( cc4_color );
             initial = "CC4";
 			data.address = "/cc4";
+            data.midi_cc_num = 105;
             break;
             
         default:
@@ -308,4 +318,3 @@ void dt_circle_base::make_vbo(){
     rshape.setUsage( GL_DYNAMIC_DRAW );
     rguid.setUsage( GL_DYNAMIC_DRAW );    
 }
-
