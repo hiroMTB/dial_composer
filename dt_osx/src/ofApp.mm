@@ -122,16 +122,39 @@ void ofApp::gotMessage( ofMessage msg ){
 }
 
 void ofApp::keyPressed( int key ){
-	bool bShitt = ofGetModifierPressed( OF_KEY_SHIFT );
+	bool bShift = ofGetModifierPressed( OF_KEY_SHIFT );
 	bool bAlt = ofGetModifierPressed( OF_KEY_ALT );
 	
+    dt_circle_base * sel = dt_circle_base::selected_circle;
 	switch(key){
 			
 		case OF_KEY_UP:
+            if( sel ){
+                int inc = bShift ? 10 : 1;
+                sel->change_shape( sel->seq->rhythm_shape_type + inc );
+            }
 			break;
 			
 		case OF_KEY_DOWN:
-			break;
+            if( sel ){
+                int dec = bShift ? 10 : 1;
+                sel->change_shape( sel->seq->rhythm_shape_type - dec );
+            }
+            break;
+
+        case OF_KEY_RIGHT:
+            if( sel ){
+                int rot = bShift ? dt_config::DT_BEAT_RESOLUTION/2 : 1;
+                sel->change_rotation( sel->data.phase_step + rot );
+            }
+            break;
+            
+        case OF_KEY_LEFT:
+            if( sel ){
+                int rot = bShift ? dt_config::DT_BEAT_RESOLUTION/2 : 1;
+                sel->change_rotation( sel->data.phase_step - rot );
+            }
+            break;
             
         // view_mode
  		case OF_KEY_RETURN:
@@ -143,10 +166,12 @@ void ofApp::keyPressed( int key ){
             dt_config::DT_PLAY_GEN_RHYTHM = !dt_config::DT_PLAY_GEN_RHYTHM;
             break;
             
-		case OF_KEY_TAB:
-            osc_recorder.toggle_play_fragment();
+		case 'm':
+            if( sel ){
+                sel->data.bMute = !sel->data.bMute;
+            }
             break;
-        
+            
 		case 'L':
             dt_config::DT_SHOW_LINER_DRAWER = !dt_config::DT_SHOW_LINER_DRAWER;
             break;
