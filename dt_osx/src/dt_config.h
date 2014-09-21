@@ -42,7 +42,6 @@ public:
     static bool     DT_OSC_IN_ENABLE;
 	static string	DT_OSC_IN_TOP_ADDRESS;
 	static int		DT_OSC_IN_PORT;
-	
     
     // MIDI out
     static bool     DT_MIDI_OUT_ENABLE;
@@ -57,8 +56,6 @@ public:
 	static int      DT_QUANTIZE_RESOLUTION;
 	static int      DT_BEAT_RESOLUTION;
 	static int      DT_BEAT_SPEED_MAX;
-	static int      DT_CONNECTION_NUM_INPUT_MAX;
-	static int      DT_CONNECTION_NUM_OUTPUT_MAX;
 	
 	// Buffered Rhythm
 	static bool     DT_PLAY_BUFFERED_RHYTHM;

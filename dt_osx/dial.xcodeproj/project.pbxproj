@@ -28724,7 +28724,7 @@
 					../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386/,
 					../../../addons/ofxTweener/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
@@ -28780,7 +28780,7 @@
 					../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386/,
 					../../../addons/ofxTweener/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",

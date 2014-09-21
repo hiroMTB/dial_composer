@@ -56,8 +56,9 @@ void dt_rhythm_lib::setup( int start_slot, int end_slot ){
 
 				string binst;
 				getline( file, binst, '\n' );
-				if( line_num++<=1 )
-					continue;	// avoid to load 0000 or 1000
+				
+                //if( line_num++<=1 )
+				//	continue;	// avoid to load 0000 or 1000
 
 				if( binst!="" ){
 					RHYTHM_SHAPE s;

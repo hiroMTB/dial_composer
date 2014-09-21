@@ -19,8 +19,6 @@ int dt_config::DT_RHYTHM_SHAPE_SLOT_MAX = 24;
 int dt_config::DT_QUANTIZE_RESOLUTION = 16;
 int dt_config::DT_BEAT_RESOLUTION = 16;
 int dt_config::DT_BEAT_SPEED_MAX = 32;
-int dt_config::DT_CONNECTION_NUM_INPUT_MAX = 16;
-int dt_config::DT_CONNECTION_NUM_OUTPUT_MAX = 3;
 
 // OSC out
 bool dt_config::DT_OSC_OUT_ENABLE = true;
@@ -107,24 +105,6 @@ void dt_config::update(){
 			int i = m.getArgAsInt32( 0 );
 			i = max( 3, i );
 			DT_RHYTHM_SHAPE_SLOT_MIN = i;
-			
-		}else if( address == pre + "rhythm_shape_slot_max" ){
-			
-			int i = m.getArgAsInt32( 0 );
-			i = max( 3, i );
-			DT_RHYTHM_SHAPE_SLOT_MAX = i;
-
-		}else if( address == pre + "connection_num_input_max" ){
-			
-			int i = m.getArgAsInt32( 0 );
-			i = max( 0, i );
-			DT_CONNECTION_NUM_INPUT_MAX = i;
-			
-		}else if( address == pre + "connection_num_output_max" ){
-			
-			int i = m.getArgAsInt32( 0 );
-			i = max( 0, i );
-			DT_CONNECTION_NUM_OUTPUT_MAX = i;
 			
 		// Buffered
 		}else if( address == pre + "play_buffered_rhythm" ){

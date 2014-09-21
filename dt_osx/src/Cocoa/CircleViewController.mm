@@ -62,6 +62,16 @@
         [beat_sl setIntValue: beat];
         [beat_tx setIntValue: beat];
         c->change_beat( beat );
+        
+        // change shape slider max value
+        int max_shape = ofApp::app->rhythm_lib.getRhythmSize(c->seq->total_beats)-1;
+        [shape_sl setMaxValue: max_shape];
+        [[shape_tx formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
+        
+        // shape type is changed after beat change
+        int shape_type = c->seq->rhythm_shape_type;
+        [shape_sl setIntValue: shape_type];
+        [shape_tx setIntValue: shape_type];
     }
 }
 
@@ -159,7 +169,10 @@
         [rotate_tx setFloatValue: c->data.phase_step];
         [shape_sl setIntValue: c->seq->rhythm_shape_type];
         [shape_tx setIntValue: c->seq->rhythm_shape_type];
-
+        int max_shape = ofApp::app->rhythm_lib.getRhythmSize(c->seq->total_beats)-1;
+        [shape_sl setMaxValue: max_shape];
+        [[shape_tx formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
+        
         string non_editable_address = ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS);
         if( c->parent ){
             non_editable_address += c->parent->data.address;
@@ -186,7 +199,6 @@
             [output_value_sl setEnabled:false];
             [output_value_stp setEnabled:false];
             [type_cb setEnabled:false];
-            
         }else{
             [output_value_sl setEnabled:true];
             [output_value_stp setEnabled:true];

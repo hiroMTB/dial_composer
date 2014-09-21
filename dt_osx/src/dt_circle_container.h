@@ -99,9 +99,6 @@ public:
 
 		for( int i=0; i<circles.size(); i++ ){
 			
-			if(  bInput && connection_num_input > dt_config::DT_CONNECTION_NUM_INPUT_MAX ) break;
-			if( !bInput && connection_num_output > dt_config::DT_CONNECTION_NUM_OUTPUT_MAX ) break;
-
 			T c2 = circles[ i ];
 			ofVec2f &p1 = c1->data.position;
 			ofVec2f &p2 = c2->data.position;

@@ -102,7 +102,7 @@ void dt_ui_home::dragging( int x, int y, int button ){
 		dt_circle_base::selected_circle = drag_target_circle;
 	}else{
         // drag camera
-        float sensitivity = 0.7;
+        float sensitivity = 0.85;
         app->cam.trans = app->cam.dragStartTrans - dist*sensitivity;
     }
     

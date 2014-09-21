@@ -10,29 +10,29 @@
 	<string>dial</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>FDB09C04-F23D-4832-8EBD-06F25BD169E6</key>
+		<key>9A88EC852DB51900F96D9BFBBD0580D53873C9C7</key>
 		<string>https://github.com/hiroMTB/dial_composer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>dt_osx/dial.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>FDB09C04-F23D-4832-8EBD-06F25BD169E6</key>
+		<key>9A88EC852DB51900F96D9BFBBD0580D53873C9C7</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/hiroMTB/dial_composer.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FDB09C04-F23D-4832-8EBD-06F25BD169E6</string>
+	<string>9A88EC852DB51900F96D9BFBBD0580D53873C9C7</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>FDB09C04-F23D-4832-8EBD-06F25BD169E6</string>
+			<string>9A88EC852DB51900F96D9BFBBD0580D53873C9C7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>dev</string>
 		</dict>
