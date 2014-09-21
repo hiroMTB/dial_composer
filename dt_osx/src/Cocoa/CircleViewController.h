@@ -38,6 +38,13 @@
 - (IBAction)change_midi_ch:(id)sender;
 - (IBAction)change_midi_cc:(id)sender;
 
-- (void)update_ui;
+- (IBAction)step_beat:(id)sender;
+- (IBAction)step_speed:(id)sender;
+- (IBAction)step_rotate:(id)sender;
+- (IBAction)step_shape:(id)sender;
+- (IBAction)step_output_value:(id)sender;
+- (IBAction)step_midi_ch:(id)sender;
+- (IBAction)step_midi_cc:(id)sender;
 
+- (void)update_ui;
 @end

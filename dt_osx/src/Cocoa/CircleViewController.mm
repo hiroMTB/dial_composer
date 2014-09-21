@@ -88,9 +88,9 @@
 - (IBAction)change_rotate:(id)sender {
     dt_circle_base * c = dt_circle_base::selected_circle;
     if( c ){
-        float rotate = [sender floatValue];
-        [rotate_sl setFloatValue:rotate];
-        [rotate_tx setFloatValue:rotate];
+        int rotate = [sender intValue];
+        [rotate_sl setIntValue:rotate];
+        [rotate_tx setIntValue:rotate];
 		c->change_rotation( rotate );
     }
 }
@@ -154,10 +154,40 @@
     }
 }
 
+- (IBAction)step_beat:(id)sender {
+}
+
+- (IBAction)step_speed:(id)sender {
+}
+
+- (IBAction)step_rotate:(id)sender {
+    dt_circle_base * c = dt_circle_base::selected_circle;
+    if( c ){
+        int step = [sender intValue];
+        int phase_step = c->data.phase_step + step;
+        c->change_rotation( phase_step );
+        [rotate_sl setIntValue: phase_step];
+        [rotate_tx setIntValue: phase_step];
+        [sender setIntValue:0];
+    }
+}
+
+- (IBAction)step_shape:(id)sender {
+}
+
+- (IBAction)step_output_value:(id)sender {
+}
+
+- (IBAction)step_midi_ch:(id)sender {
+}
+
+- (IBAction)step_midi_cc:(id)sender {
+}
+
 - (void)update_ui{
     dt_circle_base * c = dt_circle_base::dt_circle_base::selected_circle;
     if( c ){
-		[type_cb selectItemAtIndex: (int)c->data.circle_type];
+        [type_cb selectItemAtIndex: (int)c->data.circle_type];
         [name_tx setStringValue: [NSString stringWithUTF8String: c->data.name.c_str()] ];
         [solo_bt setState: NSOffState];
         [mute_bt setState: c->data.bMute];
@@ -181,7 +211,7 @@
         [address_lb setStringValue: [NSString stringWithUTF8String: c->data.address.c_str() ]];
         [output_value_sl setFloatValue: c->data.output_value];
         [output_value_tx setFloatValue: c->data.output_value];
-
+        
         [midi_ch_sl setIntValue:c->data.midi_ch];
         [midi_ch_tx setIntValue:c->data.midi_ch];
         [midi_cc_number_sl setIntValue:c->data.midi_cc_num];
@@ -221,4 +251,5 @@
         }
     }
 }
+
 @end

@@ -211,31 +211,42 @@
                 </textField>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bxf-Xq-4c9">
                     <rect key="frame" x="327" y="512" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="Kak-kn-AVL"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="Kak-kn-AVL"/>
+                    <connections>
+                        <action selector="step_beat:" target="-2" id="xWc-sR-vJV"/>
+                    </connections>
                 </stepper>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b6s-Y8-mdv">
                     <rect key="frame" x="327" y="478" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="hmE-LZ-HS8"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="hmE-LZ-HS8"/>
                 </stepper>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xym-7N-NDC">
                     <rect key="frame" x="327" y="444" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="r5U-EG-RZj"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="r5U-EG-RZj"/>
+                    <connections>
+                        <action selector="step_rotate:" target="-2" id="m1b-GW-xcC"/>
+                    </connections>
                 </stepper>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kkf-dP-iaY">
                     <rect key="frame" x="327" y="410" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="HkP-n7-gnL"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="HkP-n7-gnL"/>
+                    <connections>
+                        <action selector="step_shape:" target="-2" id="rgk-yu-lJJ"/>
+                    </connections>
                 </stepper>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wB8-q3-iM0">
                     <rect key="frame" x="327" y="278" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="gr0-XO-RCg"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="gr0-XO-RCg"/>
+                    <connections>
+                        <action selector="step_output_value:" target="-2" id="Q4a-ug-yZd"/>
+                    </connections>
                 </stepper>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JAs-sO-6uL">
                     <rect key="frame" x="327" y="82" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="ZJg-cF-yeG"/>
-                </stepper>
-                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="04L-h5-foj">
-                    <rect key="frame" x="327" y="48" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="imX-ZZ-1ZD"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="ZJg-cF-yeG"/>
+                    <connections>
+                        <action selector="step_midi_ch:" target="-2" id="0Km-Xw-4NZ"/>
+                    </connections>
                 </stepper>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5ki-HQ-sbz">
                     <rect key="frame" x="90" y="604" width="170" height="22"/>
@@ -475,6 +486,13 @@
                         <action selector="change_type:" target="-2" id="efu-I2-wN0"/>
                     </connections>
                 </comboBox>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="04L-h5-foj">
+                    <rect key="frame" x="327" y="48" width="15" height="22"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="imX-ZZ-1ZD"/>
+                    <connections>
+                        <action selector="step_midi_cc:" target="-2" id="17z-FH-khp"/>
+                    </connections>
+                </stepper>
             </subviews>
             <constraints>
                 <constraint firstItem="EhN-Dh-JkX" firstAttribute="leading" secondItem="9Tu-ix-cYM" secondAttribute="leading" id="0nM-Id-32b"/>

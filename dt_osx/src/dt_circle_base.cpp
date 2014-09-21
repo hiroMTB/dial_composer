@@ -41,7 +41,6 @@ step_age( 0 ),
 speed( 1 ),
 midi_ch( 1 ),
 midi_cc_num( 0 ),
-rev_angle( 0.0 ),
 rev_speed( 0.0 ),
 rev_radius( 20.0 ),
 collision_radius( 10.0 ),
@@ -100,7 +99,6 @@ void dt_circle_base::step(){
 void dt_circle_base::check_sequencer(){
 	seq->updateIndicator( 1 );
 	data.rev_speed = (float)360.0 / (float)seq->total_steps;
-	data.rev_angle = seq->indicator * data.rev_speed;
 
 	if ( !data.bMute ){
 		bool is_on_Beat = seq->isOnBeat();
@@ -117,7 +115,7 @@ void dt_circle_base::check_sequencer(){
 }
 
 ofVec2f dt_circle_base::calc_indi_position(){
-	int pos = seq->indicator+data.phase_step;
+    int pos = seq->indicator-data.phase_step;
 	float deg = 360.0 * (float)pos/seq->total_steps * DEG_TO_RAD;
 	ofVec2f indi_pos = data.position + ofVec2f( cos(deg), sin(deg) ) * data.rev_radius;
 	return indi_pos;
@@ -134,7 +132,6 @@ void dt_circle_base::change_beat( int beat ){
 
 void dt_circle_base::change_speed( int speed ){
     data.speed = speed;
-   	data.rev_angle = seq->indicator * data.rev_speed;
 }
 
 void dt_circle_base::change_shape( int shape ){
@@ -224,11 +221,10 @@ void dt_circle_base::change_circle_color( float r, float g, float b, float a ){
     make_vbo();
 }
 
-void dt_circle_base::change_rotation( float beat ){
-	int phase_step = (float)dt_config::DT_BEAT_RESOLUTION * beat;
-	int ds = phase_step - data.phase_step;
-	data.phase_step = phase_step;
-	seq->indicator += ds;
+void dt_circle_base::change_rotation( int p_step ){
+    int ds = p_step - data.phase_step;
+    data.phase_step = p_step;
+    seq->indicator += ds;
 }
 
 void dt_circle_base::setup_text( string initial ){

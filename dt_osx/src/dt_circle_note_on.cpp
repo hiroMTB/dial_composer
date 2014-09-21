@@ -46,9 +46,6 @@ dt_circle_note_on::~dt_circle_note_on(){
 
 void dt_circle_note_on::setup( int beat_num ){
     /*
-     speed affet to
-     - rev_angle
-     
      beat_num affect to
      - seq
      - rev_speed
@@ -188,7 +185,8 @@ void dt_circle_note_on::draw(){
     ofPushMatrix();{
         ofTranslate( data.position.x, data.position.y );
         ofPushMatrix();{
-			float angle = data.phase_step*data.rev_speed;
+            
+			float angle = -data.phase_step*data.rev_speed;
 			ofRotateZ( angle );
             ofScale( scale, scale );
 	
