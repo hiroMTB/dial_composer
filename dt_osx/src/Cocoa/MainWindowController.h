@@ -17,13 +17,12 @@
     IBOutlet NSButton *SidePanelSelector1;
     IBOutlet NSButton *SidePanelSelector2;
     IBOutlet NSButton *SidePanelSelector3;
-    IBOutlet NSButton *SidePanelSelector4;
-    IBOutlet NSButton *SidePanelSelector5;
 
+    IBOutlet NSSlider *bpm_sl;
+    IBOutlet NSTextField *bpm_tx;
     NSViewController *myCurrentViewController;
 
     @public
-    GeneralViewController *generalViewController;
     CircleViewController *circleViewController;
     OscOutViewController *oscOutViewController;
     OscInViewController *oscInViewController;
@@ -32,7 +31,6 @@
 }
 
 @property (nonatomic, assign) NSViewController *myCurrentViewController;
-@property (nonatomic, strong) GeneralViewController *generalViewController;
 @property (nonatomic, strong) CircleViewController *circleViewController;
 @property (nonatomic, strong) OscOutViewController *oscOutViewController;
 @property (nonatomic, strong) OscInViewController *oscInViewController;
@@ -40,9 +38,11 @@
 - (IBAction)SelectSideP1:(id)sender;
 - (IBAction)SelectSideP2:(id)sender;
 - (IBAction)SelectSideP3:(id)sender;
-- (IBAction)SelectSideP4:(id)sender;
-- (IBAction)SelectSideP5:(id)sender;
 - (IBAction)hide_side_panel:(id)sender;
+- (IBAction)push_play:(id)sender;
+- (IBAction)push_stop:(id)sender;
+- (IBAction)change_bpm:(id)sender;
+- (IBAction)step_bpm:(id)sender;
 - (NSViewController *)viewController;
 
 - (void)update_ui;

@@ -7,14 +7,15 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
-                <outlet property="SidePanel" destination="HDK-FH-YMP" id="LUa-HA-c78"/>
-                <outlet property="SidePanelSelector1" destination="OpI-Ve-vo7" id="tJY-wL-ohu"/>
-                <outlet property="SidePanelSelector2" destination="sSu-I1-uln" id="CDN-Wn-4KT"/>
-                <outlet property="SidePanelSelector3" destination="eze-50-kMh" id="yK3-hT-GHj"/>
-                <outlet property="SidePanelSelector4" destination="H8b-je-Rjf" id="Gde-xC-xHl"/>
-                <outlet property="SidePanelSelector5" destination="THX-Lb-uHn" id="7BN-wl-slD"/>
+                <outlet property="SidePanel" destination="8gU-h9-bQe" id="h1g-ha-Ho3"/>
+                <outlet property="SidePanelSelector1" destination="sSu-I1-uln" id="bRr-vQ-os6"/>
+                <outlet property="SidePanelSelector2" destination="eze-50-kMh" id="pwi-Sj-3No"/>
+                <outlet property="SidePanelSelector3" destination="H8b-je-Rjf" id="5Gm-kc-F9k"/>
+                <outlet property="bpm_sl" destination="gcK-gr-wW5" id="Vu8-AX-StQ"/>
+                <outlet property="bpm_tx" destination="n2Q-ft-g9b" id="UUR-1I-reB"/>
                 <outlet property="glView" destination="ga9-lS-mbF" id="zEM-hK-zSB"/>
                 <outlet property="hide_side_panel" destination="BFx-cw-iLF" id="btp-F2-b6n"/>
+                <outlet property="play_bt" destination="fEF-Jq-M2O" id="4Of-TB-4Pe"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -44,20 +45,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="OpI-Ve-vo7">
-                                                <rect key="frame" x="62" y="0.0" width="35" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="35" id="LJD-e1-bKr"/>
-                                                    <constraint firstAttribute="height" constant="35" id="PjH-24-008"/>
-                                                </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-1_off" imagePosition="only" alignment="center" alternateImage="icon-1" state="on" imageScaling="proportionallyDown" inset="2" id="64h-FC-xDA">
-                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="SelectSideP1:" target="-2" id="SDI-hz-qLc"/>
-                                                </connections>
-                                            </button>
                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="sSu-I1-uln">
                                                 <rect key="frame" x="95" y="0.0" width="35" height="35"/>
                                                 <constraints>
@@ -69,7 +56,7 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <connections>
-                                                    <action selector="SelectSideP2:" target="-2" id="O5f-4h-xcE"/>
+                                                    <action selector="SelectSideP1:" target="-2" id="sAH-Ej-0kz"/>
                                                 </connections>
                                             </button>
                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="eze-50-kMh">
@@ -83,7 +70,7 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <connections>
-                                                    <action selector="SelectSideP3:" target="-2" id="6T8-lB-7cI"/>
+                                                    <action selector="SelectSideP2:" target="-2" id="1PO-Tu-w8y"/>
                                                 </connections>
                                             </button>
                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="H8b-je-Rjf">
@@ -97,21 +84,7 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <connections>
-                                                    <action selector="SelectSideP4:" target="-2" id="6gU-oh-MhQ"/>
-                                                </connections>
-                                            </button>
-                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="THX-Lb-uHn">
-                                                <rect key="frame" x="198" y="0.0" width="35" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="35" id="YpO-pl-MNE"/>
-                                                    <constraint firstAttribute="height" constant="35" id="qPg-aW-4TZ"/>
-                                                </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSListViewTemplate" imagePosition="only" alignment="center" alternateImage="NSStopProgressTemplate" imageScaling="proportionallyDown" inset="2" id="7TC-BI-rKX">
-                                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="SelectSideP5:" target="-2" id="p8z-8B-E1d"/>
+                                                    <action selector="SelectSideP3:" target="-2" id="os9-db-rTs"/>
                                                 </connections>
                                             </button>
                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="BFx-cw-iLF">
@@ -135,22 +108,119 @@
                                             <constraint firstItem="eze-50-kMh" firstAttribute="leading" secondItem="sSu-I1-uln" secondAttribute="trailing" id="9XN-jn-FAT"/>
                                             <constraint firstItem="eze-50-kMh" firstAttribute="top" secondItem="J8X-o1-q3v" secondAttribute="top" id="DYY-n0-6r2"/>
                                             <constraint firstAttribute="centerX" secondItem="eze-50-kMh" secondAttribute="centerX" id="FWt-ra-WRU"/>
-                                            <constraint firstItem="THX-Lb-uHn" firstAttribute="leading" secondItem="eze-50-kMh" secondAttribute="trailing" constant="33" id="Jn4-b5-bYC"/>
                                             <constraint firstItem="H8b-je-Rjf" firstAttribute="top" secondItem="J8X-o1-q3v" secondAttribute="top" id="Pmi-ZC-kkz"/>
-                                            <constraint firstItem="THX-Lb-uHn" firstAttribute="top" secondItem="J8X-o1-q3v" secondAttribute="top" id="TSb-LE-4kw"/>
                                             <constraint firstAttribute="trailing" secondItem="BFx-cw-iLF" secondAttribute="trailing" id="Zoh-FR-oda"/>
-                                            <constraint firstItem="THX-Lb-uHn" firstAttribute="leading" secondItem="eze-50-kMh" secondAttribute="trailing" constant="33" id="bDM-DR-5Sn"/>
                                             <constraint firstAttribute="height" constant="35" id="dk2-nB-jVG"/>
-                                            <constraint firstItem="OpI-Ve-vo7" firstAttribute="top" secondItem="J8X-o1-q3v" secondAttribute="top" id="eFa-pl-qjU"/>
                                             <constraint firstItem="sSu-I1-uln" firstAttribute="top" secondItem="J8X-o1-q3v" secondAttribute="top" id="kip-HK-Pya"/>
-                                            <constraint firstItem="THX-Lb-uHn" firstAttribute="leading" secondItem="eze-50-kMh" secondAttribute="trailing" constant="33" id="n3q-Zl-skx"/>
-                                            <constraint firstItem="eze-50-kMh" firstAttribute="leading" secondItem="OpI-Ve-vo7" secondAttribute="trailing" constant="33" id="opb-tK-76e"/>
                                             <constraint firstItem="BFx-cw-iLF" firstAttribute="top" secondItem="J8X-o1-q3v" secondAttribute="top" id="xkU-Hn-PiC"/>
                                         </constraints>
                                     </customView>
-                                    <customView fixedFrame="YES" id="HDK-FH-YMP">
+                                    <customView id="HDK-FH-YMP">
                                         <rect key="frame" x="0.0" y="36" width="295" height="864"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <splitView dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="wye-wx-4cE">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="864"/>
+                                                <subviews>
+                                                    <customView fixedFrame="YES" id="8gU-h9-bQe">
+                                                        <rect key="frame" x="0.0" y="0.0" width="295" height="803"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </customView>
+                                                    <customView id="gq8-NC-x3M">
+                                                        <rect key="frame" x="0.0" y="804" width="295" height="60"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-gr-wW5">
+                                                                <rect key="frame" x="90" y="22" width="115" height="17"/>
+                                                                <sliderCell key="cell" controlSize="small" continuous="YES" state="on" alignment="left" minValue="1" maxValue="1000" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="MbT-2D-hPF"/>
+                                                                <connections>
+                                                                    <action selector="change_bpm:" target="-2" id="2gR-ca-ZKy"/>
+                                                                </connections>
+                                                            </slider>
+                                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n2Q-ft-g9b">
+                                                                <rect key="frame" x="214" y="20" width="50" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="6fb-p1-mVb"/>
+                                                                    <constraint firstAttribute="width" constant="50" id="S0W-EL-dzW"/>
+                                                                </constraints>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="F8D-It-jgD">
+                                                                    <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="tse-Tz-5bU">
+                                                                        <real key="minimum" value="1"/>
+                                                                        <real key="maximum" value="1500"/>
+                                                                    </numberFormatter>
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <connections>
+                                                                    <action selector="change_bpm:" target="-2" id="Wih-qI-xQW"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="fEF-Jq-M2O">
+                                                                <rect key="frame" x="20" y="15" width="30" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="jxv-Sr-Nri"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="yYA-Dd-EZv"/>
+                                                                </constraints>
+                                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRightFacingTriangleTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZjQ-aU-iLE">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="push_play:" target="-2" id="LgZ-dZ-eWt"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="O7G-pG-U5v">
+                                                                <rect key="frame" x="49" y="15" width="30" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="cEh-Qq-ZKE"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="uDF-JT-uek"/>
+                                                                </constraints>
+                                                                <buttonCell key="cell" type="square" title="||" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rcY-OP-rVt">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="push_stop:" target="-2" id="4rt-kQ-Vxn"/>
+                                                                </connections>
+                                                            </button>
+                                                            <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gEd-7a-vBZ">
+                                                                <rect key="frame" x="262" y="19" width="15" height="22"/>
+                                                                <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="OwB-vK-yw0"/>
+                                                                <connections>
+                                                                    <action selector="step_bpm:" target="-2" id="oa8-p6-dg5"/>
+                                                                </connections>
+                                                            </stepper>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="7fb-4d-EWz"/>
+                                                            <constraint firstItem="fEF-Jq-M2O" firstAttribute="leading" secondItem="gq8-NC-x3M" secondAttribute="leading" constant="20" id="8oD-ku-jen"/>
+                                                            <constraint firstAttribute="trailing" secondItem="gcK-gr-wW5" secondAttribute="trailing" priority="200" constant="90" id="CXu-Jt-mL4"/>
+                                                            <constraint firstItem="gcK-gr-wW5" firstAttribute="leading" secondItem="gq8-NC-x3M" secondAttribute="leading" constant="90" id="CwY-ZM-PzF"/>
+                                                            <constraint firstAttribute="bottom" secondItem="fEF-Jq-M2O" secondAttribute="bottom" constant="15" id="OjP-4P-WGm"/>
+                                                            <constraint firstItem="fEF-Jq-M2O" firstAttribute="centerY" secondItem="n2Q-ft-g9b" secondAttribute="centerY" id="SjF-Wr-Xr0"/>
+                                                            <constraint firstItem="fEF-Jq-M2O" firstAttribute="top" secondItem="gq8-NC-x3M" secondAttribute="top" constant="15" id="Xkx-ds-K4Q"/>
+                                                            <constraint firstItem="fEF-Jq-M2O" firstAttribute="centerY" secondItem="O7G-pG-U5v" secondAttribute="centerY" id="YSo-7h-uPu"/>
+                                                            <constraint firstItem="fEF-Jq-M2O" firstAttribute="centerY" secondItem="gEd-7a-vBZ" secondAttribute="centerY" id="fbw-gh-gfd"/>
+                                                            <constraint firstAttribute="trailing" secondItem="gEd-7a-vBZ" secondAttribute="trailing" constant="20" id="gQh-Fi-Rcg"/>
+                                                            <constraint firstItem="O7G-pG-U5v" firstAttribute="leading" secondItem="fEF-Jq-M2O" secondAttribute="trailing" constant="-1" id="j5X-Hr-G2O"/>
+                                                            <constraint firstItem="fEF-Jq-M2O" firstAttribute="centerY" secondItem="gcK-gr-wW5" secondAttribute="centerY" id="qx6-Zl-3GC"/>
+                                                            <constraint firstItem="gEd-7a-vBZ" firstAttribute="leading" secondItem="n2Q-ft-g9b" secondAttribute="trailing" id="wbb-V2-2Vl"/>
+                                                        </constraints>
+                                                    </customView>
+                                                </subviews>
+                                                <holdingPriorities>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                </holdingPriorities>
+                                            </splitView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="wye-wx-4cE" firstAttribute="leading" secondItem="HDK-FH-YMP" secondAttribute="leading" id="KOY-q9-Dir"/>
+                                            <constraint firstItem="wye-wx-4cE" firstAttribute="top" secondItem="HDK-FH-YMP" secondAttribute="top" id="aRh-7p-Gwk"/>
+                                            <constraint firstAttribute="bottom" secondItem="wye-wx-4cE" secondAttribute="bottom" id="die-TK-iEb"/>
+                                            <constraint firstAttribute="trailing" secondItem="wye-wx-4cE" secondAttribute="trailing" id="lJN-ko-X6g"/>
+                                        </constraints>
                                     </customView>
                                 </subviews>
                                 <holdingPriorities>
@@ -172,31 +242,10 @@
                     <constraint firstItem="L0P-A7-OcK" firstAttribute="top" secondItem="GzE-ve-f11" secondAttribute="top" id="v4g-M9-MR7"/>
                 </constraints>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="CAE02432-EE1E-4FA8-8EE6-DBE803D4896F" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="wZ4-fk-kZb">
-                <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="D678983B-E49B-414E-918D-1A1BEFCDAD11" explicitItemIdentifier="CCC" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="NSComputer" id="BKX-BR-ZTq"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="WKa-t1-Zgj"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="uuC-DL-8ZV"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="exg-UI-b7k"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="lz7-bh-NmB"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="9Nj-Rx-lpb"/>
-                </allowedToolbarItems>
-                <defaultToolbarItems>
-                    <toolbarItem reference="WKa-t1-Zgj"/>
-                    <toolbarItem reference="uuC-DL-8ZV"/>
-                    <toolbarItem reference="9Nj-Rx-lpb"/>
-                    <toolbarItem reference="exg-UI-b7k"/>
-                </defaultToolbarItems>
-            </toolbar>
         </window>
     </objects>
     <resources>
-        <image name="NSComputer" width="32" height="32"/>
-        <image name="NSListViewTemplate" width="11" height="10"/>
         <image name="NSRightFacingTriangleTemplate" width="9" height="9"/>
-        <image name="NSStopProgressTemplate" width="11" height="11"/>
-        <image name="icon-1" width="64" height="64"/>
-        <image name="icon-1_off" width="64" height="65"/>
         <image name="icon-2" width="65" height="64"/>
         <image name="icon-2_off" width="65" height="65"/>
         <image name="icon-3" width="65" height="64"/>

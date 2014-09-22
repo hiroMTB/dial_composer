@@ -46,7 +46,7 @@
                         <constraint firstAttribute="width" constant="58" id="7Nq-NU-RVL"/>
                         <constraint firstAttribute="height" constant="58" id="C95-oo-7cS"/>
                     </constraints>
-                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <action selector="change_color:" target="-2" id="6DK-fX-5sr"/>
                     </connections>

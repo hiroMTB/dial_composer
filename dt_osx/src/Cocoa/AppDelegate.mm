@@ -1,6 +1,5 @@
 #import "AppDelegate.h"
 #import "MainWindowController.h"
-#import "GeneralViewController.h"
 
 @implementation AppDelegate
 
