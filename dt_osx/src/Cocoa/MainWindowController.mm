@@ -15,7 +15,6 @@
 
 @implementation MainWindowController
 
-NSString *const GeneralViewTitle	= @"GeneralView";
 NSString *const CircleViewTitle		= @"CircleView";
 NSString *const OscOutViewTitle		= @"OscOutView";
 NSString *const OscInViewTitle		= @"OscInView";
@@ -33,7 +32,7 @@ NSString *const OscInViewTitle		= @"OscInView";
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    [self changeViewController:1];
+    [self SelectSideP1:self];
 	
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 	[nc addObserver:self
