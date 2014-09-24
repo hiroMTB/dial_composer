@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:dial.xcodeproj">
+      location = "self:dial_composer.xcodeproj">
    </FileRef>
 </Workspace>
