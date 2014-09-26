@@ -22,6 +22,10 @@ public:
 	dt_rhythm_lib();
 	~dt_rhythm_lib();
 	void setup( int start_slot, int end_slot );
+	void setup_serial( int start_slot, int end_slot );
+	void setup_parallel( int start_slot, int end_slot );
+	void load_rhythm( int slot );
+	void check_data();
 	const RHYTHM_SHAPE& getRhythm( int slotNum, int type );
 	
 	SHAPE_TABLE shapes;
