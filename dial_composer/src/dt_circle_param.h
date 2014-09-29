@@ -10,7 +10,6 @@
 
 #include "ofMain.h"
 #include "dt_circle_base.h"
-#include "dt_circle_drawer.h"
 
 class dt_circle_param : public dt_circle_base{
 
@@ -23,7 +22,5 @@ public:
 	virtual void draw();
     virtual void on_process();
     void change_param_type( dt_circle_type t );
-    
-    static dt_circle_drawer	circle_drawer;
 
 };

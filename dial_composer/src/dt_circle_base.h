@@ -92,6 +92,8 @@ public:
  */
 
 #include "dt_sequencer.h"
+#include "dt_circle_drawer.h"
+
 class ofApp;
 class dt_dial_ui;
 
@@ -135,10 +137,11 @@ public:
     dt_dial_ui * ui;
     static dt_circle_base * selected_circle;
     dt_circle_base * parent;
+    dt_circle_drawer circle_drawer;
+    
     vector<dt_circle_base*> input_circles;
 	vector<dt_circle_base*> output_circles;
 	
-
 	static ofColor noteOn_color;
 	static ofColor noteNum_color;
 	static ofColor velocity_color;

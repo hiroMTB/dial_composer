@@ -31,7 +31,7 @@ public:
     std::map<dt_circle_type, float> prms;
     std::map<dt_circle_type, int> CCs;
 
-	static dt_circle_drawer	circle_drawer;
+	static dt_circle_drawer	bg_circle_drawer;
 
 
 };

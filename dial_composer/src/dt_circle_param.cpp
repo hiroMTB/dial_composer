@@ -14,13 +14,9 @@
 #include "dt_sequence_thread.h"
 #include "dt_font_manager.h"
 
-dt_circle_drawer dt_circle_param::circle_drawer;
 
 dt_circle_param::dt_circle_param(){
 	initial = "";
-    if( !circle_drawer.bInitialized ){
-        circle_drawer.initialize( 12*6 );
-    }
 }
 
 dt_circle_param::~dt_circle_param(){
@@ -87,12 +83,19 @@ void dt_circle_param::draw(){
             if( selected ){
                 glPointSize( 4 );
                 ofSetColor( data.circle_color );
+
+                ofNoFill();
+                ofSetLineWidth( 1 );
+                ofSetRectMode( OF_RECTMODE_CENTER );
+                ofRect( 0, 0, data.rev_radius*3.1, data.rev_radius*3.1 );
+                ofSetRectMode( OF_RECTMODE_CORNER );
             }else{
                 glPointSize( 2 );
                 float b = app->bg.getBrightness() * 255.0;
-                ofSetColor( 255.0-b, 220 );
+                ofSetColor( 255.0-b, 30 );
             }
-            circle_drawer.draw( data.rev_radius * 1.26, OF_MESH_FILL );
+            
+            circle_drawer.draw( data.rev_radius * 1.3, OF_MESH_WIREFRAME );
             
             // guide + shape
             ofPushMatrix();{

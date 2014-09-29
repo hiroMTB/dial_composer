@@ -128,6 +128,8 @@ void dt_circle_base::change_beat( int beat ){
 	data.rev_speed = (float)360.0 / (float)seq->total_steps;
 	change_speed( data.speed );
     make_vbo();
+    
+    circle_drawer.initialize( seq->total_steps / 4 );
 }
 
 void dt_circle_base::change_speed( int speed ){
