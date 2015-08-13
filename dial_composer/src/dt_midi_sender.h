@@ -42,6 +42,10 @@ public:
 		midi_out.sendNoteOff( ch, noteNum );
 	}
 
+    void sendTimingClock(){
+        midi_out.sendMidiByte(248);        
+    }
+    
 private:
 	ofxMidiOut midi_out;
 
