@@ -57,6 +57,7 @@
 		63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */; };
 		640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2FAC65C491D4231379F3298 /* ofxOscReceiver.cpp */; };
 		67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */; };
+		6A13F6401B7BEFE400E63E53 /* dt_clock_sender_audio_pulse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A13F63E1B7BEFE400E63E53 /* dt_clock_sender_audio_pulse.cpp */; };
 		6A565A9714A6A12EB9098F52 /* src_colors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27DFA5E4C611C297AADB2002 /* src_colors.cpp */; };
 		72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */; };
 		879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */; };
@@ -10152,6 +10153,8 @@
 		5F118C5DAAA61D8DB376BB3F /* svgtiny_internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = svgtiny_internal.h; path = ../../../addons/ofxSvg/libs/svgTiny/src/svgtiny_internal.h; sourceTree = SOURCE_ROOT; };
 		63A47AC60FFAFC3BF093EC0F /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscOutboundPacketStream.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.cpp; sourceTree = SOURCE_ROOT; };
 		65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscBundle.cpp; path = ../../../addons/ofxOsc/src/ofxOscBundle.cpp; sourceTree = SOURCE_ROOT; };
+		6A13F63E1B7BEFE400E63E53 /* dt_clock_sender_audio_pulse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_clock_sender_audio_pulse.cpp; sourceTree = "<group>"; };
+		6A13F63F1B7BEFE400E63E53 /* dt_clock_sender_audio_pulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_clock_sender_audio_pulse.h; sourceTree = "<group>"; };
 		6B65E6930994CC4B2D2B8B33 /* OscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPacketListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h; sourceTree = SOURCE_ROOT; };
 		7689F8A0F3D0B7635A8C3104 /* ofxOscArg.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscArg.h; path = ../../../addons/ofxOsc/src/ofxOscArg.h; sourceTree = SOURCE_ROOT; };
 		81967292BFC87A0144BD32C6 /* ofxOscSender.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscSender.cpp; path = ../../../addons/ofxOsc/src/ofxOscSender.cpp; sourceTree = SOURCE_ROOT; };
@@ -28408,6 +28411,8 @@
 				F6B766D21947984B00B0741D /* dt_sequence_thread_oF.cpp */,
 				F63412E7194A6BE400B2E3CC /* dt_sequence_thread_audio.h */,
 				F63412E6194A6BE400B2E3CC /* dt_sequence_thread_audio.cpp */,
+				6A13F63E1B7BEFE400E63E53 /* dt_clock_sender_audio_pulse.cpp */,
+				6A13F63F1B7BEFE400E63E53 /* dt_clock_sender_audio_pulse.h */,
 			);
 			name = seq;
 			sourceTree = "<group>";
@@ -28585,6 +28590,7 @@
 				4D5A530E19C5019000039AF9 /* ofx2DCamera.cpp in Sources */,
 				4D84E8E719C38BA100D54F05 /* ofxModifierKeys_impl_linux.cpp in Sources */,
 				F6EE1B54196AA7A600A77A20 /* ofxToggle.cpp in Sources */,
+				6A13F6401B7BEFE400E63E53 /* dt_clock_sender_audio_pulse.cpp in Sources */,
 				F6779838194F9F82005DFF45 /* juce_audio_basics.mm in Sources */,
 				F6779837194F9F1F005DFF45 /* juce_core.mm in Sources */,
 				F6075E0D194DE94E00F8F7E0 /* RtMidi.cpp in Sources */,
@@ -28706,7 +28712,7 @@
 					../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386/,
 					../../../addons/ofxTweener/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
@@ -28762,7 +28768,7 @@
 					../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386/,
 					../../../addons/ofxTweener/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
@@ -28814,7 +28820,7 @@
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = ../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = dial_composerDebug;
 				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
@@ -28861,7 +28867,7 @@
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = ../../../addons/ofxOSXBoost/libs/boost/lib/osx_i386;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = dial_composer;
 				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
