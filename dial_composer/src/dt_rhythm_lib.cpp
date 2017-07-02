@@ -9,8 +9,6 @@
 #include "dt_rhythm_lib.h"
 #include "dt_config.h"
 
-#include <boost/thread.hpp>
-using namespace boost;
 
 dt_rhythm_lib::dt_rhythm_lib(){
 	shapes.resize( dt_config::DT_RHYTHM_SHAPE_SLOT_MAX+1 );
@@ -56,9 +54,14 @@ void dt_rhythm_lib::setup_serial( int start_slot, int end_slot ){
 }
 
 void dt_rhythm_lib::setup_parallel( int start_slot, int end_slot ){
-	for(int i=start_slot; i<=end_slot; i++ ){
-		boost::thread loading_thrread( &dt_rhythm_lib::load_rhythm, this, i);
+    vector<std::thread> ths;
+    for(int i=start_slot; i<=end_slot; i++ ){
+        ths.push_back( std::thread(&dt_rhythm_lib::load_rhythm, this, i) );
 	}
+    
+    for(std::thread&t : ths){
+        t.join();
+    }
 }
 
 void dt_rhythm_lib::load_rhythm( int slot ){

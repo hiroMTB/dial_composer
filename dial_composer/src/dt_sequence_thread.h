@@ -9,7 +9,7 @@
 #pragma once
 
 #ifndef USE_AUDIO_THREAD
-	#define USE_BOOST_THREAD
+	//#define USE_BOOST_THREAD
 
 	#ifdef USE_BOOST_THREAD
 		#include "dt_sequence_thread_boost.h"

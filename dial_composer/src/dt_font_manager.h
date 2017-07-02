@@ -23,10 +23,10 @@ public:
 		bool antiAliased =		true;
 		bool fullCharacterSet = true;
 		bool makeContours =		true;
-		font_SS.loadFont( fontName, 6, antiAliased, fullCharacterSet, makeContours );
-		font_S.loadFont( fontName, 10, antiAliased, fullCharacterSet, makeContours );
-		font_M.loadFont( fontName, 14, antiAliased, fullCharacterSet, makeContours );
-		font_L.loadFont( fontName, 18, antiAliased, fullCharacterSet, makeContours );
+		font_SS.load( fontName, 6, antiAliased, fullCharacterSet, makeContours );
+		font_S.load( fontName, 10, antiAliased, fullCharacterSet, makeContours );
+		font_M.load( fontName, 14, antiAliased, fullCharacterSet, makeContours );
+		font_L.load( fontName, 18, antiAliased, fullCharacterSet, makeContours );
     }
 
     float dpi_rate;

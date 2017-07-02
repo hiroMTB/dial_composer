@@ -17,11 +17,33 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,  const CVTimeS
 class ofxCocoaGLViewWindowProxy : public ofAppBaseWindow {
 public:
     
-	ofxCocoaGLView *view;
+    ofCoreEvents coreEvents;
+    shared_ptr<ofBaseRenderer> currentRenderer;
+    
+    ofCoreEvents & events(){ return coreEvents; };
+    shared_ptr<ofBaseRenderer> & renderer(){ return currentRenderer; };
+    
+    void setup(const ofWindowSettings & settings){
+        currentRenderer = shared_ptr<ofBaseRenderer>(new ofGLRenderer(this));
+    };
+    
+    void update(){};
+    void draw(){};
+    static bool doesLoop(){ return true; }
+    static bool allowsMultiWindow(){ return false; }
+    static void loop(){}
+    static bool needsPolling(){ return false; }
+    static void pollEvents(){}
+
+    ofxCocoaGLView *view;
     
 	ofxCocoaGLViewWindowProxy(ofxCocoaGLView *view_) {
 		view = view_;
 	}
+    
+    ~ofxCocoaGLViewWindowProxy(){
+        cout << "kill ofxCocoaGLViewWindowProxy()" << endl;
+    }
     
 	int getWidth() {
 #ifndef NO_RETINA
@@ -191,11 +213,13 @@ static NSOpenGLContext *_context = nil;
 			}];
             
 			// setup terminate notification
-			NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+			
+            /*NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 			[nc addObserver:self
 				   selector:@selector(appWillTerminate:)
 					   name:NSApplicationWillTerminateNotification
 					 object:NSApp];
+            */
             
 			tracking_rect_tag = NULL;
 		}
@@ -223,8 +247,8 @@ static NSOpenGLContext *_context = nil;
 		displayLink = NULL;
 	}
     
-	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-	[nc removeObserver:self name:NSApplicationWillTerminateNotification object:NSApp];
+//	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+//	[nc removeObserver:self name:NSApplicationWillTerminateNotification object:NSApp];
     
 	if (local_monitor_handler) {
 		[NSEvent removeMonitor:local_monitor_handler];
@@ -395,7 +419,7 @@ static NSOpenGLContext *_context = nil;
 	setupWindowProxy(self);
     
 	[self setup];
-	ofNotifySetup();
+	window_proxy->events().notifySetup();
     
 	initialised = YES;
     
@@ -444,7 +468,7 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
 		}
         
 		[self update];
-		ofNotifyUpdate();
+		//notifyUpdate();
         
 		// retina support
 		NSRect backingBounds = [self convertRectToBacking:[self bounds]];
@@ -452,23 +476,10 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
 		backingPixelHeight = (GLsizei)(backingBounds.size.height);
 		glViewport(0, 0, backingPixelWidth, backingPixelHeight);
 		
-		//NSRect r = self.bounds;
-		//ofViewport(0, 0, r.size.width, r.size.height);
-        
-		float *bgPtr = ofBgColorPtr();
-		bool bClearAuto = ofbClearBg();
-        
-		if (bClearAuto || nFrameCount < 3)
-		{
-			float * bgPtr = ofBgColorPtr();
-			glClearColor(bgPtr[0], bgPtr[1], bgPtr[2], bgPtr[3]);
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		}
-        
 		if (bEnableSetupScreen) ofSetupScreen();
         
 		[self draw];
-		ofNotifyDraw();
+		//notifyDraw();
         
 		glFlush();
 		[[self openGLContext] flushBuffer];
@@ -492,7 +503,7 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
 	height = r.size.height;
     
 	[self windowResized:r.size];
-	ofNotifyWindowResized(width, height);
+	//notifyWindowResized(width, height);
     
 	END_OPENGL();
     
@@ -535,7 +546,7 @@ static int conv_button_number(int n) {
     
 	int b = conv_button_number([theEvent buttonNumber]);
 	[self mousePressed:p button:b];
-	ofNotifyMousePressed(p.x, p.y, b);
+	//notifyMousePressed(p.x, p.y, b);
 }
 
 - (void)mouseDragged:(NSEvent *)theEvent {
@@ -545,7 +556,7 @@ static int conv_button_number(int n) {
     
 	int b = conv_button_number([theEvent buttonNumber]);
 	[self mouseDragged:p button:b];
-	ofNotifyMouseDragged(p.x, p.y, b);
+	//notifyMouseDragged(p.x, p.y, b);
 }
 
 - (void)mouseUp:(NSEvent *)theEvent {
@@ -555,7 +566,7 @@ static int conv_button_number(int n) {
     
 	int b = conv_button_number([theEvent buttonNumber]);
 	[self mouseReleased:p button:b];
-	ofNotifyMouseReleased(p.x, p.y, b);
+	//notifyMouseReleased(p.x, p.y, b);
 }
 
 - (void)_mouseMoved:(NSEvent *)theEvent {
@@ -564,7 +575,7 @@ static int conv_button_number(int n) {
 	makeCurrentView(self);
     
 	[self mouseMoved:p];
-	ofNotifyMouseMoved(p.x, p.y);
+	//notifyMouseMoved(p.x, p.y);
 }
 
 - (void)rightMouseDown:(NSEvent *)theEvent {
@@ -574,7 +585,7 @@ static int conv_button_number(int n) {
     
 	int b = conv_button_number([theEvent buttonNumber]);
 	[self mousePressed:p button:b];
-	ofNotifyMousePressed(p.x, p.y, b);
+	//notifyMousePressed(p.x, p.y, b);
 }
 
 - (void)rightMouseDragged:(NSEvent *)theEvent {
@@ -584,7 +595,7 @@ static int conv_button_number(int n) {
     
 	int b = conv_button_number([theEvent buttonNumber]);
 	[self mouseDragged:p button:b];
-	ofNotifyMouseDragged(p.x, p.y, b);
+	//notifyMouseDragged(p.x, p.y, b);
 }
 
 - (void)rightMouseUp:(NSEvent *)theEvent {
@@ -594,7 +605,7 @@ static int conv_button_number(int n) {
     
 	int b = conv_button_number([theEvent buttonNumber]);
 	[self mouseReleased:p button:b];
-	ofNotifyMouseReleased(p.x, p.y, b);
+	//notifyMouseReleased(p.x, p.y, b);
 }
 
 - (void)otherMouseDown:(NSEvent *)theEvent {
@@ -604,7 +615,7 @@ static int conv_button_number(int n) {
     
 	int b = conv_button_number([theEvent buttonNumber]);
 	[self mousePressed:p button:b];
-	ofNotifyMousePressed(p.x, p.y, b);
+	//notifyMousePressed(p.x, p.y, b);
 }
 
 - (void)otherMouseDragged:(NSEvent *)theEvent {
@@ -614,7 +625,7 @@ static int conv_button_number(int n) {
     
 	int b = conv_button_number([theEvent buttonNumber]);
 	[self mouseDragged:p button:b];
-	ofNotifyMouseDragged(p.x, p.y, b);
+	//notifyMouseDragged(p.x, p.y, b);
 }
 
 - (void)otherMouseUp:(NSEvent *)theEvent {
@@ -624,7 +635,7 @@ static int conv_button_number(int n) {
     
 	int b = conv_button_number([theEvent buttonNumber]);
 	[self mouseReleased:p button:b];
-	ofNotifyMouseReleased(p.x, p.y, b);
+	//notifyMouseReleased(p.x, p.y, b);
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
@@ -670,7 +681,7 @@ static int conv_button_number(int n) {
             key = OF_KEY_LEFT;
         }
         
-		ofNotifyKeyPressed( key );
+		//notifyKeyPressed( key );
        	[self keyPressed:key];
 	}
 }
@@ -682,7 +693,7 @@ static int conv_button_number(int n) {
 	makeCurrentView(self);
     
 	[self keyReleased:key];
-	ofNotifyKeyReleased(key);
+	//notifyKeyReleased(key);
 }
 
 - (void)mouseEntered:(NSEvent *)event {

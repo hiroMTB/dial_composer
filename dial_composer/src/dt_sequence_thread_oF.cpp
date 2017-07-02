@@ -10,33 +10,30 @@
 #include "ofApp.h"
 #include "dt_circle_container.h"
 
-int dt_sequence_thread_oF::sleep_millisec = 123;
-int dt_sequence_thread_oF::sleep_microsec = sleep_millisec*1000;
-
-unsigned int dt_sequence_thread_oF::master_tick = -123456;
-unsigned int dt_sequence_thread_oF::master_step = -123456;
-unsigned int dt_sequence_thread_oF::sleep_tick = 1;
 
 dt_sequence_thread_oF::dt_sequence_thread_oF()
-:
-stopRequested( false )
-{
-	app = ofApp::app;
-	master_tick = 0;
-	master_step = 0;
+{}
+
+void dt_sequence_thread_oF::setup(){
+    bStop_requested = false;
+    master_step = 0;
+    min_sleep_micro_sec = 1000;
+    app = ofApp::app;
 }
 
 void dt_sequence_thread_oF::threadedFunction(){
 	while( isThreadRunning() ){
-		master_tick++;
-		if( master_tick == UINT_MAX ) master_tick = 0;
-
-		if( master_tick % sleep_tick == 0 ){
-			ofApp::app->all_containers.step();
-			master_step++;
-		}
-
-		sleep( sleep_millisec );
+        if( dt_config::DT_PLAY_GEN_RHYTHM ){
+            app->all_containers.step();
+            app->osc_recorder.step_fragment();
+        }
+        
+        if( dt_config::DT_PLAY_BUFFERED_RHYTHM ){
+            app->osc_recorder.play_fragment();
+        }
+        
+        master_step++;
+		sleep( sleep_microsec*1000.0f );
 	}
 }
 
@@ -50,3 +47,4 @@ void dt_sequence_thread_oF::start(){
 void dt_sequence_thread_oF::stop(){
 	stopThread();
 }
+

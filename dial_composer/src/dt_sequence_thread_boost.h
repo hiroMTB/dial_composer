@@ -24,7 +24,6 @@ public:
 	void setup();
 	void start();
 	void stop();
-	void change_bpm(int bpm);
 	void change_freq(float freq);
 			
 	ofApp * app;

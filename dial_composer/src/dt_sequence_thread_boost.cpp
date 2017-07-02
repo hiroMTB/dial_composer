@@ -74,14 +74,3 @@ void dt_sequence_thread_boost::stop(){
 dt_sequence_thread_boost::~dt_sequence_thread_boost(){
 	stop();
 }
-
-void dt_sequence_thread_boost::change_bpm( int _bpm ){
-	
-	bpm = _bpm;
-	float beat_period_ms = 60.0*1000.0 / (float) bpm / dt_config::DT_BEAT_RESOLUTION;
-	sleep_microsec = beat_period_ms * 1000;
-
-	if( sleep_microsec < min_sleep_micro_sec ){
-		sleep_microsec = min_sleep_micro_sec;
-	}
-}

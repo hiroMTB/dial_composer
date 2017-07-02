@@ -9,9 +9,6 @@
 #pragma once
 
 #include "ofxMidi.h"
-#include <boost/thread.hpp>
-#include <boost/chrono.hpp>
-using namespace boost;
 
 class dt_midi_sender{
 	
@@ -21,7 +18,7 @@ public:
 	~dt_midi_sender(){
 		midi_out.closePort();
 	}
-	
+    
 	void open_port( string port_name ){
 		midi_out.openVirtualPort( port_name );
 	}
@@ -29,7 +26,7 @@ public:
 	void send_note_on( int ch, int noteNum, int vel, int dur_micro_sec ){
 		midi_out.sendNoteOn( ch, noteNum, vel );
 		if( dur_micro_sec>0 ){
-			boost::thread noteOffThread( &dt_midi_sender::send_note_off, this, ch, noteNum, dur_micro_sec );
+			thread noteOffThread( &dt_midi_sender::send_note_off, this, ch, noteNum, dur_micro_sec );
 		}
 	}
 	
@@ -38,7 +35,7 @@ public:
 	}
 	
 	void send_note_off( int ch, int noteNum, int after_micro_sec ){
-        boost::this_thread::sleep( boost::posix_time::microseconds(after_micro_sec) );
+        std::this_thread::sleep_for( chrono::microseconds(after_micro_sec) );
 		midi_out.sendNoteOff( ch, noteNum );
 	}
 

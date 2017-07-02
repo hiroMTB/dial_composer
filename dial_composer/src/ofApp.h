@@ -34,7 +34,7 @@ public:
 	void mousePressed( int x, int y, int button );
 	void mouseDragged( int x, int y, int button );
 	void mouseReleased( int x, int y, int button );
-	void mouseMoved( int x, int y ){};
+	void mouseMoved( int x, int y );
 	void windowResized( int w, int h );
 	void dragEvent( ofDragInfo dragInfo ){};
 	void gotMessage( ofMessage msg );
@@ -50,7 +50,7 @@ public:
 	dt_midi_writer		midi_writer;
 	dt_font_manager		font_manager;
 	dt_rhythm_lib		rhythm_lib;
-	dt_linear_drawer	linear_drawer;
+	//dt_linear_drawer	linear_drawer;
 	dt_sequence_thread	sequence_thread;
 	dt_config			config;
 	dt_osc_recorder		osc_recorder;

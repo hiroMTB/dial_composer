@@ -48,7 +48,7 @@ void ofApp::setup(){
     ofDisableArbTex();
     noise.loadImage("img/noise2.png");
     noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
-	bg.set( 0.1 );
+	bg.set( 0.8f );
     
     //Module
 	rhythm_lib.setup( 3, 24 );
@@ -78,18 +78,22 @@ void ofApp::draw(){
 
     float w = ofGetWidth();
     float h = ofGetHeight();
-    noise.width = w;
-    noise.height = h;
-    noise.draw( 0, 0 );
+//    noise.width = w;
+//    noise.height = h;
+//    noise.draw( 0, 0 );
 
     cam.begin(); {
+        ofSetColor(255, 0, 0);
+        ofDrawCircle(100,100,100);
+        
         all_containers.draw();
+        cam.debugDraw();
     } cam.end();
 
   	osc_recorder.draw( 5, ofGetHeight()-70, ofGetWidth()-10, 64 );
-    if( dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw( 30, 300, 30, 500, 1 );
+    //if( dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw( 30, 300, 30, 500, 1 );
     
-#ifdef DEBUG
+//#ifdef DEBUG
 	mode_manager.debug_draw();
     
     mouseX = ofGetMouseX();
@@ -97,12 +101,13 @@ void ofApp::draw(){
     ofVec2f world = cam.screenToWorld( ofVec2f(mouseX, mouseY) );
     ofSetColor(20);
     ofDrawBitmapString( "world " + ofToString(world.x) + ", " + ofToString(world.y), mouseX, mouseY+20 );
-#endif
+//#endif
 
 }
 
-void ofApp::mouseMoved( int x, int y, int button ){
-    mode_manager.current_ui->mouseMoved( x, y, button );
+void ofApp::mouseMoved( int x, int y){
+    mode_manager.current_ui->mouseMoved( x, y );
+    cout << x << ", " << y << endl;
 }
 
 void ofApp::mousePressed( int x, int y, int button ){
@@ -203,6 +208,6 @@ void ofApp::update_cocoa_ui(){
 
 void ofApp::backingScaleChanged( float newb, float oldb ){
 	backingScale = newb;
-	config.DT_SIZE_BASE *= newb / oldb;
+	//config.DT_SIZE_BASE *= newb / oldb;
 }
 

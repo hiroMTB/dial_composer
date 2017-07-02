@@ -12,7 +12,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     if( !mainWindowController ){
         mainWindowController = [[MainWindowController alloc] initWithWindowNibName:@"MainWindow"];
-        [mainWindowController showWindow:self];
+        [mainWindowController showWindow:nil];
         
         NSLog(@"AppDelegate::applicationDidFinishLaunching");
         [self update_ui];

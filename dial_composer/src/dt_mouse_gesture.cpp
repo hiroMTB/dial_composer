@@ -54,10 +54,10 @@ void dt_mouse_gesture::update(){
     }
 }
 
-void dt_mouse_gesture::mouseMoved( int x, int y, int button ){
+void dt_mouse_gesture::mouseMoved( int x, int y){
     mouseX = x;
     mouseY = y;
-    mouseButton = button;
+    //mouseButton = button;
 }
 
 void dt_mouse_gesture::mousePressed( int x, int y, int button ){

@@ -21,13 +21,14 @@ void ofx2DCamera::reset(){
 }
 
 void ofx2DCamera::update(){
-	tweener.update();
+    tweener.update();
 }
 
 void ofx2DCamera::begin(){
     ofSetupScreenOrtho();
     ofPushMatrix();
         ofTranslate( ofGetWidth()/2, ofGetHeight()/2 );
+        ofRotate( 180, 1, 0, 0);    
         ofTranslate( -trans );
         ofTranslate( pivot );
         ofRotate( angle, 0, 0, 1);
