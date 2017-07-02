@@ -50,7 +50,7 @@ public:
 	dt_midi_writer		midi_writer;
 	dt_font_manager		font_manager;
 	dt_rhythm_lib		rhythm_lib;
-	dt_linear_drawer	linear_drawer;
+	//dt_linear_drawer	linear_drawer;
 	dt_sequence_thread	sequence_thread;
 	dt_config			config;
 	dt_osc_recorder		osc_recorder;

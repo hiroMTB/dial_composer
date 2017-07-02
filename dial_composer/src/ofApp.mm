@@ -48,7 +48,7 @@ void ofApp::setup(){
     ofDisableArbTex();
     noise.loadImage("img/noise2.png");
     noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
-	bg.set( 0.1 );
+	bg.set( 0.8f );
     
     //Module
 	rhythm_lib.setup( 3, 24 );
@@ -87,7 +87,7 @@ void ofApp::draw(){
     } cam.end();
 
   	osc_recorder.draw( 5, ofGetHeight()-70, ofGetWidth()-10, 64 );
-    if( dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw( 30, 300, 30, 500, 1 );
+    //if( dt_config::DT_SHOW_LINER_DRAWER) linear_drawer.draw( 30, 300, 30, 500, 1 );
     
 #ifdef DEBUG
 	mode_manager.debug_draw();
@@ -203,6 +203,6 @@ void ofApp::update_cocoa_ui(){
 
 void ofApp::backingScaleChanged( float newb, float oldb ){
 	backingScale = newb;
-	config.DT_SIZE_BASE *= newb / oldb;
+	//config.DT_SIZE_BASE *= newb / oldb;
 }
 

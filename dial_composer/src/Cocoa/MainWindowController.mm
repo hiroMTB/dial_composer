@@ -233,8 +233,10 @@ NSString *const OscInViewTitle		= @"OscInView";
         }
     }
     
-    [bpm_sl setFloatValue:ofApp::app->sequence_thread.bpm];
-    [bpm_tx setFloatValue:ofApp::app->sequence_thread.bpm];
+    if( ofApp::app ){
+        [bpm_sl setFloatValue:ofApp::app->sequence_thread.bpm];
+        [bpm_tx setFloatValue:ofApp::app->sequence_thread.bpm];
+    }
 }
 
 -(void)update_ui_every_frame{
