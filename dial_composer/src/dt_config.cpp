@@ -17,7 +17,7 @@ int dt_config::DT_GEN_RHYTHM_RATE = 100;
 int dt_config::DT_RHYTHM_SHAPE_SLOT_MIN = 3;
 int dt_config::DT_RHYTHM_SHAPE_SLOT_MAX = 24;
 int dt_config::DT_QUANTIZE_RESOLUTION = 16;
-int dt_config::DT_BEAT_RESOLUTION = 24;
+int dt_config::DT_BEAT_RESOLUTION = 16;
 int dt_config::DT_BEAT_SPEED_MAX = 32;
 
 // OSC out

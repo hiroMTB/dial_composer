@@ -126,11 +126,7 @@ NSString *const OscInViewTitle		= @"OscInView";
     [bpm_sl setIntValue:bpm];
     [bpm_tx setIntValue:bpm];
     ofApp * app = ofApp::app;
-    if( app ){
-        app->sequence_thread.change_bpm( bpm );
-        app->clock_sender_audio_pulse.change_bpm( bpm );
-    }
-    
+    if( app ) app->sequence_thread.change_bpm( bpm );
 }
 
 - (IBAction)step_bpm:(id)sender {
@@ -139,7 +135,6 @@ NSString *const OscInViewTitle		= @"OscInView";
         int step = [sender intValue];
         int bpm = app->sequence_thread.bpm + step;
         app->sequence_thread.change_bpm( bpm );
-        app->clock_sender_audio_pulse.change_bpm( bpm );
         [bpm_sl setIntValue:bpm];
         [bpm_tx setIntValue:bpm];
         [sender setIntValue:0];

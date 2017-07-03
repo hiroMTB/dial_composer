@@ -138,7 +138,7 @@ void dt_circle_note_on::update(){
     }
 	
     // size update
-    data.rev_radius = dt_config::DT_SIZE_BASE * 0.36;
+    data.rev_radius = dt_config::DT_SIZE_BASE * 0.5;
 	data.collision_radius = data.rev_radius * 1.5;
 	data.input_connection_radius = data.collision_radius + 100;
 	data.output_connection_radius = data.collision_radius + 100;
@@ -206,7 +206,6 @@ void dt_circle_note_on::draw(){
                 ofSetColor( 255.0-b, 220 );
             }
 
-            glPointSize( 1 );
             bg_circle_drawer.draw( data.rev_radius * 1.26, OF_MESH_POINTS );
             
             // shape & guide
@@ -215,7 +214,7 @@ void dt_circle_note_on::draw(){
                 ofScale( shape_scale, shape_scale, 1 );
 
                 // guid
-                glPointSize( 2 );
+                glPointSize( 3 );
                 rguid.draw( OF_MESH_POINTS );
                 
                 // shape
@@ -244,11 +243,7 @@ void dt_circle_note_on::draw(){
                 ofSetColor( c );
                 ofSetLineWidth( 1.0+data.vel*5.0 );
                 ofLine( 0, 0, data.pan, data.note );
-                glBegin(GL_POINTS);
-                glPointSize(2);
-                glVertex3f( data.pan, data.note, 0 );
-                glEnd();
-                //ofCircle( data.pan, data.note, 1.0+data.vel*14.0 );
+                ofCircle( data.pan, data.note, 1.0+data.vel*14.0 );
             }
         }ofPopMatrix();
     }ofPopMatrix();
