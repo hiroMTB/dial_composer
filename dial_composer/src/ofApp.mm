@@ -50,6 +50,15 @@ void ofApp::setup(){
     noise.getTexture().setTextureWrap( GL_REPEAT, GL_REPEAT );
     
 	bg.set( 0.8f );
+    bgQuad.addVertex(ofVec3f(0,0,0));
+    bgQuad.addTexCoord(ofVec2f(0,0));
+    bgQuad.addVertex(ofVec3f(ofGetWidth(),0,0));
+    bgQuad.addTexCoord(ofVec3f(ofGetWidth(),0));
+    bgQuad.addVertex(ofVec3f(ofGetWidth(),ofGetHeight(),0));
+    bgQuad.addTexCoord(ofVec2f(ofGetWidth(),ofGetHeight()));
+    bgQuad.addVertex(ofVec3f(0,ofGetHeight(),0));
+    bgQuad.addTexCoord(ofVec2f(0,ofGetHeight()));
+    bgQuad.setMode(OF_PRIMITIVE_TRIANGLE_FAN);
     
     //Module
 	rhythm_lib.setup( 3, 24 );
@@ -58,15 +67,10 @@ void ofApp::setup(){
 	osc_recorder.setup();
 	sequence_thread.setup();
 	sequence_thread.change_bpm( 120 );
-    clock_sender_audio_pulse.change_bpm( 120 );
 	sequence_thread.start();
 	mode_manager.setup();
 	cam.reset();
     midi_sender.open_port( dt_config::DT_MIDI_OUT_PORT_NAME );
-    
-    soundStream.setup(2, 0, 44100, 128, 4);
-    app->soundStream.setOutput( &clock_sender_audio_pulse );
-
 }
 
 void ofApp::update(){
@@ -80,14 +84,12 @@ void ofApp::update(){
 
 void ofApp::draw(){
     ofBackground( bg );
-    ofSetColor( 255, 120 );
+    ofSetColor( 255 );
 
-    float w = ofGetWidth();
-    float h = ofGetHeight();
-//    noise.width = w;
-//    noise.height = h
-//    noise.draw( 0, 0, 100, 100 );
-
+    noise.getTexture().bind();
+    bgQuad.draw();
+    noise.getTexture().unbind();
+    
     cam.begin(); {
         all_containers.draw();
         //cam.debugDraw();
