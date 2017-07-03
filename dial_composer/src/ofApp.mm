@@ -104,7 +104,6 @@ void ofApp::draw(){
 
 void ofApp::mouseMoved( int x, int y){
     mode_manager.current_ui->mouseMoved( x, y );
-    cout << x << ", " << y << endl;
 }
 
 void ofApp::mousePressed( int x, int y, int button ){
