@@ -41,12 +41,12 @@ void ofApp::setup(){
     //Visual
 	ofSetFrameRate( 60 );
 	ofSetVerticalSync( true );
-	ofSetCircleResolution( 24 );
+	ofSetCircleResolution( 60 );
 	ofEnableAlphaBlending();
 	ofEnableAntiAliasing();
 	ofEnableSmoothing();
     ofDisableArbTex();
-    noise.loadImage("img/noise2.png");
+    noise.load("img/noise2.png");
     noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
 	bg.set( 0.8f );
     
@@ -83,11 +83,8 @@ void ofApp::draw(){
 //    noise.draw( 0, 0 );
 
     cam.begin(); {
-        ofSetColor(255, 0, 0);
-        ofDrawCircle(100,100,100);
-        
         all_containers.draw();
-        cam.debugDraw();
+        //cam.debugDraw();
     } cam.end();
 
   	osc_recorder.draw( 5, ofGetHeight()-70, ofGetWidth()-10, 64 );

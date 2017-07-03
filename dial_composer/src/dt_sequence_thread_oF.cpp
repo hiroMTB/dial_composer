@@ -33,7 +33,7 @@ void dt_sequence_thread_oF::threadedFunction(){
         }
         
         master_step++;
-		sleep( sleep_microsec*1000.0f );
+        sleep(sleep_microsec/1000.0f );
 	}
 }
 

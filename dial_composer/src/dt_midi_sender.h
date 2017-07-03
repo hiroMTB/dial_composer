@@ -26,7 +26,7 @@ public:
 	void send_note_on( int ch, int noteNum, int vel, int dur_micro_sec ){
 		midi_out.sendNoteOn( ch, noteNum, vel );
 		if( dur_micro_sec>0 ){
-			thread noteOffThread( &dt_midi_sender::send_note_off, this, ch, noteNum, dur_micro_sec );
+			//thread noteOffThread( &dt_midi_sender::send_note_off, this, ch, noteNum, dur_micro_sec );
 		}
 	}
 	
