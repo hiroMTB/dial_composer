@@ -35,7 +35,7 @@ void dt_ui_home::singleClickStart(int x, int y, int button){
         dt_circle_base::selected_circle = c;
     }else{
         bool bShift = ofGetModifierPressed( OF_KEY_SHIFT );
-        if( !bShift ){
+        if( !bShift && button!=2 && button!=1){
             // canvas -> create new circle
             dt_circle_note_on * nc = new dt_circle_note_on();
             nc->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
