@@ -47,7 +47,8 @@ void ofApp::setup(){
 	ofEnableSmoothing();
     ofDisableArbTex();
     noise.load("img/noise2.png");
-    noise.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
+    noise.getTexture().setTextureWrap( GL_REPEAT, GL_REPEAT );
+    
 	bg.set( 0.8f );
     
     //Module
@@ -79,8 +80,8 @@ void ofApp::draw(){
     float w = ofGetWidth();
     float h = ofGetHeight();
 //    noise.width = w;
-//    noise.height = h;
-//    noise.draw( 0, 0 );
+//    noise.height = h
+//    noise.draw( 0, 0, 100, 100 );
 
     cam.begin(); {
         all_containers.draw();
