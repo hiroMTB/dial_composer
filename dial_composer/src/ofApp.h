@@ -15,6 +15,8 @@
 #include "dt_mode_manager.h"
 #include "ofx2DCamera.h"
 
+#include "dt_clock_sender_audio_pulse.h"
+
 class ofApp : public ofBaseApp {
 
 private:
@@ -58,6 +60,10 @@ public:
 	dt_mode_manager		mode_manager;
 
     ofx2DCamera         cam;
-	float backingScale;
+
+    dt_clock_sender_audio_pulse clock_sender_audio_pulse;
+    float backingScale;
+    
+    ofSoundStream soundStream;
 };
 

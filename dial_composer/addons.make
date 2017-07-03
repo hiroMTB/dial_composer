@@ -1,0 +1,7 @@
+ofxModifierKeys
+ofxTweener
+ofxGui
+ofxMidi
+ofxOsc
+ofxSvg
+ofxXmlSettings

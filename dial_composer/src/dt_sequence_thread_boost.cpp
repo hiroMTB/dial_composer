@@ -46,6 +46,9 @@ void dt_sequence_thread_boost::threadFunc(){
 
 void dt_sequence_thread_boost::task( const boost::system::error_code& /*e*/, boost::asio::deadline_timer *t ){
 
+    //
+    app->midi_sender.sendTimingClock();
+    
 	if( dt_config::DT_PLAY_GEN_RHYTHM ){
 		app->all_containers.step();
 		app->osc_recorder.step_fragment();
