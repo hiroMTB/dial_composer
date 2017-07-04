@@ -188,6 +188,7 @@
 		7689F8A0F3D0B7635A8C3104 /* ofxOscArg.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscArg.h; path = ../../../addons/ofxOsc/src/ofxOscArg.h; sourceTree = SOURCE_ROOT; };
 		81967292BFC87A0144BD32C6 /* ofxOscSender.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscSender.cpp; path = ../../../addons/ofxOsc/src/ofxOscSender.cpp; sourceTree = SOURCE_ROOT; };
 		832BDC407620CDBA568B713D /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlerror.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
+		84436F3C1F0B05150060FACA /* dt_midi_send_pool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dt_midi_send_pool.h; sourceTree = "<group>"; };
 		8496B2EC1E99749200BC8AB9 /* dt_sequence_thread_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dt_sequence_thread_base.h; sourceTree = "<group>"; };
 		8496B38F1E997AB900BC8AB9 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		8496B3911E997AB900BC8AB9 /* ofxTransitions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTransitions.cpp; sourceTree = "<group>"; };
@@ -811,6 +812,7 @@
 				F6B766CD1947984B00B0741D /* dt_rhythm_lib.h */,
 				F6B766CE1947984B00B0741D /* dt_rhythm_lib.cpp */,
 				F64097821953EA440021407A /* dt_circle_drawer.h */,
+				84436F3C1F0B05150060FACA /* dt_midi_send_pool.h */,
 			);
 			name = utility;
 			sourceTree = "<group>";
