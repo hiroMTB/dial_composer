@@ -110,15 +110,19 @@ public:
 	virtual void on_process(){};
 	virtual void check_sequencer();
     void make_vbo();
+
+    // return true if success
+	bool change_beat( int beat );
+    bool change_speed( int speed );
+    bool change_shape( int shape );
+	bool change_rotation( int phase_step );
+	bool change_type( dt_circle_type t );
+    bool change_circle_color( float r, float g, float b, float a );
+    bool change_circle_color( ofFloatColor &c );
+    bool change_circle_color( ofColor &c );
     
-	void change_beat( int beat );
-    void change_speed( int speed );
-    void change_shape( int shape );
-	void change_rotation( int phase_step );
-	void change_type( dt_circle_type t );
-    void change_circle_color( float r, float g, float b, float a );
-    void change_circle_color( ofFloatColor &c );
-    void change_circle_color( ofColor &c );
+    
+    
 	void setup_text( string initial );
 	void draw_initial();
 	ofVec2f calc_indi_position();

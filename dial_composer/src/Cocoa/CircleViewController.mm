@@ -59,19 +59,24 @@
     dt_circle_base * c = dt_circle_base::selected_circle;
     if( c ){
         int beat = [sender intValue];
-        [beat_sl setIntValue: beat];
-        [beat_tx setIntValue: beat];
-        c->change_beat( beat );
         
-        // change shape slider max value
-        int max_shape = ofApp::app->rhythm_lib.getRhythmSize(c->seq->total_beats)-1;
-        [shape_sl setMaxValue: max_shape];
-        [[shape_tx formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
-        
-        // shape type is changed after beat change
-        int shape_type = c->seq->rhythm_shape_type;
-        [shape_sl setIntValue: shape_type];
-        [shape_tx setIntValue: shape_type];
+        if(c->change_beat( beat )){
+            [beat_sl setIntValue: beat];
+            [beat_tx setIntValue: beat];
+            [beat_stp setIntValue: beat];
+            
+            // change shape slider max value
+            int max_shape = ofApp::app->rhythm_lib.getRhythmSize(c->seq->total_beats)-1;
+            [shape_sl setMaxValue: max_shape];
+            [[shape_tx formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
+            [[shape_stp formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
+            
+            // shape type is changed after beat change
+            int shape_type = c->seq->rhythm_shape_type;
+            [shape_sl setIntValue: shape_type];
+            [shape_tx setIntValue: shape_type];
+            [shape_stp setIntValue: shape_type];
+        }
     }
 }
 
@@ -81,6 +86,7 @@
         int speed = [sender intValue];
         [speed_sl setIntValue:speed];
         [speed_tx setIntValue:speed];
+        [speed_stp setIntValue:speed];
         c->change_speed( speed );
     }
 }
@@ -91,7 +97,8 @@
         int rotate = [sender intValue];
         [rotate_sl setIntValue:rotate];
         [rotate_tx setIntValue:rotate];
-		c->change_rotation( rotate );
+        [rotate_stp setIntValue:rotate];
+        c->change_rotation( rotate );
     }
 }
 
@@ -103,6 +110,7 @@
         shape = c->seq->rhythm_shape_type;
         [shape_sl setIntValue:shape];
         [shape_tx setIntValue:shape];
+        [shape_stp setIntValue:shape];
     }
 }
 
@@ -119,6 +127,7 @@
         float ov = [sender floatValue];
         [output_value_sl setFloatValue:ov];
         [output_value_tx setFloatValue:ov];
+        [output_value_stp setFloatValue:ov];
         c->data.output_value = ov;
     }
 }
@@ -141,6 +150,7 @@
         c->data.midi_ch = ch;
         [midi_ch_sl setIntValue:ch];
         [midi_ch_tx setIntValue:ch];
+        [midi_ch_stp setIntValue:ch];
     }
 }
 
@@ -149,15 +159,27 @@
     if( c ){
         int cc = [sender intValue];
         c->data.midi_cc_num = cc;
-        [midi_cc_number_sl setIntValue:cc];
-        [midi_cc_number_tx setIntValue:cc];
+        [midi_cc_sl setIntValue:cc];
+        [midi_cc_tx setIntValue:cc];
+        [midi_cc_stp setIntValue:cc];
     }
 }
-
+/*
 - (IBAction)step_beat:(id)sender {
 }
 
 - (IBAction)step_speed:(id)sender {
+    dt_circle_base * c = dt_circle_base::selected_circle;
+    if( c ){
+        int step = [sender intValue];
+        int phase_step = c->data.speed + step;
+        if(phase_step>=1){
+            c->change_speed( phase_step );
+            [speed_sl setIntValue: phase_step];
+            [speed_tx setIntValue: phase_step];
+            [sender setIntValue:0];
+        }
+    }
 }
 
 - (IBAction)step_rotate:(id)sender {
@@ -178,11 +200,9 @@
 - (IBAction)step_output_value:(id)sender {
 }
 
-- (IBAction)step_midi_ch:(id)sender {
-}
-
 - (IBAction)step_midi_cc:(id)sender {
 }
+*/
 
 - (void)update_ui{
     dt_circle_base * c = dt_circle_base::dt_circle_base::selected_circle;
@@ -193,15 +213,24 @@
         [mute_bt setState: c->data.bMute];
         [beat_sl setIntValue: c->seq->total_beats];
         [beat_tx setIntValue: c->seq->total_beats];
+        [beat_stp setIntValue:c->seq->total_beats];
+        
         [speed_sl setIntValue: c->data.speed];
         [speed_tx setIntValue: c->data.speed];
+        [speed_stp setIntValue: c->data.speed];
+        
         [rotate_sl setFloatValue: c->data.phase_step];
         [rotate_tx setFloatValue: c->data.phase_step];
+        [rotate_stp setFloatValue: c->data.phase_step];
+        
         [shape_sl setIntValue: c->seq->rhythm_shape_type];
         [shape_tx setIntValue: c->seq->rhythm_shape_type];
+        [shape_stp setIntValue: c->seq->rhythm_shape_type];
+
         int max_shape = ofApp::app->rhythm_lib.getRhythmSize(c->seq->total_beats)-1;
         [shape_sl setMaxValue: max_shape];
         [[shape_tx formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
+        [[shape_stp formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
         
         string non_editable_address = ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS);
         if( c->parent ){
@@ -211,11 +240,15 @@
         [address_lb setStringValue: [NSString stringWithUTF8String: c->data.address.c_str() ]];
         [output_value_sl setFloatValue: c->data.output_value];
         [output_value_tx setFloatValue: c->data.output_value];
+        [output_value_stp setFloatValue: c->data.output_value];
         
         [midi_ch_sl setIntValue:c->data.midi_ch];
         [midi_ch_tx setIntValue:c->data.midi_ch];
-        [midi_cc_number_sl setIntValue:c->data.midi_cc_num];
-        [midi_cc_number_tx setIntValue:c->data.midi_cc_num];
+        [midi_ch_stp setIntValue:c->data.midi_ch];
+        
+        [midi_cc_sl setIntValue:c->data.midi_cc_num];
+        [midi_cc_tx setIntValue:c->data.midi_cc_num];
+        [midi_cc_stp setIntValue:c->data.midi_cc_num];
         
         ofFloatColor &col = c->data.circle_color;
         [color setColor: [NSColor colorWithCalibratedRed:col.r green:col.g blue:col.b alpha:col.a] ];
@@ -229,10 +262,16 @@
             [output_value_sl setEnabled:false];
             [output_value_stp setEnabled:false];
             [type_cb setEnabled:false];
+            [midi_ch_sl setEnabled:true];
+            [midi_ch_tx setEnabled:true];
+            [midi_ch_stp setEnabled:true];
         }else{
             [output_value_sl setEnabled:true];
             [output_value_stp setEnabled:true];
             [type_cb setEnabled:true];
+            [midi_ch_sl setEnabled:false];
+            [midi_ch_tx setEnabled:false];
+            [midi_ch_stp setEnabled:false];
         }
         
         // hide midi cc number control
@@ -241,13 +280,13 @@
            c->data.circle_type == DT_CIRCLE_NOTE_NUM ||
            c->data.circle_type == DT_CIRCLE_DURATION  )
         {
-            [midi_cc_number_sl setEnabled:false];
-            [midi_cc_number_tx setEnabled:false];
-            [midi_cc_number_stp setEnabled:false];
+            [midi_cc_sl setEnabled:false];
+            [midi_cc_tx setEnabled:false];
+            [midi_cc_stp setEnabled:false];
         }else{
-            [midi_cc_number_sl setEnabled:true];
-            [midi_cc_number_tx setEnabled:true];
-            [midi_cc_number_stp setEnabled:true];
+            [midi_cc_sl setEnabled:true];
+            [midi_cc_tx setEnabled:true];
+            [midi_cc_stp setEnabled:true];
         }
     }
 }

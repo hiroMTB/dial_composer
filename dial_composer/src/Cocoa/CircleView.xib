@@ -1,33 +1,40 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CircleViewController">
             <connections>
                 <outlet property="address_lb" destination="Zsr-ol-mNz" id="cIP-z5-5rE"/>
                 <outlet property="beat_sl" destination="WdH-ev-z2I" id="OQN-E8-nP9"/>
+                <outlet property="beat_stp" destination="Bxf-Xq-4c9" id="kjT-tL-iuF"/>
                 <outlet property="beat_tx" destination="kOs-M2-Mgz" id="7FZ-dz-TVc"/>
                 <outlet property="color" destination="H38-h7-TgT" id="YRv-MT-htP"/>
-                <outlet property="midi_cc_number_sl" destination="V5A-PN-oGU" id="omq-LV-5xT"/>
-                <outlet property="midi_cc_number_stp" destination="JAs-sO-6uL" id="YRc-wu-7Xf"/>
                 <outlet property="midi_cc_number_tx" destination="f8V-br-oZ0" id="fr9-e3-YCH"/>
+                <outlet property="midi_cc_sl" destination="V5A-PN-oGU" id="I5l-W3-0CW"/>
+                <outlet property="midi_cc_stp" destination="04L-h5-foj" id="LVv-Yw-9fm"/>
+                <outlet property="midi_cc_tx" destination="f8V-br-oZ0" id="zRF-a8-4Vu"/>
                 <outlet property="midi_ch_sl" destination="W42-Ru-bHd" id="7eI-R3-xxp"/>
+                <outlet property="midi_ch_stp" destination="JAs-sO-6uL" id="uTT-DQ-HZf"/>
                 <outlet property="midi_ch_tx" destination="NVn-h3-jsW" id="usk-cr-3XQ"/>
                 <outlet property="mute_bt" destination="bxi-0C-Mdo" id="2Aw-D9-5bk"/>
                 <outlet property="name_tx" destination="5ki-HQ-sbz" id="jC2-VW-oJo"/>
                 <outlet property="output_value_lb" destination="awo-fX-al4" id="xaa-vc-VMc"/>
                 <outlet property="output_value_sl" destination="KgW-Nl-3es" id="ROG-cn-ZQj"/>
-                <outlet property="output_value_stp" destination="wB8-q3-iM0" id="Ulu-pQ-rQm"/>
+                <outlet property="output_value_stp" destination="wB8-q3-iM0" id="WQR-y5-hUX"/>
                 <outlet property="output_value_tx" destination="4QL-1k-fOi" id="Wrl-FK-mtD"/>
                 <outlet property="rotate_sl" destination="dlV-Fk-pGg" id="KiK-Jc-UUk"/>
+                <outlet property="rotate_stp" destination="xym-7N-NDC" id="G5V-Ta-1aQ"/>
                 <outlet property="rotate_tx" destination="MKk-xb-a2e" id="cpS-4G-1Vk"/>
                 <outlet property="shape_sl" destination="ggV-jV-Nlh" id="spd-1T-Nrv"/>
-                <outlet property="shape_tx" destination="dcP-vk-16B" id="nhS-pi-hrY"/>
+                <outlet property="shape_stp" destination="kkf-dP-iaY" id="bQp-x4-cgM"/>
+                <outlet property="shape_tx" destination="dcP-vk-16B" id="hLj-Lb-MVo"/>
                 <outlet property="solo_bt" destination="QvM-0V-nuF" id="Np9-YP-7MZ"/>
                 <outlet property="speed_sl" destination="VAj-Yd-R5w" id="BTW-hB-NdR"/>
+                <outlet property="speed_stp" destination="b6s-Y8-mdv" id="H7h-ud-WcJ"/>
                 <outlet property="speed_tx" destination="Cv1-tc-ZT2" id="vns-pt-eyt"/>
                 <outlet property="top_address" destination="iDG-Vr-gSr" id="nob-yY-2vp"/>
                 <outlet property="type_cb" destination="MKu-LU-F0x" id="dCb-vK-JW8"/>
@@ -52,28 +59,28 @@
                     </connections>
                 </colorWell>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VAj-Yd-R5w">
-                    <rect key="frame" x="90" y="479" width="170" height="17"/>
+                    <rect key="frame" x="90" y="481" width="170" height="15"/>
                     <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" minValue="1" maxValue="8" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="8" allowsTickMarkValuesOnly="YES" sliderType="linear" id="xGR-3d-Igb"/>
                     <connections>
-                        <action selector="change_speed:" target="-2" id="tYc-cF-hgd"/>
+                        <action selector="change_speed:" target="-2" id="w8t-Lh-EnD"/>
                     </connections>
                 </slider>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dlV-Fk-pGg">
-                    <rect key="frame" x="90" y="447" width="170" height="15"/>
+                    <rect key="frame" x="90" y="449" width="170" height="13"/>
                     <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" minValue="-20" maxValue="20" doubleValue="20" tickMarkPosition="above" sliderType="linear" id="hiD-T9-P1B"/>
                     <connections>
-                        <action selector="change_rotate:" target="-2" id="RPp-7T-984"/>
+                        <action selector="change_rotate:" target="-2" id="1cF-pU-pWH"/>
                     </connections>
                 </slider>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Je-hw-09R">
-                    <rect key="frame" x="18" y="482" width="36" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Je-hw-09R">
+                    <rect key="frame" x="18" y="482" width="37" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="speed" id="qeI-h2-wbI">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Tu-ix-cYM">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tu-ix-cYM">
                     <rect key="frame" x="18" y="448" width="36" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="rotate" id="UFA-JZ-4Lk">
                         <font key="font" metaFont="smallSystem"/>
@@ -82,13 +89,13 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ggV-jV-Nlh">
-                    <rect key="frame" x="90" y="413" width="170" height="15"/>
+                    <rect key="frame" x="90" y="415" width="170" height="13"/>
                     <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="1000" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="4K9-8o-HyA"/>
                     <connections>
-                        <action selector="change_shape:" target="-2" id="9L0-Zd-5Ml"/>
+                        <action selector="change_shape:" target="-2" id="hNO-uV-sSw"/>
                     </connections>
                 </slider>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R1i-uA-s1n">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1i-uA-s1n">
                     <rect key="frame" x="18" y="414" width="36" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="shape" id="e3P-kr-BHx">
                         <font key="font" metaFont="smallSystem"/>
@@ -97,13 +104,13 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WdH-ev-z2I">
-                    <rect key="frame" x="90" y="513" width="170" height="17"/>
+                    <rect key="frame" x="90" y="515" width="170" height="15"/>
                     <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" minValue="4" maxValue="22" doubleValue="4" tickMarkPosition="below" numberOfTickMarks="27" allowsTickMarkValuesOnly="YES" sliderType="linear" id="7se-8Z-906"/>
                     <connections>
-                        <action selector="change_beat:" target="-2" id="rBh-62-mqW"/>
+                        <action selector="change_beat:" target="-2" id="8wp-PF-m9t"/>
                     </connections>
                 </slider>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="75M-GM-vU8">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75M-GM-vU8">
                     <rect key="frame" x="18" y="516" width="28" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="beat" id="9hF-wf-fDL">
                         <font key="font" metaFont="smallSystem"/>
@@ -111,19 +118,16 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-M2-Mgz">
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-M2-Mgz">
                     <rect key="frame" x="279" y="513" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="P06-TJ-pnY"/>
                         <constraint firstAttribute="height" constant="20" id="jS9-lj-DOS"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="QtK-ev-dwj">
-                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="j1m-vS-IIu">
+                        <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="0" negativeFormat="-0" numberStyle="decimal" usesGroupingSeparator="NO" minimumIntegerDigits="1" maximumIntegerDigits="2" decimalSeparator="." groupingSeparator="," id="j1m-vS-IIu">
                             <real key="minimum" value="4"/>
                             <real key="maximum" value="22"/>
-                            <metadata>
-                                <real key="inspectorSampleValue" value="2222"/>
-                            </metadata>
                         </numberFormatter>
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -133,7 +137,7 @@
                         <action selector="change_beat:" target="-2" id="DjV-F3-KK6"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cv1-tc-ZT2">
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cv1-tc-ZT2">
                     <rect key="frame" x="279" y="479" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="5zc-wM-HvV"/>
@@ -149,7 +153,7 @@
                         <action selector="change_speed:" target="-2" id="k6f-Nu-vHH"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MKk-xb-a2e">
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKk-xb-a2e">
                     <rect key="frame" x="279" y="445" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="2tu-jf-GRN"/>
@@ -165,7 +169,7 @@
                         <action selector="change_rotate:" target="-2" id="b9E-Ga-1OX"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dcP-vk-16B">
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcP-vk-16B">
                     <rect key="frame" x="279" y="411" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="o8E-gt-rSz"/>
@@ -175,9 +179,6 @@
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="mor-UZ-axb">
                             <real key="minimum" value="0.0"/>
                             <real key="maximum" value="1000"/>
-                            <metadata>
-                                <real key="inspectorSampleValue" value="1"/>
-                            </metadata>
                         </numberFormatter>
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -187,7 +188,7 @@
                         <action selector="change_shape:" target="-2" id="RMC-Y9-JeR"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4QL-1k-fOi">
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QL-1k-fOi">
                     <rect key="frame" x="279" y="279" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="e53-v1-NUn"/>
@@ -197,9 +198,6 @@
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="Hd1-S0-9e0">
                             <real key="minimum" value="0.0"/>
                             <real key="maximum" value="127"/>
-                            <metadata>
-                                <real key="inspectorSampleValue" value="1"/>
-                            </metadata>
                         </numberFormatter>
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -211,44 +209,47 @@
                 </textField>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bxf-Xq-4c9">
                     <rect key="frame" x="327" y="512" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="Kak-kn-AVL"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="4" maxValue="22" doubleValue="4" id="Kak-kn-AVL"/>
                     <connections>
-                        <action selector="step_beat:" target="-2" id="xWc-sR-vJV"/>
+                        <action selector="change_beat:" target="-2" id="8W5-gD-gbY"/>
                     </connections>
                 </stepper>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b6s-Y8-mdv">
                     <rect key="frame" x="327" y="478" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="hmE-LZ-HS8"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="1" maxValue="8" doubleValue="1" id="hmE-LZ-HS8"/>
+                    <connections>
+                        <action selector="change_speed:" target="-2" id="p6I-YM-nGK"/>
+                    </connections>
                 </stepper>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xym-7N-NDC">
                     <rect key="frame" x="327" y="444" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="r5U-EG-RZj"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-20" maxValue="20" id="r5U-EG-RZj"/>
                     <connections>
-                        <action selector="step_rotate:" target="-2" id="m1b-GW-xcC"/>
+                        <action selector="change_rotate:" target="-2" id="zLZ-Ex-4aa"/>
                     </connections>
                 </stepper>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kkf-dP-iaY">
                     <rect key="frame" x="327" y="410" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="HkP-n7-gnL"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="1000" id="HkP-n7-gnL"/>
                     <connections>
-                        <action selector="step_shape:" target="-2" id="rgk-yu-lJJ"/>
+                        <action selector="change_shape:" target="-2" id="ZR2-5p-lXR"/>
                     </connections>
                 </stepper>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wB8-q3-iM0">
                     <rect key="frame" x="327" y="278" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="gr0-XO-RCg"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="127" id="gr0-XO-RCg"/>
                     <connections>
-                        <action selector="step_output_value:" target="-2" id="Q4a-ug-yZd"/>
+                        <action selector="change_output_value:" target="-2" id="I2q-Pl-RZc"/>
                     </connections>
                 </stepper>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JAs-sO-6uL">
                     <rect key="frame" x="327" y="82" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="ZJg-cF-yeG"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="1" maxValue="32" doubleValue="1" id="ZJg-cF-yeG"/>
                     <connections>
-                        <action selector="step_midi_ch:" target="-2" id="0Km-Xw-4NZ"/>
+                        <action selector="change_midi_ch:" target="-2" id="lN1-NX-Jnm"/>
                     </connections>
                 </stepper>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5ki-HQ-sbz">
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ki-HQ-sbz">
                     <rect key="frame" x="90" y="604" width="170" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="My6-Jr-XEC"/>
@@ -262,8 +263,8 @@
                         <action selector="change_name:" target="-2" id="TZw-XA-JSS"/>
                     </connections>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F4e-ZV-9tm">
-                    <rect key="frame" x="18" y="184" width="45" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4e-ZV-9tm">
+                    <rect key="frame" x="18" y="184" width="46" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="address" id="3Dz-vV-HFF">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -298,7 +299,7 @@
                         <action selector="change_mute:" target="-2" id="QEi-hv-PVh"/>
                     </connections>
                 </button>
-                <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MKu-LU-F0x">
+                <comboBox verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKu-LU-F0x">
                     <rect key="frame" x="90" y="546" width="173" height="22"/>
                     <comboBoxCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" title="type" drawsBackground="YES" buttonBordered="NO" numberOfVisibleItems="9" id="mFQ-8b-Zj9">
                         <font key="font" metaFont="smallSystem"/>
@@ -320,16 +321,16 @@
                         <action selector="change_type:" target="-2" id="LUk-6H-CZG"/>
                     </connections>
                 </comboBox>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EhN-Dh-JkX">
-                    <rect key="frame" x="18" y="550" width="27" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhN-Dh-JkX">
+                    <rect key="frame" x="18" y="550" width="28" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="type" id="2Bh-wd-ms2">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zsr-ol-mNz">
-                    <rect key="frame" x="119" y="184" width="141" height="14"/>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsr-ol-mNz">
+                    <rect key="frame" x="117" y="184" width="143" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="/trg" drawsBackground="YES" usesSingleLineMode="YES" id="ABN-bC-oWK">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -339,23 +340,23 @@
                         <action selector="change_address:" target="-2" id="nx9-Nk-ezd"/>
                     </connections>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iDG-Vr-gSr">
-                    <rect key="frame" x="88" y="184" width="28" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDG-Vr-gSr">
+                    <rect key="frame" x="88" y="184" width="26" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/top" id="hXS-g7-ybh">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AXI-Sq-SSZ">
-                    <rect key="frame" x="18" y="120" width="29" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXI-Sq-SSZ">
+                    <rect key="frame" x="18" y="120" width="28" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="MIDI" id="A4t-17-NCM">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="w5Z-op-ao7">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5Z-op-ao7">
                     <rect key="frame" x="18" y="86" width="17" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ch" id="D3l-Au-jmf">
                         <font key="font" metaFont="smallSystem"/>
@@ -363,8 +364,8 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mrs-fj-pLF">
-                    <rect key="frame" x="18" y="52" width="65" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrs-fj-pLF">
+                    <rect key="frame" x="18" y="52" width="64" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="CC number" id="UAb-6Y-8fX">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -372,13 +373,13 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W42-Ru-bHd">
-                    <rect key="frame" x="90" y="85" width="170" height="15"/>
+                    <rect key="frame" x="90" y="87" width="170" height="13"/>
                     <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" minValue="1" maxValue="32" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="kPx-c7-Ofu"/>
                     <connections>
-                        <action selector="change_midi_ch:" target="-2" id="HeP-lq-gCe"/>
+                        <action selector="change_midi_ch:" target="-2" id="IbF-b7-Dql"/>
                     </connections>
                 </slider>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NVn-h3-jsW">
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVn-h3-jsW">
                     <rect key="frame" x="279" y="83" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="A5i-qu-5VZ"/>
@@ -388,9 +389,6 @@
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="ILZ-oJ-Bas">
                             <real key="minimum" value="1"/>
                             <real key="maximum" value="32"/>
-                            <metadata>
-                                <real key="inspectorSampleValue" value="1"/>
-                            </metadata>
                         </numberFormatter>
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -401,13 +399,13 @@
                     </connections>
                 </textField>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V5A-PN-oGU">
-                    <rect key="frame" x="90" y="51" width="170" height="15"/>
+                    <rect key="frame" x="90" y="52" width="170" height="13"/>
                     <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" minValue="1" maxValue="128" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="VcV-zb-gTs"/>
                     <connections>
-                        <action selector="change_midi_cc:" target="-2" id="YAw-dY-qO6"/>
+                        <action selector="change_midi_cc:" target="-2" id="qVe-gr-WSj"/>
                     </connections>
                 </slider>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f8V-br-oZ0">
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8V-br-oZ0">
                     <rect key="frame" x="279" y="49" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="6d3-9j-Mpj"/>
@@ -417,9 +415,6 @@
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="8wm-DO-xgl">
                             <real key="minimum" value="1"/>
                             <real key="maximum" value="128"/>
-                            <metadata>
-                                <real key="inspectorSampleValue" value="1"/>
-                            </metadata>
                         </numberFormatter>
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -429,24 +424,24 @@
                         <action selector="change_midi_cc:" target="-2" id="nDG-vM-cLL"/>
                     </connections>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="awo-fX-al4">
-                    <rect key="frame" x="18" y="282" width="34" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awo-fX-al4">
+                    <rect key="frame" x="18" y="282" width="33" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Value" id="4ar-Ha-tSd">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ReK-SU-8XY">
-                    <rect key="frame" x="18" y="350" width="42" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReK-SU-8XY">
+                    <rect key="frame" x="18" y="350" width="41" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Output" id="Zss-DJ-fsp">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dbn-w9-X8e">
-                    <rect key="frame" x="18" y="218" width="27" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbn-w9-X8e">
+                    <rect key="frame" x="18" y="218" width="28" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="OSC" id="sGt-MK-hQe">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -454,21 +449,21 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KgW-Nl-3es">
-                    <rect key="frame" x="90" y="281" width="170" height="15"/>
+                    <rect key="frame" x="90" y="282" width="170" height="13"/>
                     <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="127" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="iaY-3W-DZQ"/>
                     <connections>
                         <action selector="change_output_value:" target="-2" id="qey-CM-Ix2"/>
                     </connections>
                 </slider>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MsH-We-aiN">
-                    <rect key="frame" x="18" y="316" width="27" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsH-We-aiN">
+                    <rect key="frame" x="18" y="316" width="28" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="type" id="AUa-7R-ScU">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NeO-sS-kCj">
+                <comboBox verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeO-sS-kCj">
                     <rect key="frame" x="90" y="311" width="173" height="22"/>
                     <comboBoxCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" title="output type" drawsBackground="YES" buttonBordered="NO" numberOfVisibleItems="9" id="eTb-ID-88y">
                         <font key="font" metaFont="smallSystem"/>
@@ -482,15 +477,12 @@
                             <string>increment/decrement</string>
                         </objectValues>
                     </comboBoxCell>
-                    <connections>
-                        <action selector="change_type:" target="-2" id="efu-I2-wN0"/>
-                    </connections>
                 </comboBox>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="04L-h5-foj">
                     <rect key="frame" x="327" y="48" width="15" height="22"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="-10" maxValue="10" id="imX-ZZ-1ZD"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="1" maxValue="128" doubleValue="1" id="imX-ZZ-1ZD"/>
                     <connections>
-                        <action selector="step_midi_cc:" target="-2" id="17z-FH-khp"/>
+                        <action selector="change_midi_cc:" target="-2" id="YYx-ze-p39"/>
                     </connections>
                 </stepper>
             </subviews>

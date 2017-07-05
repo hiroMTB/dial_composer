@@ -75,8 +75,8 @@ void dt_circle_note_on::setup( int beat_num ){
     
     // input
     input_circles.clear();
-//    for( int j=0; j<2; j++){
-    float j = 0.5;
+    for( int j=0; j<2; j++){
+
         for( int i=0; i<8; i++){
             dt_circle_param * p = new dt_circle_param();
             p->setup( ofRandom(4, 12) );
@@ -103,7 +103,7 @@ void dt_circle_note_on::setup( int beat_num ){
             app->all_containers.param_container->addCircle( p );
             app->all_containers.circle_base_container->addCircle( p );
         }
-//    }
+    }
 }
 
 void dt_circle_note_on::update(){

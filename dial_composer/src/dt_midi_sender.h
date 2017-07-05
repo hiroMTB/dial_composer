@@ -40,6 +40,8 @@ public:
 		midi_out.sendNoteOff( ch, noteNum );
 	}
 
+    ofxMidiOut & getMidiOut(){ return midi_out; }
+    
 private:
 	ofxMidiOut midi_out;
 
