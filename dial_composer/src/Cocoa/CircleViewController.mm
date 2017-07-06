@@ -70,7 +70,7 @@
             int max_shape = ofApp::app->rhythm_lib.getRhythmSize(c->seq->total_beats)-1;
             [shape_sl setMaxValue: max_shape];
             [[shape_tx formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
-            [[shape_stp formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
+            [shape_stp setMaxValue: max_shape];
             
             // shape type is changed after beat change
             int shape_type = c->seq->rhythm_shape_type;
@@ -125,10 +125,11 @@
 - (IBAction)change_output_value:(id)sender {
     dt_circle_base * c = dt_circle_base::selected_circle;
     if( c ){
-        float ov = [sender floatValue];
-        [output_value_sl setFloatValue:ov];
-        [output_value_tx setFloatValue:ov];
-        [output_value_stp setFloatValue:ov];
+        float fov = [sender floatValue];
+        int ov = roundFloatToInt(fov);
+        [output_value_sl setIntValue:ov];
+        [output_value_tx setIntValue:ov];
+        [output_value_stp setIntValue:ov];
         c->data.output_value = ov;
         
         bool bSendOnChange = [send_on_change_btn state] == NSOnState;
@@ -195,45 +196,6 @@
         [midi_cc_stp setIntValue:cc];
     }
 }
-/*
-- (IBAction)step_beat:(id)sender {
-}
-
-- (IBAction)step_speed:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
-    if( c ){
-        int step = [sender intValue];
-        int phase_step = c->data.speed + step;
-        if(phase_step>=1){
-            c->change_speed( phase_step );
-            [speed_sl setIntValue: phase_step];
-            [speed_tx setIntValue: phase_step];
-            [sender setIntValue:0];
-        }
-    }
-}
-
-- (IBAction)step_rotate:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
-    if( c ){
-        int step = [sender intValue];
-        int phase_step = c->data.phase_step + step;
-        c->change_rotation( phase_step );
-        [rotate_sl setIntValue: phase_step];
-        [rotate_tx setIntValue: phase_step];
-        [sender setIntValue:0];
-    }
-}
-
-- (IBAction)step_shape:(id)sender {
-}
-
-- (IBAction)step_output_value:(id)sender {
-}
-
-- (IBAction)step_midi_cc:(id)sender {
-}
-*/
 
 - (void)update_ui{
     dt_circle_base * c = dt_circle_base::dt_circle_base::selected_circle;
@@ -261,7 +223,7 @@
         int max_shape = ofApp::app->rhythm_lib.getRhythmSize(c->seq->total_beats)-1;
         [shape_sl setMaxValue: max_shape];
         [[shape_tx formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
-        [[shape_stp formatter] setMaximum: [NSNumber numberWithInt: max_shape]];
+        [shape_stp setMaxValue:max_shape];
         
         string non_editable_address = ofToString(dt_config::DT_OSC_OUT_TOP_ADDRESS);
         if( c->parent ){
@@ -269,9 +231,9 @@
         }
         [top_address setStringValue:[NSString stringWithUTF8String:non_editable_address.c_str() ]];
         [address_lb setStringValue: [NSString stringWithUTF8String: c->data.address.c_str() ]];
-        [output_value_sl setFloatValue: c->data.output_value];
-        [output_value_tx setFloatValue: c->data.output_value];
-        [output_value_stp setFloatValue: c->data.output_value];
+        [output_value_sl setIntValue: c->data.output_value];
+        [output_value_tx setIntValue: c->data.output_value];
+        [output_value_stp setIntValue: c->data.output_value];
         
         [midi_ch_sl setIntValue:c->data.midi_ch];
         [midi_ch_tx setIntValue:c->data.midi_ch];

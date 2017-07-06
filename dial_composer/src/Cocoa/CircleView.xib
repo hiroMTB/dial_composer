@@ -177,7 +177,10 @@
                         <constraint firstAttribute="height" constant="20" id="p6y-rf-k5v"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="N4f-sq-nRL">
-                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="mor-UZ-axb">
+                        <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0" negativeFormat="-0" hasThousandSeparators="NO" id="mor-UZ-axb">
+                            <attributedString key="attributedStringForZero">
+                                <fragment content="0"/>
+                            </attributedString>
                             <real key="minimum" value="0.0"/>
                             <real key="maximum" value="1000"/>
                         </numberFormatter>
