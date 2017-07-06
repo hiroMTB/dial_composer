@@ -9,6 +9,7 @@
 #include "ofMain.h"
 #include "ofApp.h"
 #include "dt_circle_base.h"
+#include "dt_circle_note_on.h"
 #include "dt_sequencer.h"
 
 #import "CircleViewController.h"
@@ -129,6 +130,36 @@
         [output_value_tx setFloatValue:ov];
         [output_value_stp setFloatValue:ov];
         c->data.output_value = ov;
+        
+        bool bSendOnChange = [send_on_change_btn state] == NSOnState;
+        if(bSendOnChange){
+            ofApp * app = ofApp::app;
+            const dt_circle_type & type = c->data.circle_type;
+            if( type == DT_CIRCLE_NOTE_ON){
+                
+            }else if(
+                type == DT_CIRCLE_VELOCITY ||
+                type == DT_CIRCLE_NOTE_NUM ||
+                type == DT_CIRCLE_DURATION  )
+            {
+                dt_circle_note_on * n = static_cast<dt_circle_note_on*>(c->parent);
+                int ch = n->data.midi_ch;
+                int noteNum =   type==DT_CIRCLE_NOTE_NUM ? ov : n->prms[DT_CIRCLE_NOTE_NUM];
+                int vel =       type==DT_CIRCLE_VELOCITY ? ov : n->prms[DT_CIRCLE_VELOCITY];
+                int dur =       type==DT_CIRCLE_DURATION ? ov : n->prms[DT_CIRCLE_DURATION];
+                app->midi_sender.send_note_on(ch, noteNum, vel, dur*1000.0);
+            }else if(type == DT_CIRCLE_PAN ||
+                     type == DT_CIRCLE_CC1 ||
+                     type == DT_CIRCLE_CC2 ||
+                     type == DT_CIRCLE_CC3 ||
+                     type == DT_CIRCLE_CC4 )
+            {
+                int ch = c->data.midi_ch;
+                int cc = c->data.midi_cc_num;
+                int value = c->data.output_value;
+                app->midi_sender.send_cc(ch, cc, value);
+            }
+        }
     }
 }
 
@@ -265,6 +296,7 @@
             [midi_ch_sl setEnabled:true];
             [midi_ch_tx setEnabled:true];
             [midi_ch_stp setEnabled:true];
+            [send_on_change_btn setEnabled:false];
         }else{
             [output_value_sl setEnabled:true];
             [output_value_stp setEnabled:true];
@@ -272,6 +304,7 @@
             [midi_ch_sl setEnabled:false];
             [midi_ch_tx setEnabled:false];
             [midi_ch_stp setEnabled:false];
+            [send_on_change_btn setEnabled:true];
         }
         
         // hide midi cc number control

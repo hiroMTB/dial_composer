@@ -23,7 +23,8 @@
     IBOutlet NSTextField *shape_tx;
     IBOutlet NSTextField *output_value_tx;
     IBOutlet NSTextField *midi_ch_tx;
-    IBOutlet NSTextField *midi_cc_tx;
+    IBOutlet NSTextField *midi_cc_tx;    
+    IBOutlet NSButton *send_on_change_btn;
     
     IBOutlet NSTextField *top_address;
     IBOutlet NSTextField *address_lb;
