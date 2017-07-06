@@ -11,7 +11,7 @@
 		1B5F996886A777589D5DD794 /* svgtiny_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 077F7AC989DAB289A1EC643F /* svgtiny_list.cpp */; };
 		1D6B78EF041B097CE4F423C4 /* svgtiny.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38BC601AD0A2F4F2319D1460 /* svgtiny.cpp */; };
 		4294163B15857489B2176769 /* svgtiny_gradient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 582921BA98D224ED41833868 /* svgtiny_gradient.cpp */; };
-		451A43A51F0ECA2B00A2371E /* dt_saveload.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43A31F0ECA2B00A2371E /* dt_saveload.cpp */; };
+		451A43A51F0ECA2B00A2371E /* dt_serialize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43A31F0ECA2B00A2371E /* dt_serialize.cpp */; };
 		451A44061F0ECE0E00A2371E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 451A43D31F0ECE0E00A2371E /* license.txt */; };
 		451A44071F0ECE0E00A2371E /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 451A43DA1F0ECE0E00A2371E /* license.txt */; };
 		451A44081F0ECE0E00A2371E /* manual.html in Resources */ = {isa = PBXBuildFile; fileRef = 451A43DB1F0ECE0E00A2371E /* manual.html */; };
@@ -196,8 +196,8 @@
 		38BC601AD0A2F4F2319D1460 /* svgtiny.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = svgtiny.cpp; path = ../../../addons/ofxSvg/libs/svgTiny/src/svgtiny.cpp; sourceTree = SOURCE_ROOT; };
 		3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = NetworkingUtils.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp; sourceTree = SOURCE_ROOT; };
 		444657A12E59D0ED86981498 /* TimerListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TimerListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/TimerListener.h; sourceTree = SOURCE_ROOT; };
-		451A43A31F0ECA2B00A2371E /* dt_saveload.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_saveload.cpp; sourceTree = "<group>"; };
-		451A43A41F0ECA2B00A2371E /* dt_saveload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_saveload.h; sourceTree = "<group>"; };
+		451A43A31F0ECA2B00A2371E /* dt_serialize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dt_serialize.cpp; sourceTree = "<group>"; };
+		451A43A41F0ECA2B00A2371E /* dt_serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dt_serialize.h; sourceTree = "<group>"; };
 		451A43BB1F0ECE0E00A2371E /* access.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = access.hpp; sourceTree = "<group>"; };
 		451A43BD1F0ECE0E00A2371E /* adapters.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = adapters.hpp; sourceTree = "<group>"; };
 		451A43BE1F0ECE0E00A2371E /* binary.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = binary.hpp; sourceTree = "<group>"; };
@@ -1102,8 +1102,8 @@
 				F6B766CE1947984B00B0741D /* dt_rhythm_lib.cpp */,
 				F64097821953EA440021407A /* dt_circle_drawer.h */,
 				84436F3C1F0B05150060FACA /* dt_midi_send_pool.h */,
-				451A43A31F0ECA2B00A2371E /* dt_saveload.cpp */,
-				451A43A41F0ECA2B00A2371E /* dt_saveload.h */,
+				451A43A31F0ECA2B00A2371E /* dt_serialize.cpp */,
+				451A43A41F0ECA2B00A2371E /* dt_serialize.h */,
 			);
 			name = utility;
 			sourceTree = "<group>";
@@ -1421,7 +1421,7 @@
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
 				4D82B81C19B66AF500BA0CEF /* dt_osc_recorder.cpp in Sources */,
-				451A43A51F0ECA2B00A2371E /* dt_saveload.cpp in Sources */,
+				451A43A51F0ECA2B00A2371E /* dt_serialize.cpp in Sources */,
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
@@ -1598,28 +1598,7 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = DEBUG;
-				HEADER_SEARCH_PATHS = (
-					"$(OF_CORE_HEADERS)",
-					../../../addons/ofxOsc/libs,
-					../../../addons/ofxOsc/libs/oscpack,
-					../../../addons/ofxOsc/libs/oscpack/src,
-					../../../addons/ofxOsc/libs/oscpack/src/ip,
-					../../../addons/ofxOsc/libs/oscpack/src/ip/posix,
-					../../../addons/ofxOsc/libs/oscpack/src/ip/win32,
-					../../../addons/ofxOsc/libs/oscpack/src/osc,
-					../../../addons/ofxOsc/src,
-					../../../addons/ofxSvg/libs,
-					../../../addons/ofxSvg/libs/svgTiny,
-					../../../addons/ofxSvg/libs/svgTiny/src,
-					../../../addons/ofxSvg/src,
-					../../../addons/ofxXmlSettings/libs,
-					../../../addons/ofxXmlSettings/src,
-					"../../../addons/ofxMidi/**",
-					../../../addons/ofxOSXBoost/libs/boost/include,
-					../../../addons/juce,
-					"$(inherited)",
-					../../../addons/ofxCereal/libs/cereal/include/cereal/archives,
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
@@ -1649,28 +1628,7 @@
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
-				HEADER_SEARCH_PATHS = (
-					"$(OF_CORE_HEADERS)",
-					../../../addons/ofxOsc/libs,
-					../../../addons/ofxOsc/libs/oscpack,
-					../../../addons/ofxOsc/libs/oscpack/src,
-					../../../addons/ofxOsc/libs/oscpack/src/ip,
-					../../../addons/ofxOsc/libs/oscpack/src/ip/posix,
-					../../../addons/ofxOsc/libs/oscpack/src/ip/win32,
-					../../../addons/ofxOsc/libs/oscpack/src/osc,
-					../../../addons/ofxOsc/src,
-					../../../addons/ofxSvg/libs,
-					../../../addons/ofxSvg/libs/svgTiny,
-					../../../addons/ofxSvg/libs/svgTiny/src,
-					../../../addons/ofxSvg/src,
-					../../../addons/ofxXmlSettings/libs,
-					../../../addons/ofxXmlSettings/src,
-					"../../../addons/ofxMidi/**",
-					../../../addons/ofxOSXBoost/libs/boost/include,
-					../../../addons/juce,
-					"$(inherited)",
-					../../../addons/ofxCereal/libs/cereal/include/cereal/archives,
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
