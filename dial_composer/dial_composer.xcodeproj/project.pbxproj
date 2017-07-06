@@ -17,6 +17,58 @@
 		451A44081F0ECE0E00A2371E /* manual.html in Resources */ = {isa = PBXBuildFile; fileRef = 451A43DB1F0ECE0E00A2371E /* manual.html */; };
 		451A44091F0ECE0E00A2371E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 451A43FA1F0ECE0E00A2371E /* LICENSE */; };
 		451A440A1F0ECE0E00A2371E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 451A43FB1F0ECE0E00A2371E /* README.md */; };
+		451A44101F0ED49400A2371E /* access.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43BB1F0ECE0E00A2371E /* access.hpp */; };
+		451A44111F0ED49400A2371E /* adapters.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43BD1F0ECE0E00A2371E /* adapters.hpp */; };
+		451A44121F0ED49400A2371E /* binary.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43BE1F0ECE0E00A2371E /* binary.hpp */; };
+		451A44131F0ED49400A2371E /* json.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43BF1F0ECE0E00A2371E /* json.hpp */; };
+		451A44141F0ED49400A2371E /* portable_binary.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43C01F0ECE0E00A2371E /* portable_binary.hpp */; };
+		451A44151F0ED49400A2371E /* xml.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43C11F0ECE0E00A2371E /* xml.hpp */; };
+		451A44161F0ED49400A2371E /* cereal.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43C21F0ECE0E00A2371E /* cereal.hpp */; };
+		451A44171F0ED49400A2371E /* helpers.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43C41F0ECE0E00A2371E /* helpers.hpp */; };
+		451A44181F0ED49400A2371E /* polymorphic_impl.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43C51F0ECE0E00A2371E /* polymorphic_impl.hpp */; };
+		451A44191F0ED49400A2371E /* static_object.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43C61F0ECE0E00A2371E /* static_object.hpp */; };
+		451A441A1F0ED49400A2371E /* traits.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43C71F0ECE0E00A2371E /* traits.hpp */; };
+		451A441B1F0ED49400A2371E /* util.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43C81F0ECE0E00A2371E /* util.hpp */; };
+		451A441C1F0ED49400A2371E /* base64.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43CA1F0ECE0E00A2371E /* base64.hpp */; };
+		451A441D1F0ED49400A2371E /* document.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43CC1F0ECE0E00A2371E /* document.h */; };
+		451A441E1F0ED49400A2371E /* filestream.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43CD1F0ECE0E00A2371E /* filestream.h */; };
+		451A441F1F0ED49400A2371E /* genericstream.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43CE1F0ECE0E00A2371E /* genericstream.h */; };
+		451A44201F0ED49400A2371E /* pow10.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43D01F0ECE0E00A2371E /* pow10.h */; };
+		451A44211F0ED49400A2371E /* stack.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43D11F0ECE0E00A2371E /* stack.h */; };
+		451A44221F0ED49400A2371E /* strfunc.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43D21F0ECE0E00A2371E /* strfunc.h */; };
+		451A44231F0ED49400A2371E /* prettywriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43D41F0ECE0E00A2371E /* prettywriter.h */; };
+		451A44241F0ED49400A2371E /* rapidjson.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43D51F0ECE0E00A2371E /* rapidjson.h */; };
+		451A44251F0ED49400A2371E /* reader.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43D61F0ECE0E00A2371E /* reader.h */; };
+		451A44261F0ED49400A2371E /* stringbuffer.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43D71F0ECE0E00A2371E /* stringbuffer.h */; };
+		451A44271F0ED49400A2371E /* writer.h in Sources */ = {isa = PBXBuildFile; fileRef = 451A43D81F0ECE0E00A2371E /* writer.h */; };
+		451A44281F0ED49400A2371E /* rapidxml.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43DC1F0ECE0E00A2371E /* rapidxml.hpp */; };
+		451A44291F0ED49400A2371E /* rapidxml_iterators.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43DD1F0ECE0E00A2371E /* rapidxml_iterators.hpp */; };
+		451A442A1F0ED49400A2371E /* rapidxml_print.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43DE1F0ECE0E00A2371E /* rapidxml_print.hpp */; };
+		451A442B1F0ED49400A2371E /* rapidxml_utils.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43DF1F0ECE0E00A2371E /* rapidxml_utils.hpp */; };
+		451A442C1F0ED49400A2371E /* macros.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43E01F0ECE0E00A2371E /* macros.hpp */; };
+		451A442D1F0ED49400A2371E /* array.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43E21F0ECE0E00A2371E /* array.hpp */; };
+		451A442E1F0ED49400A2371E /* base_class.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43E31F0ECE0E00A2371E /* base_class.hpp */; };
+		451A442F1F0ED49400A2371E /* bitset.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43E41F0ECE0E00A2371E /* bitset.hpp */; };
+		451A44301F0ED49400A2371E /* boost_variant.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43E51F0ECE0E00A2371E /* boost_variant.hpp */; };
+		451A44311F0ED49400A2371E /* chrono.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43E61F0ECE0E00A2371E /* chrono.hpp */; };
+		451A44321F0ED49400A2371E /* common.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43E71F0ECE0E00A2371E /* common.hpp */; };
+		451A44331F0ED49400A2371E /* complex.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43E81F0ECE0E00A2371E /* complex.hpp */; };
+		451A44341F0ED49400A2371E /* deque.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43E91F0ECE0E00A2371E /* deque.hpp */; };
+		451A44351F0ED49400A2371E /* forward_list.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43EA1F0ECE0E00A2371E /* forward_list.hpp */; };
+		451A44361F0ED49400A2371E /* list.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43EB1F0ECE0E00A2371E /* list.hpp */; };
+		451A44371F0ED49400A2371E /* map.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43EC1F0ECE0E00A2371E /* map.hpp */; };
+		451A44381F0ED49400A2371E /* memory.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43ED1F0ECE0E00A2371E /* memory.hpp */; };
+		451A44391F0ED49400A2371E /* polymorphic.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43EE1F0ECE0E00A2371E /* polymorphic.hpp */; };
+		451A443A1F0ED49400A2371E /* queue.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43EF1F0ECE0E00A2371E /* queue.hpp */; };
+		451A443B1F0ED49400A2371E /* set.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43F01F0ECE0E00A2371E /* set.hpp */; };
+		451A443C1F0ED49400A2371E /* stack.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43F11F0ECE0E00A2371E /* stack.hpp */; };
+		451A443D1F0ED49400A2371E /* string.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43F21F0ECE0E00A2371E /* string.hpp */; };
+		451A443E1F0ED49400A2371E /* tuple.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43F31F0ECE0E00A2371E /* tuple.hpp */; };
+		451A443F1F0ED49400A2371E /* unordered_map.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43F41F0ECE0E00A2371E /* unordered_map.hpp */; };
+		451A44401F0ED49400A2371E /* unordered_set.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43F51F0ECE0E00A2371E /* unordered_set.hpp */; };
+		451A44411F0ED49400A2371E /* utility.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43F61F0ECE0E00A2371E /* utility.hpp */; };
+		451A44421F0ED49400A2371E /* valarray.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43F71F0ECE0E00A2371E /* valarray.hpp */; };
+		451A44431F0ED49400A2371E /* vector.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A43F81F0ECE0E00A2371E /* vector.hpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
 		4D199EE719BC0B2D000D4AAF /* icon-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D199EDF19BC0B2D000D4AAF /* icon-1.png */; };
 		4D199EE819BC0B2D000D4AAF /* icon-1_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D199EE019BC0B2D000D4AAF /* icon-1_off.png */; };
@@ -1284,6 +1336,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451A44101F0ED49400A2371E /* access.hpp in Sources */,
+				451A44111F0ED49400A2371E /* adapters.hpp in Sources */,
+				451A44121F0ED49400A2371E /* binary.hpp in Sources */,
+				451A44131F0ED49400A2371E /* json.hpp in Sources */,
+				451A44141F0ED49400A2371E /* portable_binary.hpp in Sources */,
+				451A44151F0ED49400A2371E /* xml.hpp in Sources */,
+				451A44161F0ED49400A2371E /* cereal.hpp in Sources */,
+				451A44171F0ED49400A2371E /* helpers.hpp in Sources */,
+				451A44181F0ED49400A2371E /* polymorphic_impl.hpp in Sources */,
+				451A44191F0ED49400A2371E /* static_object.hpp in Sources */,
+				451A441A1F0ED49400A2371E /* traits.hpp in Sources */,
+				451A441B1F0ED49400A2371E /* util.hpp in Sources */,
+				451A441C1F0ED49400A2371E /* base64.hpp in Sources */,
+				451A441D1F0ED49400A2371E /* document.h in Sources */,
+				451A441E1F0ED49400A2371E /* filestream.h in Sources */,
+				451A441F1F0ED49400A2371E /* genericstream.h in Sources */,
+				451A44201F0ED49400A2371E /* pow10.h in Sources */,
+				451A44211F0ED49400A2371E /* stack.h in Sources */,
+				451A44221F0ED49400A2371E /* strfunc.h in Sources */,
+				451A44231F0ED49400A2371E /* prettywriter.h in Sources */,
+				451A44241F0ED49400A2371E /* rapidjson.h in Sources */,
+				451A44251F0ED49400A2371E /* reader.h in Sources */,
+				451A44261F0ED49400A2371E /* stringbuffer.h in Sources */,
+				451A44271F0ED49400A2371E /* writer.h in Sources */,
+				451A44281F0ED49400A2371E /* rapidxml.hpp in Sources */,
+				451A44291F0ED49400A2371E /* rapidxml_iterators.hpp in Sources */,
+				451A442A1F0ED49400A2371E /* rapidxml_print.hpp in Sources */,
+				451A442B1F0ED49400A2371E /* rapidxml_utils.hpp in Sources */,
+				451A442C1F0ED49400A2371E /* macros.hpp in Sources */,
+				451A442D1F0ED49400A2371E /* array.hpp in Sources */,
+				451A442E1F0ED49400A2371E /* base_class.hpp in Sources */,
+				451A442F1F0ED49400A2371E /* bitset.hpp in Sources */,
+				451A44301F0ED49400A2371E /* boost_variant.hpp in Sources */,
+				451A44311F0ED49400A2371E /* chrono.hpp in Sources */,
+				451A44321F0ED49400A2371E /* common.hpp in Sources */,
+				451A44331F0ED49400A2371E /* complex.hpp in Sources */,
+				451A44341F0ED49400A2371E /* deque.hpp in Sources */,
+				451A44351F0ED49400A2371E /* forward_list.hpp in Sources */,
+				451A44361F0ED49400A2371E /* list.hpp in Sources */,
+				451A44371F0ED49400A2371E /* map.hpp in Sources */,
+				451A44381F0ED49400A2371E /* memory.hpp in Sources */,
+				451A44391F0ED49400A2371E /* polymorphic.hpp in Sources */,
+				451A443A1F0ED49400A2371E /* queue.hpp in Sources */,
+				451A443B1F0ED49400A2371E /* set.hpp in Sources */,
+				451A443C1F0ED49400A2371E /* stack.hpp in Sources */,
+				451A443D1F0ED49400A2371E /* string.hpp in Sources */,
+				451A443E1F0ED49400A2371E /* tuple.hpp in Sources */,
+				451A443F1F0ED49400A2371E /* unordered_map.hpp in Sources */,
+				451A44401F0ED49400A2371E /* unordered_set.hpp in Sources */,
+				451A44411F0ED49400A2371E /* utility.hpp in Sources */,
+				451A44421F0ED49400A2371E /* valarray.hpp in Sources */,
+				451A44431F0ED49400A2371E /* vector.hpp in Sources */,
 				F6EE1B4D196AA7A600A77A20 /* ofxBaseGui.cpp in Sources */,
 				4D84E8E919C38BA100D54F05 /* ofxModifierKeys_impl_win.cpp in Sources */,
 				F6EE1B4E196AA7A600A77A20 /* ofxButton.cpp in Sources */,
@@ -1409,6 +1513,7 @@
 					../../../addons/ofxXmlSettings/src,
 					"../../../addons/ofxMidi/**",
 					../../../addons/juce,
+					"$(OFX_CEREAL_HEADERS)",
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -1461,6 +1566,7 @@
 					../../../addons/ofxXmlSettings/src,
 					"../../../addons/ofxMidi/**",
 					../../../addons/juce,
+					"$(OFX_CEREAL_HEADERS)",
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -1511,6 +1617,8 @@
 					"../../../addons/ofxMidi/**",
 					../../../addons/ofxOSXBoost/libs/boost/include,
 					../../../addons/juce,
+					"$(inherited)",
+					../../../addons/ofxCereal/libs/cereal/include/cereal/archives,
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -1560,6 +1668,8 @@
 					"../../../addons/ofxMidi/**",
 					../../../addons/ofxOSXBoost/libs/boost/include,
 					../../../addons/juce,
+					"$(inherited)",
+					../../../addons/ofxCereal/libs/cereal/include/cereal/archives,
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";

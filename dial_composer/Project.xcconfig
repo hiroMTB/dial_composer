@@ -14,7 +14,7 @@ ICON_FILE_PATH = $(OF_PATH)/libs/openFrameworksCompiled/project/osx/
 //ICON_FILE_PATH = bin/data/
 
 
-OFX_CEREAL_HEADERS = "$(OF_PATH)/addons/ofxCereal/src" "$(OF_PATH)/addons/ofxCereal/libs" "$(OF_PATH)addons/ofxCereal/libs/cereal" "$(OF_PATH)addons/ofxCereal/libs/cereal/include" "$(OF_PATH)addons/ofxCereal/libs/cereal/include/cereal" "$(OF_PATH)addons/ofxCereal/libs/cereal/include/cereal/archives" "$(OF_PATH)addons/ofxCereal/libs/cereal/include/cereal/details" "$(OF_PATH)addons/ofxCereal/libs/cereal/include/cereal/external" "$(OF_PATH)addons/ofxCereal/libs/cereal/include/cereal/external/rapidjson" "$(OF_PATH)addons/ofxCereal/libs/cereal/include/cereal/external/rapidjson/internal" "$(OF_PATH)addons/ofxCereal/libs/cereal/include/cereal/external/rapidxml" "$(OF_PATH)addons/ofxCereal/libs/cereal/include/cereal/types" "$(OF_PATH)addons/ofxCereal/libs/cereal/license"
+OFX_CEREAL_HEADERS = "$(OF_PATH)/addons/ofxCereal/src" "$(OF_PATH)/addons/ofxCereal/libs" "$(OF_PATH)/addons/ofxCereal/libs/cereal" "$(OF_PATH)/addons/ofxCereal/libs/cereal/include" "$(OF_PATH)/addons/ofxCereal/libs/cereal/include/cereal" "$(OF_PATH)/addons/ofxCereal/libs/cereal/include/cereal/archives" "$(OF_PATH)/addons/ofxCereal/libs/cereal/include/cereal/details" "$(OF_PATH)/addons/ofxCereal/libs/cereal/include/cereal/external" "$(OF_PATH)/addons/ofxCereal/libs/cereal/include/cereal/external/rapidjson" "$(OF_PATH)/addons/ofxCereal/libs/cereal/include/cereal/external/rapidjson/internal" "$(OF_PATH)/addons/ofxCereal/libs/cereal/include/cereal/external/rapidxml" "$(OF_PATH)/addons/ofxCereal/libs/cereal/include/cereal/types" "$(OF_PATH)/addons/ofxCereal/libs/cereal/license"
 
 OTHER_LDFLAGS = $(OF_CORE_LIBS) $(OF_CORE_FRAMEWORKS)
-HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS)
+HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS) $(OFX_CEREAL_HEADERS)
