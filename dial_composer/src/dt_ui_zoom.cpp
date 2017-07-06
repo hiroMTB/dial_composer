@@ -20,7 +20,7 @@ void dt_ui_zoom::singleClickStart( int x, int y, int button ){
         return;
     app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
-    dt_circle_base * c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
+    shared_ptr<dt_circle_base> c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
     if( c ){
         // circle -> toggle mute
         dt_circle_base::selected_circle = c;
@@ -28,7 +28,7 @@ void dt_ui_zoom::singleClickStart( int x, int y, int button ){
         bool bShift = ofGetModifierPressed( OF_KEY_SHIFT );
         if( !bShift ){
             // canvas -> create new circle
-            dt_circle_param * p = new dt_circle_param();
+            shared_ptr<dt_circle_param> p( new dt_circle_param() );
             p->setup( ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
             p->parent = app->mode_manager.zoom_mode_target;
             p->data.position = mpw - p->parent->data.position;
@@ -53,7 +53,7 @@ void dt_ui_zoom::doubleClickStart( int x, int y, int button ){
 
     app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
-    dt_circle_base * c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
+    shared_ptr<dt_circle_base> c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
     
     if( c ){
         // circle -> change mode

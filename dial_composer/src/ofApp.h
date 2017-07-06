@@ -14,6 +14,8 @@
 #include "dt_osc_recorder.h"
 #include "dt_mode_manager.h"
 #include "ofx2DCamera.h"
+#include "dt_serialize.h"
+#include "ofxCereal.h"
 
 class ofApp : public ofBaseApp {
 
@@ -41,7 +43,8 @@ public:
 	void exit();
     void update_cocoa_ui();
 	void backingScaleChanged( float newb, float oldb );
-
+    void save(string fileName);
+    
     ofFloatColor bg;
     ofImage noise;
     ofVboMesh bgQuad;
@@ -60,5 +63,8 @@ public:
 
     ofx2DCamera         cam;
 	float backingScale;
+    dt_serialize serializer;
+    
+    OFX_CEREAL_DEFINE(all_containers);
 };
 

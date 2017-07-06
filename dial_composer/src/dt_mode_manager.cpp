@@ -33,7 +33,7 @@ void dt_mode_manager::go_to_home_mode(){
     });
 }
 
-void dt_mode_manager::go_to_zoom_mode( dt_circle_base *target ){
+void dt_mode_manager::go_to_zoom_mode( shared_ptr<dt_circle_base> target ){
     mode = DT_MODE_HOME2ZOOM;
     if( target ){
         zoom_mode_future_target = target;

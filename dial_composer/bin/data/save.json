@@ -1,0 +1,108 @@
+{
+    "value0": {
+        "prms": [
+            {
+                "key": 1,
+                "value": 126
+            },
+            {
+                "key": 2,
+                "value": 77
+            },
+            {
+                "key": 3,
+                "value": 66
+            },
+            {
+                "key": 4,
+                "value": 80
+            },
+            {
+                "key": 5,
+                "value": 94
+            },
+            {
+                "key": 6,
+                "value": 6
+            },
+            {
+                "key": 7,
+                "value": 38
+            },
+            {
+                "key": 8,
+                "value": 96
+            }
+        ],
+        "CCs": [
+            {
+                "key": 1,
+                "value": -1
+            },
+            {
+                "key": 2,
+                "value": -1
+            },
+            {
+                "key": 3,
+                "value": -1
+            },
+            {
+                "key": 4,
+                "value": 9
+            },
+            {
+                "key": 5,
+                "value": 12
+            },
+            {
+                "key": 6,
+                "value": 13
+            },
+            {
+                "key": 7,
+                "value": 14
+            },
+            {
+                "key": 8,
+                "value": 15
+            }
+        ],
+        "data": {
+            "bStop": false,
+            "bMute": true,
+            "phase_step": 0,
+            "fired_ch": -1,
+            "step_age": 0,
+            "speed": 1,
+            "midi_ch": 1,
+            "midi_cc_num": 0,
+            "output_value": 1,
+            "rev_speed": 2.25,
+            "rev_radius": 40.857143402099609,
+            "name": "default",
+            "address": "/trg",
+            "position": {
+                "x": 114,
+                "y": 21
+            },
+            "indi_position": {
+                "x": 78.352302551269531,
+                "y": 40.963665008544922
+            },
+            "indi_color": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+            },
+            "circle_color": {
+                "r": 0.80000001192092896,
+                "g": 0.2082059383392334,
+                "b": 0.35552319884300232,
+                "a": 1
+            },
+            "circle_type": 0
+        }
+    }
+}

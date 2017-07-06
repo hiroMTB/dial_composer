@@ -11,6 +11,7 @@
 #include "dt_mouse_gesture.h"
 #include "dt_ui_home.h"
 #include "dt_ui_zoom.h"
+#include "dt_circle_base.h"
 
 enum dt_mode{
 	DT_MODE_HOME = 0,
@@ -30,13 +31,13 @@ public:
 	void setup();
     void update();
 	void go_to_home_mode();
-    void go_to_zoom_mode( dt_circle_base * target );
+    void go_to_zoom_mode(shared_ptr<dt_circle_base> target );
     void toggle_mode();
 	void debug_draw();
     
 	ofApp * app;
 	dt_mode mode;
-    dt_circle_base * zoom_mode_target;
+    shared_ptr<dt_circle_base> zoom_mode_target;
     
     // ui
     dt_mouse_gesture * current_ui;
@@ -44,6 +45,6 @@ public:
     dt_ui_zoom ui_zoom;
     
     // fanctor helper
-    dt_circle_base * zoom_mode_future_target;
+    shared_ptr<dt_circle_base> zoom_mode_future_target;
     
 };

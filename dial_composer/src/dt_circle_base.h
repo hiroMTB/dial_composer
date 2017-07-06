@@ -9,6 +9,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxCereal.h"
 
 enum dt_circle_type{
 	DT_CIRCLE_NOTE_ON	= 0,
@@ -82,6 +83,27 @@ public:
 	ofFloatColor circle_color;
 	
 	dt_circle_type circle_type;
+    
+    OFX_CEREAL_DEFINE(
+                      CEREAL_NVP(bStop),
+                      CEREAL_NVP(bMute),
+                      CEREAL_NVP(phase_step),
+                      CEREAL_NVP(fired_ch),
+                      CEREAL_NVP(step_age),
+                      CEREAL_NVP(speed),
+                      CEREAL_NVP(midi_ch),
+                      CEREAL_NVP(midi_cc_num),
+                      CEREAL_NVP(output_value),
+                      CEREAL_NVP(rev_speed),
+                      CEREAL_NVP(rev_radius),
+                      CEREAL_NVP(name),
+                      CEREAL_NVP(address),
+                      CEREAL_NVP(position),
+                      CEREAL_NVP(indi_position),
+                      CEREAL_NVP(indi_color),
+                      CEREAL_NVP(circle_color),
+                      CEREAL_NVP(circle_type)
+                      );
 };
 
 
@@ -139,12 +161,12 @@ public:
     dt_circle_data data;
 	dt_sequencer * seq;
     dt_dial_ui * ui;
-    static dt_circle_base * selected_circle;
-    dt_circle_base * parent;
+    static shared_ptr<dt_circle_base> selected_circle;
+    shared_ptr<dt_circle_base> parent;
     dt_circle_drawer circle_drawer;
     
-    vector<dt_circle_base*> input_circles;
-	vector<dt_circle_base*> output_circles;
+    vector<shared_ptr<dt_circle_base>> input_circles;
+	vector<shared_ptr<dt_circle_base>> output_circles;
 	
 	static ofColor noteOn_color;
 	static ofColor noteNum_color;

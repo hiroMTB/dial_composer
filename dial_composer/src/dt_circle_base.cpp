@@ -63,7 +63,7 @@ output_value( (int)ofRandom(0, 127) )
  *		circle
  *
  */
-dt_circle_base * dt_circle_base::selected_circle = NULL;
+shared_ptr<dt_circle_base> dt_circle_base::selected_circle = NULL;
 
 dt_circle_base::dt_circle_base()
 :
@@ -74,10 +74,10 @@ wait_step( 0 )
 }
 
 dt_circle_base::~dt_circle_base(){
-    for( int i=0; i<input_circles.size(); i++ ){
-        if( input_circles[i] )
-            delete input_circles[i];
-    }
+//    for( int i=0; i<input_circles.size(); i++ ){
+//        if( input_circles[i] )
+//            delete input_circles[i];
+//    }
     input_circles.clear();
 }
 

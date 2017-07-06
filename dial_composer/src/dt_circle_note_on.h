@@ -13,6 +13,7 @@
 #include "dt_rhythm_lib.h"
 #include "dt_circle_param.h"
 #include "dt_circle_drawer.h"
+#include "ofxCereal.h"
 
 class dt_circle_note_on : public dt_circle_base{
 
@@ -33,5 +34,9 @@ public:
 
 	static dt_circle_drawer	bg_circle_drawer;
 
-
+    OFX_CEREAL_DEFINE(
+                      CEREAL_NVP(prms),
+                      CEREAL_NVP(CCs),
+                      CEREAL_NVP(data)
+                      ); //, input_circles, output_circles);
 };

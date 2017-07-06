@@ -29,7 +29,7 @@ void dt_ui_home::singleClickStart(int x, int y, int button){
     
     app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
-    dt_circle_base * c = app->all_containers.note_on_container->getTouchedCircle( mpw );
+    shared_ptr<dt_circle_base> c = app->all_containers.note_on_container->getTouchedCircle( mpw );
     if( c ){
         // circle -> select
         dt_circle_base::selected_circle = c;
@@ -37,7 +37,7 @@ void dt_ui_home::singleClickStart(int x, int y, int button){
         bool bShift = ofGetModifierPressed( OF_KEY_SHIFT );
         if( !bShift && button!=2 && button!=1){
             // canvas -> create new circle
-            dt_circle_note_on * nc = new dt_circle_note_on();
+            shared_ptr<dt_circle_note_on> nc(new dt_circle_note_on());
             nc->setup(ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
             nc->data.position = mpw;
             app->all_containers.circle_base_container->addCircle( nc );
@@ -57,7 +57,7 @@ void dt_ui_home::doubleClickStart( int x, int y, int button ){
     
     app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
-    dt_circle_base * c = app->all_containers.note_on_container->getTouchedCircle( mpw );
+    shared_ptr<dt_circle_base> c = app->all_containers.note_on_container->getTouchedCircle( mpw );
 
     if( c ){
         // circle -> change mode

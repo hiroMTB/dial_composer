@@ -28,7 +28,7 @@ class dt_dial_ui{
 	
 public:
 	
-	dt_dial_ui( dt_circle_base * parent );
+	dt_dial_ui( shared_ptr<dt_circle_base> parent );
 	~dt_dial_ui(){};
 	
 	static void init();
@@ -60,7 +60,7 @@ public:
 	float ui_ind_radius;
 	float button_radius;
 	
-	dt_circle_base * parent;
+	shared_ptr<dt_circle_base> parent;
 	vector<ofVec2f> ui_elem_pos;
 	dt_dial_ui_mode mode;
 	

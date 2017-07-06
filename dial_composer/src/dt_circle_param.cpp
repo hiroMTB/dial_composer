@@ -66,7 +66,7 @@ void dt_circle_param::draw(){
 
 //	bool blink = data.fire_rate > 0.3;
     bool blink = false;
-	bool selected = selected_circle == this;
+	bool selected = selected_circle == shared_ptr<dt_circle_base>(this);
     float scale = blink ? 1.0+data.fire_rate*0.05 : 1.0;
 
     ofVec2f & ppos = parent->data.position;
@@ -138,7 +138,7 @@ void dt_circle_param::on_process(){
 
     // send value to note on object
     if( parent ){
-        dt_circle_note_on * n = static_cast<dt_circle_note_on*>( parent );
+        shared_ptr<dt_circle_note_on> n = std::static_pointer_cast<dt_circle_note_on>( parent );
         n->prms[ data.circle_type ] = data.output_value;
         n->CCs[ data.circle_type] = data.midi_cc_num;
     }

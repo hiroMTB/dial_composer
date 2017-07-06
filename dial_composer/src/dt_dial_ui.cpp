@@ -46,7 +46,7 @@ vector<ofVec2f> dt_dial_ui::param_LR_vbo_points;
 vector<ofFloatColor> dt_dial_ui::param_LR_vbo_colors;
 ofVbo dt_dial_ui::param_LR_vbo;
 
-dt_dial_ui::dt_dial_ui( dt_circle_base * _parent )
+dt_dial_ui::dt_dial_ui( shared_ptr<dt_circle_base> _parent )
 :
 ui_base_radius( 0 ),
 ui_ind_radius( 0 ),

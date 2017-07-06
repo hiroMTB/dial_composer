@@ -16,6 +16,7 @@
 #include "dt_circle_output_base.h"
 #include "dt_circle_all_containers.h"
 #include "dt_mode_manager.h"
+#include "ofxCereal.h"
 
 template<typename T>
 class dt_circle_container{
@@ -91,7 +92,7 @@ public:
 			circles[ i ]->step();
 		}
 	};
-
+    
 	void check_connection( dt_circle_note_on * c1, bool bInput ){
 		
 		int connection_num_input = 0;
@@ -183,6 +184,8 @@ public:
 //			}
 		}
 	}
+    
+    OFX_CEREAL_DEFINE(circles);
 };
 
 

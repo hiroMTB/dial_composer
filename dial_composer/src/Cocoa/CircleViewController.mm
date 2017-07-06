@@ -29,7 +29,7 @@
 }
 
 - (IBAction)change_name:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         string name = [[sender stringValue] UTF8String];
         c->data.name = name;
@@ -37,7 +37,7 @@
 }
 
 - (IBAction)change_type:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
 		int tag = [(NSComboBox*)sender indexOfSelectedItem];
 		c->change_type( (dt_circle_type)tag );
@@ -49,7 +49,7 @@
 }
 
 - (IBAction)change_mute:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         int mute = [sender state];
         c->data.bMute = mute;
@@ -57,7 +57,7 @@
 }
 
 - (IBAction)change_beat:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         int beat = [sender intValue];
         
@@ -82,7 +82,7 @@
 }
 
 - (IBAction)change_speed:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         int speed = [sender intValue];
         [speed_sl setIntValue:speed];
@@ -93,7 +93,7 @@
 }
 
 - (IBAction)change_rotate:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         int rotate = [sender intValue];
         [rotate_sl setIntValue:rotate];
@@ -104,7 +104,7 @@
 }
 
 - (IBAction)change_shape:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         int shape = [sender intValue];
         c->change_shape( shape );
@@ -116,14 +116,14 @@
 }
 
 - (IBAction)change_address:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         c->data.address = [sender stringValue].UTF8String;
     }
 }
 
 - (IBAction)change_output_value:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         float fov = [sender floatValue];
         int ov = roundFloatToInt(fov);
@@ -143,7 +143,7 @@
                 type == DT_CIRCLE_NOTE_NUM ||
                 type == DT_CIRCLE_DURATION  )
             {
-                dt_circle_note_on * n = static_cast<dt_circle_note_on*>(c->parent);
+                shared_ptr<dt_circle_note_on> n = std::static_pointer_cast<dt_circle_note_on>(c->parent);
                 int ch = n->data.midi_ch;
                 int noteNum =   type==DT_CIRCLE_NOTE_NUM ? ov : n->prms[DT_CIRCLE_NOTE_NUM];
                 int vel =       type==DT_CIRCLE_VELOCITY ? ov : n->prms[DT_CIRCLE_VELOCITY];
@@ -165,7 +165,7 @@
 }
 
 - (IBAction)change_color:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         NSColorWell * cw = (NSColorWell*) sender;
         float r = cw.color.redComponent;
@@ -176,7 +176,7 @@
 }
 
 - (IBAction)change_midi_ch:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         int ch = [sender intValue];
         c->data.midi_ch = ch;
@@ -187,7 +187,7 @@
 }
 
 - (IBAction)change_midi_cc:(id)sender {
-    dt_circle_base * c = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle;
     if( c ){
         int cc = [sender intValue];
         c->data.midi_cc_num = cc;
@@ -198,7 +198,7 @@
 }
 
 - (void)update_ui{
-    dt_circle_base * c = dt_circle_base::dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> c = dt_circle_base::dt_circle_base::selected_circle;
     if( c ){
         [type_cb selectItemAtIndex: (int)c->data.circle_type];
         [name_tx setStringValue: [NSString stringWithUTF8String: c->data.name.c_str()] ];

@@ -10,6 +10,7 @@
 
 #include "ofMain.h"
 #include "dt_circle_base.h"
+#include "ofxCereal.h"
 
 class dt_circle_param : public dt_circle_base{
 
@@ -23,4 +24,7 @@ public:
     virtual void on_process();
     void change_param_type( dt_circle_type t );
 
+    OFX_CEREAL_DEFINE(
+                      CEREAL_NVP(data)
+                      ); //, input_circles, output_circles);
 };

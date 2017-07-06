@@ -134,7 +134,7 @@ void ofApp::keyPressed( int key ){
 	bool bShift = ofGetModifierPressed( OF_KEY_SHIFT );
 	bool bAlt = ofGetModifierPressed( OF_KEY_ALT );
 	
-    dt_circle_base * sel = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> sel = dt_circle_base::selected_circle;
 	switch(key){
 			
 		case OF_KEY_UP:
@@ -193,6 +193,10 @@ void ofApp::keyPressed( int key ){
             cam.angle += 30;
             break;
 
+        case 'S':
+            save("save2.json");
+            break;
+
 		default: break;
 	}
 }
@@ -215,3 +219,6 @@ void ofApp::backingScaleChanged( float newb, float oldb ){
 	//config.DT_SIZE_BASE *= newb / oldb;
 }
 
+void ofApp::save(string fileName){
+    ofxCereal::saveJson("save", *app);
+}

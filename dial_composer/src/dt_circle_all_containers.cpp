@@ -20,9 +20,9 @@ void dt_circle_all_containers::setup(){
 	
 	app = ofApp::app;
 	
-	circle_base_container	= new dt_circle_base_container();
-	note_on_container		= new dt_circle_note_on_container();
-	param_container			= new dt_circle_param_container();
+	circle_base_container	= shared_ptr<dt_circle_base_container>( new dt_circle_base_container() );
+	note_on_container		= make_shared<dt_circle_note_on_container>( new dt_circle_note_on_container());
+	param_container			= make_shared<dt_circle_param_container>( new dt_circle_param_container());
 	
     indicators.setUsage( GL_DYNAMIC_DRAW );
     indicators.setMode( OF_PRIMITIVE_POINTS );

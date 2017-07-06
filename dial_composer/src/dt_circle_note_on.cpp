@@ -78,9 +78,9 @@ void dt_circle_note_on::setup( int beat_num ){
     for( int j=0; j<2; j++){
 
         for( int i=0; i<8; i++){
-            dt_circle_param * p = new dt_circle_param();
+            shared_ptr<dt_circle_param> p(new dt_circle_param());
             p->setup( ofRandom(4, 12) );
-            p->parent = this;
+            p->parent = shared_ptr<dt_circle_note_on>(this);
             p->change_type( (dt_circle_type)(i+1) );
             p->change_shape( ofRandom(10, 100) );
 
@@ -122,7 +122,7 @@ void dt_circle_note_on::update(){
             break;
             
         case DT_MODE_ZOOM:
-            data.bShow = app->mode_manager.zoom_mode_target == this;
+            data.bShow = app->mode_manager.zoom_mode_target == shared_ptr<dt_circle_note_on>(this);
             break;
             
         case DT_MODE_ZOOM2HOME:
@@ -177,8 +177,8 @@ void dt_circle_note_on::draw(){
     }
     
 	bool blink = data.fire_rate > 0.3;
-	bool selected = selected_circle == this;
-    bool targeted = app->mode_manager.zoom_mode_target == this;
+	bool selected = selected_circle == shared_ptr<dt_circle_note_on>(this);
+    bool targeted = app->mode_manager.zoom_mode_target == shared_ptr<dt_circle_note_on>(this);
     float scale = blink ? 1.0+data.fire_rate*0.05 : 1.0;
     
     ofPushMatrix();{
