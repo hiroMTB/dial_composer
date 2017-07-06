@@ -2,11 +2,11 @@
 
 #include "ofxCereal.h"
 
-class dt_saveload{
+class dt_serialize{
     
 public:
     
-    dt_saveload();
+    dt_serialize();
     
     
     
