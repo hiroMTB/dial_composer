@@ -11,6 +11,7 @@
 #include "dt_circle_container.h"
 #include "dt_circle_all_containers.h"
 #include "ofxModifierKeys.h"
+#include "dt_circle_param.h"
 
 dt_ui_zoom::dt_ui_zoom(){
 }
@@ -20,7 +21,7 @@ void dt_ui_zoom::singleClickStart( int x, int y, int button ){
         return;
     app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
-    shared_ptr<dt_circle_base> c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
+    shared_ptr<dt_circle_base> c = app->all_containers.circle_base_container.getTouchedCircle( mpw );
     if( c ){
         // circle -> toggle mute
         dt_circle_base::selected_circle = c;
@@ -33,8 +34,8 @@ void dt_ui_zoom::singleClickStart( int x, int y, int button ){
             p->parent = app->mode_manager.zoom_mode_target;
             p->data.position = mpw - p->parent->data.position;
             p->change_type( DT_CIRCLE_PAN );
-            app->all_containers.circle_base_container->addCircle( p );
-            app->all_containers.param_container->addCircle( p );
+            app->all_containers.circle_base_container.addCircle( p );
+            app->all_containers.param_container.addCircle( p );
             app->mode_manager.zoom_mode_target->input_circles.push_back( p );
             
             dt_circle_base::selected_circle = p;
@@ -53,7 +54,7 @@ void dt_ui_zoom::doubleClickStart( int x, int y, int button ){
 
     app = ofApp::app;
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
-    shared_ptr<dt_circle_base> c = app->all_containers.circle_base_container->getTouchedCircle( mpw );
+    shared_ptr<dt_circle_base> c = app->all_containers.circle_base_container.getTouchedCircle( mpw );
     
     if( c ){
         // circle -> change mode
@@ -79,7 +80,7 @@ void dt_ui_zoom::dragStart( int x, int y, int button ){
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     drag_start_posw = mpw;
     app->cam.dragStartTrans = app->cam.trans;
-    drag_target_circle = app->all_containers.circle_base_container->getTouchedCircle( mpw );
+    drag_target_circle = app->all_containers.circle_base_container.getTouchedCircle( mpw );
 	
 	if( drag_target_circle )
 		drag_start_target_pos = drag_target_circle->data.position;

@@ -14,7 +14,6 @@
 #include "dt_sequence_thread.h"
 #include "dt_font_manager.h"
 
-
 dt_circle_param::dt_circle_param(){
 	initial = "";
 }
@@ -24,6 +23,8 @@ dt_circle_param::~dt_circle_param(){
 	   delete ui;
 		ui = 0;
 	}
+    
+        cout << "param ---- ";
 }
 
 void dt_circle_param::setup( int beat_num ){
@@ -66,7 +67,7 @@ void dt_circle_param::draw(){
 
 //	bool blink = data.fire_rate > 0.3;
     bool blink = false;
-	bool selected = selected_circle == shared_ptr<dt_circle_base>(this);
+	bool selected = selected_circle == shared_from_this();
     float scale = blink ? 1.0+data.fire_rate*0.05 : 1.0;
 
     ofVec2f & ppos = parent->data.position;
@@ -160,3 +161,4 @@ void dt_circle_param::on_process(){
         }
     }
 }
+

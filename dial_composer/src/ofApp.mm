@@ -4,6 +4,7 @@
 #include "dt_circle_container.h"
 #include "dt_circle_param.h"
 #include "ofxModifierKeys.h"
+#include <cereal/archives/json.hpp>
 
 #import  "AppDelegate.h"
 
@@ -219,6 +220,17 @@ void ofApp::backingScaleChanged( float newb, float oldb ){
 	//config.DT_SIZE_BASE *= newb / oldb;
 }
 
+#include <iostream>
+
 void ofApp::save(string fileName){
-    ofxCereal::saveJson("save", *app);
+
+    std::stringstream ss;
+
+    {
+        cereal::JSONOutputArchive archive(ss);
+        archive(all_containers);
+    }
+    
+    ofstream myfile(fileName);
+    myfile << ss.str() << endl;
 }

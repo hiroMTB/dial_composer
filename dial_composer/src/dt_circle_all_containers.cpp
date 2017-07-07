@@ -12,6 +12,7 @@
 #include "dt_circle_note_on.h"
 #include "dt_circle_param.h"
 #include "dt_config.h"
+#include "ofApp.h"
 
 dt_circle_all_containers::dt_circle_all_containers(){
 }
@@ -19,11 +20,7 @@ dt_circle_all_containers::dt_circle_all_containers(){
 void dt_circle_all_containers::setup(){
 	
 	app = ofApp::app;
-	
-	circle_base_container	= shared_ptr<dt_circle_base_container>( new dt_circle_base_container() );
-	note_on_container		= make_shared<dt_circle_note_on_container>( new dt_circle_note_on_container());
-	param_container			= make_shared<dt_circle_param_container>( new dt_circle_param_container());
-	
+    
     indicators.setUsage( GL_DYNAMIC_DRAW );
     indicators.setMode( OF_PRIMITIVE_POINTS );
     
@@ -32,15 +29,15 @@ void dt_circle_all_containers::setup(){
 }
 
 void dt_circle_all_containers::update(){
-    param_container->update();
-	note_on_container->update();
-	note_on_container->process_collision();
+    param_container.update();
+	note_on_container.update();
+	note_on_container.process_collision();
 }
 
 void dt_circle_all_containers::draw(){
 	
-    param_container->draw();
-	note_on_container->draw();
+    param_container.draw();
+	note_on_container.draw();
     
     // all lines
     glLineWidth( 1 );
@@ -55,8 +52,8 @@ void dt_circle_all_containers::draw(){
 }
 
 void dt_circle_all_containers::step(){
-    param_container->step();
-	note_on_container->step();
+    param_container.step();
+	note_on_container.step();
 }
 
 void dt_circle_all_containers::add_indicator( const ofVec2f& p, const ofFloatColor& c ){

@@ -11,11 +11,12 @@
 #include "ofMain.h"
 #include "dt_circle_base.h"
 #include "dt_rhythm_lib.h"
-#include "dt_circle_param.h"
 #include "dt_circle_drawer.h"
-#include "ofxCereal.h"
 
-class dt_circle_note_on : public dt_circle_base{
+#include <cereal/types/map.hpp>
+#include <cereal/types/vector.hpp>
+
+class dt_circle_note_on : public dt_circle_base, public std::enable_shared_from_this<dt_circle_note_on>{
 
 public:
 	dt_circle_note_on();
@@ -34,9 +35,14 @@ public:
 
 	static dt_circle_drawer	bg_circle_drawer;
 
-    OFX_CEREAL_DEFINE(
-                      CEREAL_NVP(prms),
-                      CEREAL_NVP(CCs),
-                      CEREAL_NVP(data)
-                      ); //, input_circles, output_circles);
+public:
+    template<class Archive>
+    void serialize(Archive & ar){
+        ar( CEREAL_NVP(prms),
+            CEREAL_NVP(CCs),
+            CEREAL_NVP(data),
+            CEREAL_NVP(input_circles)
+           );
+    }
 };
+

@@ -9,6 +9,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include <cereal/cereal.hpp>
 #include "ofxCereal.h"
 
 enum dt_circle_type{
@@ -83,27 +84,31 @@ public:
 	ofFloatColor circle_color;
 	
 	dt_circle_type circle_type;
-    
-    OFX_CEREAL_DEFINE(
-                      CEREAL_NVP(bStop),
-                      CEREAL_NVP(bMute),
-                      CEREAL_NVP(phase_step),
-                      CEREAL_NVP(fired_ch),
-                      CEREAL_NVP(step_age),
-                      CEREAL_NVP(speed),
-                      CEREAL_NVP(midi_ch),
-                      CEREAL_NVP(midi_cc_num),
-                      CEREAL_NVP(output_value),
-                      CEREAL_NVP(rev_speed),
-                      CEREAL_NVP(rev_radius),
-                      CEREAL_NVP(name),
-                      CEREAL_NVP(address),
-                      CEREAL_NVP(position),
-                      CEREAL_NVP(indi_position),
-                      CEREAL_NVP(indi_color),
-                      CEREAL_NVP(circle_color),
-                      CEREAL_NVP(circle_type)
-                      );
+   
+public:
+    template<class Archive>
+    void serialize(Archive & ar){
+        ar( 
+              CEREAL_NVP(bStop),
+              CEREAL_NVP(bMute),
+              CEREAL_NVP(phase_step),
+              CEREAL_NVP(fired_ch),
+              CEREAL_NVP(step_age),
+              CEREAL_NVP(speed),
+              CEREAL_NVP(midi_ch),
+              CEREAL_NVP(midi_cc_num),
+              CEREAL_NVP(output_value),
+              CEREAL_NVP(rev_speed),
+              CEREAL_NVP(rev_radius),
+              CEREAL_NVP(name),
+              CEREAL_NVP(address),
+              CEREAL_NVP(position),
+              CEREAL_NVP(indi_position),
+              CEREAL_NVP(indi_color),
+              CEREAL_NVP(circle_color),
+              CEREAL_NVP(circle_type)
+        );
+    }
 };
 
 
@@ -115,6 +120,8 @@ public:
 
 #include "dt_sequencer.h"
 #include "dt_circle_drawer.h"
+
+#include <cereal/cereal.hpp>
 
 class ofApp;
 class dt_dial_ui;
@@ -142,8 +149,6 @@ public:
     bool change_circle_color( float r, float g, float b, float a );
     bool change_circle_color( ofFloatColor &c );
     bool change_circle_color( ofColor &c );
-    
-    
     
 	void setup_text( string initial );
 	void draw_initial();
@@ -177,5 +182,6 @@ public:
 	static ofColor cc2_color;
 	static ofColor cc3_color;
 	static ofColor cc4_color;
+    
 };
 

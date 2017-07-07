@@ -79,6 +79,8 @@ dt_circle_base::~dt_circle_base(){
 //            delete input_circles[i];
 //    }
     input_circles.clear();
+    
+    cout << " base" << endl;
 }
 
 void dt_circle_base::step(){
@@ -321,3 +323,12 @@ void dt_circle_base::make_vbo(){
     rshape.setUsage( GL_DYNAMIC_DRAW );
     rguid.setUsage( GL_DYNAMIC_DRAW );    
 }
+
+
+#include <cereal/types/polymorphic.hpp>
+#include "dt_circle_param.h"
+
+CEREAL_REGISTER_TYPE(dt_circle_note_on);
+CEREAL_REGISTER_TYPE(dt_circle_param);
+CEREAL_REGISTER_POLYMORPHIC_RELATION(dt_circle_base, dt_circle_param)
+CEREAL_REGISTER_POLYMORPHIC_RELATION(dt_circle_base, dt_circle_note_on)

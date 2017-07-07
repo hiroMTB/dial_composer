@@ -14,8 +14,6 @@
 #include "dt_osc_recorder.h"
 #include "dt_mode_manager.h"
 #include "ofx2DCamera.h"
-#include "dt_serialize.h"
-#include "ofxCereal.h"
 
 class ofApp : public ofBaseApp {
 
@@ -63,8 +61,6 @@ public:
 
     ofx2DCamera         cam;
 	float backingScale;
-    dt_serialize serializer;
-    
-    OFX_CEREAL_DEFINE(all_containers);
+
 };
 

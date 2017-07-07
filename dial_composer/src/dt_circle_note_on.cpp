@@ -15,6 +15,7 @@
 #include "dt_circle_drawer.h"
 #include "dt_dial_ui.h"
 
+
 dt_circle_drawer dt_circle_note_on::bg_circle_drawer;
 
 dt_circle_note_on::dt_circle_note_on(){
@@ -40,6 +41,8 @@ dt_circle_note_on::~dt_circle_note_on(){
     
     rguid.clear();
     rshape.clear();
+    
+    cout << "note on ---- ";
 }
 
 void dt_circle_note_on::setup( int beat_num ){
@@ -80,7 +83,7 @@ void dt_circle_note_on::setup( int beat_num ){
         for( int i=0; i<8; i++){
             shared_ptr<dt_circle_param> p(new dt_circle_param());
             p->setup( ofRandom(4, 12) );
-            p->parent = shared_ptr<dt_circle_note_on>(this);
+            p->parent = shared_from_this();
             p->change_type( (dt_circle_type)(i+1) );
             p->change_shape( ofRandom(10, 100) );
 
@@ -100,8 +103,8 @@ void dt_circle_note_on::setup( int beat_num ){
             }
             
             input_circles.push_back( p );
-            app->all_containers.param_container->addCircle( p );
-            app->all_containers.circle_base_container->addCircle( p );
+            app->all_containers.param_container.addCircle( p );
+            app->all_containers.circle_base_container.addCircle( p );
         }
     }
 }
@@ -122,7 +125,7 @@ void dt_circle_note_on::update(){
             break;
             
         case DT_MODE_ZOOM:
-            data.bShow = app->mode_manager.zoom_mode_target == shared_ptr<dt_circle_note_on>(this);
+            data.bShow = app->mode_manager.zoom_mode_target == shared_from_this();
             break;
             
         case DT_MODE_ZOOM2HOME:
@@ -177,8 +180,8 @@ void dt_circle_note_on::draw(){
     }
     
 	bool blink = data.fire_rate > 0.3;
-	bool selected = selected_circle == shared_ptr<dt_circle_note_on>(this);
-    bool targeted = app->mode_manager.zoom_mode_target == shared_ptr<dt_circle_note_on>(this);
+	bool selected = selected_circle == shared_from_this();
+    bool targeted = app->mode_manager.zoom_mode_target == shared_from_this();
     float scale = blink ? 1.0+data.fire_rate*0.05 : 1.0;
     
     ofPushMatrix();{
@@ -290,3 +293,4 @@ void dt_circle_note_on::on_process(){
     data.dur = prms[DT_CIRCLE_DURATION]/127.0;
     data.fire_rate = 1.0;
 }
+
