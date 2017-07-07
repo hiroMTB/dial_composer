@@ -29,12 +29,13 @@ void dt_mode_manager::go_to_home_mode(){
         dt_mode_manager & m = ofApp::app->mode_manager;
         m.mode = DT_MODE_HOME;
         m.current_ui = &m.ui_home;
-        m.zoom_mode_target = NULL;
+        m.zoom_mode_target.reset();
     });
 }
 
-void dt_mode_manager::go_to_zoom_mode( shared_ptr<dt_circle_base> target ){
+void dt_mode_manager::go_to_zoom_mode( weak_ptr<dt_circle_base> target_w ){
     mode = DT_MODE_HOME2ZOOM;
+    shared_ptr<dt_circle_base> target = target_w.lock();
     if( target ){
         zoom_mode_future_target = target;
         app->cam.moveZoom( target->data.position + ofVec2f(0, -40), 1.85, 1000, ^(float *arg){

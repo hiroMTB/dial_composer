@@ -34,10 +34,6 @@ dt_circle_note_on::dt_circle_note_on(){
 }
 
 dt_circle_note_on::~dt_circle_note_on(){
-	if( ui ) {
-		delete ui;
-		ui = 0;
-	}
     
     rguid.clear();
     rshape.clear();
@@ -59,7 +55,7 @@ void dt_circle_note_on::setup( int beat_num ){
      - input/output_connection_radius
      
      */
-	seq = new dt_sequencer();
+	seq = shared_ptr<dt_sequencer>(new dt_sequencer());
 	change_beat( beat_num );
 	change_speed( 1 );
     change_shape( ofRandom(-3000, 3000) );
@@ -125,7 +121,7 @@ void dt_circle_note_on::update(){
             break;
             
         case DT_MODE_ZOOM:
-            data.bShow = app->mode_manager.zoom_mode_target == shared_from_this();
+            data.bShow = app->mode_manager.zoom_mode_target.lock() == shared_from_this();
             break;
             
         case DT_MODE_ZOOM2HOME:
@@ -180,8 +176,8 @@ void dt_circle_note_on::draw(){
     }
     
 	bool blink = data.fire_rate > 0.3;
-	bool selected = selected_circle == shared_from_this();
-    bool targeted = app->mode_manager.zoom_mode_target == shared_from_this();
+	bool selected = selected_circle.lock() == shared_from_this();
+    bool targeted = app->mode_manager.zoom_mode_target.lock() == shared_from_this();
     float scale = blink ? 1.0+data.fire_rate*0.05 : 1.0;
     
     ofPushMatrix();{

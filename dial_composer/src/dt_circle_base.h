@@ -164,14 +164,14 @@ public:
 	ofVboMesh rguid;
     
     dt_circle_data data;
-	dt_sequencer * seq;
-    dt_dial_ui * ui;
-    static shared_ptr<dt_circle_base> selected_circle;
-    shared_ptr<dt_circle_base> parent;
+	shared_ptr<dt_sequencer> seq;
+    //shared_ptr<dt_dial_ui> ui;
+    static weak_ptr<dt_circle_base> selected_circle;
+    weak_ptr<dt_circle_base> parent;
     dt_circle_drawer circle_drawer;
     
-    vector<shared_ptr<dt_circle_base>> input_circles;
-	vector<shared_ptr<dt_circle_base>> output_circles;
+    vector<weak_ptr<dt_circle_base>> input_circles;
+	vector<weak_ptr<dt_circle_base>> output_circles;
 	
 	static ofColor noteOn_color;
 	static ofColor noteNum_color;

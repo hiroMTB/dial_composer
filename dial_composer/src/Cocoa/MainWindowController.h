@@ -47,4 +47,6 @@
 
 - (void)update_ui;
 - (void)update_ui_every_frame;
+- (void)exit;
+
 @end

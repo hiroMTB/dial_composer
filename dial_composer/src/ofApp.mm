@@ -135,7 +135,7 @@ void ofApp::keyPressed( int key ){
 	bool bShift = ofGetModifierPressed( OF_KEY_SHIFT );
 	bool bAlt = ofGetModifierPressed( OF_KEY_ALT );
 	
-    shared_ptr<dt_circle_base> sel = dt_circle_base::selected_circle;
+    shared_ptr<dt_circle_base> sel = dt_circle_base::selected_circle.lock();
 	switch(key){
 			
 		case OF_KEY_UP:
@@ -204,6 +204,7 @@ void ofApp::keyPressed( int key ){
 
 void ofApp::exit(){
 	sequence_thread.stop();
+
 }
 
 void ofApp::update_cocoa_ui(){

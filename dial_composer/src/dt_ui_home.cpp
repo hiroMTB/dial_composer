@@ -18,9 +18,9 @@
 
 dt_ui_home::dt_ui_home()
 :
-drag_start_posw( ofVec2f(0,0) ),
-drag_target_circle( NULL )
+drag_start_posw( ofVec2f(0,0) )
 {
+    drag_target_circle.reset();
 }
 
 void dt_ui_home::singleClickStart(int x, int y, int button){
@@ -82,8 +82,8 @@ void dt_ui_home::dragStart( int x, int y, int button ){
     app->cam.dragStartTrans = app->cam.trans;
     drag_target_circle = app->all_containers.note_on_container.getTouchedCircle( mpw );
 
-	if( drag_target_circle )
-		drag_start_target_pos = drag_target_circle->data.position;
+	if( !drag_target_circle.expired() )
+		drag_start_target_pos = drag_target_circle.lock()->data.position;
 
     app->update_cocoa_ui();
 }
@@ -96,9 +96,9 @@ void dt_ui_home::dragging( int x, int y, int button ){
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     ofVec2f dist = mpw - drag_start_posw;
     
-	if( drag_target_circle ){
+	if( !drag_target_circle.expired() ){
         // drag circle
-		drag_target_circle->data.position = drag_start_target_pos + dist;
+		drag_target_circle.lock()->data.position = drag_start_target_pos + dist;
 		dt_circle_base::selected_circle = drag_target_circle;
 	}else{
         // drag camera
@@ -110,7 +110,7 @@ void dt_ui_home::dragging( int x, int y, int button ){
 }
 
 void dt_ui_home::dragEnd( int x, int y, int button ){
-    drag_target_circle = NULL;
+    drag_target_circle.reset();
 }
 
 bool dt_ui_home::mode_check(){

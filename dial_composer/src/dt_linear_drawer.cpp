@@ -52,7 +52,7 @@ void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
 		int col = y / y_max;
 		y -= ( y_max * col );
 		
-		dt_sequencer * seq = ns[i]->seq;
+		shared_ptr<dt_sequencer> seq = ns[i]->seq;
 		int total_beats = seq->total_beats;
 		
 		// add on beat

@@ -48,7 +48,7 @@ void dt_mouse_gesture::update(){
              *      single tap end
              *
              */
-            ofLogNotice( "single click end");
+//            ofLogNotice( "single click end");
             singleClickEnd( mouseX, mouseY, mouseButton );
         }
     }
@@ -76,7 +76,7 @@ void dt_mouse_gesture::mousePressed( int x, int y, int button ){
              *      double click start
              *
              */
-            ofLogNotice( "double click start" );
+//            ofLogNotice( "double click start" );
             bDoubleClicking = true;
             doubleClickStart( mouseX, mouseY, mouseButton );
         }
@@ -96,7 +96,7 @@ void dt_mouse_gesture::mouseDragged( int x, int y, int button ){
          *      drag start here
          *
          */
-        ofLogNotice( "drag start" );
+//        ofLogNotice( "drag start" );
         dragStart( mouseX, mouseY, mouseButton );
     }else{
         dragging( mouseX, mouseY, mouseButton );
@@ -128,7 +128,7 @@ void dt_mouse_gesture::mouseReleased( int x, int y, int button ){
                  *      double click end
                  *
                  */
-                ofLogNotice( "double click end");
+//                ofLogNotice( "double click end");
                 doubleClickEnd( mouseX, mouseY, mouseButton );
                 bDoubleClicking = false;
             }
@@ -139,7 +139,7 @@ void dt_mouse_gesture::mouseReleased( int x, int y, int button ){
              *      long click end
              *
              */
-            ofLogNotice( "long click end" );
+//            ofLogNotice( "long click end" );
             longClickEnd( mouseX, mouseY, mouseButton );
         }
     }else{
@@ -150,7 +150,7 @@ void dt_mouse_gesture::mouseReleased( int x, int y, int button ){
          *      drag end
          *
          */
-        ofLogNotice( "drag end" );
+//        ofLogNotice( "drag end" );
         dragEnd( mouseX, mouseY, mouseButton );
     }
     

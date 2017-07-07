@@ -32,4 +32,9 @@
     }
 }
 
+-(void)applicationWillTerminate:(NSNotification *)aNotification{
+    NSLog(@"applicationWillTerminate");
+    [mainWindowController exit];
+}
+
 @end

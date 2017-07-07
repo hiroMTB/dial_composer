@@ -19,16 +19,11 @@ dt_circle_param::dt_circle_param(){
 }
 
 dt_circle_param::~dt_circle_param(){
-	if( ui ){
-	   delete ui;
-		ui = 0;
-	}
-    
-        cout << "param ---- ";
+    cout << "param ---- ";
 }
 
 void dt_circle_param::setup( int beat_num ){
-	seq = new dt_sequencer();
+	seq = shared_ptr<dt_sequencer>(new dt_sequencer());
     
 	change_beat( beat_num );
 	change_speed( 1 );
@@ -39,7 +34,8 @@ void dt_circle_param::setup( int beat_num ){
 }
 
 void dt_circle_param::update(){
-    bool targeted = app->mode_manager.zoom_mode_target == parent;
+    
+    bool targeted = app->mode_manager.zoom_mode_target.lock() == parent.lock();
     bool zoom_mode = app->mode_manager.mode == DT_MODE_ZOOM;
 
     if( !targeted || !zoom_mode ) return;
@@ -47,8 +43,8 @@ void dt_circle_param::update(){
     
     data.indi_position = calc_indi_position();
 
-	if( parent ){
-        data.indi_position +=  parent->data.position;
+	if( !parent.expired() ){
+        data.indi_position +=  parent.lock()->data.position;
     }
     
 	ofApp::app->all_containers.add_indicator( data.indi_position, data.circle_color );
@@ -61,16 +57,16 @@ void dt_circle_param::update(){
 }
 
 void dt_circle_param::draw(){
-    bool targeted = app->mode_manager.zoom_mode_target == parent;
+    bool targeted = app->mode_manager.zoom_mode_target.lock() == parent.lock();
     bool zoom_mode = app->mode_manager.mode == DT_MODE_ZOOM;
     if( !targeted || !zoom_mode ) return;
 
 //	bool blink = data.fire_rate > 0.3;
     bool blink = false;
-	bool selected = selected_circle == shared_from_this();
+	bool selected = selected_circle.lock() == shared_from_this();
     float scale = blink ? 1.0+data.fire_rate*0.05 : 1.0;
 
-    ofVec2f & ppos = parent->data.position;
+    ofVec2f & ppos = parent.lock()->data.position;
     
 	ofPushMatrix();{
         
@@ -138,8 +134,8 @@ void dt_circle_param::on_process(){
 	data.fire_rate = 1.0;
 
     // send value to note on object
-    if( parent ){
-        shared_ptr<dt_circle_note_on> n = std::static_pointer_cast<dt_circle_note_on>( parent );
+    if( !parent.expired() ){
+        shared_ptr<dt_circle_note_on> n = std::static_pointer_cast<dt_circle_note_on>( parent.lock() );
         n->prms[ data.circle_type ] = data.output_value;
         n->CCs[ data.circle_type] = data.midi_cc_num;
     }
@@ -148,7 +144,7 @@ void dt_circle_param::on_process(){
     if(dt_config::DT_OSC_OUT_ENABLE){
         if( !dt_config::DT_OSC_OUT_PACK_RHYTHM_PARAM ){
             ofxOscMessage m;
-            m.setAddress( dt_config::DT_OSC_OUT_TOP_ADDRESS + parent->data.address + data.address );
+            m.setAddress( dt_config::DT_OSC_OUT_TOP_ADDRESS + parent.lock()->data.address + data.address );
             m.addFloatArg( data.output_value );
             ofApp::app->osc_sender.send_message( m );
         }

@@ -1,0 +1,2556 @@
+{
+    "value0": {
+        "note_on_container": {
+            "circles": [
+                {
+                    "polymorphic_id": 2147483649,
+                    "polymorphic_name": "dt_circle_note_on",
+                    "ptr_wrapper": {
+                        "id": 2147483649,
+                        "data": {
+                            "prms": [
+                                {
+                                    "key": 1,
+                                    "value": 84.0
+                                },
+                                {
+                                    "key": 2,
+                                    "value": 102.0
+                                },
+                                {
+                                    "key": 3,
+                                    "value": 80.0
+                                },
+                                {
+                                    "key": 4,
+                                    "value": 2.0
+                                },
+                                {
+                                    "key": 5,
+                                    "value": 94.0
+                                },
+                                {
+                                    "key": 6,
+                                    "value": 125.0
+                                },
+                                {
+                                    "key": 7,
+                                    "value": 17.0
+                                },
+                                {
+                                    "key": 8,
+                                    "value": 37.0
+                                }
+                            ],
+                            "CCs": [
+                                {
+                                    "key": 1,
+                                    "value": -1
+                                },
+                                {
+                                    "key": 2,
+                                    "value": -1
+                                },
+                                {
+                                    "key": 3,
+                                    "value": -1
+                                },
+                                {
+                                    "key": 4,
+                                    "value": 9
+                                },
+                                {
+                                    "key": 5,
+                                    "value": 12
+                                },
+                                {
+                                    "key": 6,
+                                    "value": 13
+                                },
+                                {
+                                    "key": 7,
+                                    "value": 14
+                                },
+                                {
+                                    "key": 8,
+                                    "value": 15
+                                }
+                            ],
+                            "data": {
+                                "bStop": false,
+                                "bMute": false,
+                                "phase_step": 0,
+                                "fired_ch": -1,
+                                "step_age": 0,
+                                "speed": 1,
+                                "midi_ch": 1,
+                                "midi_cc_num": 0,
+                                "output_value": 1.0,
+                                "rev_speed": 1.5,
+                                "rev_radius": 40.85714340209961,
+                                "name": "default",
+                                "address": "/trg",
+                                "position": {
+                                    "x": -213.0,
+                                    "y": -54.0
+                                },
+                                "indi_position": {
+                                    "x": -203.4620819091797,
+                                    "y": -93.72825622558594
+                                },
+                                "indi_color": {
+                                    "r": 1.0,
+                                    "g": 1.0,
+                                    "b": 1.0,
+                                    "a": 1.0
+                                },
+                                "circle_color": {
+                                    "r": 0.27508601546287539,
+                                    "g": 0.6894804835319519,
+                                    "b": 0.800000011920929,
+                                    "a": 1.0
+                                },
+                                "circle_type": 0
+                            },
+                            "input_circles": [
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2147483650,
+                                        "polymorphic_name": "dt_circle_param",
+                                        "ptr_wrapper": {
+                                            "id": 2147483650,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 84.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/note",
+                                                    "position": {
+                                                        "x": -130.74285888671876,
+                                                        "y": 0.000011429903679527343
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -327.4155578613281,
+                                                        "y": -54.71285629272461
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7215686440467835,
+                                                        "g": 0.3450980484485626,
+                                                        "b": 0.125490203499794,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 1
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483651,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 73.0,
+                                                    "rev_speed": 4.5,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/vel",
+                                                    "position": {
+                                                        "x": -113.22663879394531,
+                                                        "y": -65.3714370727539
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -322.4114685058594,
+                                                        "y": -135.2627410888672
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9686274528503418,
+                                                        "g": 0.4156862795352936,
+                                                        "b": 0.5058823823928833,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 2
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483652,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 115.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/dur",
+                                                    "position": {
+                                                        "x": -65.3714370727539,
+                                                        "y": -113.22663879394531
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -262.04412841796877,
+                                                        "y": -167.93951416015626
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.20392157137393952,
+                                                        "g": 0.30588236451148989,
+                                                        "b": 0.658823549747467,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 3
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483653,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 9,
+                                                    "output_value": 49.0,
+                                                    "rev_speed": 3.75,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/pan",
+                                                    "position": {
+                                                        "x": -0.000005714951839763671,
+                                                        "y": -130.74285888671876
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -229.30787658691407,
+                                                        "y": -183.67398071289063
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.11764705926179886,
+                                                        "g": 0.5529412031173706,
+                                                        "b": 0.09803921729326248,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 4
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483654,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 12,
+                                                    "output_value": 94.0,
+                                                    "rev_speed": 2.8125,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/cc1",
+                                                    "position": {
+                                                        "x": 65.37142181396485,
+                                                        "y": -113.22664642333985
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -135.51931762695313,
+                                                        "y": -156.25144958496095
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.5215686559677124,
+                                                        "g": 0.529411792755127,
+                                                        "b": 0.2549019753932953,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 5
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483655,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 13,
+                                                    "output_value": 64.0,
+                                                    "rev_speed": 2.25,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/cc2",
+                                                    "position": {
+                                                        "x": 113.22663879394531,
+                                                        "y": -65.37142944335938
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -86.93904113769531,
+                                                        "y": -129.48919677734376
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.6274510025978088,
+                                                        "g": 0.6392157077789307,
+                                                        "b": 0.30980393290519717,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 6
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483656,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 14,
+                                                    "output_value": 114.0,
+                                                    "rev_speed": 3.75,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/cc3",
+                                                    "position": {
+                                                        "x": 130.74285888671876,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -98.56501007080078,
+                                                        "y": -52.93112564086914
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7882353067398071,
+                                                        "g": 0.800000011920929,
+                                                        "b": 0.3843137323856354,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 7
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483657,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 15,
+                                                    "output_value": 37.0,
+                                                    "rev_speed": 2.8125,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/cc4",
+                                                    "position": {
+                                                        "x": 113.22663879394531,
+                                                        "y": 65.37142944335938
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -87.66410064697266,
+                                                        "y": 22.34661865234375
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9450980424880981,
+                                                        "g": 0.95686274766922,
+                                                        "b": 0.5411764979362488,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 8
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483658,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 61.0,
+                                                    "rev_speed": 3.2142856121063234,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/note",
+                                                    "position": {
+                                                        "x": -179.77142333984376,
+                                                        "y": 0.000015716117559350097
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -395.50897216796877,
+                                                        "y": -37.88803482055664
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7215686440467835,
+                                                        "g": 0.3450980484485626,
+                                                        "b": 0.125490203499794,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 1
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483659,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 102.0,
+                                                    "rev_speed": 5.625,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/vel",
+                                                    "position": {
+                                                        "x": -155.68661499023438,
+                                                        "y": -89.8857192993164
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -367.084716796875,
+                                                        "y": -127.6215591430664
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9686274528503418,
+                                                        "g": 0.4156862795352936,
+                                                        "b": 0.5058823823928833,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 2
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483660,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 80.0,
+                                                    "rev_speed": 3.2142856121063234,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/dur",
+                                                    "position": {
+                                                        "x": -89.8857192993164,
+                                                        "y": -155.68661499023438
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -305.6232604980469,
+                                                        "y": -193.5746612548828
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.20392157137393952,
+                                                        "g": 0.30588236451148989,
+                                                        "b": 0.658823549747467,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 3
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483661,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 9,
+                                                    "output_value": 2.0,
+                                                    "rev_speed": 2.8125,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/pan",
+                                                    "position": {
+                                                        "x": -0.000007858058779675048,
+                                                        "y": -179.77142333984376
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -200.8907470703125,
+                                                        "y": -222.79623413085938
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.11764705926179886,
+                                                        "g": 0.5529412031173706,
+                                                        "b": 0.09803921729326248,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 4
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483662,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 12,
+                                                    "output_value": 108.0,
+                                                    "rev_speed": 3.75,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/cc1",
+                                                    "position": {
+                                                        "x": 89.88570404052735,
+                                                        "y": -155.68663024902345
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -139.4221649169922,
+                                                        "y": -208.6177520751953
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.5215686559677124,
+                                                        "g": 0.529411792755127,
+                                                        "b": 0.2549019753932953,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 5
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483663,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 13,
+                                                    "output_value": 125.0,
+                                                    "rev_speed": 4.5,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/cc2",
+                                                    "position": {
+                                                        "x": 155.68661499023438,
+                                                        "y": -89.88571166992188
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -53.49821472167969,
+                                                        "y": -159.77700805664063
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.6274510025978088,
+                                                        "g": 0.6392157077789307,
+                                                        "b": 0.30980393290519717,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 6
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483664,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 14,
+                                                    "output_value": 17.0,
+                                                    "rev_speed": 2.045454502105713,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/cc3",
+                                                    "position": {
+                                                        "x": 179.77142333984376,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -26.97442626953125,
+                                                        "y": -69.09883117675781
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7882353067398071,
+                                                        "g": 0.800000011920929,
+                                                        "b": 0.3843137323856354,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 7
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483665,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 15,
+                                                    "output_value": 73.0,
+                                                    "rev_speed": 3.75,
+                                                    "rev_radius": 16.342857360839845,
+                                                    "name": "default",
+                                                    "address": "/cc4",
+                                                    "position": {
+                                                        "x": 155.68661499023438,
+                                                        "y": 89.88571166992188
+                                                    },
+                                                    "indi_position": {
+                                                        "x": -73.62124633789063,
+                                                        "y": 36.95458984375
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9450980424880981,
+                                                        "g": 0.95686274766922,
+                                                        "b": 0.5411764979362488,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 8
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "polymorphic_id": 1,
+                    "ptr_wrapper": {
+                        "id": 2147483666,
+                        "data": {
+                            "prms": [
+                                {
+                                    "key": 1,
+                                    "value": 80.0
+                                },
+                                {
+                                    "key": 2,
+                                    "value": 93.0
+                                },
+                                {
+                                    "key": 3,
+                                    "value": 36.0
+                                },
+                                {
+                                    "key": 4,
+                                    "value": 86.0
+                                },
+                                {
+                                    "key": 5,
+                                    "value": 64.0
+                                },
+                                {
+                                    "key": 6,
+                                    "value": 41.0
+                                },
+                                {
+                                    "key": 7,
+                                    "value": 107.0
+                                },
+                                {
+                                    "key": 8,
+                                    "value": 19.0
+                                }
+                            ],
+                            "CCs": [
+                                {
+                                    "key": 1,
+                                    "value": -1
+                                },
+                                {
+                                    "key": 2,
+                                    "value": -1
+                                },
+                                {
+                                    "key": 3,
+                                    "value": -1
+                                },
+                                {
+                                    "key": 4,
+                                    "value": 9
+                                },
+                                {
+                                    "key": 5,
+                                    "value": 12
+                                },
+                                {
+                                    "key": 6,
+                                    "value": 13
+                                },
+                                {
+                                    "key": 7,
+                                    "value": 14
+                                },
+                                {
+                                    "key": 8,
+                                    "value": 15
+                                }
+                            ],
+                            "data": {
+                                "bStop": false,
+                                "bMute": false,
+                                "phase_step": 0,
+                                "fired_ch": -1,
+                                "step_age": 0,
+                                "speed": 1,
+                                "midi_ch": 1,
+                                "midi_cc_num": 0,
+                                "output_value": 1.0,
+                                "rev_speed": 1.5,
+                                "rev_radius": 40.85714340209961,
+                                "name": "default",
+                                "address": "/trg",
+                                "position": {
+                                    "x": 161.0,
+                                    "y": -119.0
+                                },
+                                "indi_position": {
+                                    "x": 144.38189697265626,
+                                    "y": -156.32485961914063
+                                },
+                                "indi_color": {
+                                    "r": 1.0,
+                                    "g": 1.0,
+                                    "b": 1.0,
+                                    "a": 1.0
+                                },
+                                "circle_color": {
+                                    "r": 0.32863649725914,
+                                    "g": 0.800000011920929,
+                                    "b": 0.19477525353431703,
+                                    "a": 1.0
+                                },
+                                "circle_type": 0
+                            },
+                            "input_circles": [
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483667,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 80.0,
+                                                    "rev_speed": 3.75,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/note",
+                                                    "position": {
+                                                        "x": -130.74285888671876,
+                                                        "y": 0.000011429903679527343
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7215686440467835,
+                                                        "g": 0.3450980484485626,
+                                                        "b": 0.125490203499794,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 1
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483668,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 98.0,
+                                                    "rev_speed": 2.045454502105713,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/vel",
+                                                    "position": {
+                                                        "x": -113.22663879394531,
+                                                        "y": -65.3714370727539
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9686274528503418,
+                                                        "g": 0.4156862795352936,
+                                                        "b": 0.5058823823928833,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 2
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483669,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 69.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/dur",
+                                                    "position": {
+                                                        "x": -65.3714370727539,
+                                                        "y": -113.22663879394531
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.20392157137393952,
+                                                        "g": 0.30588236451148989,
+                                                        "b": 0.658823549747467,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 3
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483670,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 9,
+                                                    "output_value": 84.0,
+                                                    "rev_speed": 2.25,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/pan",
+                                                    "position": {
+                                                        "x": -0.000005714951839763671,
+                                                        "y": -130.74285888671876
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.11764705926179886,
+                                                        "g": 0.5529412031173706,
+                                                        "b": 0.09803921729326248,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 4
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483671,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 12,
+                                                    "output_value": 64.0,
+                                                    "rev_speed": 3.75,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc1",
+                                                    "position": {
+                                                        "x": 65.37142181396485,
+                                                        "y": -113.22664642333985
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.5215686559677124,
+                                                        "g": 0.529411792755127,
+                                                        "b": 0.2549019753932953,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 5
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483672,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 13,
+                                                    "output_value": 41.0,
+                                                    "rev_speed": 2.25,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc2",
+                                                    "position": {
+                                                        "x": 113.22663879394531,
+                                                        "y": -65.37142944335938
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.6274510025978088,
+                                                        "g": 0.6392157077789307,
+                                                        "b": 0.30980393290519717,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 6
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483673,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 14,
+                                                    "output_value": 107.0,
+                                                    "rev_speed": 2.8125,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc3",
+                                                    "position": {
+                                                        "x": 130.74285888671876,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7882353067398071,
+                                                        "g": 0.800000011920929,
+                                                        "b": 0.3843137323856354,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 7
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483674,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 15,
+                                                    "output_value": 19.0,
+                                                    "rev_speed": 2.25,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc4",
+                                                    "position": {
+                                                        "x": 113.22663879394531,
+                                                        "y": 65.37142944335938
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9450980424880981,
+                                                        "g": 0.95686274766922,
+                                                        "b": 0.5411764979362488,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 8
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483675,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 27.0,
+                                                    "rev_speed": 2.045454502105713,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/note",
+                                                    "position": {
+                                                        "x": -179.77142333984376,
+                                                        "y": 0.000015716117559350097
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7215686440467835,
+                                                        "g": 0.3450980484485626,
+                                                        "b": 0.125490203499794,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 1
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483676,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 93.0,
+                                                    "rev_speed": 5.625,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/vel",
+                                                    "position": {
+                                                        "x": -155.68661499023438,
+                                                        "y": -89.8857192993164
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9686274528503418,
+                                                        "g": 0.4156862795352936,
+                                                        "b": 0.5058823823928833,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 2
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483677,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 36.0,
+                                                    "rev_speed": 4.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/dur",
+                                                    "position": {
+                                                        "x": -89.8857192993164,
+                                                        "y": -155.68661499023438
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.20392157137393952,
+                                                        "g": 0.30588236451148989,
+                                                        "b": 0.658823549747467,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 3
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483678,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 9,
+                                                    "output_value": 86.0,
+                                                    "rev_speed": 4.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/pan",
+                                                    "position": {
+                                                        "x": -0.000007858058779675048,
+                                                        "y": -179.77142333984376
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.11764705926179886,
+                                                        "g": 0.5529412031173706,
+                                                        "b": 0.09803921729326248,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 4
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483679,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 12,
+                                                    "output_value": 11.0,
+                                                    "rev_speed": 5.625,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc1",
+                                                    "position": {
+                                                        "x": 89.88570404052735,
+                                                        "y": -155.68663024902345
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.5215686559677124,
+                                                        "g": 0.529411792755127,
+                                                        "b": 0.2549019753932953,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 5
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483680,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 13,
+                                                    "output_value": 85.0,
+                                                    "rev_speed": 2.045454502105713,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc2",
+                                                    "position": {
+                                                        "x": 155.68661499023438,
+                                                        "y": -89.88571166992188
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.6274510025978088,
+                                                        "g": 0.6392157077789307,
+                                                        "b": 0.30980393290519717,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 6
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483681,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 14,
+                                                    "output_value": 100.0,
+                                                    "rev_speed": 4.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc3",
+                                                    "position": {
+                                                        "x": 179.77142333984376,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7882353067398071,
+                                                        "g": 0.800000011920929,
+                                                        "b": 0.3843137323856354,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 7
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483682,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 15,
+                                                    "output_value": 98.0,
+                                                    "rev_speed": 5.625,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc4",
+                                                    "position": {
+                                                        "x": 155.68661499023438,
+                                                        "y": 89.88571166992188
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9450980424880981,
+                                                        "g": 0.95686274766922,
+                                                        "b": 0.5411764979362488,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 8
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "polymorphic_id": 1,
+                    "ptr_wrapper": {
+                        "id": 2147483683,
+                        "data": {
+                            "prms": [
+                                {
+                                    "key": 1,
+                                    "value": 78.0
+                                },
+                                {
+                                    "key": 2,
+                                    "value": 121.0
+                                },
+                                {
+                                    "key": 3,
+                                    "value": 0.0
+                                },
+                                {
+                                    "key": 4,
+                                    "value": 100.0
+                                },
+                                {
+                                    "key": 5,
+                                    "value": 112.0
+                                },
+                                {
+                                    "key": 6,
+                                    "value": 30.0
+                                },
+                                {
+                                    "key": 7,
+                                    "value": 95.0
+                                },
+                                {
+                                    "key": 8,
+                                    "value": 36.0
+                                }
+                            ],
+                            "CCs": [
+                                {
+                                    "key": 1,
+                                    "value": -1
+                                },
+                                {
+                                    "key": 2,
+                                    "value": -1
+                                },
+                                {
+                                    "key": 4,
+                                    "value": 9
+                                },
+                                {
+                                    "key": 5,
+                                    "value": 12
+                                },
+                                {
+                                    "key": 6,
+                                    "value": 13
+                                },
+                                {
+                                    "key": 7,
+                                    "value": 14
+                                },
+                                {
+                                    "key": 8,
+                                    "value": 15
+                                }
+                            ],
+                            "data": {
+                                "bStop": false,
+                                "bMute": false,
+                                "phase_step": 0,
+                                "fired_ch": -1,
+                                "step_age": 0,
+                                "speed": 1,
+                                "midi_ch": 1,
+                                "midi_cc_num": 0,
+                                "output_value": 1.0,
+                                "rev_speed": 3.2142856121063234,
+                                "rev_radius": 40.85714340209961,
+                                "name": "default",
+                                "address": "/trg",
+                                "position": {
+                                    "x": 13.0,
+                                    "y": 108.0
+                                },
+                                "indi_position": {
+                                    "x": 44.94340133666992,
+                                    "y": 133.47401428222657
+                                },
+                                "indi_color": {
+                                    "r": 1.0,
+                                    "g": 1.0,
+                                    "b": 1.0,
+                                    "a": 1.0
+                                },
+                                "circle_color": {
+                                    "r": 0.800000011920929,
+                                    "g": 0.2721242904663086,
+                                    "b": 0.39908266067504885,
+                                    "a": 1.0
+                                },
+                                "circle_type": 0
+                            },
+                            "input_circles": [
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483684,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 114.0,
+                                                    "rev_speed": 2.045454502105713,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/note",
+                                                    "position": {
+                                                        "x": -130.74285888671876,
+                                                        "y": 0.000011429903679527343
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7215686440467835,
+                                                        "g": 0.3450980484485626,
+                                                        "b": 0.125490203499794,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 1
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483685,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 121.0,
+                                                    "rev_speed": 2.045454502105713,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/vel",
+                                                    "position": {
+                                                        "x": -113.22663879394531,
+                                                        "y": -65.3714370727539
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9686274528503418,
+                                                        "g": 0.4156862795352936,
+                                                        "b": 0.5058823823928833,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 2
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483686,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 100.0,
+                                                    "rev_speed": 5.625,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/dur",
+                                                    "position": {
+                                                        "x": -65.3714370727539,
+                                                        "y": -113.22663879394531
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.20392157137393952,
+                                                        "g": 0.30588236451148989,
+                                                        "b": 0.658823549747467,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 3
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483687,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 9,
+                                                    "output_value": 100.0,
+                                                    "rev_speed": 3.2142856121063234,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/pan",
+                                                    "position": {
+                                                        "x": -0.000005714951839763671,
+                                                        "y": -130.74285888671876
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.11764705926179886,
+                                                        "g": 0.5529412031173706,
+                                                        "b": 0.09803921729326248,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 4
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483688,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 12,
+                                                    "output_value": 112.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc1",
+                                                    "position": {
+                                                        "x": 65.37142181396485,
+                                                        "y": -113.22664642333985
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.5215686559677124,
+                                                        "g": 0.529411792755127,
+                                                        "b": 0.2549019753932953,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 5
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483689,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 13,
+                                                    "output_value": 30.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc2",
+                                                    "position": {
+                                                        "x": 113.22663879394531,
+                                                        "y": -65.37142944335938
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.6274510025978088,
+                                                        "g": 0.6392157077789307,
+                                                        "b": 0.30980393290519717,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 6
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483690,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 14,
+                                                    "output_value": 95.0,
+                                                    "rev_speed": 3.2142856121063234,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc3",
+                                                    "position": {
+                                                        "x": 130.74285888671876,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7882353067398071,
+                                                        "g": 0.800000011920929,
+                                                        "b": 0.3843137323856354,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 7
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483691,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 15,
+                                                    "output_value": 32.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc4",
+                                                    "position": {
+                                                        "x": 113.22663879394531,
+                                                        "y": 65.37142944335938
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9450980424880981,
+                                                        "g": 0.95686274766922,
+                                                        "b": 0.5411764979362488,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 8
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483692,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 78.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/note",
+                                                    "position": {
+                                                        "x": -179.77142333984376,
+                                                        "y": 0.000015716117559350097
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7215686440467835,
+                                                        "g": 0.3450980484485626,
+                                                        "b": 0.125490203499794,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 1
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483693,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 44.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/vel",
+                                                    "position": {
+                                                        "x": -155.68661499023438,
+                                                        "y": -89.8857192993164
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9686274528503418,
+                                                        "g": 0.4156862795352936,
+                                                        "b": 0.5058823823928833,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 2
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483694,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": -1,
+                                                    "output_value": 3.0,
+                                                    "rev_speed": 5.625,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/dur",
+                                                    "position": {
+                                                        "x": -89.8857192993164,
+                                                        "y": -155.68661499023438
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.20392157137393952,
+                                                        "g": 0.30588236451148989,
+                                                        "b": 0.658823549747467,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 3
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483695,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 9,
+                                                    "output_value": 102.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/pan",
+                                                    "position": {
+                                                        "x": -0.000007858058779675048,
+                                                        "y": -179.77142333984376
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.11764705926179886,
+                                                        "g": 0.5529412031173706,
+                                                        "b": 0.09803921729326248,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 4
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483696,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 12,
+                                                    "output_value": 107.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc1",
+                                                    "position": {
+                                                        "x": 89.88570404052735,
+                                                        "y": -155.68663024902345
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.5215686559677124,
+                                                        "g": 0.529411792755127,
+                                                        "b": 0.2549019753932953,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 5
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483697,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 13,
+                                                    "output_value": 114.0,
+                                                    "rev_speed": 2.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc2",
+                                                    "position": {
+                                                        "x": 155.68661499023438,
+                                                        "y": -89.88571166992188
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.6274510025978088,
+                                                        "g": 0.6392157077789307,
+                                                        "b": 0.30980393290519717,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 6
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483698,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 14,
+                                                    "output_value": 21.0,
+                                                    "rev_speed": 2.045454502105713,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc3",
+                                                    "position": {
+                                                        "x": 179.77142333984376,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.7882353067398071,
+                                                        "g": 0.800000011920929,
+                                                        "b": 0.3843137323856354,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 7
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "locked_ptr": {
+                                        "polymorphic_id": 2,
+                                        "ptr_wrapper": {
+                                            "id": 2147483699,
+                                            "data": {
+                                                "data": {
+                                                    "bStop": false,
+                                                    "bMute": false,
+                                                    "phase_step": 0,
+                                                    "fired_ch": -1,
+                                                    "step_age": 0,
+                                                    "speed": 1,
+                                                    "midi_ch": 1,
+                                                    "midi_cc_num": 15,
+                                                    "output_value": 36.0,
+                                                    "rev_speed": 4.5,
+                                                    "rev_radius": 20.0,
+                                                    "name": "default",
+                                                    "address": "/cc4",
+                                                    "position": {
+                                                        "x": 155.68661499023438,
+                                                        "y": 89.88571166992188
+                                                    },
+                                                    "indi_position": {
+                                                        "x": 0.0,
+                                                        "y": 0.0
+                                                    },
+                                                    "indi_color": {
+                                                        "r": 1.0,
+                                                        "g": 1.0,
+                                                        "b": 1.0,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_color": {
+                                                        "r": 0.9450980424880981,
+                                                        "g": 0.95686274766922,
+                                                        "b": 0.5411764979362488,
+                                                        "a": 1.0
+                                                    },
+                                                    "circle_type": 8
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

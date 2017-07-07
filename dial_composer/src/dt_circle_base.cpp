@@ -63,14 +63,14 @@ output_value( (int)ofRandom(0, 127) )
  *		circle
  *
  */
-shared_ptr<dt_circle_base> dt_circle_base::selected_circle = NULL;
+weak_ptr<dt_circle_base> dt_circle_base::selected_circle;
 
 dt_circle_base::dt_circle_base()
 :
-parent( NULL ),
 wait_step( 0 )
 {
-	app = ofApp::app;
+    parent.reset();
+    app = ofApp::app;
 }
 
 dt_circle_base::~dt_circle_base(){

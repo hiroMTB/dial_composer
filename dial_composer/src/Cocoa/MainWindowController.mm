@@ -256,5 +256,8 @@ NSString *const OscInViewTitle		= @"OscInView";
         }
     }
 }
+-(void)exit{
+    [glView exit];
+}
 
 @end

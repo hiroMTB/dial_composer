@@ -17,6 +17,10 @@
 dt_circle_all_containers::dt_circle_all_containers(){
 }
 
+dt_circle_all_containers::~dt_circle_all_containers(){
+    cout << "all container kill" << endl;
+}
+
 void dt_circle_all_containers::setup(){
 	
 	app = ofApp::app;

@@ -32,11 +32,11 @@ void dt_ui_zoom::singleClickStart( int x, int y, int button ){
             shared_ptr<dt_circle_param> p( new dt_circle_param() );
             p->setup( ofRandom( dt_config::DT_RHYTHM_SHAPE_SLOT_MIN, dt_config::DT_RHYTHM_SHAPE_SLOT_MAX) );
             p->parent = app->mode_manager.zoom_mode_target;
-            p->data.position = mpw - p->parent->data.position;
+            p->data.position = mpw - p->parent.lock()->data.position;
             p->change_type( DT_CIRCLE_PAN );
             app->all_containers.circle_base_container.addCircle( p );
             app->all_containers.param_container.addCircle( p );
-            app->mode_manager.zoom_mode_target->input_circles.push_back( p );
+            app->mode_manager.zoom_mode_target.lock()->input_circles.push_back( p );
             
             dt_circle_base::selected_circle = p;
         }
@@ -82,8 +82,8 @@ void dt_ui_zoom::dragStart( int x, int y, int button ){
     app->cam.dragStartTrans = app->cam.trans;
     drag_target_circle = app->all_containers.circle_base_container.getTouchedCircle( mpw );
 	
-	if( drag_target_circle )
-		drag_start_target_pos = drag_target_circle->data.position;
+	if( !drag_target_circle.expired() )
+		drag_start_target_pos = drag_target_circle.lock()->data.position;
 	
     app->update_cocoa_ui();
 }
@@ -93,15 +93,15 @@ void dt_ui_zoom::dragging( int x, int y, int button ){
         return;
 
     app = ofApp::app;
-    if( drag_target_circle == app->mode_manager.zoom_mode_target )
+    if( drag_target_circle.lock() == app->mode_manager.zoom_mode_target.lock())
         return;
 
     ofVec2f mpw = app->cam.screenToWorld( ofVec2f(x,y) );
     ofVec2f dist = mpw - drag_start_posw;
     
-	if( drag_target_circle ){
+	if( !drag_target_circle.expired() ){
         // drag circle
-		drag_target_circle->data.position = drag_start_target_pos + dist;		dt_circle_base::selected_circle = drag_target_circle;
+		drag_target_circle.lock()->data.position = drag_start_target_pos + dist;		dt_circle_base::selected_circle = drag_target_circle;
 	}else{
         // drag camera
         float sensitivity = 0.6;
@@ -110,7 +110,7 @@ void dt_ui_zoom::dragging( int x, int y, int button ){
 }
 
 void dt_ui_zoom::dragEnd( int x, int y, int button ){
-    drag_target_circle = NULL;
+    drag_target_circle.reset();
 }
 
 bool dt_ui_zoom::mode_check(){

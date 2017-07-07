@@ -46,7 +46,7 @@ vector<ofVec2f> dt_dial_ui::param_LR_vbo_points;
 vector<ofFloatColor> dt_dial_ui::param_LR_vbo_colors;
 ofVbo dt_dial_ui::param_LR_vbo;
 
-dt_dial_ui::dt_dial_ui( shared_ptr<dt_circle_base> _parent )
+dt_dial_ui::dt_dial_ui( weak_ptr<dt_circle_base> _parent )
 :
 ui_base_radius( 0 ),
 ui_ind_radius( 0 ),
@@ -55,7 +55,7 @@ parent( _parent ),
 mode( DT_DIAL_UI_HOME )
 {
 	
-	bNeedParam = parent->data.circle_type != DT_CIRCLE_NOTE_ON;
+	bNeedParam = parent.lock()->data.circle_type != DT_CIRCLE_NOTE_ON;
 
 	if(bNeedParam){
 		num_home_button = 5;
@@ -163,7 +163,7 @@ void dt_dial_ui::make_vbo_param_LR(){
 void dt_dial_ui::draw(){
 	ui_elem_pos.clear();
 	
-	float p_radius = parent->data.rev_radius;
+	float p_radius = parent.lock()->data.rev_radius;
 	ui_base_radius =  p_radius + 20;
 	ui_ind_radius =   p_radius + 25;
 
@@ -186,7 +186,7 @@ void dt_dial_ui::draw(){
 
 void dt_dial_ui::draw_HOME(){
 	
-	float p_radius = parent->data.rev_radius;
+	float p_radius = parent.lock()->data.rev_radius;
 	float angle = 0;
 	float step_angle = 50;
 	float start_angle = 195;
@@ -294,7 +294,7 @@ void dt_dial_ui::draw_PARAM(){
 dt_dial_ui_mode dt_dial_ui::touch_test( ofVec2f &t ){
 
 	// Hit ?
-	if( parent && parent->data.bShowUI ){
+	if( !parent.expired() && parent.lock()->data.bShowUI ){
 		for( int i=0; i< ui_elem_pos.size(); i++ ){
 			float dist = t.distance( ui_elem_pos[i] );
 			if( dist <= button_radius ){
@@ -320,7 +320,7 @@ void dt_dial_ui::turn_off(){
 void dt_dial_ui::change_mode( dt_dial_ui_mode _mode ){
 	mode = _mode;
 	if( mode == DT_DIAL_UI_NONE )
-		parent->data.bShowUI = false;
+		parent.lock()->data.bShowUI = false;
 	else
-		parent->data.bShowUI = true;
+		parent.lock()->data.bShowUI = true;
 }

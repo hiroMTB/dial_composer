@@ -40,13 +40,14 @@ shared_ptr<dt_circle_base> dt_circle_container::getTouchedCircle( const ofVec2f 
                 continue;
             
         }else if(ofApp::app->mode_manager.mode == DT_MODE_ZOOM ){
-            if( c != ofApp::app->mode_manager.zoom_mode_target &&
-               c->parent != ofApp::app->mode_manager.zoom_mode_target){
+            shared_ptr<dt_circle_base> target = ofApp::app->mode_manager.zoom_mode_target.lock();
+            shared_ptr<dt_circle_base> parent = c->parent.lock();
+            if( c != target && parent != target){
                 continue;
             }
             
-            if( c->parent ){
-                pos += c->parent->data.position;
+            if( parent ){
+                pos += parent->data.position;
             }
         }
         float dis = pos.distance( t );

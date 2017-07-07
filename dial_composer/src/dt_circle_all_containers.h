@@ -18,7 +18,7 @@ class dt_circle_all_containers{
 
 public:
 	dt_circle_all_containers();
-	~dt_circle_all_containers(){};
+	~dt_circle_all_containers();
 	
 	void setup();
 	void update();

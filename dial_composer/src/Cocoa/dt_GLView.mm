@@ -29,7 +29,11 @@
 }
 
 - (void)exit {
-    //if(app) app->exit();
+    if(app){        
+        app->exit();
+        delete app;
+        app = NULL;
+    }
 }
 
 - (void)keyPressed:(int)key {

@@ -31,13 +31,13 @@ public:
 	void setup();
     void update();
 	void go_to_home_mode();
-    void go_to_zoom_mode(shared_ptr<dt_circle_base> target );
+    void go_to_zoom_mode(weak_ptr<dt_circle_base> target );
     void toggle_mode();
 	void debug_draw();
     
 	ofApp * app;
 	dt_mode mode;
-    shared_ptr<dt_circle_base> zoom_mode_target;
+    weak_ptr<dt_circle_base> zoom_mode_target;
     
     // ui
     dt_mouse_gesture * current_ui;
@@ -45,6 +45,6 @@ public:
     dt_ui_zoom ui_zoom;
     
     // fanctor helper
-    shared_ptr<dt_circle_base> zoom_mode_future_target;
+    weak_ptr<dt_circle_base> zoom_mode_future_target;
     
 };
