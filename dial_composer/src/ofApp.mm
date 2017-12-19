@@ -59,6 +59,7 @@ void ofApp::setup(){
     bgQuad.addVertex(ofVec3f(0,ofGetHeight(),0));
     bgQuad.addTexCoord(ofVec2f(0,ofGetHeight()));
     bgQuad.setMode(OF_PRIMITIVE_TRIANGLE_FAN);
+
     
     //Module
 	rhythm_lib.setup( 3, 24 );
