@@ -26,7 +26,8 @@ public:
 	void send_note_on( int ch, int noteNum, int vel, int dur_micro_sec ){
 		midi_out.sendNoteOn( ch, noteNum, vel );
 		if( dur_micro_sec>0 ){
-			//thread noteOffThread( &dt_midi_sender::send_note_off, this, ch, noteNum, dur_micro_sec );
+            std::thread noteOffThread( &dt_midi_sender::send_note_off, this, ch, noteNum, dur_micro_sec );
+            noteOffThread.detach();
 		}
 	}
 	
@@ -35,8 +36,19 @@ public:
 	}
 	
 	void send_note_off( int ch, int noteNum, int after_micro_sec ){
-        std::this_thread::sleep_for( chrono::microseconds(after_micro_sec) );
-		midi_out.sendNoteOff( ch, noteNum );
+        
+        if(after_micro_sec>0)
+            std::this_thread::sleep_for( chrono::microseconds(after_micro_sec) );
+        
+        vector<unsigned char> noteOff;
+        noteOff.push_back(MIDI_NOTE_OFF+(ch));
+        noteOff.push_back(noteNum);
+        noteOff.push_back(0);
+        if(midi_out.isOpen()){
+            ofPtr<ofxBaseMidiOut> ofOut = midi_out.midiOut;
+            ofxRtMidiOut * rtOut = static_cast<ofxRtMidiOut*>(ofOut.get());
+            rtOut->midiOut.sendMessage(&noteOff);
+        }
 	}
 
 private:
