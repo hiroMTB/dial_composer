@@ -51,15 +51,16 @@ void ofApp::setup(){
     noise.getTexture().setTextureWrap( GL_REPEAT, GL_REPEAT );
     
 	bg.set( 0.8f );
-//    bgQuad.addVertex(ofVec3f(0,0,0));
-//    bgQuad.addTexCoord(ofVec2f(0,0));
-//    bgQuad.addVertex(ofVec3f(ofGetWidth(),0,0));
-//    bgQuad.addTexCoord(ofVec3f(ofGetWidth(),0));
-//    bgQuad.addVertex(ofVec3f(ofGetWidth(),ofGetHeight(),0));
-//    bgQuad.addTexCoord(ofVec2f(ofGetWidth(),ofGetHeight()));
-//    bgQuad.addVertex(ofVec3f(0,ofGetHeight(),0));
-//    bgQuad.addTexCoord(ofVec2f(0,ofGetHeight()));
-//    bgQuad.setMode(OF_PRIMITIVE_TRIANGLE_FAN);
+    bgQuad.addVertex(ofVec3f(0,0,0));
+    bgQuad.addTexCoord(ofVec2f(0,0));
+    bgQuad.addVertex(ofVec3f(ofGetWidth(),0,0));
+    bgQuad.addTexCoord(ofVec3f(ofGetWidth(),0));
+    bgQuad.addVertex(ofVec3f(ofGetWidth(),ofGetHeight(),0));
+    bgQuad.addTexCoord(ofVec2f(ofGetWidth(),ofGetHeight()));
+    bgQuad.addVertex(ofVec3f(0,ofGetHeight(),0));
+    bgQuad.addTexCoord(ofVec2f(0,ofGetHeight()));
+    bgQuad.setMode(OF_PRIMITIVE_TRIANGLE_FAN);
+
     
     //Module
 	rhythm_lib.setup( 3, 24 );
@@ -87,9 +88,9 @@ void ofApp::draw(){
     ofBackground( bg );
     ofSetColor( 255 );
 
-//    noise.getTexture().bind();
-//    bgQuad.draw();
-//    noise.getTexture().unbind();
+    noise.getTexture().bind();
+    bgQuad.draw();
+    noise.getTexture().unbind();
     
     cam.begin(); {
         all_containers.draw();
