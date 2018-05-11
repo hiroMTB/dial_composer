@@ -87,10 +87,9 @@ void ofApp::update(){
 void ofApp::draw(){
     ofBackground( bg );
     ofSetColor( 255 );
-
-    noise.getTexture().bind();
-    bgQuad.draw();
-    noise.getTexture().unbind();
+//    noise.getTexture().bind();
+//    bgQuad.draw();
+//    noise.getTexture().unbind();
     
     cam.begin(); {
         all_containers.draw();
