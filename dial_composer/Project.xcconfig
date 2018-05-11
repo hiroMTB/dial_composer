@@ -1,9 +1,9 @@
 //THE PATH TO THE ROOT OF OUR OF PATH RELATIVE TO THIS PROJECT.
 //THIS NEEDS TO BE DEFINED BEFORE CoreOF.xcconfig IS INCLUDED
-OF_PATH = ../../..
+OF_PATH = ../../../../../../openFrameworks-hiroMTB
 
 //THIS HAS ALL THE HEADER AND LIBS FOR OF CORE
-#include "../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig"
+#include "../../../../../../openFrameworks-hiroMTB/libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig"
 
 //ICONS - NEW IN 0072 
 ICON_NAME_DEBUG = icon-debug.icns
@@ -13,8 +13,6 @@ ICON_FILE_PATH = $(OF_PATH)/libs/openFrameworksCompiled/project/osx/
 //IF YOU WANT AN APP TO HAVE A CUSTOM ICON - PUT THEM IN YOUR DATA FOLDER AND CHANGE ICON_FILE_PATH to:
 //ICON_FILE_PATH = bin/data/
 
-
-OFX_CEREAL_HEADERS = "$(OF_PATH)/addons/cereal/include" "$(OF_PATH)/addons/cereal/include/cereal" "$(OF_PATH)/addons/cereal/include/cereal/archives" "$(OF_PATH)/addons/cereal/include/cereal/details" "$(OF_PATH)/addons/cereal/include/cereal/external" "$(OF_PATH)/addons/cereal/include/cereal/external/rapidjson" "$(OF_PATH)/addons/cereal/include/cereal/external/rapidjson/internal" "$(OF_PATH)/addons/cereal/include/cereal/external/rapidxml" "$(OF_PATH)/addons/cereal/include/cereal/types"
-
+OTHER_CFLAGS = $(OF_CORE_CFLAGS)
 OTHER_LDFLAGS = $(OF_CORE_LIBS) $(OF_CORE_FRAMEWORKS)
-HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS) $(OFX_CEREAL_HEADERS)
+HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS)

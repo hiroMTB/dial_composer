@@ -1,4 +1,3 @@
-ofxCereal
 ofxGui
 ofxMidi
 ofxOsc

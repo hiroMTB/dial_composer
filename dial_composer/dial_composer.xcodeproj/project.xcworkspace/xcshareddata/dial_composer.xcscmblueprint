@@ -4,27 +4,41 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "9A88EC852DB51900F96D9BFBBD0580D53873C9C7" : 0,
-    "644C69DDF7BE50DCEB09820E1E06EF5DF0AD273F" : 9223372036854775807
+    "9A88EC852DB51900F96D9BFBBD0580D53873C9C7" : 9223372036854775807,
+    "90E2F969A762FB62C413A0C44D1F334E6EC3F531" : 9223372036854775807,
+    "2DE9C8846D9375EAACFABA8963120E8E7719BAF5" : 9223372036854775807,
+    "F69848794C3B8E65777F64980F34D78754B55DEA" : 9223372036854775807
   },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C9B2C696-67CA-4BE5-9BFA-FB970FCC690F",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "83678027-DCC3-415F-B09D-42556D85440C",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "9A88EC852DB51900F96D9BFBBD0580D53873C9C7" : "dev\/",
-    "644C69DDF7BE50DCEB09820E1E06EF5DF0AD273F" : "..\/addons\/ofxCereal"
+    "90E2F969A762FB62C413A0C44D1F334E6EC3F531" : "..\/..\/..\/..\/openFrameworks-hiroMTB\/addons\/ofxMidi",
+    "2DE9C8846D9375EAACFABA8963120E8E7719BAF5" : "..\/..\/..\/..\/openFrameworks-hiroMTB",
+    "F69848794C3B8E65777F64980F34D78754B55DEA" : "..\/..\/..\/..\/openFrameworks-hiroMTB\/addons\/ofxTweener"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "dial_composer",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "dial_composer\/dial_composer.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hanasaan\/ofxCereal.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hiroMTB\/openFrameworks.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "644C69DDF7BE50DCEB09820E1E06EF5DF0AD273F"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2DE9C8846D9375EAACFABA8963120E8E7719BAF5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/danomatika\/ofxMidi.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "90E2F969A762FB62C413A0C44D1F334E6EC3F531"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hiroMTB\/dial_composer.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9A88EC852DB51900F96D9BFBBD0580D53873C9C7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hiroMTB\/ofxTweener.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F69848794C3B8E65777F64980F34D78754B55DEA"
     }
   ]
 }
