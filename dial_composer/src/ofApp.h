@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "def.h"
-#include "dt_midi_writer.h"
+//#include "dt_midi_writer.h"
 #include "dt_osc_sender.h"
 #include "dt_midi_sender.h"
 #include "dt_font_manager.h"
@@ -49,7 +49,7 @@ public:
     
 	dt_osc_sender		osc_sender;
 	dt_midi_sender		midi_sender;
-	dt_midi_writer		midi_writer;
+	//dt_midi_writer		midi_writer;
 	dt_font_manager		font_manager;
 	dt_rhythm_lib		rhythm_lib;
 	//dt_linear_drawer	linear_drawer;
