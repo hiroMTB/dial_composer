@@ -61,13 +61,13 @@ void dt_circle_all_containers::step(){
 }
 
 void dt_circle_all_containers::add_indicator( const ofVec2f& p, const ofFloatColor& c ){
-    indicators.addVertex( p );
+    indicators.addVertex( glm::vec3(p.x, p.y, 0) );
     indicators.addColor( c );
 }
 
 void dt_circle_all_containers::add_connection_line( const ofVec2f& p1, const ofVec2f& p2, const ofFloatColor& c1, const ofFloatColor& c2 ){
-    connection_lines.addVertex( p1 );
-    connection_lines.addVertex( p2 );
+    connection_lines.addVertex( glm::vec3(p1.x, p1.y, 0) );
+    connection_lines.addVertex( glm::vec3(p2.x, p2.y, 0) );
     connection_lines.addColor( c1 );
     connection_lines.addColor( c2 );
 }

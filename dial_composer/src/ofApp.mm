@@ -54,7 +54,7 @@ void ofApp::setup(){
     bgQuad.addVertex(ofVec3f(0,0,0));
     bgQuad.addTexCoord(ofVec2f(0,0));
     bgQuad.addVertex(ofVec3f(ofGetWidth(),0,0));
-    bgQuad.addTexCoord(ofVec3f(ofGetWidth(),0));
+    bgQuad.addTexCoord(glm::vec3(ofGetWidth(), 0, 0));
     bgQuad.addVertex(ofVec3f(ofGetWidth(),ofGetHeight(),0));
     bgQuad.addTexCoord(ofVec2f(ofGetWidth(),ofGetHeight()));
     bgQuad.addVertex(ofVec3f(0,ofGetHeight(),0));

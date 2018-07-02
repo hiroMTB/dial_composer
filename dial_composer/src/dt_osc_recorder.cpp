@@ -153,13 +153,13 @@ void dt_osc_recorder::play_fragment(){
 }
 
 void dt_osc_recorder::add_line( ofVec2f p1, ofVec2f p2, ofFloatColor c1, ofFloatColor c2 ){
-    lines.addVertex( p1 );
-    lines.addVertex( p2 );
+    lines.addVertex( glm::vec3(p1.x, p1.y, 0) );
+    lines.addVertex( glm::vec3(p2.x, p2.y, 0) );
     lines.addColor( c1 );
     lines.addColor( c2);
 }
 
 void dt_osc_recorder::add_point( ofVec2f p, ofFloatColor c ){
-    points.addVertex( p );
+    points.addVertex( glm::vec3(p.x, p.y, 0) );
     points.addColor( c );
 }

@@ -62,7 +62,7 @@ void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
 				x += col * width;
 				
 				if( seq->getDataFromBeat(j) ){
-					points.addVertex( ofVec2f(x, y) );
+                    points.addVertex( glm::vec3(x, y, 0) );
 					points.addColor( onset_color );
 				};
 			}
@@ -72,13 +72,13 @@ void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
 		{
 			// start
 			x = col * width;
-			lines.addVertex( ofVec2f(x,y) );
+			lines.addVertex( glm::vec3(x, y, 0) );
 			lines.addColor( line_color );
 
 			// end
 			x = pix_per_beat * total_beats;
 			x += col * width;
-			lines.addVertex( ofVec2f(x,y) );
+			lines.addVertex( glm::vec3(x, y, 0) );
 			lines.addColor( line_color );
 		}
 		
@@ -86,7 +86,7 @@ void dt_linear_drawer::draw( int x, int y, int w, int h, float scale ){
 		{
 			x = seq->indicator * pix_per_step;
 			x += col * width;
-			points.addVertex( ofVec2f(x, y) );
+			points.addVertex( glm::vec3(x, y, 0) );
 			points.addColor( ofFloatColor(1,0,0) );
 		}
 	}

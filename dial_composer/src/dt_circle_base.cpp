@@ -295,13 +295,13 @@ void dt_circle_base::make_vbo(){
 		if( on ){
             ofFloatColor c = data.circle_color;
             c.setHsb( h + i*0.005, s+ofRandom(-0.01, 0.01), b, c.a);
-            rshape.addVertex( ofVec2f(x, y) );
+            rshape.addVertex( glm::vec3(x, y,0) );
             rshape.addIndex( vertIndex++ );
             rshape.addColor( c );
 		}
         
         // guide shape
-        rguid.addVertex( ofVec2f(x, y) );
+        rguid.addVertex( glm::vec3(x, y, 0) );
         rguid.addIndex( i );
         if( on ){
             ofFloatColor c = data.circle_color;

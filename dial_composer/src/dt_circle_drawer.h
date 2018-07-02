@@ -49,13 +49,13 @@ public:
 			radian = (double)i * step_radian;
 			float x = cos( radian );
 			float y = sin( radian );
-			circle_p.addVertex( ofVec2f(x, y) );
+            circle_p.addVertex( glm::vec3(x, y, 0) );
             circle_p.addIndex( i );
             
-            circle_l.addVertex( ofVec2f(x, y) );
+            circle_l.addVertex( glm::vec3(x, y, 0) );
             circle_l.addIndex( i );
             
-            circle_f.addVertex( ofVec2f(x, y) );
+            circle_f.addVertex( glm::vec3(x, y, 0) );
             circle_f.addIndex( i );
 		}
         
