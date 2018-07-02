@@ -9,7 +9,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxTweener.h"
+//#include "ofxTweener.h"
 
 class ofx2DCamera{
     
@@ -36,5 +36,5 @@ public:
     ofVec2f trans;
     ofVec2f dragStartTrans;
     
-  	ofxTweener tweener;
+  	//ofxTweener tweener;
 };

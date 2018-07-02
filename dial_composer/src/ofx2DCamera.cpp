@@ -21,7 +21,7 @@ void ofx2DCamera::reset(){
 }
 
 void ofx2DCamera::update(){
-    tweener.update();
+    // tweener.update();
 }
 
 void ofx2DCamera::begin(){
@@ -91,28 +91,28 @@ void ofx2DCamera::debugDraw(){
 
 void ofx2DCamera::move( ofVec2f _trans, int time_ms, void (^callback)(float *arg) ){
 	float time = (float) time_ms * 0.001;
-	tweener.addTween(trans.x, _trans.x, time, callback );
-	tweener.addTween(trans.y, _trans.y, time, callback );
+	// tweener.addTween(trans.x, _trans.x, time, callback );
+	// tweener.addTween(trans.y, _trans.y, time, callback );
 }
 
 void ofx2DCamera::zoom( float _zoomRate, int time_ms, void (^callback)(float *arg) ){
 	float time = (float) time_ms * 0.001;
-    tweener.addTween( zoomRate, _zoomRate, time, callback );
+    // tweener.addTween( zoomRate, _zoomRate, time, callback );
 }
 
 void ofx2DCamera::moveZoom( ofVec2f _trans, float _zoomRate, int time_ms, void (^callback)(float *arg)){
 	float time = (float) time_ms * 0.001 * 0.5;
 	float delay = time;
     startPivot( _trans );
-	tweener.addTween( trans.x, _trans.x, time, &ofxTransitions::easeInOutSine );
-	tweener.addTween( trans.y, _trans.y, time, &ofxTransitions::easeInOutSine );
-	tweener.addTween( zoomRate, _zoomRate, time, &ofxTransitions::easeInOutSine, delay, callback );
+	// tweener.addTween( trans.x, _trans.x, time, &ofxTransitions::easeInOutSine );
+	// tweener.addTween( trans.y, _trans.y, time, &ofxTransitions::easeInOutSine );
+	// tweener.addTween( zoomRate, _zoomRate, time, &ofxTransitions::easeInOutSine, delay, callback );
 }
 
 void ofx2DCamera::zoomMove( float _zoomRate, ofVec2f _trans, int time_ms, void (^callback)(float *arg) ){
 	float time = (float) time_ms * 0.001 * 0.5;
 	float delay = time;
-	tweener.addTween( zoomRate, _zoomRate, time, &ofxTransitions::easeInOutSine );
-	tweener.addTween( trans.x, _trans.x, time, &ofxTransitions::easeInOutSine, delay );
-	tweener.addTween( trans.y, _trans.y, time, &ofxTransitions::easeInOutSine, delay, callback );
+	// tweener.addTween( zoomRate, _zoomRate, time, &ofxTransitions::easeInOutSine );
+	// tweener.addTween( trans.x, _trans.x, time, &ofxTransitions::easeInOutSine, delay );
+	// tweener.addTween( trans.y, _trans.y, time, &ofxTransitions::easeInOutSine, delay, callback );
 }
