@@ -126,7 +126,7 @@
     shared_ptr<dt_circle_base> c = dt_circle_base::selected_circle.lock();
     if( c ){
         float fov = [sender floatValue];
-        int ov = roundFloatToInt(fov);
+        int ov = round(fov); //roundFloatToInt(fov);
         [output_value_sl setIntValue:ov];
         [output_value_tx setIntValue:ov];
         [output_value_stp setIntValue:ov];
