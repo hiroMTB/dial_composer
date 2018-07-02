@@ -41,7 +41,7 @@ void dt_sequence_thread_oF::start(){
 
 	bool blocking = false;
 	bool verbose = false;
-	startThread( blocking, verbose );
+    startThread();// blocking, verbose );
 }
 
 void dt_sequence_thread_oF::stop(){

@@ -63,12 +63,12 @@ public:
 #endif
 	}
     
-	ofPoint getWindowSize()	{
+    glm::vec2 getWindowSize()	{
 #ifndef NO_RETINA
 		NSSize size = [view convertRectToBacking:view.bounds].size;
 #else
 		NSSize size = view.bounds.size;
-		return ofPoint(size.width, size.height);
+        return glm::vec2(size.width, size.height);
 #endif
 	}
     

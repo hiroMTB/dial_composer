@@ -238,7 +238,7 @@ void dt_dial_ui::debug_draw_touch_area(){
 	ofFill();
 	ofSetColor( 200, 0, 0 );
 	for( int i=0; i< ui_elem_pos.size(); i++ ){
-		ofCircle( ui_elem_pos[i], button_radius );
+		ofDrawCircle( ui_elem_pos[i], button_radius );
 	}
 }
 
