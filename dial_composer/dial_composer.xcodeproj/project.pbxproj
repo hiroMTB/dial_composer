@@ -7,75 +7,90 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06410CE5641DD41BC31BC930 /* ofxMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E238A7C54C786684C15603B8 /* ofxMidiIn.cpp */; };
 		0D04A6725F411E4C4CB295DC /* dt_rhythm_lib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FEE6B2F333431443F30EB5 /* dt_rhythm_lib.cpp */; };
-		10DC7D0CBA537F7EC4E38C2C /* ofxTweener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37935AD02C17FA11A3F664E4 /* ofxTweener.cpp */; };
-		19392DE080F0A0F53114F6AB /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B4D08292B8E50F87D845451 /* ofxOscReceiver.cpp */; };
+		16065838CE52F0B305A8FAF5 /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9FD9B81D99B6454F7C1820B /* RtMidi.cpp */; };
+		17ED42555F48F70F15D6220F /* ofxMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C867600B9CC5A0F03234951 /* ofxMidiIn.cpp */; };
 		1A0D07C4CD94041E8E3830D8 /* dt_ui_home.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B4A169CB2586AE8E4523FC /* dt_ui_home.cpp */; };
-		27D597CF5ED8F1EF549F2202 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 960A0C796ABCF22A41C401FD /* ofxLabel.cpp */; };
-		2802D213B67C93D21577E452 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD39C7565E326FF3512BC0BE /* IpEndpointName.cpp */; };
+		2945C1C65733C063D4ADC404 /* ofxRtMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46BA862F89C2DB73A87E38B7 /* ofxRtMidiOut.cpp */; };
+		2C8C5EEAA7CF25A08ABCEF6B /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED19788CF0990B4787B41F44 /* OscReceivedElements.cpp */; };
 		3113F7598FF85C6A0E7BAF2D /* dt_circle_param.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 977160223E613109E7C02468 /* dt_circle_param.cpp */; };
+		321C838839C2EE4A9B9A7E5A /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22E5E22560A931897563D950 /* ofxButton.cpp */; };
+		325DBEF86D2F14B401851F78 /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8721A578CEFED4ABCA037052 /* ofxOscSender.cpp */; };
+		37EF105A37E09D2F18D856E1 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 682DA5F7DD68F81BB3DC2A70 /* tinyxml.cpp */; };
+		389A2609072C623464356722 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AC6FB58CFFAC35054540FDA /* ofxSlider.cpp */; };
+		3902D73CC0E9428399443124 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7620C9DDB1D612CC8D5B6882 /* tinyxmlparser.cpp */; };
+		3B7B35098C07C05E63BE2CF0 /* ofxMidiMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F292134A05A1ED488CF735 /* ofxMidiMessage.cpp */; };
+		3CC71114B28D8070D1178AD0 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD774B00F016E22C85E5783B /* ofxToggle.cpp */; };
+		3CD21D9186577CEB03FEFE33 /* ofxMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 284126AF5DBEBC5E18AA8A4F /* ofxMidiOut.cpp */; };
+		3E838502BE27969A90BDB31E /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF2389AD3C408695D5909D5C /* ofxBaseGui.cpp */; };
+		3EBB38E04C5475C381A255F6 /* ofxSvg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52F93CD35E6B98FF49EED7B7 /* ofxSvg.cpp */; };
 		3FC05C32F74FFE3542B128A7 /* dt_circle_container.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8AADCFBC646A80BCFBB5B4A6 /* dt_circle_container.cpp */; };
-		42B525CF474172969F7ED998 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E8F6D30D0D2B5AB12B28F0B /* OscReceivedElements.cpp */; };
-		498250B76754C7F04AB0B4A9 /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2A7EB23BFC1F92FA662DE /* ofxMidi.cpp */; };
-		4B3D4E7FD198A8155C1F56B8 /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81FDC9204E282F380D93B57E /* ofxButton.cpp */; };
+		45CBF76BD3053430AB9EBAD2 /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9A5313209DE2D4832D9A1FB /* ofxOscReceiver.cpp */; };
+		45F1EFD620EA1CA1000D6FAA /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45F1EFD520EA1CA1000D6FAA /* main.mm */; };
+		45F1EFD820EA1CB2000D6FAA /* ofApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45F1EFD720EA1CB2000D6FAA /* ofApp.mm */; };
+		45F1F1F620EA291C000D6FAA /* ofxModifierKeys_impl_linux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F1F1F020EA291C000D6FAA /* ofxModifierKeys_impl_linux.cpp */; };
+		45F1F1F720EA291C000D6FAA /* ofxModifierKeys_impl_mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45F1F1F120EA291C000D6FAA /* ofxModifierKeys_impl_mac.mm */; };
+		45F1F1F820EA291C000D6FAA /* ofxModifierKeys_impl_win.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F1F1F220EA291C000D6FAA /* ofxModifierKeys_impl_win.cpp */; };
+		45F1F1FC20EA2C37000D6FAA /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB83E49956839F92501876DD /* CircleView.xib */; };
+		45F1F1FD20EA2C37000D6FAA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9C85FCAC6B43CD55182A7 /* MainMenu.xib */; };
+		45F1F1FE20EA2C37000D6FAA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54198B4189F9BF913AD5D992 /* MainWindow.xib */; };
+		45F1F1FF20EA2C37000D6FAA /* OscInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D9492A17D723AD6BA2F984 /* OscInView.xib */; };
+		45F1F20020EA2C37000D6FAA /* OscOutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74CE6966D6E6390293AE0310 /* OscOutView.xib */; };
+		45F1F20920EA2C72000D6FAA /* icon-1_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F1F20120EA2C72000D6FAA /* icon-1_off.png */; };
+		45F1F20A20EA2C72000D6FAA /* icon-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F1F20220EA2C72000D6FAA /* icon-1.png */; };
+		45F1F20B20EA2C72000D6FAA /* icon-2_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F1F20320EA2C72000D6FAA /* icon-2_off.png */; };
+		45F1F20C20EA2C72000D6FAA /* icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F1F20420EA2C72000D6FAA /* icon-2.png */; };
+		45F1F20D20EA2C72000D6FAA /* icon-3_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F1F20520EA2C72000D6FAA /* icon-3_off.png */; };
+		45F1F20E20EA2C72000D6FAA /* icon-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F1F20620EA2C72000D6FAA /* icon-3.png */; };
+		45F1F20F20EA2C72000D6FAA /* icon-4_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F1F20720EA2C72000D6FAA /* icon-4_off.png */; };
+		45F1F21020EA2C72000D6FAA /* icon-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F1F20820EA2C72000D6FAA /* icon-4.png */; };
 		4D72AE7C014021C1A8DB2C8D /* dt_dial_ui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE78ABD39C612647345810F5 /* dt_dial_ui.cpp */; };
-		4EC4E64661DC3E67F0816DBE /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4217699B11E8D3922EC22FC /* tinyxmlerror.cpp */; };
+		526A97FB1736763F621819FD /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3585CB402A71F6D614E1AA43 /* OscOutboundPacketStream.cpp */; };
 		52C35EF2F031AB03EFBB8732 /* dt_config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8B12B46DB3853E910283078 /* dt_config.cpp */; };
-		6180D32379AC3980CA1C70E2 /* ofxSvg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BFFFB921A3B2D6B94CB5D98 /* ofxSvg.cpp */; };
+		550F76173B97F92EF175330B /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D0DBC35900359DB80128CB2 /* ofxSliderGroup.cpp */; };
+		561F6570CD026A6969AE8B6D /* ofxBaseMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CF3C649141D7F762F2321 /* ofxBaseMidi.cpp */; };
 		631702104AFC104323A9EB79 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81AC32CCCB56FAABA3E1BDE0 /* CoreMIDI.framework */; };
-		67964FAE23E2235DE1A79AC2 /* ofxTransitions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBA057A8BD5C3258AC2FDF2C /* ofxTransitions.cpp */; };
+		681EDCBA6289F258F81B23FB /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BCF1E97D610D085558C6942 /* ofxGuiGroup.cpp */; };
 		68E62CEC284FE69C7A1D7A26 /* dt_circle_all_containers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAC636514A8E042FB30EFBB6 /* dt_circle_all_containers.cpp */; };
-		69E3E000F354CEDDBBFD6E64 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5785A1784700C5CA4D72677C /* ofxBaseGui.cpp */; };
+		6D230692CB304779318E6747 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 938A2B478DBD5DE4085CB00E /* ofxOscMessage.cpp */; };
+		6D4DB198E2BFB76773226996 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88952F1A401E11F1FA714C6B /* tinyxmlerror.cpp */; };
 		6F25FE875D657DC0B4FF7458 /* ofxCocoaGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1161FCE1F079E89A5894EA17 /* ofxCocoaGLView.mm */; };
-		709CEDEA78B203776AA25B14 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F14D04E43814A6DB4DA7A /* NetworkingUtils.cpp */; };
-		744FC0A5AE108D3540DD692A /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BD7C4BE4626CF0831529A27 /* ofxOscSender.cpp */; };
-		74A05A2BD0A55E47B4F43ED5 /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 589C7BC252E979C4AE22A570 /* ofxOscParameterSync.cpp */; };
 		777CFFF5FBF70727A26BAE6A /* dt_sequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EEFEC65D8CE866C3104CB /* dt_sequencer.cpp */; };
 		77CEC7177131064C5A028DD5 /* ofx2DCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 995BE76EA6F93E1330A7D1CA /* ofx2DCamera.cpp */; };
+		780147434E737A02FC8D19C9 /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 637DC9EEA8D20740C238203C /* ofxOscParameterSync.cpp */; };
 		7993E77F56F59FA21DD6AA84 /* dt_circle_note_on.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1AF42972C61D8482FAC025C /* dt_circle_note_on.cpp */; };
 		7B9B7D2F0C08CDB8FC22ED42 /* dt_circle_drawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64519E13C2B83DDFC96D0BCF /* dt_circle_drawer.cpp */; };
 		81B9E05F2F81E48F3A5C4406 /* OscOutViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B54F21F24BB2F72FA4F2B /* OscOutViewController.mm */; };
+		8515D078A4F5327BB2D1B872 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B189BD330B311345AD41AFFC /* ofxXmlSettings.cpp */; };
+		852FBC5B57A938630D6C63A9 /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F447BBF1CFE185F1BB68C4D /* ofxMidi.cpp */; };
 		87597B7E0F928D7B1CB2292A /* dt_osc_recorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E036069CBEDF78B2FBF363F2 /* dt_osc_recorder.cpp */; };
-		8D09C81EC2B0644CBE71DB9F /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CC6012E70F2216A0E3E35 /* RtMidi.cpp */; };
-		93F65FFD2641505B5ACBE63D /* ofxRtMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9F95858447AA4B98CEF5A8E /* ofxRtMidiIn.cpp */; };
-		975EBE2D590D117FEE2E0C94 /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7131666BEB876DCBFF8C627F /* ofxSliderGroup.cpp */; };
+		89FE36BD203D77139DB81560 /* ofxInputField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FACE188DE15B6BEC2849E585 /* ofxInputField.cpp */; };
+		8ED48356E9C41E784F166D81 /* ofxRtMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64A3F7859623004D44E30886 /* ofxRtMidiIn.cpp */; };
 		9809702DFB822AFFDB57BEF3 /* dt_linear_drawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8694BD08D714AECF21D3A8B3 /* dt_linear_drawer.cpp */; };
-		9822E242E4754E6C75EF203F /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC9D946FF0D10CB6413957F7 /* UdpSocket.cpp */; };
 		9E066FCC9E54ECF402E51F0A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C312CAFA1A4F47E118EB87D /* AppDelegate.mm */; };
-		9E5ACB96D811EC72B7A82DB9 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEE66B3CD77BD0A6AE764EFD /* ofxGuiGroup.cpp */; };
 		A9DC8C6E365019615B4B2668 /* OscInViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7737FDB9E38AC70B702CC /* OscInViewController.mm */; };
-		B7F67D707576B4BFC8C53182 /* dt_circle_output_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E90A73DA39A5EC935D61A0CB /* dt_circle_output_base.cpp */; };
-		B83297FA7211077114272112 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5CB15A22BEC859DB189D16E /* ofxOscMessage.cpp */; };
-		B897683C38C7B472EE00AC55 /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4502BE8A819531DA8E67040 /* ofxOscBundle.cpp */; };
-		B8CAFAD0B18D3B07DA5570E6 /* ofxRtMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C647AE874F315E7DF5179A3B /* ofxRtMidiOut.cpp */; };
-		B93C55F15B1C0D68198FCE0E /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 699A2727CA15B3C1C8E20D1D /* ofxXmlSettings.cpp */; };
-		BDA83B509317B2A55EEFFBEC /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79A3E147862179D53EAD75DE /* tinyxml.cpp */; };
+		AEA9903B4E836BB28D196659 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0371584AD91A0746C8043ED /* UdpSocket.cpp */; };
+		B207AAA9613385AC5B30F900 /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C5D3E2CFE256B942E630A32 /* ofxOscBundle.cpp */; };
+		C2E85379F1460C46E710167E /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2537BD0309F8D6F763CCDA6 /* OscTypes.cpp */; };
 		C478658A72D1E48242DFD9C6 /* dt_circle_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8509131BCBD3EB330EBEAA6 /* dt_circle_base.cpp */; };
+		C562157D0155584EF205D221 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADA420442775C77E5BFBBE46 /* OscPrintReceivedElements.cpp */; };
 		C82926492B8B3350335E7BCE /* dt_sequence_thread_boost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB66DEEC5A663EEC15A696EA /* dt_sequence_thread_boost.cpp */; };
 		CA33A1B84A7FEBB39C46A8C0 /* dt_ui_zoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB806BBAEAAE24AA2DB6C87 /* dt_ui_zoom.cpp */; };
-		CF4151A481A1CF18050560D1 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F9AC8DE0294B01D3E3EF4 /* ofxSlider.cpp */; };
-		D0EF4A38EFBA4B3C113313F0 /* ofxColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 158DAF76B59323F7F3A91ABD /* ofxColorPicker.cpp */; };
+		CDFBFBBBA6501128C9F85240 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4E322609B0E5325B915291D /* IpEndpointName.cpp */; };
 		D2B67D49909E3013E65AD2F5 /* dt_osc_sender.mm in Sources */ = {isa = PBXBuildFile; fileRef = A77FD4000008245E30682EB2 /* dt_osc_sender.mm */; };
 		D50437061F95EEC74D9B2DAF /* dt_serialize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1031097A4F97DF8982F5B5B4 /* dt_serialize.cpp */; };
-		D68C15743ACB05CB22484A3C /* ofxMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9878ACB7127BA4984819695 /* ofxMidiOut.cpp */; };
-		D72925BABD2539F8085E25F3 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E24922BC295E2283C629FE1 /* OscPrintReceivedElements.cpp */; };
 		DC3B897760157340267678F9 /* dt_mode_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBB1FE6CA8ACAF101EEB3B9 /* dt_mode_manager.cpp */; };
-		DD4BBF4AF6FFBD518EB0AF91 /* ofxMidiMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C5DC7618F2F51F94F2C8D /* ofxMidiMessage.cpp */; };
-		E30F9A953428344749EABF90 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3E64C28A506ED76BC55DAB2 /* OscTypes.cpp */; };
+		E16CDFDA9BA9755FFB0614E3 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52BBF14C0EB79865724C146C /* ofxLabel.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		EBF17FC94D2B538808EA1931 /* dt_sequence_thread_oF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE26D9BAE0A2DD9D9F2A8B7E /* dt_sequence_thread_oF.cpp */; };
-		EC0F3DA857A1E836F8303726 /* ofxInputField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57E9D54376828C8D6FF8134E /* ofxInputField.cpp */; };
+		ED26C06E20857B766EE56486 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF09E8F177277B3934F35499 /* ofxPanel.cpp */; };
 		EE12937D2C1B446DA344112A /* dt_GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 71550F5C62E49B7C492EB9C9 /* dt_GLView.mm */; };
-		EEF748651E2BF93DB98DB54B /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5018BCCF40868C2042872 /* OscOutboundPacketStream.cpp */; };
-		EFA1C08CD113A7C205CE5119 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AD88A0E68927205BE0A8D57 /* tinyxmlparser.cpp */; };
-		F16B0936CE2D224718F1C65A /* ofxBaseMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D63DBF8A99A446891B8AF0 /* ofxBaseMidi.cpp */; };
+		F2191934985823A1D25F55D8 /* ofxColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5EC4FC8F7BDCABF7F67DA85 /* ofxColorPicker.cpp */; };
 		F4B069B5E5CC063155C8A6B7 /* dt_mouse_gesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89FACE51DB306C74439EC832 /* dt_mouse_gesture.cpp */; };
-		F9CF2D918966B14BDE5F2413 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4697FB5D4080B136AB345645 /* ofxPanel.cpp */; };
-		FA3BE176B13A493F1B3110D4 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EAC8FA9E2C5093F52ADCB /* ofxToggle.cpp */; };
 		FB6CAB05E4A7A5ACDA0F975E /* MainWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1C05E66402FE535280E61FCF /* MainWindowController.mm */; };
 		FDE424B4CF4EEE1D0EAA0807 /* CircleViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7D3B0CC8B167044DCD37D8BA /* CircleViewController.mm */; };
 		FDE55F371DAD64D58289D4E7 /* dt_sequence_thread_audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A494FD9B660DF008539E1 /* dt_sequence_thread_audio.cpp */; };
+		FE1140B9E8FDF959B0516495 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 171D522EC4ACF38255072FBE /* NetworkingUtils.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,215 +123,297 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0035A6CEC24CBDA5DDA321FB /* PacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PacketListener.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/PacketListener.h"; sourceTree = SOURCE_ROOT; };
-		015102FC61D24886F0A9F1F0 /* ofxOscArg.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscArg.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscArg.h"; sourceTree = SOURCE_ROOT; };
-		0284C6AADB3D4035491498A6 /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGui.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxGui.h"; sourceTree = SOURCE_ROOT; };
+		007C940CCB00CE8EB462F8ED /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGui.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxGui.h"; sourceTree = SOURCE_ROOT; };
+		0183C8F78F23EEFC243049EC /* catalog.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = catalog.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/catalog.h"; sourceTree = SOURCE_ROOT; };
 		04FA6E466CDCBAFBD459580A /* dt_sequencer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_sequencer.h; path = src/dt_sequencer.h; sourceTree = SOURCE_ROOT; };
+		079D9624FA1D774997FDB65A /* schemasInternals.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = schemasInternals.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/schemasInternals.h"; sourceTree = SOURCE_ROOT; };
+		07BB7D8F66C78D12EAE83376 /* ofxOscBundle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscBundle.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscBundle.h"; sourceTree = SOURCE_ROOT; };
 		07D5BAB9B5DD521D11FDA93B /* ofx2DCamera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofx2DCamera.h; path = src/ofx2DCamera.h; sourceTree = SOURCE_ROOT; };
-		086BE41663223C88EAC9E319 /* dt_circle_output_base.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_circle_output_base.h; path = src/dt_circle_output_base.h; sourceTree = SOURCE_ROOT; };
-		08E6C8A9F1C18B9BE1E9A9A2 /* debugXML.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = debugXML.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/debugXML.h"; sourceTree = SOURCE_ROOT; };
-		0A4CC6012E70F2216A0E3E35 /* RtMidi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = RtMidi.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi/RtMidi.cpp"; sourceTree = SOURCE_ROOT; };
-		0B4B4DBD86CFF8058C7D43F6 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscPrintReceivedElements.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.h"; sourceTree = SOURCE_ROOT; };
-		0E5FC2077C641D6A152CC48F /* ofxSvg.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSvg.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/src/ofxSvg.h"; sourceTree = SOURCE_ROOT; };
-		0EEB02ECC73D6B9E454C2633 /* ofxRtMidiOut.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxRtMidiOut.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/desktop/ofxRtMidiOut.h"; sourceTree = SOURCE_ROOT; };
+		09B903A0B86733D98211732B /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscPrintReceivedElements.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.h"; sourceTree = SOURCE_ROOT; };
+		0C867600B9CC5A0F03234951 /* ofxMidiIn.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxMidiIn.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiIn.cpp"; sourceTree = SOURCE_ROOT; };
+		0E9758F1BB28B601D6823227 /* parserInternals.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = parserInternals.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/parserInternals.h"; sourceTree = SOURCE_ROOT; };
 		0F2088AC827E4858C9216ED8 /* dt_ui_zoom.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_ui_zoom.h; path = src/dt_ui_zoom.h; sourceTree = SOURCE_ROOT; };
+		0FFD8B2FC708F4DCDD4C7619 /* pattern.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pattern.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/pattern.h"; sourceTree = SOURCE_ROOT; };
 		1031097A4F97DF8982F5B5B4 /* dt_serialize.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_serialize.cpp; path = src/dt_serialize.cpp; sourceTree = SOURCE_ROOT; };
 		1161FCE1F079E89A5894EA17 /* ofxCocoaGLView.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ofxCocoaGLView.mm; path = src/ofxCocoaGLView.mm; sourceTree = SOURCE_ROOT; };
-		138EE8173347940C929871E4 /* ofxOscBundle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscBundle.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscBundle.h"; sourceTree = SOURCE_ROOT; };
-		158DAF76B59323F7F3A91ABD /* ofxColorPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxColorPicker.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxColorPicker.cpp"; sourceTree = SOURCE_ROOT; };
+		13E2E93DD0E713357C3FEAB1 /* UdpSocket.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UdpSocket.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/UdpSocket.h"; sourceTree = SOURCE_ROOT; };
+		1558812293FEFF622A27D97D /* xmlIO.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlIO.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlIO.h"; sourceTree = SOURCE_ROOT; };
 		16B4A169CB2586AE8E4523FC /* dt_ui_home.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_ui_home.cpp; path = src/dt_ui_home.cpp; sourceTree = SOURCE_ROOT; };
-		183C6D9B7F1817A7DF82DE71 /* uri.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = uri.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/uri.h"; sourceTree = SOURCE_ROOT; };
+		171D522EC4ACF38255072FBE /* NetworkingUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = NetworkingUtils.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp"; sourceTree = SOURCE_ROOT; };
+		183B05FC8E6A5BE666D01F96 /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MessageMappingOscPacketListener.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/MessageMappingOscPacketListener.h"; sourceTree = SOURCE_ROOT; };
 		18C9D9AB77E515062D45E48E /* dt_circle_param.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_circle_param.h; path = src/dt_circle_param.h; sourceTree = SOURCE_ROOT; };
 		191DE2B8347B04150DFD2E0A /* dt_circle_drawer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_circle_drawer.h; path = src/dt_circle_drawer.h; sourceTree = SOURCE_ROOT; };
-		1B7609C2F470183AB4E299B6 /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscOutboundPacketStream.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.h"; sourceTree = SOURCE_ROOT; };
+		1962792841B0BB03E8B2DF03 /* valid.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = valid.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/valid.h"; sourceTree = SOURCE_ROOT; };
 		1C05E66402FE535280E61FCF /* MainWindowController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = MainWindowController.mm; path = src/MainWindowController.mm; sourceTree = SOURCE_ROOT; };
-		1C1CB8F753632DEA5411F8DF /* catalog.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = catalog.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/catalog.h"; sourceTree = SOURCE_ROOT; };
-		1E9EAC8FA9E2C5093F52ADCB /* ofxToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxToggle.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxToggle.cpp"; sourceTree = SOURCE_ROOT; };
-		207D9379D47CB074DED3AF20 /* ofxOscParameterSync.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscParameterSync.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscParameterSync.h"; sourceTree = SOURCE_ROOT; };
-		20D146F6A2B3EC11472A4F49 /* globals.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = globals.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/globals.h"; sourceTree = SOURCE_ROOT; };
-		23AA5E9AF6D970B86C270668 /* xmlregexp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlregexp.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlregexp.h"; sourceTree = SOURCE_ROOT; };
-		25EDEB52A141D894D1B4911C /* OscException.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscException.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscException.h"; sourceTree = SOURCE_ROOT; };
-		29B6FC3B65FA290097539FAD /* tree.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tree.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/tree.h"; sourceTree = SOURCE_ROOT; };
-		29C630D1527ADC8114A944D2 /* ofxInputField.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxInputField.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxInputField.h"; sourceTree = SOURCE_ROOT; };
+		1D54A7DD5F552E2EA16817F3 /* xpointer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xpointer.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xpointer.h"; sourceTree = SOURCE_ROOT; };
+		1F0BAF2DA7E38A4454F1ED86 /* ofxColorPicker.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxColorPicker.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxColorPicker.h"; sourceTree = SOURCE_ROOT; };
+		1F447BBF1CFE185F1BB68C4D /* ofxMidi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxMidi.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidi.cpp"; sourceTree = SOURCE_ROOT; };
+		1F94C91FAF9C70FBC659B617 /* dict.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dict.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/dict.h"; sourceTree = SOURCE_ROOT; };
+		22E5E22560A931897563D950 /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxButton.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxButton.cpp"; sourceTree = SOURCE_ROOT; };
+		2347069A7C0EF6A6B6CB4AF2 /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxBaseGui.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxBaseGui.h"; sourceTree = SOURCE_ROOT; };
+		26E2343D961F8425AAA239F7 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = IpEndpointName.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h"; sourceTree = SOURCE_ROOT; };
+		284126AF5DBEBC5E18AA8A4F /* ofxMidiOut.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxMidiOut.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiOut.cpp"; sourceTree = SOURCE_ROOT; };
+		28DDEB3DF66B794FEAA44ACC /* ofxOscReceiver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscReceiver.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscReceiver.h"; sourceTree = SOURCE_ROOT; };
 		29FEE6B2F333431443F30EB5 /* dt_rhythm_lib.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_rhythm_lib.cpp; path = src/dt_rhythm_lib.cpp; sourceTree = SOURCE_ROOT; };
+		2A64EF13F0232B26596A19E1 /* c14n.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = c14n.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/c14n.h"; sourceTree = SOURCE_ROOT; };
 		2CE1CB5DCF4228611BA16CB7 /* AppDelegate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = SOURCE_ROOT; };
-		2DC6431A5F13AFA12957EE6A /* xmlmodule.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlmodule.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlmodule.h"; sourceTree = SOURCE_ROOT; };
-		2DC7D41057C3EC988485086E /* UdpSocket.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UdpSocket.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/UdpSocket.h"; sourceTree = SOURCE_ROOT; };
-		2DF99C808BA515336988A3A9 /* xinclude.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xinclude.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xinclude.h"; sourceTree = SOURCE_ROOT; };
-		30061418DFC8DF6E0540F401 /* DOCBparser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = DOCBparser.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/DOCBparser.h"; sourceTree = SOURCE_ROOT; };
+		2D437EB03C9CA2AB78A573CB /* ofxMidiTypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidiTypes.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiTypes.h"; sourceTree = SOURCE_ROOT; };
+		2E433C66EDEA10C87BBAD41E /* entities.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = entities.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/entities.h"; sourceTree = SOURCE_ROOT; };
 		31D9492A17D723AD6BA2F984 /* OscInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OscInView.xib; path = src/OscInView.xib; sourceTree = SOURCE_ROOT; };
-		3239B389C96A85D256853EBC /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxBaseGui.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxBaseGui.h"; sourceTree = SOURCE_ROOT; };
+		33024E42D8C9D7FDD20A7C20 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxPanel.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxPanel.h"; sourceTree = SOURCE_ROOT; };
+		34F292134A05A1ED488CF735 /* ofxMidiMessage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxMidiMessage.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiMessage.cpp"; sourceTree = SOURCE_ROOT; };
+		3585CB402A71F6D614E1AA43 /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscOutboundPacketStream.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.cpp"; sourceTree = SOURCE_ROOT; };
 		35B2D7F6BCA7E8AFDC7C0955 /* dt_sequence_thread_oF.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_sequence_thread_oF.h; path = src/dt_sequence_thread_oF.h; sourceTree = SOURCE_ROOT; };
 		36BF5A756022CB8A54B986BD /* dt_sequence_thread.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_sequence_thread.h; path = src/dt_sequence_thread.h; sourceTree = SOURCE_ROOT; };
-		36F6394661DD4CC528F471AD /* xpathInternals.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xpathInternals.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xpathInternals.h"; sourceTree = SOURCE_ROOT; };
+		371A78358B70FC730EBC82FF /* OscException.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscException.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscException.h"; sourceTree = SOURCE_ROOT; };
 		372A758795BB33A7D3DD9EDD /* dt_ui_home.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_ui_home.h; path = src/dt_ui_home.h; sourceTree = SOURCE_ROOT; };
-		37935AD02C17FA11A3F664E4 /* ofxTweener.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxTweener.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxTweener/src/ofxTweener.cpp"; sourceTree = SOURCE_ROOT; };
-		39AD895335CB8646AD78698D /* xmlIO.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlIO.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlIO.h"; sourceTree = SOURCE_ROOT; };
-		39DB2E4626307166D7FAAED3 /* NetworkingUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = NetworkingUtils.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/NetworkingUtils.h"; sourceTree = SOURCE_ROOT; };
-		3AD88A0E68927205BE0A8D57 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxmlparser.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/libs/tinyxmlparser.cpp"; sourceTree = SOURCE_ROOT; };
-		3BFC207754AA2D52733ABD55 /* xmlsave.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlsave.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlsave.h"; sourceTree = SOURCE_ROOT; };
-		3D65446E8399057A083B5D64 /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxToggle.h"; sourceTree = SOURCE_ROOT; };
-		40DDB221880F899084A0C3A4 /* xmlexports.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlexports.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlexports.h"; sourceTree = SOURCE_ROOT; };
-		4226C6406E21A57FEF737540 /* ofxOsc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOsc.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOsc.h"; sourceTree = SOURCE_ROOT; };
-		42C7C30EF8E3CEC4854B2A96 /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxButton.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxButton.h"; sourceTree = SOURCE_ROOT; };
-		43A971744841D521DB3F09E0 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxPanel.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxPanel.h"; sourceTree = SOURCE_ROOT; };
-		45AD78294F85F86E5BCC7AE2 /* xlink.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xlink.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xlink.h"; sourceTree = SOURCE_ROOT; };
-		4697FB5D4080B136AB345645 /* ofxPanel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxPanel.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxPanel.cpp"; sourceTree = SOURCE_ROOT; };
-		489E78D2B52D09ABA7F6017F /* HTMLtree.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = HTMLtree.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/HTMLtree.h"; sourceTree = SOURCE_ROOT; };
-		4A8F9AC8DE0294B01D3E3EF4 /* ofxSlider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSlider.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxSlider.cpp"; sourceTree = SOURCE_ROOT; };
-		4AA74A9F9FE8C268E0964F49 /* parser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = parser.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/parser.h"; sourceTree = SOURCE_ROOT; };
-		4BD7C4BE4626CF0831529A27 /* ofxOscSender.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscSender.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscSender.cpp"; sourceTree = SOURCE_ROOT; };
+		37E8954DCC9C2A905E4E6EDC /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxButton.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxButton.h"; sourceTree = SOURCE_ROOT; };
+		38F31575020BF83DD234878E /* parser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = parser.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/parser.h"; sourceTree = SOURCE_ROOT; };
+		3A177B86C370A80FE749EE2B /* uri.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = uri.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/uri.h"; sourceTree = SOURCE_ROOT; };
+		3B14AB35650F37478769B286 /* ofxOscArg.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscArg.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscArg.h"; sourceTree = SOURCE_ROOT; };
+		3CD1C6CFFCA70E8996669BED /* encoding.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = encoding.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/encoding.h"; sourceTree = SOURCE_ROOT; };
+		3F7CF3C649141D7F762F2321 /* ofxBaseMidi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxBaseMidi.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxBaseMidi.cpp"; sourceTree = SOURCE_ROOT; };
+		3FBB8B9EDB48C7BDBFA270F2 /* xmlmemory.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlmemory.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlmemory.h"; sourceTree = SOURCE_ROOT; };
+		45F1EFD520EA1CA1000D6FAA /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		45F1EFD720EA1CB2000D6FAA /* ofApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofApp.mm; sourceTree = "<group>"; };
+		45F1F0FF20EA1F84000D6FAA /* access.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = access.hpp; sourceTree = "<group>"; };
+		45F1F10620EA1F84000D6FAA /* cereal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = cereal.hpp; sourceTree = "<group>"; };
+		45F1F10820EA1F84000D6FAA /* helpers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = helpers.hpp; sourceTree = "<group>"; };
+		45F1F10920EA1F84000D6FAA /* polymorphic_impl.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = polymorphic_impl.hpp; sourceTree = "<group>"; };
+		45F1F10A20EA1F84000D6FAA /* polymorphic_impl_fwd.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = polymorphic_impl_fwd.hpp; sourceTree = "<group>"; };
+		45F1F10B20EA1F84000D6FAA /* static_object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = static_object.hpp; sourceTree = "<group>"; };
+		45F1F10C20EA1F84000D6FAA /* traits.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = traits.hpp; sourceTree = "<group>"; };
+		45F1F10D20EA1F84000D6FAA /* util.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = util.hpp; sourceTree = "<group>"; };
+		45F1F10F20EA1F84000D6FAA /* base64.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = base64.hpp; sourceTree = "<group>"; };
+		45F1F11120EA1F84000D6FAA /* allocators.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = allocators.h; sourceTree = "<group>"; };
+		45F1F11220EA1F84000D6FAA /* document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = document.h; sourceTree = "<group>"; };
+		45F1F11320EA1F84000D6FAA /* encodedstream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = encodedstream.h; sourceTree = "<group>"; };
+		45F1F11420EA1F84000D6FAA /* encodings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = encodings.h; sourceTree = "<group>"; };
+		45F1F11620EA1F84000D6FAA /* en.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = en.h; sourceTree = "<group>"; };
+		45F1F11720EA1F84000D6FAA /* error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = error.h; sourceTree = "<group>"; };
+		45F1F11820EA1F84000D6FAA /* filereadstream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = filereadstream.h; sourceTree = "<group>"; };
+		45F1F11920EA1F84000D6FAA /* filewritestream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = filewritestream.h; sourceTree = "<group>"; };
+		45F1F11A20EA1F84000D6FAA /* fwd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fwd.h; sourceTree = "<group>"; };
+		45F1F11C20EA1F84000D6FAA /* biginteger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = biginteger.h; sourceTree = "<group>"; };
+		45F1F11D20EA1F84000D6FAA /* diyfp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = diyfp.h; sourceTree = "<group>"; };
+		45F1F11E20EA1F84000D6FAA /* dtoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dtoa.h; sourceTree = "<group>"; };
+		45F1F11F20EA1F84000D6FAA /* ieee754.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ieee754.h; sourceTree = "<group>"; };
+		45F1F12020EA1F84000D6FAA /* itoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = itoa.h; sourceTree = "<group>"; };
+		45F1F12120EA1F84000D6FAA /* meta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = meta.h; sourceTree = "<group>"; };
+		45F1F12220EA1F84000D6FAA /* pow10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pow10.h; sourceTree = "<group>"; };
+		45F1F12320EA1F84000D6FAA /* regex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = regex.h; sourceTree = "<group>"; };
+		45F1F12420EA1F84000D6FAA /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		45F1F12520EA1F84000D6FAA /* strfunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strfunc.h; sourceTree = "<group>"; };
+		45F1F12620EA1F84000D6FAA /* strtod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strtod.h; sourceTree = "<group>"; };
+		45F1F12720EA1F84000D6FAA /* swap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = swap.h; sourceTree = "<group>"; };
+		45F1F12820EA1F84000D6FAA /* istreamwrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = istreamwrapper.h; sourceTree = "<group>"; };
+		45F1F12920EA1F84000D6FAA /* memorybuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memorybuffer.h; sourceTree = "<group>"; };
+		45F1F12A20EA1F84000D6FAA /* memorystream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memorystream.h; sourceTree = "<group>"; };
+		45F1F12E20EA1F84000D6FAA /* ostreamwrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ostreamwrapper.h; sourceTree = "<group>"; };
+		45F1F12F20EA1F84000D6FAA /* pointer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pointer.h; sourceTree = "<group>"; };
+		45F1F13020EA1F84000D6FAA /* prettywriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prettywriter.h; sourceTree = "<group>"; };
+		45F1F13120EA1F84000D6FAA /* rapidjson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rapidjson.h; sourceTree = "<group>"; };
+		45F1F13220EA1F84000D6FAA /* reader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
+		45F1F13320EA1F84000D6FAA /* schema.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = schema.h; sourceTree = "<group>"; };
+		45F1F13420EA1F84000D6FAA /* stream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stream.h; sourceTree = "<group>"; };
+		45F1F13520EA1F84000D6FAA /* stringbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stringbuffer.h; sourceTree = "<group>"; };
+		45F1F13620EA1F84000D6FAA /* writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
+		45F1F13820EA1F84000D6FAA /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		45F1F13920EA1F84000D6FAA /* manual.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = manual.html; sourceTree = "<group>"; };
+		45F1F13A20EA1F84000D6FAA /* rapidxml.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rapidxml.hpp; sourceTree = "<group>"; };
+		45F1F13B20EA1F84000D6FAA /* rapidxml_iterators.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_iterators.hpp; sourceTree = "<group>"; };
+		45F1F13C20EA1F84000D6FAA /* rapidxml_print.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_print.hpp; sourceTree = "<group>"; };
+		45F1F13D20EA1F84000D6FAA /* rapidxml_utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_utils.hpp; sourceTree = "<group>"; };
+		45F1F13E20EA1F84000D6FAA /* macros.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = macros.hpp; sourceTree = "<group>"; };
+		45F1F14020EA1F84000D6FAA /* array.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = array.hpp; sourceTree = "<group>"; };
+		45F1F14120EA1F84000D6FAA /* base_class.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = base_class.hpp; sourceTree = "<group>"; };
+		45F1F14220EA1F84000D6FAA /* bitset.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = bitset.hpp; sourceTree = "<group>"; };
+		45F1F14320EA1F84000D6FAA /* boost_variant.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = boost_variant.hpp; sourceTree = "<group>"; };
+		45F1F14420EA1F84000D6FAA /* chrono.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = chrono.hpp; sourceTree = "<group>"; };
+		45F1F14520EA1F84000D6FAA /* common.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = common.hpp; sourceTree = "<group>"; };
+		45F1F14620EA1F84000D6FAA /* complex.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = complex.hpp; sourceTree = "<group>"; };
+		45F1F14820EA1F84000D6FAA /* pair_associative_container.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pair_associative_container.hpp; sourceTree = "<group>"; };
+		45F1F14920EA1F84000D6FAA /* deque.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = deque.hpp; sourceTree = "<group>"; };
+		45F1F14A20EA1F84000D6FAA /* forward_list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = forward_list.hpp; sourceTree = "<group>"; };
+		45F1F14B20EA1F84000D6FAA /* functional.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functional.hpp; sourceTree = "<group>"; };
+		45F1F14C20EA1F84000D6FAA /* list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = list.hpp; sourceTree = "<group>"; };
+		45F1F14D20EA1F84000D6FAA /* map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = map.hpp; sourceTree = "<group>"; };
+		45F1F14E20EA1F84000D6FAA /* memory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = memory.hpp; sourceTree = "<group>"; };
+		45F1F14F20EA1F84000D6FAA /* polymorphic.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = polymorphic.hpp; sourceTree = "<group>"; };
+		45F1F15020EA1F84000D6FAA /* queue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = queue.hpp; sourceTree = "<group>"; };
+		45F1F15120EA1F84000D6FAA /* set.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = set.hpp; sourceTree = "<group>"; };
+		45F1F15220EA1F84000D6FAA /* stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stack.hpp; sourceTree = "<group>"; };
+		45F1F15320EA1F84000D6FAA /* string.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = string.hpp; sourceTree = "<group>"; };
+		45F1F15420EA1F84000D6FAA /* tuple.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tuple.hpp; sourceTree = "<group>"; };
+		45F1F15520EA1F84000D6FAA /* unordered_map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = unordered_map.hpp; sourceTree = "<group>"; };
+		45F1F15620EA1F84000D6FAA /* unordered_set.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = unordered_set.hpp; sourceTree = "<group>"; };
+		45F1F15720EA1F84000D6FAA /* utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utility.hpp; sourceTree = "<group>"; };
+		45F1F15820EA1F84000D6FAA /* valarray.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = valarray.hpp; sourceTree = "<group>"; };
+		45F1F15920EA1F84000D6FAA /* vector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vector.hpp; sourceTree = "<group>"; };
+		45F1F15A20EA1F84000D6FAA /* ofxCereal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxCereal.h; sourceTree = "<group>"; };
+		45F1F1EF20EA291C000D6FAA /* ofxModifierKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxModifierKeys.h; sourceTree = "<group>"; };
+		45F1F1F020EA291C000D6FAA /* ofxModifierKeys_impl_linux.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxModifierKeys_impl_linux.cpp; sourceTree = "<group>"; };
+		45F1F1F120EA291C000D6FAA /* ofxModifierKeys_impl_mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxModifierKeys_impl_mac.mm; sourceTree = "<group>"; };
+		45F1F1F220EA291C000D6FAA /* ofxModifierKeys_impl_win.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxModifierKeys_impl_win.cpp; sourceTree = "<group>"; };
+		45F1F20120EA2C72000D6FAA /* icon-1_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-1_off.png"; path = "bin/data/icons/icon-1_off.png"; sourceTree = "<group>"; };
+		45F1F20220EA2C72000D6FAA /* icon-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-1.png"; path = "bin/data/icons/icon-1.png"; sourceTree = "<group>"; };
+		45F1F20320EA2C72000D6FAA /* icon-2_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-2_off.png"; path = "bin/data/icons/icon-2_off.png"; sourceTree = "<group>"; };
+		45F1F20420EA2C72000D6FAA /* icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-2.png"; path = "bin/data/icons/icon-2.png"; sourceTree = "<group>"; };
+		45F1F20520EA2C72000D6FAA /* icon-3_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-3_off.png"; path = "bin/data/icons/icon-3_off.png"; sourceTree = "<group>"; };
+		45F1F20620EA2C72000D6FAA /* icon-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-3.png"; path = "bin/data/icons/icon-3.png"; sourceTree = "<group>"; };
+		45F1F20720EA2C72000D6FAA /* icon-4_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-4_off.png"; path = "bin/data/icons/icon-4_off.png"; sourceTree = "<group>"; };
+		45F1F20820EA2C72000D6FAA /* icon-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-4.png"; path = "bin/data/icons/icon-4.png"; sourceTree = "<group>"; };
+		46BA862F89C2DB73A87E38B7 /* ofxRtMidiOut.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxRtMidiOut.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/desktop/ofxRtMidiOut.cpp"; sourceTree = SOURCE_ROOT; };
+		4BCF1E97D610D085558C6942 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxGuiGroup.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxGuiGroup.cpp"; sourceTree = SOURCE_ROOT; };
 		4C0738F7BAAD566E8EB13F4E /* dt_config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_config.h; path = src/dt_config.h; sourceTree = SOURCE_ROOT; };
-		4C758857D9B86E42646BCE3D /* ofxMidiConstants.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidiConstants.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiConstants.h"; sourceTree = SOURCE_ROOT; };
-		4D3ADE8AF3F4122C85CF18E3 /* parserInternals.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = parserInternals.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/parserInternals.h"; sourceTree = SOURCE_ROOT; };
-		4F8C5DC7618F2F51F94F2C8D /* ofxMidiMessage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxMidiMessage.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiMessage.cpp"; sourceTree = SOURCE_ROOT; };
-		52AD5908DC8EDD09983506D6 /* list.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = list.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/list.h"; sourceTree = SOURCE_ROOT; };
+		4D673F7368BD19C53266B256 /* threads.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = threads.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/threads.h"; sourceTree = SOURCE_ROOT; };
+		4DE633D85DF7D9736A3E0F49 /* xmlsave.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlsave.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlsave.h"; sourceTree = SOURCE_ROOT; };
+		4FF92591A847601DF20210E0 /* ofxSvg.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSvg.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/src/ofxSvg.h"; sourceTree = SOURCE_ROOT; };
+		513D440444362CA7C4524D70 /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tinyxml.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/libs/tinyxml.h"; sourceTree = SOURCE_ROOT; };
+		52367038924E16950A1CD970 /* ofxMidiOut.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidiOut.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiOut.h"; sourceTree = SOURCE_ROOT; };
+		52BBF14C0EB79865724C146C /* ofxLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxLabel.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxLabel.cpp"; sourceTree = SOURCE_ROOT; };
+		52F93CD35E6B98FF49EED7B7 /* ofxSvg.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSvg.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/src/ofxSvg.cpp"; sourceTree = SOURCE_ROOT; };
 		54198B4189F9BF913AD5D992 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = src/MainWindow.xib; sourceTree = SOURCE_ROOT; };
 		54E0181A084F639EF57A4C01 /* dt_circle_base.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_circle_base.h; path = src/dt_circle_base.h; sourceTree = SOURCE_ROOT; };
-		5669CC0B0A785E34A9F1DE95 /* svgtiny.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = svgtiny.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include/svgtiny.h"; sourceTree = SOURCE_ROOT; };
-		5785A1784700C5CA4D72677C /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxBaseGui.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxBaseGui.cpp"; sourceTree = SOURCE_ROOT; };
-		5797C68BFBAFCB89CEB19EB9 /* ofxMidiIn.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidiIn.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiIn.h"; sourceTree = SOURCE_ROOT; };
-		57D3438F3854BB8CC2836969 /* SAX2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SAX2.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/SAX2.h"; sourceTree = SOURCE_ROOT; };
-		57E9D54376828C8D6FF8134E /* ofxInputField.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxInputField.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxInputField.cpp"; sourceTree = SOURCE_ROOT; };
-		589C7BC252E979C4AE22A570 /* ofxOscParameterSync.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscParameterSync.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscParameterSync.cpp"; sourceTree = SOURCE_ROOT; };
-		58A14172D2B1FE3C06D6897B /* xpath.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xpath.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xpath.h"; sourceTree = SOURCE_ROOT; };
-		59A3DEE8EB8C4771BE6C96F4 /* c14n.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = c14n.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/c14n.h"; sourceTree = SOURCE_ROOT; };
-		5C29CCB8F14281C3620FF013 /* nanohttp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = nanohttp.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/nanohttp.h"; sourceTree = SOURCE_ROOT; };
+		54F1A4274462EC90D015F5C0 /* SAX.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SAX.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/SAX.h"; sourceTree = SOURCE_ROOT; };
+		55B3AE612608E39EC11BE894 /* xmlwriter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlwriter.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlwriter.h"; sourceTree = SOURCE_ROOT; };
+		5A0522CDCD0A82A6800DC9E6 /* xmlschemastypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlschemastypes.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlschemastypes.h"; sourceTree = SOURCE_ROOT; };
 		5C312CAFA1A4F47E118EB87D /* AppDelegate.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AppDelegate.mm; path = src/AppDelegate.mm; sourceTree = SOURCE_ROOT; };
 		5C7A494FD9B660DF008539E1 /* dt_sequence_thread_audio.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_sequence_thread_audio.cpp; path = src/dt_sequence_thread_audio.cpp; sourceTree = SOURCE_ROOT; };
-		5D2109720AA251CA28EB03B2 /* xmlstring.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlstring.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlstring.h"; sourceTree = SOURCE_ROOT; };
-		5D4EAF51CA64261947A89AB2 /* xmlreader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlreader.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlreader.h"; sourceTree = SOURCE_ROOT; };
-		5E6A4B968DC071054FAF5D9A /* pattern.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pattern.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/pattern.h"; sourceTree = SOURCE_ROOT; };
+		5D0DBC35900359DB80128CB2 /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSliderGroup.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxSliderGroup.cpp"; sourceTree = SOURCE_ROOT; };
 		5F28501F8CCD59030F7BA5F2 /* dt_midi_send_pool.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_midi_send_pool.h; path = src/dt_midi_send_pool.h; sourceTree = SOURCE_ROOT; };
+		612102AD934DB697B8DD869B /* svgtiny.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = svgtiny.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include/svgtiny.h"; sourceTree = SOURCE_ROOT; };
+		61C22BDB136093805B3A089E /* SAX2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SAX2.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/SAX2.h"; sourceTree = SOURCE_ROOT; };
 		628E497A53E56921320C3644 /* dt_circle_container.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_circle_container.h; path = src/dt_circle_container.h; sourceTree = SOURCE_ROOT; };
+		637DC9EEA8D20740C238203C /* ofxOscParameterSync.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscParameterSync.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscParameterSync.cpp"; sourceTree = SOURCE_ROOT; };
+		643DA2F07E7E387F62CFCB0E /* xlink.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xlink.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xlink.h"; sourceTree = SOURCE_ROOT; };
 		64519E13C2B83DDFC96D0BCF /* dt_circle_drawer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_circle_drawer.cpp; path = src/dt_circle_drawer.cpp; sourceTree = SOURCE_ROOT; };
-		64579550C475A3DA4E3E3717 /* OscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscPacketListener.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h"; sourceTree = SOURCE_ROOT; };
-		665081116CB28B9E95039CAA /* xmlmemory.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlmemory.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlmemory.h"; sourceTree = SOURCE_ROOT; };
+		64A3F7859623004D44E30886 /* ofxRtMidiIn.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxRtMidiIn.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/desktop/ofxRtMidiIn.cpp"; sourceTree = SOURCE_ROOT; };
+		64B0FBE4E0E15AD0EC7224D7 /* TimerListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TimerListener.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/TimerListener.h"; sourceTree = SOURCE_ROOT; };
 		66C0225CDEC2A4BAC8FE218C /* dt_font_manager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_font_manager.h; path = src/dt_font_manager.h; sourceTree = SOURCE_ROOT; };
-		670E11B3E224C5FE828FA861 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = IpEndpointName.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h"; sourceTree = SOURCE_ROOT; };
-		699A2727CA15B3C1C8E20D1D /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxXmlSettings.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/src/ofxXmlSettings.cpp"; sourceTree = SOURCE_ROOT; };
-		6ABD9EF54FA48C10A3809E2C /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tinyxml.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/libs/tinyxml.h"; sourceTree = SOURCE_ROOT; };
+		682DA5F7DD68F81BB3DC2A70 /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxml.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/libs/tinyxml.cpp"; sourceTree = SOURCE_ROOT; };
+		6AC6FB58CFFAC35054540FDA /* ofxSlider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSlider.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxSlider.cpp"; sourceTree = SOURCE_ROOT; };
 		6AD9C85FCAC6B43CD55182A7 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = src/MainMenu.xib; sourceTree = SOURCE_ROOT; };
-		6C0014D4B5B9B96C065F2199 /* nanoftp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = nanoftp.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/nanoftp.h"; sourceTree = SOURCE_ROOT; };
-		6E0C97D16B7D90272737633A /* ofxTweener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxTweener.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxTweener/src/ofxTweener.h"; sourceTree = SOURCE_ROOT; };
-		6E24922BC295E2283C629FE1 /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscPrintReceivedElements.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.cpp"; sourceTree = SOURCE_ROOT; };
+		6C5D3E2CFE256B942E630A32 /* ofxOscBundle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscBundle.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscBundle.cpp"; sourceTree = SOURCE_ROOT; };
+		6E09E7635209657E69C7A90C /* chvalid.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = chvalid.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/chvalid.h"; sourceTree = SOURCE_ROOT; };
+		6F4A4A57E5465FC47AEA0B03 /* xmlversion.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlversion.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlversion.h"; sourceTree = SOURCE_ROOT; };
 		6F7EEFEC65D8CE866C3104CB /* dt_sequencer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_sequencer.cpp; path = src/dt_sequencer.cpp; sourceTree = SOURCE_ROOT; };
-		7131666BEB876DCBFF8C627F /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSliderGroup.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxSliderGroup.cpp"; sourceTree = SOURCE_ROOT; };
+		6FFECA729B9A208DD358D2B2 /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiGroup.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxGuiGroup.h"; sourceTree = SOURCE_ROOT; };
+		70F039CAD209FDBCFACBCDD4 /* xmlexports.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlexports.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlexports.h"; sourceTree = SOURCE_ROOT; };
+		7145249CEBDD16EEC89A6F6F /* hash.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = hash.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/hash.h"; sourceTree = SOURCE_ROOT; };
 		71550F5C62E49B7C492EB9C9 /* dt_GLView.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = dt_GLView.mm; path = src/dt_GLView.mm; sourceTree = SOURCE_ROOT; };
-		71A1962D2F0C9303EE94E52F /* ofxOscSender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscSender.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscSender.h"; sourceTree = SOURCE_ROOT; };
+		71F551F5A52B1DC21C563FBC /* NetworkingUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = NetworkingUtils.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/NetworkingUtils.h"; sourceTree = SOURCE_ROOT; };
 		74CE6966D6E6390293AE0310 /* OscOutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OscOutView.xib; path = src/OscOutView.xib; sourceTree = SOURCE_ROOT; };
-		75BE82ADCEFB05EAE7AEF78C /* ofxBaseMidi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxBaseMidi.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxBaseMidi.h"; sourceTree = SOURCE_ROOT; };
-		79A3E147862179D53EAD75DE /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxml.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/libs/tinyxml.cpp"; sourceTree = SOURCE_ROOT; };
+		7620C9DDB1D612CC8D5B6882 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxmlparser.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/libs/tinyxmlparser.cpp"; sourceTree = SOURCE_ROOT; };
+		778BFFEC1ED9A73B14ED4573 /* ofxInputField.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxInputField.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxInputField.h"; sourceTree = SOURCE_ROOT; };
+		7A2F188D28C36D28E224FC99 /* list.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = list.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/list.h"; sourceTree = SOURCE_ROOT; };
+		7AF58090416C1618BC931DF4 /* xpath.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xpath.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xpath.h"; sourceTree = SOURCE_ROOT; };
 		7AF9A38EE6D1E021913C6FB4 /* ofxCocoaGLView.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxCocoaGLView.h; path = src/ofxCocoaGLView.h; sourceTree = SOURCE_ROOT; };
-		7B4D08292B8E50F87D845451 /* ofxOscReceiver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscReceiver.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscReceiver.cpp"; sourceTree = SOURCE_ROOT; };
-		7B9F14D04E43814A6DB4DA7A /* NetworkingUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = NetworkingUtils.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp"; sourceTree = SOURCE_ROOT; };
 		7D3B0CC8B167044DCD37D8BA /* CircleViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = CircleViewController.mm; path = src/CircleViewController.mm; sourceTree = SOURCE_ROOT; };
 		7DCC49E57072C1CF0C7D9E44 /* dt_GLView.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_GLView.h; path = src/dt_GLView.h; sourceTree = SOURCE_ROOT; };
-		80B3CFB2ECA6767BEA6A406B /* ofxMidiOut.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidiOut.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiOut.h"; sourceTree = SOURCE_ROOT; };
+		7FBA1A4229F859B7DBE954F6 /* nanoftp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = nanoftp.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/nanoftp.h"; sourceTree = SOURCE_ROOT; };
+		8161494E54675E7AF184E867 /* xmlstring.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlstring.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlstring.h"; sourceTree = SOURCE_ROOT; };
 		81AC32CCCB56FAABA3E1BDE0 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = /System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<group>"; };
-		81FDC9204E282F380D93B57E /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxButton.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxButton.cpp"; sourceTree = SOURCE_ROOT; };
-		8289B64D8DB1F205DD28EFBE /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiGroup.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxGuiGroup.h"; sourceTree = SOURCE_ROOT; };
-		85B41583088D16523383FF06 /* schematron.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = schematron.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/schematron.h"; sourceTree = SOURCE_ROOT; };
+		8304DC0632C7DF9E8FAEFCFE /* HTMLparser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = HTMLparser.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/HTMLparser.h"; sourceTree = SOURCE_ROOT; };
+		8673EA8B903833B5B8F9B111 /* ofxMidi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidi.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidi.h"; sourceTree = SOURCE_ROOT; };
 		8694BD08D714AECF21D3A8B3 /* dt_linear_drawer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_linear_drawer.cpp; path = src/dt_linear_drawer.cpp; sourceTree = SOURCE_ROOT; };
+		8721A578CEFED4ABCA037052 /* ofxOscSender.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscSender.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscSender.cpp"; sourceTree = SOURCE_ROOT; };
+		88952F1A401E11F1FA714C6B /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxmlerror.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/libs/tinyxmlerror.cpp"; sourceTree = SOURCE_ROOT; };
+		897BDB4D4141584AE7A8F8BB /* ofxBaseMidi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxBaseMidi.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxBaseMidi.h"; sourceTree = SOURCE_ROOT; };
 		89FACE51DB306C74439EC832 /* dt_mouse_gesture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_mouse_gesture.cpp; path = src/dt_mouse_gesture.cpp; sourceTree = SOURCE_ROOT; };
+		8A182B85C873533E2F4C8B87 /* HTMLtree.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = HTMLtree.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/HTMLtree.h"; sourceTree = SOURCE_ROOT; };
+		8A3418C3363959EAAE35CC91 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSlider.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxSlider.h"; sourceTree = SOURCE_ROOT; };
 		8AADCFBC646A80BCFBB5B4A6 /* dt_circle_container.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_circle_container.cpp; path = src/dt_circle_container.cpp; sourceTree = SOURCE_ROOT; };
-		8B17B3705BFC09974E511E2D /* xmlunicode.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlunicode.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlunicode.h"; sourceTree = SOURCE_ROOT; };
-		8C0AE908E6D7A1A9CAD3D557 /* ofxMidiMessage.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidiMessage.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiMessage.h"; sourceTree = SOURCE_ROOT; };
-		8D5FED62EEAE95F706CCC6F6 /* ofxMidiTypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidiTypes.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiTypes.h"; sourceTree = SOURCE_ROOT; };
-		8DD5018BCCF40868C2042872 /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscOutboundPacketStream.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.cpp"; sourceTree = SOURCE_ROOT; };
-		8E447589D342C4F1910B17C8 /* threads.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = threads.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/threads.h"; sourceTree = SOURCE_ROOT; };
-		8ED7DEE15182FE9CF5B2A267 /* xmlerror.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlerror.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlerror.h"; sourceTree = SOURCE_ROOT; };
-		8F753A210DBC19D11624B11C /* OscTypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscTypes.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscTypes.h"; sourceTree = SOURCE_ROOT; };
-		9023B2AF08D33FF588B751BA /* ofxTransitions.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxTransitions.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxTweener/src/ofxTransitions.h"; sourceTree = SOURCE_ROOT; };
-		90C0105B7AFBCEFD87F1E8A8 /* ofxMidi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidi.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidi.h"; sourceTree = SOURCE_ROOT; };
-		9135A0148C8201EF3971CD19 /* entities.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = entities.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/entities.h"; sourceTree = SOURCE_ROOT; };
-		960A0C796ABCF22A41C401FD /* ofxLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxLabel.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxLabel.cpp"; sourceTree = SOURCE_ROOT; };
+		8B24598BDD8DD1322308A560 /* xmlautomata.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlautomata.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlautomata.h"; sourceTree = SOURCE_ROOT; };
+		8CDC4440422CD066603BB4EC /* ofxOscMessage.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscMessage.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscMessage.h"; sourceTree = SOURCE_ROOT; };
+		938A2B478DBD5DE4085CB00E /* ofxOscMessage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscMessage.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscMessage.cpp"; sourceTree = SOURCE_ROOT; };
+		94000FC0257C0DE242BD39B9 /* debugXML.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = debugXML.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/debugXML.h"; sourceTree = SOURCE_ROOT; };
+		9535B2B558D7B8286FAC797C /* tree.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tree.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/tree.h"; sourceTree = SOURCE_ROOT; };
 		977160223E613109E7C02468 /* dt_circle_param.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_circle_param.cpp; path = src/dt_circle_param.cpp; sourceTree = SOURCE_ROOT; };
 		9848684012AA0D861E74C8A3 /* CircleViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = CircleViewController.h; path = src/CircleViewController.h; sourceTree = SOURCE_ROOT; };
+		994565282E9151EC7C6440F6 /* OscTypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscTypes.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscTypes.h"; sourceTree = SOURCE_ROOT; };
 		995BE76EA6F93E1330A7D1CA /* ofx2DCamera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofx2DCamera.cpp; path = src/ofx2DCamera.cpp; sourceTree = SOURCE_ROOT; };
 		998BD6775E10FCE5C2182DF4 /* dt_osc_sender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_osc_sender.h; path = src/dt_osc_sender.h; sourceTree = SOURCE_ROOT; };
 		9B6B54F21F24BB2F72FA4F2B /* OscOutViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = OscOutViewController.mm; path = src/OscOutViewController.mm; sourceTree = SOURCE_ROOT; };
-		9BFFFB921A3B2D6B94CB5D98 /* ofxSvg.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSvg.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/src/ofxSvg.cpp"; sourceTree = SOURCE_ROOT; };
-		9E8F6D30D0D2B5AB12B28F0B /* OscReceivedElements.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscReceivedElements.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.cpp"; sourceTree = SOURCE_ROOT; };
-		9FB2A7EB23BFC1F92FA662DE /* ofxMidi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxMidi.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidi.cpp"; sourceTree = SOURCE_ROOT; };
-		9FC896E1385C24FA4E8BF493 /* ofxColorPicker.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxColorPicker.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxColorPicker.h"; sourceTree = SOURCE_ROOT; };
+		9F42A27C1D7767F733296E41 /* ofxRtMidiOut.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxRtMidiOut.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/desktop/ofxRtMidiOut.h"; sourceTree = SOURCE_ROOT; };
+		A03405C69772C5346A9F7F1E /* xpathInternals.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xpathInternals.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xpathInternals.h"; sourceTree = SOURCE_ROOT; };
 		A26C8DA0DA1A376B3BE13180 /* OscInViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscInViewController.h; path = src/OscInViewController.h; sourceTree = SOURCE_ROOT; };
 		A2E087AF8B9C0C7D7A64A707 /* OscOutViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscOutViewController.h; path = src/OscOutViewController.h; sourceTree = SOURCE_ROOT; };
-		A32574AE3E4D59DC79707032 /* encoding.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = encoding.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/encoding.h"; sourceTree = SOURCE_ROOT; };
-		A4217699B11E8D3922EC22FC /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxmlerror.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/libs/tinyxmlerror.cpp"; sourceTree = SOURCE_ROOT; };
-		A4502BE8A819531DA8E67040 /* ofxOscBundle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscBundle.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscBundle.cpp"; sourceTree = SOURCE_ROOT; };
-		A504956B766822E3C16E1087 /* OscReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscReceivedElements.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h"; sourceTree = SOURCE_ROOT; };
-		A5087937D6E6FB4F52132B9D /* SAX.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SAX.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/SAX.h"; sourceTree = SOURCE_ROOT; };
-		A5CB15A22BEC859DB189D16E /* ofxOscMessage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscMessage.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscMessage.cpp"; sourceTree = SOURCE_ROOT; };
-		A6CACF5014099E9405B69ED0 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSlider.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxSlider.h"; sourceTree = SOURCE_ROOT; };
+		A31CB6A1E399BD7F0F79C746 /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscOutboundPacketStream.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.h"; sourceTree = SOURCE_ROOT; };
+		A5CAAFDFCF01C680FB4EDB7E /* OscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscPacketListener.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h"; sourceTree = SOURCE_ROOT; };
 		A77FD4000008245E30682EB2 /* dt_osc_sender.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = dt_osc_sender.mm; path = src/dt_osc_sender.mm; sourceTree = SOURCE_ROOT; };
 		A7A7737FDB9E38AC70B702CC /* OscInViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = OscInViewController.mm; path = src/OscInViewController.mm; sourceTree = SOURCE_ROOT; };
 		A87842F2507016446498CFD3 /* dt_osc_recorder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_osc_recorder.h; path = src/dt_osc_recorder.h; sourceTree = SOURCE_ROOT; };
 		A9169F58570927B4B4A34900 /* dt_circle_note_on.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_circle_note_on.h; path = src/dt_circle_note_on.h; sourceTree = SOURCE_ROOT; };
+		A9FD9B81D99B6454F7C1820B /* RtMidi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = RtMidi.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi/RtMidi.cpp"; sourceTree = SOURCE_ROOT; };
 		AAC636514A8E042FB30EFBB6 /* dt_circle_all_containers.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_circle_all_containers.cpp; path = src/dt_circle_all_containers.cpp; sourceTree = SOURCE_ROOT; };
-		AC3B2E05817C627086F72A6E /* xmlwriter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlwriter.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlwriter.h"; sourceTree = SOURCE_ROOT; };
-		AF3DB8CB9A096E6F9298C1CB /* dt_midi_writer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_midi_writer.h; path = src/dt_midi_writer.h; sourceTree = SOURCE_ROOT; };
-		B3AC65C6B9CEEED8C26AE700 /* ofxRtMidiIn.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxRtMidiIn.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/desktop/ofxRtMidiIn.h"; sourceTree = SOURCE_ROOT; };
-		B3E64C28A506ED76BC55DAB2 /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscTypes.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp"; sourceTree = SOURCE_ROOT; };
-		B514FE40D1310C6969C8D4CF /* ofxOscMessage.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscMessage.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscMessage.h"; sourceTree = SOURCE_ROOT; };
-		B5FA4CC94642F12E961AD5F9 /* HTMLparser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = HTMLparser.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/HTMLparser.h"; sourceTree = SOURCE_ROOT; };
+		ADA420442775C77E5BFBBE46 /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscPrintReceivedElements.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.cpp"; sourceTree = SOURCE_ROOT; };
+		B189BD330B311345AD41AFFC /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxXmlSettings.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/src/ofxXmlSettings.cpp"; sourceTree = SOURCE_ROOT; };
+		B4BB0086527E92B426A5B95A /* DOCBparser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = DOCBparser.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/DOCBparser.h"; sourceTree = SOURCE_ROOT; };
+		B5A34B76C0729D88E007D99A /* PacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PacketListener.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/PacketListener.h"; sourceTree = SOURCE_ROOT; };
+		B7B1C5BCD714B04AEC850BB8 /* relaxng.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = relaxng.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/relaxng.h"; sourceTree = SOURCE_ROOT; };
+		B8AC1346A86F5652CA5F9CC9 /* xmlschemas.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlschemas.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlschemas.h"; sourceTree = SOURCE_ROOT; };
 		B8BDC10C3067899345040243 /* dt_serialize.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_serialize.h; path = src/dt_serialize.h; sourceTree = SOURCE_ROOT; };
 		BB83E49956839F92501876DD /* CircleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CircleView.xib; path = src/CircleView.xib; sourceTree = SOURCE_ROOT; };
+		BB8D8FA778853FD2482CC10B /* nanohttp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = nanohttp.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/nanohttp.h"; sourceTree = SOURCE_ROOT; };
 		BD94C2B35B969342B6EE7987 /* dt_rhythm_lib.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_rhythm_lib.h; path = src/dt_rhythm_lib.h; sourceTree = SOURCE_ROOT; };
 		BDA1E8412E90CED3E499C14B /* MainWindowController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MainWindowController.h; path = src/MainWindowController.h; sourceTree = SOURCE_ROOT; };
 		BDBB1FE6CA8ACAF101EEB3B9 /* dt_mode_manager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_mode_manager.cpp; path = src/dt_mode_manager.cpp; sourceTree = SOURCE_ROOT; };
-		C17A94FDEC677DE58325DC2F /* xmlschemas.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlschemas.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlschemas.h"; sourceTree = SOURCE_ROOT; };
+		BF032BAADBD4F28F794B2AF3 /* OscReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscReceivedElements.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h"; sourceTree = SOURCE_ROOT; };
+		BF152DC8A95333200E568552 /* ofxOscParameterSync.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscParameterSync.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscParameterSync.h"; sourceTree = SOURCE_ROOT; };
+		C0D65259641D11F06B51EA88 /* globals.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = globals.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/globals.h"; sourceTree = SOURCE_ROOT; };
 		C1A16303E42D86278FC380C9 /* dt_sequence_thread_base.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_sequence_thread_base.h; path = src/dt_sequence_thread_base.h; sourceTree = SOURCE_ROOT; };
 		C1AF42972C61D8482FAC025C /* dt_circle_note_on.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_circle_note_on.cpp; path = src/dt_circle_note_on.cpp; sourceTree = SOURCE_ROOT; };
-		C3453A723A569666A3825DC3 /* valid.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = valid.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/valid.h"; sourceTree = SOURCE_ROOT; };
-		C647AE874F315E7DF5179A3B /* ofxRtMidiOut.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxRtMidiOut.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/desktop/ofxRtMidiOut.cpp"; sourceTree = SOURCE_ROOT; };
-		C6F9A6A678AF5A32B01CB9E4 /* dict.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dict.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/dict.h"; sourceTree = SOURCE_ROOT; };
-		C7117EB90856B6A75F60A34D /* xpointer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xpointer.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xpointer.h"; sourceTree = SOURCE_ROOT; };
-		C724B02159918A9AB964E0A0 /* relaxng.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = relaxng.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/relaxng.h"; sourceTree = SOURCE_ROOT; };
+		C4D9A0E49358056A80A15140 /* RtMidi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = RtMidi.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi/RtMidi.h"; sourceTree = SOURCE_ROOT; };
 		C8509131BCBD3EB330EBEAA6 /* dt_circle_base.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_circle_base.cpp; path = src/dt_circle_base.cpp; sourceTree = SOURCE_ROOT; };
-		C9B3931D75E2F41CCFB76888 /* chvalid.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = chvalid.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/chvalid.h"; sourceTree = SOURCE_ROOT; };
+		C8BFC081E0514BE882A05549 /* xmlreader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlreader.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlreader.h"; sourceTree = SOURCE_ROOT; };
+		CA5A3BE8ABC30FAEC383D0C0 /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSliderGroup.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxSliderGroup.h"; sourceTree = SOURCE_ROOT; };
+		CA66B5A44B2B2BF71852188D /* xmlunicode.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlunicode.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlunicode.h"; sourceTree = SOURCE_ROOT; };
+		CBE9FF49EE9F49B4B920FB06 /* ofxMidiMessage.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidiMessage.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiMessage.h"; sourceTree = SOURCE_ROOT; };
 		CD0B142F3EBE00A84FE7D3FD /* dt_mouse_gesture.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_mouse_gesture.h; path = src/dt_mouse_gesture.h; sourceTree = SOURCE_ROOT; };
-		CE6F1E8EB48D3C96708FB005 /* ofxXmlSettings.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxXmlSettings.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/src/ofxXmlSettings.h"; sourceTree = SOURCE_ROOT; };
 		CE78ABD39C612647345810F5 /* dt_dial_ui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_dial_ui.cpp; path = src/dt_dial_ui.cpp; sourceTree = SOURCE_ROOT; };
+		CF2389AD3C408695D5909D5C /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxBaseGui.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxBaseGui.cpp"; sourceTree = SOURCE_ROOT; };
+		D1740E885F6AFBB329DF7C29 /* xinclude.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xinclude.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xinclude.h"; sourceTree = SOURCE_ROOT; };
+		D2537BD0309F8D6F763CCDA6 /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscTypes.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp"; sourceTree = SOURCE_ROOT; };
+		D3B138697F88568007E84E2F /* OscHostEndianness.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscHostEndianness.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscHostEndianness.h"; sourceTree = SOURCE_ROOT; };
 		D5B86390053C4CF609268399 /* dt_midi_sender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_midi_sender.h; path = src/dt_midi_sender.h; sourceTree = SOURCE_ROOT; };
-		D9F95858447AA4B98CEF5A8E /* ofxRtMidiIn.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxRtMidiIn.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/desktop/ofxRtMidiIn.cpp"; sourceTree = SOURCE_ROOT; };
+		D74BBF13FF6D61FAC3BE70AE /* ofxOsc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOsc.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOsc.h"; sourceTree = SOURCE_ROOT; };
 		DA09331DD294EADE80EB3E0F /* dt_mode_manager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_mode_manager.h; path = src/dt_mode_manager.h; sourceTree = SOURCE_ROOT; };
-		DD0A40960D587C5EF32F961D /* xmlversion.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlversion.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlversion.h"; sourceTree = SOURCE_ROOT; };
-		DD39C7565E326FF3512BC0BE /* IpEndpointName.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = IpEndpointName.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.cpp"; sourceTree = SOURCE_ROOT; };
 		DE5E9C6B8A5DD30C431DA314 /* dt_sequence_thread_boost.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_sequence_thread_boost.h; path = src/dt_sequence_thread_boost.h; sourceTree = SOURCE_ROOT; };
+		DE7D5CD95CDA84CF04626AF6 /* schematron.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = schematron.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/schematron.h"; sourceTree = SOURCE_ROOT; };
 		E036069CBEDF78B2FBF363F2 /* dt_osc_recorder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_osc_recorder.cpp; path = src/dt_osc_recorder.cpp; sourceTree = SOURCE_ROOT; };
-		E1EB168A290C2DDCB1EA0685 /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MessageMappingOscPacketListener.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/MessageMappingOscPacketListener.h"; sourceTree = SOURCE_ROOT; };
-		E22402BD2C4182CE63FD8CA3 /* schemasInternals.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = schemasInternals.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/schemasInternals.h"; sourceTree = SOURCE_ROOT; };
-		E238A7C54C786684C15603B8 /* ofxMidiIn.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxMidiIn.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiIn.cpp"; sourceTree = SOURCE_ROOT; };
-		E347BF1625E71BD386088058 /* xmlautomata.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlautomata.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlautomata.h"; sourceTree = SOURCE_ROOT; };
-		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = "../../../../../../openFrameworks-hiroMTB/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		E036F746FC39C7EE1F087AAD /* xmlerror.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlerror.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlerror.h"; sourceTree = SOURCE_ROOT; };
+		E0371584AD91A0746C8043ED /* UdpSocket.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = UdpSocket.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix/UdpSocket.cpp"; sourceTree = SOURCE_ROOT; };
+		E0FD6E42302FD34EA4D4533E /* ofxMidiConstants.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidiConstants.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiConstants.h"; sourceTree = SOURCE_ROOT; };
+		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* dial_composerDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dial_composerDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
-		E4CE7E52E1D7A5656728692C /* ofxOscReceiver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscReceiver.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscReceiver.h"; sourceTree = SOURCE_ROOT; };
-		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = "../../../../../../openFrameworks-hiroMTB/libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig"; sourceTree = SOURCE_ROOT; };
+		E4E322609B0E5325B915291D /* IpEndpointName.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = IpEndpointName.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.cpp"; sourceTree = SOURCE_ROOT; };
+		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig"; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		E60F6A5D3B0FF72D3DA4C440 /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSliderGroup.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxSliderGroup.h"; sourceTree = SOURCE_ROOT; };
 		E6DFD2C26440E1FECAA97288 /* dt_circle_all_containers.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_circle_all_containers.h; path = src/dt_circle_all_containers.h; sourceTree = SOURCE_ROOT; };
-		E780B79BAFBD7273AE503A18 /* hash.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = hash.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/hash.h"; sourceTree = SOURCE_ROOT; };
 		E8B12B46DB3853E910283078 /* dt_config.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_config.cpp; path = src/dt_config.cpp; sourceTree = SOURCE_ROOT; };
-		E90A73DA39A5EC935D61A0CB /* dt_circle_output_base.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_circle_output_base.cpp; path = src/dt_circle_output_base.cpp; sourceTree = SOURCE_ROOT; };
+		E9A14687BB0A0EB2F4FD0A9D /* ofxMidiIn.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxMidiIn.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiIn.h"; sourceTree = SOURCE_ROOT; };
 		EA72A0DD6125B972C78D5C04 /* dt_sequence_thread_audio.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_sequence_thread_audio.h; path = src/dt_sequence_thread_audio.h; sourceTree = SOURCE_ROOT; };
+		EA7422ABC6A27706D6CC7F53 /* ofxRtMidiIn.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxRtMidiIn.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/desktop/ofxRtMidiIn.h"; sourceTree = SOURCE_ROOT; };
 		EB66DEEC5A663EEC15A696EA /* dt_sequence_thread_boost.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_sequence_thread_boost.cpp; path = src/dt_sequence_thread_boost.cpp; sourceTree = SOURCE_ROOT; };
-		EBA057A8BD5C3258AC2FDF2C /* ofxTransitions.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxTransitions.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxTweener/src/ofxTransitions.cpp"; sourceTree = SOURCE_ROOT; };
 		EC03A7A9EAB9B5D46CFA52B8 /* dt_dial_ui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_dial_ui.h; path = src/dt_dial_ui.h; sourceTree = SOURCE_ROOT; };
-		EC3C9F059178340AFE44D914 /* OscHostEndianness.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = OscHostEndianness.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscHostEndianness.h"; sourceTree = SOURCE_ROOT; };
+		ED19788CF0990B4787B41F44 /* OscReceivedElements.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OscReceivedElements.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.cpp"; sourceTree = SOURCE_ROOT; };
 		EE26D9BAE0A2DD9D9F2A8B7E /* dt_sequence_thread_oF.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_sequence_thread_oF.cpp; path = src/dt_sequence_thread_oF.cpp; sourceTree = SOURCE_ROOT; };
-		EEE66B3CD77BD0A6AE764EFD /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxGuiGroup.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxGuiGroup.cpp"; sourceTree = SOURCE_ROOT; };
 		EFB806BBAEAAE24AA2DB6C87 /* dt_ui_zoom.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = dt_ui_zoom.cpp; path = src/dt_ui_zoom.cpp; sourceTree = SOURCE_ROOT; };
-		F09C8F1F46F7781884291F3C /* xmlschemastypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlschemastypes.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlschemastypes.h"; sourceTree = SOURCE_ROOT; };
-		F3D63DBF8A99A446891B8AF0 /* ofxBaseMidi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxBaseMidi.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxBaseMidi.cpp"; sourceTree = SOURCE_ROOT; };
-		F68DDB2205C7F0CCC0DF36DC /* TimerListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TimerListener.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/TimerListener.h"; sourceTree = SOURCE_ROOT; };
-		F9878ACB7127BA4984819695 /* ofxMidiOut.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxMidiOut.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ofxMidiOut.cpp"; sourceTree = SOURCE_ROOT; };
+		F1DCB4375D0BFC34F4019822 /* xmlmodule.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlmodule.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlmodule.h"; sourceTree = SOURCE_ROOT; };
+		F35EDDE20A772E2CB8B5F95E /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxToggle.h"; sourceTree = SOURCE_ROOT; };
+		F3630B523280DDB2792C69C6 /* ofxXmlSettings.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxXmlSettings.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/src/ofxXmlSettings.h"; sourceTree = SOURCE_ROOT; };
+		F454C8D0038770E896C7B5B9 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxLabel.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxLabel.h"; sourceTree = SOURCE_ROOT; };
+		F5C6438AE405929AA053CFC0 /* xmlregexp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = xmlregexp.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml/xmlregexp.h"; sourceTree = SOURCE_ROOT; };
+		F5EC4FC8F7BDCABF7F67DA85 /* ofxColorPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxColorPicker.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxColorPicker.cpp"; sourceTree = SOURCE_ROOT; };
+		F7094A2A408F23E67A6D60A0 /* ofxOscSender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscSender.h; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscSender.h"; sourceTree = SOURCE_ROOT; };
+		F9A5313209DE2D4832D9A1FB /* ofxOscReceiver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxOscReceiver.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src/ofxOscReceiver.cpp"; sourceTree = SOURCE_ROOT; };
 		FA290C29ECB1FA4F0D93DF0E /* def.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = def.h; path = src/def.h; sourceTree = SOURCE_ROOT; };
-		FABB7E2DF118AC2FDAA2C49D /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxLabel.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src/ofxLabel.h"; sourceTree = SOURCE_ROOT; };
-		FC9D946FF0D10CB6413957F7 /* UdpSocket.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = UdpSocket.cpp; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix/UdpSocket.cpp"; sourceTree = SOURCE_ROOT; };
-		FECD9F815BC4198F3A5CC485 /* RtMidi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = RtMidi.h; path = "../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi/RtMidi.h"; sourceTree = SOURCE_ROOT; };
+		FACE188DE15B6BEC2849E585 /* ofxInputField.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxInputField.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxInputField.cpp"; sourceTree = SOURCE_ROOT; };
+		FD774B00F016E22C85E5783B /* ofxToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxToggle.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxToggle.cpp"; sourceTree = SOURCE_ROOT; };
+		FF09E8F177277B3934F35499 /* ofxPanel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxPanel.cpp; path = "../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src/ofxPanel.cpp"; sourceTree = SOURCE_ROOT; };
 		FF8ADBA911DFECBD655AC6FA /* dt_linear_drawer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dt_linear_drawer.h; path = src/dt_linear_drawer.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -342,14 +439,6 @@
 			name = ofxXmlSettings;
 			sourceTree = "<group>";
 		};
-		1FDD577CD8B9901D5774D6C7 /* ofxTweener */ = {
-			isa = PBXGroup;
-			children = (
-				ABDAFDB1F629411443294761 /* src */,
-			);
-			name = ofxTweener;
-			sourceTree = "<group>";
-		};
 		2413C01760B1811BED0F502D /* ofxMidi */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,18 +452,18 @@
 		30CB364908817057B430D528 /* osc */ = {
 			isa = PBXGroup;
 			children = (
-				E1EB168A290C2DDCB1EA0685 /* MessageMappingOscPacketListener.h */,
-				25EDEB52A141D894D1B4911C /* OscException.h */,
-				EC3C9F059178340AFE44D914 /* OscHostEndianness.h */,
-				8DD5018BCCF40868C2042872 /* OscOutboundPacketStream.cpp */,
-				1B7609C2F470183AB4E299B6 /* OscOutboundPacketStream.h */,
-				64579550C475A3DA4E3E3717 /* OscPacketListener.h */,
-				6E24922BC295E2283C629FE1 /* OscPrintReceivedElements.cpp */,
-				0B4B4DBD86CFF8058C7D43F6 /* OscPrintReceivedElements.h */,
-				9E8F6D30D0D2B5AB12B28F0B /* OscReceivedElements.cpp */,
-				A504956B766822E3C16E1087 /* OscReceivedElements.h */,
-				B3E64C28A506ED76BC55DAB2 /* OscTypes.cpp */,
-				8F753A210DBC19D11624B11C /* OscTypes.h */,
+				183B05FC8E6A5BE666D01F96 /* MessageMappingOscPacketListener.h */,
+				371A78358B70FC730EBC82FF /* OscException.h */,
+				D3B138697F88568007E84E2F /* OscHostEndianness.h */,
+				3585CB402A71F6D614E1AA43 /* OscOutboundPacketStream.cpp */,
+				A31CB6A1E399BD7F0F79C746 /* OscOutboundPacketStream.h */,
+				A5CAAFDFCF01C680FB4EDB7E /* OscPacketListener.h */,
+				ADA420442775C77E5BFBBE46 /* OscPrintReceivedElements.cpp */,
+				09B903A0B86733D98211732B /* OscPrintReceivedElements.h */,
+				ED19788CF0990B4787B41F44 /* OscReceivedElements.cpp */,
+				BF032BAADBD4F28F794B2AF3 /* OscReceivedElements.h */,
+				D2537BD0309F8D6F763CCDA6 /* OscTypes.cpp */,
+				994565282E9151EC7C6440F6 /* OscTypes.h */,
 			);
 			name = osc;
 			sourceTree = "<group>";
@@ -382,53 +471,53 @@
 		34383B8C0C105728B792B600 /* libxml */ = {
 			isa = PBXGroup;
 			children = (
-				59A3DEE8EB8C4771BE6C96F4 /* c14n.h */,
-				1C1CB8F753632DEA5411F8DF /* catalog.h */,
-				C9B3931D75E2F41CCFB76888 /* chvalid.h */,
-				08E6C8A9F1C18B9BE1E9A9A2 /* debugXML.h */,
-				C6F9A6A678AF5A32B01CB9E4 /* dict.h */,
-				30061418DFC8DF6E0540F401 /* DOCBparser.h */,
-				A32574AE3E4D59DC79707032 /* encoding.h */,
-				9135A0148C8201EF3971CD19 /* entities.h */,
-				20D146F6A2B3EC11472A4F49 /* globals.h */,
-				E780B79BAFBD7273AE503A18 /* hash.h */,
-				B5FA4CC94642F12E961AD5F9 /* HTMLparser.h */,
-				489E78D2B52D09ABA7F6017F /* HTMLtree.h */,
-				52AD5908DC8EDD09983506D6 /* list.h */,
-				6C0014D4B5B9B96C065F2199 /* nanoftp.h */,
-				5C29CCB8F14281C3620FF013 /* nanohttp.h */,
-				4AA74A9F9FE8C268E0964F49 /* parser.h */,
-				4D3ADE8AF3F4122C85CF18E3 /* parserInternals.h */,
-				5E6A4B968DC071054FAF5D9A /* pattern.h */,
-				C724B02159918A9AB964E0A0 /* relaxng.h */,
-				A5087937D6E6FB4F52132B9D /* SAX.h */,
-				57D3438F3854BB8CC2836969 /* SAX2.h */,
-				E22402BD2C4182CE63FD8CA3 /* schemasInternals.h */,
-				85B41583088D16523383FF06 /* schematron.h */,
-				8E447589D342C4F1910B17C8 /* threads.h */,
-				29B6FC3B65FA290097539FAD /* tree.h */,
-				183C6D9B7F1817A7DF82DE71 /* uri.h */,
-				C3453A723A569666A3825DC3 /* valid.h */,
-				2DF99C808BA515336988A3A9 /* xinclude.h */,
-				45AD78294F85F86E5BCC7AE2 /* xlink.h */,
-				E347BF1625E71BD386088058 /* xmlautomata.h */,
-				8ED7DEE15182FE9CF5B2A267 /* xmlerror.h */,
-				40DDB221880F899084A0C3A4 /* xmlexports.h */,
-				39AD895335CB8646AD78698D /* xmlIO.h */,
-				665081116CB28B9E95039CAA /* xmlmemory.h */,
-				2DC6431A5F13AFA12957EE6A /* xmlmodule.h */,
-				5D4EAF51CA64261947A89AB2 /* xmlreader.h */,
-				23AA5E9AF6D970B86C270668 /* xmlregexp.h */,
-				3BFC207754AA2D52733ABD55 /* xmlsave.h */,
-				C17A94FDEC677DE58325DC2F /* xmlschemas.h */,
-				F09C8F1F46F7781884291F3C /* xmlschemastypes.h */,
-				5D2109720AA251CA28EB03B2 /* xmlstring.h */,
-				8B17B3705BFC09974E511E2D /* xmlunicode.h */,
-				DD0A40960D587C5EF32F961D /* xmlversion.h */,
-				AC3B2E05817C627086F72A6E /* xmlwriter.h */,
-				58A14172D2B1FE3C06D6897B /* xpath.h */,
-				36F6394661DD4CC528F471AD /* xpathInternals.h */,
-				C7117EB90856B6A75F60A34D /* xpointer.h */,
+				2A64EF13F0232B26596A19E1 /* c14n.h */,
+				0183C8F78F23EEFC243049EC /* catalog.h */,
+				6E09E7635209657E69C7A90C /* chvalid.h */,
+				94000FC0257C0DE242BD39B9 /* debugXML.h */,
+				1F94C91FAF9C70FBC659B617 /* dict.h */,
+				B4BB0086527E92B426A5B95A /* DOCBparser.h */,
+				3CD1C6CFFCA70E8996669BED /* encoding.h */,
+				2E433C66EDEA10C87BBAD41E /* entities.h */,
+				C0D65259641D11F06B51EA88 /* globals.h */,
+				7145249CEBDD16EEC89A6F6F /* hash.h */,
+				8304DC0632C7DF9E8FAEFCFE /* HTMLparser.h */,
+				8A182B85C873533E2F4C8B87 /* HTMLtree.h */,
+				7A2F188D28C36D28E224FC99 /* list.h */,
+				7FBA1A4229F859B7DBE954F6 /* nanoftp.h */,
+				BB8D8FA778853FD2482CC10B /* nanohttp.h */,
+				38F31575020BF83DD234878E /* parser.h */,
+				0E9758F1BB28B601D6823227 /* parserInternals.h */,
+				0FFD8B2FC708F4DCDD4C7619 /* pattern.h */,
+				B7B1C5BCD714B04AEC850BB8 /* relaxng.h */,
+				54F1A4274462EC90D015F5C0 /* SAX.h */,
+				61C22BDB136093805B3A089E /* SAX2.h */,
+				079D9624FA1D774997FDB65A /* schemasInternals.h */,
+				DE7D5CD95CDA84CF04626AF6 /* schematron.h */,
+				4D673F7368BD19C53266B256 /* threads.h */,
+				9535B2B558D7B8286FAC797C /* tree.h */,
+				3A177B86C370A80FE749EE2B /* uri.h */,
+				1962792841B0BB03E8B2DF03 /* valid.h */,
+				D1740E885F6AFBB329DF7C29 /* xinclude.h */,
+				643DA2F07E7E387F62CFCB0E /* xlink.h */,
+				8B24598BDD8DD1322308A560 /* xmlautomata.h */,
+				E036F746FC39C7EE1F087AAD /* xmlerror.h */,
+				70F039CAD209FDBCFACBCDD4 /* xmlexports.h */,
+				1558812293FEFF622A27D97D /* xmlIO.h */,
+				3FBB8B9EDB48C7BDBFA270F2 /* xmlmemory.h */,
+				F1DCB4375D0BFC34F4019822 /* xmlmodule.h */,
+				C8BFC081E0514BE882A05549 /* xmlreader.h */,
+				F5C6438AE405929AA053CFC0 /* xmlregexp.h */,
+				4DE633D85DF7D9736A3E0F49 /* xmlsave.h */,
+				B8AC1346A86F5652CA5F9CC9 /* xmlschemas.h */,
+				5A0522CDCD0A82A6800DC9E6 /* xmlschemastypes.h */,
+				8161494E54675E7AF184E867 /* xmlstring.h */,
+				CA66B5A44B2B2BF71852188D /* xmlunicode.h */,
+				6F4A4A57E5465FC47AEA0B03 /* xmlversion.h */,
+				55B3AE612608E39EC11BE894 /* xmlwriter.h */,
+				7AF58090416C1618BC931DF4 /* xpath.h */,
+				A03405C69772C5346A9F7F1E /* xpathInternals.h */,
+				1D54A7DD5F552E2EA16817F3 /* xpointer.h */,
 			);
 			name = libxml;
 			sourceTree = "<group>";
@@ -455,6 +544,204 @@
 				34383B8C0C105728B792B600 /* libxml */,
 			);
 			name = include;
+			sourceTree = "<group>";
+		};
+		45F1F0F220EA1F84000D6FAA /* cereal */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F0FD20EA1F84000D6FAA /* include */,
+			);
+			name = cereal;
+			path = ../../../addons/cereal;
+			sourceTree = "<group>";
+		};
+		45F1F0FD20EA1F84000D6FAA /* include */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F0FE20EA1F84000D6FAA /* cereal */,
+				45F1F15A20EA1F84000D6FAA /* ofxCereal.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		45F1F0FE20EA1F84000D6FAA /* cereal */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F0FF20EA1F84000D6FAA /* access.hpp */,
+				45F1F10620EA1F84000D6FAA /* cereal.hpp */,
+				45F1F10720EA1F84000D6FAA /* details */,
+				45F1F10E20EA1F84000D6FAA /* external */,
+				45F1F13E20EA1F84000D6FAA /* macros.hpp */,
+				45F1F13F20EA1F84000D6FAA /* types */,
+			);
+			path = cereal;
+			sourceTree = "<group>";
+		};
+		45F1F10720EA1F84000D6FAA /* details */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F10820EA1F84000D6FAA /* helpers.hpp */,
+				45F1F10920EA1F84000D6FAA /* polymorphic_impl.hpp */,
+				45F1F10A20EA1F84000D6FAA /* polymorphic_impl_fwd.hpp */,
+				45F1F10B20EA1F84000D6FAA /* static_object.hpp */,
+				45F1F10C20EA1F84000D6FAA /* traits.hpp */,
+				45F1F10D20EA1F84000D6FAA /* util.hpp */,
+			);
+			path = details;
+			sourceTree = "<group>";
+		};
+		45F1F10E20EA1F84000D6FAA /* external */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F10F20EA1F84000D6FAA /* base64.hpp */,
+				45F1F11020EA1F84000D6FAA /* rapidjson */,
+				45F1F13720EA1F84000D6FAA /* rapidxml */,
+			);
+			path = external;
+			sourceTree = "<group>";
+		};
+		45F1F11020EA1F84000D6FAA /* rapidjson */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F11120EA1F84000D6FAA /* allocators.h */,
+				45F1F11220EA1F84000D6FAA /* document.h */,
+				45F1F11320EA1F84000D6FAA /* encodedstream.h */,
+				45F1F11420EA1F84000D6FAA /* encodings.h */,
+				45F1F11520EA1F84000D6FAA /* error */,
+				45F1F11820EA1F84000D6FAA /* filereadstream.h */,
+				45F1F11920EA1F84000D6FAA /* filewritestream.h */,
+				45F1F11A20EA1F84000D6FAA /* fwd.h */,
+				45F1F11B20EA1F84000D6FAA /* internal */,
+				45F1F12820EA1F84000D6FAA /* istreamwrapper.h */,
+				45F1F12920EA1F84000D6FAA /* memorybuffer.h */,
+				45F1F12A20EA1F84000D6FAA /* memorystream.h */,
+				45F1F12E20EA1F84000D6FAA /* ostreamwrapper.h */,
+				45F1F12F20EA1F84000D6FAA /* pointer.h */,
+				45F1F13020EA1F84000D6FAA /* prettywriter.h */,
+				45F1F13120EA1F84000D6FAA /* rapidjson.h */,
+				45F1F13220EA1F84000D6FAA /* reader.h */,
+				45F1F13320EA1F84000D6FAA /* schema.h */,
+				45F1F13420EA1F84000D6FAA /* stream.h */,
+				45F1F13520EA1F84000D6FAA /* stringbuffer.h */,
+				45F1F13620EA1F84000D6FAA /* writer.h */,
+			);
+			path = rapidjson;
+			sourceTree = "<group>";
+		};
+		45F1F11520EA1F84000D6FAA /* error */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F11620EA1F84000D6FAA /* en.h */,
+				45F1F11720EA1F84000D6FAA /* error.h */,
+			);
+			path = error;
+			sourceTree = "<group>";
+		};
+		45F1F11B20EA1F84000D6FAA /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F11C20EA1F84000D6FAA /* biginteger.h */,
+				45F1F11D20EA1F84000D6FAA /* diyfp.h */,
+				45F1F11E20EA1F84000D6FAA /* dtoa.h */,
+				45F1F11F20EA1F84000D6FAA /* ieee754.h */,
+				45F1F12020EA1F84000D6FAA /* itoa.h */,
+				45F1F12120EA1F84000D6FAA /* meta.h */,
+				45F1F12220EA1F84000D6FAA /* pow10.h */,
+				45F1F12320EA1F84000D6FAA /* regex.h */,
+				45F1F12420EA1F84000D6FAA /* stack.h */,
+				45F1F12520EA1F84000D6FAA /* strfunc.h */,
+				45F1F12620EA1F84000D6FAA /* strtod.h */,
+				45F1F12720EA1F84000D6FAA /* swap.h */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		45F1F13720EA1F84000D6FAA /* rapidxml */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F13820EA1F84000D6FAA /* license.txt */,
+				45F1F13920EA1F84000D6FAA /* manual.html */,
+				45F1F13A20EA1F84000D6FAA /* rapidxml.hpp */,
+				45F1F13B20EA1F84000D6FAA /* rapidxml_iterators.hpp */,
+				45F1F13C20EA1F84000D6FAA /* rapidxml_print.hpp */,
+				45F1F13D20EA1F84000D6FAA /* rapidxml_utils.hpp */,
+			);
+			path = rapidxml;
+			sourceTree = "<group>";
+		};
+		45F1F13F20EA1F84000D6FAA /* types */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F14020EA1F84000D6FAA /* array.hpp */,
+				45F1F14120EA1F84000D6FAA /* base_class.hpp */,
+				45F1F14220EA1F84000D6FAA /* bitset.hpp */,
+				45F1F14320EA1F84000D6FAA /* boost_variant.hpp */,
+				45F1F14420EA1F84000D6FAA /* chrono.hpp */,
+				45F1F14520EA1F84000D6FAA /* common.hpp */,
+				45F1F14620EA1F84000D6FAA /* complex.hpp */,
+				45F1F14720EA1F84000D6FAA /* concepts */,
+				45F1F14920EA1F84000D6FAA /* deque.hpp */,
+				45F1F14A20EA1F84000D6FAA /* forward_list.hpp */,
+				45F1F14B20EA1F84000D6FAA /* functional.hpp */,
+				45F1F14C20EA1F84000D6FAA /* list.hpp */,
+				45F1F14D20EA1F84000D6FAA /* map.hpp */,
+				45F1F14E20EA1F84000D6FAA /* memory.hpp */,
+				45F1F14F20EA1F84000D6FAA /* polymorphic.hpp */,
+				45F1F15020EA1F84000D6FAA /* queue.hpp */,
+				45F1F15120EA1F84000D6FAA /* set.hpp */,
+				45F1F15220EA1F84000D6FAA /* stack.hpp */,
+				45F1F15320EA1F84000D6FAA /* string.hpp */,
+				45F1F15420EA1F84000D6FAA /* tuple.hpp */,
+				45F1F15520EA1F84000D6FAA /* unordered_map.hpp */,
+				45F1F15620EA1F84000D6FAA /* unordered_set.hpp */,
+				45F1F15720EA1F84000D6FAA /* utility.hpp */,
+				45F1F15820EA1F84000D6FAA /* valarray.hpp */,
+				45F1F15920EA1F84000D6FAA /* vector.hpp */,
+			);
+			path = types;
+			sourceTree = "<group>";
+		};
+		45F1F14720EA1F84000D6FAA /* concepts */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F14820EA1F84000D6FAA /* pair_associative_container.hpp */,
+			);
+			path = concepts;
+			sourceTree = "<group>";
+		};
+		45F1F1DA20EA291C000D6FAA /* ofxModifierKeys */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F1EE20EA291C000D6FAA /* src */,
+			);
+			name = ofxModifierKeys;
+			path = ../../../addons/ofxModifierKeys;
+			sourceTree = "<group>";
+		};
+		45F1F1EE20EA291C000D6FAA /* src */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F1EF20EA291C000D6FAA /* ofxModifierKeys.h */,
+				45F1F1F020EA291C000D6FAA /* ofxModifierKeys_impl_linux.cpp */,
+				45F1F1F120EA291C000D6FAA /* ofxModifierKeys_impl_mac.mm */,
+				45F1F1F220EA291C000D6FAA /* ofxModifierKeys_impl_win.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		45F1F21220EA2D97000D6FAA /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				45F1F20120EA2C72000D6FAA /* icon-1_off.png */,
+				45F1F20220EA2C72000D6FAA /* icon-1.png */,
+				45F1F20320EA2C72000D6FAA /* icon-2_off.png */,
+				45F1F20420EA2C72000D6FAA /* icon-2.png */,
+				45F1F20520EA2C72000D6FAA /* icon-3_off.png */,
+				45F1F20620EA2C72000D6FAA /* icon-3.png */,
+				45F1F20720EA2C72000D6FAA /* icon-4_off.png */,
+				45F1F20820EA2C72000D6FAA /* icon-4.png */,
+			);
+			name = icon;
 			sourceTree = "<group>";
 		};
 		480A780D8D0308AE4A368801 /* ofxGui */ = {
@@ -484,8 +771,8 @@
 		641362CA659FAFEE4E81001B /* posix */ = {
 			isa = PBXGroup;
 			children = (
-				7B9F14D04E43814A6DB4DA7A /* NetworkingUtils.cpp */,
-				FC9D946FF0D10CB6413957F7 /* UdpSocket.cpp */,
+				171D522EC4ACF38255072FBE /* NetworkingUtils.cpp */,
+				E0371584AD91A0746C8043ED /* UdpSocket.cpp */,
 			);
 			name = posix;
 			sourceTree = "<group>";
@@ -500,10 +787,10 @@
 		6E54289412D2D94F45A05113 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				79A3E147862179D53EAD75DE /* tinyxml.cpp */,
-				6ABD9EF54FA48C10A3809E2C /* tinyxml.h */,
-				A4217699B11E8D3922EC22FC /* tinyxmlerror.cpp */,
-				3AD88A0E68927205BE0A8D57 /* tinyxmlparser.cpp */,
+				682DA5F7DD68F81BB3DC2A70 /* tinyxml.cpp */,
+				513D440444362CA7C4524D70 /* tinyxml.h */,
+				88952F1A401E11F1FA714C6B /* tinyxmlerror.cpp */,
+				7620C9DDB1D612CC8D5B6882 /* tinyxmlparser.cpp */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -511,8 +798,8 @@
 		6ECEF0D76BC33727823EADFF /* src */ = {
 			isa = PBXGroup;
 			children = (
-				699A2727CA15B3C1C8E20D1D /* ofxXmlSettings.cpp */,
-				CE6F1E8EB48D3C96708FB005 /* ofxXmlSettings.h */,
+				B189BD330B311345AD41AFFC /* ofxXmlSettings.cpp */,
+				F3630B523280DDB2792C69C6 /* ofxXmlSettings.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -536,8 +823,8 @@
 		945CEFADFB0DF400A92A507C /* rtmidi */ = {
 			isa = PBXGroup;
 			children = (
-				0A4CC6012E70F2216A0E3E35 /* RtMidi.cpp */,
-				FECD9F815BC4198F3A5CC485 /* RtMidi.h */,
+				A9FD9B81D99B6454F7C1820B /* RtMidi.cpp */,
+				C4D9A0E49358056A80A15140 /* RtMidi.h */,
 			);
 			name = rtmidi;
 			sourceTree = "<group>";
@@ -545,10 +832,10 @@
 		99DED6A5D3EDE030B1A80348 /* desktop */ = {
 			isa = PBXGroup;
 			children = (
-				D9F95858447AA4B98CEF5A8E /* ofxRtMidiIn.cpp */,
-				B3AC65C6B9CEEED8C26AE700 /* ofxRtMidiIn.h */,
-				C647AE874F315E7DF5179A3B /* ofxRtMidiOut.cpp */,
-				0EEB02ECC73D6B9E454C2633 /* ofxRtMidiOut.h */,
+				64A3F7859623004D44E30886 /* ofxRtMidiIn.cpp */,
+				EA7422ABC6A27706D6CC7F53 /* ofxRtMidiIn.h */,
+				46BA862F89C2DB73A87E38B7 /* ofxRtMidiOut.cpp */,
+				9F42A27C1D7767F733296E41 /* ofxRtMidiOut.h */,
 			);
 			name = desktop;
 			sourceTree = "<group>";
@@ -557,18 +844,18 @@
 			isa = PBXGroup;
 			children = (
 				99DED6A5D3EDE030B1A80348 /* desktop */,
-				F3D63DBF8A99A446891B8AF0 /* ofxBaseMidi.cpp */,
-				75BE82ADCEFB05EAE7AEF78C /* ofxBaseMidi.h */,
-				9FB2A7EB23BFC1F92FA662DE /* ofxMidi.cpp */,
-				90C0105B7AFBCEFD87F1E8A8 /* ofxMidi.h */,
-				4C758857D9B86E42646BCE3D /* ofxMidiConstants.h */,
-				E238A7C54C786684C15603B8 /* ofxMidiIn.cpp */,
-				5797C68BFBAFCB89CEB19EB9 /* ofxMidiIn.h */,
-				4F8C5DC7618F2F51F94F2C8D /* ofxMidiMessage.cpp */,
-				8C0AE908E6D7A1A9CAD3D557 /* ofxMidiMessage.h */,
-				F9878ACB7127BA4984819695 /* ofxMidiOut.cpp */,
-				80B3CFB2ECA6767BEA6A406B /* ofxMidiOut.h */,
-				8D5FED62EEAE95F706CCC6F6 /* ofxMidiTypes.h */,
+				3F7CF3C649141D7F762F2321 /* ofxBaseMidi.cpp */,
+				897BDB4D4141584AE7A8F8BB /* ofxBaseMidi.h */,
+				1F447BBF1CFE185F1BB68C4D /* ofxMidi.cpp */,
+				8673EA8B903833B5B8F9B111 /* ofxMidi.h */,
+				E0FD6E42302FD34EA4D4533E /* ofxMidiConstants.h */,
+				0C867600B9CC5A0F03234951 /* ofxMidiIn.cpp */,
+				E9A14687BB0A0EB2F4FD0A9D /* ofxMidiIn.h */,
+				34F292134A05A1ED488CF735 /* ofxMidiMessage.cpp */,
+				CBE9FF49EE9F49B4B920FB06 /* ofxMidiMessage.h */,
+				284126AF5DBEBC5E18AA8A4F /* ofxMidiOut.cpp */,
+				52367038924E16950A1CD970 /* ofxMidiOut.h */,
+				2D437EB03C9CA2AB78A573CB /* ofxMidiTypes.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -576,38 +863,27 @@
 		A763ED608B35AE3310251DEE /* src */ = {
 			isa = PBXGroup;
 			children = (
-				5785A1784700C5CA4D72677C /* ofxBaseGui.cpp */,
-				3239B389C96A85D256853EBC /* ofxBaseGui.h */,
-				81FDC9204E282F380D93B57E /* ofxButton.cpp */,
-				42C7C30EF8E3CEC4854B2A96 /* ofxButton.h */,
-				158DAF76B59323F7F3A91ABD /* ofxColorPicker.cpp */,
-				9FC896E1385C24FA4E8BF493 /* ofxColorPicker.h */,
-				0284C6AADB3D4035491498A6 /* ofxGui.h */,
-				EEE66B3CD77BD0A6AE764EFD /* ofxGuiGroup.cpp */,
-				8289B64D8DB1F205DD28EFBE /* ofxGuiGroup.h */,
-				57E9D54376828C8D6FF8134E /* ofxInputField.cpp */,
-				29C630D1527ADC8114A944D2 /* ofxInputField.h */,
-				960A0C796ABCF22A41C401FD /* ofxLabel.cpp */,
-				FABB7E2DF118AC2FDAA2C49D /* ofxLabel.h */,
-				4697FB5D4080B136AB345645 /* ofxPanel.cpp */,
-				43A971744841D521DB3F09E0 /* ofxPanel.h */,
-				4A8F9AC8DE0294B01D3E3EF4 /* ofxSlider.cpp */,
-				A6CACF5014099E9405B69ED0 /* ofxSlider.h */,
-				7131666BEB876DCBFF8C627F /* ofxSliderGroup.cpp */,
-				E60F6A5D3B0FF72D3DA4C440 /* ofxSliderGroup.h */,
-				1E9EAC8FA9E2C5093F52ADCB /* ofxToggle.cpp */,
-				3D65446E8399057A083B5D64 /* ofxToggle.h */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		ABDAFDB1F629411443294761 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				EBA057A8BD5C3258AC2FDF2C /* ofxTransitions.cpp */,
-				9023B2AF08D33FF588B751BA /* ofxTransitions.h */,
-				37935AD02C17FA11A3F664E4 /* ofxTweener.cpp */,
-				6E0C97D16B7D90272737633A /* ofxTweener.h */,
+				CF2389AD3C408695D5909D5C /* ofxBaseGui.cpp */,
+				2347069A7C0EF6A6B6CB4AF2 /* ofxBaseGui.h */,
+				22E5E22560A931897563D950 /* ofxButton.cpp */,
+				37E8954DCC9C2A905E4E6EDC /* ofxButton.h */,
+				F5EC4FC8F7BDCABF7F67DA85 /* ofxColorPicker.cpp */,
+				1F0BAF2DA7E38A4454F1ED86 /* ofxColorPicker.h */,
+				007C940CCB00CE8EB462F8ED /* ofxGui.h */,
+				4BCF1E97D610D085558C6942 /* ofxGuiGroup.cpp */,
+				6FFECA729B9A208DD358D2B2 /* ofxGuiGroup.h */,
+				FACE188DE15B6BEC2849E585 /* ofxInputField.cpp */,
+				778BFFEC1ED9A73B14ED4573 /* ofxInputField.h */,
+				52BBF14C0EB79865724C146C /* ofxLabel.cpp */,
+				F454C8D0038770E896C7B5B9 /* ofxLabel.h */,
+				FF09E8F177277B3934F35499 /* ofxPanel.cpp */,
+				33024E42D8C9D7FDD20A7C20 /* ofxPanel.h */,
+				6AC6FB58CFFAC35054540FDA /* ofxSlider.cpp */,
+				8A3418C3363959EAAE35CC91 /* ofxSlider.h */,
+				5D0DBC35900359DB80128CB2 /* ofxSliderGroup.cpp */,
+				CA5A3BE8ABC30FAEC383D0C0 /* ofxSliderGroup.h */,
+				FD774B00F016E22C85E5783B /* ofxToggle.cpp */,
+				F35EDDE20A772E2CB8B5F95E /* ofxToggle.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -615,11 +891,12 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				45F1F1DA20EA291C000D6FAA /* ofxModifierKeys */,
+				45F1F0F220EA1F84000D6FAA /* cereal */,
 				480A780D8D0308AE4A368801 /* ofxGui */,
 				2413C01760B1811BED0F502D /* ofxMidi */,
 				E6053AB7FEC63D5F83825B88 /* ofxOsc */,
 				F5F1F1EF8441E64FD46F07C8 /* ofxSvg */,
-				1FDD577CD8B9901D5774D6C7 /* ofxTweener */,
 				1F4FB5C423662B96ADFDCC0B /* ofxXmlSettings */,
 			);
 			name = addons;
@@ -628,18 +905,18 @@
 		BD2F1A9F8D0C05EDB29122D0 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4226C6406E21A57FEF737540 /* ofxOsc.h */,
-				015102FC61D24886F0A9F1F0 /* ofxOscArg.h */,
-				A4502BE8A819531DA8E67040 /* ofxOscBundle.cpp */,
-				138EE8173347940C929871E4 /* ofxOscBundle.h */,
-				A5CB15A22BEC859DB189D16E /* ofxOscMessage.cpp */,
-				B514FE40D1310C6969C8D4CF /* ofxOscMessage.h */,
-				589C7BC252E979C4AE22A570 /* ofxOscParameterSync.cpp */,
-				207D9379D47CB074DED3AF20 /* ofxOscParameterSync.h */,
-				7B4D08292B8E50F87D845451 /* ofxOscReceiver.cpp */,
-				E4CE7E52E1D7A5656728692C /* ofxOscReceiver.h */,
-				4BD7C4BE4626CF0831529A27 /* ofxOscSender.cpp */,
-				71A1962D2F0C9303EE94E52F /* ofxOscSender.h */,
+				D74BBF13FF6D61FAC3BE70AE /* ofxOsc.h */,
+				3B14AB35650F37478769B286 /* ofxOscArg.h */,
+				6C5D3E2CFE256B942E630A32 /* ofxOscBundle.cpp */,
+				07BB7D8F66C78D12EAE83376 /* ofxOscBundle.h */,
+				938A2B478DBD5DE4085CB00E /* ofxOscMessage.cpp */,
+				8CDC4440422CD066603BB4EC /* ofxOscMessage.h */,
+				637DC9EEA8D20740C238203C /* ofxOscParameterSync.cpp */,
+				BF152DC8A95333200E568552 /* ofxOscParameterSync.h */,
+				F9A5313209DE2D4832D9A1FB /* ofxOscReceiver.cpp */,
+				28DDEB3DF66B794FEAA44ACC /* ofxOscReceiver.h */,
+				8721A578CEFED4ABCA037052 /* ofxOscSender.cpp */,
+				F7094A2A408F23E67A6D60A0 /* ofxOscSender.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -656,7 +933,7 @@
 		CBB0EC04A879D9C8DBD295B8 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				5669CC0B0A785E34A9F1DE95 /* svgtiny.h */,
+				612102AD934DB697B8DD869B /* svgtiny.h */,
 			);
 			name = include;
 			sourceTree = "<group>";
@@ -673,8 +950,8 @@
 		DBB3EF673AE7E843FD50910D /* src */ = {
 			isa = PBXGroup;
 			children = (
-				9BFFFB921A3B2D6B94CB5D98 /* ofxSvg.cpp */,
-				0E5FC2077C641D6A152CC48F /* ofxSvg.h */,
+				52F93CD35E6B98FF49EED7B7 /* ofxSvg.cpp */,
+				4FF92591A847601DF20210E0 /* ofxSvg.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -690,6 +967,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				45F1F21220EA2D97000D6FAA /* icon */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
@@ -704,6 +982,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				45F1EFD720EA1CB2000D6FAA /* ofApp.mm */,
 				2CE1CB5DCF4228611BA16CB7 /* AppDelegate.h */,
 				5C312CAFA1A4F47E118EB87D /* AppDelegate.mm */,
 				BB83E49956839F92501876DD /* CircleView.xib */,
@@ -720,8 +999,6 @@
 				191DE2B8347B04150DFD2E0A /* dt_circle_drawer.h */,
 				C1AF42972C61D8482FAC025C /* dt_circle_note_on.cpp */,
 				A9169F58570927B4B4A34900 /* dt_circle_note_on.h */,
-				E90A73DA39A5EC935D61A0CB /* dt_circle_output_base.cpp */,
-				086BE41663223C88EAC9E319 /* dt_circle_output_base.h */,
 				977160223E613109E7C02468 /* dt_circle_param.cpp */,
 				18C9D9AB77E515062D45E48E /* dt_circle_param.h */,
 				E8B12B46DB3853E910283078 /* dt_config.cpp */,
@@ -735,7 +1012,6 @@
 				FF8ADBA911DFECBD655AC6FA /* dt_linear_drawer.h */,
 				5F28501F8CCD59030F7BA5F2 /* dt_midi_send_pool.h */,
 				D5B86390053C4CF609268399 /* dt_midi_sender.h */,
-				AF3DB8CB9A096E6F9298C1CB /* dt_midi_writer.h */,
 				BDBB1FE6CA8ACAF101EEB3B9 /* dt_mode_manager.cpp */,
 				DA09331DD294EADE80EB3E0F /* dt_mode_manager.h */,
 				89FACE51DB306C74439EC832 /* dt_mouse_gesture.cpp */,
@@ -766,6 +1042,7 @@
 				54198B4189F9BF913AD5D992 /* MainWindow.xib */,
 				BDA1E8412E90CED3E499C14B /* MainWindowController.h */,
 				1C05E66402FE535280E61FCF /* MainWindowController.mm */,
+				45F1EFD520EA1CA1000D6FAA /* main.mm */,
 				995BE76EA6F93E1330A7D1CA /* ofx2DCamera.cpp */,
 				07D5BAB9B5DD521D11FDA93B /* ofx2DCamera.h */,
 				7AF9A38EE6D1E021913C6FB4 /* ofxCocoaGLView.h */,
@@ -810,13 +1087,13 @@
 		FF8CDF57858E9B94E3237115 /* ip */ = {
 			isa = PBXGroup;
 			children = (
-				DD39C7565E326FF3512BC0BE /* IpEndpointName.cpp */,
-				670E11B3E224C5FE828FA861 /* IpEndpointName.h */,
-				39DB2E4626307166D7FAAED3 /* NetworkingUtils.h */,
-				0035A6CEC24CBDA5DDA321FB /* PacketListener.h */,
+				E4E322609B0E5325B915291D /* IpEndpointName.cpp */,
+				26E2343D961F8425AAA239F7 /* IpEndpointName.h */,
+				71F551F5A52B1DC21C563FBC /* NetworkingUtils.h */,
+				B5A34B76C0729D88E007D99A /* PacketListener.h */,
 				641362CA659FAFEE4E81001B /* posix */,
-				F68DDB2205C7F0CCC0DF36DC /* TimerListener.h */,
-				2DC7D41057C3EC988485086E /* UdpSocket.h */,
+				64B0FBE4E0E15AD0EC7224D7 /* TimerListener.h */,
+				13E2E93DD0E713357C3FEAB1 /* UdpSocket.h */,
 			);
 			name = ip;
 			sourceTree = "<group>";
@@ -833,6 +1110,7 @@
 				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
 				E4C2427710CC5ABF004149E2 /* CopyFiles */,
 				8466F1851C04CA0E00918B1C /* ShellScript */,
+				45F1F21120EA2CCC000D6FAA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -888,6 +1166,29 @@
 		};
 /* End PBXReferenceProxy section */
 
+/* Begin PBXResourcesBuildPhase section */
+		45F1F21120EA2CCC000D6FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45F1F20920EA2C72000D6FAA /* icon-1_off.png in Resources */,
+				45F1F20A20EA2C72000D6FAA /* icon-1.png in Resources */,
+				45F1F20B20EA2C72000D6FAA /* icon-2_off.png in Resources */,
+				45F1F20C20EA2C72000D6FAA /* icon-2.png in Resources */,
+				45F1F20D20EA2C72000D6FAA /* icon-3_off.png in Resources */,
+				45F1F20E20EA2C72000D6FAA /* icon-3.png in Resources */,
+				45F1F20F20EA2C72000D6FAA /* icon-4_off.png in Resources */,
+				45F1F21020EA2C72000D6FAA /* icon-4.png in Resources */,
+				45F1F1FC20EA2C37000D6FAA /* CircleView.xib in Resources */,
+				45F1F1FD20EA2C37000D6FAA /* MainMenu.xib in Resources */,
+				45F1F1FE20EA2C37000D6FAA /* MainWindow.xib in Resources */,
+				45F1F1FF20EA2C37000D6FAA /* OscInView.xib in Resources */,
+				45F1F20020EA2C37000D6FAA /* OscOutView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXShellScriptBuildPhase section */
 		8466F1851C04CA0E00918B1C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -922,6 +1223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F1EFD620EA1CA1000D6FAA /* main.mm in Sources */,
 				9E066FCC9E54ECF402E51F0A /* AppDelegate.mm in Sources */,
 				FDE424B4CF4EEE1D0EAA0807 /* CircleViewController.mm in Sources */,
 				68E62CEC284FE69C7A1D7A26 /* dt_circle_all_containers.cpp in Sources */,
@@ -929,11 +1231,11 @@
 				3FC05C32F74FFE3542B128A7 /* dt_circle_container.cpp in Sources */,
 				7B9B7D2F0C08CDB8FC22ED42 /* dt_circle_drawer.cpp in Sources */,
 				7993E77F56F59FA21DD6AA84 /* dt_circle_note_on.cpp in Sources */,
-				B7F67D707576B4BFC8C53182 /* dt_circle_output_base.cpp in Sources */,
 				3113F7598FF85C6A0E7BAF2D /* dt_circle_param.cpp in Sources */,
 				52C35EF2F031AB03EFBB8732 /* dt_config.cpp in Sources */,
 				4D72AE7C014021C1A8DB2C8D /* dt_dial_ui.cpp in Sources */,
 				EE12937D2C1B446DA344112A /* dt_GLView.mm in Sources */,
+				45F1EFD820EA1CB2000D6FAA /* ofApp.mm in Sources */,
 				9809702DFB822AFFDB57BEF3 /* dt_linear_drawer.cpp in Sources */,
 				DC3B897760157340267678F9 /* dt_mode_manager.cpp in Sources */,
 				F4B069B5E5CC063155C8A6B7 /* dt_mouse_gesture.cpp in Sources */,
@@ -952,43 +1254,44 @@
 				6F25FE875D657DC0B4FF7458 /* ofxCocoaGLView.mm in Sources */,
 				A9DC8C6E365019615B4B2668 /* OscInViewController.mm in Sources */,
 				81B9E05F2F81E48F3A5C4406 /* OscOutViewController.mm in Sources */,
-				69E3E000F354CEDDBBFD6E64 /* ofxBaseGui.cpp in Sources */,
-				4B3D4E7FD198A8155C1F56B8 /* ofxButton.cpp in Sources */,
-				D0EF4A38EFBA4B3C113313F0 /* ofxColorPicker.cpp in Sources */,
-				9E5ACB96D811EC72B7A82DB9 /* ofxGuiGroup.cpp in Sources */,
-				EC0F3DA857A1E836F8303726 /* ofxInputField.cpp in Sources */,
-				27D597CF5ED8F1EF549F2202 /* ofxLabel.cpp in Sources */,
-				F9CF2D918966B14BDE5F2413 /* ofxPanel.cpp in Sources */,
-				CF4151A481A1CF18050560D1 /* ofxSlider.cpp in Sources */,
-				975EBE2D590D117FEE2E0C94 /* ofxSliderGroup.cpp in Sources */,
-				FA3BE176B13A493F1B3110D4 /* ofxToggle.cpp in Sources */,
-				93F65FFD2641505B5ACBE63D /* ofxRtMidiIn.cpp in Sources */,
-				B8CAFAD0B18D3B07DA5570E6 /* ofxRtMidiOut.cpp in Sources */,
-				F16B0936CE2D224718F1C65A /* ofxBaseMidi.cpp in Sources */,
-				498250B76754C7F04AB0B4A9 /* ofxMidi.cpp in Sources */,
-				06410CE5641DD41BC31BC930 /* ofxMidiIn.cpp in Sources */,
-				DD4BBF4AF6FFBD518EB0AF91 /* ofxMidiMessage.cpp in Sources */,
-				D68C15743ACB05CB22484A3C /* ofxMidiOut.cpp in Sources */,
-				8D09C81EC2B0644CBE71DB9F /* RtMidi.cpp in Sources */,
-				B897683C38C7B472EE00AC55 /* ofxOscBundle.cpp in Sources */,
-				B83297FA7211077114272112 /* ofxOscMessage.cpp in Sources */,
-				74A05A2BD0A55E47B4F43ED5 /* ofxOscParameterSync.cpp in Sources */,
-				19392DE080F0A0F53114F6AB /* ofxOscReceiver.cpp in Sources */,
-				744FC0A5AE108D3540DD692A /* ofxOscSender.cpp in Sources */,
-				2802D213B67C93D21577E452 /* IpEndpointName.cpp in Sources */,
-				709CEDEA78B203776AA25B14 /* NetworkingUtils.cpp in Sources */,
-				9822E242E4754E6C75EF203F /* UdpSocket.cpp in Sources */,
-				EEF748651E2BF93DB98DB54B /* OscOutboundPacketStream.cpp in Sources */,
-				D72925BABD2539F8085E25F3 /* OscPrintReceivedElements.cpp in Sources */,
-				42B525CF474172969F7ED998 /* OscReceivedElements.cpp in Sources */,
-				E30F9A953428344749EABF90 /* OscTypes.cpp in Sources */,
-				6180D32379AC3980CA1C70E2 /* ofxSvg.cpp in Sources */,
-				67964FAE23E2235DE1A79AC2 /* ofxTransitions.cpp in Sources */,
-				10DC7D0CBA537F7EC4E38C2C /* ofxTweener.cpp in Sources */,
-				B93C55F15B1C0D68198FCE0E /* ofxXmlSettings.cpp in Sources */,
-				BDA83B509317B2A55EEFFBEC /* tinyxml.cpp in Sources */,
-				4EC4E64661DC3E67F0816DBE /* tinyxmlerror.cpp in Sources */,
-				EFA1C08CD113A7C205CE5119 /* tinyxmlparser.cpp in Sources */,
+				3E838502BE27969A90BDB31E /* ofxBaseGui.cpp in Sources */,
+				321C838839C2EE4A9B9A7E5A /* ofxButton.cpp in Sources */,
+				45F1F1F820EA291C000D6FAA /* ofxModifierKeys_impl_win.cpp in Sources */,
+				45F1F1F720EA291C000D6FAA /* ofxModifierKeys_impl_mac.mm in Sources */,
+				F2191934985823A1D25F55D8 /* ofxColorPicker.cpp in Sources */,
+				681EDCBA6289F258F81B23FB /* ofxGuiGroup.cpp in Sources */,
+				89FE36BD203D77139DB81560 /* ofxInputField.cpp in Sources */,
+				E16CDFDA9BA9755FFB0614E3 /* ofxLabel.cpp in Sources */,
+				ED26C06E20857B766EE56486 /* ofxPanel.cpp in Sources */,
+				389A2609072C623464356722 /* ofxSlider.cpp in Sources */,
+				550F76173B97F92EF175330B /* ofxSliderGroup.cpp in Sources */,
+				3CC71114B28D8070D1178AD0 /* ofxToggle.cpp in Sources */,
+				8ED48356E9C41E784F166D81 /* ofxRtMidiIn.cpp in Sources */,
+				2945C1C65733C063D4ADC404 /* ofxRtMidiOut.cpp in Sources */,
+				561F6570CD026A6969AE8B6D /* ofxBaseMidi.cpp in Sources */,
+				852FBC5B57A938630D6C63A9 /* ofxMidi.cpp in Sources */,
+				17ED42555F48F70F15D6220F /* ofxMidiIn.cpp in Sources */,
+				3B7B35098C07C05E63BE2CF0 /* ofxMidiMessage.cpp in Sources */,
+				3CD21D9186577CEB03FEFE33 /* ofxMidiOut.cpp in Sources */,
+				16065838CE52F0B305A8FAF5 /* RtMidi.cpp in Sources */,
+				B207AAA9613385AC5B30F900 /* ofxOscBundle.cpp in Sources */,
+				6D230692CB304779318E6747 /* ofxOscMessage.cpp in Sources */,
+				780147434E737A02FC8D19C9 /* ofxOscParameterSync.cpp in Sources */,
+				45CBF76BD3053430AB9EBAD2 /* ofxOscReceiver.cpp in Sources */,
+				325DBEF86D2F14B401851F78 /* ofxOscSender.cpp in Sources */,
+				CDFBFBBBA6501128C9F85240 /* IpEndpointName.cpp in Sources */,
+				FE1140B9E8FDF959B0516495 /* NetworkingUtils.cpp in Sources */,
+				AEA9903B4E836BB28D196659 /* UdpSocket.cpp in Sources */,
+				526A97FB1736763F621819FD /* OscOutboundPacketStream.cpp in Sources */,
+				C562157D0155584EF205D221 /* OscPrintReceivedElements.cpp in Sources */,
+				2C8C5EEAA7CF25A08ABCEF6B /* OscReceivedElements.cpp in Sources */,
+				C2E85379F1460C46E710167E /* OscTypes.cpp in Sources */,
+				3EBB38E04C5475C381A255F6 /* ofxSvg.cpp in Sources */,
+				8515D078A4F5327BB2D1B872 /* ofxXmlSettings.cpp in Sources */,
+				37EF105A37E09D2F18D856E1 /* tinyxml.cpp in Sources */,
+				45F1F1F620EA291C000D6FAA /* ofxModifierKeys_impl_linux.cpp in Sources */,
+				6D4DB198E2BFB76773226996 /* tinyxmlerror.cpp in Sources */,
+				3902D73CC0E9428399443124 /* tinyxmlparser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1027,37 +1330,38 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxTweener/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxTweener/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"$(OFX_CEREAL_HEADERS)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1072,8 +1376,8 @@
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_FRAMEWORKS)",
 					"$(OF_CORE_LIBS)",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
 				);
 				SDKROOT = macosx;
 			};
@@ -1095,37 +1399,38 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxTweener/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxTweener/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"$(OFX_CEREAL_HEADERS)",
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -1135,8 +1440,8 @@
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_FRAMEWORKS)",
 					"$(OF_CORE_LIBS)",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1166,37 +1471,38 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxTweener/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxTweener/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"$(OFX_CEREAL_HEADERS)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1207,8 +1513,8 @@
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_FRAMEWORKS)",
 					"$(OF_CORE_LIBS)",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
 				);
 				SDKROOT = macosx;
 			};
@@ -1237,37 +1543,38 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxTweener/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxTweener/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"$(OFX_CEREAL_HEADERS)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1277,8 +1584,8 @@
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_FRAMEWORKS)",
 					"$(OF_CORE_LIBS)",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
 				);
 				SDKROOT = macosx;
 			};
@@ -1300,37 +1607,38 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxTweener/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxTweener/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"$(OFX_CEREAL_HEADERS)",
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -1340,8 +1648,8 @@
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_FRAMEWORKS)",
 					"$(OF_CORE_LIBS)",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
@@ -1363,37 +1671,38 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxGui/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxOsc/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxTweener/src",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxGui/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/pgmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/libs/rtmidi",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/desktop",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxMidi/src/ios",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/posix",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/ip/win32",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/libs/oscpack/src/osc",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxOsc/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/include/libxml",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/include",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/license",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxTweener/src",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/libs",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxXmlSettings/src",
+					"$(OFX_CEREAL_HEADERS)",
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -1403,8 +1712,8 @@
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_FRAMEWORKS)",
 					"$(OF_CORE_LIBS)",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
-					"../../../../../../openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/libxml2/lib/osx/xml2.a",
+					"../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/addons/ofxSvg/libs/svgtiny/lib/osx/svgtiny.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

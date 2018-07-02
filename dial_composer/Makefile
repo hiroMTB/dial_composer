@@ -6,7 +6,7 @@ endif
 
 # make sure the the OF_ROOT location is defined
 ifndef OF_ROOT
-	OF_ROOT=$(realpath ../../../../../../openFrameworks-hiroMTB/../../../../../../openFrameworks-hiroMTB/openFrameworks-hiroMTB)
+	OF_ROOT=$(realpath ../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/openFrameworks-hiroMTB/../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/openFrameworks-hiroMTB/openFrameworks-hiroMTB)
 endif
 
 # call the project makefile!

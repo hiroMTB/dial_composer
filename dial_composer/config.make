@@ -6,9 +6,9 @@
 ################################################################################
 # OF ROOT
 #   The location of your root openFrameworks installation
-#       (default) OF_ROOT = ../../../../../../openFrameworks-hiroMTB/../../../../../../openFrameworks-hiroMTB/openFrameworks-hiroMTB 
+#       (default) OF_ROOT = ../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/openFrameworks-hiroMTB/../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/openFrameworks-hiroMTB/openFrameworks-hiroMTB 
 ################################################################################
-# OF_ROOT = ../../../../../../openFrameworks-hiroMTB/../../../../../../openFrameworks-hiroMTB/openFrameworks-hiroMTB
+# OF_ROOT = ../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/openFrameworks-hiroMTB/../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/../../../../../../../../../../Users/hiro/Desktop/openFrameworks-hiroMTB/openFrameworks-hiroMTB/openFrameworks-hiroMTB
 
 ################################################################################
 # PROJECT ROOT
